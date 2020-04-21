@@ -1,5 +1,5 @@
 # Stellaris Balance Mod
-Praise the Birb, and the Birb shalth give a perfectly balanced game.
+Praise the Birb, and the Birb shalth give a perfectly balanced game. Balance changes can be viewed in the GitHub wiki.
 
 ## Installation
 
