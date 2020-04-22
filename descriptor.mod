@@ -3,4 +3,5 @@ tags={
 	"Balance"
 }
 name="Stellaris Balance Mod"
-supported_version="2.6.3"
+supported_version="2.6.*"
+path="mod/stellaris-balance-mod"

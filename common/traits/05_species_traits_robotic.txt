@@ -163,14 +163,14 @@ trait_robot_enhanced_memory = {
 }
 
 trait_robot_emotion_emulators = {
-	cost = 1
+	cost = 2
 	opposites = { "trait_robot_uncanny" }
 	allowed_archetypes = { MACHINE }
 	custom_tooltip = TRAIT_EMOTION_EMULATORS_EFFECT
 }
 
 trait_robot_uncanny = {
-	cost = -1
+	cost = -2
 	opposites = { "trait_robot_emotion_emulators" }
 	allowed_archetypes = { MACHINE }
 	custom_tooltip = TRAIT_UNCANNY_EFFECT
@@ -264,7 +264,7 @@ trait_robot_mass_produced = {
 	allowed_archetypes = { ROBOT MACHINE }
 
 	modifier = {
-		pop_assembly_speed = 0.15
+		pop_assembly_speed = 0.10
 	}
 }
 
@@ -275,7 +275,7 @@ trait_robot_custom_made = {
 	allowed_archetypes = { ROBOT MACHINE }
 
 	modifier = {
-		pop_assembly_speed = -0.15
+		pop_assembly_speed = -0.10
 	}
 	ai_weight = {
 		factor = 0
@@ -290,7 +290,7 @@ trait_robot_recycled = {
 
 	#assembling_modifier, declining_modifier, growing_modifier are applied to planet when pop is the one assembling/declining/growing
 	assembling_modifier = {
-		planet_pop_assemblers_upkeep_mult = -0.20
+		planet_pop_assemblers_upkeep_mult = -0.25
 	}
 }
 
@@ -302,7 +302,7 @@ trait_robot_luxurious = {
 
 	#assembling_modifier, declining_modifier, growing_modifier are applied to planet when pop is the one assembling/declining/growing
 	assembling_modifier = {
-		planet_pop_assemblers_upkeep_mult = 0.20
+		planet_pop_assemblers_upkeep_mult = 0.25
 	}
 	ai_weight = {
 		weight = 1
@@ -333,7 +333,7 @@ trait_robot_propaganda_machines = {
 }
 
 trait_robot_streamlined_protocols = {
-	cost = 2
+	cost = 1
 	opposites = { "trait_robot_high_bandwidth" }
 	allowed_archetypes = { ROBOT MACHINE }
 	modifier = {
@@ -342,7 +342,7 @@ trait_robot_streamlined_protocols = {
 }
 
 trait_robot_high_bandwidth = {
-	cost = -2
+	cost = -1
 	opposites = { "trait_robot_streamlined_protocols" }
 	allowed_archetypes = { ROBOT MACHINE }
 	modifier = {

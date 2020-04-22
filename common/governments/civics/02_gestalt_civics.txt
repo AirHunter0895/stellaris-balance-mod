@@ -21,7 +21,8 @@ civic_hive_subspace_ephapse = {
 	potential = { authority = { value = auth_hive_mind } }
 	random_weight = { base = 5 }
 	modifier = {
-		country_naval_cap_mult = 0.15
+		country_command_limit_add = 10
+		country_naval_cap_mult = 0.25
 	}
 }
 
@@ -30,7 +31,7 @@ civic_hive_natural_neural_network = {
 	description = "civic_tooltip_natural_neural_network_effects"
 	random_weight = { base = 5 }
 	modifier = {
-		num_tech_alternatives_add = 1
+		num_tech_alternatives_add = 2
 	}
 }
 
@@ -56,7 +57,7 @@ civic_hive_divided_attention = {
 	potential = { authority = { value = auth_hive_mind } }
 	random_weight = { base = 5 }
 	modifier = {
-		country_admin_cap_mult = 0.10
+		country_admin_cap_mult = 0.20
 	}
 }
 
@@ -64,9 +65,9 @@ civic_hive_strength_of_legions = {
 	potential = { authority = { value = auth_hive_mind } }
 	random_weight = { base = 5 }
 	modifier = {
-		army_starting_experience_add = 100
-		army_damage_mult = 0.20
-		armies_upkeep_mult = -0.20
+		army_damage_mult = 0.25
+		armies_upkeep_mult = -0.25
+		planet_army_build_speed_mult = 0.25		
 	}
 }
 
@@ -75,6 +76,7 @@ civic_hive_subsumed_will = {
 	random_weight = { base = 5 }
 	modifier = {
 		empire_size_pops_mult = -0.20
+		planet_crime_no_happiness_mult = -0.20
 	}
 }
 
@@ -83,7 +85,8 @@ civic_hive_pooled_knowledge = {
 	random_weight = { base = 5 }
 	modifier = {
 		leader_skill_levels = 1
-		species_leader_exp_gain = 0.1
+		species_leader_exp_gain = 0.25
+		leader_age = 20
 	}
 }
 
@@ -248,6 +251,7 @@ civic_machine_builder = {
 	modifier = {
 		planet_structures_cost_mult = -0.10
 		planet_structures_upkeep_mult = -0.10
+		planet_building_build_speed_mult = 0.10
 	}
 }
 
@@ -257,7 +261,7 @@ civic_machine_factory_overclock = {
     random_weight = { base = 5 }
     modifier = {
         leader_skill_levels = 1
-		species_leader_exp_gain = 0.1
+		species_leader_exp_gain = 0.25
     }
 }
 
@@ -282,6 +286,7 @@ civic_machine_zero_waste_protocols = {
 	random_weight = { base = 5 }
 	modifier = {
 		planet_pops_robotics_upkeep_mult = -0.10
+		planet_jobs_upkeep_mult = -0.05
 	}
 }
 
@@ -298,6 +303,7 @@ civic_machine_ota_updates = {
 	random_weight = { base = 5 }
 	modifier = {
 		empire_size_pops_mult = -0.20
+		planet_crime_no_happiness_mult = -0.20
 	}
 }
 
@@ -305,8 +311,9 @@ civic_machine_warbots = {
 	potential = { authority = { value = auth_machine_intelligence } }
 	random_weight = { base = 5 }
 	modifier = {
-		army_damage_mult = 0.2
-		armies_upkeep_mult = -0.2
+		army_damage_mult = 0.25
+		armies_upkeep_mult = -0.25
+		planet_army_build_speed_mult = 0.25
 	}
 }
 
@@ -323,6 +330,7 @@ civic_machine_delegated_functions = {
 	random_weight = { base = 5 }
 	modifier = {
 		leaders_upkeep_mult = -0.25
+		leaders_cost_mult = -0.25
 		country_leader_pool_size = 1
 	}
 }
@@ -332,6 +340,7 @@ civic_machine_predictive_analysis = {
 	random_weight = { base = 5 }
 	modifier = {
 		num_tech_alternatives_add = 1
+		all_technology_research_speed = 0.05
 	}
 }
 
