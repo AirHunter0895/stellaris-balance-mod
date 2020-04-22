@@ -298,7 +298,7 @@ civic_environmentalist = {
 	random_weight = { base = 5 }
 	modifier = {
 		planet_pops_consumer_goods_upkeep_mult = -0.10
-		planet_jobs_upkeep_mult = -0.10
+		planet_jobs_upkeep_mult = -0.05
 	}
 }
 
