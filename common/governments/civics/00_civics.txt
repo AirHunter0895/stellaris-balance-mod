@@ -515,10 +515,11 @@ civic_shadow_council = {
 		}
 	}
 	random_weight = { base = 5 }
+	description = "civic_tooltip_shadow_council_effect"
 	modifier = {
+		planet_jobs_ruler_produces_mult = 0.10
 		country_base_influence_produces_add = 0.5
 		country_election_influence_cost_mult = -0.75
-		planet_jobs_ruler_produces_mult = 0.10
 	}
 }
 
