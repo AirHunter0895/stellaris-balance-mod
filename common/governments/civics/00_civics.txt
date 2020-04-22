@@ -516,7 +516,7 @@ civic_shadow_council = {
 	}
 	random_weight = { base = 5 }
 	modifier = {
-		country_influence_produces_add = 0.5
+		country_base_influence_produces_add = 0.5
 		country_election_influence_cost_mult = -0.75
 		planet_jobs_ruler_produces_mult = 0.10
 	}
