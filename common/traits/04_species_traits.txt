@@ -687,10 +687,10 @@ trait_survivor = {
 	potential_crossbreeding_chance = 0.33
 	initial = no
 	randomized = no
-	modification = no
+	advanced_trait = yes
 	allowed_archetypes = { BIOLOGICAL LITHOID }
 	modifier = {
-		pc_nuked_habitability = 0.7
+		pop_growth_speed = -0.25
 		leader_age = 10
 	}
 	slave_cost = {

@@ -178,7 +178,7 @@ origin_post_apocalyptic = {
 	is_origin = yes
 	icon = "gfx/interface/icons/origins/origins_post_apocalyptic.dds"
 	picture = GFX_origin_post_apocalyptic
-
+    habitability_preference = pc_nuked
 	starting_colony = pc_nuked
 
 	playable = {
