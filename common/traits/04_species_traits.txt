@@ -686,6 +686,7 @@ trait_survivor = {
 	cost = 0
 	potential_crossbreeding_chance = 0.33
 	initial = no
+	species_potential_add = { always = no }
 	randomized = no
 	advanced_trait = yes
 	allowed_archetypes = { BIOLOGICAL LITHOID }
@@ -857,6 +858,7 @@ trait_void_dweller_1 = {
 	icon = "gfx/interface/icons/traits/trait_void_dweller_positive.dds"
 	initial = no
 	randomized = no
+	species_potential_add = { always = no }
 	advanced_trait = yes
 	allowed_archetypes = { BIOLOGICAL LITHOID }
 	sorting_priority = 30
