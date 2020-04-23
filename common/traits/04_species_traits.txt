@@ -249,7 +249,7 @@ trait_quarrelsome = {
 }
 
 trait_docile = {
-	cost = 2
+	cost = 1
 	potential_crossbreeding_chance = 1.0
 	opposites = { "trait_unruly" }
 	allowed_archetypes = { BIOLOGICAL LITHOID }
@@ -259,7 +259,7 @@ trait_docile = {
 }
 
 trait_unruly = {
-	cost = -2
+	cost = -1
 	potential_crossbreeding_chance = 1.0
 	opposites = { "trait_docile" }
 	allowed_archetypes = { BIOLOGICAL LITHOID }
@@ -275,7 +275,7 @@ trait_very_strong = {
 	allowed_archetypes = { BIOLOGICAL LITHOID }
 	modifier = {
 		army_damage_mult = 0.40
-		planet_jobs_worker_produces_mult = 0.05
+		planet_jobs_worker_produces_mult = 0.075
 	}
 	slave_cost = {
 		energy = 150
@@ -303,7 +303,7 @@ trait_weak = {
 	allowed_archetypes = { BIOLOGICAL LITHOID }
 	modifier = {
 		army_damage_mult = -0.20
-		planet_jobs_worker_produces_mult = -0.025
+		planet_jobs_worker_produces_mult = -0.05
 	}
 	slave_cost = {
 		energy = -50
@@ -403,9 +403,9 @@ trait_uplifted = {
 }
 
 trait_conformists = {
-	cost = 2
+	cost = 1
 	potential_crossbreeding_chance = 1.0
-	modifier = { pop_government_ethic_attraction = 0.30 }
+	modifier = { pop_government_ethic_attraction = 0.20 }
 
 	allowed_archetypes = { BIOLOGICAL LITHOID }
 
@@ -418,7 +418,7 @@ trait_conformists = {
 trait_deviants = {
 	cost = -1
 	potential_crossbreeding_chance = 1.0
-	modifier = { pop_government_ethic_attraction = -0.15 }
+	modifier = { pop_government_ethic_attraction = -0.20 }
 
 	allowed_archetypes = { BIOLOGICAL LITHOID }
 
@@ -429,7 +429,7 @@ trait_deviants = {
 }
 
 trait_venerable = {
-	cost = 4
+	cost = 3
 	potential_crossbreeding_chance = 1.0
 	modifier = { leader_age = 80 }
 	opposites = { "trait_enduring" "trait_fleeting" "trait_fleeting_lithoid" }
@@ -439,7 +439,7 @@ trait_venerable = {
 trait_enduring = {
 	cost = 1
 	potential_crossbreeding_chance = 1.0
-	modifier = { leader_age = 20 }
+	modifier = { leader_age = 25 }
 	opposites = { "trait_venerable" "trait_fleeting" "trait_fleeting_lithoid" }
 	allowed_archetypes = { BIOLOGICAL LITHOID }
 }
@@ -490,7 +490,7 @@ trait_resilient = {
 	potential_crossbreeding_chance = 1.0
 	allowed_archetypes = { BIOLOGICAL LITHOID }
 	modifier = {
-		army_defense_damage_mult = 0.5
+		army_defense_health_mult = 0.5
 	}
 }
 

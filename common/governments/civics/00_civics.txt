@@ -287,6 +287,7 @@ civic_idealistic_foundation = {
 	random_weight = { base = 5 }
 	modifier = {
 		pop_citizen_happiness = 0.10
+		planet_culture_workers_upkeep_mult = -0.20
 	}
 }
 
@@ -377,7 +378,7 @@ civic_warrior_culture = {
 	description = "civic_tooltip_warrior_culture_effects"
 	modifier = {
 		army_damage_mult = 0.20
-		armies_energy_upkeep_mult = -0.20
+		armies_upkeep_mult = -0.20
 	}
 }
 
@@ -515,10 +516,10 @@ civic_shadow_council = {
 		}
 	}
 	random_weight = { base = 5 }
+	description = "civic_tooltip_shadow_council_effect"
 	modifier = {
-		country_influence_produces_add = 0.5
-		country_election_influence_cost_mult = -0.75
 		planet_jobs_ruler_produces_mult = 0.10
+		country_election_influence_cost_mult = -0.75
 	}
 }
 
