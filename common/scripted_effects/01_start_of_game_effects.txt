@@ -1546,11 +1546,12 @@ generate_start_pops = {
 		}
 
 		add_building = building_robot_assembly_plant
+		add_district = district_generator
 		add_district_and_planet_size_if_needed_effect = {
 			district = district_generator
 		}
 		while = {
-			limit = { num_pops < 27 }
+			limit = { num_pops < 32 }
 			create_pop = {
 				species = owner_main_species
 				ethos = random
