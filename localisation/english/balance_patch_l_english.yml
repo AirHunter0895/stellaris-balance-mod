@@ -12,3 +12,7 @@
  # Deposits
  d_arcane_generator_new:0 "Arcane Generator"
  d_arcane_generator_new_desc:0 "This ancient machine has given power and resources to our ringworld for millenia, but it is aged and damaged. We will need to invest in new technologies and industries if we wish to expand."
+
+ # Buildings
+ building_sanctuary_of_sin:0 "Sanctuary of Sin"
+ building_sanctuary_of_sin_desc:0 "This secretive locale is a meeting place for cutthroats, pariahs, and deviants alike, such that they may find belonging in scandalous prayer and ritual."
