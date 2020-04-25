@@ -1,3 +1,7 @@
 ﻿l_english:
  civic_tooltip_shadow_council_effect:0 "Ruler Pop Amenities and Trade Value: §G+10%§!"
  mod_planet_culture_workers_upkeep_mult:0 "Culture Worker Upkeep"
+
+ d_arcane_generator_new:0 "Arcane Generator"
+ d_arcane_generator_new_desc:0 "This ancient machine has given power and resources to our ringworld for millenia, but it is aged and damaged. We will need to invest in new technologies and industries if we wish to expand."
+ 
