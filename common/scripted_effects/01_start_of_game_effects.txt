@@ -1550,11 +1550,28 @@ generate_start_pops = {
 		add_district_and_planet_size_if_needed_effect = {
 			district = district_mining
 		}
-		while = {
-			limit = { num_pops < 32 }
-			create_pop = {
-				species = owner_main_species
-				ethos = random
+		if = {
+			limit = {
+				owner = { is_megacorp = yes }
+			}
+			while = {
+				limit = { num_pops < 34 }
+				create_pop = {
+					species = owner_main_species
+					ethos = random
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				owner = { is_megacorp = no }
+			}
+			while = {
+				limit = { num_pops < 32 }
+				create_pop = {
+					species = owner_main_species
+					ethos = random
+				}
 			}
 		}
 	}
