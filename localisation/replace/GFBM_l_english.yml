@@ -1,5 +1,8 @@
 ﻿l_english:
  ####################################
- # Misc
+ # Localisation for the Grand Flotilla Balance Mod
  ####################################
  civic_tooltip_feudal_realm_effects:3 "§R- WARNING: Challenging Civic§!\n\nSubject empires can expand into neighbouring systems."
+ TRAIT_SYNCRETIC_PROLES_EFFECT:0 "$MOD_POP_HAPPINESS$: §G+10%§!\n$mod_planet_workers_produces_mult$: §G+10%§!\nCannot generate §YLeaders§!\nCannot be employed in §Y$pop_cat_ruler$§! or Complex §Y$pop_cat_specialist$§! Jobs"
+ 
+ 
