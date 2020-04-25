@@ -180,7 +180,6 @@ origin_post_apocalyptic = {
 	picture = GFX_origin_post_apocalyptic
     habitability_preference = pc_nuked
 	starting_colony = pc_nuked
-	habitability_preference = pc_nuked
 
 	playable = {
 		host_has_dlc = "Apocalypse"
@@ -246,7 +245,6 @@ origin_shattered_ring = {
 	habitability_preference = pc_ringworld_habitable
 	initializers = { shattered_ring_start }
 	max_once_global = yes
-	habitability_preference = pc_ringworld_habitable
 
 	playable = {
 		host_has_dlc = Federations
