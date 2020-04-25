@@ -371,9 +371,7 @@ generate_start_deposits_and_blockers = {
 			33 = { add_deposit = d_fertile_lands }
 		}
 
-		add_deposit = d_dust_caverns
-		add_deposit = d_bubbling_swamp
-		add_deposit = d_crystalline_caverns
+		add_deposit = d_arcane_Nature
 	}
 
 	if = {
@@ -1546,9 +1544,10 @@ generate_start_pops = {
 		add_building = building_robot_assembly_plant
 		add_district_and_planet_size_if_needed_effect = {
 			district = district_generator
+			district = district_mining
 		}
 		while = {
-			limit = { num_pops < 27 }
+			limit = { num_pops < 32 }
 			create_pop = {
 				species = owner_main_species
 				ethos = random

@@ -313,7 +313,7 @@ civic_machine_warbots = {
 	modifier = {
 		army_damage_mult = 0.25
 		armies_upkeep_mult = -0.25
-		planet_army_build_speed_mult = 0.25
+		planet_army_build_speed_mult = 0.5
 	}
 }
 

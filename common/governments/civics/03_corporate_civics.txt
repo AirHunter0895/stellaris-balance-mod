@@ -78,6 +78,7 @@ civic_private_prospectors = {
 	random_weight = { base = 5 }
 	modifier = {
 		empire_size_colonies_mult = -0.33
+		empire_size_systems_mult = -0.33
 	}
 
 	# unlocks sponsored_colonizer ship size
