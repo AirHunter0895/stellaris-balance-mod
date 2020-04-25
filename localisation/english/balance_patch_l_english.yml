@@ -1,3 +1,10 @@
 ﻿l_english:
+ # Civics
  civic_tooltip_shadow_council_effect:0 "Ruler Pop Amenities and Trade Value: §G+10%§!"
+ 
+ # Job upkeep
  mod_planet_culture_workers_upkeep_mult:0 "Culture Worker Upkeep"
+ 
+ # Decisions
+ decision_remove_lithoid_impact_crater:0 "Pave over the crater"
+ decision_remove_lithoid_impact_crater_desc:0 "While crashing into a planet is fun and all, it doesn't help when trying to build a civilization. We can invest in a project to remove the crater, restoring this planet's surface."
