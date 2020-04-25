@@ -8,3 +8,7 @@
  # Decisions
  decision_remove_lithoid_impact_crater:0 "Pave over the crater"
  decision_remove_lithoid_impact_crater_desc:0 "While crashing into a planet is fun and all, it doesn't help when trying to build a civilization. We can invest in a project to remove the crater, restoring this planet's surface."
+
+ # Deposits
+ d_arcane_generator_new:0 "Arcane Generator"
+ d_arcane_generator_new_desc:0 "This ancient machine has given power and resources to our ringworld for millenia, but it is aged and damaged. We will need to invest in new technologies and industries if we wish to expand."
