@@ -1,0 +1,19 @@
+opinion_lost_colony_child_to_parent = {
+  trigger = {
+    is_same_species_class = FROM
+    has_origin = origin_lost_colony
+    FROM = { has_country_flag = lost_colony_parent }
+  }
+  opinion = { base = 200 }
+}
+
+opinion_lost_colony_parent_to_child = {
+  trigger = {
+    has_country_flag = lost_colony_parent
+    FROM = {
+      is_same_species_class = FROM
+      has_origin = origin_lost_colony
+    }
+  }
+  opinion = { base = 200 }
+}

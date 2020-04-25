@@ -18,3 +18,7 @@
  # Buildings
  building_sanctuary_of_sin:0 "Sanctuary of Sin"
  building_sanctuary_of_sin_desc:0 "This secretive locale is a meeting place for cutthroats, pariahs, and deviants alike, such that they may find belonging in scandalous prayer and ritual."
+
+ # Opinions
+ opinion_lost_colony_child_to_parent:0 "Found origin empire"
+ opinion_lost_colony_parent_to_child:0 "Found lost children"
