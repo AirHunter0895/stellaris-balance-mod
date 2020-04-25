@@ -12,6 +12,8 @@
  # Deposits
  d_arcane_generator_new:0 "Arcane Generator"
  d_arcane_generator_new_desc:0 "This ancient machine has given power and resources to our ringworld for millenia, but it is aged and damaged. We will need to invest in new technologies and industries if we wish to expand."
+ d_arcane_nature:0 "Arcane Nature"
+ d_arcane_nature_desc:0 "The landscape of this world is full of natural wonders; flora and fauna that breathe exotic gases, mountaintops studded with rare crystals, and ocean currents of volatile motes. It takes barely any effort to sequester these resources for our own future use."
 
  # Buildings
  building_sanctuary_of_sin:0 "Sanctuary of Sin"

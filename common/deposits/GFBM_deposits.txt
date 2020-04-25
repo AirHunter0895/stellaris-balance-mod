@@ -42,3 +42,20 @@ d_arcane_generator_new = {
 		}
 	}
 }
+
+d_arcane_nature = {
+	is_for_colonizeable = yes
+	icon = "d_infestation"
+	category = deposit_cat_rare
+
+	potential = { always = no }
+
+	resources = {
+		category = planet_deposits
+		produces = {
+			volatile_motes = 2
+			rare_crystals = 2
+			exotic_gases = 2
+		}
+	}
+}
