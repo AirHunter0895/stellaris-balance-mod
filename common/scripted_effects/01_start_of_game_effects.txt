@@ -371,7 +371,9 @@ generate_start_deposits_and_blockers = {
 			33 = { add_deposit = d_fertile_lands }
 		}
 
-		add_deposit = d_arcane_Nature
+		add_deposit = d_dust_desert
+		add_deposit = d_crystal_forest
+		add_deposit = d_fuming_bog
 	}
 
 	if = {
@@ -835,10 +837,7 @@ generate_earth_deposits_and_blockers = {
 		}
 
 		set_planet_size = 25
-
-		add_deposit = d_dust_caverns
-		add_deposit = d_bubbling_swamp
-		add_deposit = d_crystalline_caverns
+		add_deposit = d_arcane_nature
 	}
 }
 
