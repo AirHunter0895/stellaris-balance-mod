@@ -1546,6 +1546,8 @@ generate_start_pops = {
 		add_building = building_robot_assembly_plant
 		add_district_and_planet_size_if_needed_effect = {
 			district = district_generator
+		}
+		add_district_and_planet_size_if_needed_effect = {
 			district = district_mining
 		}
 		while = {
