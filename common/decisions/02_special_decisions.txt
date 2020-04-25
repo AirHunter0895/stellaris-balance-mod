@@ -1,0 +1,22 @@
+# Remove impact crater
+decision_remove_lithoid_impact_crater = {
+	resources = {
+		category = decisions
+		cost = {
+			energy = 1000
+			minerals = 1000
+		}
+	}
+	
+	potential = {
+		has_modifier = lithoid_crater
+	}
+	
+	effect = {
+		remove_modifier = lithoid_crater
+	}
+	
+	ai_weight = {
+		weight = 10
+	}
+}
