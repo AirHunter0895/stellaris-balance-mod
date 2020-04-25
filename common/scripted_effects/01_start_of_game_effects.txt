@@ -1223,6 +1223,8 @@ generate_start_buildings_and_districts = {
 			if = {
 				limit = { owner = { has_origin = origin_machine } }
 
+				set_planet_size = 22
+
 				remove_district = district_generator
 				remove_district = district_generator
 				remove_district = district_generator
