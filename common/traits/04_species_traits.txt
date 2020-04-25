@@ -687,8 +687,8 @@ trait_survivor = {
 	potential_crossbreeding_chance = 0.33
 	initial = no
 	randomized = no
-	modification = no
 	advanced_trait = yes
+	species_potential_add = { always = no }
 	allowed_archetypes = { BIOLOGICAL LITHOID }
 	modifier = {
 		leader_age = 10
@@ -858,8 +858,8 @@ trait_void_dweller_1 = {
 	icon = "gfx/interface/icons/traits/trait_void_dweller_positive.dds"
 	initial = no
 	randomized = no
-	modification = no
 	advanced_trait = yes
+	species_potential_add = { always = no }
 	allowed_archetypes = { BIOLOGICAL LITHOID }
 	sorting_priority = 30
 	potential_crossbreeding_chance = 0.33
@@ -877,8 +877,8 @@ trait_void_dweller_2 = {
 	icon = "gfx/interface/icons/traits/trait_void_dweller.dds"
 	initial = no
 	randomized = no
-	modification = no
 	advanced_trait = yes
+	species_potential_add = { always = no }
 	allowed_archetypes = { BIOLOGICAL LITHOID }
 	sorting_priority = 30
 	potential_crossbreeding_chance = 0.33

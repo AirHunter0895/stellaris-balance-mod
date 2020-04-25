@@ -2,7 +2,13 @@
  ####################################
  # Localisation for the Grand Flotilla Balance Mod
  ####################################
+ # Civics
  civic_tooltip_feudal_realm_effects:3 "§R- WARNING: Challenging Civic§!\n\nSubject empires can expand into neighbouring systems."
+
+ # Traits
+ TRAIT_LITHOID_GASEOUS_BYPRODUCTS_EFFECT:0 "Each pop with living standards of slavery or better produces 0.03 £exotic_gases£ §Y$exotic_gases$§! per month."
+ TRAIT_LITHOID_SCINTILLATING_EFFECT:0 "Each pop with living standards of slavery or better produces 0.03 £rare_crystals£ §Y$rare_crystals$§! per month."
+ TRAIT_LITHOID_VOLATILE_EXCRETIONS_EFFECT:0 "Each pop with living standards of slavery or better produces 0.03 £volatile_motes£ §Y$volatile_motes$§! per month."
  TRAIT_SYNCRETIC_PROLES_EFFECT:0 "$MOD_POP_HAPPINESS$: §G+10%§!\n$mod_planet_worker_produces_mult$: §G+10%§!\nCannot generate §YLeaders§!\nCannot be employed in §Y$pop_cat_ruler$§! or Complex §Y$pop_cat_specialist$§! Jobs"
  
  
