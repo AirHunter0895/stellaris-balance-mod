@@ -26,6 +26,7 @@ ap_enigmatic_engineering = {
 	modifier = {
 		ship_sensor_range_add = 2
 		ship_hyperlane_range_add = 4
+		country_minor_artifacts_produces_add = 0.05
 	}
 
 	ai_weight = {
@@ -492,6 +493,7 @@ ap_world_shaper = {
 
 	modifier = {
 		terraforming_cost_mult = -0.25
+		terraform_speed_mult = 0.25
 	}
 
 	on_enabled = {
@@ -523,7 +525,7 @@ ap_galactic_force_projection = {
 		}
 	}
 	modifier = {
-		country_naval_cap_add = 80
+		country_naval_cap_add = 100
 		country_command_limit_add = 20
 	}
 
@@ -569,6 +571,7 @@ ap_defender_of_the_galaxy = {
 		damage_vs_country_type_extradimensional_3_mult = 0.5
 		damage_vs_country_type_ai_empire_mult = 0.5
 		damage_vs_country_type_gray_goo_mult = 0.5
+		damage_vs_country_type_awakened_marauders_mult = 0.5
 	}
 
 	on_enabled = {
@@ -597,8 +600,8 @@ ap_defender_of_the_galaxy = {
 
 ap_interstellar_dominion = {
 	modifier = {
-		country_starbase_influence_cost_mult = -0.20
 		country_claim_influence_cost_mult = -0.20
+		country_war_exhaustion_mult = -0.20
 	}
 
 	potential = {
@@ -630,6 +633,8 @@ ap_grasp_the_void = {
 
 	modifier = {
 		country_starbase_capacity_add = 5
+		ships_upkeep_mult = -0.10
+		ship_speed_mult = 0.10
 	}
 
 	potential = {
@@ -664,6 +669,7 @@ ap_eternal_vigilance = {
 		shipclass_starbase_hull_mult = 0.25
 		shipclass_military_station_damage_mult = 0.25
 		starbase_defense_platform_capacity_add = 5
+		ship_home_territory_fire_rate_mult = 0.25
 	}
 
 	potential = {
@@ -825,6 +831,7 @@ ap_mastery_of_nature = {
 	}
 	modifier = {
 		deposit_blockers_cost_mult = -0.33
+		deposit_blockers_time_cost_mult = -0.33
 	}
 
 	potential = {
@@ -849,6 +856,7 @@ ap_mastery_of_nature = {
 ap_imperial_prerogative = {
 	modifier = {
 		country_admin_cap_mult = 0.20
+		country_starbase_influence_cost_mult = -0.20
 	}
 
 	potential = {
@@ -903,7 +911,8 @@ ap_transcendent_learning = {
 ap_shared_destiny = {
 	modifier = {
 		subject_integration_influence_cost_mult = -0.5
-		country_subject_trust_cap_add = 100
+		country_subject_trust_cap_add = 200
+		country_subject_technology_sharing_mult = 0.30
 	}
 
 	potential = {
@@ -1178,7 +1187,8 @@ ap_galactic_wonders_utopia_and_megacorp = {
 ap_synthetic_age = {
 	modifier = {
 		MACHINE_species_trait_points_add = 2
-		modify_species_cost_mult = -0.33
+		modify_species_cost_mult = -0.75
+		planet_jobs_produces_mult = 0.05
 	}
 
 	potential = {
@@ -1387,7 +1397,7 @@ ap_universal_transactions = {
 	}
 
 	modifier = {
-		planet_branch_offices_cost_mult = -0.15
+		planet_branch_offices_cost_mult = -0.33
 	}
 
 	on_enabled = {

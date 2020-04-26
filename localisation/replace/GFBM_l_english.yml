@@ -10,5 +10,12 @@
  TRAIT_LITHOID_SCINTILLATING_EFFECT:0 "Each pop with living standards of slavery or better produces 0.03 £rare_crystals£ §Y$rare_crystals$§! per month."
  TRAIT_LITHOID_VOLATILE_EXCRETIONS_EFFECT:0 "Each pop with living standards of slavery or better produces 0.03 £volatile_motes£ §Y$volatile_motes$§! per month."
  TRAIT_SYNCRETIC_PROLES_EFFECT:0 "$MOD_POP_HAPPINESS$: §G+10%§!\n$mod_planet_worker_produces_mult$: §G+10%§!\nCannot generate §YLeaders§!\nCannot be employed in §Y$pop_cat_ruler$§! or Complex §Y$pop_cat_specialist$§! Jobs"
+
+ # Traditions
+ tr_domination_colonial_viceroys_desc:0 "Soldier and capital building is +1 job (TODO)."
+ tr_domination_grand_council_desc:0 "§Y$MOD_LEADER_GOVERNOR_SKILL_LEVELS$§! increased by §Y2§!\n§Y$MOD_LEADER_RULER_SKILL_LEVELS$§! increased by §Y2§!."
+ tr_domination_imperious_architecture_desc:2 "£building£ §YCapital Buildings§!, £building£ §YHousing Buildings§!, and £building£ §YStronghold Buildings§! provide §G+1§! £housing£ §Y$MOD_PLANET_HOUSING_ADD$§! each."
+ 
+ 
  
  

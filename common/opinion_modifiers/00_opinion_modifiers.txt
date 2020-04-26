@@ -2719,7 +2719,7 @@ triggered_opinion_ap_defender_of_the_galaxy = {
 	}
 
 	opinion = {
-		base = 20 # remember to update the ascension perk's tooltip
+		base = 50 # remember to update the ascension perk's tooltip
 	}
 }
 
