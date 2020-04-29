@@ -288,6 +288,7 @@ civic_idealistic_foundation = {
 	modifier = {
 		pop_citizen_happiness = 0.10
 		planet_culture_workers_upkeep_mult = -0.20
+		planet_priests_upkeep_mult = -0.20
 	}
 }
 

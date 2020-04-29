@@ -4,6 +4,7 @@
  
  # Job upkeep
  mod_planet_culture_workers_upkeep_mult:0 "Culture Worker Upkeep"
+ mod_planet_priests_upkeep_mult:0 "Priest Upkeep"
  
  # Decisions
  decision_remove_lithoid_impact_crater:0 "Pave over the crater"

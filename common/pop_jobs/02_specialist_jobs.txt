@@ -1540,7 +1540,7 @@ healthcare = {
 
 	planet_modifier = {
 		planet_amenities_add = 5
-		pop_growth_speed = 0.05
+		pop_growth_speed = 0.10
 	}
 
 	resources = {
