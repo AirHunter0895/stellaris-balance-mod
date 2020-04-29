@@ -105,7 +105,7 @@ event = {
 	hide_window = yes
 
 	trigger = {
-		years_passed >= 50
+		years_passed >= 75
 		any_planet = {
 			has_deposit = d_shattered_ring_superblocker3
 			NOT = { has_planet_flag = shattered_project_given }
@@ -134,7 +134,7 @@ planet_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		years_passed >= 50
+		years_passed >= 75
 		has_deposit = d_shattered_ring_superblocker3
 		NOT = { has_planet_flag = shattered_project_given }
 	}
