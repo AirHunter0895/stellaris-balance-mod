@@ -7,7 +7,7 @@
 
 namespace = shattered
 
-# At year 2225, replace the Massive Structural Damage with a removable variant
+# Gatekeeper for removing Massive Structural Damage
 event = {
 	id = shattered.1
 	is_triggered_only = yes
@@ -98,7 +98,7 @@ planet_event = {
 	}
 }
 
-# At year 2225, replace the Minor Structural Damage with a removable variant
+# Gatekeeper for removing Minor Structural Damage
 event = {
 	id = shattered.5
 	is_triggered_only = yes
@@ -125,7 +125,7 @@ event = {
 	}
 }
 
-# At year 2250, replace the Minor Structural Damage with a removable variant
+# At year 2275, replace the Minor Structural Damage with a removable variant
 planet_event = {
 	id = shattered.6
 	title = shattered.6.name
