@@ -62,15 +62,29 @@ d_arcane_nature = {
 
 # Superblocker for Shattered Ringworld
 d_shattered_ring_superblocker = {
+	time = 1800
 	icon = "d_shattered_ring"
 	is_for_colonizeable = yes
-	category = deposit_cat_rare
+	category = deposit_cat_rare_blocker
 	
 	potential = { always = no }
 
 	planet_modifier = {
 		planet_max_districts_add = -1
 	}
+
+	blocker_swap_types = {
+		d_shattered_ring_superblocker3
+	}
+
+	resources = {
+		category = deposit_blockers
+		cost = {
+			alloys = 5000
+		}
+	}
+
+	prerequisites = { "tech_mega_engineering" }
 }
 
 # Superblocker Stage 2
