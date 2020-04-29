@@ -1,0 +1,12 @@
+# No scope, like on_game_start
+on_five_year_pulse = {
+	events = {
+		shattered.1
+	}
+}
+
+on_planet_transfer = {
+	events = {
+		shattered.4
+	}
+}

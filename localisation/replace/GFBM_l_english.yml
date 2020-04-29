@@ -15,7 +15,8 @@
  tr_domination_colonial_viceroys_desc:0 "Soldier and capital building is +1 job (TODO)."
  tr_domination_grand_council_desc:0 "§Y$MOD_LEADER_GOVERNOR_SKILL_LEVELS$§! increased by §Y2§!\n§Y$MOD_LEADER_RULER_SKILL_LEVELS$§! increased by §Y2§!."
  tr_domination_imperious_architecture_desc:2 "£building£ §YCapital Buildings§!, £building£ §YHousing Buildings§!, and £building£ §YStronghold Buildings§! provide §G+1§! £housing£ §Y$MOD_PLANET_HOUSING_ADD$§! each."
- 
- 
- 
- 
+
+ # Deposits
+ d_arcane_generator:0 "Arcane Generator"
+ d_arcane_generator_desc:0 "This ancient machine at the heart of the ringworld has supported our people for generations.\n§YThis deposit will grow and develop as new districts are built.§!"
+  

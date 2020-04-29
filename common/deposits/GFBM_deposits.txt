@@ -59,3 +59,118 @@ d_arcane_nature = {
 		}
 	}
 }
+
+# Superblocker for Shattered Ringworld
+d_shattered_ring_superblocker = {
+	icon = "d_shattered_ring"
+	is_for_colonizeable = yes
+	category = deposit_cat_rare
+	
+	potential = { always = no }
+
+	#triggered_planet_modifier = {
+	#	potential = { planet = { has_district = district_rw_commercial } }
+	#	job_merchant_add = -5
+	#	job_artisan_add = -1
+	#	job_clerk_add = -4
+	#}
+	#triggered_planet_modifier = {
+	#	potential = { planet = { has_district = district_rw_science } }
+	#	job_researcher_add = -15
+	#}
+
+	planet_modifier = {
+		planet_max_districts_add = -1
+	}
+}
+
+# Superblocker switches to this in 2225
+d_shattered_ring_superblocker2 = {
+	time = 3600
+	icon = "d_shattered_ring"
+	is_for_colonizeable = yes
+	category = deposit_cat_rare_blocker
+	
+	potential = { always = no }
+
+	#triggered_planet_modifier = {
+	#	potential = { planet = { has_district = district_rw_commercial } }
+	#	job_merchant_add = -5
+	#	job_artisan_add = -1
+	#	job_clerk_add = -4
+	#}
+	#triggered_planet_modifier = {
+	#	potential = { planet = { has_district = district_rw_science } }
+	#	job_researcher_add = -15
+	#}
+
+	planet_modifier = {
+		planet_max_districts_add = -1
+	}
+
+	resources = {
+		category = deposit_blockers
+		cost = {
+			alloys = 10000
+		}
+	}
+}
+
+# Replacement blockers for Shattered Ring
+d_decrepit_tunnels_4 = {
+	is_for_colonizeable = yes
+	icon = "d_mining_tunnels"
+	category = deposit_cat_blockers
+	time = 360
+
+	potential = { always = no }
+
+	resources = {
+		category = deposit_blockers
+		cost = {
+			energy = 1000
+		}
+	}
+
+	on_cleared = {
+		owner = {
+			add_resource = {
+				minerals = 500
+				exotic_gases = 100
+			}
+		}
+	}
+
+	planet_modifier = {
+		planet_max_districts_add = -1
+	}
+}
+
+d_decrepit_tunnels_5 = {
+	is_for_colonizeable = yes
+	icon = "d_mining_tunnels"
+	category = deposit_cat_blockers
+	time = 360
+
+	potential = { always = no }
+
+	resources = {
+		category = deposit_blockers
+		cost = {
+			energy = 1000
+		}
+	}
+
+	on_cleared = {
+		owner = {
+			add_resource = {
+				minerals = 500
+				rare_crystals = 100
+			}
+		}
+	}
+
+	planet_modifier = {
+		planet_max_districts_add = -1
+	}
+}

@@ -1257,10 +1257,10 @@ generate_start_buildings_and_districts = {
 	if = {
 		limit = { owner = { has_origin = origin_shattered_ring } }
 		add_district = district_rw_farming
-		add_deposit = d_arcane_generator_new
-		add_deposit = d_dust_desert
-		add_deposit = d_crystal_forest
-		add_deposit = d_fuming_bog
+		add_deposit = d_arcane_generator
+		add_deposit = d_shattered_ring_superblocker
+		add_deposit = d_decrepit_tunnels_4
+		add_deposit = d_decrepit_tunnels_5
 
 		if = {
 			limit = {

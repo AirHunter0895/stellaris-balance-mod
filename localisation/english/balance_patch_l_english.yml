@@ -14,6 +14,14 @@
  d_arcane_generator_new_desc:0 "This ancient machine has given power and resources to our ringworld for millenia, but it is aged and damaged. We will need to invest in new technologies and industries if we wish to expand."
  d_arcane_nature:0 "Arcane Nature"
  d_arcane_nature_desc:0 "The landscape of this world is full of natural wonders; flora and fauna that breathe exotic gases, mountaintops studded with rare crystals, and ocean currents of volatile motes. It takes barely any effort to sequester these resources for our own future use."
+ d_shattered_ring_superblocker:0 "Massive Structural Damage"
+ d_shattered_ring_superblocker_desc:0 "The ringworld we inhabit has suffered massive structural damage over the millenia of our species' development.\n§YThis deposit will prevent us from fully exploiting any new districts.§!"
+ d_shattered_ring_superblocker2:0 "Massive Structural Damage"
+ d_shattered_ring_superblocker2_desc:0 "The ringworld we inhabit has suffered massive structural damage over the millenia of our species' development. Though it is possible for us to repair this damage, the cost will be massive.\n§YThis deposit will prevent us from fully exploiting any new districts.§!"
+ d_decrepit_tunnels_4:1 "£blocker£ Decrepit Tunnels"
+ d_decrepit_tunnels_4_desc:0 "These ancient and decrepit tunnels have never been fully explored or cleared."
+ d_decrepit_tunnels_5:1 "£blocker£ Decrepit Tunnels"
+ d_decrepit_tunnels_5_desc:0 "These ancient and decrepit tunnels have never been fully explored or cleared."
 
  # Buildings
  building_sanctuary_of_sin:0 "Sanctuary of Sin"
@@ -22,3 +30,13 @@
  # Opinions
  opinion_lost_colony_child_to_parent:0 "Reunited"
  opinion_lost_colony_parent_to_child:0 "Reunited"
+
+ # Events
+ shattered.2.name:0 "Engineering Breakthrough"
+ shattered.2.desc:0 "It is no secret that the ringworld that we have called home for millenia is badly damaged. The years have taken their toll on its generator, and The Interloper has severely threatened its structural integrity.\n\nRecently, however, our brightest minds believe that they have stumbled upon a solution to our problem. With a large sum of alloys to reinforce its frame and a good deal of engineering work, they believe that they can return the ringworld to 100% efficiency. You need only give the order."
+ shattered.3.name:0 "Ringworld Restoration Project"
+ shattered.3.desc:0 "After much trial and error, we believe we are on the cusp of returning the ringworld to its proper glory. Once the proper arrangements have been made and the requisite alloys have been acquired, it will be a simple - though time-consuming - matter to replace the damaged structures with parts of our own design."
+
+ # Misc
+ shattered_ring_superblocker_desc:0 "The §Y$d_shattered_ring_superblocker$§! is preventing us from fully exploiting this segment."
+ ringworld_restoration_project_DESC:0 "Though it will be a significant task, our engineers believe they can restore this ringworld to optimal condition. Once this preliminary engineering research is complete, we will need a substantial amount of time and alloys to complete the repairs."

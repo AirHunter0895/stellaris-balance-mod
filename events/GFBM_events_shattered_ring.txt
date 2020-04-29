@@ -1,0 +1,98 @@
+################################
+#
+# Shattered Ring Events
+# Written by Muggins
+#
+###############################
+
+namespace = shattered
+
+# At year 2225, replace the Massive Structural Damage with a removable variant
+event = {
+	id = shattered.1
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		# years_passed >= 25 # Disabled for testing
+		any_owned_planet = {
+			has_deposit = d_shattered_ring_superblocker
+			NOT = { has_planet_flag = shattered_project_given }
+		}
+	}
+
+	immediate = {
+		every_playable_country = {
+			every_owned_planet = { 
+				limit = {
+					has_deposit = d_shattered_ring_superblocker
+					NOT = { has_planet_flag = shattered_project_given }
+				}
+				planet_event = { id = shattered.2 }
+			}
+		}
+	}
+}
+
+# At year 2225, replace the Massive Structural Damage with a removable variant
+planet_event = {
+	id = shattered.2
+	title = shattered.2.name
+	desc = shattered.2.desc
+	picture = GFX_evt_ringworld
+	is_triggered_only = yes
+
+	trigger = {
+		# years_passed >= 25 # Disabled for testing
+		has_deposit = d_shattered_ring_superblocker
+		NOT = { has_planet_flag = shattered_project_given }
+	}
+
+	immediate = {
+		set_planet_flag = shattered_project_given
+	}
+
+	option = { 
+		name = EXCELLENT
+		enable_special_project = {
+			name = "ringworld_restoration_project"
+			location = this
+			owner = root
+		}
+	}
+}
+
+# On completion of the Ringworld Restoration Project, replace the superblocker with a removable variant.
+planet_event = {
+	id = shattered.3
+	title = shattered.3.name
+	desc = shattered.3.desc
+	picture = GFX_evt_ringworld
+	is_triggered_only = yes
+
+	immediate = {
+		remove_deposit = d_shattered_ring_superblocker
+		add_deposit = d_shattered_ring_superblocker2
+	}
+
+	option = { 
+		name = EXCELLENT
+	}
+}
+
+# Backup event in case the shattered ring is conquered before the project is complete.
+planet_event = {
+	id = shattered.4
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		has_deposit = d_shattered_ring_superblocker
+		has_planet_flag = shattered_project_given
+		NOT = { owner = { has_special_project = ringworld_restoration_project } }
+	}
+
+	immediate = {
+		remove_planet_flag = shattered_project_given
+	}
+}
