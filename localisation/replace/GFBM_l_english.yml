@@ -18,6 +18,11 @@
  tr_domination_judgment_corps_desc:0 "£job_enforcer£ §Y$job_enforcer_plural$§! reduce £crime£ §Y$MOD_PLANET_CRIME_ADD$§! by an additional §G-5§! and also produce §Y1§! £unity£ Unity."
  tr_domination_deviancy_protocols_desc:2 "£job_patrol_drone£ §Y$job_patrol_drone_plural$§! reduce £crime£ §Y$MOD_PLANET_CRIME_ADD$§! by an additional §G-5§! and also produce §Y1§! £unity£ Unity."
 
+ tr_diplomacy_open_markets_desc:1 "Empire §Y$MOD_TRADE_VALUE_MULT$§! and §YDiplomatic Weight From Economy§! increased by §G+10%§!."
+ tr_diplomacy_secure_shipping_desc:0 "§YBase Trade Protection§! for Trade Routes increased by §G20§!."
+ tr_diplomacy_finish_effect:1 "§E$TRADITIONS_FINISH$:§!\nAdopting all $tr_diplomacy_adopt$ will increase our §Y$MOD_COUNTRY_TRUST_CAP_ADD$§! by §G+100§! and our §Y$MOD_COUNTRY_TRUST_GROWTH$§! by §G+33%§!."
+ tr_diplomacy_entente_coordination_desc:0 "The amount we contribute towards the §YFederation Naval Capacity§! counts for twice as much and §YNaval Capacity§! increased by §G+10%§!."
+
  # Deposits
  d_arcane_generator:0 "Arcane Generator"
  d_arcane_generator_desc:0 "This ancient machine at the heart of the ringworld has supported our people for generations.\n§YThis deposit will grow and develop as new districts are built.§!"
