@@ -15,6 +15,11 @@
  tr_domination_colonial_viceroys_desc:0 "Soldier and capital building is +1 job (TODO)."
  tr_domination_grand_council_desc:0 "§Y$MOD_LEADER_GOVERNOR_SKILL_LEVELS$§! increased by §Y2§!\n§Y$MOD_LEADER_RULER_SKILL_LEVELS$§! increased by §Y2§!."
  tr_domination_imperious_architecture_desc:2 "£building£ §YCapital Buildings§!, £building£ §YHousing Buildings§!, and £building£ §YStronghold Buildings§! provide §G+1§! £housing£ §Y$MOD_PLANET_HOUSING_ADD$§! each."
+ tr_domination_trust_officers_desc:0 "£job_enforcer£ §Y$job_enforcer_plural$§! reduce £crime£ §Y$MOD_PLANET_CRIME_ADD$§! by an additional §G-5§! and also produce §Y1§! £unity£ Unity."
+ tr_domination_judgment_corps_desc:0 "£job_enforcer£ §Y$job_enforcer_plural$§! reduce £crime£ §Y$MOD_PLANET_CRIME_ADD$§! by an additional §G-5§! and also produce §Y1§! £unity£ Unity."
+ tr_domination_deviancy_protocols_desc:2 "£job_patrol_drone£ §Y$job_patrol_drone_plural$§! reduce £crime£ §Y$MOD_PLANET_CRIME_ADD$§! by an additional §G-5§! and also produce §Y1§! £unity£ Unity."
+ 
+ 
 
  # Deposits
  d_arcane_generator:0 "Arcane Generator"

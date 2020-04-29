@@ -694,14 +694,14 @@ patrol_drone = {
 		produces = {
 			trigger = {
 				exists = owner
-				owner = { has_non_swapped_tradition = tr_domination_deviancy_protocols }
+				owner = { has_swapped_tradition = tr_domination_deviancy_protocols }
 			}
 			unity = 1
 		}
 		produces = {
 			trigger = {
 				exists = owner
-				owner = { has_non_swapped_tradition = tr_domination_divergence_supression }
+				owner = { has_swapped_tradition = tr_domination_divergence_supression }
 			}
 			unity = 1
 		}
@@ -714,16 +714,10 @@ patrol_drone = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { has_non_swapped_tradition = tr_domination_deviancy_protocols }
-		}
-		modifier = {
-			planet_crime_add = -5
-		}
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { has_non_swapped_tradition = tr_domination_divergence_supression }
+			OR = {
+				owner = { has_swapped_tradition = tr_domination_divergence_supression }
+				owner = { has_swapped_tradition = tr_domination_deviancy_protocols }
+			}
 		}
 		modifier = {
 			planet_crime_add = -5

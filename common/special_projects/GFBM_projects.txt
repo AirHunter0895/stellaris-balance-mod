@@ -45,15 +45,29 @@
 #
 
 special_project = {
-	key = "ringworld_restoration_project"
+	key = "ringworld_reparation_project"
 	cost = 5000
 	tech_department = engineering_technology
-	picture = GFX_evt_shattered_ring
+	picture = GFX_evt_ringworld
 	icon = "gfx/interface/icons/situation_log/situation_log_debris.dds"
 	
 	event_scope = planet_event
 	
 	on_success = {
 		planet_event = { id = shattered.3 }
+	}	
+}
+
+special_project = {
+	key = "ringworld_restoration_project"
+	cost = 10000
+	tech_department = engineering_technology
+	picture = GFX_evt_ringworld
+	icon = "gfx/interface/icons/situation_log/situation_log_debris.dds"
+	
+	event_scope = planet_event
+	
+	on_success = {
+		planet_event = { id = shattered.7 }
 	}	
 }

@@ -502,6 +502,24 @@ district_rw_commercial = {
 		}
 	}
 
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+			planet = {
+				OR = {
+					has_deposit = d_shattered_ring_superblocker3
+					has_deposit = d_shattered_ring_superblocker4
+				}
+			}
+		}
+		modifier = {
+			job_merchant_add = -3
+			job_artisan_add = -1
+			job_clerk_add = -6
+		}
+	}
+
 	triggered_desc = {
 		trigger = {
 			planet = {
@@ -522,6 +540,18 @@ district_rw_commercial = {
 			}
 		}
 		text = shattered_ring_superblocker_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			planet = {
+				OR = {
+					has_deposit = d_shattered_ring_superblocker3
+					has_deposit = d_shattered_ring_superblocker4
+				}
+			}
+		}
+		text = shattered_ring_superblocker3_desc
 	}
 
 	triggered_desc = {
@@ -669,6 +699,54 @@ district_rw_science = {
 		}
 	}
 
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+			planet = {
+				OR = {
+					has_deposit = d_shattered_ring_superblocker3
+					has_deposit = d_shattered_ring_superblocker4
+				}
+			}
+		}
+		modifier = {
+			job_researcher_add = -10
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+			planet = {
+				OR = {
+					has_deposit = d_shattered_ring_superblocker3
+					has_deposit = d_shattered_ring_superblocker4
+				}
+			}
+		}
+		modifier = {
+			job_brain_drone_add = -10
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+			planet = {
+				OR = {
+					has_deposit = d_shattered_ring_superblocke3
+					has_deposit = d_shattered_ring_superblocker4
+				}
+			}
+		}
+		modifier = {
+			job_calculator_add = -10
+		}
+	}
+
 	triggered_desc = {
 		trigger = {
 			planet = {
@@ -689,6 +767,18 @@ district_rw_science = {
 			}
 		}
 		text = shattered_ring_superblocker_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			planet = {
+				OR = {
+					has_deposit = d_shattered_ring_superblocker3
+					has_deposit = d_shattered_ring_superblocker4
+				}
+			}
+		}
+		text = shattered_ring_superblocker3_desc
 	}
 
 	triggered_desc = {

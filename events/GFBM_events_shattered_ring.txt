@@ -55,14 +55,14 @@ planet_event = {
 	option = { 
 		name = EXCELLENT
 		enable_special_project = {
-			name = "ringworld_restoration_project"
+			name = "ringworld_reparation_project"
 			location = this
 			owner = root
 		}
 	}
 }
 
-# On completion of the Ringworld Restoration Project, replace the superblocker with a removable variant.
+# On completion of the Ringworld Reparation Project, replace the superblocker with a removable variant.
 planet_event = {
 	id = shattered.3
 	title = shattered.3.name
@@ -73,10 +73,12 @@ planet_event = {
 	immediate = {
 		remove_deposit = d_shattered_ring_superblocker
 		add_deposit = d_shattered_ring_superblocker2
+		remove_planet_flag = shattered_project_given
 	}
 
 	option = { 
 		name = EXCELLENT
+		custom_tooltip = shattered.3.tooltip
 	}
 }
 
@@ -87,12 +89,86 @@ planet_event = {
 	hide_window = yes
 
 	trigger = {
-		has_deposit = d_shattered_ring_superblocker
 		has_planet_flag = shattered_project_given
 		NOT = { owner = { has_special_project = ringworld_restoration_project } }
 	}
 
 	immediate = {
 		remove_planet_flag = shattered_project_given
+	}
+}
+
+# At year 2225, replace the Minor Structural Damage with a removable variant
+event = {
+	id = shattered.5
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		years_passed >= 50
+		any_planet = {
+			has_deposit = d_shattered_ring_superblocker3
+			NOT = { has_planet_flag = shattered_project_given }
+		}
+	}
+
+	immediate = {
+		every_playable_country = {
+			every_owned_planet = { 
+				limit = {
+					has_deposit = d_shattered_ring_superblocker3
+					NOT = { has_planet_flag = shattered_project_given }
+				}
+				planet_event = { id = shattered.6 }
+			}
+		}
+	}
+}
+
+# At year 2250, replace the Minor Structural Damage with a removable variant
+planet_event = {
+	id = shattered.6
+	title = shattered.6.name
+	desc = shattered.6.desc
+	picture = GFX_evt_ringworld
+	is_triggered_only = yes
+
+	trigger = {
+		years_passed >= 50
+		has_deposit = d_shattered_ring_superblocker3
+		NOT = { has_planet_flag = shattered_project_given }
+	}
+
+	immediate = {
+		set_planet_flag = shattered_project_given
+	}
+
+	option = { 
+		name = EXCELLENT
+		enable_special_project = {
+			name = "ringworld_restoration_project"
+			location = this
+			owner = root
+		}
+	}
+}
+
+# On completion of the Ringworld Restoration Project, replace the superblocker with a removable variant.
+planet_event = {
+	id = shattered.7
+	title = shattered.7.name
+	desc = shattered.7.desc
+	picture = GFX_evt_ringworld
+	is_triggered_only = yes
+
+	immediate = {
+		remove_deposit = d_shattered_ring_superblocker3
+		add_deposit = d_shattered_ring_superblocker4
+		remove_planet_flag = shattered_project_given
+	}
+
+	option = { 
+		name = EXCELLENT
+		custom_tooltip = shattered.7.tooltip
 	}
 }
