@@ -669,6 +669,7 @@ telepath = {
 
 	planet_modifier = {
 		planet_crime_add = -35
+		planet_stability_add = 5
 	}
 
 	triggered_planet_modifier = {
@@ -1506,13 +1507,13 @@ roboticist = {
 	}
 
 	planet_modifier = {
-		planet_pop_assembly_add = 2
+		planet_pop_assembly_add = 1
 	}
 
 	resources = {
 		category = planet_pop_assemblers
 		upkeep = {
-			alloys = 2
+			alloys = 1
 		}
 	}
 
