@@ -692,7 +692,7 @@ trait_survivor = {
 	allowed_archetypes = { BIOLOGICAL LITHOID }
 	modifier = {
 		leader_age = 10
-		pop_growth_speed = -0.15
+		pop_growth_speed = -0.25
 	}
 	slave_cost = {
 		energy = 50
