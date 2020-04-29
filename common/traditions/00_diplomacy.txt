@@ -225,6 +225,7 @@ tr_diplomacy_entente_coordination = {
 
 	modifier = {
 		federation_naval_cap_contribution_mult = 1.00
+		country_naval_cap_mult = 0.10
 	}
 
 	tradition_swap = {
