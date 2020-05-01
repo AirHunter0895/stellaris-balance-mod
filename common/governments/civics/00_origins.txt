@@ -265,9 +265,7 @@ origin_shattered_ring = {
 
 	advanced_start = yes
 
-	random_weight = {
-		base = 2
-	}
+	# Removing the random_weight prevents randomly generated AI empires from selecting it
 }
 
 origin_void_dwellers = {

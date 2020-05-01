@@ -7,8 +7,8 @@
  mod_planet_priests_upkeep_mult:0 "Priest Upkeep"
  
  # Decisions
- decision_remove_lithoid_impact_crater:0 "Pave over the crater"
- decision_remove_lithoid_impact_crater_desc:0 "While crashing into a planet is fun and all, it doesn't help when trying to build a civilization. We can invest in a project to remove the crater, restoring this planet's surface."
+ decision_remove_lithoid_impact_crater:0 "Crater Restoration"
+ decision_remove_lithoid_impact_crater_desc:0 "The surface of this planet has been scarred by a lithoid-bearing meteor. Though the damage to its climate and ecosystem will take time to heal, we can make life easier for ourselves by simply paving over the impact crater."
 
  # Deposits
  d_arcane_generator_new:0 "Arcane Generator"
@@ -55,3 +55,5 @@
  ringworld_restoration_project_DESC:0 "Though it will be a significant task, our engineers believe they can restore this ringworld to optimal condition. Once the preliminary engineering research is complete, we will need a substantial amount of time and alloys to complete the repairs."
  shattered.3.tooltip:0 "We can now repair the §Y$d_shattered_ring_superblocker$§! on [Root.GetName]."
  shattered.7.tooltip:0 "We can now repair the §Y$d_shattered_ring_superblocker3$§! on [Root.GetName]."
+ synthetic_growth_penalty:0 "The Flesh Is Weak"
+ synthetic_growth_penalty_desc:0 "Since our ascension to synthetic shells, we have found fewer and fewer reasons to encourage the growth of our organic brethren."
