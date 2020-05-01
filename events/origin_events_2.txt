@@ -184,8 +184,8 @@ country_event = {
 					add_monthly_resource_mult = {
 						resource = alloys
 						value = @tier3materialreward
-						min = @tier3materialmin
-						max = @tier3materialmax
+						min = 400
+						max = 800
 					}
 				}
 				25 = {
@@ -198,8 +198,8 @@ country_event = {
 					add_monthly_resource_mult = {
 						resource = alloys
 						value = @tier3materialreward
-						min = @tier3materialmin
-						max = @tier3materialmax
+						min = 400
+						max = 800
 					}
 				}
 				25 = {
@@ -212,8 +212,8 @@ country_event = {
 					add_monthly_resource_mult = {
 						resource = alloys
 						value = @tier2materialreward
-						min = @tier2materialmin
-						max = @tier2materialmax
+						min = 300
+						max = 700
 					}
 				}
 				25 = {
@@ -553,7 +553,7 @@ country_event = {
 				name = "NAME_Gateway_Vermin"
 				effect = {
 					while = {
-						count = 8	
+						count = 10	
 						create_ship = {
 							name = "NAME_Gateway_Vermin"
 							design = "NAME_Small_Space_Organism_Teal"
@@ -671,7 +671,7 @@ country_event = {
 				name = "NAME_Gateway_Vermin"
 				effect = {
 					while = {
-						count = 5
+						count = 8
 						create_ship = {
 							name = "NAME_Gateway_Vermin"
 							design = "NAME_Small_Space_Organism_Teal"
