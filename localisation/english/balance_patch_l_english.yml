@@ -57,4 +57,5 @@
  shattered.7.tooltip:0 "We can now repair the §Y$d_shattered_ring_superblocker3$§! on [Root.GetName]."
  synthetic_growth_penalty:0 "The Flesh Is Weak"
  synthetic_growth_penalty_desc:0 "Since our ascension to synthetic shells, we have found fewer and fewer reasons to encourage the growth of our organic brethren."
- mod_country_minor_artifacts_produces_add = "Monthly £minor_artifacts£ §YMinor Artifacts§!"
+ mod_country_base_minor_artifacts_produces_add:0 "Monthly £minor_artifacts£ §YMinor Artifacts§!"
+ mod_deposit_blockers_clear_time_mult:0 "Clear Blocker Time"
