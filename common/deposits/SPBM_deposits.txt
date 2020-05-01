@@ -1,15 +1,3 @@
-## Possible Deposit Variables ##
-# resources, resource and amount
-# potential trigger (planet scope)
-# blocked_modifier - applied to planet only when deposit blocker has been cleared
-# constant_modifier - applied to planet always
-# blocker = <key/any/none> - default any
-# station = station class in orbit to gather
-
-###########################################
-#   Grand Flotilla Balance Mod Deposits   #
-###########################################
-
 d_arcane_generator_new = {
 	is_for_colonizeable = yes
 	icon = "d_station_reactor"
