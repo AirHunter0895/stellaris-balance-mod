@@ -9,7 +9,7 @@
  TRAIT_LITHOID_GASEOUS_BYPRODUCTS_EFFECT:0 "Each pop with living standards of slavery or better produces 0.03 £exotic_gases£ §Y$exotic_gases$§! per month."
  TRAIT_LITHOID_SCINTILLATING_EFFECT:0 "Each pop with living standards of slavery or better produces 0.03 £rare_crystals£ §Y$rare_crystals$§! per month."
  TRAIT_LITHOID_VOLATILE_EXCRETIONS_EFFECT:0 "Each pop with living standards of slavery or better produces 0.03 £volatile_motes£ §Y$volatile_motes$§! per month."
- TRAIT_SYNCRETIC_PROLES_EFFECT:0 "$MOD_POP_HAPPINESS$: §G+10%§!\n$mod_planet_worker_produces_mult$: §G+10%§!\nCannot generate §YLeaders§!\nCannot be employed in §Y$pop_cat_ruler$§! or Complex §Y$pop_cat_specialist$§! Jobs"
+ TRAIT_SYNCRETIC_PROLES_EFFECT:0 "$MOD_POP_HAPPINESS$: §G+10%§!\n$planet_jobs_workers_produces_mult$: §G+10%§!\nCannot generate §YLeaders§!\nCannot be employed in §Y$pop_cat_ruler$§! or Complex §Y$pop_cat_specialist$§! Jobs"
 
  # Traditions
  tr_domination_colonial_viceroys_desc:0 "£job_soldier£ §Y$job_soldier_plural$§! also produce §G+1§! £stability£ Stability."
@@ -25,7 +25,7 @@
 
  # Deposits
  d_arcane_generator:0 "Arcane Generator"
- d_arcane_generator_desc:0 "This ancient machine at the heart of the ringworld has supported our people for generations.\n§YThis deposit will grow and develop as new districts are built.§!"
+ d_arcane_generator_desc:0 "This ancient machine at the heart of the ringworld has supported our people for generations.\n§YThis deposit will adapt as new districts are built.§!"
  
  # Misc
  relic_zro_crystal_passive:0 "The cooldown to §YBreach into the Shroud§! is reduced by §G33%§!."
