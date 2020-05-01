@@ -548,7 +548,10 @@ event = {
 				10 = {
 					modifier = {
 						factor = 0
-						has_country_flag = scion_gave_ships
+						OR = { 
+							has_country_flag = scion_gave_ships
+							years_passed < 50
+						}
 					}
 					country_event = { id = origin.28 }
 				}
@@ -883,7 +886,6 @@ event = {
 	is_triggered_only = yes
 
 	trigger = {
-		years_passed > 30
 		any_playable_country = {
 			is_ai = no
 			is_subject_type = scion

@@ -111,6 +111,34 @@ district_rw_city = {
 		}
 	}
 
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			planet = {
+				OR = {
+					has_deposit = d_shattered_ring_superblocker
+					has_deposit = d_shattered_ring_superblocker2
+				}
+			}
+		}
+		modifier = {
+			job_enforcer_add = -1
+			planet_housing_add = -20
+		}
+	}
+
+	triggered_desc = {
+		trigger = {
+			planet = {
+				OR = {
+					has_deposit = d_shattered_ring_superblocker
+					has_deposit = d_shattered_ring_superblocker2
+				}
+			}
+		}
+		text = shattered_ring_superblocker_desc
+	}
+
 	triggered_desc = {
 		trigger = {
 			planet = {
@@ -200,6 +228,34 @@ district_rw_hive = {
 		}
 	}
 
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			planet = {
+				OR = {
+					has_deposit = d_shattered_ring_superblocker
+					has_deposit = d_shattered_ring_superblocker2
+				}
+			}
+		}
+		modifier = {
+			job_maintenance_drone_add = -24
+			planet_housing_add = -30
+		}
+	}
+
+	triggered_desc = {
+		trigger = {
+			planet = {
+				OR = {
+					has_deposit = d_shattered_ring_superblocker
+					has_deposit = d_shattered_ring_superblocker2
+				}
+			}
+		}
+		text = shattered_ring_superblocker_desc
+	}
+
 	triggered_desc = {
 		trigger = {
 			planet = {
@@ -278,6 +334,35 @@ district_rw_nexus = {
 		modifier = {
 			planet_housing_add = 10
 		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			planet = {
+				OR = {
+					has_deposit = d_shattered_ring_superblocker
+					has_deposit = d_shattered_ring_superblocker2
+				}
+			}
+		}
+		modifier = {
+			job_maintenance_drone_add = -20
+			job_technician_drone_add = -5
+			planet_housing_add = -30
+		}
+	}
+
+	triggered_desc = {
+		trigger = {
+			planet = {
+				OR = {
+					has_deposit = d_shattered_ring_superblocker
+					has_deposit = d_shattered_ring_superblocker2
+				}
+			}
+		}
+		text = shattered_ring_superblocker_desc
 	}
 
 	triggered_desc = {
@@ -370,6 +455,52 @@ district_rw_generator = {
 		modifier = {
 			job_fe_acolyte_generator_add = 20
 		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+			planet = {
+				OR = {
+					has_deposit = d_shattered_ring_superblocker
+					has_deposit = d_shattered_ring_superblocker2
+				}
+			}
+		}
+		modifier = {
+			job_technician_drone_add = -10
+			planet_housing_add = -10
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+			planet = {
+				OR = {
+					has_deposit = d_shattered_ring_superblocker
+					has_deposit = d_shattered_ring_superblocker2
+				}
+			}
+		}
+		modifier = {
+			job_technician_drone_add = -15
+			planet_housing_add = -15
+		}
+	}
+
+	triggered_desc = {
+		trigger = {
+			planet = {
+				OR = {
+					has_deposit = d_shattered_ring_superblocker
+					has_deposit = d_shattered_ring_superblocker2
+				}
+			}
+		}
+		text = shattered_ring_superblocker_desc
 	}
 
 	triggered_desc = {
@@ -499,6 +630,7 @@ district_rw_commercial = {
 			job_merchant_add = -4
 			job_artisan_add = -1
 			job_clerk_add = -10
+			planet_housing_add = -15
 		}
 	}
 
@@ -517,6 +649,7 @@ district_rw_commercial = {
 			job_merchant_add = -3
 			job_artisan_add = -1
 			job_clerk_add = -6
+			planet_housing_add = -10
 		}
 	}
 
@@ -664,6 +797,7 @@ district_rw_science = {
 		}
 		modifier = {
 			job_researcher_add = -15
+			planet_housing_add = -15
 		}
 	}
 
@@ -680,6 +814,7 @@ district_rw_science = {
 		}
 		modifier = {
 			job_brain_drone_add = -15
+			planet_housing_add = -15
 		}
 	}
 
@@ -696,6 +831,7 @@ district_rw_science = {
 		}
 		modifier = {
 			job_calculator_add = -15
+			planet_housing_add = -15
 		}
 	}
 
@@ -712,6 +848,7 @@ district_rw_science = {
 		}
 		modifier = {
 			job_researcher_add = -10
+			planet_housing_add = -10
 		}
 	}
 
@@ -728,6 +865,7 @@ district_rw_science = {
 		}
 		modifier = {
 			job_brain_drone_add = -10
+			planet_housing_add = -10
 		}
 	}
 
@@ -737,13 +875,14 @@ district_rw_science = {
 			owner = { is_machine_empire = yes }
 			planet = {
 				OR = {
-					has_deposit = d_shattered_ring_superblocke3
+					has_deposit = d_shattered_ring_superblocker3
 					has_deposit = d_shattered_ring_superblocker4
 				}
 			}
 		}
 		modifier = {
 			job_calculator_add = -10
+			planet_housing_add = -10
 		}
 	}
 
@@ -942,6 +1081,69 @@ district_rw_farming = {
 		modifier = {
 			planet_housing_add = 10
 		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+			planet = {
+				OR = {
+					has_deposit = d_shattered_ring_superblocker
+					has_deposit = d_shattered_ring_superblocker2
+				}
+			}
+		}
+		modifier = {
+			job_farmer_add = -10
+			planet_housing_add = -10
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+			planet = {
+				OR = {
+					has_deposit = d_shattered_ring_superblocker
+					has_deposit = d_shattered_ring_superblocker2
+				}
+			}
+		}
+		modifier = {
+			job_agri_drone_add = -10
+			planet_housing_add = -10
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+			planet = {
+				OR = {
+					has_deposit = d_shattered_ring_superblocker
+					has_deposit = d_shattered_ring_superblocker2
+				}
+			}
+		}
+		modifier = {
+			job_agri_drone_add = -15
+			planet_housing_add = -15
+		}
+	}
+
+	triggered_desc = {
+		trigger = {
+			planet = {
+				OR = {
+					has_deposit = d_shattered_ring_superblocker
+					has_deposit = d_shattered_ring_superblocker2
+				}
+			}
+		}
+		text = shattered_ring_superblocker_desc
 	}
 
 	triggered_desc = {

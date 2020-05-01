@@ -1,0 +1,6 @@
+##########################################################################
+# Static Modifiers for the Grand Flotilla Balance Mod
+##########################################################################
+synthetic_growth_penalty = {
+	pop_growth_speed_reduction = 0.5
+}

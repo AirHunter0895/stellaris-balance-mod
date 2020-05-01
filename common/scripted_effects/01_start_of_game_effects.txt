@@ -1259,8 +1259,22 @@ generate_start_buildings_and_districts = {
 		add_district = district_rw_farming
 		add_deposit = d_arcane_generator
 		add_deposit = d_shattered_ring_superblocker
-		add_deposit = d_decrepit_tunnels_4
-		add_deposit = d_decrepit_tunnels_5
+		add_deposit = d_decrepit_tunnels_1
+		add_deposit = d_decrepit_tunnels_2
+		add_deposit = d_decrepit_tunnels_3
+
+		if = {
+			limit = { owner = { is_regular_empire = yes } }
+			add_district = district_rw_city
+		}
+		if = {
+			limit = { owner = { is_hive_empire = yes } }
+			add_district = district_rw_hive
+		}
+		if = {
+			limit = { owner = { is_machine_empire = yes } }
+			add_district = district_rw_nexus
+		}
 
 		if = {
 			limit = {
@@ -1286,17 +1300,6 @@ generate_start_buildings_and_districts = {
 				count = 2
 				add_deposit = d_hibernating_lithoids
 			}
-		}
-
-		if = {
-			limit = {
-				owner = {
-					is_lithoid_empire = yes
-					is_hive_empire = yes
-				}
-			}
-			remove_district = district_rw_farming
-			add_district = district_rw_generator
 		}
 
 		if = {
@@ -1326,6 +1329,7 @@ generate_start_buildings_and_districts = {
 
 		if = {
 			limit = { owner = { is_hive_empire = yes } }
+			add_district = district_rw_generator
 
 			# 5 jobs
 			add_building = building_hive_capital
@@ -1371,10 +1375,6 @@ generate_start_buildings_and_districts = {
 			if = {
 				limit = { owner = { has_civic = civic_machine_assimilator } }
 				add_district = district_rw_farming
-				add_deposit = d_segment_rubble_1
-				add_deposit = d_segment_rubble_1
-				add_deposit = d_segment_rubble_2
-				add_deposit = d_segment_rubble_2
 			}
 
 			#Servitors
@@ -1382,10 +1382,6 @@ generate_start_buildings_and_districts = {
 				limit = { owner = { has_civic = civic_machine_servitor } }
 				add_building = building_organic_sanctuary
 				add_district = district_rw_farming
-				add_deposit = d_segment_rubble_1
-				add_deposit = d_segment_rubble_1
-				add_deposit = d_segment_rubble_2
-				add_deposit = d_segment_rubble_2
 			}
 		}
 	}

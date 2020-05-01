@@ -24,9 +24,6 @@ d_arcane_generator_new = {
 	resources = {
 		category = planet_deposits
 		produces = {
-			energy = 10
-		}
-		produces = {
 			trigger = {
 				planet = { has_district = district_rw_farming }
 			}
@@ -35,10 +32,47 @@ d_arcane_generator_new = {
 		}
 		produces = {
 			trigger = {
-				planet = { has_district = district_rw_generator }
-				owner = { is_machine_empire = yes }
+				OR = {
+					planet = { has_district = district_rw_commercial }
+					planet = { has_district = district_rw_generator	}
+				}
+			}
+			energy = 10
+		}
+		produces = {
+			trigger = {
+				OR = {
+					planet = { has_district = district_rw_commercial }
+					planet = { has_district = district_rw_generator	}
+					owner = { is_ai = yes } # Otherwise the AI is too braindead to try
+				}
 			}
 			rare_crystals = 2
+		}
+		produces = {
+			trigger = {
+				planet = { has_district = district_rw_science }
+			}
+			energy = 10
+		}
+		produces = {
+			trigger = {
+				OR = {
+					planet = { has_district = district_rw_science }
+					owner = { is_ai = yes } # Otherwise the AI is too braindead to try
+				}
+			}
+			exotic_gases = 2
+		}
+		produces = {
+			trigger = {
+				OR = {
+					planet = { has_district = district_rw_city }
+					planet = { has_district = district_rw_hive }
+					planet = { has_district = district_rw_nexus	}
+				}
+			}
+			energy = 10
 		}
 	}
 }
@@ -62,15 +96,33 @@ d_arcane_nature = {
 
 # Superblocker for Shattered Ringworld
 d_shattered_ring_superblocker = {
+	time = 1800
 	icon = "d_shattered_ring"
 	is_for_colonizeable = yes
-	category = deposit_cat_rare
+	category = deposit_cat_rare_blocker
 	
 	potential = { always = no }
 
 	planet_modifier = {
 		planet_max_districts_add = -1
 	}
+
+	blocker_swap_types = {
+		d_shattered_ring_superblocker3
+	}
+
+	resources = {
+		category = deposit_blockers
+		cost = {
+			alloys = 5000
+		}
+	}
+
+	ai_weight = {
+		weight = 2
+	}
+
+	prerequisites = { "tech_mega_engineering" }
 }
 
 # Superblocker Stage 2
@@ -96,19 +148,37 @@ d_shattered_ring_superblocker2 = {
 			alloys = 5000
 		}
 	}
+
+	ai_weight = {
+		weight = 2
+	}
 }
 
 # Superblocker Stage 3
 d_shattered_ring_superblocker3 = {
+	time = 1800
 	icon = "d_shattered_ring"
 	is_for_colonizeable = yes
-	category = deposit_cat_rare
+	category = deposit_cat_rare_blocker
 	
 	potential = { always = no }
 
 	planet_modifier = {
 		planet_max_districts_add = -1
 	}
+
+	resources = {
+		category = deposit_blockers
+		cost = {
+			alloys = 5000
+		}
+	}
+
+	ai_weight = {
+		weight = 2
+	}
+
+	prerequisites = { "tech_mega_engineering" }
 }
 
 # Superblocker Stage 4
@@ -129,6 +199,10 @@ d_shattered_ring_superblocker4 = {
 		cost = {
 			alloys = 5000
 		}
+	}
+
+	ai_weight = {
+		weight = 2
 	}
 }
 
@@ -157,8 +231,8 @@ d_decrepit_tunnels_4 = {
 		}
 	}
 
-	planet_modifier = {
-		planet_max_districts_add = -1
+	ai_weight = {
+		weight = 1
 	}
 }
 
@@ -186,7 +260,7 @@ d_decrepit_tunnels_5 = {
 		}
 	}
 
-	planet_modifier = {
-		planet_max_districts_add = -1
+	ai_weight = {
+		weight = 1
 	}
 }

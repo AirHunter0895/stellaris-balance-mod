@@ -426,7 +426,7 @@ noble = {
 	}
 	
 	planet_modifier = {
-		planet_amenities_add = 8
+		planet_amenities_add = 5
 		planet_stability_add = 5
 	}
 	

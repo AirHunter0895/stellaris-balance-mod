@@ -7,12 +7,12 @@
  mod_planet_priests_upkeep_mult:0 "Priest Upkeep"
  
  # Decisions
- decision_remove_lithoid_impact_crater:0 "Pave over the crater"
- decision_remove_lithoid_impact_crater_desc:0 "While crashing into a planet is fun and all, it doesn't help when trying to build a civilization. We can invest in a project to remove the crater, restoring this planet's surface."
+ decision_remove_lithoid_impact_crater:0 "Crater Restoration"
+ decision_remove_lithoid_impact_crater_desc:0 "The surface of this planet has been scarred by a lithoid-bearing meteor. Though the damage to its climate and ecosystem will take time to heal, we can make life easier for ourselves by simply paving over the impact crater."
 
  # Deposits
  d_arcane_generator_new:0 "Arcane Generator"
- d_arcane_generator_new_desc:0 "This ancient machine has given power and resources to our ringworld for millenia, but it is aged and damaged. We will need to invest in new technologies and industries if we wish to expand."
+ d_arcane_generator_new_desc:0 "This ancient machine at the heart of the ringworld has supported our people for generations.\n§YThis deposit will adapt as new districts are built.§!"
  d_arcane_nature:0 "Arcane Nature"
  d_arcane_nature_desc:0 "The landscape of this world is full of natural wonders; flora and fauna that breathe exotic gases, mountaintops studded with rare crystals, and ocean currents of volatile motes. It takes barely any effort to sequester these resources for our own future use."
  d_shattered_ring_superblocker:0 "Massive Structural Damage"
@@ -20,7 +20,7 @@
  d_shattered_ring_superblocker2:0 "Massive Structural Damage"
  d_shattered_ring_superblocker2_desc:0 "The ringworld we inhabit has suffered massive structural damage over the millenia of our species' development. Though it is possible for us to repair this damage, the cost will be massive.\n§YThis deposit will prevent us from fully exploiting some of our districts.§!"
  d_shattered_ring_superblocker3:0 "Minor Structural Damage"
- d_shattered_ring_superblocker3_desc:0 "Though we have taken great strides in improving the condition of our ringworld, there is still much to be done.\n§YThis deposit will prevent us from fully exploiting some of our districts.§!"
+ d_shattered_ring_superblocker3_desc:0 "Though we have taken great strides in improving the condition of our ringworld, there is still much to be done.\n§YThis deposit will prevent us from fully exploiting most of our districts.§!"
  d_shattered_ring_superblocker4:0 "Minor Structural Damage"
  d_shattered_ring_superblocker4_desc:0 "Though we have taken great strides in improving the condition of our ringworld, there is still much to be done. Restoring our home to its former glory is now within our reach.\n§YThis deposit will prevent us from fully exploiting some of our districts.§!"
  d_decrepit_tunnels_4:1 "£blocker£ Decrepit Tunnels"
@@ -55,3 +55,7 @@
  ringworld_restoration_project_DESC:0 "Though it will be a significant task, our engineers believe they can restore this ringworld to optimal condition. Once the preliminary engineering research is complete, we will need a substantial amount of time and alloys to complete the repairs."
  shattered.3.tooltip:0 "We can now repair the §Y$d_shattered_ring_superblocker$§! on [Root.GetName]."
  shattered.7.tooltip:0 "We can now repair the §Y$d_shattered_ring_superblocker3$§! on [Root.GetName]."
+ synthetic_growth_penalty:0 "The Flesh Is Weak"
+ synthetic_growth_penalty_desc:0 "Since our ascension to synthetic shells, we have found fewer and fewer reasons to encourage the growth of our organic brethren."
+ mod_country_base_minor_artifacts_produces_add:0 "Monthly £minor_artifacts£ §YMinor Artifacts§!"
+ mod_deposit_blockers_time_cost_mult:0 "Clear Blocker Time"

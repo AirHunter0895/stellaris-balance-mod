@@ -80,7 +80,9 @@ tr_domination_finish = {
 }
 
 tr_domination_colonial_viceroys = {
-	# Improve soldier building or jobs
+	modifier = {
+		country_leader_pool_size = 2
+	}
 
 	tradition_swap = {
 		name = tr_domination_colonial_viceroys_machine

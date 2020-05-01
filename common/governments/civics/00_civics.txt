@@ -208,7 +208,7 @@ civic_citizen_service = {
 	}
 	random_weight = { base = 5 }
 	modifier = {
-		country_naval_cap_mult = 0.25
+		country_naval_cap_mult = 0.20
 	}
 }
 
@@ -243,7 +243,7 @@ civic_feudal_realm = {
 			value = auth_imperial
 		}
 	}
-	random_weight = { base = 5 }
+	random_weight = { base = 0 }
 
 	description = "civic_tooltip_feudal_realm_effects"
 	modifier = {
@@ -287,8 +287,6 @@ civic_idealistic_foundation = {
 	random_weight = { base = 5 }
 	modifier = {
 		pop_citizen_happiness = 0.10
-		planet_culture_workers_upkeep_mult = -0.20
-		planet_priests_upkeep_mult = -0.20
 	}
 }
 
@@ -547,7 +545,7 @@ civic_parliamentary_system = {
 	}
 	random_weight = { base = 5 }
 	modifier = {
-		pop_factions_produces_mult = 0.33
+		pop_factions_produces_mult = 0.25
 		pop_ethics_shift_speed_mult = 0.50
 	}
 }
@@ -895,6 +893,9 @@ civic_barbaric_despoilers = {
 				value = origin_common_ground
 			}
 		}
+	}
+	modifier = {
+		starbase_shipyard_build_cost_mult = -0.15
 	}
 	modification = no
 	random_weight = {
