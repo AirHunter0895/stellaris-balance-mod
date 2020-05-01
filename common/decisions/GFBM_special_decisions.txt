@@ -11,6 +11,10 @@ decision_remove_lithoid_impact_crater = {
 	potential = {
 		has_modifier = lithoid_crater
 	}
+
+	allow = {
+		owner = { has_technology = tech_terrestrial_sculpting }		
+	}
 	
 	effect = {
 		remove_modifier = lithoid_crater

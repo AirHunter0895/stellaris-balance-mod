@@ -80,11 +80,13 @@ tr_domination_finish = {
 }
 
 tr_domination_colonial_viceroys = {
-	# Improve soldier building or jobs
+	modifier = {
+		country_leader_pool_size = 2
+	}
 
 	tradition_swap = {
 		name = tr_domination_colonial_viceroys_machine
-		inherit_effects = no
+		inherit_effects = yes
 		inherit_icon = yes
 		inherit_name = no
 		trigger = {
@@ -98,7 +100,7 @@ tr_domination_colonial_viceroys = {
 
 	tradition_swap = {
 		name = tr_domination_colonial_viceroys_hive
-		inherit_effects = no
+		inherit_effects = yes
 		inherit_icon = yes
 		inherit_name = no
 		trigger = {

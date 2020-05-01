@@ -1206,19 +1206,6 @@ warrior_drone = {
 		}
 	}
 
-	triggered_planet_modifier = {
-		potential = {
-			exists = planet
-			OR = {
-				owner = { has_swapped_tradition = tr_domination_colonial_viceroys_hive }
-				owner = { has_swapped_tradition = tr_domination_colonial_viceroys_machine }
-			}
-		}
-		modifier = {
-			planet_stability_add = 1
-		}
-	}
-
 	possible_pre_triggers = {
 		has_owner = yes
 		is_enslaved = no
