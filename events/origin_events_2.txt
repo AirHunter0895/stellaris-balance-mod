@@ -192,8 +192,8 @@ country_event = {
 					add_monthly_resource_mult = {
 						resource = minerals
 						value = @tier2materialreward
-						min = @tier2materialmin
-						max = @tier2materialmax
+						min = 300
+						max = 500
 					}
 					add_monthly_resource_mult = {
 						resource = alloys
@@ -206,8 +206,8 @@ country_event = {
 					add_monthly_resource_mult = {
 						resource = minerals
 						value = @tier3materialreward
-						min = @tier3materialmin
-						max = @tier3materialmax
+						min = 400
+						max = 600
 					}
 					add_monthly_resource_mult = {
 						resource = alloys
@@ -220,8 +220,8 @@ country_event = {
 					add_monthly_resource_mult = {
 						resource = minerals
 						value = @tier3materialreward
-						min = @tier3materialmin
-						max = @tier3materialmax
+						min = 400
+						max = 800
 					}
 				}
 			}
