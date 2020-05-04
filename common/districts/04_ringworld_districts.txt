@@ -239,7 +239,23 @@ district_rw_hive = {
 			}
 		}
 		modifier = {
-			job_maintenance_drone_add = -24
+			job_maintenance_drone_add = -30
+			planet_housing_add = -30
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			planet = {
+				OR = {
+					has_deposit = d_shattered_ring_superblocker3
+					has_deposit = d_shattered_ring_superblocker4
+				}
+			}
+		}
+		modifier = {
+			job_maintenance_drone_add = -18
 			planet_housing_add = -30
 		}
 	}
@@ -250,6 +266,8 @@ district_rw_hive = {
 				OR = {
 					has_deposit = d_shattered_ring_superblocker
 					has_deposit = d_shattered_ring_superblocker2
+					has_deposit = d_shattered_ring_superblocker3
+					has_deposit = d_shattered_ring_superblocker4
 				}
 			}
 		}
@@ -347,7 +365,24 @@ district_rw_nexus = {
 			}
 		}
 		modifier = {
-			job_maintenance_drone_add = -20
+			job_maintenance_drone_add = -24
+			job_technician_drone_add = -5
+			planet_housing_add = -30
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			planet = {
+				OR = {
+					has_deposit = d_shattered_ring_superblocker3
+					has_deposit = d_shattered_ring_superblocker4
+				}
+			}
+		}
+		modifier = {
+			job_maintenance_drone_add = -12
 			job_technician_drone_add = -5
 			planet_housing_add = -30
 		}
@@ -359,6 +394,8 @@ district_rw_nexus = {
 				OR = {
 					has_deposit = d_shattered_ring_superblocker
 					has_deposit = d_shattered_ring_superblocker2
+					has_deposit = d_shattered_ring_superblocker3
+					has_deposit = d_shattered_ring_superblocker4
 				}
 			}
 		}
@@ -627,8 +664,8 @@ district_rw_commercial = {
 			}
 		}
 		modifier = {
-			job_merchant_add = -4
-			job_artisan_add = -1
+			job_merchant_add = -3
+			job_artisan_add = -2
 			job_clerk_add = -10
 			planet_housing_add = -15
 		}
@@ -643,12 +680,15 @@ district_rw_commercial = {
 					has_deposit = d_shattered_ring_superblocker3
 					has_deposit = d_shattered_ring_superblocker4
 				}
+				NOR = {
+					has_deposit = d_shattered_ring_superblocker
+					has_deposit = d_shattered_ring_superblocker2
+				}
 			}
 		}
 		modifier = {
-			job_merchant_add = -3
-			job_artisan_add = -1
-			job_clerk_add = -6
+			job_merchant_add = -2
+			job_clerk_add = -8
 			planet_housing_add = -10
 		}
 	}
@@ -669,22 +709,12 @@ district_rw_commercial = {
 				OR = {
 					has_deposit = d_shattered_ring_superblocker
 					has_deposit = d_shattered_ring_superblocker2
-				}
-			}
-		}
-		text = shattered_ring_superblocker_desc
-	}
-
-	triggered_desc = {
-		trigger = {
-			planet = {
-				OR = {
 					has_deposit = d_shattered_ring_superblocker3
 					has_deposit = d_shattered_ring_superblocker4
 				}
 			}
 		}
-		text = shattered_ring_superblocker3_desc
+		text = shattered_ring_superblocker_desc
 	}
 
 	triggered_desc = {
@@ -844,6 +874,10 @@ district_rw_science = {
 					has_deposit = d_shattered_ring_superblocker3
 					has_deposit = d_shattered_ring_superblocker4
 				}
+				NOR = {
+					has_deposit = d_shattered_ring_superblocker
+					has_deposit = d_shattered_ring_superblocker2
+				}
 			}
 		}
 		modifier = {
@@ -861,6 +895,10 @@ district_rw_science = {
 					has_deposit = d_shattered_ring_superblocker3
 					has_deposit = d_shattered_ring_superblocker4
 				}
+				NOR = {
+					has_deposit = d_shattered_ring_superblocker
+					has_deposit = d_shattered_ring_superblocker2
+				}
 			}
 		}
 		modifier = {
@@ -877,6 +915,10 @@ district_rw_science = {
 				OR = {
 					has_deposit = d_shattered_ring_superblocker3
 					has_deposit = d_shattered_ring_superblocker4
+				}
+				NOR = {
+					has_deposit = d_shattered_ring_superblocker
+					has_deposit = d_shattered_ring_superblocker2
 				}
 			}
 		}
@@ -902,6 +944,8 @@ district_rw_science = {
 				OR = {
 					has_deposit = d_shattered_ring_superblocker
 					has_deposit = d_shattered_ring_superblocker2
+					has_deposit = d_shattered_ring_superblocker3
+					has_deposit = d_shattered_ring_superblocker4
 				}
 			}
 		}

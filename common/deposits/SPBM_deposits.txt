@@ -95,10 +95,6 @@ d_shattered_ring_superblocker = {
 		planet_max_districts_add = -1
 	}
 
-	blocker_swap_types = {
-		d_shattered_ring_superblocker3
-	}
-
 	resources = {
 		category = deposit_blockers
 		cost = {
@@ -126,10 +122,6 @@ d_shattered_ring_superblocker2 = {
 		planet_max_districts_add = -1
 	}
 
-	blocker_swap_types = {
-		d_shattered_ring_superblocker3
-	}
-
 	resources = {
 		category = deposit_blockers
 		cost = {
@@ -150,10 +142,6 @@ d_shattered_ring_superblocker3 = {
 	category = deposit_cat_rare_blocker
 	
 	potential = { always = no }
-
-	planet_modifier = {
-		planet_max_districts_add = -1
-	}
 
 	resources = {
 		category = deposit_blockers
@@ -177,10 +165,6 @@ d_shattered_ring_superblocker4 = {
 	category = deposit_cat_rare_blocker
 	
 	potential = { always = no }
-
-	planet_modifier = {
-		planet_max_districts_add = -1
-	}
 
 	resources = {
 		category = deposit_blockers

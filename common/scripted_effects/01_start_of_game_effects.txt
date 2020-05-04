@@ -869,6 +869,13 @@ generate_start_buildings_and_districts = {
 		}
 
 		if = {
+			limit = { owner = { has_origin = origin_syncretic_evolution } }
+			add_district_and_planet_size_if_needed_effect = {
+				district = district_generator
+			}
+		}
+
+		if = {
 			limit = {
 				owner = {
 					has_origin = origin_tree_of_life
@@ -1259,6 +1266,7 @@ generate_start_buildings_and_districts = {
 		add_district = district_rw_farming
 		add_deposit = d_arcane_generator
 		add_deposit = d_shattered_ring_superblocker
+		add_deposit = d_shattered_ring_superblocker3
 		add_deposit = d_decrepit_tunnels_1
 		add_deposit = d_decrepit_tunnels_2
 		add_deposit = d_decrepit_tunnels_3
@@ -1477,6 +1485,30 @@ generate_start_pops = {
 					ethos = random
 				}
 			}
+			if = {
+				limit = {
+					owner = { is_megacorp = yes }
+				}
+				while = {
+					limit = { num_pops < 32 }
+					create_pop = {
+						species = owner_main_species
+						ethos = random
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					owner = { is_megacorp = no }
+				}
+				while = {
+					limit = { num_pops < 30 }
+					create_pop = {
+						species = owner_main_species
+						ethos = random
+					}
+				}
+			}
 		}
 
 		if = {
@@ -1542,15 +1574,12 @@ generate_start_pops = {
 		add_district_and_planet_size_if_needed_effect = {
 			district = district_generator
 		}
-		add_district_and_planet_size_if_needed_effect = {
-			district = district_mining
-		}
 		if = {
 			limit = {
 				owner = { is_megacorp = yes }
 			}
 			while = {
-				limit = { num_pops < 34 }
+				limit = { num_pops < 32 }
 				create_pop = {
 					species = owner_main_species
 					ethos = random
@@ -1562,7 +1591,49 @@ generate_start_pops = {
 				owner = { is_megacorp = no }
 			}
 			while = {
+				limit = { num_pops < 30 }
+				create_pop = {
+					species = owner_main_species
+					ethos = random
+				}
+			}
+		}
+	}
+	if = {
+		limit = { owner = { has_origin = origin_mechanists } }
+		owner = { create_built_robot_species = yes }
+		while = {
+			count = 8
+			create_pop = {
+				species = last_created_species
+			}
+		}
+
+		add_building = building_robot_assembly_plant
+		add_district_and_planet_size_if_needed_effect = {
+			district = district_generator
+		}
+		add_district_and_planet_size_if_needed_effect = {
+			district = district_mining
+		}
+		if = {
+			limit = {
+				owner = { is_megacorp = yes }
+			}
+			while = {
 				limit = { num_pops < 32 }
+				create_pop = {
+					species = owner_main_species
+					ethos = random
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				owner = { is_megacorp = no }
+			}
+			while = {
+				limit = { num_pops < 30 }
 				create_pop = {
 					species = owner_main_species
 					ethos = random

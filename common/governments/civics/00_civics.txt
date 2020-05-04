@@ -177,7 +177,7 @@ civic_meritocracy = {
 	random_weight = { base = 5 }
 	modifier = {
 		leader_skill_levels = 1
-		planet_jobs_specialist_produces_mult = 0.10
+		planet_jobs_specialist_produces_mult = 0.075
 	}
 }
 
@@ -231,24 +231,6 @@ civic_technocracy = {
 		}
 	}
 	random_weight = { base = 5 }
-}
-
-civic_feudal_realm = {
-	potential = {
-		ethics = { NOT = { value = ethic_gestalt_consciousness } }
-		authority = { NOT = { value = auth_corporate } }
-	}
-	possible = {
-		authority = {
-			value = auth_imperial
-		}
-	}
-	random_weight = { base = 0 }
-
-	description = "civic_tooltip_feudal_realm_effects"
-	modifier = {
-		country_subject_power_penalty_mult = -0.5
-	}
 }
 
 civic_police_state = {
