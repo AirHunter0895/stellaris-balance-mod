@@ -134,7 +134,7 @@ researcher = {
 				exists = owner
 				owner = { has_valid_civic = civic_technocracy }
 			}
-			unity = 1
+			unity = 0.5
 		}
 		upkeep = {
 			consumer_goods = 2
