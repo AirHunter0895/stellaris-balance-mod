@@ -1600,48 +1600,6 @@ generate_start_pops = {
 		}
 	}
 	if = {
-		limit = { owner = { has_origin = origin_mechanists } }
-		owner = { create_built_robot_species = yes }
-		while = {
-			count = 8
-			create_pop = {
-				species = last_created_species
-			}
-		}
-
-		add_building = building_robot_assembly_plant
-		add_district_and_planet_size_if_needed_effect = {
-			district = district_generator
-		}
-		add_district_and_planet_size_if_needed_effect = {
-			district = district_mining
-		}
-		if = {
-			limit = {
-				owner = { is_megacorp = yes }
-			}
-			while = {
-				limit = { num_pops < 32 }
-				create_pop = {
-					species = owner_main_species
-					ethos = random
-				}
-			}
-		}
-		else_if = {
-			limit = {
-				owner = { is_megacorp = no }
-			}
-			while = {
-				limit = { num_pops < 30 }
-				create_pop = {
-					species = owner_main_species
-					ethos = random
-				}
-			}
-		}
-	}
-	if = {
 		limit = { owner = { is_hive_empire = yes } }
 		while = {
 			limit = { num_pops < 34 }
