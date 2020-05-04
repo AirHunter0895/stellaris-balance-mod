@@ -252,6 +252,10 @@ district_rw_hive = {
 					has_deposit = d_shattered_ring_superblocker3
 					has_deposit = d_shattered_ring_superblocker4
 				}
+				NOR = {
+					has_deposit = d_shattered_ring_superblocker
+					has_deposit = d_shattered_ring_superblocker2
+				}
 			}
 		}
 		modifier = {
@@ -378,6 +382,10 @@ district_rw_nexus = {
 				OR = {
 					has_deposit = d_shattered_ring_superblocker3
 					has_deposit = d_shattered_ring_superblocker4
+				}
+				NOR = {
+					has_deposit = d_shattered_ring_superblocker
+					has_deposit = d_shattered_ring_superblocker2
 				}
 			}
 		}
@@ -950,18 +958,6 @@ district_rw_science = {
 			}
 		}
 		text = shattered_ring_superblocker_desc
-	}
-
-	triggered_desc = {
-		trigger = {
-			planet = {
-				OR = {
-					has_deposit = d_shattered_ring_superblocker3
-					has_deposit = d_shattered_ring_superblocker4
-				}
-			}
-		}
-		text = shattered_ring_superblocker3_desc
 	}
 
 	triggered_desc = {
