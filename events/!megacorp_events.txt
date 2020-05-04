@@ -1,0 +1,22 @@
+############################
+#
+# Megacorp Events
+#
+# Written by Maximilian Olbers
+#
+############################
+
+namespace = mega
+
+# Colonized Consecrated World
+planet_event = {
+	id = mega.110
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		always = no
+		#has_planet_flag = consecrated@space_owner
+	}
+}
