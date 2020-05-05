@@ -1,5 +1,5 @@
 
-### Grand Flotilla Balance Mod
+### Stefan's Balance Mod
 
 planet_culture_workers = {
 	parent = planet_jobs

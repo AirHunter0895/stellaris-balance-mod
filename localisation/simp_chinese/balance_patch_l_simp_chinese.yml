@@ -1,8 +1,7 @@
-﻿l_english:
+﻿l_simp_chinese:
  # Civics
  civic_tooltip_shadow_council_effect:0 "Ruler Pop Amenities and Trade Value: §G+10%§!"
- civic_tooltip_technocracy_effects:2 "£building£ §YCapital Buildings§! replace some £job_administrator£ §Y$job_administrator$§! Jobs with £job_head_researcher£ §Y$job_head_researcher_plural$§!\n§Y$job_researcher_plural$§! also produce §Y0.5§! £unity£ Unity"
-  
+ 
  # Job upkeep
  mod_planet_culture_workers_upkeep_mult:0 "Culture Worker Upkeep"
  mod_planet_priests_upkeep_mult:0 "Priest Upkeep"
@@ -21,9 +20,9 @@
  d_shattered_ring_superblocker2:0 "Massive Structural Damage"
  d_shattered_ring_superblocker2_desc:0 "The ringworld we inhabit has suffered massive structural damage over the millenia of our species' development. Though it is possible for us to repair this damage, the cost will be massive.\n§YThis deposit will prevent us from fully exploiting some of our districts.§!"
  d_shattered_ring_superblocker3:0 "Minor Structural Damage"
- d_shattered_ring_superblocker3_desc:0 "The ringworld we inhabit has suffered massive structural damage over the millenia of our species' development.\n§YThis deposit will prevent us from fully exploiting any of our districts.§!"
+ d_shattered_ring_superblocker3_desc:0 "Though we have taken great strides in improving the condition of our ringworld, there is still much to be done.\n§YThis deposit will prevent us from fully exploiting most of our districts.§!"
  d_shattered_ring_superblocker4:0 "Minor Structural Damage"
- d_shattered_ring_superblocker4_desc:0 "The ringworld we inhabit has suffered massive structural damage over the millenia of our species' development. Though it is possible for us to repair this damage, the cost will be massive.\n§YThis deposit will prevent us from fully exploiting some of our districts.§!"
+ d_shattered_ring_superblocker4_desc:0 "Though we have taken great strides in improving the condition of our ringworld, there is still much to be done. Restoring our home to its former glory is now within our reach.\n§YThis deposit will prevent us from fully exploiting some of our districts.§!"
  d_decrepit_tunnels_4:1 "£blocker£ Decrepit Tunnels"
  d_decrepit_tunnels_4_desc:0 "These ancient and decrepit tunnels have never been fully explored or cleared."
  d_decrepit_tunnels_5:1 "£blocker£ Decrepit Tunnels"
@@ -48,7 +47,7 @@
  shattered.7.desc:0 "It is done; the preparations are complete. We are on the cusp of returning the shattered ringworld to its proper glory. Once we have allocated the requisite alloys and manpower to the project, our work will be all but finished."
 
  # Misc
- shattered_ring_superblocker_desc:0 "The §YStructural Damage§! is preventing us from fully exploiting this segment."
+ shattered_ring_superblocker_desc:0 "The §Y$d_shattered_ring_superblocker$§! is preventing us from fully exploiting this segment."
  shattered_ring_superblocker3_desc:0 "The §Y$d_shattered_ring_superblocker3$§! is preventing us from fully exploiting this segment."
  ringworld_reparation_project:0 "Ringworld Reparation Project"
  ringworld_reparation_project_DESC:0 "Though it will be a significant task, our engineers believe they can repair the major structural faults present in this ringworld. Once the preliminary engineering research is complete, we will need a substantial amount of time and alloys to complete the repairs."

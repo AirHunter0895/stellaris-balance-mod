@@ -1,4 +1,4 @@
-﻿l_english:
+﻿l_german:
  ####################################
  # Localisation for the Grand Flotilla Balance Mod
  ####################################
@@ -10,7 +10,7 @@
  TRAIT_LITHOID_GASEOUS_BYPRODUCTS_EFFECT:0 "Each pop with living standards of slavery or better produces 0.03 £exotic_gases£ §Y$exotic_gases$§! per month."
  TRAIT_LITHOID_SCINTILLATING_EFFECT:0 "Each pop with living standards of slavery or better produces 0.03 £rare_crystals£ §Y$rare_crystals$§! per month."
  TRAIT_LITHOID_VOLATILE_EXCRETIONS_EFFECT:0 "Each pop with living standards of slavery or better produces 0.03 £volatile_motes£ §Y$volatile_motes$§! per month."
- TRAIT_SYNCRETIC_PROLES_EFFECT:0 "$MOD_POP_HAPPINESS$: §G+10%§!\nWorker Output: §G+10%§!\nCannot generate §YLeaders§!\nCannot be employed in §Y$pop_cat_ruler$§! or §Y$pop_cat_specialist$§! Jobs"
+ TRAIT_SYNCRETIC_PROLES_EFFECT:0 "$MOD_POP_HAPPINESS$: §G+10%§!\n$planet_jobs_workers_produces_mult$: §G+10%§!\nCannot generate §YLeaders§!\nCannot be employed in §Y$pop_cat_ruler$§! or Complex §Y$pop_cat_specialist$§! Jobs"
  trait_survivor_desc:0 "§LThis species has survived the horrors of a nuclear apocalypse. Though robust, their prolonged exposure to near-lethal doses of radiation have resulted in major genetic deformities.§!"
  
  # Origins
