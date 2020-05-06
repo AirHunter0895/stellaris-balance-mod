@@ -692,9 +692,10 @@ trait_survivor = {
 	species_potential_add = { always = no }
 	allowed_archetypes = { BIOLOGICAL LITHOID }
 	modifier = {
-		army_health = 0.25
-		army_morale_damage_mult = 0.25
-		pop_growth_speed = -0.25
+		pc_nuked_habitability = 0.6
+		pop_amenities_usage_mult = -0.10
+		planet_jobs_produces_mult = 0.05
+		army_morale_damage_mult = 0.33
 	}
 	slave_cost = {
 		energy = 50

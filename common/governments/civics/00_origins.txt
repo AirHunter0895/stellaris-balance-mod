@@ -178,7 +178,6 @@ origin_post_apocalyptic = {
 	is_origin = yes
 	icon = "gfx/interface/icons/origins/origins_post_apocalyptic.dds"
 	picture = GFX_origin_post_apocalyptic
-    habitability_preference = pc_nuked
 	starting_colony = pc_nuked
 
 	playable = {
@@ -244,7 +243,7 @@ origin_shattered_ring = {
 	starting_colony = pc_ringworld_habitable
 	initializers = { shattered_ring_start }
 	max_once_global = yes
-	preferred_planet_class_neighbor = no
+	non_colonizable_planet_class_neighbor = yes
 
 	playable = {
 		host_has_dlc = Federations

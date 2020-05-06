@@ -31,7 +31,7 @@ civic_hive_natural_neural_network = {
 	description = "civic_tooltip_natural_neural_network_effects"
 	random_weight = { base = 5 }
 	modifier = {
-		num_tech_alternatives_add = 2
+		num_tech_alternatives_add = 1
 	}
 }
 
@@ -75,7 +75,7 @@ civic_hive_subsumed_will = {
 	random_weight = { base = 5 }
 	modifier = {
 		empire_size_pops_mult = -0.30
-		planet_crime_no_happiness_mult = -0.20
+		planet_stability_add = 5
 	}
 }
 
@@ -302,7 +302,7 @@ civic_machine_ota_updates = {
 	random_weight = { base = 5 }
 	modifier = {
 		empire_size_pops_mult = -0.30
-		planet_crime_no_happiness_mult = -0.20
+		planet_stability_add = 5
 	}
 }
 
