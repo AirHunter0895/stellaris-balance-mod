@@ -3425,9 +3425,8 @@ sensor_shroud_low = {
 avatar_shroud_high = {
 	hidden_effect = {
 		random_list = {
-			38 = { country_event = { id = utopia.3020 }}
-			38 = { country_event = { id = utopia.3021 }}
-			20 = { country_event = { id = utopia.3022 }}
+			48 = { country_event = { id = utopia.3020 }}
+			48 = { country_event = { id = utopia.3021 }}
 			10 = { country_event = { id = utopia.3023 }}
 		}
 	}
@@ -3437,8 +3436,8 @@ avatar_shroud_medium = {
 		random_list = {
 			25 = { country_event = { id = utopia.3020 }}
 			25 = { country_event = { id = utopia.3021 }}
-			30 = { country_event = { id = utopia.3022 }}
-			20 = { country_event = { id = utopia.3023 }}
+			40 = { country_event = { id = utopia.3022 }}
+			10 = { country_event = { id = utopia.3023 }}
 		}
 	}
 }
@@ -3447,8 +3446,8 @@ avatar_shroud_low = {
 		random_list = {
 			15 = { country_event = { id = utopia.3020 }}
 			15 = { country_event = { id = utopia.3021 }}
-			40 = { country_event = { id = utopia.3022 }}
-			30 = { country_event = { id = utopia.3023 }}
+			45 = { country_event = { id = utopia.3022 }}
+			25 = { country_event = { id = utopia.3023 }}
 		}
 	}
 }

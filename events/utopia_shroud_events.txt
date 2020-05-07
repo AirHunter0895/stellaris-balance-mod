@@ -1908,9 +1908,9 @@ country_event = {
 		custom_tooltip = "shroud.avatar.chances.high"
 		hidden_effect = {
 			random_list = {
-				35 = { country_event = { id = utopia.3020 }}
-				35 = { country_event = { id = utopia.3021 }}
-				20 = { 
+				45 = { country_event = { id = utopia.3020 }}
+				45 = { country_event = { id = utopia.3021 }}
+				0 = { 
 					modifier = {
 						factor = 0.5
 						has_relic = r_zro_crystal
@@ -3256,8 +3256,8 @@ country_event = {
 		custom_tooltip = "shroud.unknown.chances.medium"
 		hidden_effect = {
 			random_list = {
-				60 = { country_event = { id = utopia.3161 } }
-				40 = { 
+				80 = { country_event = { id = utopia.3161 } }
+				20 = { 
 					modifier = {
 						factor = 0.5
 						has_relic = r_zro_crystal
@@ -3371,10 +3371,10 @@ country_event = {
 		custom_tooltip = "shroud.unknown.chances.medium"
 		hidden_effect = {
 			random_list = {
-				60 = {
+				80 = {
 					country_event = { id = utopia.3171 }
 				}
-				40 = {
+				20 = {
 					modifier = {
 						factor = 0.5
 						has_relic = r_zro_crystal
@@ -3489,10 +3489,10 @@ country_event = {
 		custom_tooltip = "shroud.unknown.chances.medium"
 		hidden_effect = {
 			random_list = {
-				60 = {
+				80 = {
 					country_event = { id = utopia.3181 }
 				}
-				40 = {
+				20 = {
 					modifier = {
 						factor = 0.5
 						has_relic = r_zro_crystal
@@ -3673,8 +3673,7 @@ country_event = {
 		event_target:leader_1 = { save_event_target_as = chosen_leader }
 		hidden_effect = {
 			random_list = {
-				70 = { country_event = { id = utopia.3191 }}
-				20 = { country_event = { id = utopia.3192 }}
+				90 = { country_event = { id = utopia.3191 }}
 				10 = { country_event = { id = utopia.3193 }}
 			}
 		}
@@ -3688,9 +3687,8 @@ country_event = {
 		event_target:leader_1 = { save_event_target_as = chosen_leader }
 		hidden_effect = {
 			random_list = {
-				50 = { country_event = { id = utopia.3191 }}
-				30 = { country_event = { id = utopia.3192 }}
-				20 = { country_event = { id = utopia.3193 }}
+				60 = { country_event = { id = utopia.3191 }}
+				40 = { country_event = { id = utopia.3193 }}
 			}
 		}
 	}
@@ -3704,8 +3702,7 @@ country_event = {
 		hidden_effect = {
 			random_list = {
 				30 = { country_event = { id = utopia.3191 }}
-				40 = { country_event = { id = utopia.3192 }}
-				30 = { country_event = { id = utopia.3193 }}
+				70 = { country_event = { id = utopia.3193 }}
 			}
 		}
 	}
@@ -3718,8 +3715,7 @@ country_event = {
 		event_target:leader_2 = { save_event_target_as = chosen_leader }
 		hidden_effect = {
 			random_list = {
-				70 = { country_event = { id = utopia.3191 }}
-				20 = { country_event = { id = utopia.3192 }}
+				90 = { country_event = { id = utopia.3191 }}
 				10 = { country_event = { id = utopia.3193 }}
 			}
 		}
@@ -3733,9 +3729,8 @@ country_event = {
 		event_target:leader_2 = { save_event_target_as = chosen_leader }
 		hidden_effect = {
 			random_list = {
-				50 = { country_event = { id = utopia.3191 }}
-				30 = { country_event = { id = utopia.3192 }}
-				20 = { country_event = { id = utopia.3193 }}
+				60 = { country_event = { id = utopia.3191 }}
+				40 = { country_event = { id = utopia.3193 }}
 			}
 		}
 	}
@@ -3749,8 +3744,7 @@ country_event = {
 		hidden_effect = {
 			random_list = {
 				30 = { country_event = { id = utopia.3191 }}
-				40 = { country_event = { id = utopia.3192 }}
-				30 = { country_event = { id = utopia.3193 }}
+				70 = { country_event = { id = utopia.3193 }}
 			}
 		}
 	}
@@ -3764,8 +3758,7 @@ country_event = {
 		event_target:leader_3 = { save_event_target_as = chosen_leader }
 		hidden_effect = {
 			random_list = {
-				70 = { country_event = { id = utopia.3191 }}
-				20 = { country_event = { id = utopia.3192 }}
+				90 = { country_event = { id = utopia.3191 }}
 				10 = { 
 					modifier = {
 						factor = 0
@@ -3785,9 +3778,8 @@ country_event = {
 		event_target:leader_3 = { save_event_target_as = chosen_leader }
 		hidden_effect = {
 			random_list = {
-				50 = { country_event = { id = utopia.3191 }}
-				30 = { country_event = { id = utopia.3192 }}
-				20 = { 
+				60 = { country_event = { id = utopia.3191 }}
+				40 = { 
 					modifier = {
 						factor = 0
 						has_relic = r_zro_crystal
@@ -3807,8 +3799,7 @@ country_event = {
 		hidden_effect = {
 			random_list = {
 				30 = { country_event = { id = utopia.3191 }}
-				40 = { country_event = { id = utopia.3192 }}
-				30 = { 
+				70 = { 
 					modifier = {
 						factor = 0
 						has_relic = r_zro_crystal
@@ -4392,9 +4383,8 @@ country_event = {
 		}
 		hidden_effect = {
 			random_list = {
-				70 = { country_event = { id = utopia.3303 }}
-				20 = { country_event = { id = utopia.3302 }}
-				10 = { country_event = { id = utopia.3301 }}
+				90 = { country_event = { id = utopia.3303 }}
+				10 = { country_event = { id = utopia.3302 }}
 			}
 		}
 	}
@@ -4406,9 +4396,8 @@ country_event = {
 		}
 		hidden_effect = {
 			random_list = {
-				50 = { country_event = { id = utopia.3303 }}
-				30 = { country_event = { id = utopia.3302 }}
-				20 = { country_event = { id = utopia.3301 }}
+				60 = { country_event = { id = utopia.3303 }}
+				40 = { country_event = { id = utopia.3302 }}
 			}
 		}
 	}
@@ -4421,8 +4410,7 @@ country_event = {
 		hidden_effect = {
 			random_list = {
 				30 = { country_event = { id = utopia.3303 }}
-				40 = { country_event = { id = utopia.3302 }}
-				30 = { country_event = { id = utopia.3301 }}
+				70 = { country_event = { id = utopia.3301 }}
 			}
 		}
 	}
@@ -4434,9 +4422,8 @@ country_event = {
 		}
 		hidden_effect = {
 			random_list = {
-				85 = { country_event = { id = utopia.3303 }}
-				10 = { country_event = { id = utopia.3302 }}
-				5 = { country_event = { id = utopia.3301 }}
+				90 = { country_event = { id = utopia.3303 }}
+				10 = { country_event = { id = utopia.3301 }}
 			}
 		}
 	}	
