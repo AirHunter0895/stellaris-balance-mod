@@ -11,10 +11,10 @@
  TRAIT_LITHOID_SCINTILLATING_EFFECT:0 "Each pop with living standards of slavery or better produces 0.03 £rare_crystals£ §Y$rare_crystals$§! per month."
  TRAIT_LITHOID_VOLATILE_EXCRETIONS_EFFECT:0 "Each pop with living standards of slavery or better produces 0.03 £volatile_motes£ §Y$volatile_motes$§! per month."
  TRAIT_SYNCRETIC_PROLES_EFFECT:0 "$MOD_POP_HAPPINESS$: §G+10%§!\nWorker Output: §G+10%§!\nCannot generate §YLeaders§!\nCannot be employed in §Y$pop_cat_ruler$§! or §Y$pop_cat_specialist$§! Jobs"
- trait_survivor_desc:0 "§LThis species has survived the horrors of a nuclear apocalypse. Though robust, their prolonged exposure to near-lethal doses of radiation have resulted in major genetic deformities.§!"
+ #trait_survivor_desc:0 "§LThis species has survived the horrors of a nuclear apocalypse. Though robust, their prolonged exposure to near-lethal doses of radiation have resulted in major genetic deformities.§!"
  
  # Origins
- civic_tooltip_post_apocalyptic_effects:3 "Capital starts as a §YTomb World§!\nGain §Y$trait_pc_nuked_preference$§! and the §Y$trait_survivor$§! trait, granting:\n  Army Health and Morale Damage: §G+25%§!\n  Pop Growth Speed: §R-25%§!"
+ civic_tooltip_post_apocalyptic_effects:3 "Capital starts as a §YTomb World§!\nGain the §Y$trait_survivor$§! trait, granting:\n  Tomb World Habitability: §G+60%§!\n  Amenities Use: §G-10%§!\n  Job Output: §G+5%§!\n  Army Morale Damage: §G+33%§!"
  origin_tooltip_void_dwellers_effects:3 "- Start with three §YOrbital Habitats§! and the technology to build more\n- Members of your species can easily navigate the mazeline interiors of Habitats and use §G15%§! less housing there\n- Severe habitability and growth penalties on all normal planets\n- Hydroponic Farms have §G+1§! £job_farmer£ $job_farmer$ Job"
 
  # Traditions
@@ -45,5 +45,6 @@
  ap_defender_of_the_galaxy_effect_opinion:0 "Everyone's £opinion£ §YOpinion§! increased by §G+50§!"
  ap_defender_of_the_galaxy_modifier_desc:0 "Damage to Galactic Crisis factions: §G+50%§!"
  describe_edict_consectrated_worlds:5 "§EConsecrating planets (up to §Y3§!) increases §YSpiritualist Ethics Attraction§! and §YEmpire-Wide Amenities§! as well as £unity£ §YUnity Generation§!, scaling to the spiritual significance of the worlds consecrated.§!"
+ living_standard_chemical_bliss_happiness_tooltip:1 "Increases £happiness£ Pop Happiness by §G40%§! unless there is a £consumer_goods£ §YConsumer Goods§! deficit.\n$mod_planet_jobs_produces_mult$: §R-20%§! per Strata."
  
   

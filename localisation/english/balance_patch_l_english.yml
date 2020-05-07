@@ -28,6 +28,12 @@
  d_decrepit_tunnels_4_desc:0 "These ancient and decrepit tunnels have never been fully explored or cleared."
  d_decrepit_tunnels_5:1 "£blocker£ Decrepit Tunnels"
  d_decrepit_tunnels_5_desc:0 "These ancient and decrepit tunnels have never been fully explored or cleared."
+ d_nuked_battlefield1:1 "Radioactive Wasteland"
+ d_nuked_battlefield1_desc:1 "Few organisms can survive in this desolate, irradiated wasteland."
+ d_nuked_battlefield2:1 "Radioactive Wasteland"
+ d_nuked_battlefield2_desc:1 "Few organisms can survive in this desolate, irradiated wasteland."
+ d_nuked_battlefield3:1 "Radioactive Wasteland"
+ d_nuked_battlefield3_desc:1 "Few organisms can survive in this desolate, irradiated wasteland."
 
  # Buildings
  building_sanctuary_of_sin:0 "Sanctuary of Sin"
