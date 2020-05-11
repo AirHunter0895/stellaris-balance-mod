@@ -1,0 +1,31 @@
+################################
+#
+# On Action Events for SPBM
+#
+###############################
+
+namespace = spbm
+
+# Remove invalid crime lord deals on yearly pulse
+event = {
+	id = spbm.1
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		any_planet = {
+			has_planet_modifier = crime_lord_deal
+			planet_crime <= 10
+		}
+	}
+
+	immediate = {
+		every_owned_planet = {
+			limit = {
+				has_planet_modifier = crime_lord_deal
+				planet_crime <= 10
+			}
+			remove_modifier = crime_lord_deal
+		}
+	}
+}

@@ -40,11 +40,14 @@
  d_arcane_generator_desc:0 "This ancient machine at the heart of the ringworld has supported our people for generations.\n§YThis deposit will adapt as new districts are built.§!"
  
  # Misc
- relic_zro_crystal_passive:0 "The cooldown to §YBreach into the Shroud§! is reduced by §G33%§!."
  MOD_COUNTRY_SUBJECT_TECHNOLOGY_SHARING_MULT:0 "Subject Research Tax"
  ap_defender_of_the_galaxy_effect_opinion:0 "Everyone's £opinion£ §YOpinion§! increased by §G+50§!"
  ap_defender_of_the_galaxy_modifier_desc:0 "Damage to Galactic Crisis factions: §G+50%§!"
  describe_edict_consectrated_worlds:5 "§EConsecrating planets (up to §Y3§!) increases §YSpiritualist Ethics Attraction§! and §YEmpire-Wide Amenities§! as well as £unity£ §YUnity Generation§!, scaling to the spiritual significance of the worlds consecrated.§!"
  living_standard_chemical_bliss_happiness_tooltip:1 "Increases £happiness£ Pop Happiness by §G40%§! unless there is a £consumer_goods£ §YConsumer Goods§! deficit.\n$mod_planet_jobs_produces_mult$: §R-20%§! per Strata."
+
+ # Relics
+ relic_zro_crystal_passive:0 "The cooldown to §YBreach into the Shroud§! is reduced by §G33%§!."
+ relic_rubricator_active:0 "Create §Y25§! £minor_artifacts£Minor Artifacts."
  
   

@@ -1,0 +1,65 @@
+########################
+#
+# Overwritten Precursor Events
+#
+########################
+
+namespace = precursor
+
+# Vultaum Reality Perforator Activated
+country_event = {
+	id = precursor.105
+	title = "precursor.105.name"
+	desc = "precursor.105.desc"
+	picture = GFX_evt_surreal_visions
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "precursor.105.a"
+		locked_random_list = {
+			10 = {
+				add_modifier = {
+					modifier = "reality_perforator_1" 
+					modifier = "reality_perforator_2" 
+					days = 360
+				}	
+			}
+			10 = {
+				add_modifier = {
+					modifier = "reality_perforator_1" 
+					modifier = "reality_perforator_3" 
+					days = 360
+				}	
+			}
+			10 = {
+				add_modifier = {
+					modifier = "reality_perforator_1" 
+					modifier = "reality_perforator_4" 
+					days = 360
+				}	
+			}
+			10 = {
+				add_modifier = {
+					modifier = "reality_perforator_2"
+					modifier = "reality_perforator_3"  
+					days = 360
+				}
+			}
+			10 = {
+				add_modifier = {
+					modifier = "reality_perforator_2"
+					modifier = "reality_perforator_4"  
+					days = 360
+				}
+			}
+			10 = {
+				add_modifier = {
+					modifier = "reality_perforator_3" 
+					modifier = "reality_perforator_4" 
+					days = 360
+				}
+			}
+		}
+	}
+}
