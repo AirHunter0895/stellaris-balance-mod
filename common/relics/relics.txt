@@ -991,8 +991,7 @@ r_cryo_core = {
 		add_modifier = {
 			modifier = "yuht_cryo_core"
 			days = @triumph_duration
-		} # TODO: Spawn 20 xenomorph armies over the capital - "We've extracted some yuht DNA from the cryo core and strapped guns onto the resulting genetic abominations."
-		custom_tooltip = relic_triumph_cooldown_short
+		}
 		hidden_effect = {
 			add_modifier = {
 				modifier = "relic_activation_cooldown"
@@ -1003,6 +1002,7 @@ r_cryo_core = {
 			country_event = { id = SPBM.1000 }
 			custom_tooltip = cryo_xeno
 		}
+		custom_tooltip = relic_triumph_cooldown_short
 	}
 
 	# Possible check for activation
