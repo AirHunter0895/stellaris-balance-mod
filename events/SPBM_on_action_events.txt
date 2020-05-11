@@ -6,25 +6,57 @@
 
 namespace = spbm
 
-# Remove invalid crime lord deals on yearly pulse
+# Gatekeeper event to remove invalid crime lord deals on yearly pulse
 event = {
 	id = spbm.1
 	is_triggered_only = yes
 	hide_window = yes
 
-	trigger = {
-		any_planet = {
-			has_planet_modifier = crime_lord_deal
-			planet_crime <= 10
+	immediate = {
+		every_playable_country = {
+			limit = {
+				any_owned_planet = {
+					has_modifier = crime_lord_deal
+					planet_crime <= 10
+					NOR = {
+						has_modifier = criminal_underworld
+						has_modifier = mob_rule
+						has_modifier = gang_wars
+						has_modifier = center_of_drug_trade
+					}
+				}
+			}
+			country_event = { id = spbm.2 }
+		}
+	}
+}
+
+country_event = {
+	id = spbm.2
+	title = spbm.2.name
+	desc = spbm.2.desc
+	picture = GFX_evt_dark_alley
+	is_triggered_only = yes
+
+	immediate = {
+		random_owned_planet = {
+			limit = {
+				has_modifier = crime_lord_deal
+				planet_crime <= 10
+				NOR = {
+					has_modifier = criminal_underworld
+					has_modifier = mob_rule
+					has_modifier = gang_wars
+					has_modifier = center_of_drug_trade
+				}
+			}
+			remove_modifier = crime_lord_deal
 		}
 	}
 
-	immediate = {
-		every_owned_planet = {
-			limit = {
-				has_planet_modifier = crime_lord_deal
-				planet_crime <= 10
-			}
+	option = {
+		name = EXCELLENT
+		tooltip = {
 			remove_modifier = crime_lord_deal
 		}
 	}
