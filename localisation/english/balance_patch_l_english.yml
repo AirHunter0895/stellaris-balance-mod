@@ -52,6 +52,8 @@
  shattered.6.desc:0 "Our top engineers have once again taken an interest in [Root.GetName]. Though its most significant structural and technical issues have been resolved through prior maintenance, there are still a number of improvements that could be made to the megastructure's integrity. Our scientists believe that with their current level of expertise, it should be possible to reinforce the shattered ringworld and return it to 100% efficiency. You need only give the order."
  shattered.7.name:0 "Ringworld Restoration Project"
  shattered.7.desc:0 "It is done; the preparations are complete. We are on the cusp of returning the shattered ringworld to its proper glory. Once we have allocated the requisite alloys and manpower to the project, our work will be all but finished."
+ spbm.2.name:0 "Crime Wave Subsides on [Root.GetName]!"
+ spbm.2.desc:0 "With the significant reduction of crime on §H[Root.GetName]§!, we no longer have any need to curry favour with the local crime lords. Our enforcers have already stepped in to arrest the individuals responsible, seize their assets, and destroy what remains of their underground empires."
 
  # Misc
  shattered_ring_superblocker_desc:0 "The §YStructural Damage§! is preventing us from fully exploiting this segment."
