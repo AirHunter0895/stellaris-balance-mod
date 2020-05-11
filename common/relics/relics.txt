@@ -999,6 +999,10 @@ r_cryo_core = {
 				days = @triumph_duration_short
 			}
 		}
+		hidden_effect = {
+			country_event = { id = SPBM.1000 }
+			custom_tooltip = cryo_xeno
+		}
 	}
 
 	# Possible check for activation

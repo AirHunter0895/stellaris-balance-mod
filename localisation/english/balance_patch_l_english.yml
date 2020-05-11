@@ -66,3 +66,6 @@
  synthetic_growth_penalty_desc:0 "Since our ascension to synthetic shells, we have found fewer and fewer reasons to encourage the growth of our organic brethren."
  mod_country_base_minor_artifacts_produces_add:0 "Monthly £minor_artifacts£ §YMinor Artifacts§!"
  mod_deposit_blockers_time_cost_mult:0 "Clear Blocker Time"
+
+# Relics
+ cry_xeno:2 "cryo_xeno"
