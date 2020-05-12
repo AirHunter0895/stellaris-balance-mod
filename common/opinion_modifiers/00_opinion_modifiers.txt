@@ -3405,3 +3405,57 @@ opinion_crime_corp_branch_offices = {
 		base = -10
 	}
 }
+
+opinion_killed_tiyanki_fleet_1 = {
+	opinion = {
+		base = -10
+	}
+
+	accumulative = yes
+
+	decay = {
+		base = 1
+	}
+}
+
+opinion_killed_tiyanki_fleet_2 = {
+	opinion = {
+		base = -20
+	}
+
+	accumulative = yes
+
+	decay = {
+		base = 1
+	}
+}
+
+opinion_killed_all_tiyanki_1 = {
+	opinion = {
+		base = -25
+	}
+
+	decay = {
+		base = 1
+	}
+}
+
+opinion_killed_all_tiyanki_2 = {
+	opinion = {
+		base = -50
+	}
+
+	decay = {
+		base = 1
+	}
+}
+
+opinion_killed_all_tiyanki_3 = {
+	opinion = {
+		base = -100
+	}
+
+	decay = {
+		base = 1
+	}
+}

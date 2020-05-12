@@ -139,6 +139,15 @@ researcher = {
 		upkeep = {
 			consumer_goods = 2
 		}
+		upkeep = {
+			trigger = {
+				exists = owner
+				owner = {
+					has_edict = research_subsidies
+				}
+			}
+			energy = 1
+		}
 	}
 
 	weight = {
@@ -419,6 +428,15 @@ foundry = {
 		upkeep = {
 			minerals = 6
 		}
+		upkeep = {
+			trigger = {
+				exists = owner
+				owner = {
+					has_edict = forge_subsidies
+				}
+			}
+			energy = 1
+		}
 	}
 
 	weight = {
@@ -624,6 +642,10 @@ enforcer = {
 			is_enslaved = yes
 			has_slavery_type = { type = slavery_indentured }
 		}
+		modifier = {
+			factor = 2
+			has_trait = trait_lithoid
+		}
 	}
 }
 
@@ -782,6 +804,15 @@ artisan = {
 		upkeep = {
 			minerals = 6
 		}
+		upkeep = {
+			trigger = {
+				exists = owner
+				owner = {
+					has_edict = industrial_subsidies
+				}
+			}
+			energy = 1
+		}
 	}
 
 	weight = {
@@ -920,7 +951,7 @@ entertainer = {
 		}
 		modifier = {
 			factor = 0.1
-			can_take_servant_job = yes
+			is_domestic_servant = yes
 		}
 		modifier = {
 			factor = 1.1
