@@ -840,7 +840,10 @@ generate_earth_deposits_and_blockers = {
 		}
 
 		set_planet_size = 25
-		add_deposit = d_arcane_nature
+
+		add_deposit = d_dust_desert
+		add_deposit = d_crystal_forest
+		add_deposit = d_fuming_bog
 	}
 }
 
@@ -1890,6 +1893,7 @@ void_dweller_home_planet_setup = {
 			tech = tech_habitat_1
 			message = no
 		}
+		add_research_option = tech_habitat_2
 
 		if = {
 			limit = {
@@ -1922,9 +1926,11 @@ void_dweller_home_planet_setup = {
 		}
 	}
 	set_planet_entity = {
-		entity = "orbital_habitat_entity"
+		entity = "habitat_phase_02_entity"
 		graphical_culture = event_target:void_dweller_owner
 	}
+	set_planet_size = 6
+	set_planet_flag = advanced_habitat
 	add_district = district_hab_housing
 	add_district = district_hab_science
 	add_building = building_hab_major_capital
@@ -1957,9 +1963,10 @@ void_dweller_home_planet_setup = {
 				}
 			}
 			set_planet_entity = {
-				entity = "orbital_habitat_entity"
+				entity = "habitat_phase_01_entity"
 				graphical_culture = event_target:void_dweller_owner
 			}
+			set_planet_size = 4
 			set_planet_flag = mining_habitat
 			add_district = district_hab_housing
 			add_district = district_hab_mining
@@ -1989,9 +1996,10 @@ void_dweller_home_planet_setup = {
 				}
 			}
 			set_planet_entity = {
-				entity = "orbital_habitat_entity"
+				entity = "habitat_phase_01_entity"
 				graphical_culture = event_target:void_dweller_owner
 			}
+			set_planet_size = 4
 			set_planet_flag = energy_habitat
 			add_district = district_hab_housing
 			add_district = district_hab_energy

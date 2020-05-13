@@ -2,7 +2,6 @@
 tr_diplomacy_adopt = {
 	modifier = {
 		diplomacy_upkeep_mult = -0.5
-		pop_growth_from_immigration = 0.10
 	}
 
 	tradition_swap = {

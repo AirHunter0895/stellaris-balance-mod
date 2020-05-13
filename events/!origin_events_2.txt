@@ -1,0 +1,538 @@
+################################
+#
+# Replaced Origin Events 2
+#
+###############################
+
+namespace = origin
+
+# Stage 1 - Beyond Impact
+fleet_event = {
+	id = origin.1100
+	title = "origin.1100.name"
+	desc = "origin.1100.desc"
+	picture = GFX_evt_landing_ship
+	show_sound = event_ghost_town
+	
+	archaeology = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = { 
+		from = { set_site_progress_locked = no } 
+	}
+	
+	option = {
+		name = DIG
+		galactic_doorstep_artifact_reward = yes
+	}
+}
+
+# Stage 2 - Temporal Dissonance
+fleet_event = {
+	id = origin.1105
+	title = "origin.1105.name"
+	desc = "origin.1105.desc"
+	picture = GFX_evt_clocks
+	show_sound = event_mystic_reveal
+	
+	archaeology = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = { 
+		from = { set_site_progress_locked = no } 
+	}
+	
+	option = {
+		name = DIG
+		galactic_doorstep_artifact_reward = yes
+	}
+}
+
+# Stage 4 - Room Without A View
+fleet_event = {
+	id = origin.1110
+	title = "origin.1110.name"
+	desc = "origin.1110.desc"
+	picture = GFX_evt_discovered_hidden_door
+	show_sound = event_mystic_reveal
+	
+	archaeology = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = { 
+		from = { set_site_progress_locked = no } 
+	}
+	
+	option = {
+		name = DIG
+		galactic_doorstep_artifact_reward = yes
+		owner = {
+			add_monthly_resource_mult = {
+				resource = physics_research
+				value = @tier2researchreward
+				min = @tier2researchmin
+				max = @tier2researchmax
+			}
+		}
+	}
+}
+
+# Stage 4 - The Gatekeeper Memoirs
+fleet_event = {
+	id = origin.1115
+	title = "origin.1115.name"
+	desc = "origin.1115.desc"
+	picture = GFX_evt_star_chart
+	show_sound = event_collapsing_ruins
+	
+	archaeology = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = { 
+		from = { set_site_progress_locked = no }
+	}
+	
+	option = {
+		name = FASCINATING
+		galactic_doorstep_artifact_reward = yes
+		owner = {
+			add_monthly_resource_mult = {
+				resource = engineering_research
+				value = @tier3researchreward
+				min = @tier3researchmin
+				max = @tier3researchmax
+			}
+		}
+		hidden_effect = {
+			owner = { country_event = { id = origin.1013 days = 10 } }
+		}
+	}
+}
+
+# Galactic Doorstep - Events 1 - The Boon
+country_event = {
+	id = origin.1000
+	title = "origin.1000.name"
+	desc = "origin.1000.desc"
+	picture = GFX_evt_hive
+	show_sound = event_energy_field
+	location = event_target:doorstep_gateway
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = MARVELOUS
+		owner = {
+			locked_random_list = {
+				25 = {
+					add_monthly_resource_mult = {
+						resource = alloys
+						value = @tier3materialreward
+						min = 400
+						max = 800
+					}
+				}
+				25 = {
+					add_monthly_resource_mult = {
+						resource = minerals
+						value = @tier2materialreward
+						min = 300
+						max = 500
+					}
+					add_monthly_resource_mult = {
+						resource = alloys
+						value = @tier3materialreward
+						min = 400
+						max = 800
+					}
+				}
+				25 = {
+					add_monthly_resource_mult = {
+						resource = minerals
+						value = @tier3materialreward
+						min = 400
+						max = 600
+					}
+					add_monthly_resource_mult = {
+						resource = alloys
+						value = @tier2materialreward
+						min = 300
+						max = 700
+					}
+				}
+				25 = {
+					add_monthly_resource_mult = {
+						resource = minerals
+						value = @tier3materialreward
+						min = 400
+						max = 800
+					}
+				}
+			}
+		}
+		hidden_effect = {
+			country_event = { id = origin.1005 days = 500 random = 60 }
+		}
+	}
+}
+
+# Galactic Doorstep - Return to Sender
+country_event = {
+	id = origin.1020
+	title = "origin.1020.name"
+	desc = {
+		text = "origin.1020.desc"
+		trigger = {
+			NOT = { has_authority = auth_machine_intelligence }
+		}
+	}
+	desc = {
+		text = "origin.1020.desc.machine"
+		trigger = {
+			has_authority = auth_machine_intelligence
+		}
+	}
+	picture = GFX_evt_space_debris
+	show_sound = event_energy_field
+	location = event_target:doorstep_gateway
+	
+	is_triggered_only = yes
+
+	immediate = {
+	}
+
+	option = {
+		name = INTRIGUING
+		owner = {
+			if = {
+				limit = {
+					has_tech_option = tech_gateway_activation
+				}
+				add_tech_progress = {
+					tech = tech_gateway_activation
+					progress = 0.9
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = { has_technology = tech_gateway_activation }
+				}
+				add_research_option = tech_gateway_activation
+				add_tech_progress = {
+					tech = tech_gateway_activation
+					progress = 0.9
+				}
+			}
+			else = {
+				add_monthly_resource_mult = {
+     				resource = engineering_research
+     				value = @tier4researchreward
+     				min = @tier4researchmin
+     				max = @tier4researchmax
+     			}
+     			add_monthly_resource_mult = {
+     				resource = physics_research
+     				value = @tier4researchreward
+     				min = @tier4researchmin
+     				max = @tier4researchmax
+     			}
+			}
+		}
+		hidden_effect = {
+			country_event = { id = origin.1021 days = 1200 random = 100 }
+		}
+	}
+}
+
+# Galactic Doorstep - Hidden Event - Randomises outcome of Origin Event Chain
+country_event = {
+	id = origin.1021
+	hide_window = yes
+	
+	is_triggered_only = yes
+
+	immediate = {
+		random_list = {
+			40 = {
+				country_event = { id = origin.1025 }
+			}
+			30 = {
+				country_event = { id = origin.1035 }
+			}
+			30 = {
+				country_event = { id = origin.1040 }
+			}
+		}
+	}
+}
+
+# Galactic Doorstep - Gateway Locust
+country_event = {
+	id = origin.1025
+	title = "origin.1025.name"
+	desc = "origin.1025.desc"
+	picture = GFX_evt_fleet_evil
+	show_sound = event_red_alert
+	location = event_target:doorstep_gateway
+
+	is_triggered_only = yes
+
+	immediate = {
+		create_country = {
+			name = "NAME_Gateway_Vermin"
+			type = amoeba
+			flag = {
+				icon = {
+					category = "zoological"
+					file = "flag_zoological_1.dds"
+				}
+				background= {
+					category = "backgrounds"
+					file = "00_solid.dds"
+				}
+				colors={
+					"black"
+					"black"
+					"null"
+					"null"
+				}
+			}
+		}
+		last_created_country = {
+			create_fleet = {
+				name = "NAME_Gateway_Vermin"
+				effect = {
+					while = {
+						count = 10	
+						create_ship = {
+							name = "NAME_Gateway_Vermin"
+							design = "NAME_Small_Space_Organism_Teal"
+						}
+						set_owner = PREV
+						set_location = {
+							target = event_target:doorstep_gateway
+							distance = 5
+							angle = random
+						}
+						set_fleet_stance = aggressive
+						set_aggro_range_measure_from = self
+						set_aggro_range = 500
+					}
+					set_fleet_flag = gateway_vermin
+				}
+			}
+		}
+		set_country_flag = gateway_swarm
+	}
+
+	option = {
+		name = BATTLESTATIONS
+	}
+}
+
+# Galactic Doorstep - Pest Control
+country_event = {
+	id = origin.1030
+	title = "origin.1030.name"
+	desc = {
+		text = "origin.1030.desc"
+		trigger = {
+			NOT = { has_ethic = ethic_gestalt_consciousness }
+		}
+	}
+	desc = {
+		text = "origin.1030.desc.gestalt"
+		trigger = {
+			has_ethic = ethic_gestalt_consciousness
+		}
+	}
+	picture = GFX_evt_atmospheric_entry
+	show_sound = event_energy_field
+	location = owner
+	
+	is_triggered_only = yes
+
+	trigger = {
+		has_origin = origin_galactic_doorstep
+        fromfromfrom = { 
+            has_fleet_flag = gateway_vermin
+        }
+	}
+
+	immediate = {
+	}
+
+	after = {
+	}
+
+	option = {
+		name = origin.1030.a
+		hidden_effect = {
+			remove_country_flag = gateway_swarm
+		}
+	}
+}
+
+# Galactic Doorstep - Relentless Barrage
+country_event = {
+	id = origin.1035
+	title = "origin.1035.name"
+	desc = {
+		text = "origin.1035.desc"
+		trigger = {
+			NOT = { has_ethic = ethic_gestalt_consciousness }
+		}
+	}
+	desc = {
+		text = "origin.1035.desc.gestalt"
+		trigger = {
+			has_ethic = ethic_gestalt_consciousness
+		}
+	}
+	picture = GFX_evt_fleet_evil
+	show_sound = event_red_alert
+	location = event_target:doorstep_gateway
+
+	is_triggered_only = yes
+
+	immediate = {
+		create_country = {
+			name = "NAME_Gateway_Vermin"
+			type = amoeba
+			flag = {
+				icon = {
+					category = "zoological"
+					file = "flag_zoological_1.dds"
+				}
+				background= {
+					category = "backgrounds"
+					file = "00_solid.dds"
+				}
+				colors={
+					"black"
+					"black"
+					"null"
+					"null"
+				}
+			}
+		}
+		last_created_country = {
+			create_fleet = {
+				name = "NAME_Gateway_Vermin"
+				effect = {
+					while = {
+						count = 8
+						create_ship = {
+							name = "NAME_Gateway_Vermin"
+							design = "NAME_Small_Space_Organism_Teal"
+						}
+						set_owner = PREV
+						set_location = {
+							target = root.capital_scope
+							distance = 5
+							angle = random
+						}
+						set_fleet_stance = aggressive
+						set_aggro_range_measure_from = self
+						set_aggro_range = 500
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = BATTLESTATIONS
+	}
+}
+
+# Galactic Doorstep - Cosmic Overload
+country_event = {
+	id = origin.1040
+	title = "origin.1040.name"
+	desc = {
+		text = "origin.1040.desc"
+		trigger = {
+			NOT = { has_ethic = ethic_gestalt_consciousness }
+		}
+	}
+	desc = {
+		text = "origin.1040.desc.gestalt"
+		trigger = {
+			has_ethic = ethic_gestalt_consciousness
+		}
+	}
+	picture = GFX_evt_archaeologists_escaping
+	show_sound = event_air_raid_siren
+	location = root.capital_scope
+	
+	is_triggered_only = yes
+
+	immediate = {
+	}
+
+	option = {
+		name = TERRIBLE
+		root = {
+			capital_scope = {
+				while = {
+					count = 3
+					remove_district = district_generator
+				}
+				add_planet_devastation = 21
+			}
+		}
+	}
+}
+
+country_event = {
+	id = origin.1050
+	title = origin.1050.name
+	desc = origin.1050.desc
+	picture = GFX_evt_drifting_gateway
+	show_sound = event_default
+	location = from
+	
+	is_triggered_only = yes
+
+	trigger = {
+		has_origin = origin_galactic_doorstep
+		NOT = { has_technology = tech_gateway_construction }
+		NOT = { has_tech_option = tech_gateway_construction }
+		fromfromfrom = { has_megastructure_flag = doorstep_gateway@root }
+		NOR = {
+			has_country_flag = gateway_reactivated
+			has_country_flag = gateway_built
+		}
+	}
+
+	immediate = {
+		set_country_flag = gateway_reactivated
+	}
+
+	option = {
+		name = origin.1050.A
+
+		add_research_option = tech_gateway_construction
+		add_tech_progress = {
+			tech = tech_gateway_construction
+			progress = 0.9
+		}
+	}
+}

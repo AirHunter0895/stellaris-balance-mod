@@ -99,6 +99,7 @@ civic_hive_devouring_swarm = {
 			NOR = {
 				value = origin_common_ground
 				value = origin_hegemon
+				value = origin_tree_of_life
 			}
 		}
 	}
@@ -157,6 +158,11 @@ civic_machine_servitor = {
 				value = civic_machine_assimilator
 			}
 		}
+		origin = {
+			NOT = {
+				value = origin_machine
+			}
+		}
 	}
 	modification = no
 	random_weight = {
@@ -178,7 +184,14 @@ civic_machine_servitor = {
 }
 
 civic_machine_terminator = {
-	potential = { authority = { value = auth_machine_intelligence } }
+	potential = {
+		authority = {
+			OR = {
+				value = auth_ancient_machine_intelligence
+				value = auth_machine_intelligence
+			}
+		}
+	}
 	starting_colony = pc_nuked # Changes homeworld class regardless of what is picked for empire
 	possible = {
 		civics = {
@@ -290,7 +303,11 @@ civic_machine_zero_waste_protocols = {
 }
 
 civic_machine_built_to_last = {
-	potential = { always = no }
+	potential = {
+		authority = {
+			value = auth_ancient_machine_intelligence
+		}
+	}
 	random_weight = { base = 5 }
 	modifier = {
 		pop_amenities_usage_no_happiness_mult = -0.15
@@ -307,7 +324,14 @@ civic_machine_ota_updates = {
 }
 
 civic_machine_warbots = {
-	potential = { authority = { value = auth_machine_intelligence } }
+	potential = {
+		authority = {
+			OR = {
+				value = auth_ancient_machine_intelligence
+				value = auth_machine_intelligence
+			}
+		}
+	}
 	random_weight = { base = 5 }
 	modifier = {
 		army_damage_mult = 0.25
