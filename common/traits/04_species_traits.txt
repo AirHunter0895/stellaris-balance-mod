@@ -276,6 +276,7 @@ trait_very_strong = {
 	modifier = {
 		army_damage_mult = 0.40
 		planet_jobs_worker_produces_mult = 0.075
+		planet_jobs_slave_produces_mult = 0.075
 	}
 	slave_cost = {
 		energy = 150
@@ -290,6 +291,7 @@ trait_strong = {
 	modifier = {
 		army_damage_mult = 0.20
 		planet_jobs_worker_produces_mult = 0.025
+		planet_jobs_slave_produces_mult = 0.025
 	}
 	slave_cost = {
 		energy = 50
@@ -304,6 +306,7 @@ trait_weak = {
 	modifier = {
 		army_damage_mult = -0.20
 		planet_jobs_worker_produces_mult = -0.025
+		planet_jobs_slave_produces_mult = 0.025
 	}
 	slave_cost = {
 		energy = -50

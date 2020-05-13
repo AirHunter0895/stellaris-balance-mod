@@ -15,7 +15,8 @@
  
  # Origins
  civic_tooltip_post_apocalyptic_effects:3 "Capital starts as a §YTomb World§!\nGain the §Y$trait_survivor$§! trait, granting:\n  Tomb World Habitability: §G+60%§!\n  Amenities Use: §G-10%§!\n  Job Output: §G+5%§!\n  Army Morale Damage: §G+33%§!"
- origin_tooltip_void_dwellers_effects:3 "- Start with three §YOrbital Habitats§! and the technology to build more\n- Members of your species can easily navigate the mazeline interiors of Habitats and use §G15%§! less housing there\n- Severe habitability and growth penalties on all normal planets\n- Hydroponic Farms have §G+1§! £job_farmer£ $job_farmer$ Job"
+ origin_tooltip_void_dwellers_effects:3 "- Start with three §YOrbital Habitats§! and the technology to build more\n- Members of your species can easily navigate the mazeline interiors of Habitats and use §G15%§! less housing there\n- Severe habitability and growth penalties on all normal planets\n- Hydroponic Farms have §G+1§! £job_farmer£ $job_farmer$ Job"civic_tooltip_life_seeded_effects:1 "Homeworld is a §Y$pc_gaia$§! (Size: £planetsize£ §Y22§!) with several §YRare Planetary Features§!\nHabitability preference is set to §Y$trait_pc_gaia_preference$§!, making other types of planets undesirable.\nYour neighbouring worlds are also §Y$pc_gaia$§!"
+ 
 
  # Traditions
  #tr_domination_colonial_viceroys_desc:0 "£job_soldier£ §Y$job_soldier_plural$§! also produce §G+1§! £stability£ Stability."
