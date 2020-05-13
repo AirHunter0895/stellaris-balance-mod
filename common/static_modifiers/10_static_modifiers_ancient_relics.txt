@@ -268,6 +268,7 @@ artifact_vultaum_research_completed_machine = {
 
 artifact_vultaum_research_completed_hive = {
 	country_physics_research_produces_mult = 0.15
+	planet_amenities_mult = 0.1
 }
 
 artifact_baol_research_completed = {

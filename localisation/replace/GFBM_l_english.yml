@@ -33,7 +33,6 @@
  tr_diplomacy_secure_shipping_desc:0 "§YBase Trade Protection§! for Trade Routes increased by §G20§!."
  tr_diplomacy_finish_effect:1 "§E$TRADITIONS_FINISH$:§!\nAdopting all $tr_diplomacy_adopt$ will increase our §Y$MOD_COUNTRY_TRUST_CAP_ADD$§! by §G+100§! and our §Y$MOD_COUNTRY_TRUST_GROWTH$§! by §G+33%§!."
  tr_diplomacy_entente_coordination_desc:0 "The amount we contribute towards the §YFederation Naval Capacity§! counts for twice as much and our §YNaval Capacity§! is increased by §G+10%§!."
- tr_discovery_databank_uplinks_desc:1 "§Y$mod_station_researchers_produces_mult$§! increased by §G20%§!."
 
  # Deposits
  d_arcane_generator:0 "Arcane Generator"
@@ -45,6 +44,10 @@
  ap_defender_of_the_galaxy_modifier_desc:0 "Damage to Galactic Crisis factions: §G+50%§!"
  describe_edict_consectrated_worlds:5 "§EConsecrating planets (up to §Y3§!) increases §YSpiritualist Ethics Attraction§! and §YEmpire-Wide Amenities§! as well as £unity£ §YUnity Generation§!, scaling to the spiritual significance of the worlds consecrated.§!"
  living_standard_chemical_bliss_happiness_tooltip:1 "Increases £happiness£ Pop Happiness by §G40%§! unless there is a £consumer_goods£ §YConsumer Goods§! deficit.\n$mod_planet_jobs_produces_mult$: §R-20%§! per Strata."
+ prosp_uni_mod2:0 "Prosperous Unification"
+ prosp_uni_mod2_desc:0 "Since Unification Day the economy has been booming!"
+ edict_research_subsidies_tooltip:0 "Increases the upkeep of £job_researcher£ $job_researcher_plural$ by £energy£§Y2§!"
+ edict_industrial_subsidies_tooltip:0 "Increases the upkeep of £job_artisan£ $job_artisan_plural$ by £energy£§Y2§!"
 
  # Relics
  relic_zro_crystal_passive:0 "The cooldown to §YBreach into the Shroud§! is reduced by §G33%§!."

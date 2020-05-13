@@ -146,7 +146,7 @@ researcher = {
 					has_edict = research_subsidies
 				}
 			}
-			energy = 1
+			energy = 2
 		}
 	}
 
@@ -811,7 +811,7 @@ artisan = {
 					has_edict = industrial_subsidies
 				}
 			}
-			energy = 1
+			energy = 2
 		}
 	}
 

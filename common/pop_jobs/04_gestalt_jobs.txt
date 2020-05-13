@@ -351,7 +351,7 @@ brain_drone = {
 					has_edict = research_subsidies
 				}
 			}
-			energy = 1
+			energy = 2
 		}
 	}
 
@@ -436,7 +436,7 @@ calculator = {
 					has_edict = research_subsidies
 				}
 			}
-			energy = 1
+			energy = 2
 		}
 	}
 
@@ -515,7 +515,7 @@ artisan_drone = {
 					has_edict = industrial_subsidies
 				}
 			}
-			energy = 1
+			energy = 2
 		}
 	}
 
@@ -1206,15 +1206,6 @@ technician_drone = {
 				}
 			}
 			energy = 2
-		}
-		upkeep = {
-			trigger = {
-				exists = owner
-				owner = {
-					has_edict = capacity_subsidies
-				}
-			}
-			energy = 0.5
 		}
 	}
 

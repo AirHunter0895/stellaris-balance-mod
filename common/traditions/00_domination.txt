@@ -1,6 +1,6 @@
 tr_domination_adopt = {
 	modifier = {
-		edict_length_mult = 0.20
+		country_edict_cap_add = 1
 	}
 
 	tradition_swap = {
@@ -12,7 +12,7 @@ tr_domination_adopt = {
 			is_machine_empire = yes
 		}
 		modifier = {
-			edict_length_mult = 0.20
+			country_edict_cap_add = 1
 		}
 
 		weight = {
@@ -29,7 +29,7 @@ tr_domination_adopt = {
 			is_hive_empire = yes
 		}
 		modifier = {
-			edict_length_mult = 0.20
+			country_edict_cap_add = 1
 		}
 
 		weight = {

@@ -75,7 +75,7 @@ civic_imperial_cult = {
 	random_weight = { base = 5 }
 	modifier = {
 		country_edict_cap_add = 1
-		edicts_cost_mult = -0.25
+		pop_government_ethic_attraction = 0.25
 	}
 }
 

@@ -343,7 +343,7 @@ generate_start_deposits_and_blockers = {
 			}
 		}
 
-		set_planet_size = 25
+		set_planet_size = 22
 
 		# 5 + 3 energy
 		add_deposit = d_searing_desert
@@ -839,7 +839,7 @@ generate_earth_deposits_and_blockers = {
 			}
 		}
 
-		set_planet_size = 25
+		set_planet_size = 22
 
 		add_deposit = d_dust_desert
 		add_deposit = d_crystal_forest
@@ -1821,7 +1821,7 @@ generate_home_planet_final_pass = {
 		}
 		owner = {
 			capital_scope = {
-				add_modifier = { modifier = prosp_uni_mod }
+				add_modifier = { modifier = prosp_uni_mod2 }
 			}
 		}
 	}

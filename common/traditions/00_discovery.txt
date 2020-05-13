@@ -136,7 +136,7 @@ tr_discovery_databank_uplinks = {
 	}	
 	
 	modifier = {
-		station_researchers_produces_mult = 0.20
+		station_researchers_produces_mult = 0.10
 	}
 	
 	ai_weight = {
