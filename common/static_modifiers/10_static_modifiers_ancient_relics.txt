@@ -187,7 +187,7 @@ relic_defragmentor = {
 }
 
 yuht_cryo_core = {
-	army_upkeep_mult = -0.4
+	armies_upkeep_mult = -0.4
 }
 
 javorian_pox = {

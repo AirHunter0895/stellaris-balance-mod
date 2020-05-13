@@ -695,7 +695,7 @@ trait_survivor = {
 	species_potential_add = { always = no }
 	allowed_archetypes = { BIOLOGICAL LITHOID }
 	modifier = {
-		pc_nuked_habitability = 0.6
+		pc_nuked_habitability = 0.7
 		pop_amenities_usage_mult = -0.10
 		planet_jobs_produces_mult = 0.05
 		army_morale_damage_mult = 0.33
