@@ -508,13 +508,6 @@ enforcer = {
 			}
 			unity = 1
 		}
-		produces = {
-			trigger = {
-				exists = owner
-				owner = { has_non_swapped_tradition = tr_domination_judgment_corps }
-			}
-			unity = 1
-		}
 		upkeep = {
 			trigger = {
 				exists = planet
@@ -539,6 +532,7 @@ enforcer = {
 		}
 		modifier = {
 			planet_crime_add = -5
+			planet_stability_add = 1
 		}
 	}
 

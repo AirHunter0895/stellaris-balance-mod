@@ -22,17 +22,14 @@
  
 
  # Traditions
- #tr_domination_colonial_viceroys_desc:0 "£job_soldier£ §Y$job_soldier_plural$§! also produce §G+1§! £stability£ Stability."
- #tr_domination_colonial_viceroys_hive_desc:0 "£job_warrior_drone£ §Y$job_warrior_drone_plural$§! also produce §G+1§! £stability£ Stability."
- #tr_domination_colonial_viceroys_machine_desc:0 "£job_warrior_drone£ §Y$job_warrior_drone_plural$§! also produce §G+1§! £stability£ Stability."
  tr_domination_colonial_viceroys_desc:0 "Leader Pool Size: §G+2§!."
  tr_domination_colonial_viceroys_hive_desc:0 "Leader Pool Size: §G+2§!."
  tr_domination_colonial_viceroys_machine_desc:0 "Leader Pool Size: §G+2§!."
  tr_domination_grand_council_desc:0 "§Y$MOD_LEADER_GOVERNOR_SKILL_LEVELS$§! increased by §Y2§!\n§Y$MOD_LEADER_RULER_SKILL_LEVELS$§! increased by §Y2§!."
- tr_domination_trust_officers_desc:0 "£job_enforcer£ §Y$job_enforcer_plural$§! reduce £crime£ §Y$MOD_PLANET_CRIME_ADD$§! by an additional §G-5§! and also produce §Y1§! £unity£ Unity."
- tr_domination_judgment_corps_desc:0 "£job_enforcer£ §Y$job_enforcer_plural$§! reduce £crime£ §Y$MOD_PLANET_CRIME_ADD$§! by an additional §G-5§! and also produce §Y1§! £unity£ Unity."
+ tr_domination_trust_officers_desc:0 "£job_enforcer£ §Y$job_enforcer_plural$§! reduce £crime£ §Y$MOD_PLANET_CRIME_ADD$§! by an additional §G-5§! and also produce §Y1§! £stability£ Stability."
+ tr_domination_judgment_corps_desc:0 "£job_enforcer£ §Y$job_enforcer_plural$§! reduce £crime£ §Y$MOD_PLANET_CRIME_ADD$§! by an additional §G-5§! and also produce §Y1§! £stability£ Stability."
  tr_domination_deviancy_protocols_desc:2 "£job_patrol_drone£ §Y$job_patrol_drone_plural$§! reduce £crime£ §Y$MOD_PLANET_CRIME_ADD$§! by an additional §G-5§! and also produce §Y1§! £unity£ Unity."
- tr_domination_adopt_effect:3 "§E$TRADITIONS_ADOPT$:§!\n§YEdict Duration§! increased by §G20%§!."
+ tr_domination_adopt_effect:3 "§E$TRADITIONS_ADOPT$:§!\n§YEdict Cap§! increased by §G20%§!."
  tr_diplomacy_open_markets_desc:1 "Empire §Y$MOD_TRADE_VALUE_MULT$§! and §YDiplomatic Weight From Economy§! increased by §G+10%§!."
  tr_diplomacy_secure_shipping_desc:0 "§YBase Trade Protection§! for Trade Routes increased by §G20§!."
  tr_diplomacy_finish_effect:1 "§E$TRADITIONS_FINISH$:§!\nAdopting all $tr_diplomacy_adopt$ will increase our §Y$MOD_COUNTRY_TRUST_CAP_ADD$§! by §G+100§! and our §Y$MOD_COUNTRY_TRUST_GROWTH$§! by §G+33%§!."
