@@ -6,85 +6,87 @@ country_event = {
 				
 	immediate = {
 		capital_scope = {
-			create_army = {
-				name = "Unfrozen Xenomorphs"
-				type = "xenomorph_army"
-			}
-			create_army = {
-				name = "Unfrozen Xenomorphs"
-				type = "xenomorph_army"
-			}
-			create_army = {
-				name = "Unfrozen Xenomorphs"
-				type = "xenomorph_army"
-			}
-			create_army = {
-				name = "Unfrozen Xenomorphs"
-				type = "xenomorph_army"
-			}
-			create_army = {
-				name = "Unfrozen Xenomorphs"
-				type = "xenomorph_army"
-			}
-			create_army = {
-				name = "Unfrozen Xenomorphs"
-				type = "xenomorph_army"
-			}
-			create_army = {
-				name = "Unfrozen Xenomorphs"
-				type = "xenomorph_army"
-			}
-			create_army = {
-				name = "Unfrozen Xenomorphs"
-				type = "xenomorph_army"
-			}
-			create_army = {
-				name = "Unfrozen Xenomorphs"
-				type = "xenomorph_army"
-			}
-			create_army = {
-				name = "Unfrozen Xenomorphs"
-				type = "xenomorph_army"
-			}
-			create_army = {
-				name = "Unfrozen Xenomorphs"
-				type = "xenomorph_army"
-			}
-			create_army = {
-				name = "Unfrozen Xenomorphs"
-				type = "xenomorph_army"
-			}
-			create_army = {
-				name = "Unfrozen Xenomorphs"
-				type = "xenomorph_army"
-			}
-			create_army = {
-				name = "Unfrozen Xenomorphs"
-				type = "xenomorph_army"
-			}
-			create_army = {
-				name = "Unfrozen Xenomorphs"
-				type = "xenomorph_army"
-			}
-			create_army = {
-				name = "Unfrozen Xenomorphs"
-				type = "xenomorph_army"
-			}
-			create_army = {
-				name = "Unfrozen Xenomorphs"
-				type = "xenomorph_army"
-			}
-			create_army = {
-				name = "Unfrozen Xenomorphs"
-				type = "xenomorph_army"
-			}
-			create_army = {
-				name = "Unfrozen Xenomorphs"
-				type = "xenomorph_army"
-			}
-			create_army = {
-				name = "Unfrozen Xenomorphs"
-				type = "xenomorph_army"
+			hidden_effect = {
+				create_army = {
+					name = "Unfrozen Xenomorphs"
+					type = "xenomorph_army"
+				}
+				create_army = {
+					name = "Unfrozen Xenomorphs"
+					type = "xenomorph_army"
+				}
+				create_army = {
+					name = "Unfrozen Xenomorphs"
+					type = "xenomorph_army"
+				}
+				create_army = {
+					name = "Unfrozen Xenomorphs"
+					type = "xenomorph_army"
+				}
+				create_army = {
+					name = "Unfrozen Xenomorphs"
+					type = "xenomorph_army"
+				}
+				create_army = {
+					name = "Unfrozen Xenomorphs"
+					type = "xenomorph_army"
+				}
+				create_army = {
+					name = "Unfrozen Xenomorphs"
+					type = "xenomorph_army"
+				}
+				create_army = {
+					name = "Unfrozen Xenomorphs"
+					type = "xenomorph_army"
+				}
+				create_army = {
+					name = "Unfrozen Xenomorphs"
+					type = "xenomorph_army"
+				}
+				create_army = {
+					name = "Unfrozen Xenomorphs"
+					type = "xenomorph_army"
+				}
+				create_army = {
+					name = "Unfrozen Xenomorphs"
+					type = "xenomorph_army"
+				}
+				create_army = {
+					name = "Unfrozen Xenomorphs"
+					type = "xenomorph_army"
+				}
+				create_army = {
+					name = "Unfrozen Xenomorphs"
+					type = "xenomorph_army"
+				}
+				create_army = {
+					name = "Unfrozen Xenomorphs"
+					type = "xenomorph_army"
+				}
+				create_army = {
+					name = "Unfrozen Xenomorphs"
+					type = "xenomorph_army"
+				}
+				create_army = {
+					name = "Unfrozen Xenomorphs"
+					type = "xenomorph_army"
+				}
+				create_army = {
+					name = "Unfrozen Xenomorphs"
+					type = "xenomorph_army"
+				}
+				create_army = {
+					name = "Unfrozen Xenomorphs"
+					type = "xenomorph_army"
+				}
+				create_army = {
+					name = "Unfrozen Xenomorphs"
+					type = "xenomorph_army"
+				}
+				create_army = {
+					name = "Unfrozen Xenomorphs"
+					type = "xenomorph_army"
+				}
 			}
 		}
 	}				

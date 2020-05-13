@@ -1000,7 +1000,8 @@ r_cryo_core = {
 		}
 		hidden_effect = {
 			country_event = { id = SPBM.1000 }
-			custom_tooltip = cryo_xeno
+			custom_tooltip = relic_cry_core2
+			custom_tooltip = relic_cry_core
 		}
 		custom_tooltip = relic_triumph_cooldown_short
 	}
