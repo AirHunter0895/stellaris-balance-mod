@@ -522,7 +522,7 @@ industrial_subsidies = {
 			trigger = {
 				NOT = { has_edict = industrial_subsidies }			
 			}
-			influence = 300
+			influence = 200
 		}
 		cost = { #Deactivation Cost
 			trigger = {
