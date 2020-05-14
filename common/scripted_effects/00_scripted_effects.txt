@@ -100,6 +100,10 @@ create_cloud_country = {
 			}
 			effect = {
 				save_global_event_target_as = cloud_country
+				add_modifier = {
+					modifier = cloud_power
+					days = -1
+				}
 			}
 		}
 	}
@@ -131,6 +135,83 @@ create_amoeba_country = {
 			}
 			effect = {
 				save_global_event_target_as = amoeba_country
+				if = {
+					limit = {
+						exists = event_target:amoeba_garrison_country
+					}
+					set_faction_hostility = {
+						set_hostile = no
+						set_neutral = yes
+						target = event_target:amoeba_garrison_country
+					}
+				}
+				if = {
+					limit = {
+						exists = event_target:amoeba_country_borderless
+					}
+					set_faction_hostility = {
+						set_hostile = no
+						set_neutral = yes
+						target = event_target:amoeba_country_borderless
+					}
+				}
+			}
+		}
+	}
+}
+
+# Checks if Space Amoeba country (global event target) exists
+# Creates the country and saves it if it does not
+create_amoeba_country_borderless = {
+	if = {
+		limit = { NOT = { exists = event_target:amoeba_country_borderless } }
+		create_country = {
+			name = "NAME_Spaceborne_Organics"
+			type = amoeba_borderless
+			flag = {
+				icon = {
+					category = "zoological"
+					file = "flag_zoological_1.dds"
+				}
+				background= {
+					category = "backgrounds"
+					file = "00_solid.dds"
+				}
+				colors={
+					"black"
+					"black"
+					"null"
+					"null"
+				}
+			}
+			effect = {
+				save_global_event_target_as = amoeba_country_borderless
+				if = {
+					limit = {
+						exists = event_target:amoeba_garrison_country
+					}
+					set_faction_hostility = {
+						set_hostile = no
+						set_neutral = yes
+						target = event_target:amoeba_garrison_country
+					}
+				}
+				if = {
+					limit = {
+						exists = event_target:amoeba_country
+					}
+					set_faction_hostility = {
+						set_hostile = no
+						set_neutral = yes
+						target = event_target:amoeba_country
+					}
+				}
+				every_country = {
+					limit = {
+						has_communications = event_target:amoeba_country
+					}
+					establish_communications_no_message = event_target:amoeba_country_borderless
+				}
 			}
 		}
 	}
@@ -163,6 +244,14 @@ create_drone_country = {
 			effect = {
 				save_global_event_target_as = drone_country
 				set_graphical_culture = ancient_drone_01
+				set_variable = {	# Variable to track number of Ancient Mining Drone Expansion Fleets sent out throughout the game session.
+					which = expansion_fleets_sent_var
+					value = 0
+				}
+				set_variable = {	# Variable to track number of aggressiveAncient Mining Drone Expansion Fleets sent out throughout the game session.
+					which = aggressive_expansion_fleets_sent_var
+					value = 0
+				}
 			}
 		}
 	}
