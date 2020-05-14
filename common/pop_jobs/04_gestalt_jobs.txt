@@ -123,6 +123,7 @@ replicator = {
 					is_country_type = ai_empire
 				}
 			}
+		}
 	}
 }
 

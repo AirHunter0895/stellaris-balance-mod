@@ -21,6 +21,9 @@ country_event = {
 			10 = {
 				add_modifier = {
 					modifier = "reality_perforator_1" 
+					days = 360
+				}	
+				add_modifier = {
 					modifier = "reality_perforator_2" 
 					days = 360
 				}	
@@ -28,6 +31,9 @@ country_event = {
 			10 = {
 				add_modifier = {
 					modifier = "reality_perforator_1" 
+					days = 360
+				}	
+				add_modifier = {
 					modifier = "reality_perforator_3" 
 					days = 360
 				}	
@@ -35,6 +41,9 @@ country_event = {
 			10 = {
 				add_modifier = {
 					modifier = "reality_perforator_1" 
+					days = 360
+				}	
+				add_modifier = {
 					modifier = "reality_perforator_4" 
 					days = 360
 				}	
@@ -42,6 +51,9 @@ country_event = {
 			10 = {
 				add_modifier = {
 					modifier = "reality_perforator_2"
+					days = 360
+				}
+				add_modifier = {
 					modifier = "reality_perforator_3"  
 					days = 360
 				}
@@ -49,6 +61,9 @@ country_event = {
 			10 = {
 				add_modifier = {
 					modifier = "reality_perforator_2"
+					days = 360
+				}
+				add_modifier = {
 					modifier = "reality_perforator_4"  
 					days = 360
 				}
@@ -56,6 +71,9 @@ country_event = {
 			10 = {
 				add_modifier = {
 					modifier = "reality_perforator_3" 
+					days = 360
+				}
+				add_modifier = {
 					modifier = "reality_perforator_4" 
 					days = 360
 				}

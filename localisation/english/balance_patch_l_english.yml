@@ -71,3 +71,4 @@
 
  # Relics
  relic_cry_core2:0 "Spawns 20 §YXenomorph§! Armies"
+ r_cryo_core2_passive_desc:0 "New colonies start with §Y1§! additional £pop£ Pop\nShip Upkeep: §G-10%§!"

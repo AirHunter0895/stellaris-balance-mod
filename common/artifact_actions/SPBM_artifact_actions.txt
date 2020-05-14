@@ -26,11 +26,8 @@ artifact_sell_collector = {
 	potential = { is_gestalt = no }
 
 	effect = {
-		add_monthly_resource_mult = {
-			resource = energy
-			value = @tier0materialreward
-			min = @tier0materialmin
-			max = @tier0materialmax
+		add_resource = {
+			energy = 250
 		}
 	}
 }
