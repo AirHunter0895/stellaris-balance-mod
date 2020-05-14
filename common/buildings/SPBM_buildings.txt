@@ -223,6 +223,16 @@ building_paradise_dome = {
 
 	potential = {
 		has_building = building_luxury_residence
+		OR = {
+			NOT = { is_planet_class = pc_habitat }
+			AND = {
+				has_planet_flag = advanced_habitat
+				exists = owner
+				owner = {
+					has_ascension_perk = ap_voidborn
+				}
+			}
+		}
 	}
 
 	allow = {
@@ -292,25 +302,9 @@ building_paradise_dome = {
 			weight = 1
 			buildings_has_crystals = yes
 		}
-	}
-
-	on_queued = {
-		IF = {
-			limit = {
-				owner = { has_technology = tech_construction_templates }
-			}
-			owner = { set_timed_country_flag = { flag = buildings_new_crystal_building days = 270 } }
-		}
-		ELSE_IF = {
-			limit = {
-				owner = { has_technology = tech_assembly_pattern }
-			}
-			owner = { set_timed_country_flag = { flag = buildings_new_crystal_building days = 390 } }
-		}
-		else = {
-			planet = {
-				owner = { set_timed_country_flag = { flag = buildings_new_crystal_building days = 510 } }
-			}
+		modifier = {
+			factor = 10
+			free_housing < 0
 		}
 	}
 }
@@ -324,6 +318,16 @@ building_communal_housing_large = {
 
 	potential = {
 		has_building = building_communal_housing
+		OR = {
+			NOT = { is_planet_class = pc_habitat }
+			AND = {
+				has_planet_flag = advanced_habitat
+				exists = owner
+				owner = {
+					has_ascension_perk = ap_voidborn
+				}
+			}
+		}
 	}
 
 	allow = {
@@ -380,10 +384,6 @@ building_communal_housing_large = {
 		}
 	}
 
-	show_tech_unlock_if = {
-		has_valid_civic = civic_shared_burden
-	}
-
 	prerequisites = {
 		"tech_paradise_dome"
 	}
@@ -394,25 +394,9 @@ building_communal_housing_large = {
 			weight = 1
 			buildings_has_crystals = yes
 		}
-	}
-
-	on_queued = {
-		IF = {
-			limit = {
-				owner = { has_technology = tech_construction_templates }
-			}
-			owner = { set_timed_country_flag = { flag = buildings_new_crystal_building days = 270 } }
-		}
-		ELSE_IF = {
-			limit = {
-				owner = { has_technology = tech_assembly_pattern }
-			}
-			owner = { set_timed_country_flag = { flag = buildings_new_crystal_building days = 390 } }
-		}
-		else = {
-			planet = {
-				owner = { set_timed_country_flag = { flag = buildings_new_crystal_building days = 510 } }
-			}
+		modifier = {
+			factor = 10
+			free_housing < 0
 		}
 	}
 }

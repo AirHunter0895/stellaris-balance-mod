@@ -132,7 +132,6 @@ technician = {
 			energy = 2
 		}
 	}
-
 	weight = {
 		weight = @worker_job_weight
 		modifier = {

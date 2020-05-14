@@ -495,16 +495,6 @@ enforcer = {
 	possible = {
 		battle_thrall_job_check_trigger = yes
 	}
-	
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { has_non_swapped_tradition = tr_domination_judgment_corps }
-		}
-		modifier = {
-			planet_stability_add = 1
-		}
-	}
 
 	resources = {
 		category = planet_enforcers

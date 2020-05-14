@@ -199,7 +199,7 @@ tr_domination_grand_council = {
 
 tr_domination_judgment_corps = {
 
-	# effect implemented in jobs file - TODO: add +1 unity to tooltip
+	# effect implemented in jobs file
 
 	tradition_swap = {
 		name = tr_domination_trust_officers

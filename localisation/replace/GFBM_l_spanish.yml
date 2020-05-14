@@ -10,40 +10,48 @@
  TRAIT_LITHOID_GASEOUS_BYPRODUCTS_EFFECT:0 "Each pop with living standards of slavery or better produces 0.03 £exotic_gases£ §Y$exotic_gases$§! per month."
  TRAIT_LITHOID_SCINTILLATING_EFFECT:0 "Each pop with living standards of slavery or better produces 0.03 £rare_crystals£ §Y$rare_crystals$§! per month."
  TRAIT_LITHOID_VOLATILE_EXCRETIONS_EFFECT:0 "Each pop with living standards of slavery or better produces 0.03 £volatile_motes£ §Y$volatile_motes$§! per month."
- TRAIT_SYNCRETIC_PROLES_EFFECT:0 "$MOD_POP_HAPPINESS$: §G+10%§!\n$planet_jobs_workers_produces_mult$: §G+10%§!\nCannot generate §YLeaders§!\nCannot be employed in §Y$pop_cat_ruler$§! or Complex §Y$pop_cat_specialist$§! Jobs"
- trait_survivor_desc:0 "§LThis species has survived the horrors of a nuclear apocalypse. Though robust, their prolonged exposure to near-lethal doses of radiation have resulted in major genetic deformities.§!"
+ TRAIT_SYNCRETIC_PROLES_EFFECT:0 "$MOD_POP_HAPPINESS$: §G+10%§!\nWorker Output: §G+10%§!\nCannot generate §YLeaders§!\nCannot be employed in §Y$pop_cat_ruler$§! or Complex §Y$pop_cat_specialist$§! Jobs"
+ #trait_survivor_desc:0 "§LThis species has survived the horrors of a nuclear apocalypse. Though robust, their prolonged exposure to near-lethal doses of radiation have resulted in major genetic deformities.§!"
  
  # Origins
- civic_tooltip_post_apocalyptic_effects:3 "Capital starts as a §YTomb World§!\nGain §Y$trait_pc_nuked_preference$§! and the §Y$trait_survivor$§! trait, granting:\n  Army Health and Morale Damage: §G+25%§!\n  Pop Growth Speed: §R-25%§!"
+ civic_tooltip_post_apocalyptic_effects:3 "Capital starts as a §YTomb World§! with several §YRare Planetary Features§!\nGain the §Y$trait_survivor$§! trait, granting:\n  Tomb World Habitability: §G+70%§!\n  Amenities Use: §G-10%§!\n  Job Output: §G+5%§!\n  Army Morale Damage: §G+33%§!"
  origin_tooltip_void_dwellers_effects:3 "- Start with three §YOrbital Habitats§! and the technology to build more\n- Members of your species can easily navigate the mazeline interiors of Habitats and use §G15%§! less housing there\n- Severe habitability and growth penalties on all normal planets\n- Hydroponic Farms have §G+1§! £job_farmer£ $job_farmer$ Job"
+ civic_tooltip_life_seeded_effects:1 "Homeworld is a §Y$pc_gaia$§! (Size: £planetsize£ §Y22§!) with several §YRare Planetary Features§!\nHabitability preference is set to §Y$trait_pc_gaia_preference$§!, making other types of planets undesirable.\nYour neighbouring worlds are also §Y$pc_gaia$§!"
+ origin_tooltip_default_effects:0 "Start the game with an additional §Y4§! £pop£ Pops and with an additional §Y2§! Districts.\nYour homeworld receives the following modifier:\n  Pop Happiness: §G+10%§!\n  Planet Amenities: §G+15%§!\n  Pop Resource Output: §G+10%§!"
+ origin_tooltip_scion_effects:0 "Start as a vassal of a Fallen Empire.\nYour diplomatic options are restricted, but in exchange you will receive their protection and occasional gifts.\nYour overlord's gifts will grow more significant over time."
+ 
 
  # Traditions
- #tr_domination_colonial_viceroys_desc:0 "£job_soldier£ §Y$job_soldier_plural$§! also produce §G+1§! £stability£ Stability."
- #tr_domination_colonial_viceroys_hive_desc:0 "£job_warrior_drone£ §Y$job_warrior_drone_plural$§! also produce §G+1§! £stability£ Stability."
- #tr_domination_colonial_viceroys_machine_desc:0 "£job_warrior_drone£ §Y$job_warrior_drone_plural$§! also produce §G+1§! £stability£ Stability."
  tr_domination_colonial_viceroys_desc:0 "Leader Pool Size: §G+2§!."
  tr_domination_colonial_viceroys_hive_desc:0 "Leader Pool Size: §G+2§!."
  tr_domination_colonial_viceroys_machine_desc:0 "Leader Pool Size: §G+2§!."
  tr_domination_grand_council_desc:0 "§Y$MOD_LEADER_GOVERNOR_SKILL_LEVELS$§! increased by §Y2§!\n§Y$MOD_LEADER_RULER_SKILL_LEVELS$§! increased by §Y2§!."
- tr_domination_trust_officers_desc:0 "£job_enforcer£ §Y$job_enforcer_plural$§! reduce £crime£ §Y$MOD_PLANET_CRIME_ADD$§! by an additional §G-5§! and also produce §Y1§! £unity£ Unity."
- tr_domination_judgment_corps_desc:0 "£job_enforcer£ §Y$job_enforcer_plural$§! reduce £crime£ §Y$MOD_PLANET_CRIME_ADD$§! by an additional §G-5§! and also produce §Y1§! £unity£ Unity."
+ tr_domination_trust_officers_desc:0 "£job_enforcer£ §Y$job_enforcer_plural$§! reduce £crime£ §Y$MOD_PLANET_CRIME_ADD$§! by an additional §G-5§! and also produce §Y1§! £stability£ Stability."
+ tr_domination_judgment_corps_desc:0 "£job_enforcer£ §Y$job_enforcer_plural$§! reduce £crime£ §Y$MOD_PLANET_CRIME_ADD$§! by an additional §G-5§! and also produce §Y1§! £stability£ Stability."
  tr_domination_deviancy_protocols_desc:2 "£job_patrol_drone£ §Y$job_patrol_drone_plural$§! reduce £crime£ §Y$MOD_PLANET_CRIME_ADD$§! by an additional §G-5§! and also produce §Y1§! £unity£ Unity."
- tr_domination_adopt_effect:3 "§E$TRADITIONS_ADOPT$:§!\n§YEdict Duration§! increased by §G20%§!."
+ tr_domination_adopt_effect:3 "§E$TRADITIONS_ADOPT$:§!\nEdict Cap: §G+1§!."
  tr_diplomacy_open_markets_desc:1 "Empire §Y$MOD_TRADE_VALUE_MULT$§! and §YDiplomatic Weight From Economy§! increased by §G+10%§!."
  tr_diplomacy_secure_shipping_desc:0 "§YBase Trade Protection§! for Trade Routes increased by §G20§!."
  tr_diplomacy_finish_effect:1 "§E$TRADITIONS_FINISH$:§!\nAdopting all $tr_diplomacy_adopt$ will increase our §Y$MOD_COUNTRY_TRUST_CAP_ADD$§! by §G+100§! and our §Y$MOD_COUNTRY_TRUST_GROWTH$§! by §G+33%§!."
  tr_diplomacy_entente_coordination_desc:0 "The amount we contribute towards the §YFederation Naval Capacity§! counts for twice as much and our §YNaval Capacity§! is increased by §G+10%§!."
- tr_discovery_databank_uplinks_desc:1 "§Y$mod_station_researchers_produces_mult$§! increased by §G20%§!."
 
  # Deposits
  d_arcane_generator:0 "Arcane Generator"
  d_arcane_generator_desc:0 "This ancient machine at the heart of the ringworld has supported our people for generations.\n§YThis deposit will adapt as new districts are built.§!"
  
  # Misc
- relic_zro_crystal_passive:0 "The cooldown to §YBreach into the Shroud§! is reduced by §G33%§!."
  MOD_COUNTRY_SUBJECT_TECHNOLOGY_SHARING_MULT:0 "Subject Research Tax"
  ap_defender_of_the_galaxy_effect_opinion:0 "Everyone's £opinion£ §YOpinion§! increased by §G+50§!"
  ap_defender_of_the_galaxy_modifier_desc:0 "Damage to Galactic Crisis factions: §G+50%§!"
  describe_edict_consectrated_worlds:5 "§EConsecrating planets (up to §Y3§!) increases §YSpiritualist Ethics Attraction§! and §YEmpire-Wide Amenities§! as well as £unity£ §YUnity Generation§!, scaling to the spiritual significance of the worlds consecrated.§!"
+ living_standard_chemical_bliss_happiness_tooltip:1 "Increases £happiness£ Pop Happiness by §G40%§! unless there is a £consumer_goods£ §YConsumer Goods§! deficit.\n$mod_planet_jobs_produces_mult$: §R-20%§! per Strata."
+ prosp_uni_mod2:0 "Prosperous Unification"
+ prosp_uni_mod2_desc:0 "Since Unification Day the economy has been booming!"
+ edict_research_subsidies_tooltip:0 "Increases the upkeep of £job_researcher£ $job_researcher_plural$ by £energy£§Y2§!"
+ edict_industrial_subsidies_tooltip:0 "Increases the upkeep of £job_artisan£ $job_artisan_plural$ by £energy£§Y2§!"
+
+ # Relics
+ relic_zro_crystal_passive:0 "The cooldown to §YBreach into the Shroud§! is reduced by §G33%§!."
+ relic_rubricator_active:0 "Create §Y25§! £minor_artifacts£Minor Artifacts."
  
   

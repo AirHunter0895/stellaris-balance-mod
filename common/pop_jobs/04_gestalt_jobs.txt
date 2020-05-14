@@ -123,7 +123,6 @@ replicator = {
 					is_country_type = ai_empire
 				}
 			}
-		}
 	}
 }
 
@@ -799,16 +798,6 @@ patrol_drone = {
 	resources = {
 		category = planet_jobs
 		produces = {
-			unity = 1
-		}
-		produces = {
-			trigger = {
-				exists = owner
-				OR = {
-					owner = { has_swapped_tradition = tr_domination_divergence_supression }
-					owner = { has_swapped_tradition = tr_domination_deviancy_protocols }
-				}
-			}
 			unity = 1
 		}
 	}

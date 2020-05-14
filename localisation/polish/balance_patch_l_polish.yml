@@ -1,7 +1,8 @@
 ﻿l_polish:
  # Civics
  civic_tooltip_shadow_council_effect:0 "Ruler Pop Amenities and Trade Value: §G+10%§!"
- 
+ civic_tooltip_technocracy_effects:2 "£building£ §YCapital Buildings§! replace some £job_administrator£ §Y$job_administrator$§! Jobs with £job_head_researcher£ §Y$job_head_researcher_plural$§!\n§Y$job_researcher_plural$§! also produce §Y0.5§! £unity£ Unity"
+  
  # Job upkeep
  mod_planet_culture_workers_upkeep_mult:0 "Culture Worker Upkeep"
  mod_planet_priests_upkeep_mult:0 "Priest Upkeep"
@@ -20,13 +21,19 @@
  d_shattered_ring_superblocker2:0 "Massive Structural Damage"
  d_shattered_ring_superblocker2_desc:0 "The ringworld we inhabit has suffered massive structural damage over the millenia of our species' development. Though it is possible for us to repair this damage, the cost will be massive.\n§YThis deposit will prevent us from fully exploiting some of our districts.§!"
  d_shattered_ring_superblocker3:0 "Minor Structural Damage"
- d_shattered_ring_superblocker3_desc:0 "Though we have taken great strides in improving the condition of our ringworld, there is still much to be done.\n§YThis deposit will prevent us from fully exploiting most of our districts.§!"
+ d_shattered_ring_superblocker3_desc:0 "The ringworld we inhabit has suffered massive structural damage over the millenia of our species' development.\n§YThis deposit will prevent us from fully exploiting any of our districts.§!"
  d_shattered_ring_superblocker4:0 "Minor Structural Damage"
- d_shattered_ring_superblocker4_desc:0 "Though we have taken great strides in improving the condition of our ringworld, there is still much to be done. Restoring our home to its former glory is now within our reach.\n§YThis deposit will prevent us from fully exploiting some of our districts.§!"
+ d_shattered_ring_superblocker4_desc:0 "The ringworld we inhabit has suffered massive structural damage over the millenia of our species' development. Though it is possible for us to repair this damage, the cost will be massive.\n§YThis deposit will prevent us from fully exploiting some of our districts.§!"
  d_decrepit_tunnels_4:1 "£blocker£ Decrepit Tunnels"
  d_decrepit_tunnels_4_desc:0 "These ancient and decrepit tunnels have never been fully explored or cleared."
  d_decrepit_tunnels_5:1 "£blocker£ Decrepit Tunnels"
  d_decrepit_tunnels_5_desc:0 "These ancient and decrepit tunnels have never been fully explored or cleared."
+ d_nuked_battlefield1:1 "Radioactive Wasteland"
+ d_nuked_battlefield1_desc:1 "Few organisms can survive in this desolate, irradiated wasteland."
+ d_nuked_battlefield2:1 "Radioactive Wasteland"
+ d_nuked_battlefield2_desc:1 "Few organisms can survive in this desolate, irradiated wasteland."
+ d_nuked_battlefield3:1 "Radioactive Wasteland"
+ d_nuked_battlefield3_desc:1 "Few organisms can survive in this desolate, irradiated wasteland."
 
  # Buildings
  building_sanctuary_of_sin:0 "Sanctuary of Sin"
@@ -45,9 +52,11 @@
  shattered.6.desc:0 "Our top engineers have once again taken an interest in [Root.GetName]. Though its most significant structural and technical issues have been resolved through prior maintenance, there are still a number of improvements that could be made to the megastructure's integrity. Our scientists believe that with their current level of expertise, it should be possible to reinforce the shattered ringworld and return it to 100% efficiency. You need only give the order."
  shattered.7.name:0 "Ringworld Restoration Project"
  shattered.7.desc:0 "It is done; the preparations are complete. We are on the cusp of returning the shattered ringworld to its proper glory. Once we have allocated the requisite alloys and manpower to the project, our work will be all but finished."
+ spbm.2.name:0 "Crime Wave Subsides on [Root.GetName]!"
+ spbm.2.desc:0 "With the significant reduction of crime on §H[Root.GetName]§!, we no longer have any need to curry favour with the local crime lords. Our enforcers have already stepped in to arrest the individuals responsible, seize their assets, and destroy what remains of their underground empires."
 
  # Misc
- shattered_ring_superblocker_desc:0 "The §Y$d_shattered_ring_superblocker$§! is preventing us from fully exploiting this segment."
+ shattered_ring_superblocker_desc:0 "The §YStructural Damage§! is preventing us from fully exploiting this segment."
  shattered_ring_superblocker3_desc:0 "The §Y$d_shattered_ring_superblocker3$§! is preventing us from fully exploiting this segment."
  ringworld_reparation_project:0 "Ringworld Reparation Project"
  ringworld_reparation_project_DESC:0 "Though it will be a significant task, our engineers believe they can repair the major structural faults present in this ringworld. Once the preliminary engineering research is complete, we will need a substantial amount of time and alloys to complete the repairs."
@@ -59,3 +68,6 @@
  synthetic_growth_penalty_desc:0 "Since our ascension to synthetic shells, we have found fewer and fewer reasons to encourage the growth of our organic brethren."
  mod_country_base_minor_artifacts_produces_add:0 "Monthly £minor_artifacts£ §YMinor Artifacts§!"
  mod_deposit_blockers_time_cost_mult:0 "Clear Blocker Time"
+
+ # Relics
+ relic_cry_core2:0 "Spawns 20 §YXenomorph§! Armies"
