@@ -1948,7 +1948,7 @@ void_dweller_home_planet_setup = {
 	}
 	else = {
 		add_building = building_factory_1
-		add_building = building_factory_1
+		add_district = district_hab_cultural
 	}
 
 	add_deposit = d_arcane_replicator
@@ -1980,7 +1980,7 @@ void_dweller_home_planet_setup = {
 				add_district = district_hab_commercial
 			}
 			else = {
-				add_building = building_holo_theatres
+				add_district = district_hab_mining
 				add_district = district_hab_mining
 			}
 
