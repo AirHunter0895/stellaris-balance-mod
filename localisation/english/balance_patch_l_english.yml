@@ -11,6 +11,11 @@
  decision_remove_lithoid_impact_crater:0 "Crater Restoration"
  decision_remove_lithoid_impact_crater_desc:0 "The surface of this planet has been scarred by a lithoid-bearing meteor. Though the damage to its climate and ecosystem will take time to heal, we can make life easier for ourselves by simply paving over the impact crater."
 
+ # Traditions #Someone please fix these fuckers
+ tr_domination_trust_officers_desc:0 "£job_enforcer£ §Y$job_enforcer_plural$§! reduce £crime£ §Y$MOD_PLANET_CRIME_ADD$§! by an additional §G20%§!."
+ tr_domination_judgment_corps_desc:0 "£job_enforcer£ §Y$job_enforcer_plural$§! reduce £crime£ §Y$MOD_PLANET_CRIME_ADD$§! by an additional §G20%§!."
+ tr_domination_deviancy_protocols_desc:2 "§Y$MOD_PLANET_CRIME_NO_HAPPINESS_ADD$§! is reduced by §G10§! on all our planets."
+
  # Deposits
  d_arcane_generator_new:0 "Arcane Generator"
  d_arcane_generator_new_desc:0 "This ancient machine at the heart of the ringworld has supported our people for generations.\n§YThis deposit will adapt as new districts are built.§!"
