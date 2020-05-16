@@ -2,6 +2,7 @@ version="2.7.*"
 tags={
 	"Balance"
 }
-name="Stéƒãñs®️ ρérƒæçtlÿ ßäЇåñçéd Môð™️"
+name="Stefan's Perfectly Balanced Mod"
+picture="thumbnail.png"
 supported_version="2.7.*"
-remote_file_id="2080939813"
+remote_file_id="2096137740"
