@@ -527,6 +527,7 @@ ap_galactic_force_projection = {
 	modifier = {
 		country_naval_cap_add = 100
 		country_command_limit_add = 20
+		ship_fire_rate_mult = 0.10
 	}
 
 	potential = {

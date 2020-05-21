@@ -7,7 +7,7 @@ artifact_sell_collector = {
 	resources = {
 		category = artifact_actions
 		cost = {
-			minor_artifacts = 1
+			minor_artifacts = 5
 		}
 	}
 	
@@ -27,7 +27,7 @@ artifact_sell_collector = {
 
 	effect = {
 		add_resource = {
-			energy = 250
+			energy = 500
 		}
 	}
 }
