@@ -1,0 +1,23 @@
+TEST = {
+	icon = "GFX_spaceport_module_crew_quarters"
+	construction_days = 180
+	section = "HOMESYSTEM_HANGAR_STARBASE_SECTION"
+
+	initial = yes
+
+	resources = {
+		category = starbase_buildings
+		cost = {
+			alloys = 50
+		}
+
+		upkeep = {
+			energy = 1
+		}
+	}
+
+	orbit_modifier = {
+		ship_orbit_upkeep_mult = -0.25
+	}
+	}
+}

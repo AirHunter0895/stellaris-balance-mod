@@ -2,7 +2,9 @@
  # Civics
  civic_tooltip_shadow_council_effect:0 "Ruler Pop Amenities and Trade Value: §G+10%§!"
  civic_tooltip_technocracy_effects:2 "£building£ §YCapital Buildings§! replace some £job_administrator£ §Y$job_administrator$§! Jobs with £job_head_researcher£ §Y$job_head_researcher_plural$§!\n§Y$job_researcher_plural$§! also produce §Y0.5§! £unity£ Unity"
-  
+ # Space module
+ sm_homeworld_trade:0 "Home Bastion"
+ sm_homeworld_trade:desc:1 "We have dedicated alot of time and resources securing our home system"
  # Job upkeep
  mod_planet_culture_workers_upkeep_mult:0 "Culture Worker Upkeep"
  mod_planet_priests_upkeep_mult:0 "Priest Upkeep"
