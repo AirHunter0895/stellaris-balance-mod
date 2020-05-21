@@ -1,5 +1,5 @@
-homeworld_trade = {
-	icon = "GFX_starbase_trading_hub"
+spbm_vanilla_bastion = {
+	icon = "GFX_starbase_defense_grid_supercomputer"
 	section = "HOMESYSTEM_HANGAR_STARBASE_SECTION"
 	construction_days = 180	
 	initial = yes
@@ -35,8 +35,9 @@ homeworld_trade = {
 		weight = 10000
 		}
 }
-homeworld_energy = {
-	icon = "GFX_solar_panel_network"
+
+spbm_gestalt_bastion = {
+	icon = "GFX_starbase_defense_grid_supercomputer"
 	section = "HOMESYSTEM_HANGAR_STARBASE_SECTION"
 	construction_days = 180	
 	initial = yes

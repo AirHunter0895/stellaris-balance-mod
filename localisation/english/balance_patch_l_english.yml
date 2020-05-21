@@ -1,22 +1,20 @@
 ﻿l_english:
  # Civics
  civic_tooltip_shadow_council_effect:0 "Ruler Pop Amenities and Trade Value: §G+10%§!"
- civic_tooltip_technocracy_effects:2 "£building£ §YCapital Buildings§! replace some £job_administrator£ §Y$job_administrator$§! Jobs with £job_head_researcher£ §Y$job_head_researcher_plural$§!\n§Y$job_researcher_plural$§! also produce §Y0.5§! £unity£ Unity"
+
  # Space module
- sm_homeworld_trade:0 "Home Bastion"
- sm_homeworld_trade_desc:0 "We have dedicated alot of time and resources securing our home system"
+ sm_spbm_vanilla_bastion:0 "Home Bastion"
+ sm_spbm_vanilla_bastion_desc:0 "Our efforts to exploit and secure our home system are reflected in this combined spaceport and defense network."
+ sm_spbm_gestalt_bastion:0 "Home Bastion"
+ sm_spbm_gestalt_bastion_desc:0 "Our efforts to exploit and secure our home system are reflected in this combined spaceport and defense network."
+
  # Job upkeep
  mod_planet_culture_workers_upkeep_mult:0 "Culture Worker Upkeep"
  mod_planet_priests_upkeep_mult:0 "Priest Upkeep"
  
  # Decisions
  decision_remove_lithoid_impact_crater:0 "Crater Restoration"
- decision_remove_lithoid_impact_crater_desc:0 "The surface of this planet has been scarred by a lithoid-bearing meteor. Though the damage to its climate and ecosystem will take time to heal, we can make life easier for ourselves by simply paving over the impact crater."
-
- # Traditions #Someone please fix these fuckers
- tr_domination_trust_officers_desc:0 "£job_enforcer£ §Y$job_enforcer_plural$§! reduce £crime£ §Y$MOD_PLANET_CRIME_ADD$§! by an additional §G20%§!."
- tr_domination_judgment_corps_desc:0 "£job_enforcer£ §Y$job_enforcer_plural$§! reduce £crime£ §Y$MOD_PLANET_CRIME_ADD$§! by an additional §G20%§!."
- tr_domination_deviancy_protocols_desc:2 "§Y$MOD_PLANET_CRIME_NO_HAPPINESS_ADD$§! is reduced by §G10§! on all our planets."
+ decision_remove_lithoid_impact_crater_desc:0 "The surface of this planet has been scarred by a lithoid-bearing meteor. Though the damage to its climate and ecosystem will take time to heal, we can make life easier for ourselves in the meantime by simply paving over the impact crater."
 
  # Deposits
  d_arcane_generator_new:0 "Arcane Generator"

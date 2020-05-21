@@ -137,7 +137,7 @@ researcher = {
 			unity = 0.5
 		}
 		upkeep = {
-			consumer_goods = 2
+			consumer_goods = 4
 		}
 		upkeep = {
 			trigger = {
@@ -1565,7 +1565,8 @@ healthcare = {
 
 	planet_modifier = {
 		planet_amenities_add = 5
-		pop_growth_speed = 0.10
+		pop_growth_speed = 0.05
+		pop_environment_tolerance = 0.05
 	}
 
 	resources = {

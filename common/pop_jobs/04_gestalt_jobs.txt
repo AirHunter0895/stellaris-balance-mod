@@ -342,7 +342,7 @@ brain_drone = {
 			society_research = 4
 		}
 		upkeep = {
-			minerals = 6
+			minerals = 12
 		}
 		upkeep = {
 			trigger = {
@@ -427,7 +427,7 @@ calculator = {
 			society_research = 4
 		}
 		upkeep = {
-			energy = 4
+			energy = 12
 		}
 		upkeep = {
 			trigger = {
