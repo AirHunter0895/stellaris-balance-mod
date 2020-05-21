@@ -258,24 +258,24 @@ trait_robot_repurposed_hardware = {
 }
 
 trait_robot_mass_produced = {
-	cost = 3
+	cost = 2
 	opposites = { "trait_robot_custom_made" }
 
 	allowed_archetypes = { ROBOT MACHINE }
 
 	modifier = {
-		pop_assembly_speed = 0.15
+		pop_assembly_speed = 0.10
 	}
 }
 
 trait_robot_custom_made = {
-	cost = -3
+	cost = -2
 	opposites = { "trait_robot_mass_produced" }
 
 	allowed_archetypes = { ROBOT MACHINE }
 
 	modifier = {
-		pop_assembly_speed = -0.15
+		pop_assembly_speed = -0.10
 	}
 	ai_weight = {
 		factor = 0

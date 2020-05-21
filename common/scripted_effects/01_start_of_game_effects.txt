@@ -1272,7 +1272,6 @@ generate_start_buildings_and_districts = {
 		add_district = district_rw_farming
 		add_deposit = d_arcane_generator
 		add_deposit = d_shattered_ring_superblocker
-		add_deposit = d_shattered_ring_superblocker3
 		add_deposit = d_decrepit_tunnels_1
 		add_deposit = d_decrepit_tunnels_2
 		add_deposit = d_decrepit_tunnels_3
@@ -1980,7 +1979,7 @@ void_dweller_home_planet_setup = {
 				add_district = district_hab_commercial
 			}
 			else = {
-				add_district = district_hab_mining
+				add_building = building_holo_theatres
 				add_district = district_hab_mining
 			}
 

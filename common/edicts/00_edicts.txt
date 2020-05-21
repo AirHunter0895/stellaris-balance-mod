@@ -867,11 +867,16 @@ greater_than_ourselves = {
 	}
 
 	potential = {
-		is_galactic_community_member = yes
 		OR = {
-			is_active_resolution = "resolution_greatergood_greater_than_ourselves"
-			is_active_resolution = "resolution_greatergood_balance_in_the_middle"
-			is_active_resolution = "resolution_greatergood_universal_prosperity_mandate"
+			has_valid_civic = civic_beacon_of_liberty
+			AND = {
+				is_galactic_community_member = yes
+				OR = {
+					is_active_resolution = "resolution_greatergood_greater_than_ourselves"
+					is_active_resolution = "resolution_greatergood_balance_in_the_middle"
+					is_active_resolution = "resolution_greatergood_universal_prosperity_mandate"
+				}
+			}
 		}
 	}
 

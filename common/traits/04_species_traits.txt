@@ -826,7 +826,7 @@ trait_lithoid_scintillating = {
 
 	opposites = { "trait_lithoid_volatile_excretions" "trait_lithoid_gaseous_byproducts" }
 	allowed_archetypes = { LITHOID }
-	custom_tooltip = TRAIT_LITHOID_SCINTILLATING_EFFECT
+	custom_tooltip = TRAIT_LITHOID_SCINTILLATING2_EFFECT
 
 	slave_cost = {
 		energy = 100
@@ -839,7 +839,7 @@ trait_lithoid_gaseous_byproducts = {
 
 	opposites = { "trait_lithoid_volatile_excretions" "trait_lithoid_scintillating" }
 	allowed_archetypes = { LITHOID }
-	custom_tooltip = TRAIT_LITHOID_GASEOUS_BYPRODUCTS_EFFECT
+	custom_tooltip = TRAIT_LITHOID_GASEOUS_BYPRODUCTS2_EFFECT
 
 	slave_cost = {
 		energy = 100
@@ -852,7 +852,7 @@ trait_lithoid_volatile_excretions = {
 
 	opposites = { "trait_lithoid_gaseous_byproducts" "trait_lithoid_scintillating" }
 	allowed_archetypes = { LITHOID }
-	custom_tooltip = TRAIT_LITHOID_VOLATILE_EXCRETIONS_EFFECT
+	custom_tooltip = TRAIT_LITHOID_VOLATILE_EXCRETIONS2_EFFECT
 
 	slave_cost = {
 		energy = 100
@@ -870,6 +870,7 @@ trait_void_dweller_1 = {
 	sorting_priority = 30
 	potential_crossbreeding_chance = 0.33
 	modifier = {
+		planet_jobs_produces_mult = 0.05
 		pop_housing_usage_mult = -0.15
 		pop_growth_speed = -0.15
 	}
@@ -889,7 +890,8 @@ trait_void_dweller_2 = {
 	sorting_priority = 30
 	potential_crossbreeding_chance = 0.33
 	modifier = {
-		pop_growth_speed = -0.6
+		planet_jobs_produces_mult = -0.10
+		pop_growth_speed = -0.40
 	}
 	ai_weight = {
 		weight = 0

@@ -56,7 +56,7 @@ civic_hive_divided_attention = {
 	potential = { authority = { value = auth_hive_mind } }
 	random_weight = { base = 5 }
 	modifier = {
-		country_admin_cap_mult = 0.20
+		country_edict_cap_add = 2
 	}
 }
 
@@ -85,7 +85,7 @@ civic_hive_pooled_knowledge = {
 	modifier = {
 		leader_skill_levels = 1
 		species_leader_exp_gain = 0.25
-		leader_age = 20
+		planet_jobs_complex_drone_produces_mult = 0.05
 	}
 }
 
@@ -318,7 +318,7 @@ civic_machine_ota_updates = {
 	potential = { authority = { value = auth_machine_intelligence } }
 	random_weight = { base = 5 }
 	modifier = {
-		empire_size_pops_mult = -0.30
+		country_admin_cap_mult = 0.20
 		planet_stability_add = 5
 	}
 }
