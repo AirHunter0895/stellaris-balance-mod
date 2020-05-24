@@ -334,7 +334,7 @@ feral_overload_00 = {
 	icon_frame = 1
 	planet_crime_add = 10
 	pop_happiness = -0.10
-	pop_growth_speed = 1.25
+	pop_growth_speed = 0.2
 }
 
 feral_overload_01 = {
@@ -342,14 +342,14 @@ feral_overload_01 = {
 	icon_frame = 1
 	planet_crime_add = 25
 	pop_happiness = -0.25
-	pop_growth_speed = 2
+	pop_growth_speed = 0.35
 }
 
 feral_overload_02 = {
 	icon = "gfx/interface/icons/planet_modifiers/pm_microscopic_life.dds"
 	icon_frame = 1
 	pop_happiness = -0.05
-	pop_growth_speed = 2
+	pop_growth_speed = 0.2
 }
 
 the_evermore_modifier = {
