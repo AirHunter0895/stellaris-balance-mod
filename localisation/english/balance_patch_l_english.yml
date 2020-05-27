@@ -8,6 +8,10 @@
  sm_spbm_gestalt_bastion:0 "Home Bastion"
  sm_spbm_gestalt_bastion_desc:0 "Our efforts to exploit and secure our home system are reflected in this combined spaceport and defense network."
 
+ # Tech
+ tech_home_bastion:0 "Home Defense"
+ tech_home_bastion_desc:0 "We have spent many years researching a defense system to defend our most important world"
+
  # Job upkeep
  mod_planet_culture_workers_upkeep_mult:0 "Culture Worker Upkeep"
  mod_planet_priests_upkeep_mult:0 "Priest Upkeep"

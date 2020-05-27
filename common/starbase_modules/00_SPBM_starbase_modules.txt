@@ -5,9 +5,9 @@ spbm_vanilla_bastion = {
 	initial = yes
 	potential = {
 		exists = owner
-		always = yes
 		owner = {
 			is_gestalt = no
+			not = {has_technology = tech_home_bastion}
 		}
 		
 	}
@@ -43,9 +43,9 @@ spbm_gestalt_bastion = {
 	initial = yes
 	potential = {
 		exists = owner
-		always = yes
 		owner = {
 			is_gestalt = yes
+			not = {has_technology = tech_home_bastion}
 		}
 		
 	}

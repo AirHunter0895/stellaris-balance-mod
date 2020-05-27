@@ -1,0 +1,7 @@
+
+tech_home_bastion = {
+	area = engineering
+	cost = 1000
+	tier = 0
+	category = { voidcraft }
+}

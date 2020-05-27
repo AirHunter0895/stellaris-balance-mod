@@ -61,3 +61,14 @@ country_event = {
 		}
 	}
 }
+country_event = {
+	id = spbm.3
+	is_triggered_only = yes
+	hide_window = yes
+	
+	immediate = {
+		every_playable_country = {
+			give_technology = { tech = tech_home_bastion }
+			}
+		}
+	}
