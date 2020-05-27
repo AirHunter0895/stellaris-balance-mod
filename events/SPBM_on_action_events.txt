@@ -68,7 +68,7 @@ country_event = {
 	
 	immediate = {
 		every_playable_country = {
-			give_technology = { tech = tech_home_bastion }
+			give_technology = { tech = "tech_home_bastion" message = no }
 			}
 		}
 	}
