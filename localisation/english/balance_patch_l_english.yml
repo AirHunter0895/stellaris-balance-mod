@@ -1,7 +1,7 @@
 ﻿l_english:
  # Civics
- civic_tooltip_shadow_council_effect:0 "Ruler Pop Amenities and Trade Value: §G+10%§!"
-
+ civic_tooltip_shadow_council_effect:0 "Ruler Pop Amenities and Unity Output: §G+20%§!"
+ civic_tooltip_SPBM_private_military_companies_effects:0 "£job_soldier£ §Y$job_soldier_plural$§! and £job_enforcer£ §Y$job_enforcer_plural$§! also produce §Y2§! £trade_value£ §Y$TRADE_VALUE$§!"
  # Space module
  sm_spbm_vanilla_bastion:0 "Home Bastion"
  sm_spbm_vanilla_bastion_desc:0 "Our efforts to exploit and secure our home system are reflected in this combined spaceport and defense network."

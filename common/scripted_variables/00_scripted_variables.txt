@@ -148,13 +148,13 @@
 @base_moon_distance = 10
 
 # TECH COSTS
-@tier1cost1 = 2000
-@tier1cost2 = 2500
-@tier1cost3 = 3000
+@tier1cost1 = 3000
+@tier1cost2 = 3500
+@tier1cost3 = 4000
 
-@tier2cost1 = 4000
-@tier2cost2 = 5000
-@tier2cost3 = 6000
+@tier2cost1 = 4500
+@tier2cost2 = 5500
+@tier2cost3 = 6500
 
 @tier3cost1 = 8000
 @tier3cost2 = 10000
