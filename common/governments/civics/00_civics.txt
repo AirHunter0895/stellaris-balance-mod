@@ -80,6 +80,7 @@ civic_imperial_cult = {
 }
 
 civic_beacon_of_liberty = {
+	description = "civic_tooltip_beacon_of_liberty_effects"
 	potential = {
 		ethics = { NOT = { value = ethic_gestalt_consciousness } }
 		authority = { NOT = { value = auth_corporate } }

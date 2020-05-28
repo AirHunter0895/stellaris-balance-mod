@@ -2,7 +2,7 @@
 @minor_artifact_decision_duration = 3600
 
 
-# overwrite to reduce payout
+# overwrite to increase cost
 artifact_sell_collector = {
 	resources = {
 		category = artifact_actions
