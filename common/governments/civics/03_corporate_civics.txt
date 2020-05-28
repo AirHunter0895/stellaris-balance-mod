@@ -133,7 +133,7 @@ civic_criminal_heritage = {
 		}
 	}
 	modifier = {
-		planet_branch_offices_cost_mult = -0.33
+		planet_branch_offices_cost_mult = -0.25
 	}
 
 	description = "civic_tooltip_criminal_heritage_effects"

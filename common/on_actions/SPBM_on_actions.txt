@@ -1,4 +1,10 @@
 # No scope, like on_game_start
+on_game_start_country = {
+	events = {
+		spbm.3
+	}
+}
+
 on_five_year_pulse = {
 	events = {
 		shattered.1
