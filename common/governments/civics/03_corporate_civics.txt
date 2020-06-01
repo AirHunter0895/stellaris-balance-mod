@@ -151,9 +151,9 @@ civic_private_military_companies = {
 			}
 		}
 	}
+	description = "civic_tooltip_SPBM_private_military_companies_effects"
 	modifier = {
 		army_starting_experience_add = 100
-		army_damage_mult = 0.2
 		armies_upkeep_mult = -0.2
 	}
 }

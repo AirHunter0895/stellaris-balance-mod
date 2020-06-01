@@ -944,6 +944,15 @@ soldier = {
 		}
 	}
 
+	triggered_planet_modifier = { #Stefan's Balance Mod: from Private Military Companies civic
+		potential = {
+			has_civic = civic_private_military_companies
+		}
+		modifier = {
+			trade_value_add = 2
+		}
+	}
+
 	possible_pre_triggers = {
 		has_owner = yes
 		is_being_purged = no

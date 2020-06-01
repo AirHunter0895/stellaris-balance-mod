@@ -61,12 +61,12 @@ head_researcher = {
 		}
 	}
 
-	triggered_planet_modifier = {
+	triggered_planet_modifier = { #for shadow council 20% ruler amenity output
 		potential = {
 			owner = { has_valid_civic = civic_shadow_council }
 		}
 		modifier = {
-			planet_amenities_add = 0.5
+			planet_amenities_add = 1
 		}
 	}
 	
@@ -194,6 +194,13 @@ high_priest = {
 				owner = { has_valid_civic = civic_exalted_priesthood }
 			}
 			unity = 1
+		}	
+		produces = { #for shadow council 20% unity ruler output
+			trigger = {
+				exists = owner
+				owner = { has_valid_civic = civic_shadow_council }
+			}
+			unity = 1
 		}				
 	}
 	
@@ -221,12 +228,12 @@ high_priest = {
 		}
 	}	
 
-	triggered_planet_modifier = {
+	triggered_planet_modifier = { #for shadow council 20% ruler amenity output
 		potential = {
 			owner = { has_valid_civic = civic_shadow_council }
 		}
 		modifier = {
-			planet_amenities_add = 0.5
+			planet_amenities_add = 1
 		}
 	}
 	
@@ -321,6 +328,13 @@ administrator = {
 		produces = {
 			unity = 3
 		}
+		produces = { #for shadow council 20% unity ruler output
+			trigger = {
+				exists = owner
+				owner = { has_valid_civic = civic_shadow_council }
+			}
+			unity = 0.6
+		}	
 	}
 	
 	planet_modifier = {
@@ -347,12 +361,12 @@ administrator = {
 		}
 	}	
 
-	triggered_planet_modifier = {
+	triggered_planet_modifier = { #for shadow council 20% ruler amenity output
 		potential = {
 			owner = { has_valid_civic = civic_shadow_council }
 		}
 		modifier = {
-			planet_amenities_add = 0.8
+			planet_amenities_add = 1.6
 		}
 	}
 	
@@ -438,6 +452,13 @@ noble = {
 		produces = {
 			unity = 3
 		}
+		produces = { #for shadow council 20% unity ruler output
+			trigger = {
+				exists = owner
+				owner = { has_valid_civic = civic_shadow_council }
+			}
+			unity = 0.6
+		}
 	}
 	
 	planet_modifier = {
@@ -465,12 +486,12 @@ noble = {
 		}
 	}	
 
-	triggered_planet_modifier = {
+	triggered_planet_modifier = { #for shadow council 20% ruler amenity output
 		potential = {
 			owner = { has_valid_civic = civic_shadow_council }
 		}
 		modifier = {
-			planet_amenities_add = 0.8
+			planet_amenities_add = 1.6
 		}
 	}
 		
@@ -594,13 +615,12 @@ merchant = {
 		}
 	}
 
-	triggered_planet_modifier = {
+	triggered_planet_modifier = { #for shadow council 20% ruler amenity output
 		potential = {
 			owner = { has_valid_civic = civic_shadow_council }
 		}
 		modifier = {
-			planet_amenities_add = 0.5
-			trade_value_add = 0.8
+			planet_amenities_add = 1
 		}
 	}
 	
@@ -687,6 +707,13 @@ executive = {
 		category = planet_executives
 		produces = {
 			unity = 2
+		}
+		produces = { #for shadow council 20% unity ruler output
+			trigger = {
+				exists = owner
+				owner = { has_valid_civic = civic_shadow_council }
+			}
+			unity = 0.4
 		}
 	}	
 	

@@ -1049,7 +1049,7 @@ irassian_energy = {
 ##########################################################################
 
 skill_admiral = {
-	ship_fire_rate_mult = 0.03
+	ship_fire_rate_mult = 0.04 #Stefan's Perfectly Balanced Mod: changed from base game 0.03
 }
 
 skill_general = {
@@ -1068,9 +1068,10 @@ skill_governor = {
 	planet_crime_add = -3
 }
 
-skill_ruler = {
+skill_ruler = { #Stefan's Perfectly Balanced Mod: added +4% unity per level, +1 stab per level
 	edict_length_mult = 0.05
-	country_unity_produces_mult = 0.03
+	country_unity_produces_mult = 0.04
+	planet_stability_add = 1
 }
 
 leader_skills_spawn = {

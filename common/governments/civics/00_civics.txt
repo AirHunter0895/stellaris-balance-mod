@@ -157,7 +157,7 @@ civic_philosopher_king = {
 	random_weight = { base = 5 }
 	modifier = {
 		ruler_skill_levels = 2
-		species_leader_exp_gain = 0.25
+		species_leader_exp_gain = 0.33
 	}
 }
 
@@ -185,7 +185,7 @@ civic_meritocracy = {
 	random_weight = { base = 5 }
 	modifier = {
 		leader_skill_levels = 1
-		planet_jobs_specialist_produces_mult = 0.10
+		planet_jobs_specialist_produces_mult = 0.075
 	}
 }
 
@@ -256,6 +256,7 @@ civic_feudal_realm = {
 	description = "civic_tooltip_feudal_realm_effects"
 	modifier = {
 		country_subject_power_penalty_mult = -0.5
+		country_insult_efficiency = 0.20
 	}
 }
 
@@ -445,6 +446,7 @@ civic_cutthroat_politics = {
 	}
 	random_weight = { base = 5 }
 	modifier = {
+		country_base_influence_produces_add = 0.5
 		edicts_cost_mult = -0.25
 	}
 }
@@ -524,7 +526,7 @@ civic_shadow_council = {
 		}
 	}
 	random_weight = { base = 5 }
-	description = "civic_tooltip_shadow_council_effect"
+	description = "civic_tooltip_shadow_council_effect" # provides +20% ruler amnenity and unity output
 	modifier = {
 		planet_jobs_ruler_produces_mult = 0.10
 		country_election_influence_cost_mult = -0.75
