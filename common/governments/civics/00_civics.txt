@@ -526,9 +526,8 @@ civic_shadow_council = {
 		}
 	}
 	random_weight = { base = 5 }
-	description = "civic_tooltip_shadow_council_effect" # provides +20% ruler amnenity and unity output
+	description = "civic_tooltip_shadow_council_effect" # provides +2 amenities per ruler job
 	modifier = {
-		planet_jobs_ruler_produces_mult = 0.10
 		country_election_influence_cost_mult = -0.75
 	}
 }
@@ -908,7 +907,6 @@ civic_barbaric_despoilers = {
 	modifier = {
 		starbase_shipyard_build_cost_mult = -0.15
 		country_claim_influence_cost_mult = 0.25		
-		# TODO: Make the wargoal scale with pops instead of planets, give a monthly income instead of a lump sum, and impose a harsher penalty to the victim.
 	}
 	modification = no
 	random_weight = {

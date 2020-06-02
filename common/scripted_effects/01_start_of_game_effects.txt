@@ -1791,12 +1791,12 @@ generate_home_planet_final_pass = {
 		}
 		owner = {
 			capital_scope = {
-				add_deposit = d_lithoid_crater
+				add_deposit = d_lithoid_crater_large
 				add_deposit = d_buried_lithoids
 				add_deposit = d_buried_lithoids
 				add_deposit = d_buried_lithoids
 				add_deposit = d_buried_lithoids
-				add_modifier = { modifier = lithoid_crater }
+				add_modifier = { modifier = lithoid_crater2 }
 			}
 		}
 	}

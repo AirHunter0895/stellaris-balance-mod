@@ -426,7 +426,8 @@ capacity_subsidies = {
 	}
 
 	modifier = {
-		planet_technician_produces_mult = 0.25
+		planet_technicians_energy_produces_add = 1
+		custom_tooltip = edict_capacity_subsidies_tooltip
 		show_only_custom_tooltip = no
 	}
 
@@ -461,7 +462,7 @@ mining_subsidies = {
 	}
 
 	modifier = {
-		planet_miners_produces_mult = 0.25 # Note: Also affects organic special resource miners!
+		planet_miners_minerals_produces_add = 1
 		custom_tooltip = edict_mining_subsidies_tooltip
 		show_only_custom_tooltip = no
 	}
@@ -497,7 +498,7 @@ farming_subsidies = {
 	}
 
 	modifier = {
-		planet_farmers_produces_mult = 0.25
+		planet_farmers_food_produces_add = 1
 		custom_tooltip = edict_farming_subsidies_tooltip
 		show_only_custom_tooltip = no
 	}
@@ -533,7 +534,7 @@ industrial_subsidies = {
 	}
 
 	modifier = {
-		planet_artisans_produces_mult = 0.20
+		planet_artisans_consumer_goods_produces_add = 2
 		custom_tooltip = edict_industrial_subsidies_tooltip
 		show_only_custom_tooltip = no
 	}
@@ -577,7 +578,7 @@ forge_subsidies = {
 	}
 
 	modifier = {
-		planet_metallurgists_produces_mult = 0.10
+		planet_metallurgists_alloys_produces_add = 1
 		custom_tooltip = edict_forge_subsidies_tooltip
 		show_only_custom_tooltip = no
 	}
@@ -613,7 +614,7 @@ research_subsidies = {
 	}
 
 	modifier = {
-		planet_researchers_produces_mult = 0.10
+		all_technology_research_speed = 0.10
 		custom_tooltip = edict_research_subsidies_tooltip
 		show_only_custom_tooltip = no
 	}

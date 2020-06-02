@@ -16,3 +16,35 @@ planet_priests = {
 		upkeep
 	}
 }
+
+planet_metallurgists = {
+	parent = planet_jobs
+	generate_add_modifiers = {
+		produces
+		upkeep
+	}
+}
+
+planet_artisans = {
+	parent = planet_jobs
+	generate_add_modifiers = {
+		produces
+		upkeep
+	}
+}
+
+planet_technician = {
+	parent = planet_jobs
+	generate_add_modifiers = {
+		produces
+		upkeep
+	}
+}
+
+planet_farmers = {
+	parent = planet_jobs
+	generate_add_modifiers = {
+		produces
+		upkeep
+	}
+}

@@ -61,6 +61,7 @@ country_event = {
 		}
 	}
 }
+
 country_event = {
 	id = spbm.3
 	is_triggered_only = yes
@@ -69,6 +70,36 @@ country_event = {
 	immediate = {
 		every_playable_country = {
 			give_technology = { tech = "tech_home_bastion" message = no }
-			}
 		}
 	}
+}
+
+# Prevent colonisation+resettlement abuse by penalising recolonisation.
+planet_event = {
+	id = spbm.4
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		NOT = { has_modifier = spbm_deserted }
+	}
+
+	immediate = {
+		add_modifier = { modifier = spbm_deserted days = 1800 }
+	}
+}
+
+# Once it's done its job, clear the modifier so that it doesn't clog up the view
+planet_event = {
+	id = spbm.5
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		has_modifier = spbm_deserted
+	}
+
+	immediate = {
+		remove_modifier = spbm_deserted
+	}
+}

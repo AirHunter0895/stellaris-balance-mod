@@ -131,6 +131,15 @@ technician = {
 			}
 			energy = 2
 		}
+		upkeep = {
+			trigger = {
+				exists = owner
+				owner = {
+					has_edict = capacity_subsidies
+				}
+			}
+			minerals = 0.5
+		}
 	}
 	weight = {
 		weight = @worker_job_weight

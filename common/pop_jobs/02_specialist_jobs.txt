@@ -435,7 +435,7 @@ foundry = {
 					has_edict = forge_subsidies
 				}
 			}
-			energy = 1
+			minerals = 4
 		}
 	}
 
@@ -813,7 +813,7 @@ artisan = {
 					has_edict = industrial_subsidies
 				}
 			}
-			energy = 2
+			minerals = 4
 		}
 	}
 

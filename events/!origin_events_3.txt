@@ -1,0 +1,33 @@
+################################
+#
+# Origin Events
+#
+###############################
+namespace = origin
+
+#Lithoid origin
+planet_event = {
+	id = origin.3010
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		FROM = { 
+			exists = FROM
+			is_ship_size = lithoid_colonizer
+		} 
+		NOR = { # Prevent lithoid meteor spamming
+			has_deposit = d_lithoid_crater_small
+			has_deposit = d_lithoid_crater_large 
+			has_modifier = lithoid_crater2
+		}
+	}
+
+	immediate = {
+		add_deposit = d_lithoid_crater_small
+		add_deposit = d_buried_lithoids
+		add_deposit = d_buried_lithoids
+		add_modifier = { modifier = lithoid_crater2 }
+	}
+}

@@ -9,7 +9,7 @@ decision_remove_lithoid_impact_crater = {
 	}
 	
 	potential = {
-		has_modifier = lithoid_crater
+		has_modifier = lithoid_crater2
 	}
 
 	allow = {
@@ -17,7 +17,7 @@ decision_remove_lithoid_impact_crater = {
 	}
 	
 	effect = {
-		remove_modifier = lithoid_crater
+		remove_modifier = lithoid_crater2
 	}
 	
 	ai_weight = {

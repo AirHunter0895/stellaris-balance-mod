@@ -231,6 +231,9 @@ tr_domination_judgment_corps = {
 		trigger = {
 			is_machine_empire = yes
 		}
+		modifier = {
+			planet_crime_no_happiness_add = -20
+		}
 		weight = {
 			factor = 1
 		}
@@ -243,6 +246,9 @@ tr_domination_judgment_corps = {
 		inherit_name = no
 		trigger = {
 			is_hive_empire = yes
+		}
+		modifier = {
+			planet_crime_no_happiness_add = -20
 		}
 		weight = {
 			factor = 1

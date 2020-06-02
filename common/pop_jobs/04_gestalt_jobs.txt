@@ -342,7 +342,7 @@ brain_drone = {
 			society_research = 4
 		}
 		upkeep = {
-			minerals = 12
+			minerals = 6
 		}
 		upkeep = {
 			trigger = {
@@ -427,7 +427,7 @@ calculator = {
 			society_research = 4
 		}
 		upkeep = {
-			energy = 12
+			energy = 4
 		}
 		upkeep = {
 			trigger = {
@@ -515,7 +515,7 @@ artisan_drone = {
 					has_edict = industrial_subsidies
 				}
 			}
-			energy = 2
+			minerals = 4
 		}
 	}
 
@@ -570,7 +570,7 @@ fabricator = {
 					has_edict = forge_subsidies
 				}
 			}
-			energy = 1
+			minerals = 4
 		}
 	}
 
@@ -625,7 +625,7 @@ alloy_drone = {
 					has_edict = forge_subsidies
 				}
 			}
-			energy = 1
+			minerals = 4
 		}
 	}
 
@@ -805,20 +805,6 @@ patrol_drone = {
 
 	planet_modifier = {
 		planet_crime_no_happiness_add = -20
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			OR = {
-				owner = { has_swapped_tradition = tr_domination_divergence_supression }
-				owner = { has_swapped_tradition = tr_domination_deviancy_protocols }
-			}
-		}
-		modifier = {
-			planet_crime_no_happiness_add = -5
-			planet_stability_add = 1
-		}
 	}
 
 	pop_modifier = {
@@ -1197,6 +1183,15 @@ technician_drone = {
 				}
 			}
 			energy = 2
+		}
+		upkeep = {
+			trigger = {
+				exists = owner
+				owner = {
+					has_edict = capacity_subsidies
+				}
+			}
+			minerals = 0.5
 		}
 	}
 
