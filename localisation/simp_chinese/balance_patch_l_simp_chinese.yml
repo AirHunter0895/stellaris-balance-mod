@@ -1,15 +1,28 @@
 ﻿l_simp_chinese:
  # Civics
- civic_tooltip_shadow_council_effect:0 "Ruler Pop Amenities and Trade Value: §G+10%§!"
- civic_tooltip_technocracy_effects:2 "£building£ §YCapital Buildings§! replace some £job_administrator£ §Y$job_administrator$§! Jobs with £job_head_researcher£ §Y$job_head_researcher_plural$§!\n§Y$job_researcher_plural$§! also produce §Y0.5§! £unity£ Unity"
-  
- # Job upkeep
+ civic_tooltip_shadow_council_effect:0 "£pop_cat_ruler£ §Y$pop_cat_ruler_plural$ also produce §Y2§! £amenities£ §YAmenities§!"
+ civic_tooltip_private_military_companies_effects:0 "£job_soldier£ §Y$job_soldier_plural$§! and £job_enforcer£ §Y$job_enforcer_plural$§! also produce §Y2§! £trade_value£ §Y$TRADE_VALUE$§!"
+ civic_tooltip_beacon_of_liberty_effects:0 "§YUnlocks Edict:§! Greater Than Ourselves"
+
+ # Station Modules
+ sm_spbm_vanilla_bastion:0 "Home Bastion"
+ sm_spbm_vanilla_bastion_desc:0 "Our efforts to exploit and secure our home system are reflected in this combined spaceport and defense network."
+ sm_spbm_gestalt_bastion:0 "Home Bastion"
+ sm_spbm_gestalt_bastion_desc:0 "Our efforts to exploit and secure our home system are reflected in this combined spaceport and defense network."
+
+ # Tech
+ tech_home_bastion:0 "Home Defense"
+ tech_home_bastion_desc:0 "We have spent many years researching a defense system to defend our most important world"
+
+ # Economic Categories
  mod_planet_culture_workers_upkeep_mult:0 "Culture Worker Upkeep"
  mod_planet_priests_upkeep_mult:0 "Priest Upkeep"
+ mod_country_base_minor_artifacts_produces_add:0 "Monthly £minor_artifacts£ §YMinor Artifacts§!"
+ mod_deposit_blockers_time_cost_mult:0 "Clear Blocker Time"
  
  # Decisions
  decision_remove_lithoid_impact_crater:0 "Crater Restoration"
- decision_remove_lithoid_impact_crater_desc:0 "The surface of this planet has been scarred by a lithoid-bearing meteor. Though the damage to its climate and ecosystem will take time to heal, we can make life easier for ourselves by simply paving over the impact crater."
+ decision_remove_lithoid_impact_crater_desc:0 "The surface of this planet has been scarred by a lithoid-bearing meteor. Though the damage to its climate and ecosystem will take time to heal, we can make life easier for ourselves in the meantime by simply paving over the impact crater."
 
  # Deposits
  d_arcane_generator_new:0 "Arcane Generator"
@@ -34,6 +47,22 @@
  d_nuked_battlefield2_desc:1 "Few organisms can survive in this desolate, irradiated wasteland."
  d_nuked_battlefield3:1 "Radioactive Wasteland"
  d_nuked_battlefield3_desc:1 "Few organisms can survive in this desolate, irradiated wasteland."
+ d_lithoid_crater_large:0 "Massive Crater"
+ d_lithoid_crater_large_desc:0 "The impact site of the meteorite which brought Lithoids to this planet."
+ d_lithoid_crater_small:0 "Massive Crater"
+ d_lithoid_crater_small_desc:0 "The impact site of the meteorite which brought Lithoids to this planet." 
+
+ # Modifiers
+ synthetic_growth_penalty:0 "The Flesh Is Weak"
+ synthetic_growth_penalty_desc:0 "Since our ascension to synthetic shells, we have found fewer and fewer reasons to encourage the growth of our organic brethren."
+ prosp_uni_mod2:0 "Prosperous Unification"
+ prosp_uni_mod2_desc:0 "Since Unification Day the economy has been booming!"
+ lithoid_crater2:0 "Lithoid Crater"
+ lithoid_crater2_desc:0 "This large crater is the result of a Lithoid-bearing meteorite slamming into the planet."
+ spbm_deserted:0 "Recently Deserted"
+ spbm_deserted_desc:0 "This world was recently deserted by its inhabitats. The remnants of their colony serve as a grim reminder for those who would try the same."
+ raided_new:0 "Raided"
+ raided_new_desc: "We failed to protect ourselves from the despoilers. It will take us some time to recover."
 
  # Buildings
  building_sanctuary_of_sin:0 "Sanctuary of Sin"
@@ -55,7 +84,7 @@
  spbm.2.name:0 "Crime Wave Subsides on [Root.GetName]!"
  spbm.2.desc:0 "With the significant reduction of crime on §H[Root.GetName]§!, we no longer have any need to curry favour with the local crime lords. Our enforcers have already stepped in to arrest the individuals responsible, seize their assets, and destroy what remains of their underground empires."
 
- # Misc
+ # Shattered Ring
  shattered_ring_superblocker_desc:0 "The §YStructural Damage§! is preventing us from fully exploiting this segment."
  shattered_ring_superblocker3_desc:0 "The §Y$d_shattered_ring_superblocker3$§! is preventing us from fully exploiting this segment."
  ringworld_reparation_project:0 "Ringworld Reparation Project"
@@ -64,10 +93,17 @@
  ringworld_restoration_project_DESC:0 "Though it will be a significant task, our engineers believe they can restore this ringworld to optimal condition. Once the preliminary engineering research is complete, we will need a substantial amount of time and alloys to complete the repairs."
  shattered.3.tooltip:0 "We can now repair the §Y$d_shattered_ring_superblocker$§! on [Root.GetName]."
  shattered.7.tooltip:0 "We can now repair the §Y$d_shattered_ring_superblocker3$§! on [Root.GetName]."
- synthetic_growth_penalty:0 "The Flesh Is Weak"
- synthetic_growth_penalty_desc:0 "Since our ascension to synthetic shells, we have found fewer and fewer reasons to encourage the growth of our organic brethren."
- mod_country_base_minor_artifacts_produces_add:0 "Monthly £minor_artifacts£ §YMinor Artifacts§!"
- mod_deposit_blockers_time_cost_mult:0 "Clear Blocker Time"
+
+ # Galactic Doorstep
+ gateway_doorstep:0 "$gateway_final$"
+ gateway_doorstep_DESC:0 "$gateway_final_DESC$"
+ gateway_doorstep_MEGASTRUCTURE_DETAILS:0 "$gateway_0_MEGASTRUCTURE_DETAILS$"
+ gateway_doorstep_ruined:0 "$gateway_ruined$"
+ gateway_doorstep_ruined_DESC:0 "$gateway_ruined_DESC$"
+ gateway_doorstep_ruined_MEGASTRUCTURE_DETAILS:0 ""
+ gateway_doorstep_restored:0 "$gateway_final$"
+ gateway_doorstep_restored_DESC:0 "$gateway_final_DESC$"
 
  # Relics
  relic_cry_core2:0 "Spawns 20 §YXenomorph§! Armies"
+ r_cryo_core2_passive_desc:0 "New colonies start with §Y1§! additional £pop£ Pop\nShip Upkeep: §G-10%§!"
