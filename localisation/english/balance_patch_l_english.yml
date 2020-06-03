@@ -1,7 +1,7 @@
 ﻿l_english:
  # Civics
  civic_tooltip_shadow_council_effect:0 "£pop_cat_ruler£ §Y$pop_cat_ruler_plural$ also produce §Y2§! £amenities£ §YAmenities§!"
- civic_tooltip_SPBM_private_military_companies_effects:0 "£job_soldier£ §Y$job_soldier_plural$§! and £job_enforcer£ §Y$job_enforcer_plural$§! also produce §Y2§! £trade_value£ §Y$TRADE_VALUE$§!"
+ civic_tooltip_private_military_companies_effects:0 "£job_soldier£ §Y$job_soldier_plural$§! and £job_enforcer£ §Y$job_enforcer_plural$§! also produce §Y2§! £trade_value£ §Y$TRADE_VALUE$§!"
  civic_tooltip_beacon_of_liberty_effects:0 "§YUnlocks Edict:§! Greater Than Ourselves"
 
  # Station Modules
@@ -61,6 +61,8 @@
  lithoid_crater2_desc:0 "This large crater is the result of a Lithoid-bearing meteorite slamming into the planet."
  spbm_deserted:0 "Recently Deserted"
  spbm_deserted_desc:0 "This world was recently deserted by its inhabitats. The remnants of their colony serve as a grim reminder for those who would try the same."
+ raided_new:0 "Raided"
+ raided_new_desc: "We failed to protect ourselves from the despoilers. It will take us some time to recover."
 
  # Buildings
  building_sanctuary_of_sin:0 "Sanctuary of Sin"
@@ -82,7 +84,7 @@
  spbm.2.name:0 "Crime Wave Subsides on [Root.GetName]!"
  spbm.2.desc:0 "With the significant reduction of crime on §H[Root.GetName]§!, we no longer have any need to curry favour with the local crime lords. Our enforcers have already stepped in to arrest the individuals responsible, seize their assets, and destroy what remains of their underground empires."
 
- # Misc
+ # Shattered Ring
  shattered_ring_superblocker_desc:0 "The §YStructural Damage§! is preventing us from fully exploiting this segment."
  shattered_ring_superblocker3_desc:0 "The §Y$d_shattered_ring_superblocker3$§! is preventing us from fully exploiting this segment."
  ringworld_reparation_project:0 "Ringworld Reparation Project"
@@ -91,9 +93,16 @@
  ringworld_restoration_project_DESC:0 "Though it will be a significant task, our engineers believe they can restore this ringworld to optimal condition. Once the preliminary engineering research is complete, we will need a substantial amount of time and alloys to complete the repairs."
  shattered.3.tooltip:0 "We can now repair the §Y$d_shattered_ring_superblocker$§! on [Root.GetName]."
  shattered.7.tooltip:0 "We can now repair the §Y$d_shattered_ring_superblocker3$§! on [Root.GetName]."
- gateway_doorstep:0 "Gateway"
- gateway_doorstep_DESC:0 "A conduit through the very fabric of subspace that enables rapid travel to other Gateways."
- gateway_doorstep_MEGASTRUCTURE_DETAILS:0 "A portal through subspace that allows instantaneous travel to other Gateways."
+
+ # Galactic Doorstep
+ gateway_doorstep:0 "$gateway_final$"
+ gateway_doorstep_DESC:0 "$gateway_final_DESC$"
+ gateway_doorstep_MEGASTRUCTURE_DETAILS:0 "$gateway_0_MEGASTRUCTURE_DETAILS$"
+ gateway_doorstep_ruined:0 "$gateway_ruined$"
+ gateway_doorstep_ruined_DESC:0 "$gateway_ruined_DESC$"
+ gateway_doorstep_ruined_MEGASTRUCTURE_DETAILS:0 ""
+ gateway_doorstep_restored:0 "$gateway_final$"
+ gateway_doorstep_restored_DESC:0 "$gateway_final_DESC$"
 
  # Relics
  relic_cry_core2:0 "Spawns 20 §YXenomorph§! Armies"

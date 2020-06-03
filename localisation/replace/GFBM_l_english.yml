@@ -62,5 +62,28 @@
  # Relics
  relic_zro_crystal_passive:0 "The cooldown to §YBreach into the Shroud§! is reduced by §G33%§!."
  relic_rubricator_active:0 "Create §Y25§! £minor_artifacts£Minor Artifacts."
+
+ # Despoilers
+ wg_plunder_accept_them:0 "§Y[From.GetName]§!'s planets are despoiled, reducing their §YMineral§! and §YEnergy§! production and penalising their §YStability§! for §Y10§! years"
+ wg_plunder_accept_us_1:0 "§Y[Root.GetName]§! gains §G+2500§! £energy£ £minerals"
+ wg_plunder_accept_us_2:0 "§Y[Root.GetName]§! gains §G+5000§! £energy£ £minerals"
+ wg_plunder_accept_us_3:0 "§Y[Root.GetName]§! gains §G+7500§! £energy£ £minerals"
+ wg_plunder_accept_us_4:0 "§Y[Root.GetName]§! gains §G+10000§! £energy£ £minerals"
+ wg_plunder_accept_us_5:0 "§Y[Root.GetName]§! gains §G+12500§! £energy£ £minerals"
+ wg_plunder_accept_us_6:0 "§Y[Root.GetName]§! gains §G+15000§! £energy£ £minerals"
+ wg_plunder_accept_us_7:0 "§Y[Root.GetName]§! gains §G+17500§! £energy£ £minerals"
+ wg_plunder_accept_us_8:0 "§Y[Root.GetName]§! gains §G+20000§! £energy£ £minerals"
+ wg_plunder_accept_us_9:0 "§Y[Root.GetName]§! gains §G+22500§! £energy£ £minerals"
+ wg_plunder_accept_us_10:0 "§Y[Root.GetName]§! gains §G+25000§! £energy£ £minerals"
+ wg_plunder_accept_us_11:0 "§Y[Root.GetName]§! gains §G+27500§! £energy£ £minerals"
+ wg_plunder_accept_us_12:0 "§Y[Root.GetName]§! gains §G+30000§! £energy£ £minerals"
+ wg_plunder_accept_us_13:0 "§Y[Root.GetName]§! gains §G+32500§! £energy£ £minerals"
+ wg_plunder_accept_us_14:0 "§Y[Root.GetName]§! gains §G+35000§! £energy£ £minerals"
+ wg_plunder_accept_us_15:0 "§Y[Root.GetName]§! gains §G+37500§! £energy£ £minerals"
+ wg_plunder_accept_us_16:0 "§Y[Root.GetName]§! gains §G+40000§! £energy£ £minerals"
+ wg_plunder_accept_us_17:0 "§Y[Root.GetName]§! gains §G+42500§! £energy£ £minerals"
+ wg_plunder_accept_us_18:0 "§Y[Root.GetName]§! gains §G+45000§! £energy£ £minerals"
+ wg_plunder_accept_us_19:0 "§Y[Root.GetName]§! gains §G+47500§! £energy£ £minerals"
+ wg_plunder_accept_us_20:0 "§Y[Root.GetName]§! gains §G+50000§! £energy£ £minerals"
  
   

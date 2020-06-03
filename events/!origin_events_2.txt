@@ -125,6 +125,39 @@ fleet_event = {
 	}
 }
 
+### Origin - Galactic Doorstep - Origin Events
+
+# Galactic Doorstep - Events 0 - Setup
+country_event = {
+	id = origin.1001
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_origin = origin_galactic_doorstep
+	}
+
+	immediate = {
+		capital_scope = {
+			solar_system = {
+				spawn_megastructure = {
+					name = "NAME_Galactic_Doorstep"
+					type = "gateway_doorstep_ruined"
+					random_pos = yes
+					orbit_angle = 360
+					init_effect = {
+						set_megastructure_flag = doorstep_gateway@root
+						save_event_target_as = doorstep_gateway
+					}
+				}
+			}
+		}
+		set_country_flag = encountered_first_gateway
+		country_event = { id = origin.1000 days = 300 random = 30 }
+	}
+}
+
 # Galactic Doorstep - Events 1 - The Boon
 country_event = {
 	id = origin.1000

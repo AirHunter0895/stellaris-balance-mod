@@ -43,7 +43,7 @@ wg_plunder = {
 				}
 			}		
 			custom_tooltip = wg_plunder_accept_us_1
-			hidden_effect = { add_resource = { energy = 1500 minerals = 1500 consumer_goods = 750 } }
+			hidden_effect = { add_resource = { energy = 2500 minerals = 2500 } }
 		}
 		if = {
 			limit = { 
@@ -53,7 +53,7 @@ wg_plunder = {
 				}
 			}		
 			custom_tooltip = wg_plunder_accept_us_2
-			hidden_effect = { add_resource = { energy = 3000 minerals = 3000 consumer_goods = 1500 } }
+			hidden_effect = { add_resource = { energy = 5000 minerals = 5000 } }
 		}
 		if = {
 			limit = { 
@@ -63,7 +63,7 @@ wg_plunder = {
 				}
 			}		
 			custom_tooltip = wg_plunder_accept_us_3
-			hidden_effect = { add_resource = { energy = 4500 minerals = 4500 consumer_goods = 2250 } }
+			hidden_effect = { add_resource = { energy = 7500 minerals = 7500 } }
 		}
 		if = {
 			limit = { 
@@ -73,7 +73,7 @@ wg_plunder = {
 				}
 			}		
 			custom_tooltip = wg_plunder_accept_us_4
-			hidden_effect = { add_resource = { energy = 6000 minerals = 6000 consumer_goods = 3000 } }
+			hidden_effect = { add_resource = { energy = 10000 minerals = 10000 } }
 		}
 		if = {
 			limit = { 
@@ -83,7 +83,7 @@ wg_plunder = {
 				}
 			}		
 			custom_tooltip = wg_plunder_accept_us_5
-			hidden_effect = { add_resource = { energy = 7500 minerals = 7500 consumer_goods = 3750 } }
+			hidden_effect = { add_resource = { energy = 12500 minerals = 12500 } }
 		}
 		if = {
 			limit = { 
@@ -93,7 +93,7 @@ wg_plunder = {
 				}
 			}		
 			custom_tooltip = wg_plunder_accept_us_6
-			hidden_effect = { add_resource = { energy = 9000 minerals = 9000 consumer_goods = 4500 } }
+			hidden_effect = { add_resource = { energy = 15000 minerals = 15000 } }
 		}
 		if = {
 			limit = { 
@@ -103,7 +103,7 @@ wg_plunder = {
 				}
 			}		
 			custom_tooltip = wg_plunder_accept_us_7
-			hidden_effect = { add_resource = { energy = 10500 minerals = 10500 consumer_goods = 5250 } }
+			hidden_effect = { add_resource = { energy = 17500 minerals = 17500 } }
 		}
 		if = {
 			limit = { 
@@ -113,7 +113,7 @@ wg_plunder = {
 				}
 			}		
 			custom_tooltip = wg_plunder_accept_us_8
-			hidden_effect = { add_resource = { energy = 12000 minerals = 12000 consumer_goods = 6000 } }
+			hidden_effect = { add_resource = { energy = 20000 minerals = 20000 } }
 		}
 		if = {
 			limit = { 
@@ -123,7 +123,7 @@ wg_plunder = {
 				}
 			}		
 			custom_tooltip = wg_plunder_accept_us_9
-			hidden_effect = { add_resource = { energy = 13500 minerals = 13500 consumer_goods = 6750 } }
+			hidden_effect = { add_resource = { energy = 22500 minerals = 22500 } }
 		}
 		if = {
 			limit = { 
@@ -133,7 +133,7 @@ wg_plunder = {
 				}
 			}		
 			custom_tooltip = wg_plunder_accept_us_10
-			hidden_effect = { add_resource = { energy = 15000 minerals = 15000 consumer_goods = 7500 } }
+			hidden_effect = { add_resource = { energy = 25000 minerals = 25000 } }
 		}
 		if = {
 			limit = { 
@@ -143,7 +143,7 @@ wg_plunder = {
 				}
 			}		
 			custom_tooltip = wg_plunder_accept_us_11
-			hidden_effect = { add_resource = { energy = 16500 minerals = 16500 consumer_goods = 8250 } }
+			hidden_effect = { add_resource = { energy = 27500 minerals = 27500 } }
 		}
 		if = {
 			limit = { 
@@ -153,7 +153,7 @@ wg_plunder = {
 				}
 			}		
 			custom_tooltip = wg_plunder_accept_us_12
-			hidden_effect = { add_resource = { energy = 18000 minerals = 18000 consumer_goods = 9000 } }
+			hidden_effect = { add_resource = { energy = 30000 minerals = 30000 } }
 		}
 		if = {
 			limit = { 
@@ -163,7 +163,7 @@ wg_plunder = {
 				}
 			}		
 			custom_tooltip = wg_plunder_accept_us_13
-			hidden_effect = { add_resource = { energy = 19500 minerals = 19500 consumer_goods = 9750 } }
+			hidden_effect = { add_resource = { energy = 32500 minerals = 32500 } }
 		}
 		if = {
 			limit = { 
@@ -173,7 +173,7 @@ wg_plunder = {
 				}
 			}		
 			custom_tooltip = wg_plunder_accept_us_14
-			hidden_effect = { add_resource = { energy = 21000 minerals = 21000 consumer_goods = 10500 } }
+			hidden_effect = { add_resource = { energy = 35000 minerals = 35000 } }
 		}
 		if = {
 			limit = { 
@@ -183,7 +183,7 @@ wg_plunder = {
 				}
 			}		
 			custom_tooltip = wg_plunder_accept_us_15
-			hidden_effect = { add_resource = { energy = 22500 minerals = 22500 consumer_goods = 11250 } }
+			hidden_effect = { add_resource = { energy = 37500 minerals = 37500 } }
 		}
 		if = {
 			limit = { 
@@ -193,7 +193,7 @@ wg_plunder = {
 				}
 			}		
 			custom_tooltip = wg_plunder_accept_us_16
-			hidden_effect = { add_resource = { energy = 24000 minerals = 24000 consumer_goods = 12000 } }
+			hidden_effect = { add_resource = { energy = 40000 minerals = 40000 } }
 		}
 		if = {
 			limit = { 
@@ -203,7 +203,7 @@ wg_plunder = {
 				}
 			}		
 			custom_tooltip = wg_plunder_accept_us_17
-			hidden_effect = { add_resource = { energy = 25500 minerals = 25500 consumer_goods = 12750 } }
+			hidden_effect = { add_resource = { energy = 42500 minerals = 42500 } }
 		}
 		if = {
 			limit = { 
@@ -213,7 +213,7 @@ wg_plunder = {
 				}
 			}		
 			custom_tooltip = wg_plunder_accept_us_18
-			hidden_effect = { add_resource = { energy = 27000 minerals = 27000 consumer_goods = 13500 } }
+			hidden_effect = { add_resource = { energy = 45000 minerals = 45000 } }
 		}
 		if = {
 			limit = { 
@@ -223,17 +223,16 @@ wg_plunder = {
 				}
 			}		
 			custom_tooltip = wg_plunder_accept_us_19
-			hidden_effect = { add_resource = { energy = 28500 minerals = 28500 consumer_goods = 14250 } }
+			hidden_effect = { add_resource = { energy = 47500 minerals = 47500 } }
 		}
 		if = {
 			limit = { 
 				from = {
 					num_pops >= 501
-					num_pops <= 525
 				}
 			}		
 			custom_tooltip = wg_plunder_accept_us_20
-			hidden_effect = { add_resource = { energy = 30000 minerals = 30000 consumer_goods = 15000 } }
+			hidden_effect = { add_resource = { energy = 50000 minerals = 50000 } }
 		}
 		hidden_effect = { from = { add_modifier = { modifier = raided_new days = 3600 } } }
 	}

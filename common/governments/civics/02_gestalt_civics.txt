@@ -66,7 +66,7 @@ civic_hive_strength_of_legions = {
 	modifier = {
 		planet_jobs_simple_drone_produces_mult = 0.05
 		army_damage_mult = 0.20
-		armies_upkeep_mult = -0.33
+		armies_upkeep_mult = -0.20
 	}
 }
 
@@ -336,7 +336,7 @@ civic_machine_warbots = {
 	modifier = {
 		ship_fire_rate_mult = 0.10
 		army_damage_mult = 0.20
-		planet_army_build_speed_mult = 0.33
+		planet_army_build_speed_mult = 0.20
 	}
 }
 
