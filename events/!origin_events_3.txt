@@ -25,9 +25,17 @@ planet_event = {
 	}
 
 	immediate = {
-		add_deposit = d_lithoid_crater_small
 		add_deposit = d_buried_lithoids
 		add_deposit = d_buried_lithoids
-		add_modifier = { modifier = lithoid_crater2 }
+		if = {
+			limit = {
+				NOR = {
+					is_planet_class = pc_habitat
+					is_planet_class = pc_ringworld_habitable
+				}
+			}
+			add_deposit = d_lithoid_crater_small
+			add_modifier = { modifier = lithoid_crater2 }
+		}
 	}
 }

@@ -257,7 +257,7 @@ priest = {
 	resources = {
 		category = planet_priests
 		produces = {
-			unity = 3
+			unity = 4
 			society_research = 2
 		}
 		produces = {
@@ -1108,8 +1108,8 @@ culture_worker = {
 	resources = {
 		category = planet_culture_workers
 		produces = {
-			unity = 3
-			society_research = 3
+			unity = 4
+			society_research = 2
 		}
 		upkeep = {
 			consumer_goods = 2

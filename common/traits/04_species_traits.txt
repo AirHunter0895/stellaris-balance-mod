@@ -872,7 +872,7 @@ trait_void_dweller_1 = {
 	modifier = {
 		planet_jobs_produces_mult = 0.05
 		pop_housing_usage_mult = -0.15
-		pop_growth_speed = -0.15
+		pop_growth_speed = -0.25
 	}
 	ai_weight = {
 		weight = 0
@@ -891,7 +891,7 @@ trait_void_dweller_2 = {
 	potential_crossbreeding_chance = 0.33
 	modifier = {
 		planet_jobs_produces_mult = -0.10
-		pop_growth_speed = -0.40
+		pop_growth_speed = -0.60
 	}
 	ai_weight = {
 		weight = 0

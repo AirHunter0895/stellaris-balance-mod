@@ -32,7 +32,8 @@
  tr_domination_trust_officers_desc:0 "£job_enforcer£ §Y$job_enforcer_plural$§! reduce £crime£ §Y$MOD_PLANET_CRIME_ADD$§! by an additional §G-10§!."
  tr_domination_judgment_corps_desc:0 "$tr_domination_trust_officers_desc$"
  tr_domination_deviancy_protocols_desc:2 "§Y$MOD_PLANET_CRIME_NO_HAPPINESS_ADD$§! is reduced by §G20§! on all our planets."
- tr_domination_adopt_effect:3 "§E$TRADITIONS_ADOPT$:§!\nEdict Cap: §G+1§!."
+ tr_domination_imperious_architecture_desc:2 "£building£ §YCapital Buildings§! provide §G+1§! £housing£ §Y$MOD_PLANET_HOUSING_ADD$§!.\n£building£ §YHousing Buildings§! provide §G+2§! £housing£ §Y$MOD_PLANET_HOUSING_ADD$§! per tier."
+ tr_domination_adopt_effect:3 "§E$TRADITIONS_ADOPT$:§!\n§YEdict Capacity§! increased by §G+1§!."
  tr_diplomacy_open_markets_desc:1 "Empire §Y$MOD_TRADE_VALUE_MULT$§! and §YDiplomatic Weight From Economy§! increased by §G+10%§!."
  tr_diplomacy_secure_shipping_desc:0 "§YBase Trade Protection§! for Trade Routes increased by §G20§!."
  tr_diplomacy_finish_effect:1 "§E$TRADITIONS_FINISH$:§!\nAdopting all $tr_diplomacy_adopt$ will increase our §Y$MOD_COUNTRY_TRUST_CAP_ADD$§! by §G+100§! and our §Y$MOD_COUNTRY_TRUST_GROWTH$§! by §G+33%§!."
@@ -85,5 +86,6 @@
  wg_plunder_accept_us_18:0 "§Y[Root.GetName]§! gains §G+45000§! £energy£ £minerals"
  wg_plunder_accept_us_19:0 "§Y[Root.GetName]§! gains §G+47500§! £energy£ £minerals"
  wg_plunder_accept_us_20:0 "§Y[Root.GetName]§! gains §G+50000§! £energy£ £minerals"
+ war_goal_wg_plunder_desc:0 "War is waged to raid and plunder the enemy. We will not press any claims."
  
   

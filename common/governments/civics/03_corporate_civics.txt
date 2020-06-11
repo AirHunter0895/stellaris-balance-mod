@@ -153,8 +153,8 @@ civic_private_military_companies = {
 	}
 	description = "civic_tooltip_private_military_companies_effects"
 	modifier = {
-		armies_upkeep_mult = -0.2
 		army_damage_mult = 0.2
+		armies_upkeep_mult = -0.2
 	}
 }
 

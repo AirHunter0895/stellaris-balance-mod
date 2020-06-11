@@ -137,6 +137,9 @@ civic_exalted_priesthood = {
 		}
 	}
 	random_weight = { base = 5 }
+	modifier = {
+		planet_priests_upkeep_mult = -0.50
+	}
 }
 
 civic_philosopher_king = {
@@ -528,6 +531,7 @@ civic_shadow_council = {
 	random_weight = { base = 5 }
 	description = "civic_tooltip_shadow_council_effect" # provides +2 amenities per ruler job
 	modifier = {
+		planet_jobs_ruler_produces_mult = 0.20
 		country_election_influence_cost_mult = -0.75
 	}
 }
@@ -905,8 +909,7 @@ civic_barbaric_despoilers = {
 		}
 	}
 	modifier = {
-		starbase_shipyard_build_cost_mult = -0.15
-		country_claim_influence_cost_mult = 0.25		
+		starbase_shipyard_build_cost_mult = -0.10	
 	}
 	modification = no
 	random_weight = {

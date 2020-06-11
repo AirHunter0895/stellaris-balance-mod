@@ -13,6 +13,9 @@ wg_plunder = {
 		demand_surrender
 	}
 	
+	cede_claims = no
+	show_claims_in_description = no
+	
 	surrender_acceptance = -25
 
 	potential = {

@@ -1,6 +1,6 @@
 ﻿l_english:
  # Civics
- civic_tooltip_shadow_council_effect:0 "£pop_cat_ruler£ §Y$pop_cat_ruler_plural$ also produce §Y2§! £amenities£ §YAmenities§!"
+ civic_tooltip_shadow_council_effect:0 "£pop_cat_ruler£ §Y$pop_cat_ruler_plural$§! also produce §Y2§! £amenities£ §YAmenities§!"
  civic_tooltip_private_military_companies_effects:0 "£job_soldier£ §Y$job_soldier_plural$§! and £job_enforcer£ §Y$job_enforcer_plural$§! also produce §Y2§! £trade_value£ §Y$TRADE_VALUE$§!"
  civic_tooltip_beacon_of_liberty_effects:0 "§YUnlocks Edict:§! Greater Than Ourselves"
 
@@ -9,6 +9,11 @@
  sm_spbm_vanilla_bastion_desc:0 "Our efforts to exploit and secure our home system are reflected in this combined spaceport and defense network."
  sm_spbm_gestalt_bastion:0 "Home Bastion"
  sm_spbm_gestalt_bastion_desc:0 "Our efforts to exploit and secure our home system are reflected in this combined spaceport and defense network."
+
+ # Traits
+ TRAIT_LITHOID_GASEOUS_BYPRODUCTS2_EFFECT:0 "Each pop with living standards of slavery or better produces 0.03 £exotic_gases£ §Y$exotic_gases$§! per month."
+ TRAIT_LITHOID_SCINTILLATING2_EFFECT:0 "Each pop with living standards of slavery or better produces 0.03 £rare_crystals£ §Y$rare_crystals$§! per month."
+ TRAIT_LITHOID_VOLATILE_EXCRETIONS2_EFFECT:0 "Each pop with living standards of slavery or better produces 0.03 £volatile_motes£ §Y$volatile_motes$§! per month."
 
  # Tech
  tech_home_bastion:0 "Home Defense"
@@ -19,6 +24,7 @@
  mod_planet_priests_upkeep_mult:0 "Priest Upkeep"
  mod_country_base_minor_artifacts_produces_add:0 "Monthly £minor_artifacts£ §YMinor Artifacts§!"
  mod_deposit_blockers_time_cost_mult:0 "Clear Blocker Time"
+ mod_planet_pops_organics_upkeep_mult:0 "Organic Pop Upkeep"
  
  # Decisions
  decision_remove_lithoid_impact_crater:0 "Crater Restoration"

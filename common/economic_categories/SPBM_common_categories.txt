@@ -7,6 +7,10 @@ planet_culture_workers = {
 		produces
 		upkeep
 	}
+	generate_mult_modifiers = {
+		produces
+		upkeep
+	}
 }
 
 planet_priests = {
@@ -15,10 +19,18 @@ planet_priests = {
 		produces
 		upkeep
 	}
+	generate_mult_modifiers = {
+		produces
+		upkeep
+	}
 }
 
 planet_metallurgists = {
 	parent = planet_jobs
+	generate_mult_modifiers = {
+		produces
+		upkeep
+	}
 	generate_add_modifiers = {
 		produces
 		upkeep
@@ -27,6 +39,10 @@ planet_metallurgists = {
 
 planet_artisans = {
 	parent = planet_jobs
+	generate_mult_modifiers = {
+		produces
+		upkeep
+	}
 	generate_add_modifiers = {
 		produces
 		upkeep
@@ -35,6 +51,10 @@ planet_artisans = {
 
 planet_technician = {
 	parent = planet_jobs
+	generate_mult_modifiers = {
+		produces
+		upkeep
+	}
 	generate_add_modifiers = {
 		produces
 		upkeep
@@ -43,6 +63,10 @@ planet_technician = {
 
 planet_farmers = {
 	parent = planet_jobs
+	generate_mult_modifiers = {
+		produces
+		upkeep
+	}
 	generate_add_modifiers = {
 		produces
 		upkeep

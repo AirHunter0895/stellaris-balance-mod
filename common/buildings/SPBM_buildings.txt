@@ -222,7 +222,7 @@ building_paradise_dome = {
 			}
 		}
 		modifier = {
-			planet_housing_add = 2
+			planet_housing_add = 4
 		}
 	}
 
@@ -426,7 +426,7 @@ building_communal_housing_large = {
 			}
 		}
 		modifier = {
-			planet_housing_add = 2
+			planet_housing_add = 4
 		}
 	}
 
