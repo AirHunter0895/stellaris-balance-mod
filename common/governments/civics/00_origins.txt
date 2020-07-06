@@ -272,7 +272,7 @@ origin_void_dwellers = {
 	picture = GFX_origin_void_dwellers
 
 	starting_colony = pc_habitat
-	initializers = { void_dweller_system }
+	initializers = { void_dweller_system sol_system_void_dweller_system }
 	habitability_preference = pc_habitat
 	max_once_global = yes
 	preferred_planet_class_neighbor = no

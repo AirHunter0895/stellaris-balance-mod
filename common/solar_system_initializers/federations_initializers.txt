@@ -2543,9 +2543,9 @@ wenkwort_initializer = {
 # Sol System - Void-Dweller Origins Edition
 sol_system_void_dweller_system = {
 	name = "NAME_Sol_Void_Dweller"
-	
 	class = "sc_g"
 	usage = origin
+	flags = { empire_home_system sol_system sol }
 	asteroid_belt = {
 		type = rocky_asteroid_belt
 		radius = 145
@@ -2554,9 +2554,6 @@ sol_system_void_dweller_system = {
 		type = icy_asteroid_belt
 		radius = 290
 	}
-	
-	flags = { empire_home_system sol_system sol }
-
 	init_effect = {
 		every_neighbor_system = {
 			set_star_flag = empire_cluster
@@ -2612,7 +2609,7 @@ sol_system_void_dweller_system = {
 		init_effect = {
 			prevent_anomaly = yes
 			clear_deposits = yes
-			add_deposit = d_society_3
+			set_deposit = d_energy_3
 		}
 		
 		moon = {
@@ -2635,8 +2632,8 @@ sol_system_void_dweller_system = {
 			flags = {
 				void_dweller_habitat_1
 				special_start_planet
-				megastructure habitat
-				research_habitat
+				megastructure
+				habitat energy_habitat
 			}
 			deposit_blockers = none
 		}
@@ -2669,7 +2666,8 @@ sol_system_void_dweller_system = {
 			size = 6
 			flags = {
 				void_dweller_habitat_2
-				megastructure habitat
+				megastructure
+				habitat
 				mining_habitat
 			}
 			deposit_blockers = none
