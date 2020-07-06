@@ -1,0 +1,9 @@
+
+btrpurge_crisis = {
+	ship_orbital_bombardment_mult = 2
+}
+
+btrpurge_crisis_purge = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_exploding_planet.dds"
+	pop_decline_speed = 13
+}

@@ -1679,7 +1679,7 @@ manager = {
 	resources = {
 		category = planet_managers
 		produces = {
-			unity = 3
+			unity = 4
 			society_research = 2
 		}
 		upkeep = {

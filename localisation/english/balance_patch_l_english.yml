@@ -113,3 +113,9 @@
  # Relics
  relic_cry_core2:0 "Spawns 20 §YXenomorph§! Armies"
  r_cryo_core2_passive_desc:0 "New colonies start with §Y1§! additional £pop£ Pop\nShip Upkeep: §G-10%§!"
+ 
+ # Techs
+ tech_interstellaris_economics_desc:1 "Clerk Trade Value: +25%"
+ tech_galactic_markets_desc:1 "Clerk Trade Value: +25%"
+ 
+ 
