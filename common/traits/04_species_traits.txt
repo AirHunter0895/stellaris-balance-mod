@@ -194,7 +194,7 @@ trait_talented = {
 	allowed_archetypes = { BIOLOGICAL LITHOID }
 	opposites = { "trait_nerve_stapled" }
 	modifier = {
-		#leader_skill_levels = 1 (idk if this was to be kept or no)
+		leader_skill_levels = 1
 		planet_jobs_specialist_produces_mult = 0.025
 	}
 }
