@@ -195,6 +195,7 @@ trait_talented = {
 	opposites = { "trait_nerve_stapled" }
 	modifier = {
 		leader_skill_levels = 1
+		planet_jobs_specialist_produces_mult = 0.025
 	}
 }
 
@@ -204,7 +205,7 @@ trait_quick_learners = {
 	opposites = { "trait_slow_learners" }
 	allowed_archetypes = { BIOLOGICAL LITHOID }
 	modifier = {
-		species_leader_exp_gain = 0.25
+		species_leader_exp_gain = 0.33
 	}
 }
 
@@ -214,7 +215,7 @@ trait_slow_learners = {
 	opposites = { "trait_quick_learners" "trait_enigmatic_intelligence" }
 	allowed_archetypes = { BIOLOGICAL LITHOID }
 	modifier = {
-		species_leader_exp_gain = -0.25
+		species_leader_exp_gain = -0.33
 	}
 	ai_weight = {
 		weight = 0
@@ -503,7 +504,7 @@ trait_conservational = {
 	opposites = { "trait_wasteful" "trait_hive_mind" }
 	allowed_archetypes = { BIOLOGICAL LITHOID }
 	modifier = {
-		planet_pops_consumer_goods_upkeep_mult = -0.10
+		planet_pops_consumer_goods_upkeep_mult = -0.15
 	}
 }
 
@@ -513,7 +514,7 @@ trait_wasteful = {
 	opposites = { "trait_conservational" "trait_hive_mind" }
 	allowed_archetypes = { BIOLOGICAL LITHOID }
 	modifier = {
-		planet_pops_consumer_goods_upkeep_mult = 0.10
+		planet_pops_consumer_goods_upkeep_mult = 0.15
 	}
 	ai_weight = {
 		weight = 0

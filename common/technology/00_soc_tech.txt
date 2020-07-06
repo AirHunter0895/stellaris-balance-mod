@@ -80,6 +80,12 @@ tech_interstellar_economics = {
 		is_gestalt = no
 	}
 
+	prereqfor_desc = {
+		custom = {
+        	title = "flag_spbm_clerk_buff"
+		}
+	}
+
 	weight_modifier = {
 		factor = 2
 		modifier = {
@@ -129,6 +135,12 @@ tech_galactic_markets = {
 
 	potential = {
 		is_gestalt = no
+	}
+
+	prereqfor_desc = {
+		custom = {
+        	title = "flag_spbm_clerk_buff"
+		}
 	}
 
 	weight_modifier = {
@@ -225,7 +237,7 @@ tech_eco_simulation = {
 	weight = @tier1weight1
 
 	modifier = {
-		planet_farmers_food_produces_mult = 0.1
+		planet_farmers_food_produces_mult = 0.2
 	}
 
 	weight_modifier = {
@@ -301,7 +313,7 @@ tech_gene_crops = {
 	weight = @tier2weight1
 
 	modifier = {
-		planet_farmers_food_produces_mult = 0.1
+		planet_farmers_food_produces_mult = 0.2
 	}
 
 	weight_modifier = {
@@ -377,7 +389,7 @@ tech_nano_vitality_crops = {
 	weight = @tier3weight1
 
 	modifier = {
-		planet_farmers_food_produces_mult = 0.1
+		planet_farmers_food_produces_mult = 0.2
 	}
 
 	weight_modifier = {
@@ -732,7 +744,7 @@ tech_society_1 = {
 	weight = @tier1weight1
 
 	modifier = {
-		planet_researchers_society_research_produces_mult = 0.1
+		planet_researchers_society_research_produces_mult = 0.2
 	}
 
 	weight_modifier = {
@@ -787,7 +799,7 @@ tech_society_2 = {
 	weight = @tier2weight3
 
 	modifier = {
-		planet_researchers_society_research_produces_mult = 0.1
+		planet_researchers_society_research_produces_mult = 0.2
 	}
 
 	weight_modifier = {
@@ -838,7 +850,7 @@ tech_society_3 = {
 	weight = @tier4weight2
 
 	modifier = {
-		planet_researchers_society_research_produces_mult = 0.1
+		planet_researchers_society_research_produces_mult = 0.2
 	}
 
 	weight_modifier = {
