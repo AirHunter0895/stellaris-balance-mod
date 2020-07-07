@@ -1933,6 +1933,7 @@ void_dweller_home_planet_setup = {
 	add_district = district_hab_housing
 	add_district = district_hab_energy
 	add_building = building_hab_major_capital
+	add_building = building_research_lab_1
 
 
 	if = {
@@ -1941,11 +1942,9 @@ void_dweller_home_planet_setup = {
 				is_lithoid_empire = no
 			}
 		}
-		add_building = building_research_lab_1
 		add_building = building_hydroponics_farm
 	}
 	else = {
-		add_building = building_research_lab_1
 		add_building = building_factory_1
 		add_district = district_hab_cultural
 	}
@@ -2013,9 +2012,6 @@ void_dweller_home_planet_setup = {
 				}
 
 				add_building = building_hydroponics_farm
-			}
-			else = {
-
 			}
 		}
 		every_system_planet = {
