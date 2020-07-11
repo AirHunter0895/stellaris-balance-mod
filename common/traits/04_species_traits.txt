@@ -215,7 +215,7 @@ trait_slow_learners = {
 	opposites = { "trait_quick_learners" "trait_enigmatic_intelligence" }
 	allowed_archetypes = { BIOLOGICAL LITHOID }
 	modifier = {
-		species_leader_exp_gain = -0.25
+		species_leader_exp_gain = -0.33
 	}
 	ai_weight = {
 		weight = 0
@@ -514,7 +514,7 @@ trait_wasteful = {
 	opposites = { "trait_conservational" "trait_hive_mind" }
 	allowed_archetypes = { BIOLOGICAL LITHOID }
 	modifier = {
-		planet_pops_consumer_goods_upkeep_mult = 0.10
+		planet_pops_consumer_goods_upkeep_mult = 0.15
 	}
 	ai_weight = {
 		weight = 0

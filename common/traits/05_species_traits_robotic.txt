@@ -138,7 +138,7 @@ trait_robot_bulky = {
 }
 
 trait_robot_enhanced_memory = {
-	cost = 2
+	cost = 1
 
 	allowed_archetypes = { ROBOT MACHINE }
 

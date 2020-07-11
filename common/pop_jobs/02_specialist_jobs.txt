@@ -532,7 +532,6 @@ enforcer = {
 		}
 		modifier = {
 			planet_crime_add = -10
-			planet_stability_add = 1
 		}
 	}
 
@@ -546,9 +545,9 @@ enforcer = {
 		}
 	}
 
-	triggered_planet_modifier = { #Stefan's Balance Mod: from Private Military Companies civic
+	triggered_planet_modifier = {
 		potential = {
-			has_civic = civic_private_military_companies
+			owner = { has_civic = civic_private_military_companies }
 		}
 		modifier = {
 			trade_value_add = 2
@@ -1680,7 +1679,7 @@ manager = {
 	resources = {
 		category = planet_managers
 		produces = {
-			unity = 3
+			unity = 4
 			society_research = 2
 		}
 		upkeep = {

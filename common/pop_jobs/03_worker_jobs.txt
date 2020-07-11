@@ -53,6 +53,24 @@ clerk = {
 			trade_value_add = 0.5
 		}
 	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_interstellar_economics }
+		}
+		modifier = {
+			trade_value_add = 0.5
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_galactic_markets }
+		}
+		modifier = {
+			trade_value_add = 0.5
+		}
+	}
 
 	weight = {
 		weight = @clerk_job_weight
@@ -953,10 +971,9 @@ soldier = {
 		}
 	}
 
-	triggered_planet_modifier = { #Stefan's Balance Mod: from Private Military Companies civic
+	triggered_planet_modifier = {
 		potential = {
-			has_civic = civic_private_military_companies
-		}
+			owner = { has_civic = civic_private_military_companies }
 		modifier = {
 			trade_value_add = 2
 		}
