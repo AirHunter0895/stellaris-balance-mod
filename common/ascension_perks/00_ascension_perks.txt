@@ -26,7 +26,7 @@ ap_enigmatic_engineering = {
 	modifier = {
 		ship_sensor_range_add = 2
 		ship_hyperlane_range_add = 4
-		country_base_minor_artifacts_produces_add = 0.05
+		country_base_minor_artifacts_produces_add = 0.1
 	}
 
 	ai_weight = {

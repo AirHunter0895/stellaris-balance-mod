@@ -1282,7 +1282,7 @@ country_event = {
 			remove_country_flag = shroud_diplomacy_engaged
 			set_timed_country_flag = {
 				flag = negative_shroud_outcome
-				days = 3600 # 5 years
+				days = 1800 # 5 years
 			}
 		}
 	}
@@ -1291,7 +1291,7 @@ country_event = {
 		name = "exit.shroud"
 		add_modifier = {
 			modifier = "shroud_neg_happiness"
-			days = 3600
+			days = 1800
 		}
 		default_hide_option = yes
 	}
@@ -1322,7 +1322,7 @@ country_event = {
 			remove_country_flag = shroud_diplomacy_engaged
 			set_timed_country_flag = {
 				flag = negative_shroud_outcome
-				days = 3600 # 5 years
+				days = 1800 # 5 years
 			}
 		}
 	}
@@ -1331,7 +1331,7 @@ country_event = {
 		name = "exit.shroud"
 		add_modifier = {
 			modifier = "shroud_neg_ethic"
-			days = 3600
+			days = 1800
 		}
 		default_hide_option = yes
 	}
@@ -1362,7 +1362,7 @@ country_event = {
 			remove_country_flag = shroud_diplomacy_engaged
 			set_timed_country_flag = {
 				flag = negative_shroud_outcome
-				days = 3600 # 5 years
+				days = 1800 # 5 years
 			}
 		}
 	}
@@ -1371,7 +1371,7 @@ country_event = {
 		name = "exit.shroud"
 		add_modifier = {
 			modifier = "shroud_neg_armor"
-			days = 3600
+			days = 1800
 		}
 		default_hide_option = yes
 	}
@@ -1402,7 +1402,7 @@ country_event = {
 			remove_country_flag = shroud_diplomacy_engaged
 			set_timed_country_flag = {
 				flag = negative_shroud_outcome
-				days = 3600 # 5 years
+				days = 1800 # 5 years
 			}
 		}
 	}
@@ -1411,7 +1411,7 @@ country_event = {
 		name = "exit.shroud"
 		add_modifier = {
 			modifier = "shroud_neg_growth"
-			days = 3600
+			days = 1800
 		}
 		default_hide_option = yes
 	}
@@ -1442,7 +1442,7 @@ country_event = {
 			remove_country_flag = shroud_diplomacy_engaged
 			set_timed_country_flag = {
 				flag = negative_shroud_outcome
-				days = 3600 # 5 years
+				days = 1800 # 5 years
 			}
 		}
 	}
@@ -1451,7 +1451,7 @@ country_event = {
 		name = "exit.shroud"
 		add_modifier = {
 			modifier = "shroud_neg_research"
-			days = 3600
+			days = 1800
 		}
 		default_hide_option = yes
 	}
@@ -1482,7 +1482,7 @@ country_event = {
 			remove_country_flag = shroud_diplomacy_engaged
 			set_timed_country_flag = {
 				flag = negative_shroud_outcome
-				days = 3600 # 5 years
+				days = 1800 # 5 years
 			}
 		}
 	}
@@ -1491,7 +1491,7 @@ country_event = {
 		name = "exit.shroud"
 		add_modifier = {
 			modifier = "shroud_neg_influence"
-			days = 3600
+			days = 1800
 		}
 		default_hide_option = yes
 	}
@@ -1522,7 +1522,7 @@ country_event = {
 			remove_country_flag = shroud_diplomacy_engaged
 			set_timed_country_flag = {
 				flag = negative_shroud_outcome
-				days = 3600 # 5 years
+				days = 1800 # 5 years
 			}
 		}
 	}
@@ -1531,7 +1531,7 @@ country_event = {
 		name = "exit.shroud"
 		add_modifier = {
 			modifier = "shroud_neg_unity"
-			days = 3600
+			days = 1800
 		}
 		default_hide_option = yes
 	}
@@ -1562,7 +1562,7 @@ country_event = {
 			remove_country_flag = shroud_diplomacy_engaged
 			set_timed_country_flag = {
 				flag = negative_shroud_outcome
-				days = 3600 # 5 years
+				days = 1800 # 5 years
 			}
 		}
 	}
@@ -1571,7 +1571,7 @@ country_event = {
 		name = "exit.shroud"
 		add_modifier = {
 			modifier = "shroud_neg_speed"
-			days = 3600
+			days = 1800
 		}
 		default_hide_option = yes
 	}
@@ -1602,7 +1602,7 @@ country_event = {
 			remove_country_flag = shroud_diplomacy_engaged
 			set_timed_country_flag = {
 				flag = negative_shroud_outcome
-				days = 3600 # 5 years
+				days = 1800 # 5 years
 			}
 		}
 	}
@@ -1611,7 +1611,7 @@ country_event = {
 		name = "exit.shroud"
 		add_modifier = {
 			modifier = "shroud_neg_morale"
-			days = 3600
+			days = 1800
 		}
 		default_hide_option = yes
 	}
@@ -1642,7 +1642,7 @@ country_event = {
 			remove_country_flag = shroud_diplomacy_engaged
 			set_timed_country_flag = {
 				flag = negative_shroud_outcome
-				days = 3600 # 5 years
+				days = 1800 # 5 years
 			}
 		}
 	}
@@ -1651,7 +1651,7 @@ country_event = {
 		name = "exit.shroud"
 		add_modifier = {
 			modifier = "shroud_neg_sensors"
-			days = 3600
+			days = 1800
 		}
 		default_hide_option = yes
 	}
@@ -3378,7 +3378,7 @@ country_event = {
 		default_hide_option = yes
 		add_modifier = {
 			modifier = "shroud_neg_speed"
-			days = 3600
+			days = 1800
 		}
 	}
 }
@@ -3625,13 +3625,13 @@ country_event = {
 				}
 				add_modifier = {
 					modifier = "shroud_precog_cooldown"
-					days = 3600
+					days = 1800
 				}
 			}				
 			else = {
 				add_modifier = {
 					modifier = "shroud_precog_cooldown"
-					days = 3600
+					days = 1800
 				}
 			}
 		}
@@ -4585,7 +4585,7 @@ country_event = {
 			25 = { country_event = { id = utopia.3305 } }	# The Composer of Strands
 			25 = { country_event = { id = utopia.3306 } }	# The Eater of Worlds
 			25 = { country_event = { id = utopia.3307 } }	# The Instrument of Desire
-			2 = {
+			10 = {
 				modifier = {
 					factor = 13
 					has_global_flag = impending_doom
