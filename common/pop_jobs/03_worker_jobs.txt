@@ -974,6 +974,7 @@ soldier = {
 	triggered_planet_modifier = {
 		potential = {
 			owner = { has_civic = civic_private_military_companies }
+		}
 		modifier = {
 			trade_value_add = 2
 		}
