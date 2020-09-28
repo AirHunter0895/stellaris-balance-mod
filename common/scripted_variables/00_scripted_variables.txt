@@ -245,4 +245,4 @@
 @ap_technological_ascendancy_rare_tech = 1.5
 @federation_perk_factor = 2
 
-@lithoid_trait_resource_production = 0.03
+@lithoid_trait_resource_production = 0.05

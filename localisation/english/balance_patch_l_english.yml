@@ -11,10 +11,14 @@
  sm_spbm_gestalt_bastion_desc:0 "Our efforts to exploit and secure our home system are reflected in this combined spaceport and defense network."
 
  # Traits
- TRAIT_LITHOID_GASEOUS_BYPRODUCTS2_EFFECT:0 "Each pop with living standards of slavery or better produces 0.03 £exotic_gases£ §Y$exotic_gases$§! per month."
- TRAIT_LITHOID_SCINTILLATING2_EFFECT:0 "Each pop with living standards of slavery or better produces 0.03 £rare_crystals£ §Y$rare_crystals$§! per month."
- TRAIT_LITHOID_VOLATILE_EXCRETIONS2_EFFECT:0 "Each pop with living standards of slavery or better produces 0.03 £volatile_motes£ §Y$volatile_motes$§! per month."
-
+ TRAIT_LITHOID_GASEOUS_BYPRODUCTS2_EFFECT:0 "Each pop with living standards of slavery or better produces 0.05 £exotic_gases£ §Y$exotic_gases$§! per month."
+ TRAIT_LITHOID_SCINTILLATING2_EFFECT:0 "Each pop with living standards of slavery or better produces 0.05 £rare_crystals£ §Y$rare_crystals$§! per month."
+ TRAIT_LITHOID_VOLATILE_EXCRETIONS2_EFFECT:0 "Each pop with living standards of slavery or better produces 0.05 £volatile_motes£ §Y$volatile_motes$§! per month."
+ 
+ trait_salty:0 "Salty"
+ trait_salty_desc:0 "Increases mineral extraction rate due to additional salts growing on the lithoid."
+ trait_salty_effect:0 "Eeach pop with the slavery type Livestock produces an additional 2 £minerals£ §Y$minerals$§! per month."
+ 
  # Tech
  tech_home_bastion:0 "Home Defense"
  tech_home_bastion_desc:0 "We have spent many years researching a defense system to defend our most important world"
@@ -26,6 +30,8 @@
  mod_country_base_minor_artifacts_produces_add:0 "Monthly £minor_artifacts£ §YMinor Artifacts§!"
  mod_deposit_blockers_time_cost_mult:0 "Clear Blocker Time"
  mod_planet_pops_organics_upkeep_mult:0 "Organic Pop Upkeep"
+ 
+ mod_planet_livestock_minerals_produces_add:0 "£minerals£ from lithoid livestock"
  
  # Decisions
  decision_remove_lithoid_impact_crater:0 "Crater Restoration"

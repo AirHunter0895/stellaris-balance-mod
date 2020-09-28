@@ -87,7 +87,7 @@ trait_extremely_adaptive = {
 	cost = 4
 	potential_crossbreeding_chance = 1.0
 	opposites = { "trait_nonadaptive" "trait_adaptive" "trait_robust" "trait_adaptive_lithoid" }
-	allowed_archetypes = { BIOLOGICAL }
+	allowed_archetypes = { BIOLOGICAL LITHOID }
 	modifier = {
 		pop_environment_tolerance = 0.20
 	}
@@ -100,7 +100,7 @@ trait_adaptive = {
 	cost = 2
 	potential_crossbreeding_chance = 1.0
 	opposites = { "trait_nonadaptive" "trait_extremely_adaptive" "trait_robust" "trait_adaptive_lithoid" }
-	allowed_archetypes = { BIOLOGICAL }
+	allowed_archetypes = { BIOLOGICAL LITHOID }
 	modifier = {
 		pop_environment_tolerance = 0.10
 	}
@@ -109,22 +109,6 @@ trait_adaptive = {
 	}
 }
 
-trait_adaptive_lithoid = {
-	cost = 2
-	icon = "gfx/interface/icons/traits/trait_adaptive.dds"
-	initial = no
-	randomized = no
-	advanced_trait = yes
-	potential_crossbreeding_chance = 0.5
-	opposites = { "trait_nonadaptive" "trait_extremely_adaptive" "trait_robust" "trait_adaptive" }
-	allowed_archetypes = { LITHOID }
-	modifier = {
-		pop_environment_tolerance = 0.10
-	}
-	slave_cost = {
-		energy = 100
-	}
-}
 
 trait_nonadaptive = {
 	cost = -2
@@ -146,7 +130,7 @@ trait_rapid_breeders = {
 	cost = 2
 	potential_crossbreeding_chance = 1.0
 	opposites = { "trait_slow_breeders" "trait_fertile" "trait_rapid_breeders_lithoid" }
-	allowed_archetypes = { BIOLOGICAL }
+	allowed_archetypes = { BIOLOGICAL LITHOID }
 	modifier = {
 		pop_growth_speed = 0.10
 	}
@@ -155,28 +139,11 @@ trait_rapid_breeders = {
 	}
 }
 
-trait_rapid_breeders_lithoid = {
-	cost = 2
-	icon = "gfx/interface/icons/traits/trait_rapid_breeders.dds"
-	initial = no
-	randomized = no
-	advanced_trait = yes
-	potential_crossbreeding_chance = 0.5
-	opposites = { "trait_slow_breeders" "trait_rapid_breeders" "trait_fertile" }
-	allowed_archetypes = { LITHOID }
-	modifier = {
-		pop_growth_speed = 0.10
-	}
-	slave_cost = {
-		energy = 200
-	}
-}
-
 trait_slow_breeders = {
 	cost = -2
 	potential_crossbreeding_chance = 1.0
 	opposites = { "trait_rapid_breeders" "trait_fertile" "trait_rapid_breeders_lithoid" }
-	allowed_archetypes = { BIOLOGICAL }
+	allowed_archetypes = { BIOLOGICAL LITHOID }
 	modifier = {
 		pop_growth_speed = -0.10
 	}
@@ -617,7 +584,20 @@ trait_delicious = {
 		energy = 100
 	}
 }
-
+trait_salty = {
+	cost = 2
+	potential_crossbreeding_chance = 0.5
+	initial = no
+	randomized = no
+	advanced_trait = yes
+	allowed_archetypes = { LITHOID }
+	modifier = {
+		planet_livestock_minerals_produces_add = 2
+	}
+	slave_cost = {
+		energy = 100
+	}
+}
 trait_nerve_stapled = {
 	cost = 3
 	potential_crossbreeding_chance = 0.5
@@ -644,7 +624,7 @@ trait_fertile = {
 	randomized = no
 	advanced_trait = yes
 	opposites = { "trait_slow_breeders" }
-	allowed_archetypes = { BIOLOGICAL }
+	allowed_archetypes = { BIOLOGICAL LITHOID }
 	modifier = {
 		pop_growth_speed = 0.3
 		pop_housing_usage_mult = -0.1
@@ -661,7 +641,7 @@ trait_robust = {
 	randomized = no
 	advanced_trait = yes
 	opposites = { "trait_nonadaptive" "trait_adaptive" "trait_extremely_adaptive" "trait_adaptive_lithoid" }
-	allowed_archetypes = { BIOLOGICAL }
+	allowed_archetypes = { BIOLOGICAL LITHOID }
 	modifier = {
 		pop_environment_tolerance = 0.30
 		planet_jobs_produces_mult = 0.05
