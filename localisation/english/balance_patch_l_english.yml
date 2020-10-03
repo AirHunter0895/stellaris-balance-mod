@@ -18,7 +18,8 @@
  trait_salty:0 "Salty"
  trait_salty_desc:0 "These lithoids have a high concentration of salts in their mineral composition, allowing for easier extraction of their more precious components."
  trait_salty_effect:0 "Each pop with the slavery type Livestock produces an additional 2 £minerals£ §Y$minerals$§! per month."
- 
+ TRAIT_LITHOID_EFFECT:0 "Consumes £minerals£ §YMinerals§! instead of £food£ §YFood§!\n\n$MOD_POP_GROWTH_SPEED$: §R-20%§!\n$MOD_POP_ENVIRONMENT_TOLERANCE$: §G+50%§!\n$MOD_ARMY_HEALTH$: §G+50%§!\n$MOD_LEADER_AGE$: §G+50§!"
+
  # Tech
  tech_home_bastion:0 "Home Defense"
  tech_home_bastion_desc:0 "We have spent many years researching a defense system to defend our most important world"
