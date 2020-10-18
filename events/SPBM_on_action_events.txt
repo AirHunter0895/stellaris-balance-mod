@@ -103,3 +103,14 @@ planet_event = {
 		remove_modifier = spbm_deserted
 	}
 }
+
+event = {
+	id = spbm.6
+	is_triggered_only
+	hide_window = yes
+	
+	immediate = {
+		set_global_flag = SPBM_enabled
+	}
+	
+}	
