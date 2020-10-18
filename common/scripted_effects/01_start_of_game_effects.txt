@@ -195,6 +195,7 @@ generate_start_deposits_and_blockers = {
 		add_deposit = d_nuked_battlefield1
 		add_deposit = d_nuked_battlefield2
 		add_deposit = d_nuked_battlefield3
+
 	}
 	else_if = {
 		limit = {
@@ -831,7 +832,18 @@ generate_earth_deposits_and_blockers = {
 			add_deposit = d_hibernating_lithoids
 		}
 	}
-
+	if = {
+		limit = {
+			owner = {
+				has_origin = origin_post_apocalyptic
+			}
+		}
+		add_deposit = d_tomb_world_ruins
+		add_deposit = d_tomb_world_wasteland
+		add_deposit = d_nuked_battlefield1
+		add_deposit = d_nuked_battlefield2
+		add_deposit = d_nuked_battlefield3
+	}
 	if = {
 		limit = {
 			owner = {
