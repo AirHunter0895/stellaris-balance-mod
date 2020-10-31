@@ -921,6 +921,62 @@ opinion_genocidal_our_species = {
 	}
 }
 
+# They just necrophaged a Pop
+opinion_necrophage = {
+	opinion = {
+		base = -1
+		modifier = {
+			add = -1
+			has_ethic = ethic_xenophile
+		}
+		modifier = {
+			add = -2
+			has_ethic = ethic_fanatic_xenophile
+		}
+	}
+
+	accumulative = yes
+
+	min = -100
+
+	decay = {
+		base = 2
+		modifier = {
+			add = 1
+			OR = {
+				has_defensive_pact = from
+				is_in_federation_with = from
+			}
+		}
+	}
+}
+
+# They just necrophaged our species
+opinion_necrophage_our_species = {
+	opinion = {
+		base = -10
+		modifier = {
+			add = 3.5
+			has_migration_access = from
+		}
+	}
+
+	accumulative = yes
+
+	min = -500
+
+	decay = {
+		base = 3
+		modifier = {
+			add = 2
+			OR = {
+				has_defensive_pact = from
+				is_in_federation_with = from
+			}
+		}
+	}
+}
+
 # They just bombed a pop to death
 opinion_nuker = {
 	opinion = {

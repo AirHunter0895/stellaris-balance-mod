@@ -348,7 +348,7 @@ intercepting_history_system_initializer_02 = {
 					trait = "trait_nomadic"	
 				}
 				effect = {
-					save_global_event_target_as = primitive_benefactor_species
+#					save_global_event_target_as = primitive_benefactor_species
 				}
     		}
 			create_early_primitive_empire = yes
@@ -1998,7 +1998,6 @@ mega_shipyard_init_01 = {
 						distance = 20
 						angle = 20
 					}
-					set_ambient_object_flag = mega_shipyard_ruined_debris
 				}
 			}
 		}
