@@ -441,7 +441,10 @@ planet_jobs = {
 			mult
 		}
 		trigger = {
-			is_pop_category = specialist
+			OR = {
+				is_pop_category = specialist
+				is_pop_category = complex_drone #should use planet_jobs_complex_drone wherever possible, this is just for cases like species traits
+			}
 		}
 	}
 
@@ -602,6 +605,10 @@ planet_nobles = {
 	parent = planet_jobs
 }
 
+planet_necro_apprentices = {
+	parent = planet_pop_assemblers
+}
+
 planet_merchants = {
 	parent = planet_jobs
 }
@@ -612,6 +619,10 @@ planet_entertainers = {
 
 planet_soldiers = {
 	parent = planet_jobs
+}
+
+planet_necromancers = {
+	parent = planet_researchers
 }
 
 planet_priests = {

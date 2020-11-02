@@ -59,6 +59,9 @@ ship_event = {
 		}
 		from = { 
 			create_archaeological_site = zroni_digsite_1
+			root.owner = {
+				set_country_flag = zroni_arc_chain_@prev
+			}
 			add_deposit = d_zro_deposit_1
 		}
 		owner = {
@@ -160,9 +163,15 @@ fleet_event = {
 					habitable_planet = yes
 					has_anomaly = no
 					is_colony = no
-					NOT = { exists = archaeological_site }
+					NOR = { 
+						exists = archaeological_site
+						has_planet_flag = hatchling_egg
+					}
 				}
 				create_archaeological_site = zroni_digsite_2
+				root.owner = {
+					set_country_flag = zroni_arc_chain_@prev
+				}
 				add_deposit = d_zro_deposit_2
 			}
 		}
@@ -267,9 +276,15 @@ fleet_event = {
 					habitable_planet = yes
 					has_anomaly = no
 					is_colony = no
-					NOT = { exists = archaeological_site }
+					NOR = { 
+						exists = archaeological_site
+						has_planet_flag = hatchling_egg
+					}
 				}
 				create_archaeological_site = zroni_digsite_3
+				root.owner = {
+					set_country_flag = zroni_arc_chain_@prev
+				}
 				add_deposit = d_zro_deposit_2
 			}
 		}
@@ -342,9 +357,15 @@ fleet_event = {
 					habitable_planet = yes
 					has_anomaly = no
 					is_colony = no
-					NOT = { exists = archaeological_site }
+					NOR = { 
+						exists = archaeological_site
+						has_planet_flag = hatchling_egg
+					}
 				}
 				create_archaeological_site = zroni_digsite_4
+				root.owner = {
+					set_country_flag = zroni_arc_chain_@prev
+				}
 				add_deposit = d_zro_deposit_2
 			}
 		}
@@ -424,9 +445,15 @@ fleet_event = {
 					habitable_planet = yes
 					has_anomaly = no
 					is_colony = no
-					NOT = { exists = archaeological_site }
+					NOR = { 
+						exists = archaeological_site
+						has_planet_flag = hatchling_egg
+					}
 				}
 				create_archaeological_site = zroni_digsite_5
+				root.owner = {
+					set_country_flag = zroni_arc_chain_@prev
+				}
 				add_deposit = d_zro_deposit_2
 			}
 		}
@@ -538,6 +565,7 @@ fleet_event = {
 					}
 				}
 			}
+			add_extra_hyperlane_to_spawned_system_effect = yes
 		}
 	}
 }
@@ -1009,13 +1037,6 @@ ship_event = { #
 			FROM = { has_planet_flag = aliens_site_badaliens }
 		}
 	}
-	desc = {
-		text = ancrel.107.nothing.desc
-		#text = ancrel.107.fallback.desc
-		trigger = {
-			
-		}
-	}
 	picture = GFX_evt_ship_in_orbit_3
 	show_sound = event_finding_loot
 	location = from
@@ -1234,6 +1255,6 @@ country_event = {
     is_triggered_only = yes
 
     immediate = {
-       owner = { remove_herald_damage = yes }
+       remove_herald_damage = yes
     }
 }

@@ -1731,6 +1731,7 @@ crystal = {
 }
 
 drone = {
+	always_valid_target_aggressive = yes
 	share_communications = no
 	is_space_critter = yes
 	blocks_piracy = yes

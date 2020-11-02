@@ -291,6 +291,19 @@ tr_harmony_mind_and_body = {
 		}
 	}
 
+	tradition_swap = {
+		name = tr_harmony_unity_of_self
+		inherit_effects = no	# gain unity per pop necrophaged
+		inherit_icon = no
+		inherit_name = no
+		trigger = {
+			has_origin = origin_necrophage
+		}
+		weight = {
+			factor = 1
+		}
+	}
+
 	ai_weight = {
 		factor = 1000
 	}

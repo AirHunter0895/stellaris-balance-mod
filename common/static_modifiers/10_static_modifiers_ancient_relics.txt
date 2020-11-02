@@ -222,7 +222,7 @@ oracle_software_integration = {
 }
 
 oracle_administration = {
-	country_admin_cap_add = 20
+	country_admin_cap_mult = 0.10
 }
 
 chosen_of_zarqlan = {

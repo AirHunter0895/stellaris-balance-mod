@@ -2743,6 +2743,11 @@ tech_gene_tailoring = {
 				has_trait = "leader_trait_expertise_biology"
 			}
 		}
+		modifier = {
+			factor = 1.25
+			has_origin = origin_necrophage
+			has_trait = trait_necrophage
+		}
 	}
 
 	ai_weight = {
@@ -2752,6 +2757,11 @@ tech_gene_tailoring = {
 				area = society
 				has_trait = "leader_trait_expertise_biology"
 			}
+		}
+		modifier = {
+			factor = 2
+			has_origin = origin_necrophage
+			has_trait = trait_necrophage
 		}
 	}
 }
@@ -2790,6 +2800,11 @@ tech_glandular_acclimation = {
 				has_trait = "leader_trait_expertise_biology"
 			}
 		}
+		modifier = {
+			factor = 1.25
+			has_origin = origin_necrophage
+			has_trait = trait_necrophage
+		}
 	}
 
 	ai_weight = {
@@ -2799,6 +2814,11 @@ tech_glandular_acclimation = {
 				area = society
 				has_trait = "leader_trait_expertise_biology"
 			}
+		}
+		modifier = {
+			factor = 2
+			has_origin = origin_necrophage
+			has_trait = trait_necrophage
 		}
 	}
 }
