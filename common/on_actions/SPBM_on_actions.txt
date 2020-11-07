@@ -1,8 +1,12 @@
 # No scope, like on_game_start
+on_game_start = {
+	events = {
+		spbm.6
+	}
+}
 on_game_start_country = {
 	events = {
 		spbm.3
-		spbm.6
 	}
 }
 
