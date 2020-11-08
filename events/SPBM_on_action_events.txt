@@ -106,7 +106,7 @@ planet_event = {
 
 event = {
 	id = spbm.6
-	is_triggered_only
+	is_triggered_only = yes
 	hide_window = yes
 	
 	immediate = {

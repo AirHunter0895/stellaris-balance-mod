@@ -5914,6 +5914,7 @@ create_first_diadochi = {
 		establish_communications_no_message = event_target:first_diadochi
 	}
 }
+}
 
 assign_second_diadochi_planets = {
 	random_system_within_border = {
@@ -6192,6 +6193,7 @@ create_second_diadochi = {
 		}
 		establish_communications_no_message = event_target:second_diadochi
 	}
+}
 }
 
 assign_third_diadochi_planets = {
@@ -6472,6 +6474,7 @@ create_third_diadochi = {
 		establish_communications_no_message = event_target:third_diadochi
 	}
 }
+}
 
 assign_fourth_diadochi_planets = {
 	random_system_within_border = {
@@ -6751,7 +6754,7 @@ create_fourth_diadochi = {
 		establish_communications_no_message = event_target:fourth_diadochi
 	}
 }
-
+}
 assign_diadochi_systems = {
 	while = {
 		count = 100
