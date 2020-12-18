@@ -63,8 +63,8 @@
  spbm_deserted:0 "Recently Deserted"
  spbm_deserted_desc:0 "This world was recently deserted by its inhabitats. The remnants of their colony serve as a grim reminder for those who would try the same."
  raided_new:0 "Raided"
- raided_new_desc: "We failed to protect ourselves from the despoilers. It will take us some time to recover."
-
+ raided_new_desc:0 "We failed to protect ourselves from the despoilers. It will take us some time to recover."
+ mod_planet_jobs_organics_produces_mult:0 "Organic Output"
  # Buildings
  building_sanctuary_of_sin:0 "Sanctuary of Sin"
  building_sanctuary_of_sin_desc:0 "This secretive locale is a meeting place for cutthroats, pariahs, and deviants alike, such that they may find belonging in scandalous prayer and ritual."
