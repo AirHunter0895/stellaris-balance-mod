@@ -78,6 +78,7 @@
  raided_new:0 "Raided"
  raided_new_desc:0 "We failed to protect ourselves from the despoilers. It will take us some time to recover."
  mod_planet_jobs_organics_produces_mult:0 "Organic Output"
+ spbm_offworld_trading_company_desc_modifier:3 "Produces §G4§! £trade_value£§Y$TRADE_VALUE$§! for each [Root.GetTradingHubType]\n\n"
 
  # Buildings
  building_sanctuary_of_sin:0 "Sanctuary of Sin"

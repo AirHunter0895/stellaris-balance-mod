@@ -110,7 +110,7 @@ origin_mechanists = {
 		}
 	}
 
-	modifier = { planet_pops_robotics_upkeep_mult = -0.05 }
+	modifier = { planet_pops_robotics_upkeep_mult = -0.1 }
 
 	description = "origin_tooltip_mechanists_effects"
 
