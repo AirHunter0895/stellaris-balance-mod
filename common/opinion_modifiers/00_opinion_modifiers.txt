@@ -3345,7 +3345,7 @@ triggered_opinion_barbaric_despoilers = {
 		FROM = { has_civic = civic_barbaric_despoilers }
 	}
 	opinion = {
-		base = -50
+		base = -150
 	}
 }
 
@@ -3399,7 +3399,7 @@ triggered_fe_opinion_barbaric_despoilers = {
 		FROM = { has_civic = civic_barbaric_despoilers }
 	}
 	opinion = {
-		base = -120
+		base = -20
 	}
 }
 
