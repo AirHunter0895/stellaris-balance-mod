@@ -315,7 +315,17 @@ miner = {
 			energy = 0.5
 		}
 	}
-
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_valid_civic = civic_agrarian_idyll }
+			owner = { is_lithoid_empire = yes }
+		}
+		modifier = {
+			planet_amenities_add = 2
+		}
+	}
 	weight = {
 		weight = @worker_job_weight
 		modifier = {

@@ -920,7 +920,6 @@ building_capital = {
 		potential = {
 			exists = owner
 			owner = { has_origin = origin_mechanists }
-			owner = { NOT = { has_ascension_perk = ap_synthetic_evolution } }
 		}
 		job_roboticist_add = 1
 	}
@@ -1147,17 +1146,6 @@ building_major_capital = {
 		}
 	}
 
-	# SPBM
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { has_origin = origin_mechanists }
-			owner = { NOT = { has_ascension_perk = ap_synthetic_evolution } }
-		}
-		job_roboticst_add = 1
-	}
-	#
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -1171,7 +1159,6 @@ building_major_capital = {
 		potential = {
 			exists = owner
 			owner = { has_origin = origin_mechanists }
-			owner = { NOT = { has_ascension_perk = ap_synthetic_evolution } }
 		}
 		job_roboticist_add = 1
 	}
@@ -1418,7 +1405,6 @@ building_system_capital = {
 		potential = {
 			exists = owner
 			owner = { has_origin = origin_mechanists }
-			owner = { NOT = { has_ascension_perk = ap_synthetic_evolution } }
 		}
 		job_roboticst_add = 1
 	}
