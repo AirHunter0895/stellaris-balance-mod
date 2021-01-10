@@ -119,7 +119,7 @@ decision_baol_life_seed = {
 				}
 			}
 			while = {
-				count = 1
+				count = 2
 				create_pop = {
 					species = event_target:nu_baol_species
 					ethos = {

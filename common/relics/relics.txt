@@ -930,7 +930,7 @@ r_pox_sample = {
 			always = yes
 		}
 		leader_age = 20
-		category_biology_research_speed_mult = 0.2
+		country_society_research_produces_mult = 0.2
 	}
 
 	score = 1000
@@ -1050,7 +1050,7 @@ r_war_forge = {
 			add_resource = { alloys = 5000 }
 			add_modifier = {
 				modifier = "relic_activation_cooldown"
-				days = @triumph_duration_short
+				days = @triumph_duration
 			}
 		}
 	}

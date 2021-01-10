@@ -906,7 +906,22 @@ building_capital = {
 			planet_housing_add = 1
 		}
 	}
+	# SPBM
+	triggered_planet_modifier = {
+		potential = {
+		exists = owner
+		owner = {
+			has_civic = civic_reanimated_armies
+			}
+		}
+		modifier = {
+			job_necromancer_add = 1
+			job_administrator_add = 1
+		}
+	}
+	
 
+	}
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -935,6 +950,7 @@ building_capital = {
 					has_civic = civic_aristocratic_elite
 					has_civic = civic_merchant_guilds
 					has_civic = civic_technocracy
+					has_civic = civic_reanimated_armies
 				}
 			}
 		}
@@ -1181,7 +1197,19 @@ building_major_capital = {
 			job_administrator_add = 3
 		}
 	}
-
+	# SPBM
+	triggered_planet_modifier = {
+		potential = {
+		exists = owner
+		owner = {
+			has_civic = civic_reanimated_armies
+			}
+		}
+		modifier = {
+			job_necromancer_add = 1
+			job_administrator_add = 2
+		}
+	}
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -1435,7 +1463,19 @@ building_system_capital = {
 			job_administrator_add = 4
 		}
 	}
-
+	# SPBM
+	triggered_planet_modifier = {
+		potential = {
+		exists = owner
+		owner = {
+			has_civic = civic_reanimated_armies
+			}
+		}
+		modifier = {
+			job_necromancer_add = 2
+			job_administrator_add = 2
+		}
+	}
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
