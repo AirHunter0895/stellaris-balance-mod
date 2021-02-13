@@ -970,7 +970,7 @@ ap_voidborn = {
 	possible = {
 		custom_tooltip = {
 			fail_text = "requires_technology_habitat_1"
-			fail_text = "requires_ascension_perks_2"
+			fail_text = "requires_ascension_perks_1"
 			has_technology = tech_habitat_1
 			num_ascension_perks > 0
 		}
