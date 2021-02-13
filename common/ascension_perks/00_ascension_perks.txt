@@ -961,8 +961,6 @@ ap_voidborn = {
 	potential = {
 		host_has_dlc = "Utopia"
 		custom_tooltip = {
-			fail_text = "requires_ascension_perks_2"
-			num_ascension_perks > 0
 		}
 		NOT = {
 			has_ascension_perk = ap_voidborn
@@ -972,7 +970,9 @@ ap_voidborn = {
 	possible = {
 		custom_tooltip = {
 			fail_text = "requires_technology_habitat_1"
+			fail_text = "requires_ascension_perks_2"
 			has_technology = tech_habitat_1
+			num_ascension_perks > 0
 		}
 	}
 
