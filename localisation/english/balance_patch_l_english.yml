@@ -123,3 +123,16 @@
  # Relics
  relic_cry_core2:0 "Spawns 20 §YXenomorph§! Armies"
  r_cryo_core2_passive_desc:0 "New colonies start with §Y1§! additional £pop£ Pop\nShip Upkeep: §G-10%§!"
+ 
+ federation_fleet_speed_default:0 "Federation propulsion engines"
+ federation_fleet_speed_default_desc:0 "After the federation had gone through a few decades of continued military cooperation, many technological discoveries regarding propulsion have been shared, leading to new discoveries, to be implemented in the ships of all federation members."
+ job_output_default:0 "Worker rights discussions"
+ job_output_default_desc:0 "Many years into the life of the federation, as member states opened their borders to migration between the different empires, the migrants have picked up different work environment rules and regulations, helping improve worker efficiency and thereby improving their output."
+ extra_influence_default_member:0 "Influential federation connections"
+ extra_influence_default_member_desc:0 "Through use of the connections diplomats of the various members of the federations have built up, they are able to call on these connections to increase the influence of different branches of government, able to exert influence both inside and outside the federation."
+ diplo_weight_default:0 "Diplomatic ties"
+ diplo_weight_default_desc:0 "Empires working together in the federation will support their fellows in the galactic community, thus giving eachother credibility, leading to an increase in their respective diplomatic weight on the galactic stage."
+ damage_crisis_default_1:0 "Outside threat preparations"
+ damage_crisis_default_1_desc:0 "After years of prosperious cooperation, rumours of a possible extra-galactic threat have begun circulating. While no proper information has been found about this possible threat to the galaxy, member states have begun military simulations with many unknown scenarios, to better prepare for what may come."
+ damage_crisis_default_2:0 "Galactic threat countermeasures"
+ damage_crisis_default_2_desc:0 "After years of conflict with the outside threat, the military commanders of the different members of the federation have come together to share what tactical intel they have gathered on this new, unknown threat. In doing so, new federation-wide military plans are made up, increasing combat effectiveness against this threat."
