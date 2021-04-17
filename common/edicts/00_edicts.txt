@@ -50,10 +50,10 @@ evacuation_protocols = {
 			}
 		}
 	}
-	
+
 	allow = {
 		custom_tooltip = {
-			fail_text = "requires_doomsday_colony"			
+			fail_text = "requires_doomsday_colony"
 			any_owned_planet = {
 				habitable_planet = yes
 				NOR = {
@@ -68,7 +68,7 @@ evacuation_protocols = {
 	}
 
 	ai_weight = {
-		weight = @EdictHighPrio
+		weight = 500
 	}
 }
 
@@ -113,7 +113,7 @@ nutritional_plenitude = {
 		category = edicts
 		cost = { #Activation Cost
 			trigger = {
-				NOT = { has_edict = nutritional_plenitude }			
+				NOT = { has_edict = nutritional_plenitude }
 			}
 			influence = 300
 		}
@@ -160,7 +160,7 @@ nutritional_plenitude_hive = {
 		category = edicts
 		cost = { #Activation Cost
 			trigger = {
-				NOT = { has_edict = nutritional_plenitude_hive }			
+				NOT = { has_edict = nutritional_plenitude_hive }
 			}
 			influence = 300
 		}
@@ -176,7 +176,7 @@ nutritional_plenitude_hive = {
 		pop_growth_speed = 0.10
 		empire_size_pops_mult = 0.10
 		planet_pops_organics_food_upkeep_mult = 0.25
-		planet_pops_organics_minerals_upkeep_mult = 0.25	
+		planet_pops_organics_minerals_upkeep_mult = 0.25
 	}
 
 	potential = {
@@ -205,7 +205,7 @@ expanded_breeding_program_servitor = {
 		category = edicts
 		cost = { #Activation Cost
 			trigger = {
-				NOT = { has_edict = expanded_breeding_program_servitor }			
+				NOT = { has_edict = expanded_breeding_program_servitor }
 			}
 			influence = 200
 		}
@@ -252,7 +252,7 @@ fleet_supremacy = {
 		category = edicts
 		cost = { #Activation Cost
 			trigger = {
-				NOT = { has_edict = fleet_supremacy }			
+				NOT = { has_edict = fleet_supremacy }
 			}
 			influence = 100
 		}
@@ -289,7 +289,7 @@ diplomatic_grants = {
 		category = edicts
 		cost = { #Activation Cost
 			trigger = {
-				NOT = { has_edict = diplomatic_grants }			
+				NOT = { has_edict = diplomatic_grants }
 			}
 			influence = 100
 		}
@@ -315,6 +315,289 @@ diplomatic_grants = {
 	}
 }
 
+enhanced_surveillance = {
+	length = @EdictPerpetual
+	icon = "GFX_edict_type_policy"
+	edict_cap_usage = 1
+
+	resources = {
+		category = edicts
+		cost = {
+			influence = @Edict2Cost
+		}
+	}
+
+	modifier = {
+		envoys_add = 1
+		intel_encryption_add = 1
+		pop_happiness = -0.10
+		pop_ethic_authoritarian_attraction_mult = 0.25
+	}
+
+	potential = {
+		has_tradition = tr_domination_judgment_corps
+		has_comms_with_alien_empire = yes
+		is_gestalt = no
+	}
+
+	ai_weight = {
+		weight = @EdictMedPrio
+		modifier = {
+			factor = 2
+			has_ethic = ethic_authoritarian
+		}
+		modifier = {
+			factor = 3
+			has_ethic = ethic_fanatic_authoritarian
+		}
+		modifier = {
+			factor = 0
+			is_egalitarian = yes
+		}
+	}
+}
+
+bureau_of_espionage = {
+	length = @EdictPerpetual
+	icon = "GFX_edict_type_policy"
+	edict_cap_usage = 1
+
+	resources = {
+		category = edicts
+		cost = {
+			influence = @Edict2Cost
+		}
+	}
+
+	modifier = {
+		envoys_add = 1
+		espionage_operation_difficulty_add = -2
+		add_base_country_intel = 10
+	}
+
+	potential = {
+		has_comms_with_alien_empire = yes
+		is_gestalt = no
+	}
+
+	show_tech_unlock_if = {
+		is_gestalt = no
+	}
+
+	prerequisites = {
+		tech_decryption_1
+	}
+
+	ai_weight = {
+		weight = @EdictMedPrio
+		modifier = {
+			factor = 2
+			has_ethic = ethic_authoritarian
+		}
+		modifier = {
+			factor = 3
+			has_ethic = ethic_fanatic_authoritarian
+		}
+		modifier = {
+			factor = 0
+			is_egalitarian = yes
+		}
+	}
+}
+
+observation_instinct = {
+	length = @EdictPerpetual
+	icon = "GFX_edict_type_policy"
+	edict_cap_usage = 1
+
+	resources = {
+		category = edicts
+		cost = {
+			influence = @Edict2Cost
+		}
+	}
+
+	modifier = {
+		envoys_add = 1
+		espionage_operation_difficulty_add = -2
+		add_base_country_intel = 10
+	}
+
+	potential = {
+		has_comms_with_alien_empire = yes
+		is_hive_empire = yes
+	}
+
+	show_tech_unlock_if = {
+		is_hive_empire = yes
+	}
+
+	prerequisites = {
+		tech_decryption_1
+	}
+
+	ai_weight = {
+		weight = @EdictMedPrio
+		modifier = {
+			factor = 2
+			has_ethic = ethic_authoritarian
+		}
+		modifier = {
+			factor = 3
+			has_ethic = ethic_fanatic_authoritarian
+		}
+		modifier = {
+			factor = 0
+			is_egalitarian = yes
+		}
+	}
+}
+
+covert_analysis_algorithm = {
+	length = @EdictPerpetual
+	icon = "GFX_edict_type_policy"
+	edict_cap_usage = 1
+
+	resources = {
+		category = edicts
+		cost = {
+			influence = @Edict2Cost
+		}
+	}
+
+	modifier = {
+		envoys_add = 1
+		espionage_operation_difficulty_add = -2
+		add_base_country_intel = 10
+	}
+
+	potential = {
+		has_comms_with_alien_empire = yes
+		is_machine_empire = yes
+	}
+
+	show_tech_unlock_if = {
+		is_machine_empire = yes
+	}
+
+	prerequisites = {
+		tech_decryption_1
+	}
+
+	ai_weight = {
+		weight = @EdictMedPrio
+		modifier = {
+			factor = 2
+			has_ethic = ethic_authoritarian
+		}
+		modifier = {
+			factor = 3
+			has_ethic = ethic_fanatic_authoritarian
+		}
+		modifier = {
+			factor = 0
+			is_egalitarian = yes
+		}
+	}
+}
+
+tracking_implants = {
+	length = @EdictPerpetual
+	icon = "GFX_edict_type_policy"
+	edict_cap_usage = 1
+
+	resources = {
+		category = edicts
+		cost = {
+			influence = @Edict3Cost
+		}
+	}
+
+	modifier = {
+		intel_encryption_add = 1
+		pop_happiness = -0.10
+		planet_crime_add = -10
+		pop_ethic_authoritarian_attraction_mult = 0.25
+	}
+
+	potential = {
+		has_comms_with_alien_empire = yes
+		is_gestalt = no
+	}
+
+	prerequisites = {
+		tech_tracking_implants
+	}
+
+	show_tech_unlock_if = {
+		is_gestalt = no
+	}
+
+	ai_weight = {
+		weight = @EdictMedPrio
+		modifier = {
+			factor = 2
+			has_ethic = ethic_authoritarian
+		}
+		modifier = {
+			factor = 3
+			has_ethic = ethic_fanatic_authoritarian
+		}
+		modifier = {
+			factor = 0
+			is_egalitarian = yes
+		}
+	}
+}
+
+thought_enforcement = {
+	length = @EdictPerpetual
+	icon = "GFX_edict_type_policy"
+	edict_cap_usage = 1
+
+	resources = {
+		category = edicts
+		cost = {
+			influence = @Edict3Cost
+		}
+	}
+
+	modifier = {
+		intel_encryption_add = 1
+		pop_happiness = -0.10
+		pop_government_ethic_attraction = 0.25
+	}
+
+	potential = {
+		has_comms_with_alien_empire = yes
+		is_gestalt = no
+	}
+
+	prerequisites = {
+		tech_thought_enforcement
+	}
+
+	show_tech_unlock_if = {
+		is_gestalt = no
+	}
+
+	ai_weight = {
+		weight = @EdictMedPrio
+		modifier = {
+			factor = 2
+			has_ethic = ethic_authoritarian
+		}
+		modifier = {
+			factor = 3
+			has_ethic = ethic_fanatic_authoritarian
+		}
+		modifier = {
+			factor = 0
+			is_egalitarian = yes
+		}
+	}
+}
+
 extended_shifts = {
 	length = @EdictPerpetual
 	icon = "GFX_edict_type_policy"
@@ -324,7 +607,7 @@ extended_shifts = {
 		category = edicts
 		cost = { #Activation Cost
 			trigger = {
-				NOT = { has_edict = extended_shifts }			
+				NOT = { has_edict = extended_shifts }
 			}
 			influence = 300
 		}
@@ -360,6 +643,81 @@ extended_shifts = {
 	}
 }
 
+synaptic_reinforcement = {
+	length = @EdictPerpetual
+	icon = "GFX_edict_type_policy"
+	edict_cap_usage = 1
+
+	resources = {
+		category = edicts
+		cost = { #Activation Cost
+			trigger = {
+				NOT = { has_edict = synaptic_reinforcement }
+			}
+			influence = 200
+		}
+		cost = { #Deactivation Cost
+			trigger = {
+				has_edict = synaptic_reinforcement
+			}
+			influence = 100
+		}
+	}
+
+	# Synapse Nodes provide an extra Maintenance Drone job
+	modifier = {
+		custom_tooltip = edict_synaptic_reinforcement_tooltip
+	}
+
+	potential = {
+		is_hive_empire = yes
+	}
+
+	prerequisites = {
+		"tech_hive_cluster"
+	}
+
+	ai_weight = {
+		weight = @EdictHighPrio
+	}
+}
+
+industrial_maintenance = {
+	length = @EdictPerpetual
+	icon = "GFX_edict_type_policy"
+	edict_cap_usage = 1
+
+	resources = {
+		category = edicts
+		cost = { #Activation Cost
+			trigger = {
+				NOT = { has_edict = industrial_maintenance }
+			}
+			influence = 200
+		}
+		cost = { #Deactivation Cost
+			trigger = {
+				has_edict = industrial_maintenance
+			}
+			influence = 100
+		}
+	}
+
+	# Industrial Districts also provide an extra Maintenance Drone job
+	modifier = {
+		custom_tooltip = edict_industrial_maintenance_tooltip
+	}
+
+	potential = {
+		is_machine_empire = yes
+		has_swapped_tradition = tr_synchronicity_finish
+	}
+
+	ai_weight = {
+		weight = @EdictHighPrio
+	}
+}
+
 drone_overdrive = {
 	length = @EdictPerpetual
 	icon = "GFX_edict_type_policy"
@@ -369,7 +727,7 @@ drone_overdrive = {
 		category = edicts
 		cost = { #Activation Cost
 			trigger = {
-				NOT = { has_edict = drone_overdrive }			
+				NOT = { has_edict = drone_overdrive }
 			}
 			influence = 200
 		}
@@ -413,7 +771,7 @@ capacity_subsidies = {
 		category = edicts
 		cost = { #Activation Cost
 			trigger = {
-				NOT = { has_edict = capacity_subsidies }			
+				NOT = { has_edict = capacity_subsidies }
 			}
 			influence = 200
 		}
@@ -437,6 +795,11 @@ capacity_subsidies = {
 
 	ai_weight = {
 		weight = @EdictHighPrio
+
+		modifier = {
+			factor = 2
+			has_monthly_income = { resource = energy value < 50 }
+		}
 	}
 }
 
@@ -449,7 +812,7 @@ mining_subsidies = {
 		category = edicts
 		cost = { #Activation Cost
 			trigger = {
-				NOT = { has_edict = mining_subsidies }			
+				NOT = { has_edict = mining_subsidies }
 			}
 			influence = 200
 		}
@@ -473,6 +836,12 @@ mining_subsidies = {
 
 	ai_weight = {
 		weight = @EdictMedPrio
+
+		modifier = {
+			factor = 2
+			has_monthly_income = { resource = minerals value < 0 }
+			has_monthly_income = { resource = energy value > 50 }
+		}
 	}
 }
 
@@ -485,7 +854,7 @@ farming_subsidies = {
 		category = edicts
 		cost = { #Activation Cost
 			trigger = {
-				NOT = { has_edict = farming_subsidies }			
+				NOT = { has_edict = farming_subsidies }
 			}
 			influence = 200
 		}
@@ -509,6 +878,12 @@ farming_subsidies = {
 
 	ai_weight = {
 		weight = @EdictMedPrio
+
+		modifier = {
+			factor = 2
+			has_monthly_income = { resource = food value < 0 }
+			has_monthly_income = { resource = energy value > 50 }
+		}
 	}
 }
 
@@ -521,7 +896,7 @@ industrial_subsidies = {
 		category = edicts
 		cost = { #Activation Cost
 			trigger = {
-				NOT = { has_edict = industrial_subsidies }			
+				NOT = { has_edict = industrial_subsidies }
 			}
 			influence = 200
 		}
@@ -553,6 +928,12 @@ industrial_subsidies = {
 
 	ai_weight = {
 		weight = @EdictMedPrio
+
+		modifier = {
+			factor = 2
+			has_monthly_income = { resource = consumer_goods value < 0 }
+			has_monthly_income = { resource = energy value > 50 }
+		}
 	}
 }
 
@@ -565,7 +946,7 @@ forge_subsidies = {
 		category = edicts
 		cost = { #Activation Cost
 			trigger = {
-				NOT = { has_edict = forge_subsidies }			
+				NOT = { has_edict = forge_subsidies }
 			}
 			influence = 300
 		}
@@ -582,7 +963,7 @@ forge_subsidies = {
 		custom_tooltip = edict_forge_subsidies_tooltip
 		show_only_custom_tooltip = no
 	}
-	
+
 	prerequisites = {
 		tech_global_production_strategy
 	}
@@ -601,7 +982,7 @@ research_subsidies = {
 		category = edicts
 		cost = { #Activation Cost
 			trigger = {
-				NOT = { has_edict = research_subsidies }			
+				NOT = { has_edict = research_subsidies }
 			}
 			influence = 300
 		}
@@ -672,7 +1053,7 @@ peace_festivals = {
 		category = edicts
 		cost = { #Activation Cost
 			trigger = {
-				NOT = { has_edict = peace_festivals }			
+				NOT = { has_edict = peace_festivals }
 			}
 			influence = 100
 		}
@@ -707,7 +1088,7 @@ information_quarantine = {
 		category = edicts
 		cost = { #Activation Cost
 			trigger = {
-				NOT = { has_edict = information_quarantine }			
+				NOT = { has_edict = information_quarantine }
 			}
 			influence = 200
 		}
@@ -777,7 +1158,7 @@ map_the_stars = {
 		category = edicts
 		cost = { #Activation Cost
 			trigger = {
-				NOT = { has_edict = map_the_stars }			
+				NOT = { has_edict = map_the_stars }
 			}
 			influence = 100
 		}
@@ -792,6 +1173,7 @@ map_the_stars = {
 	modifier = {
 		science_ship_survey_speed = 0.25
 		ship_anomaly_generation_chance_mult = 0.10
+		ship_hyperlane_range_add = 1
 	}
 
 	potential = {
@@ -852,7 +1234,7 @@ greater_than_ourselves = {
 		category = edicts
 		cost = { #Activation Cost
 			trigger = {
-				NOT = { has_edict = greater_than_ourselves }			
+				NOT = { has_edict = greater_than_ourselves }
 			}
 			influence = 300
 		}

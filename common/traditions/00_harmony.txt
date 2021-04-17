@@ -129,7 +129,7 @@ tr_harmony_adopt = {
 }
 
 tr_harmony_finish = {
-	modifier = {	
+	modifier = {
 		empire_size_pops_mult = -0.10
 		ascension_perks_add = 1
 	}
@@ -191,7 +191,7 @@ tr_harmony_the_greater_good = {
 tr_harmony_kinship = {
 
 	modifier = {
-		pop_demotion_time_mult = -0.5
+		pop_demotion_time_mult = -0.25
 	}
 
 	tradition_swap = {
@@ -210,6 +210,23 @@ tr_harmony_kinship = {
 			factor = 1
 		}
 	}
+
+	tradition_swap = {
+		name = tr_harmony_kinship_shared_burdens
+		inherit_effects = no
+		inherit_icon = yes
+		inherit_name = no
+		trigger = {
+			has_valid_civic = civic_shared_burden
+		}
+		modifier = {
+			leaders_upkeep_mult = -0.20
+		}
+		weight = {
+			factor = 1
+		}
+	}
+
 
 	ai_weight = {
 		factor = 1000

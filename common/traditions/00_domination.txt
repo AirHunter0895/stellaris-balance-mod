@@ -36,6 +36,20 @@ tr_domination_adopt = {
 			factor = 1
 		}
 	}
+
+	tradition_swap = {
+		name = tr_domination_adopt_void
+		inherit_effects = no
+		inherit_icon = yes
+		inherit_name = no
+		trigger = {
+			has_origin = origin_void_dwellers
+		}
+		# Effects are implemented in 00_capital_buildings.txt
+		weight = {
+			factor = 1
+		}
+	}
 	
 	ai_weight = {
 		factor = 10

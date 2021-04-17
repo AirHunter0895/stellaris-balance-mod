@@ -46,21 +46,21 @@
 @tier6influencemin = 300
 @tier6influencemax = 600
 
-@tier1researchreward = 6
-@tier1researchmin = 60
-@tier1researchmax = 150
-@tier2researchreward = 12
-@tier2researchmin = 90
-@tier2researchmax = 250
-@tier3researchreward = 18
-@tier3researchmin = 120
-@tier3researchmax = 350
-@tier4researchreward = 24
-@tier4researchmin = 150
-@tier4researchmax = 500
-@tier5researchreward = 48
-@tier5researchmin = 300
-@tier5researchmax = 1000
+@tier1researchreward = 12
+@tier1researchmin = 250
+@tier1researchmax = 10000
+@tier2researchreward = 18
+@tier2researchmin = 350
+@tier2researchmax = 10000
+@tier3researchreward = 24
+@tier3researchmin = 500
+@tier3researchmax = 10000
+@tier4researchreward = 48
+@tier4researchmin = 1000
+@tier4researchmax = 10000
+@tier5researchreward = 96
+@tier5researchmin = 2000
+@tier5researchmax = 10000
 
 @tier1unityreward = 6
 @tier1unitymin = 100
@@ -80,14 +80,18 @@
 
 ### CONTACT PROJECTS
 
-@tier1influencecontact = 7
-@tier1influencecontactxenophile = 8
+@tier1influencecontact = 6
+@tier1influencecontactxenophile = 9
 @tier1influencecontactmin = 20
+@tier1influencecontactminxenophile = 30
 @tier1influencecontactmax = 80
+@tier1influencecontactmaxxenophile = 120
 @tier2influencecontact = 10
-@tier2influencecontactxenophile = 12
+@tier2influencecontactxenophile = 15
 @tier2influencecontactmin = 40
+@tier2influencecontactminxenophile = 60
 @tier2influencecontactmax = 100
+@tier2influencecontactmaxxenophile = 150
 
 ### MANDATES
 @unityreward = 6
@@ -142,6 +146,9 @@
 @habitable_min_distance = 60
 @habitable_max_distance = 100
 @habitable_spawn_odds = 0.5
+@carry_cap_high = 6
+@carry_cap_normal = 4
+@carry_cap_low = 3
 
 # INITIALIZERS
 @distance = 50
@@ -211,7 +218,6 @@
 @guardiantechtier = 5
 
 # BUILDINGS
-
 @b1_time = 360
 @b1_minerals = 400
 @b1_upkeep = 2
@@ -222,18 +228,20 @@
 @b2_upkeep = 5
 @b2_rare_cost = 50
 @b2_rare_upkeep = 1
-@b2_jobs = 5
+@b2_jobs = 4
 
 @b3_time = 600
 @b3_minerals = 800
 @b3_upkeep = 8
 @b3_rare_cost = 100
 @b3_rare_upkeep = 2
-@b3_jobs = 8
+@b3_jobs = 6
 
 @b4_time = 900
 @b4_minerals = 2000
 @b4_upkeep = 10
+@b4_rare_cost = 200
+@b4_rare_upkeep = 4
 
 @natural_equilibrium_happiness = 0.02
 
@@ -246,3 +254,5 @@
 @federation_perk_factor = 2
 
 @lithoid_trait_resource_production = 0.05
+
+@armies_for_declaring_war = 6

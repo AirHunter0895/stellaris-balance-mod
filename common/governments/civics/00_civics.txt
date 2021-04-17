@@ -22,9 +22,11 @@
 #			local_human_species_class = ..
 #		}
 #	}
+#	ai_playable = {}							# Similar to "playable", for AI
 #}
 
 civic_corvee_system = {
+	description = "civic_corvee_system_effects"
 	potential = {
 		ethics = { NOT = { value = ethic_gestalt_consciousness } }
 		authority = { NOT = { value = auth_corporate } }
@@ -46,7 +48,6 @@ civic_corvee_system = {
 	random_weight = { base = 5 }
 	modifier = {
 		pop_housing_usage_mult = -0.10
-		pop_resettlement_cost_mult = -0.25
 	}
 }
 
@@ -374,6 +375,8 @@ civic_inwards_perfection = {
 		country_edict_cap_add = 1
 		pop_citizen_happiness = 0.05
 		envoys_add = -1
+		intel_encryption_add = 1
+		intel_decryption_add = -1
 	}
 }
 
@@ -456,12 +459,14 @@ civic_cutthroat_politics = {
 	modifier = {
 		country_base_influence_produces_add = 0.5
 		edicts_cost_mult = -0.25
+		intel_decryption_add = 1
 	}
 }
 
 # Disable this civic if host has MegaCorp as it's replaced by the Corporate authority
 civic_corporate_dominion = {
 	playable = { NOT = { host_has_dlc = "Megacorp" } }
+	ai_playable = { NOT = { host_has_dlc = "Megacorp" } }
 	potential = {
 		ethics = { NOT = { value = ethic_gestalt_consciousness } }
 		authority = { NOT = { value = auth_corporate } }
@@ -536,8 +541,9 @@ civic_shadow_council = {
 	random_weight = { base = 5 }
 	description = "civic_tooltip_shadow_council_effect" # provides +2 amenities per ruler job
 	modifier = {
-		planet_jobs_ruler_produces_mult = 0.20
 		country_election_influence_cost_mult = -0.75
+		planet_jobs_ruler_produces_mult = 0.20
+		spy_network_levels_add = 10
 	}
 }
 
@@ -611,6 +617,7 @@ civic_functional_architecture = {
 		planet_structures_cost_mult = -0.10
 		planet_structures_upkeep_mult = -0.10
 		planet_building_build_speed_mult = 0.25
+		planet_max_buildings_add = 1
 	}
 }
 
@@ -653,6 +660,7 @@ civic_aristocratic_elite = {
 #civic_mechanists = {
 #	modification = no
 #	playable = { host_has_dlc = "Utopia" }
+#	ai_playable = { host_has_dlc = "Utopia" }
 #	potential = {
 #		ethics = { NOT = { value = ethic_gestalt_consciousness } }
 #		authority = { NOT = { value = auth_corporate } }
@@ -693,6 +701,7 @@ civic_aristocratic_elite = {
 
 civic_shared_burden = {
 	playable = { host_has_dlc = "Megacorp" }
+	ai_playable = { host_has_dlc = "Megacorp" }
 	potential = {
 		ethics = { NOT = { value = ethic_gestalt_consciousness } }
 		authority = { NOT = { value = auth_corporate } }
@@ -724,6 +733,7 @@ civic_shared_burden = {
 #civic_syncretic_evolution = {
 #	modification = no
 #	playable = { host_has_dlc = "Utopia" }
+#	ai_playable = { host_has_dlc = "Utopia" }
 #	potential = {
 #		ethics = { NOT = { value = ethic_gestalt_consciousness } }
 #		authority = { NOT = { value = auth_corporate } }
@@ -766,6 +776,7 @@ civic_shared_burden = {
 civic_fanatic_purifiers = {
 	modification = no
 	playable = { host_has_dlc = "Utopia" }
+	ai_playable = { host_has_dlc = "Utopia" }
 	potential = {
 		ethics = { NOT = { value = ethic_gestalt_consciousness } }
 		authority = { NOT = { value = auth_corporate } }
@@ -810,6 +821,7 @@ civic_fanatic_purifiers = {
 
 #civic_post_apocalyptic = {
 #	playable = { host_has_dlc = "Apocalypse" }
+#	ai_playable = { host_has_dlc = "Apocalypse" }
 #	starting_colony = pc_nuked # Changes homeworld class regardless of what is picked for empire
 #	potential = {
 #		ethics = { NOT = { value = ethic_gestalt_consciousness } }
@@ -847,6 +859,7 @@ civic_fanatic_purifiers = {
 
 #civic_life_seeded = {
 #	playable = { host_has_dlc = "Apocalypse" }
+#	ai_playable = { host_has_dlc = "Apocalypse" }
 #	starting_colony = pc_gaia
 #	habitability_preference = pc_gaia
 #	preferred_planet_class_neighbor = no
@@ -881,6 +894,7 @@ civic_fanatic_purifiers = {
 
 civic_barbaric_despoilers = {
 	playable = { host_has_dlc = "Apocalypse" }
+	ai_playable = { host_has_dlc = "Apocalypse" }
 	potential = {
 		ethics = { NOT = { value = ethic_gestalt_consciousness } }
 		authority = { NOT = { value = auth_corporate } }
@@ -936,6 +950,7 @@ civic_barbaric_despoilers = {
 # New for MegaCorp
 civic_byzantine_bureaucracy = {
 	playable = { host_has_dlc = "Megacorp" }
+	ai_playable = { host_has_dlc = "Megacorp" }
 	potential = {
 		ethics = { NOT = { value = ethic_gestalt_consciousness } }
 		authority = { NOT = { value = auth_corporate } }
@@ -955,6 +970,7 @@ civic_byzantine_bureaucracy = {
 civic_merchant_guilds = {
 	description = "civic_tooltip_merchant_guilds_effects"
 	playable = { host_has_dlc = "Megacorp" }
+	ai_playable = { host_has_dlc = "Megacorp" }
 	potential = {
 		ethics = { NOT = { value = ethic_gestalt_consciousness } }
 		authority = { NOT = { value = auth_corporate } }
@@ -976,6 +992,7 @@ civic_merchant_guilds = {
 
 civic_reanimated_armies = {
 	playable = { host_has_dlc = "Necroids Species Pack" }
+	ai_playable = { host_has_dlc = "Necroids Species Pack" }
 	potential = {
 		ethics = { NOT = { value = ethic_gestalt_consciousness } }
 		authority = { NOT = { value = auth_corporate } }
@@ -997,6 +1014,12 @@ civic_reanimated_armies = {
 				value = civic_merchant_guilds
 			}
 		}
+		species = {
+			NOT = {
+				text = disabled_by_synthetic_ascension
+				value = ROBOT
+			}
+		}
 	}
 	random_weight = {
 		base = 3
@@ -1006,6 +1029,7 @@ civic_reanimated_armies = {
 
 civic_diplomatic_corps = {
 	playable = { host_has_dlc = "Federations" }
+	ai_playable = { host_has_dlc = "Federations" }
 	potential = {
 		ethics = { NOT = { value = ethic_gestalt_consciousness } }
 		authority = { NOT = { value = auth_corporate } }
@@ -1027,6 +1051,7 @@ civic_diplomatic_corps = {
 
 civic_death_cult = {
 	playable = { host_has_dlc = "Necroids Species Pack" }
+	ai_playable = { host_has_dlc = "Necroids Species Pack" }
 	description = "civic_tooltip_death_cult_effects"
 	potential = {
 		ethics = { NOT = { value = ethic_gestalt_consciousness } }
@@ -1054,6 +1079,7 @@ civic_death_cult = {
 
 civic_memorialist = {
 	playable = { host_has_dlc = "Necroids Species Pack" }
+	ai_playable = { host_has_dlc = "Necroids Species Pack" }
 	description = "civic_tooltip_memorialist_effects"
 	potential = {
 		ethics = { NOT = { value = ethic_gestalt_consciousness } } #Gestalts get their own versions

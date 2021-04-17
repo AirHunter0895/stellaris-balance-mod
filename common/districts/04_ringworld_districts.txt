@@ -1,8 +1,8 @@
-@rw_cost = 2000
-@rw_cost_sr = 100
-@rw_maintenance = 10
+@rw_cost = 1000
+@rw_cost_sr = 50
+@rw_maintenance = 5
 @rw_maintenance_sr = 2
-@rw_district_buildtime = 600
+@rw_district_buildtime = 360
 
 district_rw_city = {
 	base_buildtime = @rw_district_buildtime
@@ -37,8 +37,8 @@ district_rw_city = {
 	}
 
 	planet_modifier = {
-		planet_housing_add = 50
-		job_enforcer_add = 1
+		planet_housing_add = 25
+		job_enforcer_add = 2
 	}
 
 	triggered_planet_modifier = {
@@ -49,7 +49,7 @@ district_rw_city = {
 			}
 		}
 		modifier = {
-			planet_housing_add = -10
+			planet_housing_add = -5
 		}
 	}
 
@@ -62,7 +62,7 @@ district_rw_city = {
 			}
 		}
 		modifier = {
-			job_clerk_add = 10
+			job_clerk_add = 5
 		}
 	}
 
@@ -72,7 +72,7 @@ district_rw_city = {
 			owner = { has_non_swapped_tradition = tr_prosperity_public_works }
 		}
 		modifier = {
-			planet_housing_add = 10
+			planet_housing_add = 5
 		}
 	}
 
@@ -84,7 +84,7 @@ district_rw_city = {
 			}
 		}
 		modifier = {
-			planet_housing_add = 10
+			planet_housing_add = 5
 		}
 	}
 
@@ -97,7 +97,7 @@ district_rw_city = {
 			}
 		}
 		modifier = {
-			planet_housing_add = 10
+			planet_housing_add = 5
 		}
 	}
 
@@ -107,7 +107,7 @@ district_rw_city = {
 			owner = { has_non_swapped_tradition = tr_prosperity_interstellar_franchising }
 		}
 		modifier = {
-			job_clerk_add = 10
+			job_clerk_add = 5
 		}
 	}
 
@@ -122,8 +122,8 @@ district_rw_city = {
 			}
 		}
 		modifier = {
-			job_enforcer_add = -1
-			planet_housing_add = -20
+			job_enforcer_add = -2
+			planet_housing_add = -10
 		}
 	}
 
@@ -193,8 +193,9 @@ district_rw_hive = {
 	}
 
 	planet_modifier = {
-		planet_housing_add = 60
-		job_maintenance_drone_add = 36
+		planet_housing_add = 30
+		job_maintenance_drone_add = 15
+		job_synapse_drone_add = 2
 	}
 
 	triggered_planet_modifier = {
@@ -203,7 +204,7 @@ district_rw_hive = {
 			owner = { has_technology = tech_housing_1 }
 		}
 		modifier = {
-			planet_housing_add = 10
+			planet_housing_add = 5
 		}
 	}
 
@@ -213,8 +214,8 @@ district_rw_hive = {
 			owner = { has_technology = tech_housing_2 }
 		}
 		modifier = {
-			planet_housing_add = 10
-			job_maintenance_drone_add = 12
+			planet_housing_add = 5
+			job_maintenance_drone_add = 5
 		}
 	}
 
@@ -224,7 +225,7 @@ district_rw_hive = {
 			owner = { has_swapped_tradition = tr_prosperity_extended_hives }
 		}
 		modifier = {
-			planet_housing_add = 10
+			planet_housing_add = 5
 		}
 	}
 
@@ -239,8 +240,9 @@ district_rw_hive = {
 			}
 		}
 		modifier = {
-			job_maintenance_drone_add = -30
-			planet_housing_add = -30
+			job_maintenance_drone_add = -15
+			planet_housing_add = -15
+			job_synapse_drone_add = -1
 		}
 	}
 
@@ -255,8 +257,9 @@ district_rw_hive = {
 			}
 		}
 		modifier = {
-			job_maintenance_drone_add = -20
-			planet_housing_add = -20
+			job_maintenance_drone_add = -10
+			planet_housing_add = -10
+			job_synapse_drone_add = -1
 		}
 	}
 
@@ -328,9 +331,9 @@ district_rw_nexus = {
 	}
 
 	planet_modifier = {
-		planet_housing_add = 50
-		job_maintenance_drone_add = 30
-		job_technician_drone_add = 10
+		planet_housing_add = 25
+		job_maintenance_drone_add = 10
+		job_technician_drone_add = 2
 	}
 
 	triggered_planet_modifier = {
@@ -339,7 +342,7 @@ district_rw_nexus = {
 			owner = { has_technology = tech_housing_1 }
 		}
 		modifier = {
-			planet_housing_add = 10
+			planet_housing_add = 5
 		}
 	}
 
@@ -349,8 +352,8 @@ district_rw_nexus = {
 			owner = { has_technology = tech_housing_2 }
 		}
 		modifier = {
-			planet_housing_add = 10
-			job_maintenance_drone_add = 10
+			planet_housing_add = 5
+			job_maintenance_drone_add = 5
 		}
 	}
 
@@ -360,7 +363,7 @@ district_rw_nexus = {
 			owner = { has_swapped_tradition = tr_prosperity_optimized_nexus }
 		}
 		modifier = {
-			planet_housing_add = 10
+			planet_housing_add = 5
 		}
 	}
 
@@ -375,9 +378,9 @@ district_rw_nexus = {
 			}
 		}
 		modifier = {
-			job_maintenance_drone_add = -25
-			job_technician_drone_add = -5
-			planet_housing_add = -30
+			job_maintenance_drone_add = -7
+			job_technician_drone_add = -1
+			planet_housing_add = -15
 		}
 	}
 
@@ -392,9 +395,9 @@ district_rw_nexus = {
 			}
 		}
 		modifier = {
-			job_maintenance_drone_add = -15
-			job_technician_drone_add = -5
-			planet_housing_add = -20
+			job_maintenance_drone_add = -5
+			job_technician_drone_add = -1
+			planet_housing_add = -10
 		}
 	}
 
@@ -471,7 +474,7 @@ district_rw_generator = {
 	}
 
 	triggered_planet_modifier = {
-		planet_housing_add = 20
+		planet_housing_add = 10
 	}
 
 	triggered_planet_modifier = {
@@ -479,7 +482,7 @@ district_rw_generator = {
 			exists = owner
 			owner = { is_machine_empire = yes }
 		}
-		job_technician_drone_add = 20
+		job_technician_drone_add = 10
 	}
 
 	triggered_planet_modifier = {
@@ -487,8 +490,19 @@ district_rw_generator = {
 			exists = owner
 			owner = { is_hive_empire = yes }
 		}
-		planet_housing_add = 10
-		job_technician_drone_add = 30
+		planet_housing_add = 5
+		job_technician_drone_add = 15
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+			has_active_building = building_energy_nexus
+		}
+		modifier = {
+			job_technician_drone_add = 5
+		}
 	}
 
 	triggered_planet_modifier = {
@@ -500,7 +514,21 @@ district_rw_generator = {
 			}
 		}
 		modifier = {
-			job_technician_add = 20
+			job_technician_add = 10
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+			has_active_building = building_energy_nexus
+		}
+		modifier = {
+			job_technician_add = 5
 		}
 	}
 
@@ -510,7 +538,18 @@ district_rw_generator = {
 			owner = { is_fallen_empire_spiritualist = yes }
 		}
 		modifier = {
-			job_fe_acolyte_generator_add = 20
+			job_fe_acolyte_generator_add = 10
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_fallen_empire_spiritualist = yes }
+			has_active_building = building_energy_nexus
+		}
+		modifier = {
+			job_fe_acolyte_generator_add = 5
 		}
 	}
 
@@ -526,8 +565,8 @@ district_rw_generator = {
 			}
 		}
 		modifier = {
-			job_technician_drone_add = -10
-			planet_housing_add = -10
+			job_technician_drone_add = -5
+			planet_housing_add = -5
 		}
 	}
 
@@ -543,8 +582,8 @@ district_rw_generator = {
 			}
 		}
 		modifier = {
-			job_technician_drone_add = -15
-			planet_housing_add = -15
+			job_technician_drone_add = -7
+			planet_housing_add = -7
 		}
 	}
 
@@ -595,30 +634,6 @@ district_rw_generator = {
 		text = job_fe_acolyte_generator_effect_desc
 	}
 
-	ai_weight = {
-		weight = 0
-
-		modifier = {
-			weight = 250
-
-			owner = {
-				has_monthly_income = {
-					resource = energy
-					value < 200
-				}
-			}
-		}
-
-		modifier = {
-			factor = 0.01
-			OR = {
-				planet = { has_district = district_rw_farming }
-				planet = { has_district = district_rw_science }
-				planet = { has_district = district_rw_commercial }
-			}
-		}
-	}
-
 	ai_resource_production = {
 		energy = 10
 		trigger = {
@@ -666,10 +681,10 @@ district_rw_commercial = {
 	}
 
 	triggered_planet_modifier = {
-		planet_housing_add = 20
-		job_merchant_add = 5
-		job_artisan_add = 5
+		planet_housing_add = 10
+		job_merchant_add = 2
 		job_clerk_add = 10
+
 	}
 
 	triggered_planet_modifier = {
@@ -684,10 +699,9 @@ district_rw_commercial = {
 			}
 		}
 		modifier = {
-			job_merchant_add = -3
-			job_artisan_add = -2
-			job_clerk_add = -10
-			planet_housing_add = -15
+			job_merchant_add = -1
+			job_clerk_add = -5
+			planet_housing_add = -7
 		}
 	}
 
@@ -703,9 +717,9 @@ district_rw_commercial = {
 			}
 		}
 		modifier = {
-			job_merchant_add = -2
-			job_clerk_add = -8
-			planet_housing_add = -10
+			job_merchant_add = -1
+			job_clerk_add = -4
+			planet_housing_add = -5
 		}
 	}
 
@@ -755,29 +769,6 @@ district_rw_commercial = {
 		text = job_clerk_effect_desc
 	}
 
-	ai_weight = {
-		weight = 0
-
-		modifier = {
-			weight = 250
-			owner = {
-				has_monthly_income = {
-					resource = energy
-					value < 200
-				}
-			}
-		}
-
-		modifier = {
-			factor = 0.01
-			OR = {
-				planet = { has_district = district_rw_farming }
-				planet = { has_district = district_rw_science }
-				planet = { has_district = district_rw_generator }
-			}
-		}
-	}
-
 	ai_resource_production = {
 		energy = 10
 		trigger = {
@@ -807,7 +798,7 @@ district_rw_science = {
 	}
 
 	triggered_planet_modifier = {
-		planet_housing_add = 20
+		planet_housing_add = 10
 	}
 
 	triggered_planet_modifier = {
@@ -816,7 +807,7 @@ district_rw_science = {
 			owner = { is_regular_empire = yes }
 		}
 		modifier = {
-			job_researcher_add = 20
+			job_researcher_add = 10
 		}
 	}
 
@@ -826,7 +817,7 @@ district_rw_science = {
 			owner = { is_hive_empire = yes }
 		}
 		modifier = {
-			job_brain_drone_add = 20
+			job_brain_drone_add = 10
 		}
 	}
 
@@ -836,7 +827,7 @@ district_rw_science = {
 			owner = { is_machine_empire = yes }
 		}
 		modifier = {
-			job_calculator_add = 20
+			job_calculator_add = 10
 		}
 	}
 
@@ -852,8 +843,8 @@ district_rw_science = {
 			}
 		}
 		modifier = {
-			job_researcher_add = -15
-			planet_housing_add = -15
+			job_researcher_add = -7
+			planet_housing_add = -7
 		}
 	}
 
@@ -869,8 +860,8 @@ district_rw_science = {
 			}
 		}
 		modifier = {
-			job_brain_drone_add = -15
-			planet_housing_add = -15
+			job_brain_drone_add = -7
+			planet_housing_add = -7
 		}
 	}
 
@@ -886,8 +877,8 @@ district_rw_science = {
 			}
 		}
 		modifier = {
-			job_calculator_add = -15
-			planet_housing_add = -15
+			job_calculator_add = -7
+			planet_housing_add = -7
 		}
 	}
 
@@ -903,8 +894,8 @@ district_rw_science = {
 			}
 		}
 		modifier = {
-			job_researcher_add = -10
-			planet_housing_add = -10
+			job_researcher_add = -5
+			planet_housing_add = -5
 		}
 	}
 
@@ -920,8 +911,8 @@ district_rw_science = {
 			}
 		}
 		modifier = {
-			job_brain_drone_add = -10
-			planet_housing_add = -10
+			job_brain_drone_add = -5
+			planet_housing_add = -5
 		}
 	}
 
@@ -937,8 +928,8 @@ district_rw_science = {
 			}
 		}
 		modifier = {
-			job_calculator_add = -10
-			planet_housing_add = -10
+			job_calculator_add = -5
+			planet_housing_add = -5
 		}
 	}
 
@@ -1000,29 +991,6 @@ district_rw_science = {
 		text = job_calculator_effect_desc
 	}
 
-  ai_weight = {
-		weight = 0
-
-		modifier = {
-			weight = 250
-			owner = {
-				has_monthly_income = {
-					resource = consumer_goods
-					value > 50
-				}
-			}
-		}
-
-		modifier = {
-			factor = 0.01
-			OR = {
-				planet = { has_district = district_rw_farming }
-				planet = { has_district = district_rw_commercial }
-				planet = { has_district = district_rw_generator }
-			}
-		}
-	}
-
 }
 
 district_rw_farming = {
@@ -1066,7 +1034,7 @@ district_rw_farming = {
 	# triggered for tooltip formatting purposes
 	triggered_planet_modifier = {
 		modifier = {
-			planet_housing_add = 20
+			planet_housing_add = 10
 		}
 	}
 
@@ -1076,8 +1044,8 @@ district_rw_farming = {
 			owner = { is_hive_empire = yes }
 		}
 		modifier = {
-			planet_housing_add = 10
-			job_agri_drone_add = 30
+			planet_housing_add = 5
+			job_agri_drone_add = 15
 		}
 	}
 
@@ -1087,7 +1055,7 @@ district_rw_farming = {
 			owner = { is_machine_empire = yes }
 		}
 		modifier = {
-			job_agri_drone_add = 20
+			job_agri_drone_add = 10
 		}
 	}
 
@@ -1100,7 +1068,7 @@ district_rw_farming = {
 			}
 		}
 		modifier = {
-			job_farmer_add = 20
+			job_farmer_add = 10
 		}
 	}
 
@@ -1110,7 +1078,7 @@ district_rw_farming = {
 			owner = { is_fallen_empire_spiritualist = yes }
 		}
 		modifier = {
-			job_fe_acolyte_farm_add = 20
+			job_fe_acolyte_farm_add = 10
 		}
 	}
 
@@ -1122,7 +1090,7 @@ district_rw_farming = {
 			}
 		}
 		modifier = {
-			planet_housing_add = 10
+			planet_housing_add = 5
 		}
 	}
 
@@ -1135,7 +1103,7 @@ district_rw_farming = {
 			}
 		}
 		modifier = {
-			planet_housing_add = 10
+			planet_housing_add = 5
 		}
 	}
 
@@ -1151,8 +1119,8 @@ district_rw_farming = {
 			}
 		}
 		modifier = {
-			job_farmer_add = -10
-			planet_housing_add = -10
+			job_farmer_add = -5
+			planet_housing_add = -5
 		}
 	}
 
@@ -1168,8 +1136,8 @@ district_rw_farming = {
 			}
 		}
 		modifier = {
-			job_agri_drone_add = -10
-			planet_housing_add = -10
+			job_agri_drone_add = -5
+			planet_housing_add = -5
 		}
 	}
 
@@ -1185,8 +1153,8 @@ district_rw_farming = {
 			}
 		}
 		modifier = {
-			job_agri_drone_add = -15
-			planet_housing_add = -15
+			job_agri_drone_add = -7
+			planet_housing_add = -7
 		}
 	}
 
@@ -1227,36 +1195,6 @@ district_rw_farming = {
 		text = job_fe_acolyte_farm_effect_desc
 	}
 
-	ai_weight = {
-		weight = 0
-
-		modifier = {
-			weight = 250
-
-			owner = {
-				has_monthly_income = {
-					resource = food
-					value < 200
-				}
-			}
-		}
-
-		modifier = {
-			factor = 0.01
-			OR = {
-				planet = { has_district = district_rw_science }
-				planet = { has_district = district_rw_commercial }
-				planet = { has_district = district_rw_generator }
-			}
-		}
-		modifier = {
-			factor = 0
-			owner = {
-				country_uses_food = no
-			}
-		}
-	}
-
 	ai_resource_production = {
 		food = 10
 		trigger = {
@@ -1265,3 +1203,263 @@ district_rw_farming = {
 	}
 }
 
+district_rw_industrial = {
+	base_buildtime = @rw_district_buildtime
+	is_capped_by_modifier = no
+
+	show_on_uncolonized = { uses_district_set = ring_world }
+
+	potential = { uses_district_set = ring_world }
+
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = @rw_cost
+			volatile_motes = @rw_cost_sr
+		}
+		upkeep = {
+			energy = @rw_maintenance
+			volatile_motes = @rw_maintenance_sr
+		}
+		upkeep = {
+			trigger = {
+				exists = owner
+				owner = {
+					has_edict = industrial_maintenance
+				}
+			}
+			energy = 4
+		}
+	}
+
+	triggered_planet_modifier = {
+		planet_housing_add = 10
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		modifier = {
+			job_artisan_add = 5
+			job_foundry_add = 5
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		modifier = {
+			job_alloy_drone_add = 10
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {
+			job_fabricator_add = 10
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_machine_empire = yes
+				has_valid_civic = civic_machine_servitor
+			}
+		}
+		modifier = {
+			job_artisan_drone_add = 1
+			job_fabricator_add = -1
+		}
+	}
+
+	# Extra jobs from foundry buildings
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+			has_active_building = building_foundry_2
+		}
+		modifier = {
+			job_foundry_add = 5
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+			has_active_building = building_foundry_3
+		}
+		modifier = {
+			job_foundry_add = 10
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+			has_active_building = building_foundry_2
+		}
+		modifier = {
+			job_fabricator_add = 5
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+			has_active_building = building_foundry_3
+		}
+		modifier = {
+			job_fabricator_add = 10
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+			has_active_building = building_foundry_2
+		}
+		modifier = {
+			job_alloy_drone_add = 5
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+			has_active_building = building_foundry_3
+		}
+		modifier = {
+			job_alloy_drone_add = 10
+		}
+	}
+
+	# Extra jobs from factory buildings
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+			has_active_building = building_factory_2
+		}
+		modifier = {
+			job_artisan_add = 5
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+			has_active_building = building_factory_3
+		}
+		modifier = {
+			job_artisan_add = 10
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+			has_active_building = building_factory_2
+		}
+		modifier = {
+			job_artisan_drone_add = 2
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+			has_active_building = building_factory_3
+		}
+		modifier = {
+			job_artisan_drone_add = 5
+		}
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		text = job_artisan_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_machine_empire = yes
+				has_valid_civic = civic_machine_servitor
+			}
+		}
+		text = job_artisan_drone_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		text = job_foundry_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		text = job_fabricator_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+			OR = {
+				has_active_building = building_factory_2
+				has_active_building = building_factory_3
+			}
+		}
+		text = job_alloy_drone_effect_desc
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_machine_empire = yes
+				has_edict = industrial_maintenance
+			}
+		}
+		modifier = {
+			job_maintenance_drone_add = 2
+		}
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_machine_empire = yes
+				has_edict = industrial_maintenance
+			}
+		}
+		text = job_maintenance_drone_effect_desc
+	}
+}

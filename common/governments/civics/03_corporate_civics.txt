@@ -18,7 +18,12 @@
 # Corporate
 
 civic_franchising = {
-	potential = { authority = { value = auth_corporate } }
+	potential = {
+		OR = {
+			authority = { value = auth_corporate }
+			civics = { value = civic_galactic_sovereign_megacorp }
+		}
+	}
 	random_weight = { base = 5 }
 	description = "civic_tooltip_franchising_effects"
 	possible = {
@@ -36,7 +41,12 @@ civic_franchising = {
 }
 
 civic_trading_posts = {
-	potential = { authority = { value = auth_corporate } }
+	potential = {
+		OR = {
+			authority = { value = auth_corporate }
+			civics = { value = civic_galactic_sovereign_megacorp }
+		}
+	}
 	random_weight = { base = 5 }
 	modifier = {
 		country_starbase_capacity_add = 4
@@ -46,7 +56,12 @@ civic_trading_posts = {
 }
 
 civic_media_conglomerate = {
-	potential = { authority = { value = auth_corporate } }
+	potential = {
+		OR = {
+			authority = { value = auth_corporate }
+			civics = { value = civic_galactic_sovereign_megacorp }
+		}
+	}
 	random_weight = { base = 5 }
 	modifier = {
 		country_edict_cap_add = 1
@@ -55,7 +70,12 @@ civic_media_conglomerate = {
 }
 
 civic_naval_contractors = {
-	potential = { authority = { value = auth_corporate } }
+	potential = {
+		OR = {
+			authority = { value = auth_corporate }
+			civics = { value = civic_galactic_sovereign_megacorp }
+		}
+	}
 	random_weight = { base = 5 }
 	possible = {
 		ethics = {
@@ -72,7 +92,12 @@ civic_naval_contractors = {
 }
 
 civic_free_traders = {
-	potential = { authority = { value = auth_corporate } }
+	potential = {
+		OR = {
+			authority = { value = auth_corporate }
+			civics = { value = civic_galactic_sovereign_megacorp }
+		}
+	}
 	random_weight = { base = 5 }
 	modifier = {
 		trade_value_mult = 0.10
@@ -81,7 +106,12 @@ civic_free_traders = {
 }
 
 civic_private_prospectors = {
-	potential = { authority = { value = auth_corporate } }
+	potential = {
+		OR = {
+			authority = { value = auth_corporate }
+			civics = { value = civic_galactic_sovereign_megacorp }
+		}
+	}
 	random_weight = { base = 5 }
 	modifier = {
 		empire_size_colonies_mult = -0.33
@@ -93,7 +123,12 @@ civic_private_prospectors = {
 }
 
 civic_gospel_of_the_masses = {
-	potential = { authority = { value = auth_corporate } }
+	potential = {
+		OR = {
+			authority = { value = auth_corporate }
+			civics = { value = civic_galactic_sovereign_megacorp }
+		}
+	}
 	random_weight = { base = 5 }
 	possible = {
 		ethics = {
@@ -112,18 +147,29 @@ civic_gospel_of_the_masses = {
 }
 
 civic_ruthless_competition = {
-	potential = { authority = { value = auth_corporate } }
+	potential = {
+		OR = {
+			authority = { value = auth_corporate }
+			civics = { value = civic_galactic_sovereign_megacorp }
+		}
+	}
 	random_weight = { base = 5 }
 	modifier = {
         leader_skill_levels = 1
 		species_leader_exp_gain = 0.25
+		spy_network_levels_add = 10
 		pop_demotion_time_mult = -0.25
     }
 }
 
 civic_criminal_heritage = {
 	modification = no
-	potential = { authority = { value = auth_corporate } }
+	potential = {
+		OR = {
+			authority = { value = auth_corporate }
+			civics = { value = civic_galactic_sovereign_megacorp }
+		}
+	}
 	random_weight = { base = 5 }
 	possible = {
 		civics = {
@@ -133,6 +179,7 @@ civic_criminal_heritage = {
 		}
 	}
 	modifier = {
+		spy_network_daily_value_mult = 0.20
 		planet_branch_offices_cost_mult = -0.15
 	}
 
@@ -140,7 +187,12 @@ civic_criminal_heritage = {
 }
 
 civic_private_military_companies = {
-	potential = { authority = { value = auth_corporate } }
+	potential = {
+		OR = {
+			authority = { value = auth_corporate }
+			civics = { value = civic_galactic_sovereign_megacorp }
+		}
+	}
 	random_weight = { base = 5 }
 	possible = {
 		ethics = {
@@ -159,7 +211,12 @@ civic_private_military_companies = {
 }
 
 civic_indentured_assets = {
-	potential = { authority = { value = auth_corporate } }
+	potential = {
+		OR = {
+			authority = { value = auth_corporate }
+			civics = { value = civic_galactic_sovereign_megacorp }
+		}
+	}
 	random_weight = { base = 5 }
 	possible = {
 		ethics = {
@@ -177,16 +234,27 @@ civic_indentured_assets = {
 }
 
 civic_brand_loyalty = {
-	potential = { authority = { value = auth_corporate } }
+	potential = {
+		OR = {
+			authority = { value = auth_corporate }
+			civics = { value = civic_galactic_sovereign_megacorp }
+		}
+	}
 	random_weight = { base = 5 }
 	modifier = {
 		country_unity_produces_mult = 0.15
+		intel_encryption_add = 1
 	}
 }
 
 civic_public_relations_specialists = {
 	playable = { host_has_dlc = "Federations" }
-	potential = { authority = { value = auth_corporate } }
+	potential = {
+		OR = {
+			authority = { value = auth_corporate }
+			civics = { value = civic_galactic_sovereign_megacorp }
+		}
+	}
 	random_weight = { base = 5 }
 	modifier = {
 		envoys_add = 2
@@ -197,7 +265,12 @@ civic_public_relations_specialists = {
 civic_death_cult_corporate = {
 	playable = { host_has_dlc = "Necroids Species Pack" }
 	description = "civic_tooltip_death_cult_effects"
-	potential = { authority = { value = auth_corporate } }
+	potential = {
+		OR = {
+			authority = { value = auth_corporate }
+			civics = { value = civic_galactic_sovereign_megacorp }
+		}
+	}
 	random_weight = { base = 5 }
 	possible = {
 		origin = { NOT = { value = origin_necrophage } }

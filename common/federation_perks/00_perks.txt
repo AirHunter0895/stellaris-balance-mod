@@ -34,7 +34,6 @@ hostile = {
 default_federation_passive = {
 	federation_modifier = {
 		description = default_federation_passive_effect
-		# TODO
 	}
 }
 
@@ -384,6 +383,7 @@ damage_crisis_1 = {
 		damage_vs_country_type_extradimensional_3_mult = 0.25
 		damage_vs_country_type_ai_empire_mult = 0.25
 		damage_vs_country_type_gray_goo_mult = 0.25
+		damage_vs_player_crisis_mult = 0.25
 	}
 }
 
@@ -396,6 +396,7 @@ damage_crisis_2 = {
 		damage_vs_country_type_extradimensional_3_mult = 0.25
 		damage_vs_country_type_ai_empire_mult = 0.25
 		damage_vs_country_type_gray_goo_mult = 0.25
+		damage_vs_player_crisis_mult = 0.25
 	}
 }
 
@@ -406,15 +407,18 @@ envoy_unity_1 = {
 	envoy_modifier = {
 		description = envoy_unity_1_effect
 		country_base_unity_produces_add = 10
+		country_trust_growth = 0.05
 	}
 }
 
 envoy_unity_2 = {
 	members_modifier = {
-		description = envoy_unity_1_effect
+		description = envoy_unity_2_effect
 	}
 	envoy_modifier = {
-		country_base_unity_produces_add = 1
+		description = envoy_unity_2_effect
+		country_base_unity_produces_add = 2
+		country_trust_cap_add = 5
 	}
 }
 

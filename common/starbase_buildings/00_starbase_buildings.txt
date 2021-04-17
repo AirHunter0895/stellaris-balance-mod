@@ -116,6 +116,14 @@ nebula_refinery = {
 			minerals = 10
 		}
 
+		produces = {
+			trigger = {
+				exists = owner
+				owner = { has_technology = tech_mine_exotic_gases }
+			}
+			exotic_gases = 1
+		}
+
 		upkeep = {
 			energy = 2
 		}
@@ -470,7 +478,8 @@ colossus_yards = {
 		owner = {
 			OR = {
 				has_technology = tech_colossus
-				has_technology = tech_juggernaut		
+				has_technology = tech_juggernaut
+				has_technology = tech_btc_1 # star-eater
 			}
 		}
 	}
@@ -564,7 +573,14 @@ black_hole_observatory = {
 					is_active_resolution = "resolution_galacticstudies_extradimensional_experimentation"
 				}
 			}
-			physics_research = 10
+			physics_research = 15
+		}
+		produces = {
+			trigger = {
+				exists = owner
+				owner = { has_technology = tech_mine_dark_matter }
+			}
+			sr_dark_matter = 1
 		}
 
 		upkeep = {
@@ -967,8 +983,8 @@ warp_fluctuator = {
 
 	potential = {
 		exists = owner
-		owner = { 
-			has_technology = tech_hyper_drive_2 
+		owner = {
+			has_technology = tech_hyper_drive_2
 			is_gestalt = no
 		}
 	}
@@ -995,12 +1011,73 @@ warp_fluctuator = {
 		starbase_trade_collection_range_add = 2
 	}
 
-	show_in_tech = "tech_hyper_drive_2"
+	show_in_tech = "tech_interstellar_economics"
 
 	ai_build_at_chokepoint = yes
 	ai_build_outside_chokepoint = no
 	ai_weight = {
 		weight = 10
+	}
+}
+
+transit_hub = {
+	icon = "GFX_spaceport_module_pioneering_terminal"
+	construction_days = 180
+
+	potential = {
+		exists = owner
+		owner = {
+			has_technology = tech_hyper_drive_2
+		}
+	}
+
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_starport"
+			has_starbase_size >= starbase_starport
+		}
+		custom_tooltip = {
+			fail_text = "requires_colonized_planet"
+			solar_system = {
+				any_system_planet = {
+					is_owned_by = from
+				}
+			}
+		}
+	}
+
+	resources = {
+		category = starbase_buildings
+		cost = {
+			alloys = 100
+		}
+
+		upkeep = {
+			energy = 3
+		}
+	}
+
+	system_modifier = {
+		planet_resettlement_unemployed_mult = 1.00
+	}
+
+	show_in_tech = "tech_hyper_drive_2"
+
+	ai_build_at_chokepoint = yes
+	ai_build_outside_chokepoint = yes
+	ai_weight = {
+		weight = 100
+		modifier = {
+			factor = 0
+			NOT = {
+				solar_system = {
+					any_system_planet = {
+						exists = owner
+						owner = { is_country_type = default }
+					}
+				}
+			}
+		}
 	}
 }
 

@@ -304,6 +304,10 @@
 		MODIFIER_TEXT_ICON_SCALE = 0.70
 
 		CELESTIAL_WARNING_COORDINATE_VALUE = 500			# System size at which you get errors for the system being too big (500 is the normal values, as graphics can glitch with bigger values)
+
+		GDF_SHIP_GRAPHICAL_CULTURE = "nemesis_01"
+
+		FEDERATION_UNKOWN_FEDERATION_ICON	= "GFX_unknown_federation"
 	}
 
 	NInterface = {
@@ -332,9 +336,6 @@
 		ARCH_VIEW_DEFAULT_MAX_CHAPTERS = 6 # default number of supported chapters in a site, will be overriden if a site is scripted to have more
 		ARCH_VIEW_TEXTBOX_SMALL = 200	# height of textbox when not showing an event
 		ARCH_VIEW_TEXTBOX_LARGE = 265	# height of textbox when showing an event
-
-		PLANETVIEW_ORBITAL_RED_HEALTH 			= 50 # How high percentage health before orbital health bar turns red in planet view.
-		PLANETVIEW_ORBITAL_YELLOW_HEALTH 		= 75 # How high percentage health before orbital health bar turns yellow in planet view.
 
 		DEFAULT_CITY_POP_LEVEL					= 4 # Shown in empire designer
 		POPS_TO_SHOW_CITY_LEVEL 				= { 1 20 60 100 200 } # Decides how many pops are required to show the next level of city-infrastructure in city_frame
@@ -375,10 +376,25 @@
 
 		SITUATION_LOG_ARCHAEOLOGY_PICTURE_SPRITE = "GFX_evt_archaeological_dig"
 		SITUATION_LOG_ARCHAEOLOGY_ICON_FILENAME		= "gfx/interface/icons/situation_log/situation_log_archaeology.dds"
+		SITUATION_LOG_FIRST_CONTACT_ICON_FILENAME		= "gfx/interface/icons/situation_log/situation_log_radar.dds"
 		SITUATION_LOG_DEBRIS_PICTURE_SPRITE		= "GFX_situation_log_debris_picture"
 		SITUATION_LOG_DEBRIS_ICON_FILENAME		= "gfx/interface/icons/situation_log/situation_log_debris.dds"
 		SITUATION_LOG_MODIFICATION_PICTURE_SPRITE 	= "GFX_situation_log_modification_picture"
 		SITUATION_LOG_MODIFICATION_ICON_FILENAME 	= "gfx/interface/icons/situation_log/situation_log_modification.dds"
+
+		SITUATION_LOG_ESPIONAGE_PICTURE_SPRITE = "GFX_evt_archaeological_dig"
+		ESPIONAGE_OPERATION_VIEW_TEXTBOX_SMALL = 200	# height of textbox when not showing an event
+		ESPIONAGE_OPERATION_VIEW_TEXTBOX_LARGE = 265	# height of textbox when showing an event
+		ESPIONAGE_OPERATION_VIEW_DEFAULT_MAX_CHAPTERS = 6 # default number of supported chapters in an operation, will be overriden if an operation is scripted to have more
+
+		FIRST_CONTACT_RELATION_ICON_UNKNOWN = "GFX_option_icon_unknown"
+		FIRST_CONTACT_RELATION_ICON_ISOLATIONIST = "GFX_option_icon_isolationist"
+		FIRST_CONTACT_RELATION_ICON_FRIENDLY = "GFX_option_icon_friendly"
+		FIRST_CONTACT_RELATION_ICON_HOSTILE = "GFX_option_icon_hostile"
+
+		ARCHAEOLOGY_DIFFICULTY_SPRITE_NAME_ROOT = "GFX_archaeology_difficulty"
+		FIRSTCONTACT_DIFFICULTY_SPRITE_NAME_ROOT = "GFX_firstcontact_difficulty"
+		ESPIONAGE_DIFFICULTY_SPRITE_NAME_ROOT = "GFX_espionage_difficulty"
 
 		MIN_GUI_SCALE							= 0.5 # Minimum UI scale factor
 
@@ -418,7 +434,8 @@
 		OUTLINER_PLANET_CONSTRUCTION_MAX_ENTRIES			= 3	# not enough space in vanilla stellaris for more. priority: starbase, tile, army, pop
 		OUTLINER_STARBASE_SHIPYARD_CONSTRUCTION_MAX_ENTRIES	= 6 # The max number of starbase shipyard construction progress bars to show in the outliner,
 																# make sure to also update the progress bar sizes
-		OUTLINER_SHIPYARD_CONSTRUCTION_MAX_ENTRIES		= 20
+		OUTLINER_SHIPYARD_CONSTRUCTION_MAX_ENTRIES			= 20
+		OUTLINER_UPDATE_EVERY_N_FRAMES 						= 7		# Optimization (mainly for late game)
 		SOCIALVIEW_CONTEXT_MENU_MARGIN						= 2 	# Margin for social view context menu
 		SOCIALVIEW_CONTEXT_MENU_BUTTON_OFFSET				= 10 	# Offset for context buttons
 		WAROVERVIEW_BATTLE_RESULT_BASE_EXHAUSTION			= 0.10	# In order to avoid a very small win with no losses on one side looking like it was "overwhelming"
@@ -454,10 +471,30 @@
 		GC_SENATE_BG_75 	= "GFX_4_senate_floor_portrait_bg"
 		GC_SENATE_BG_100 	= "GFX_5_senate_floor_portrait_bg"
 
+		IMPERIUM_SENATE_BG_EMPTY 	= "GFX_0_senate_floor_empire_portrait_bg"
+		IMPERIUM_SENATE_BG_0 		= "GFX_1_senate_floor_empire_portrait_bg"
+		IMPERIUM_SENATE_BG_25 		= "GFX_2_senate_floor_empire_portrait_bg"
+		IMPERIUM_SENATE_BG_50 		= "GFX_3_senate_floor_empire_portrait_bg"
+		IMPERIUM_SENATE_BG_75 		= "GFX_4_senate_floor_empire_portrait_bg"
+		IMPERIUM_SENATE_BG_100 		= "GFX_5_senate_floor_empire_portrait_bg"
+
 		GC_SENATE_BG_0_MAX 	= 13
 		GC_SENATE_BG_25_MAX = 38
 		GC_SENATE_BG_50_MAX = 63
 		GC_SENATE_BG_75_MAX = 82
+
+		DAYS_PENDING_FIRST_CONTACT_NOTIFICATIONS = 30 # num of days First Contact notifications are shown
+
+		DAYS_LEFT_TO_SHOW_NUMBER = 360 # Num of days until vote when this number is shown
+		DAYS_LEFT_TO_COLORIZE_NUMBER = 60 # Num of days until vote when this number is shown and colored
+
+		OPINION_PROGRESS_SPRITE_EXCELLENT = GFX_diplomacy_opinion_excellent
+		OPINION_PROGRESS_SPRITE_GOOD = GFX_diplomacy_opinion_good
+		OPINION_PROGRESS_SPRITE_NEUTRAL = GFX_diplomacy_opinion_neutral
+		OPINION_PROGRESS_SPRITE_POOR = GFX_diplomacy_opinion_poor
+		OPINION_PROGRESS_SPRITE_TERRIBLE = GFX_diplomacy_opinion_terrible
+
+		SELF_INTEL_ICON_FRAME = 3
 	}
 
 	NGameplay = {
@@ -521,11 +558,9 @@
 
 		MAX_PLANET_POPS							= 1000	# Used for building calculations
 
-		POPS_BUILDING_SLOTS						= 5 	# The amount of pops needed to unlock a new building slot
 		BASE_PLANET_BUILDING_SLOTS				= 1
-		MAX_PLANET_BUILDING_SLOTS				= 16
+		MAX_PLANET_BUILDING_SLOTS				= 12
 
-		POPS_BRANCH_OFFICE_BUILDING_SLOTS		 = 25 	# The amount of pops needed to unlock a new branch office building slot
 		BASE_PLANET_BRANCH_OFFICE_BUILDING_SLOTS = 0
 		MAX_PLANET_BRANCH_OFFICE_BUILDING_SLOTS	 = 4
 
@@ -610,6 +645,9 @@
 		SYSTEM_BOTTLENECK_RADIUS = 2				# System will be considered bottleneck if within N systems there are no intersections between all of the directions
 
 		SHIP_DESIGN_SAME_NAME_FACTOR = 10			# The higher this is, the more likely a design of the same name is to be picked when upgrading to latest design
+
+		GALACTIC_DEFENSE_FORCE_NAMELIST = "GDF"
+		IMPERIAL_ARMADA_NAMELIST = "IA"
 
 		JUMP_DRIVE_COOLDOWN = 200					# Days between uses of Jump Drive
 
@@ -705,7 +743,7 @@
 		HABITABILITY_IDEAL_PLANET		= 1.00			# Habitability of Gaia worlds
 		HABITABILITY_WRONG_PLANET		= 0.70			# Below which point we color habitability icons and text yellow
 		HABITABILITY_OPPOSITE_PLANET	= 0.40			# Below which point we color habitability icons and text red
-
+		HABITABILITY_AUTO_MIGRATION		= 0.40			# The minimum habitability that will be considered for automatic migration
 
 		WAR_EXHAUSTION_NAVAL_CAP_ADD		  = 100
 		WAR_EXHAUSTION_SHIP_KILLED_MULT		  = 2.00	# Multiplier of war exhaustion gained from ships
@@ -797,11 +835,13 @@
 		FEDERATION_LEAVE_COHESION_PENALTY	= -100  # Cohesion loss every time a member leaves the federation
 		FEDERATION_SWITCH_COHESION_PENALTY	= -50	# Cohesion loss when you switch federation type
 
-		ENVOY_IMPROVE_RELATION_BASE			= 1.0	# Monthly effect on opinion when an envoy is improving relations
-		ENVOY_IMPROVE_RELATION_MAX			= 200.0	# Maximum value from using envoys to improve relations
-		ENVOY_HARM_RELATION_BASE			= -1.0	# Monthly effect on opinion when an envoy is harming relations
-		ENVOY_HARM_RELATION_MIN				= -200.0	# Lowest possible value from using envoys to harm relations
+		ENVOY_IMPROVE_RELATION_BASE			= 0.25	# Monthly effect on opinion when an envoy is improving relations
+		ENVOY_IMPROVE_RELATION_MAX			= 100.0	# Maximum value from using envoys to improve relations
+		ENVOY_HARM_RELATION_BASE			= -0.5	# Monthly effect on opinion when an envoy is harming relations
+		ENVOY_HARM_RELATION_MIN				= -100.0	# Lowest possible value from using envoys to harm relations
 		ENVOY_RELATION_EFFECT_DECAY			= 1.0	# Every month that there is no envoy effecting opinion it moves towards 0 with this/month
+
+		EMBASSY_IMPROVE_RELATION_MULTIPLIER = 3	# Multiplies ENVOY_IMPROVE_RELATION_BASE if you have established embassies
 
 		MIN_RIVAL_YEARS						= 10	# Years before you can remove an empire as a rival
 
@@ -982,6 +1022,8 @@
 		NAVAL_CAPACITY_BASE 									= 20	# Base value of Naval Capacity
 		NAVAL_CAPACITY_POP_MULT									= 0		# Mult value of Naval Capacity for each Pop
 
+		NAVAL_CAPACITY_BASE_GALACTIC_COMMUNITY					= 400	# Base value of Naval Capacity for the Galactic Defense Force/Imperial Armada
+
 		STARBASE_CAPACITY_MAX									= 999	# Max value of Starbase Capacity
 		STARBASE_CAPACITY_BASE 									= 3		# Base value of Starbase Capacity
 		STARBASE_CAPACITY_SYSTEM_MULT							= 0.10	# Mult value of Starbase Capacity for each owned system
@@ -1013,15 +1055,21 @@
 		ARCHAEOLOGICAL_SITE_DISCOVERY_SCORE = 14
 		ARCHAEOLOGICAL_SITE_DISCOVERY_DAYS = 90
 
+		ESPIONAGE_OPERATION_BASE_ROLL_FREQUENCY = 30.0 # Roll frequency in days
+		ESPIONAGE_OPERATION_SUCCESS_SCORE = 14.0
+		ESPIONAGE_OPERATION_DICE_ROLL_MIN = 1
+		ESPIONAGE_OPERATION_DICE_ROLL_MAX = 10
+
 		RELIC_VIEW_SLOTS_PER_ROW = 3
 		RELIC_VIEW_SLOTS_PER_ROW_WIDE	= 4
 		RELIC_VIEW_DEFAULT_ROW_COUNT = 2
 
 		MEGASTRUCTURE_BUILD_CAP_BASE		= 1.0
 
-		BASE_ENVOYS_REGULAR_EMPIRE			= 1			# The starting number of envoys for regular empires
+		BASE_ENVOYS_REGULAR_EMPIRE			= 2			# The starting number of envoys for regular empires
 
 		RESOLUTION_VOTE_TIMER = 1080					# number of days a resolution will be on the senate floor before being passed/failed
+		RESOLUTION_VOTE_PREMATURE_TIMER = 540			# number of days until the custodian/emperor can prematurely end the senate session
 		SENATE_RECESS_TIMER = 720						# number of days until the next proposed resolution will be put on the floor after the current vote
 		COUNCIL_DIPLOMACY_WEIGHT_MODIFIER = 1.5			# how much a countries diplomatic weight will be increased when voting if on the council
 		CHANGE_VOTE_COOLDOWN = 120						# number of days after voting in a resolution before you can change your vote
@@ -1041,6 +1089,18 @@
 		LEFT_COMMUNITY_MODIFIER_TIMER = 7200			# how many days the left_community_modifier will affect the leaving country
 		COUNCIL_ELECTION_TIMER = 7200					# time between galactic council elections
 		COUNCIL_ELECTION_SOON_CUTOFF = 180				# when there is less than this many days left until the next council we show an alert
+		COMMUNITY_FREEZE_RESOLUTION_MONTHS = 48			# The time period a resolution is frozen by the Custodian/Emperor
+		CUSTODIAN_TERM_LIMIT_DAYS = 10800				# The time period that a Custodian keeps their position
+		CUSTODIAN_TERM_LIMIT_EXPIRATION_MESSAGE_DAYS = 1825 # The amount of days left on a term limit when a notification should be sent to the custodian about their term expiring
+
+		ENVOY_STRENGTHEN_IMPERIAL_AUTHORITY_RELATION_GROWTH = 2 	# Monthly opinion growth when having envoys assigned that strengthen the imperial authority
+		ENVOY_STRENGTHEN_IMPERIAL_AUTHORITY_RELATION_DECAY = -1 	# Monthly opinion decay when having envoys assigned that strengthen the imperial authority
+		ENVOY_STRENGTHEN_IMPERIAL_AUTHORITY_RELATION_MAX = 200 		# The highest the above growth can get to
+		ENVOY_UNDERMINE_IMPERIAL_AUTHORITY_RELATION_GROWTH = -2 	# Monthly opinion "growth" when having envoys assigned that undermine the imperial authority
+		ENVOY_UNDERMINE_IMPERIAL_AUTHORITY_RELATION_DECAY = 1 		# Monthly opinion "decay" when having envoys assigned that undermine the imperial authority
+		ENVOY_UNDERMINE_IMPERIAL_AUTHORITY_RELATION_MIN = -200 		# The "lowest" the above growth can get to
+
+
 		FEDERATION_LOW_COHESION_CUTOFF = 0.1			# when there is less than this ratio left of cohesion with negative cohesion growth we show an alert
 
 		OPINION_MAX 						= 1500		# Upper limit for opinion value
@@ -1063,6 +1123,75 @@
 		SPAWN_SYSTEM_ATTEMPTS				= 15		# Number of times the game will try and find a location for a system created via spawn_system before it defaults to the center of the galaxy. Note: The last two tries ignore SPAWN_SYSTEM_BUFFER_DISTANCE
 
 		EDICT_CAPACITY_BASE					= 1			# Max number of active edicts before penalties kick in
+
+		INTEL_CAP							= 100		# Maximum Intel for countries
+		INTEL_YEARLY_DECREASE				= 1.0		# Amount of Intel lost every year to reach the target Intel
+		INTEL_YEARLY_INCREASE				= 12.0		# Amount of Intel gained every year to reach the target Intel
+		INTEL_FROM_TRUST_MULTIPLIER			= 0.5		# Value to be multiplied to the trust to calculate the minimum intel due to trust
+		INTEL_FROM_COMMUNICATIONS			= 10.0		# Minimum Intel, after establishing communications
+		INTEL_FROM_NON_AGGRESSION_PACT		= 20.0		# Minimum Intel, if there's a non aggression pact
+		INTEL_FROM_GALACTIC_COMMUNITY		= 30.0		# Minimum Intel, if both empires are part of the Galactic Community
+		INTEL_FROM_GALACTIC_CUSTODIAN		= 45.0		# Minimum Intel, if we are galactic custodian and they are a galactic community member
+		INTEL_FROM_GALACTIC_EMPEROR			= 65.0		# Minimum Intel, if we are galactic emperor and they are an imperium member
+		INTEL_FROM_GALACTIC_EMPEROR_HEIGHTENED_SECURITY	= 80.0		# Minimum Intel, if we are galactic emperor and they are an imperium member and the imperial_security_directorate resolution is passed
+		INTEL_FROM_COMMERCIAL_PACT			= 20.0		# Minimum Intel, if there's a commercial pact
+		INTEL_FROM_MIGRATION_PACT			= 30.0		# Minimum Intel, if there's a migration treaty
+		INTEL_FROM_GUARANTEE				= 20.0		# Minimum Intel, if one country is guaranteeing the other country
+		INTEL_FROM_DEFENSIVE_PACT			= 40.0		# Minimum Intel, if there's a defensive pact
+		INTEL_FROM_FEDERATION_ASSOCIATION	= 40.0		# Minimum Intel, if the country has federation association status
+		INTEL_FROM_RESEARCH_AGREEMENT		= 30.0		# Minimum Intel, if there's a research agreement
+		INTEL_FROM_FEDERATION_CENTRALIZATION	= 10.0  # Additive modifier to the base federation Intel. Multiplied by centralization level
+		INTEL_FROM_EMBASSY					= 20.0  # Additive modifier to the minimum Intel.
+
+		FIRST_CONTACT_DICE_ROLL_MIN			= 1
+		FIRST_CONTACT_DICE_ROLL_MAX 		= 10
+		FIRST_CONTACT_LOWER_INSIGHT_SCORE	= 0			# score for any insights to be granted
+		FIRST_CONTACT_HIGHER_INSIGHT_SCORE	= 5			# score for more insights to be granted
+		FIRST_CONTACT_LOWER_INSIGHT_REWARD	= 1			# insights granted for FIRST_CONTACT_LOWER_INSIGHT_SCORE
+		FIRST_CONTACT_HIGHER_INSIGHT_REWARD	= 2			# insights granted for FIRST_CONTACT_HIGHER_INSIGHT_SCORE
+		FIRST_CONTACT_DISCOVERY_SCORE		= 10		# score for completing the stage
+		FIRST_CONTACT_DISCOVERY_DAYS		= 30		# 30 days for 1 roll
+		FIRST_CONTACT_DISCOVERY_DAYS_AI		= 50		# slower for AI to guarantee player has a chance to finish first
+		FIRST_CONTACT_FIRST_STAGE			= "base_contact_set" # Starting stage for all first contacts (see game/common/first_contact)
+		FIRST_CONTACT_INTEL_TARGET			= 10
+		FIRST_CONTACT_POLICY				= "first_contact_policy"
+		FIRST_CONTACT_POLICY_FLAG_CAUTIOUS  = "first_contact_cautious"
+		FIRST_CONTACT_POLICY_FLAG_PROACTIVE = "first_contact_proactive"
+		FIRST_CONTACT_POLICY_FLAG_ATTACK_ALLOWED = "first_contact_attack_allowed"
+		FIRST_CONTACT_UNKNOWN_SPECIES_PORTRAITS_AMOUNT = 22	#Matches number of portraits in gfx\interface\intel\firstcontact\unknown_species; picks which one to use by doing ( "GFX_unknown_species_portrait_" + ( <First Contact ID> % <this define> ) )
+
+		SPY_NETWORK_LEVELS					= 50		# What is the base maximum spy network level? (spy_network_levels_add and relative encryption can increase this value)
+		SPY_NETWORK_MAX_LEVELS				= 100		# What is the absolute maximum spy network level?
+		SPY_NETWORK_ENCRYPTION_DECRYPTION_LEVELS_EFFECT = -10	# How much does each point of relative encryption difference modify the maximum network level?
+		SPY_NETWORK_ENCRYPTION_DECRYPTION_LEVELS_MIN = -40		# Lower bounds on the infiltration level modifier value
+		SPY_NETWORK_ENCRYPTION_DECRYPTION_LEVELS_MAX = 40		# Upper bounds on the infiltration level modifier value
+		SPY_NETWORK_MAX_POWER				= 100		# Including all modifiers, how powerful can a Spy Network ever be?
+		SPY_NETWORK_MAX_ENVOYS_COUNT		= 1			# How many envoys can be assigned to build a single spy network?
+		SPY_NETWORK_DAILY_ENVOY_SCORE		= 1.0		# How much progression do you get for each envoy
+		SPY_NETWORK_SPRAWL_SCORE_SCALE		= 400.0		# This many empire sprawl in the opposing empire adds 1 to daily spy network progression.
+		SPY_NETWORK_BASE_LEVEL_SCORE 		= 5.0		# It takes (SPY_NETWORK_BASE_LEVEL_SCORE) + (Current Level * SPY_NETWORK_PER_LEVEL_SCORE) points to increase spy network level
+		SPY_NETWORK_PER_LEVEL_SCORE			= 5.0		# Per level portion of the above formula
+		SPY_NETWORK_MONTHLY_DECAY			= 1.0		# If we don't have an envoy assigned to a spy network or it's above the max value, it decays at this many levels per month
+		SPY_NETWORK_ENCRYPTION_DECRYPTION_BONUS_MULT = -0.10	#Encryption vs decryption bonus scale, multiplied with the difference between those values.
+		SPY_NETWORK_ENCRYPTION_DECRYPTION_BONUS_MIN = -0.4	# Lower bounds to encryption vs decryption (bad for attacker)
+		SPY_NETWORK_ENCRYPTION_DECRYPTION_BONUS_MAX = 0.4	# Upper bounds to encryption vs decryption (good for attacker)
+		SPY_NETWORK_MAXIMUM_ASSIGNED_ASSETS = 1			# Maximal number of assets that can be assigned to spy network
+		SPY_NETWORK_RELATIVE_ENCRYPTION_DIFFICULTY_MULT = 1	# Difficulty modifier to be multiplied to the relative encryption
+		SPY_NETWORK_RELATIVE_ENCRYPTION_DIFFICULTY_MIN = -4		# How low can excess Codebreaking drop the difficulty of operations? Negative numbers good for the spy.
+		SPY_NETWORK_RELATIVE_ENCRYPTION_DIFFICULTY_MAX = 4		# How high can excess Encryption increase the difficulty of operations? Positive numbers good for the defender.
+		SPY_NETWORK_RELATIVE_ENCRYPTION_MIN = -4	# Lower bounds for relative encryption
+		SPY_NETWORK_RELATIVE_ENCRYPTION_MAX = 4	# Upper bounds for relative encryption
+
+		GALACTIC_EMPIRE_BASE_AUTHORITY		= 100		# Starting imperial authority when establishing the galactic empire
+		GALACTIC_EMPIRE_MAX_AUTHORITY		= 200		# Maximum value for imperial authority
+		GALACTIC_EMPIRE_ENVOY_AUTHORITY_CHANGE = 0.1	# How much imperial authority is gained/lost each month per envoy assigned
+		IMPERIAL_COUNCIL_CHANGE_MEMBER_INFLUENCE_COST = 100.0 # Influence cost of adding/removing members to/from Imperial Council
+
+		MENACE_PERK_MINIMUM_ACTIVATION_TIME = 360		# Number of days before the perk can be deactivated
+		SEEN_ALIENS = "seen_aliens"
+
+		PLANET_COLONIZED_STRING				= "colonized"	# Identifies when a planet is newly colonized in telemetries
+		PLANET_ACQUIRED_STRING				= "acquired"	# Identifies when a planet was acquired in any way from another empire in telemetries
 	}
 
 	NSpecies = {
@@ -1230,13 +1359,23 @@
 		MAX_POLITICAL_POWER_NEGATIVE_STABILITY_IMPACT		= 20
 
 		BASE_POP_GROWTH						= 3		# Base growth rate of pops
-		NEW_COLONY_GROWTH					= 0.5	# New colonies have a penalty to their growth
+		LOGISTIC_POP_GROWTH_R				= 0.125	# Logistic Pop Growth Constant r
+		LOGISTIC_POP_GROWTH_FLOOR			= 0.01	# Logistic Pop Growth won't lower growth to less than this percent.
+		LOGISTIC_POP_GROWTH_CEILING			= 2.00	# Logistic Pop Growth won't raise growth beyond this percent.
+		LOGISTIC_POP_GROWTH_MIN_POPS		= 5		# Treat small colonies as having this many pops to avoid the very bottom of the curve
+		LOGISTIC_POP_GROWTH_LOWER_THRESHOLD	= 0.5	# Ignore penalties to Pop Growth if the current number of pops are below this percent of the carrying capacity
+		MAX_CARRYING_CAPACITY				= 500	# Logistic Carrying Capacity Cap (so modders have access to this value in case they make a planet with infinite districts or something like that)
 		MAX_NEW_COLONIES_SCALE				= 2 	# At this ratio of new to old colonies, no further scaling of migration
 		REQUIRED_POP_GROWTH					= 100	# Required growth to make a new pop
+		REQUIRED_POP_GROWTH_SCALE			= 0.5	# Required pop growth increased by this much for every pop in the empire
+
 		OVERCROWDING_NO_GROWTH_THRESHOLD	= 1.15	# At this amount of overcrowding (required housing / actual housing), growth stops entirely
 		OVERCROWDING_DECLINE_THRESHOLD		= 1.25	# At this amount of overcrowding (required housing / actual housing), pops start declining
 		OVERCROWDING_ABSOLUTE_THRESHOLD_FOR_NO_GROWTH		= 5	# Planet needs this amount of overcrowding (required housing - actual housing) for OVERCROWDING_NO_GROWTH_THRESHOLD to kick in
 		MAX_NUM_GROWTH_OR_DECLINE_PER_MONTH = 10 	# No more than this amount of pops can grow, assemble or decline in the same month
+
+		RESETTLE_UNEMPLOYED_BASE_RATE		= 0.1	# Chance an unemployed pop will automatically migrate if an acceptable location is found (Range is 0 to 1)
+		RESETTLE_DESTROY_COLONY_COST		= 200	# Influence surcharge for manually resettling the last pop from a colony
 
 		NEW_POP_SPECIES_RANDOMNESS			= 0.5	# The higher this is, the more random species selection of new pops will be
 		NEW_POP_SAME_SPECIES_WEIGHT			= 1.0	# The higher this is, the more new pops will be weighted by number of same or subspecies pops
@@ -1258,9 +1397,10 @@
 
 		BASE_POP_ASSEMBLY					= 0		# Base assembly rate of pops
 		REQUIRED_POP_ASSEMBLY				= 100	# Required assembly to add a pop
+		REQUIRED_POP_ASSEMBLY_SCALE			= 0.5	# Required pop assembly increased by this much for every pop in the empire
 
 		MAX_EMIGRATION_PUSH					= 100
-		MAX_GROWTH_FROM_IMMIGRATION			= 5
+		MAX_GROWTH_FROM_IMMIGRATION			= 10
 		MAX_GROWTH_PENALTY_FROM_EMIGRATION	= 0.95	# Fraction of base monthly growth
 
 		DEFAULT_CHANGE_JOB_THRESHOLD		= 1.1		# A job must have this much higher weight in order for a pop to switch to it from their current job
@@ -1324,7 +1464,7 @@
 	}
 
 	NEconomy = {
-		COLONY_MONTHLY_GROWTH				= 1.67		# How much the colonization pop grows every month.
+		COLONY_MONTHLY_GROWTH				= 3		# How much the colonization pop grows every month.
 		COLONY_MAINTENANCE_COST 			= 8		# Base cost per month for a new colony.
 
 		FLEET_UPGRADE_TIME_COST_MULT		= 0.50		# Upgrade fleet time cost
@@ -1386,25 +1526,30 @@
 		SLAVE_MARKET_SIZE_CAP					= 100 #Max amount of slaves allowed on the market
 
 		SECTOR_AUTOMATION_CONTRUCTION_RAND_FACTOR = 0.1	# Random factor applied to the score of constructions in the sector automation
+		SECTOR_AUTOMATION_FREE_JOBS_BUILD_CAP = 0		# Sector automation will build if there is unemployment OR free jobs <= SECTOR_AUTOMATION_FREE_JOBS_BUILD_CAP OR free housing <= SECTOR_AUTOMATION_FREE_HOUSING_BUILD_CAP
+		SECTOR_AUTOMATION_FREE_HOUSING_BUILD_CAP = 1
+		SECTOR_AUTOMATION_BASE_FOCUS = "basic" 			# Items in this sector focus list are appended to all other ones
 
 		MONTHLY_SUBJECT_TAX_ECONOMIC_CATEGORY = "subject_tax"
 		MONTHLY_SUBJECT_INTEGRATION_ECONOMIC_CATEGORY = "subject_integration"
 
 		BORROW_DIPLO_WEIGHT_FAVOR_RESOURCE	= { "influence" }
-		BORROW_DIPLO_WEIGHT_FAVOR_COST		= { 25 }
+		BORROW_DIPLO_WEIGHT_FAVOR_COST		= { 10 }
 	}
 
 	NAI = {
-		AI_FREE_JOBS_DISTRICT_BUILD_CAP = 1			# AI will not build new districts on a planet with more than this many free jobs
+		AI_FREE_JOBS_DISTRICT_BUILD_CAP = 4			# AI will not build new districts on a planet with more than this many free jobs
 		AI_DEFICIT_SCORE_MULT = 50					# AI will score buildings producing resources in deficit this much more
 		AI_FOCUS_SCORE_MULT = 5					# AI will score buildings producing focus resources this much more
 		AI_AMENITIES_SCORE_MULT = 20					# AI will score amenity buildings this much more than other misc resources
-		AI_HOUSING_SCORE_MULT = 5					# AI will score housing buildings this much more than other misc resources
+		AI_HOUSING_SCORE_MULT = 4.5					# AI will score housing buildings this much more than other misc resources
 		AI_CRIME_REDUCTION_SCORE_MULT = 2			# AI will score crime fighting buildings this much more than other misc resource
 		AI_ADMIN_CAP_SCORE_MULT = 2					# AI will score admin cap buildings this much more than other misc resource
 		AI_POPS_SCORE_MULT = 5						# AI will score pop growth and assembly buildings this much more ( already fairly high weighted  in code )
 		AI_UPGRADE_SCORE_MULT = 40					# AI will score building upgrades this much more ( since they don't take up a new building slot )
 
+		AI_TECHNOLOGY_RARE_WEIGHT_MULT = 5						# AI will multiply AI weight of rare techs with this value
+		AI_TECHNOLOGY_INFINITELY_REPEATABLE_WEIGHT_MULT = 0.01	# AI will multiply AI weight of infinitely repeatable techs with this value
 
 		AI_IN_BREACH_THRESHOLD = 3					# AI will consider leaving the community ( and wont try to join it either ) if theyre in breach of this many resolutions
 
@@ -1508,7 +1653,7 @@
 		MONTHLY_TRUST_FEDERATION = 1.00
 		MONTHLY_TRUST_AT_WAR = -2.00
 		MONTHLY_TRUST_RIVAL = -2.00
-
+		MONTHLY_TRUST_EMBASSY = 0.10
 
 		BROKEN_TRADE_DEAL_FACTOR = 0.5				# How much does broken trade deal affect opinion (based on value of deal)
 
@@ -1544,6 +1689,7 @@
 		ACTION_MIN_DAYS_REJECTED_PEACE = 360	# AI will remember a peace deal rejection at least this time
 		ACTION_DAYS_REJECTED_RANDOM_PEACE = 360 # Max random extra days AI will reject peace offer
 		INSTANT_AI_DIPLOMACY = 0				# AI answers diplomacy immediately. No proposals are sent off to AIs.
+		DIPLOMACY_RESPONSE_COOLDOWN_DAYS = 7 # Cooldown days before the AI will consider answer a proposed diplo action, after that on daily roll with increasing chance until proposal experation date
 		DIPLO_BREAK_THRESHOLD = -30		# If AI values an existing deal at less than this break it
 
 		ACCEPTANCE_DEAL_BREAKER = -1000	# This is used when something is a deal breaker in diplomacy
@@ -1571,8 +1717,9 @@
 		FEDERATION_ACCEPTANCE_DISTANCE_MULT = -0.1 # per 1 border distance
 		FEDERATION_LAW_SUPPORT_THRESHOLD = 50 # How big ai weight should be for AI to support the vote
 		FEDERATION_ACCEPTANCE_SUPPORT = 100 # Support for ai law
-		FEDERATION_PROPOSE_THRESHOLD = 100 # How big ai weight should be for AI to propose the vote
+		FEDERATION_PROPOSE_THRESHOLD = 125 # How big ai weight should be for AI to propose the vote
 		FEDERATION_WEIGHT_COHESION_FACTOR = 0.25 # Cohesion added on the vote weight
+		FEDERATION_ALL_AI_LEADER_WEIGHT_FACTOR = 1.5 # Since the AI is set to generally not propose votes on laws in player federations, it needs this boost to care enough to reach FEDERATION_PROPOSE_THRESHOLD in AI-only federations.
 
 		DEFENSIVE_PACT_ACCEPTANCE_OPINION_FACTOR = 0.2
 		DEFENSIVE_PACT_ACCEPTANCE_ATTITUDE_ALLIANCE = 50
@@ -1585,6 +1732,18 @@
 		DEFENSIVE_PACT_ACCEPTANCE_RELATIVE_STRENGTH_FACTOR = 5 # For each 1x we are stronger than them
 		DEFENSIVE_PACT_ACCEPTANCE_RELATIVE_STRENGTH_MAX = 20
 		DEFENSIVE_PACT_ACCEPTANCE_DISTANCE_MULT = -0.1 # per 1 border distance
+
+		EMBASSY_ACCEPTANCE_OPINION_FACTOR = 0.5
+		EMBASSY_ACCEPTANCE_ATTITUDE_ALLIANCE = 100
+		EMBASSY_ACCEPTANCE_ATTITUDE_COEXIST = 40
+		EMBASSY_ACCEPTANCE_OTHER_ATTITUDE = -25
+		EMBASSY_ACCEPTANCE_NUM_PACTS = 0	# per existing defensive pact
+		EMBASSY_ACCEPTANCE_SHARED_RIVAL = 40 # per rival
+		EMBASSY_ACCEPTANCE_SHARED_ALLY = 60 # per shared ally
+		EMBASSY_ACCEPTANCE_SHARED_THREAT = 0.25	# scales with actual threat
+		EMBASSY_ACCEPTANCE_RELATIVE_STRENGTH_FACTOR = 1 # For each 1x we are stronger than them
+		EMBASSY_ACCEPTANCE_RELATIVE_STRENGTH_MAX = 20
+		EMBASSY_ACCEPTANCE_DISTANCE_MULT = -0.05 # per 1 border distance
 
 		NON_AGGRESSION_PACT_ACCEPTANCE_OPINION_FACTOR = 0.2
 		NON_AGGRESSION_PACT_ACCEPTANCE_ATTITUDE_ALLIANCE = 100
@@ -1762,7 +1921,7 @@
 		SURRENDER_ACCEPTANCE_LOW = -60			# Display "unlikely to surrender" in war summary badge
 		SURRENDER_ACCEPTANCE_LOWEST = -100		# Display "for sure not surrender" in war summary badge
 
-		AI_ALLOWED_TO_BUY = { "minerals" "food" "alloys" "consumer_goods" "exotic_gases" "rare_crystals" "volatile_motes" }
+		AI_ALLOWED_TO_BUY = { "minerals" "food" "alloys" "consumer_goods" "exotic_gases" "rare_crystals" "volatile_motes" "sr_living_metal" "sr_dark_matter" "sr_zro" }
 		AI_ALLOWED_TO_SELL = { "minerals" "food" "alloys" "consumer_goods" "exotic_gases" "rare_crystals" "volatile_motes" "sr_living_metal" "sr_dark_matter" "sr_zro" }
 		AI_MIN_CURRENCY_TO_SELL = 1000.0		# If the AI has less currency (energy) than this it will consider selling resources
 		AI_MIN_CURRENCY_INCOME_TO_SELL = 10.0	# If the AI has less currency (energy) gain last month than this it will consider selling resources
@@ -1789,15 +1948,32 @@
 		WAR_DECLARATION_MINIMUM_SCORE = 0.5				# minimum score multiplier for war declaration after all distance have been applied
 
 		COLONY_AUTOMATION_COOLDOWN = 3					# Number of days automation will not be done after a build queue item on a planet completes
+		COLONY_AUTOMATION_DISTRICT_PREFERENCE = 1.5		# Prefer to build districts over buildings unless there are multiple building slots open or this many times as many districts as buildings, minimum 1
 
 		DIPLO_ACTION_REPEAT_DELAY = 360					# number of days before the ai will try to repeat a proposal
 
-		RESOLUTION_VOTE_ABSTAIN_THRESHOLD = 5.5		# the AI weight of a resolution need to be at least this much, else the AI will oppose it
-		RESOLUTION_VOTE_SUPPORT_THRESHOLD = 7.0		# if the AI weight of a resolution reaches this value the AI will vote for it
-		RESOLUTION_VOTE_VETO_THRESHOLD = 1.0		# if the AI hates something this much ( weight is lower ), they might veto it
-		RESOLUTION_VOTE_EMERGENCY_THRESHOLD = 10.0	# if it isnt their own resolution but the AI still loves something this much they might declare it an Emergency Measure
-		RESOLUTION_WEIGHT_OPINION_FACTOR = 0.03 	# how much opinion will factor in the decision to support a resolution or not
-		RESOLUTION_USE_FAVORS_THRESHOLD_DELTA = 2.0	# if weight reaches the threshold +/- DELTA (support/abstain) AI will use favors to boost their diplo weight
+		# These weights determine how much an empire wants to strengthen/undermine Imperial Authority and how large portion of their envoys they are willing to spend on it.
+		# Positive means they want to strengthen, negative means undermine.
+		# Zero means they don't care and won't use envoys for it.
+		IMPERIAL_AUTHORITY_ENVOY_WEIGHT_EMPEROR = 3.0
+		IMPERIAL_AUTHORITY_ENVOY_WEIGHT_OPINION_EXCELLENT = 2.0
+		IMPERIAL_AUTHORITY_ENVOY_WEIGHT_OPINION_GOOD = 1.0
+		IMPERIAL_AUTHORITY_ENVOY_WEIGHT_OPINION_NEUTRAL = 0.0
+		IMPERIAL_AUTHORITY_ENVOY_WEIGHT_OPINION_POOR = -1.0
+		IMPERIAL_AUTHORITY_ENVOY_WEIGHT_OPINION_TERRIBLE = -2.0
+		IMPERIAL_AUTHORITY_ENVOY_WEIGHT_COUNCIL_MEMBER_ADD = 1.0	# This is added on top of opinion weight. Not used for the Emperor.
+		IMPERIAL_AUTHORITY_ENVOY_WEIGHT_MAX = 3.0 					# This value means you are willing to spend all available envoys for strengthening if needed.
+		IMPERIAL_AUTHORITY_ENVOY_WEIGHT_MIN = -2.0 					# This value means you are willing to spend all available envoys for undermining if needed.
+		IMPERIAL_AUTHORITY_STRENGTHEN_ACCEPTABLE_THRESHOLD = 0.75	# If Imperial Authority percentage is above this, AI won't assign as many envoys for strengthening.
+		IMPERIAL_AUTHORITY_UNDERMINE_ACCEPTABLE_THRESHOLD = 0.25	# If Imperial Authority percentage is below this, AI won't assign as many envoys for undermining.
+
+		RESOLUTION_VOTE_ABSTAIN_THRESHOLD = 5.5			# the AI weight of a resolution need to be at least this much, else the AI will oppose it
+		RESOLUTION_VOTE_SUPPORT_THRESHOLD = 7.0			# if the AI weight of a resolution reaches this value the AI will vote for it
+		RESOLUTION_VOTE_VETO_THRESHOLD = 1.0			# if the AI hates something this much ( weight is lower ), they might veto it
+		RESOLUTION_VOTE_EMERGENCY_THRESHOLD = 10.0		# if it isnt their own resolution but the AI still loves something this much they might declare it an Emergency Measure
+		RESOLUTION_VOTE_FREEZE_THRESHOLD_DELTA = 3.0	# if the resolution next in line after the current resolution is this much better, the AI will freeze the current resolution
+		RESOLUTION_WEIGHT_OPINION_FACTOR = 0.03 		# how much opinion will factor in the decision to support a resolution or not
+		RESOLUTION_USE_FAVORS_THRESHOLD_DELTA = 2.0		# if weight reaches the threshold +/- DELTA (support/abstain) AI will use favors to boost their diplo weight
 
 		MAX_SUPPORT_PERCENTAGE_FOR_FAVORS_SUPPORTING = 55	# if we are supporting the resolution, don't spend favors if support percentage is above this
 		MIN_SUPPORT_PERCENTAGE_FOR_FAVORS_OPPOSING = 45		# if we are opposing the resolution, don't spend favors if support percentage is below this
@@ -1844,4 +2020,9 @@
 
 		AI_FOLLOW_FLEET_DESIRE = 5					# AI desire to follow "take point" fleets from random people
 		AI_FOLLOW_WAR_LEADER_DESIRE = 10			# AI desire to follow "take point" fleets from the war leader
+
+		CRISIS_EMPIRE_PROTECTIVE_MULT = 1.5 		# Used when calculating atitude protective weigth
+		AI_GALCOM_PATROL_ORBIT_TIME_DAYS = 60		# The time that the Galactic Defense Force AI will stay in orbit around a capital before moving to the next one
+
+		CRISIS_EMPIRE_DESTROY_DESIRE = 1			# AI desire to destroy stars as a crisis empire
 	}
