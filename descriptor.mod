@@ -1,11 +1,11 @@
-version="2.8.*"
+version="3.0.*"
 tags={
 	"Balance"
 }
-name="Stéƒãñs®️ ρérƒæçtlÿ ßäЇåñçéd Beta"
+name="Stefan's Perfectly Balanced Mod 3.0"
 dependencies={
 	"~ StarNet AI"
 }
-supported_version="2.8.*"
-path="E:/Muggins/Documents/Paradox Interactive/Stellaris/mod/stellaris-balance-mod"
-remote_file_id="2080939813"
+supported_version="3.0.*"
+path="mod/stellaris-balance-mod"
+remote_file_id="2279069500"
