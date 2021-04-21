@@ -744,7 +744,7 @@ void_dweller_system = {
 			flags = { ignore_startup_effect habitat_3_planet has_megastructure }
 
 			init_effect = {
-				set_deposit = d_energy_6
+				set_deposit = d_physics_10
 			}
 	
 			moon = {
@@ -752,7 +752,7 @@ void_dweller_system = {
 				orbit_angle = { min = 90 max = 270 }
 				orbit_distance = 5
 				size = 6
-				flags = { void_dweller_habitat_3 megastructure habitat energy_habitat }
+				flags = { void_dweller_habitat_3 megastructure habitat research_habitat }
 				deposit_blockers = none
 			}
 		}

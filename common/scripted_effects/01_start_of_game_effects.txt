@@ -1284,23 +1284,9 @@ generate_start_buildings_and_districts = {
 		limit = { owner = { has_origin = origin_shattered_ring } }
 		add_district = district_rw_farming
 		add_deposit = d_arcane_generator
-		add_deposit = d_shattered_ring_superblocker
 		add_deposit = d_decrepit_tunnels_1
 		add_deposit = d_decrepit_tunnels_2
 		add_deposit = d_decrepit_tunnels_3
-
-		if = {
-			limit = { owner = { is_regular_empire = yes } }
-			add_district = district_rw_city
-		}
-		if = {
-			limit = { owner = { is_hive_empire = yes } }
-			add_district = district_rw_hive
-		}
-		if = {
-			limit = { owner = { is_machine_empire = yes } }
-			add_district = district_rw_nexus
-		}
 
 		if = {
 			limit = {
@@ -1400,16 +1386,29 @@ generate_start_buildings_and_districts = {
 			#Assimilators
 			if = {
 				limit = { owner = { has_civic = civic_machine_assimilator } }
-				add_district = district_rw_farming
+				add_district_and_planet_size_if_needed_effect = {
+					district = district_rw_farming
+				}
+				add_deposit = d_segment_rubble_1
+				add_deposit = d_segment_rubble_2
 			}
 
 			#Servitors
 			if = {
 				limit = { owner = { has_civic = civic_machine_servitor } }
 				add_building = building_organic_sanctuary
-				add_district = district_rw_farming
+				add_district_and_planet_size_if_needed_effect = {
+					district = district_rw_farming
+				}
+				add_deposit = d_segment_rubble_1
+				add_deposit = d_segment_rubble_2
 			}
 		}
+
+		# blockers to reduce effectiveness of the city and industrial segments
+		add_deposit = d_segment_rubble_3
+		add_deposit = d_segment_rubble_4
+
 	}
 
 	# Additional resources based on empire type and possible subspecies
@@ -1860,7 +1859,7 @@ generate_home_planet_final_pass = {
 		}
 		owner = {
 			capital_scope = {
-				add_modifier = { modifier = prosp_uni_mod2 }
+				add_modifier = { modifier = prosp_uni_mod days = 3600 }
 			}
 		}
 	}
