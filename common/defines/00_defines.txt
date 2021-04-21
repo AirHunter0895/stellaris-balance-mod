@@ -377,6 +377,7 @@
 		SITUATION_LOG_ARCHAEOLOGY_PICTURE_SPRITE = "GFX_evt_archaeological_dig"
 		SITUATION_LOG_ARCHAEOLOGY_ICON_FILENAME		= "gfx/interface/icons/situation_log/situation_log_archaeology.dds"
 		SITUATION_LOG_FIRST_CONTACT_ICON_FILENAME		= "gfx/interface/icons/situation_log/situation_log_radar.dds"
+
 		SITUATION_LOG_DEBRIS_PICTURE_SPRITE		= "GFX_situation_log_debris_picture"
 		SITUATION_LOG_DEBRIS_ICON_FILENAME		= "gfx/interface/icons/situation_log/situation_log_debris.dds"
 		SITUATION_LOG_MODIFICATION_PICTURE_SPRITE 	= "GFX_situation_log_modification_picture"
@@ -434,7 +435,9 @@
 		OUTLINER_PLANET_CONSTRUCTION_MAX_ENTRIES			= 3	# not enough space in vanilla stellaris for more. priority: starbase, tile, army, pop
 		OUTLINER_STARBASE_SHIPYARD_CONSTRUCTION_MAX_ENTRIES	= 6 # The max number of starbase shipyard construction progress bars to show in the outliner,
 																# make sure to also update the progress bar sizes
+
 		OUTLINER_SHIPYARD_CONSTRUCTION_MAX_ENTRIES			= 20
+
 		OUTLINER_UPDATE_EVERY_N_FRAMES 						= 7		# Optimization (mainly for late game)
 		SOCIALVIEW_CONTEXT_MENU_MARGIN						= 2 	# Margin for social view context menu
 		SOCIALVIEW_CONTEXT_MENU_BUTTON_OFFSET				= 10 	# Offset for context buttons
@@ -557,6 +560,7 @@
 		BASE_AMENITIES_USAGE					= 5
 
 		MAX_PLANET_POPS							= 1000	# Used for building calculations
+
 
 		BASE_PLANET_BUILDING_SLOTS				= 1
 		MAX_PLANET_BUILDING_SLOTS				= 12
@@ -1369,6 +1373,7 @@
 		REQUIRED_POP_GROWTH					= 100	# Required growth to make a new pop
 		REQUIRED_POP_GROWTH_SCALE			= 0.5	# Required pop growth increased by this much for every pop in the empire
 
+
 		OVERCROWDING_NO_GROWTH_THRESHOLD	= 1.15	# At this amount of overcrowding (required housing / actual housing), growth stops entirely
 		OVERCROWDING_DECLINE_THRESHOLD		= 1.25	# At this amount of overcrowding (required housing / actual housing), pops start declining
 		OVERCROWDING_ABSOLUTE_THRESHOLD_FOR_NO_GROWTH		= 5	# Planet needs this amount of overcrowding (required housing - actual housing) for OVERCROWDING_NO_GROWTH_THRESHOLD to kick in
@@ -2023,6 +2028,5 @@
 
 		CRISIS_EMPIRE_PROTECTIVE_MULT = 1.5 		# Used when calculating atitude protective weigth
 		AI_GALCOM_PATROL_ORBIT_TIME_DAYS = 60		# The time that the Galactic Defense Force AI will stay in orbit around a capital before moving to the next one
-
 		CRISIS_EMPIRE_DESTROY_DESIRE = 1			# AI desire to destroy stars as a crisis empire
 	}

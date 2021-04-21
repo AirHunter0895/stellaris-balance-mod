@@ -33,6 +33,8 @@ civic_franchising = {
 			}
 		}
 	}
+	random_weight = { base = 5 }
+	description = "civic_tooltip_franchising_effects"
 	modifier = {
 		country_subject_power_penalty_mult = -0.33
 		empire_size_branch_office_mult = -0.25
@@ -159,6 +161,7 @@ civic_ruthless_competition = {
 		species_leader_exp_gain = 0.25
 		spy_network_levels_add = 10
 		pop_demotion_time_mult = -0.25
+				spy_network_levels_add = 10
     }
 }
 
@@ -181,6 +184,7 @@ civic_criminal_heritage = {
 	modifier = {
 		spy_network_daily_value_mult = 0.20
 		planet_branch_offices_cost_mult = -0.15
+		spy_network_daily_value_mult = 0.20
 	}
 
 	description = "civic_tooltip_criminal_heritage_effects"

@@ -251,6 +251,7 @@ origin_shattered_ring = {
 
 	possible = {
 		civics = { NOT = { value = civic_agrarian_idyll } }
+		authority = { NOT = { value = auth_machine_intelligence } }
 	}
 
 	description = "origin_tooltip_shattered_ring_effects"

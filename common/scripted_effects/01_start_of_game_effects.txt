@@ -939,7 +939,6 @@ generate_start_buildings_and_districts = {
 					district = district_city
 				}
 			}
-
 			# 4 - 6 jobs
 			if = {
 				limit = {
@@ -1063,8 +1062,9 @@ generate_start_buildings_and_districts = {
 
 		if = {
 			limit = { owner = { is_hive_empire = yes } }
+			
+      # 9 jobs
 
-			# 9 jobs
 			while = {
 				count = 3
 				add_district_and_planet_size_if_needed_effect = {
@@ -1218,7 +1218,6 @@ generate_start_buildings_and_districts = {
 						district = district_generator
 					}
 				}
-
 				# 2 jobs
 				if = {
 					limit = {
@@ -1296,23 +1295,9 @@ generate_start_buildings_and_districts = {
 			district = district_rw_farming
 		}
 		add_deposit = d_arcane_generator
-		add_deposit = d_shattered_ring_superblocker
 		add_deposit = d_decrepit_tunnels_1
 		add_deposit = d_decrepit_tunnels_2
 		add_deposit = d_decrepit_tunnels_3
-
-		if = {
-			limit = { owner = { is_regular_empire = yes } }
-			add_district = district_rw_city
-		}
-		if = {
-			limit = { owner = { is_hive_empire = yes } }
-			add_district = district_rw_hive
-		}
-		if = {
-			limit = { owner = { is_machine_empire = yes } }
-			add_district = district_rw_nexus
-		}
 
 		if = {
 			limit = {
@@ -1435,6 +1420,8 @@ generate_start_buildings_and_districts = {
 				add_district_and_planet_size_if_needed_effect = {
 					district = district_rw_farming
 				}
+				add_deposit = d_segment_rubble_1
+				add_deposit = d_segment_rubble_2
 			}
 
 			#Servitors
@@ -1444,8 +1431,15 @@ generate_start_buildings_and_districts = {
 				add_district_and_planet_size_if_needed_effect = {
 					district = district_rw_farming
 				}
+				add_deposit = d_segment_rubble_1
+				add_deposit = d_segment_rubble_2
 			}
 		}
+
+		# blockers to reduce effectiveness of the city and industrial segments
+		add_deposit = d_segment_rubble_3
+		add_deposit = d_segment_rubble_4
+
 	}
 
 	# Additional resources based on empire type and possible subspecies
@@ -1564,7 +1558,7 @@ generate_start_pops = {
 			}
 			else = {
 				while = {
-					count = 12
+					count = 14
 					create_pop = {
 						species = last_created_species
 						ethos = random
@@ -1636,28 +1630,11 @@ generate_start_pops = {
 		add_district_and_planet_size_if_needed_effect = {
 			district = district_generator
 		}
-		if = {
-			limit = {
-				owner = { is_megacorp = yes }
-			}
-			while = {
-				limit = { num_pops < 32 }
-				create_pop = {
-					species = owner_main_species
-					ethos = random
-				}
-			}
-		}
-		else_if = {
-			limit = {
-				owner = { is_megacorp = no }
-			}
-			while = {
-				limit = { num_pops < 30 }
-				create_pop = {
-					species = owner_main_species
-					ethos = random
-				}
+		while = {
+			limit = { num_pops < 29 }
+			create_pop = {
+				species = owner_main_species
+				ethos = random
 			}
 		}
 	}
@@ -1734,6 +1711,20 @@ generate_start_pops = {
 		}
 	}
 	if = {
+		limit = {
+			owner = {
+				is_regular_empire = yes
+			}
+		}
+		while = {
+			limit = { num_pops < 28 }
+			create_pop = {
+				species = owner_main_species
+				ethos = random
+			}
+		}
+	}
+	if = {
 		limit = { owner = { has_origin = origin_necrophage } }
 		while = { #to make them start without resource deficits
 			count = 2
@@ -1746,75 +1737,9 @@ generate_start_pops = {
 	if = {
 		limit = {
 			owner = { has_origin = origin_default }
-			owner = { is_regular_empire = yes }
 		}
 		while = {
-			limit = { num_pops < 32 }
-			create_pop = {
-				species = owner_main_species
-				ethos = random
-			}
-		}
-	}
-	if = {
-		limit = {
-			owner = { has_origin = origin_default }
-			owner = { is_machine_empire = yes }
-		}
-		while = {
-			limit = { num_pops < 33 }
-			create_pop = {
-				species = owner_main_species
-				ethos = random
-			}
-		}
-	}
-	if = {
-		limit = {
-			owner = { has_origin = origin_default }
-			owner = { is_hive_empire = yes }
-		}
-		while = {
-			limit = { num_pops < 35 }
-			create_pop = {
-				species = owner_main_species
-				ethos = random
-			}
-		}
-	}
-	if = {
-		limit = {
-			owner = { has_origin = origin_default }
-			owner = { is_megacorp = yes }
-		}
-		while = {
-			limit = { num_pops < 34 }
-			create_pop = {
-				species = owner_main_species
-				ethos = random
-			}
-		}
-	}
-	if = {
-		limit = {
-			owner = { has_origin = origin_default }
-			owner = { has_valid_civic = civic_machine_servitor }
-		}
-		while = {
-			limit = { num_pops < 37 }
-			create_pop = {
-				species = owner_main_species
-				ethos = random
-			}
-		}
-	}
-	if = {
-		limit = {
-			owner = { has_origin = origin_default }
-			owner = { has_valid_civic = civic_machine_assimilator }
-		}
-		while = {
-			limit = { num_pops < 33 }
+			count = 4
 			create_pop = {
 				species = owner_main_species
 				ethos = random
@@ -1909,7 +1834,8 @@ generate_home_planet_final_pass = {
 		}
 		owner = {
 			capital_scope = {
-				add_modifier = { modifier = prosp_uni_mod2 days = 3600 }
+
+				add_modifier = { modifier = prosp_uni_mod days = 3600 }
 			}
 		}
 	}
@@ -2033,7 +1959,6 @@ void_dweller_home_planet_setup = {
 	}
 
 	add_building = building_hab_major_capital
-	add_building = building_research_lab_1
 
 
 	if = {
@@ -2044,11 +1969,10 @@ void_dweller_home_planet_setup = {
 		}
 
 
-		add_building = building_hydroponics_farm
+		add_building = building_bureaucratic_1
 	}
 	else = {
 		add_building = building_holo_theatres
-		add_district = district_hab_cultural
 	}
 
 	add_deposit = d_arcane_replicator
@@ -2087,7 +2011,8 @@ void_dweller_home_planet_setup = {
 				}
 			}
 			else = {
-				add_building = building_commercial_zone
+				add_building = building_holo_theatres
+
 				add_district_and_planet_size_if_needed_effect = {
 					district = district_hab_mining
 				}
@@ -2117,8 +2042,8 @@ void_dweller_home_planet_setup = {
 			add_district_and_planet_size_if_needed_effect = {
 				district = district_hab_commercial
 			}
-
 			add_building = building_bureaucratic_1
+
 
 			if = {
 				limit = {

@@ -893,6 +893,8 @@ building_capital = {
 		job_enforcer_add = 1
 		planet_housing_add = 5
 		planet_amenities_add = 5
+		planet_max_buildings_add = @buildings_t2
+		planet_max_branch_office_buildings_add = 1
 	}
 
 	triggered_planet_modifier = {
@@ -919,9 +921,7 @@ building_capital = {
 			job_administrator_add = 1
 		}
 	}
-	
 
-	}
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -950,7 +950,6 @@ building_capital = {
 					has_civic = civic_aristocratic_elite
 					has_civic = civic_merchant_guilds
 					has_civic = civic_technocracy
-					has_civic = civic_reanimated_armies
 				}
 			}
 		}
@@ -1010,6 +1009,17 @@ building_capital = {
 		modifier = {
 			job_merchant_add = 1
 			job_administrator_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_capital_productivity_1 }
+		}
+		modifier = {
+			planet_jobs_upkeep_mult = 0.1
+			planet_jobs_produces_mult = 0.1
 		}
 	}
 
@@ -1090,14 +1100,6 @@ building_capital = {
 	triggered_desc = {
 		text = job_enforcer_effect_desc
 	}
-
-	ai_weight = {
-		weight = 100 # get rid of the colony malus asap
-		modifier = {
-			factor = 0.25
-			owner = { has_resource = { type = minerals amount < 500 } }
-		}#This is here to prevent the AI from queuing up to buy this building when it could really do with another mineral district
-	}
 }
 
 # Major Capital
@@ -1148,6 +1150,8 @@ building_major_capital = {
 		job_enforcer_add = 2
 		planet_housing_add = 8
 		planet_amenities_add = 8
+		planet_max_buildings_add = @buildings_t3
+		planet_max_branch_office_buildings_add = 2
 	}
 
 	triggered_planet_modifier = {
@@ -1414,6 +1418,8 @@ building_system_capital = {
 		job_enforcer_add = 3
 		planet_housing_add = 12
 		planet_amenities_add = 12
+		planet_max_buildings_add = @buildings_t4
+		planet_max_branch_office_buildings_add = 3
 	}
 
 	triggered_planet_modifier = {

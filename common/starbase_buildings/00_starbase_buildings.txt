@@ -50,10 +50,6 @@ hydroponics_bay = {
 		}
 	}
 
-	system_modifier = {
-		pop_growth_speed = 0.05
-	}
-
 	show_in_tech = "tech_hydroponics"
 
 	ai_build_at_chokepoint = no
@@ -127,10 +123,6 @@ nebula_refinery = {
 		upkeep = {
 			energy = 2
 		}
-	}
-
-	station_modifier = {
-		starbase_shipyard_build_cost_mult = -0.05
 	}
 
 	show_in_tech = "tech_space_mining_1"
@@ -573,7 +565,6 @@ black_hole_observatory = {
 					is_active_resolution = "resolution_galacticstudies_extradimensional_experimentation"
 				}
 			}
-			physics_research = 15
 		}
 		produces = {
 			trigger = {

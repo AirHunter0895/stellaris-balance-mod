@@ -4967,7 +4967,6 @@ resolution_council_denouncement = {
 
 	ai_weight = {
 		weight = @resolution_weight_disliked
-
 		# weaklings are scared of BtC
 		modifier = {
 			factor = 5
@@ -6961,6 +6960,7 @@ resolution_galacticreforms_council_size_1 = {
 		has_galactic_emperor = no
 	}
 
+
 	ai_weight = {
 		weight = @resolution_weight_hated
 
@@ -7197,7 +7197,6 @@ resolution_galacticreforms_council_size_3 = {
 		}
 		has_galactic_emperor = no
 	}
-
 	ai_weight = {
 		weight = @resolution_weight_unpopular
 
@@ -7501,6 +7500,7 @@ resolution_galacticreforms_council_size_5 = {
 		num_council_positions = 4
 		has_galactic_emperor = no
 	}
+
 
 	ai_weight = {
 		weight = @resolution_weight_popular
@@ -8474,7 +8474,10 @@ resolution_sanctions_tech_3 = {
 			factor = 0
 			is_in_breach_of_any = yes
 		}
-
+		modifier = {
+			factor = 0.33
+			has_global_flag = recent_galcom_sanctions_passed
+		}
 		modifier = {
 			factor = 0.33
 			has_global_flag = recent_galcom_sanctions_passed
@@ -8828,7 +8831,10 @@ resolution_sanctions_economic_1 = {
 			factor = 0
 			is_in_breach_of_any = yes
 		}
-
+		modifier = {
+			factor = 0.33
+			has_global_flag = recent_galcom_sanctions_passed
+		}
 		modifier = {
 			factor = 0.33
 			has_global_flag = recent_galcom_sanctions_passed
@@ -8929,7 +8935,10 @@ resolution_sanctions_economic_2 = {
 			factor = 0
 			is_in_breach_of_any = yes
 		}
-
+		modifier = {
+			factor = 0.33
+			has_global_flag = recent_galcom_sanctions_passed
+		}
 		modifier = {
 			factor = 0.33
 			has_global_flag = recent_galcom_sanctions_passed
@@ -9029,6 +9038,10 @@ resolution_sanctions_economic_3 = {
 		modifier = {
 			factor = 0
 			is_in_breach_of_any = yes
+		}
+		modifier = {
+			factor = 0.33
+			has_global_flag = recent_galcom_sanctions_passed
 		}
 
 		modifier = {
@@ -9393,7 +9406,10 @@ resolution_sanctions_military_1 = {
 			factor = 0
 			is_in_breach_of_any = yes
 		}
-
+		modifier = {
+			factor = 0.33
+			has_global_flag = recent_galcom_sanctions_passed
+		}
 		modifier = {
 			factor = 0.33
 			has_global_flag = recent_galcom_sanctions_passed
@@ -9497,7 +9513,10 @@ resolution_sanctions_military_2 = {
 			factor = 0
 			is_in_breach_of_any = yes
 		}
-
+		modifier = {
+			factor = 0.33
+			has_global_flag = recent_galcom_sanctions_passed
+		}
 		modifier = {
 			factor = 0.33
 			has_global_flag = recent_galcom_sanctions_passed
@@ -9601,7 +9620,10 @@ resolution_sanctions_military_3 = {
 			factor = 0
 			is_in_breach_of_any = yes
 		}
-
+		modifier = {
+			factor = 0.33
+			has_global_flag = recent_galcom_sanctions_passed
+		}
 		modifier = {
 			factor = 0.33
 			has_global_flag = recent_galcom_sanctions_passed
@@ -9979,6 +10001,10 @@ resolution_sanctions_administrative_1 = {
 			factor = 0
 			is_in_breach_of_any = yes
 		}
+		modifier = {
+			factor = 0.33
+			has_global_flag = recent_galcom_sanctions_passed
+		}
 
 		modifier = {
 			factor = 0.33
@@ -10087,7 +10113,10 @@ resolution_sanctions_administrative_2 = {
 			factor = 0
 			is_in_breach_of_any = yes
 		}
-
+		modifier = {
+			factor = 0.33
+			has_global_flag = recent_galcom_sanctions_passed
+		}
 		modifier = {
 			factor = 0.33
 			has_global_flag = recent_galcom_sanctions_passed
@@ -10194,6 +10223,10 @@ resolution_sanctions_administrative_3 = {
 		modifier = {
 			factor = 0
 			is_in_breach_of_any = yes
+		}
+		modifier = {
+			factor = 0.33
+			has_global_flag = recent_galcom_sanctions_passed
 		}
 
 		modifier = {
