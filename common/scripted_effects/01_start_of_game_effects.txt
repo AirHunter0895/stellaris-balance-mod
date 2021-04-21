@@ -1008,7 +1008,7 @@ generate_start_buildings_and_districts = {
 				limit = { owner = { is_megacorp = no } }
 				add_district_and_planet_size_if_needed_effect = {
 					district = district_generator
-					}
+
 				}
 			}
 
@@ -1065,9 +1065,6 @@ generate_start_buildings_and_districts = {
 		if = {
 			limit = { owner = { is_hive_empire = yes } }
 
-			# total - 34 jobs
-
-			# 4 jobs
 			while = {
 				count = 3
 				add_district_and_planet_size_if_needed_effect = {
@@ -1162,7 +1159,6 @@ generate_start_buildings_and_districts = {
 
 			# 1 job
 			add_building = building_spawning_pool
-
 		}
 
 		# Replace capital building for machine empires
@@ -1172,7 +1168,6 @@ generate_start_buildings_and_districts = {
 			# total - 27 jobs
 
 			# 3 jobs
-
 			while = {
 				count = 2
 				add_district_and_planet_size_if_needed_effect = {
@@ -1351,7 +1346,7 @@ generate_start_buildings_and_districts = {
 			add_district_and_planet_size_if_needed_effect = {
 				district = district_rw_industrial
 			}
- 
+
 			# 3 jobs
 			add_building = building_capital
 
@@ -1377,6 +1372,7 @@ generate_start_buildings_and_districts = {
 			add_district_and_planet_size_if_needed_effect = {
 				district = district_rw_industrial
 			}
+
 			# 5 jobs
 			add_building = building_hive_capital
 
@@ -1405,7 +1401,9 @@ generate_start_buildings_and_districts = {
 			}
 			add_district_and_planet_size_if_needed_effect = {
 				district = district_rw_industrial
-			}			# 6 jobs
+			}
+
+			# 6 jobs
 			add_building = building_machine_capital
 
 			# 2 job
@@ -1413,6 +1411,7 @@ generate_start_buildings_and_districts = {
 
 			# 2 jobs
 			add_building = building_research_lab_1
+
 			#Assimilators
 			if = {
 				limit = { owner = { has_civic = civic_machine_assimilator } }
@@ -1722,7 +1721,6 @@ generate_start_pops = {
 	if = {
 		limit = {
 			owner = { has_origin = origin_default }
-
 		}
 		while = {
 			count = 4

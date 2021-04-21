@@ -893,6 +893,8 @@ building_capital = {
 		job_enforcer_add = 1
 		planet_housing_add = 5
 		planet_amenities_add = 5
+		planet_max_buildings_add = @buildings_t2
+		planet_max_branch_office_buildings_add = 1
 	}
 
 	triggered_planet_modifier = {
@@ -1148,6 +1150,8 @@ building_major_capital = {
 		job_enforcer_add = 2
 		planet_housing_add = 8
 		planet_amenities_add = 8
+		planet_max_buildings_add = @buildings_t3
+		planet_max_branch_office_buildings_add = 2
 	}
 
 	triggered_planet_modifier = {
@@ -1414,6 +1418,8 @@ building_system_capital = {
 		job_enforcer_add = 3
 		planet_housing_add = 12
 		planet_amenities_add = 12
+		planet_max_buildings_add = @buildings_t4
+		planet_max_branch_office_buildings_add = 3
 	}
 
 	triggered_planet_modifier = {
