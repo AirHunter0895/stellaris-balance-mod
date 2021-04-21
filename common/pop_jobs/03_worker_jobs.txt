@@ -12,6 +12,7 @@ clerk = {
 		has_owner = yes
 		is_being_purged = no
 		is_being_assimilated = no
+		is_sapient = yes
 	}
 
 	possible = {
@@ -44,6 +45,15 @@ clerk = {
 	triggered_planet_modifier = {
 		potential = {
 			has_trait = trait_thrifty
+		}
+		modifier = {
+			trade_value_add = 0.5
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			has_trait = trait_nuumismatic_administration
 		}
 		modifier = {
 			trade_value_add = 0.75
@@ -169,6 +179,7 @@ technician = {
 			minerals = 0.5
 		}
 	}
+
 	weight = {
 		weight = @worker_job_weight
 		modifier = {
@@ -323,7 +334,7 @@ miner = {
 			energy = 0.5
 		}
 	}
-	
+
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -473,7 +484,7 @@ crystal_miner = {
 	}
 
 	weight = {
-		weight = @specialist_job_weight
+		weight = @specialist_job_weight # Important job
 		modifier = {
 			factor = 10
 			is_enslaved = yes
@@ -579,7 +590,7 @@ gas_extractor = {
 	}
 
 	weight = {
-		weight = @specialist_job_weight
+		weight = @specialist_job_weight # Important job
 		modifier = {
 			factor = 10
 			is_enslaved = yes
@@ -685,7 +696,7 @@ mote_harvester = {
 	}
 
 	weight = {
-		weight = @specialist_job_weight
+		weight = @specialist_job_weight # Important job
 		modifier = {
 			factor = 10
 			is_enslaved = yes
@@ -1160,7 +1171,7 @@ preacher = {
 
 	planet_modifier = {
 		planet_amenities_add = 3
-		trade_value_add = 3
+		trade_value_add = 4
 	}
 
 	triggered_planet_modifier = {
@@ -1192,15 +1203,25 @@ preacher = {
 	}
 	triggered_planet_modifier = {
 		potential = {
+
 			has_trait = trait_thrifty
 		}
 		modifier = {
-			trade_value_add = 0.6
+			trade_value_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			has_trait = trait_nuumismatic_administration
+		}
+		modifier = {
+			trade_value_add = 1
 		}
 	}
 
 	weight = {
-		weight = @specialist_job_weight
+		weight = @specialist_job_weight # Important job
 		modifier = {
 			factor = 0.2
 			has_citizenship_rights = no
@@ -1303,7 +1324,8 @@ mortal_initiate = {
 
 	possible = {
 		worker_job_check_trigger = yes
-		NOT = { has_trait = trait_mechanical } #No machines	}
+		NOT = { has_trait = trait_mechanical } #No machines
+	}
 
 	resources = {
 		category = planet_culture_workers

@@ -10,12 +10,34 @@ tr_diplomacy_adopt = {
 		inherit_icon = yes
 		inherit_name = no
 		trigger = {
+			NOT = { has_origin = origin_void_dwellers }
 			OR = {
 				has_valid_civic = civic_fanatic_purifiers
 				has_valid_civic = civic_inwards_perfection
 				is_hive_empire = yes
 				has_valid_civic = civic_barbaric_despoilers
 				has_origin = origin_necrophage
+			}
+		}
+		modifier = {
+			pop_housing_usage_mult = -0.10
+		}
+		weight = {
+			factor = 1
+		}
+	}
+
+	tradition_swap = {
+		name = tr_adaptability_void_adopt
+		inherit_effects = no
+		inherit_icon = yes
+		inherit_name = no
+		trigger = {
+			has_origin = origin_void_dwellers
+			OR = {
+				has_valid_civic = civic_fanatic_purifiers
+				has_valid_civic = civic_inwards_perfection
+				has_valid_civic = civic_barbaric_despoilers
 			}
 		}
 		modifier = {
@@ -102,12 +124,34 @@ tr_diplomacy_finish = {
 		inherit_icon = yes
 		inherit_name = yes
 		trigger = {
+			NOT = { has_origin = origin_void_dwellers }
 			OR = {
 				has_valid_civic = civic_fanatic_purifiers
 				has_valid_civic = civic_inwards_perfection
 				is_hive_empire = yes
 				has_valid_civic = civic_barbaric_despoilers
 				has_origin = origin_necrophage
+			}
+		}
+		modifier = {
+			ascension_perks_add = 1
+		}
+		weight = {
+			factor = 1
+		}
+	}
+
+	tradition_swap = {
+		name = tr_adaptability_void_finish
+		inherit_effects = no
+		inherit_icon = yes
+		inherit_name = yes
+		trigger = {
+			has_origin = origin_void_dwellers
+			OR = {
+				has_valid_civic = civic_fanatic_purifiers
+				has_valid_civic = civic_inwards_perfection
+				has_valid_civic = civic_barbaric_despoilers
 			}
 		}
 		modifier = {
@@ -188,7 +232,6 @@ tr_diplomacy_the_federation = {
 					has_federations_dlc = no
 				}
 #				has_origin = origin_necrophage #necrophage federations, why not I guess :D
-
 			}
 			is_lithoid_empire = yes
 		}
@@ -210,7 +253,9 @@ tr_diplomacy_the_federation = {
 		}
 		modifier = {
 			country_synthetic_trust_cap_add = 50
+			envoys_add = 1
 		}
+
 		weight = {
 			factor = 1
 		}
@@ -234,7 +279,7 @@ tr_diplomacy_entente_coordination = {
 	tradition_swap = {
 		name = tr_adaptability_survival_fittest
 		inherit_effects = no
-		inherit_icon = yes #todo: add new icon
+		inherit_icon = no
 		inherit_name = no
 		trigger = {
 			OR = {
@@ -332,6 +377,24 @@ tr_diplomacy_insider_trading = {
 
 	modifier = {
 		country_trade_fee = -0.10
+		planet_max_branch_office_buildings_add = 1
+	}
+
+	tradition_swap = {
+		name = tr_diplomacy_insider_trading_megacorp
+		inherit_effects = no
+		inherit_icon = yes
+		inherit_name = yes
+		trigger = {
+			has_authority = auth_corporate
+		}
+		modifier = {
+			country_trade_fee = -0.10
+			branch_office_value_mult = 0.05
+		}
+		weight = {
+			factor = 1
+		}
 	}
 
 	tradition_swap = {

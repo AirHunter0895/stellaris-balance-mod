@@ -22,6 +22,7 @@
 #			local_human_species_class = ..
 #		}
 #	}
+#	ai_playable = {}							# Similar to "playable", for AI
 #}
 
 civic_corvee_system = {
@@ -47,7 +48,6 @@ civic_corvee_system = {
 	random_weight = { base = 5 }
 	modifier = {
 		pop_housing_usage_mult = -0.10
-		pop_resettlement_cost_mult = -0.25
 	}
 }
 
@@ -541,8 +541,8 @@ civic_shadow_council = {
 	random_weight = { base = 5 }
 	description = "civic_tooltip_shadow_council_effect" # provides +2 amenities per ruler job
 	modifier = {
-		planet_jobs_ruler_produces_mult = 0.20
 		country_election_influence_cost_mult = -0.75
+		planet_jobs_ruler_produces_mult = 0.20
 		spy_network_levels_add = 10
 	}
 }
@@ -616,6 +616,7 @@ civic_functional_architecture = {
 	modifier = {
 		planet_structures_cost_mult = -0.10
 		planet_structures_upkeep_mult = -0.10
+		planet_building_build_speed_mult = 0.25
 		planet_max_buildings_add = 1
 	}
 }
@@ -659,6 +660,7 @@ civic_aristocratic_elite = {
 #civic_mechanists = {
 #	modification = no
 #	playable = { host_has_dlc = "Utopia" }
+#	ai_playable = { host_has_dlc = "Utopia" }
 #	potential = {
 #		ethics = { NOT = { value = ethic_gestalt_consciousness } }
 #		authority = { NOT = { value = auth_corporate } }
@@ -731,6 +733,7 @@ civic_shared_burden = {
 #civic_syncretic_evolution = {
 #	modification = no
 #	playable = { host_has_dlc = "Utopia" }
+#	ai_playable = { host_has_dlc = "Utopia" }
 #	potential = {
 #		ethics = { NOT = { value = ethic_gestalt_consciousness } }
 #		authority = { NOT = { value = auth_corporate } }
@@ -818,6 +821,7 @@ civic_fanatic_purifiers = {
 
 #civic_post_apocalyptic = {
 #	playable = { host_has_dlc = "Apocalypse" }
+#	ai_playable = { host_has_dlc = "Apocalypse" }
 #	starting_colony = pc_nuked # Changes homeworld class regardless of what is picked for empire
 #	potential = {
 #		ethics = { NOT = { value = ethic_gestalt_consciousness } }
@@ -855,6 +859,7 @@ civic_fanatic_purifiers = {
 
 #civic_life_seeded = {
 #	playable = { host_has_dlc = "Apocalypse" }
+#	ai_playable = { host_has_dlc = "Apocalypse" }
 #	starting_colony = pc_gaia
 #	habitability_preference = pc_gaia
 #	preferred_planet_class_neighbor = no
@@ -889,6 +894,7 @@ civic_fanatic_purifiers = {
 
 civic_barbaric_despoilers = {
 	playable = { host_has_dlc = "Apocalypse" }
+	ai_playable = { host_has_dlc = "Apocalypse" }
 	potential = {
 		ethics = { NOT = { value = ethic_gestalt_consciousness } }
 		authority = { NOT = { value = auth_corporate } }
@@ -1006,6 +1012,12 @@ civic_reanimated_armies = {
 				value = civic_aristocratic_elite
 				value = civic_technocracy
 				value = civic_merchant_guilds
+			}
+		}
+		species = {
+			NOT = {
+				text = disabled_by_synthetic_ascension
+				value = ROBOT
 			}
 		}
 	}

@@ -26,6 +26,15 @@ civic_franchising = {
 	}
 	random_weight = { base = 5 }
 	description = "civic_tooltip_franchising_effects"
+	possible = {
+		civics = {
+			NOT = {
+				value = civic_criminal_heritage
+			}
+		}
+	}
+	random_weight = { base = 5 }
+	description = "civic_tooltip_franchising_effects"
 	modifier = {
 		country_subject_power_penalty_mult = -0.33
 		empire_size_branch_office_mult = -0.25
@@ -39,7 +48,8 @@ civic_trading_posts = {
 			authority = { value = auth_corporate }
 			civics = { value = civic_galactic_sovereign_megacorp }
 		}
-	}	random_weight = { base = 5 }
+	}
+	random_weight = { base = 5 }
 	modifier = {
 		country_starbase_capacity_add = 4
 		station_gatherers_produces_mult = 0.1
@@ -53,7 +63,8 @@ civic_media_conglomerate = {
 			authority = { value = auth_corporate }
 			civics = { value = civic_galactic_sovereign_megacorp }
 		}
-	}	random_weight = { base = 5 }
+	}
+	random_weight = { base = 5 }
 	modifier = {
 		country_edict_cap_add = 1
 		pop_citizen_happiness = 0.05
@@ -66,7 +77,8 @@ civic_naval_contractors = {
 			authority = { value = auth_corporate }
 			civics = { value = civic_galactic_sovereign_megacorp }
 		}
-	}	random_weight = { base = 5 }
+	}
+	random_weight = { base = 5 }
 	possible = {
 		ethics = {
 			OR = {
@@ -87,7 +99,8 @@ civic_free_traders = {
 			authority = { value = auth_corporate }
 			civics = { value = civic_galactic_sovereign_megacorp }
 		}
-	}	random_weight = { base = 5 }
+	}
+	random_weight = { base = 5 }
 	modifier = {
 		trade_value_mult = 0.10
 		branch_office_value_mult = 0.10
@@ -100,7 +113,8 @@ civic_private_prospectors = {
 			authority = { value = auth_corporate }
 			civics = { value = civic_galactic_sovereign_megacorp }
 		}
-	}	random_weight = { base = 5 }
+	}
+	random_weight = { base = 5 }
 	modifier = {
 		empire_size_colonies_mult = -0.33
 		empire_size_systems_mult = -0.33
@@ -116,7 +130,8 @@ civic_gospel_of_the_masses = {
 			authority = { value = auth_corporate }
 			civics = { value = civic_galactic_sovereign_megacorp }
 		}
-	}	random_weight = { base = 5 }
+	}
+	random_weight = { base = 5 }
 	possible = {
 		ethics = {
 			OR = {
@@ -139,10 +154,12 @@ civic_ruthless_competition = {
 			authority = { value = auth_corporate }
 			civics = { value = civic_galactic_sovereign_megacorp }
 		}
-	}	random_weight = { base = 5 }
+	}
+	random_weight = { base = 5 }
 	modifier = {
         leader_skill_levels = 1
 		species_leader_exp_gain = 0.25
+		spy_network_levels_add = 10
 		pop_demotion_time_mult = -0.25
 				spy_network_levels_add = 10
     }
@@ -165,6 +182,7 @@ civic_criminal_heritage = {
 		}
 	}
 	modifier = {
+		spy_network_daily_value_mult = 0.20
 		planet_branch_offices_cost_mult = -0.15
 		spy_network_daily_value_mult = 0.20
 	}

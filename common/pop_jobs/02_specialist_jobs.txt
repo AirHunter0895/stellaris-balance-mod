@@ -1305,7 +1305,7 @@ bureaucrat = {
 			unity = 2
 		}
 		upkeep = {
-			consumer_goods = 1
+			consumer_goods = 2
 		}
 	}
 
@@ -1750,6 +1750,7 @@ manager = {
 			has_trait = trait_thrifty
 		}
 		modifier = {
+
 			trade_value_add = 1
 		}
 	}

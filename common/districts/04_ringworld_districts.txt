@@ -122,8 +122,8 @@ district_rw_city = {
 			}
 		}
 		modifier = {
-			job_enforcer_add = -1
-			planet_housing_add = -20
+			job_enforcer_add = -2
+			planet_housing_add = -10
 		}
 	}
 
@@ -240,8 +240,9 @@ district_rw_hive = {
 			}
 		}
 		modifier = {
-			job_maintenance_drone_add = -30
-			planet_housing_add = -30
+			job_maintenance_drone_add = -15
+			planet_housing_add = -15
+			job_synapse_drone_add = -1
 		}
 	}
 
@@ -256,8 +257,9 @@ district_rw_hive = {
 			}
 		}
 		modifier = {
-			job_maintenance_drone_add = -20
-			planet_housing_add = -20
+			job_maintenance_drone_add = -10
+			planet_housing_add = -10
+			job_synapse_drone_add = -1
 		}
 	}
 
@@ -376,9 +378,9 @@ district_rw_nexus = {
 			}
 		}
 		modifier = {
-			job_maintenance_drone_add = -25
-			job_technician_drone_add = -5
-			planet_housing_add = -30
+			job_maintenance_drone_add = -7
+			job_technician_drone_add = -1
+			planet_housing_add = -15
 		}
 	}
 
@@ -393,9 +395,9 @@ district_rw_nexus = {
 			}
 		}
 		modifier = {
-			job_maintenance_drone_add = -15
-			job_technician_drone_add = -5
-			planet_housing_add = -20
+			job_maintenance_drone_add = -5
+			job_technician_drone_add = -1
+			planet_housing_add = -10
 		}
 	}
 
@@ -519,10 +521,36 @@ district_rw_generator = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+			has_active_building = building_energy_nexus
+		}
+		modifier = {
+			job_technician_add = 5
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
 			owner = { is_fallen_empire_spiritualist = yes }
 		}
 		modifier = {
 			job_fe_acolyte_generator_add = 10
+
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_fallen_empire_spiritualist = yes }
+			has_active_building = building_energy_nexus
+		}
+		modifier = {
+			job_fe_acolyte_generator_add = 5
 		}
 	}
 
@@ -538,8 +566,8 @@ district_rw_generator = {
 			}
 		}
 		modifier = {
-			job_technician_drone_add = -10
-			planet_housing_add = -10
+			job_technician_drone_add = -5
+			planet_housing_add = -5
 		}
 	}
 
@@ -555,8 +583,8 @@ district_rw_generator = {
 			}
 		}
 		modifier = {
-			job_technician_drone_add = -15
-			planet_housing_add = -15
+			job_technician_drone_add = -7
+			planet_housing_add = -7
 		}
 	}
 
@@ -605,30 +633,6 @@ district_rw_generator = {
 			owner = { is_fallen_empire_spiritualist = yes }
 		}
 		text = job_fe_acolyte_generator_effect_desc
-	}
-
-	ai_weight = {
-		weight = 0
-
-		modifier = {
-			weight = 250
-
-			owner = {
-				has_monthly_income = {
-					resource = energy
-					value < 200
-				}
-			}
-		}
-
-		modifier = {
-			factor = 0.01
-			OR = {
-				planet = { has_district = district_rw_farming }
-				planet = { has_district = district_rw_science }
-				planet = { has_district = district_rw_commercial }
-			}
-		}
 	}
 
 	ai_resource_production = {
@@ -681,6 +685,7 @@ district_rw_commercial = {
 		planet_housing_add = 10
 		job_merchant_add = 2
 		job_clerk_add = 10
+
 	}
 
 	triggered_planet_modifier = {
@@ -695,10 +700,9 @@ district_rw_commercial = {
 			}
 		}
 		modifier = {
-			job_merchant_add = -3
-			job_artisan_add = -2
-			job_clerk_add = -10
-			planet_housing_add = -15
+			job_merchant_add = -1
+			job_clerk_add = -5
+			planet_housing_add = -7
 		}
 	}
 
@@ -714,9 +718,9 @@ district_rw_commercial = {
 			}
 		}
 		modifier = {
-			job_merchant_add = -2
-			job_clerk_add = -8
-			planet_housing_add = -10
+			job_merchant_add = -1
+			job_clerk_add = -4
+			planet_housing_add = -5
 		}
 	}
 
@@ -764,29 +768,6 @@ district_rw_commercial = {
 
 	triggered_desc = {
 		text = job_clerk_effect_desc
-	}
-
-	ai_weight = {
-		weight = 0
-
-		modifier = {
-			weight = 250
-			owner = {
-				has_monthly_income = {
-					resource = energy
-					value < 200
-				}
-			}
-		}
-
-		modifier = {
-			factor = 0.01
-			OR = {
-				planet = { has_district = district_rw_farming }
-				planet = { has_district = district_rw_science }
-				planet = { has_district = district_rw_generator }
-			}
-		}
 	}
 
 	ai_resource_production = {
@@ -863,8 +844,8 @@ district_rw_science = {
 			}
 		}
 		modifier = {
-			job_researcher_add = -15
-			planet_housing_add = -15
+			job_researcher_add = -7
+			planet_housing_add = -7
 		}
 	}
 
@@ -880,8 +861,8 @@ district_rw_science = {
 			}
 		}
 		modifier = {
-			job_brain_drone_add = -15
-			planet_housing_add = -15
+			job_brain_drone_add = -7
+			planet_housing_add = -7
 		}
 	}
 
@@ -897,8 +878,8 @@ district_rw_science = {
 			}
 		}
 		modifier = {
-			job_calculator_add = -15
-			planet_housing_add = -15
+			job_calculator_add = -7
+			planet_housing_add = -7
 		}
 	}
 
@@ -914,8 +895,8 @@ district_rw_science = {
 			}
 		}
 		modifier = {
-			job_researcher_add = -10
-			planet_housing_add = -10
+			job_researcher_add = -5
+			planet_housing_add = -5
 		}
 	}
 
@@ -931,8 +912,8 @@ district_rw_science = {
 			}
 		}
 		modifier = {
-			job_brain_drone_add = -10
-			planet_housing_add = -10
+			job_brain_drone_add = -5
+			planet_housing_add = -5
 		}
 	}
 
@@ -948,8 +929,8 @@ district_rw_science = {
 			}
 		}
 		modifier = {
-			job_calculator_add = -10
-			planet_housing_add = -10
+			job_calculator_add = -5
+			planet_housing_add = -5
 		}
 	}
 
@@ -1009,29 +990,6 @@ district_rw_science = {
 			owner = { is_machine_empire = yes }
 		}
 		text = job_calculator_effect_desc
-	}
-
-  ai_weight = {
-		weight = 0
-
-		modifier = {
-			weight = 250
-			owner = {
-				has_monthly_income = {
-					resource = consumer_goods
-					value > 50
-				}
-			}
-		}
-
-		modifier = {
-			factor = 0.01
-			OR = {
-				planet = { has_district = district_rw_farming }
-				planet = { has_district = district_rw_commercial }
-				planet = { has_district = district_rw_generator }
-			}
-		}
 	}
 
 }
@@ -1136,7 +1094,7 @@ district_rw_farming = {
 			has_active_building = building_food_processing_center
 		}
 		modifier = {
-			job_farmer_add = 5
+			job_farmer_add = 10
 		}
 	}
 
@@ -1187,8 +1145,8 @@ district_rw_farming = {
 			}
 		}
 		modifier = {
-			job_farmer_add = -10
-			planet_housing_add = -10
+			job_farmer_add = -5
+			planet_housing_add = -5
 		}
 	}
 
@@ -1204,8 +1162,8 @@ district_rw_farming = {
 			}
 		}
 		modifier = {
-			job_agri_drone_add = -10
-			planet_housing_add = -10
+			job_agri_drone_add = -5
+			planet_housing_add = -5
 		}
 	}
 
@@ -1221,8 +1179,8 @@ district_rw_farming = {
 			}
 		}
 		modifier = {
-			job_agri_drone_add = -15
-			planet_housing_add = -15
+			job_agri_drone_add = -7
+			planet_housing_add = -7
 		}
 	}
 
@@ -1261,36 +1219,6 @@ district_rw_farming = {
 			owner = { is_fallen_empire_spiritualist = yes }
 		}
 		text = job_fe_acolyte_farm_effect_desc
-	}
-
-	ai_weight = {
-		weight = 0
-
-		modifier = {
-			weight = 250
-
-			owner = {
-				has_monthly_income = {
-					resource = food
-					value < 200
-				}
-			}
-		}
-
-		modifier = {
-			factor = 0.01
-			OR = {
-				planet = { has_district = district_rw_science }
-				planet = { has_district = district_rw_commercial }
-				planet = { has_district = district_rw_generator }
-			}
-		}
-		modifier = {
-			factor = 0
-			owner = {
-				country_uses_food = no
-			}
-		}
 	}
 
 	ai_resource_production = {

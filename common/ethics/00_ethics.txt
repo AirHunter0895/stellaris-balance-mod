@@ -92,7 +92,24 @@ ethic_authoritarian = {
 		desc = POP_ATTRACTION_SLAVERY_POS
 		trigger = {
 			any_enslaved_species = {
+				is_same_species = root
 				is_robotic = no
+			}
+		}
+	}
+
+	pop_attraction_tag = {
+		desc = POP_ATTRACTION_XENO_SLAVES_POS
+		trigger = {
+			any_enslaved_species = {
+				not = { is_same_species = root }
+				is_robotic = no
+			}
+			NOT = {
+				any_enslaved_species = {
+					is_same_species = root
+					is_robotic = no
+				}
 			}
 		}
 	}
@@ -246,8 +263,14 @@ ethic_authoritarian = {
 			is_enslaved = no
 			from = {
 				any_enslaved_species = {
-					is_same_species = root
+					NOT = { is_same_species = root }
 					is_robotic = no
+				}
+				NOT = {
+					any_enslaved_species = {
+						is_same_species = root
+						is_robotic = no
+					}
 				}
 			}
 		}
@@ -742,7 +765,7 @@ ethic_xenophobe = {
 		trigger = {
 			any_relation = {
 				is_subject = no
-				has_migration_access = root				
+				has_migration_access = root
 				NOT = { is_same_species = root }
 			}
 		}
@@ -814,7 +837,7 @@ ethic_xenophobe = {
 			factor = 0.75
 			any_relation = {
 				is_subject = no
-				has_migration_access = root				
+				has_migration_access = root
 				NOT = { is_same_species = root }
 			}
 		}
@@ -917,7 +940,7 @@ ethic_xenophobe = {
 		modifier = {
 			factor = 1.5
 			from = {
-				any_pop = {
+				any_owned_pop = {
 					NOT = { is_same_species = root }
 					has_trait = "trait_repugnant"
 				}
@@ -1736,8 +1759,8 @@ ethic_pacifist = {
 		trigger = {
 			has_valid_civic = civic_inwards_perfection
 		}
-	}	
-	
+	}
+
 	pop_attraction_tag = {
 		desc = POP_ATTRACTION_WEAK_POS
 		trigger = {
@@ -2506,6 +2529,7 @@ ethic_gestalt_consciousness = {
 	country_modifier = {
 		country_war_exhaustion_mult = -0.2
 		country_base_influence_produces_add = 1
+		intel_encryption_add = 2
 	}
 
 	tags = {

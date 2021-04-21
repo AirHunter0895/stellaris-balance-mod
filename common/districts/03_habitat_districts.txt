@@ -92,26 +92,6 @@ district_hab_housing = {
 		}
 		text = job_maintenance_drone_effect_desc
 	}
-
-	ai_weight = {
-		weight = 0
-		modifier = {
-			weight = 250
-			planet = {
-				num_districts = { type = district_hab_housing value < 1 }
-			}
-		}
-		modifier = {
-			weight = 250
-			planet = {
-				owner = {
-					is_regular_empire = yes
-					has_ascension_perk = ap_master_builders
-				}
-				num_districts = { type = district_hab_housing value < 2 }
-			}
-		}
-	}
 }
 
 district_hab_energy = {
@@ -670,22 +650,6 @@ district_hab_science = {
 		}
 		text = job_calculator_effect_desc
 	}
-
-	ai_weight = {
-		weight = 0
-		modifier = {
-			weight = 250
-			planet = {
-				NOT = { has_district = district_hab_energy }
-			}
-			owner = {
-				has_monthly_income = {
-					resource = minerals
-					value > 80
-				}
-			}
-		}
-	}
 }
 
 district_hab_commercial = {
@@ -728,6 +692,16 @@ district_hab_commercial = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
+			owner = { has_non_swapped_tradition = tr_prosperity_interstellar_franchising }
+		}
+		modifier = {
+			job_clerk_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
 			owner = { is_fallen_empire_spiritualist = no }
 		}
 		modifier = {
@@ -758,22 +732,6 @@ district_hab_commercial = {
 
 	triggered_desc = {
 		text = job_clerk_effect_desc
-	}
-
-	ai_weight = {
-		weight = 0
-		modifier = {
-			weight = 250
-			OR = {
-				has_district = district_hab_commercial
-				owner = {
-					has_monthly_income = {
-						resource = consumer_goods
-						value < 6
-					}
-				}
-			}
-		}
 	}
 
 	ai_resource_production = {
@@ -915,24 +873,6 @@ district_hab_mining = {
 			owner = { is_fallen_empire_spiritualist = yes }
 		}
 		text = job_fe_acolyte_mine_effect_desc
-	}
-
-	ai_weight = {
-		weight = 0
-
-		modifier = {
-			weight = 400
-			OR = {
-				owner = {
-					has_monthly_income = {
-						resource = energy
-						value < 200
-					}
-				}
-				planet = { has_district = district_hab_energy }
-			}
-			NOT = { planet = { has_district = district_hab_science } }
-		}
 	}
 
 	ai_resource_production = {
