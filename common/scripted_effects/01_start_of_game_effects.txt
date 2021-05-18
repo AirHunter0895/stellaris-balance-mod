@@ -2011,8 +2011,7 @@ void_dweller_home_planet_setup = {
 				}
 			}
 			else = {
-				add_building = building_holo_theatres
-
+				add_building = building_commercial_zone
 				add_district_and_planet_size_if_needed_effect = {
 					district = district_hab_mining
 				}
@@ -2064,7 +2063,6 @@ void_dweller_home_planet_setup = {
 		}
 	}
 }
-
 add_district_and_planet_size_if_needed_effect = {
 	if = {
 		limit = {

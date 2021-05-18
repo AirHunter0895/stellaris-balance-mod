@@ -62,7 +62,7 @@ district_rw_city = {
 			}
 		}
 		modifier = {
-			job_clerk_add = 5
+			job_clerk_add = 3
 		}
 	}
 
@@ -107,36 +107,8 @@ district_rw_city = {
 			owner = { has_non_swapped_tradition = tr_prosperity_interstellar_franchising }
 		}
 		modifier = {
-			job_clerk_add = 5
+			job_clerk_add = 3
 		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			planet = {
-				OR = {
-					has_deposit = d_shattered_ring_superblocker
-					has_deposit = d_shattered_ring_superblocker2
-				}
-			}
-		}
-		modifier = {
-			job_enforcer_add = -2
-			planet_housing_add = -10
-		}
-	}
-
-	triggered_desc = {
-		trigger = {
-			planet = {
-				OR = {
-					has_deposit = d_shattered_ring_superblocker
-					has_deposit = d_shattered_ring_superblocker2
-				}
-			}
-		}
-		text = shattered_ring_superblocker_desc
 	}
 
 	triggered_desc = {
@@ -229,64 +201,6 @@ district_rw_hive = {
 		}
 	}
 
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			planet = {
-				OR = {
-					has_deposit = d_shattered_ring_superblocker
-					has_deposit = d_shattered_ring_superblocker2
-				}
-			}
-		}
-		modifier = {
-			job_maintenance_drone_add = -15
-			planet_housing_add = -15
-			job_synapse_drone_add = -1
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			planet = {
-				OR = {
-					has_deposit = d_shattered_ring_superblocker3
-					has_deposit = d_shattered_ring_superblocker4
-				}
-			}
-		}
-		modifier = {
-			job_maintenance_drone_add = -10
-			planet_housing_add = -10
-			job_synapse_drone_add = -1
-		}
-	}
-
-	triggered_desc = {
-		trigger = {
-			planet = {
-				OR = {
-					has_deposit = d_shattered_ring_superblocker
-					has_deposit = d_shattered_ring_superblocker2
-				}
-			}
-		}
-		text = shattered_ring_superblocker_desc
-	}
-
-	triggered_desc = {
-		trigger = {
-			planet = {
-				OR = {
-					has_deposit = d_shattered_ring_superblocker3
-					has_deposit = d_shattered_ring_superblocker4
-				}
-			}
-		}
-		text = shattered_ring_superblocker2_desc
-	}
-
 	triggered_desc = {
 		trigger = {
 			planet = {
@@ -367,63 +281,6 @@ district_rw_nexus = {
 		}
 	}
 
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			planet = {
-				OR = {
-					has_deposit = d_shattered_ring_superblocker
-					has_deposit = d_shattered_ring_superblocker2
-				}
-			}
-		}
-		modifier = {
-			job_maintenance_drone_add = -7
-			job_technician_drone_add = -1
-			planet_housing_add = -15
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			planet = {
-				OR = {
-					has_deposit = d_shattered_ring_superblocker3
-					has_deposit = d_shattered_ring_superblocker4
-				}
-			}
-		}
-		modifier = {
-			job_maintenance_drone_add = -5
-			job_technician_drone_add = -1
-			planet_housing_add = -10
-		}
-	}
-
-	triggered_desc = {
-		trigger = {
-			planet = {
-				OR = {
-					has_deposit = d_shattered_ring_superblocker
-					has_deposit = d_shattered_ring_superblocker2
-				}
-			}
-		}
-		text = shattered_ring_superblocker_desc
-	}
-
-	triggered_desc = {
-		trigger = {
-			planet = {
-				OR = {
-					has_deposit = d_shattered_ring_superblocker3
-					has_deposit = d_shattered_ring_superblocker4
-				}
-			}
-		}
-		text = shattered_ring_superblocker2_desc
-	}
 
 	triggered_desc = {
 		trigger = {
@@ -497,17 +354,6 @@ district_rw_generator = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { is_gestalt = yes }
-			has_active_building = building_energy_nexus
-		}
-		modifier = {
-			job_technician_drone_add = 5
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
 			owner = {
 				is_gestalt = no
 				is_fallen_empire_spiritualist = no
@@ -554,51 +400,6 @@ district_rw_generator = {
 		}
 	}
 
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_machine_empire = yes }
-			planet = {
-				OR = {
-					has_deposit = d_shattered_ring_superblocker
-					has_deposit = d_shattered_ring_superblocker2
-				}
-			}
-		}
-		modifier = {
-			job_technician_drone_add = -5
-			planet_housing_add = -5
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_hive_empire = yes }
-			planet = {
-				OR = {
-					has_deposit = d_shattered_ring_superblocker
-					has_deposit = d_shattered_ring_superblocker2
-				}
-			}
-		}
-		modifier = {
-			job_technician_drone_add = -7
-			planet_housing_add = -7
-		}
-	}
-
-	triggered_desc = {
-		trigger = {
-			planet = {
-				OR = {
-					has_deposit = d_shattered_ring_superblocker
-					has_deposit = d_shattered_ring_superblocker2
-				}
-			}
-		}
-		text = shattered_ring_superblocker_desc
-	}
 
 	triggered_desc = {
 		trigger = {
@@ -684,44 +485,8 @@ district_rw_commercial = {
 	triggered_planet_modifier = {
 		planet_housing_add = 10
 		job_merchant_add = 2
-		job_clerk_add = 10
+		job_clerk_add = 6
 
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_regular_empire = yes }
-			planet = {
-				OR = {
-					has_deposit = d_shattered_ring_superblocker
-					has_deposit = d_shattered_ring_superblocker2
-				}
-			}
-		}
-		modifier = {
-			job_merchant_add = -1
-			job_clerk_add = -5
-			planet_housing_add = -7
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_regular_empire = yes }
-			planet = {
-				OR = {
-					has_deposit = d_shattered_ring_superblocker3
-					has_deposit = d_shattered_ring_superblocker4
-				}
-			}
-		}
-		modifier = {
-			job_merchant_add = -1
-			job_clerk_add = -4
-			planet_housing_add = -5
-		}
 	}
 
 	triggered_desc = {
@@ -735,35 +500,7 @@ district_rw_commercial = {
 	}
 
 	triggered_desc = {
-		trigger = {
-			planet = {
-				OR = {
-					has_deposit = d_shattered_ring_superblocker
-					has_deposit = d_shattered_ring_superblocker2
-				}
-			}
-		}
-		text = shattered_ring_superblocker_desc
-	}
-
-	triggered_desc = {
-		trigger = {
-			planet = {
-				OR = {
-					has_deposit = d_shattered_ring_superblocker3
-					has_deposit = d_shattered_ring_superblocker4
-				}
-			}
-		}
-		text = shattered_ring_superblocker2_desc
-	}
-
-	triggered_desc = {
 		text = job_merchant_effect_desc
-	}
-
-	triggered_desc = {
-		text = job_artisan_effect_desc
 	}
 
 	triggered_desc = {
@@ -832,108 +569,6 @@ district_rw_science = {
 		}
 	}
 
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_regular_empire = yes }
-			planet = {
-				OR = {
-					has_deposit = d_shattered_ring_superblocker
-					has_deposit = d_shattered_ring_superblocker2
-				}
-			}
-		}
-		modifier = {
-			job_researcher_add = -7
-			planet_housing_add = -7
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_hive_empire = yes }
-			planet = {
-				OR = {
-					has_deposit = d_shattered_ring_superblocker
-					has_deposit = d_shattered_ring_superblocker2
-				}
-			}
-		}
-		modifier = {
-			job_brain_drone_add = -7
-			planet_housing_add = -7
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_machine_empire = yes }
-			planet = {
-				OR = {
-					has_deposit = d_shattered_ring_superblocker
-					has_deposit = d_shattered_ring_superblocker2
-				}
-			}
-		}
-		modifier = {
-			job_calculator_add = -7
-			planet_housing_add = -7
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_regular_empire = yes }
-			planet = {
-				OR = {
-					has_deposit = d_shattered_ring_superblocker3
-					has_deposit = d_shattered_ring_superblocker4
-				}
-			}
-		}
-		modifier = {
-			job_researcher_add = -5
-			planet_housing_add = -5
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_hive_empire = yes }
-			planet = {
-				OR = {
-					has_deposit = d_shattered_ring_superblocker3
-					has_deposit = d_shattered_ring_superblocker4
-				}
-			}
-		}
-		modifier = {
-			job_brain_drone_add = -5
-			planet_housing_add = -5
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_machine_empire = yes }
-			planet = {
-				OR = {
-					has_deposit = d_shattered_ring_superblocker3
-					has_deposit = d_shattered_ring_superblocker4
-				}
-			}
-		}
-		modifier = {
-			job_calculator_add = -5
-			planet_housing_add = -5
-		}
-	}
-
 	triggered_desc = {
 		trigger = {
 			planet = {
@@ -942,30 +577,6 @@ district_rw_science = {
 			}
 		}
 		text = arcane_generator_upkeep_desc
-	}
-
-	triggered_desc = {
-		trigger = {
-			planet = {
-				OR = {
-					has_deposit = d_shattered_ring_superblocker
-					has_deposit = d_shattered_ring_superblocker2
-				}
-			}
-		}
-		text = shattered_ring_superblocker_desc
-	}
-
-	triggered_desc = {
-		trigger = {
-			planet = {
-				OR = {
-					has_deposit = d_shattered_ring_superblocker3
-					has_deposit = d_shattered_ring_superblocker4
-				}
-			}
-		}
-		text = shattered_ring_superblocker2_desc
 	}
 
 	triggered_desc = {
@@ -998,27 +609,9 @@ district_rw_farming = {
 	base_buildtime = @rw_district_buildtime
 	is_capped_by_modifier = no
 
-	show_on_uncolonized = {
-		uses_district_set = ring_world
-		exists = from
-		from = {
-			OR = {
-				country_uses_food = yes
-				is_lithoid_empire = yes
-			}
-		}
-	}
+	show_on_uncolonized = { uses_district_set = ring_world }
 
-	potential = {
-		uses_district_set = ring_world
-		exists = owner
-		owner = {
-			OR = {
-				country_uses_food = yes
-				is_lithoid_empire = yes
-			}
-		}
-	}
+	potential = { uses_district_set = ring_world }
 
 	resources = {
 		category = planet_districts
@@ -1057,17 +650,6 @@ district_rw_farming = {
 		}
 		modifier = {
 			job_agri_drone_add = 10
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_gestalt = yes }
-			has_active_building = building_food_processing_center
-		}
-		modifier = {
-			job_agri_drone_add = 5
 		}
 	}
 
@@ -1132,6 +714,7 @@ district_rw_farming = {
 			planet_housing_add = 5
 		}
 	}
+
 
 	triggered_planet_modifier = {
 		potential = {
@@ -1307,118 +890,6 @@ district_rw_industrial = {
 		}
 	}
 
-	# Extra jobs from foundry buildings
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_regular_empire = yes }
-			has_active_building = building_foundry_2
-		}
-		modifier = {
-			job_foundry_add = 5
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_regular_empire = yes }
-			has_active_building = building_foundry_3
-		}
-		modifier = {
-			job_foundry_add = 10
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_machine_empire = yes }
-			has_active_building = building_foundry_2
-		}
-		modifier = {
-			job_fabricator_add = 5
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_machine_empire = yes }
-			has_active_building = building_foundry_3
-		}
-		modifier = {
-			job_fabricator_add = 10
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_hive_empire = yes }
-			has_active_building = building_foundry_2
-		}
-		modifier = {
-			job_alloy_drone_add = 5
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_hive_empire = yes }
-			has_active_building = building_foundry_3
-		}
-		modifier = {
-			job_alloy_drone_add = 10
-		}
-	}
-
-	# Extra jobs from factory buildings
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_regular_empire = yes }
-			has_active_building = building_factory_2
-		}
-		modifier = {
-			job_artisan_add = 5
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_regular_empire = yes }
-			has_active_building = building_factory_3
-		}
-		modifier = {
-			job_artisan_add = 10
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_machine_empire = yes }
-			has_active_building = building_factory_2
-		}
-		modifier = {
-			job_artisan_drone_add = 2
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_machine_empire = yes }
-			has_active_building = building_factory_3
-		}
-		modifier = {
-			job_artisan_drone_add = 5
-		}
-	}
-
 	triggered_desc = {
 		trigger = {
 			exists = owner
@@ -1454,17 +925,6 @@ district_rw_industrial = {
 		text = job_fabricator_effect_desc
 	}
 
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = { is_hive_empire = yes }
-			OR = {
-				has_active_building = building_factory_2
-				has_active_building = building_factory_3
-			}
-		}
-		text = job_alloy_drone_effect_desc
-	}
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner

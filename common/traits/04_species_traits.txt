@@ -851,7 +851,7 @@ trait_void_dweller_1 = {
 	sorting_priority = 30
 	potential_crossbreeding_chance = 0.33
 	modifier = {
-		planet_jobs_produces_mult = 0.1
+		planet_jobs_produces_mult = 0.05
 		pop_housing_usage_mult = -0.15
 		pop_growth_speed = -0.25
 	}

@@ -20,8 +20,8 @@ clerk = {
 	}
 
 	planet_modifier = {
-		planet_amenities_add = 3
-		trade_value_add = 3
+		planet_amenities_add = 4
+		trade_value_add = 4
 	}
 	triggered_planet_modifier = {
 		potential = {
@@ -31,7 +31,7 @@ clerk = {
 			}
 		}
 		modifier = {
-			planet_amenities_add = 0.6
+			planet_amenities_add = 0.8
 		}
 	}
 	triggered_planet_modifier = {
@@ -39,7 +39,7 @@ clerk = {
 			has_trait = trait_repugnant
 		}
 		modifier = {
-			planet_amenities_add = -0.6
+			planet_amenities_add = -0.8
 		}
 	}
 	triggered_planet_modifier = {
@@ -47,25 +47,15 @@ clerk = {
 			has_trait = trait_thrifty
 		}
 		modifier = {
-			trade_value_add = 0.5
+			trade_value_add = 1
 		}
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_trait = trait_nuumismatic_administration
 		}
 		modifier = {
-			trade_value_add = 0.75
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			has_trait = trait_nuumismatic_administration
-		}
-		modifier = {
-			trade_value_add = 0.75
+			trade_value_add = 1
 		}
 	}
 	triggered_planet_modifier = {
@@ -74,7 +64,7 @@ clerk = {
 			owner = { has_technology = tech_interstellar_economics }
 		}
 		modifier = {
-			trade_value_add = 0.75
+			trade_value_add = 1
 		}
 	}
 	triggered_planet_modifier = {
@@ -83,9 +73,19 @@ clerk = {
 			owner = { has_technology = tech_galactic_markets }
 		}
 		modifier = {
-			trade_value_add = 0.75
+			trade_value_add = 1
 		}
 	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_space_trading }
+		}
+		modifier = {
+			trade_value_add = 1
+		}
+	}
+
 
 	weight = {
 		weight = @clerk_job_weight
