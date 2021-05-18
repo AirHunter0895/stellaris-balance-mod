@@ -939,6 +939,7 @@ generate_start_buildings_and_districts = {
 					district = district_city
 				}
 			}
+ 
 			# 4 - 6 jobs
 			if = {
 				limit = {
@@ -1007,6 +1008,7 @@ generate_start_buildings_and_districts = {
 				limit = { owner = { is_megacorp = no } }
 				add_district_and_planet_size_if_needed_effect = {
 					district = district_generator
+
 				}
 			}
 
@@ -1062,8 +1064,6 @@ generate_start_buildings_and_districts = {
 
 		if = {
 			limit = { owner = { is_hive_empire = yes } }
-			
-      # 9 jobs
 
 			while = {
 				count = 3
@@ -1192,7 +1192,6 @@ generate_start_buildings_and_districts = {
 			# 2 jobs
 			add_building = building_research_lab_1
 
-			# SPBM TODO: ADD 22 SIZE BACK IN
 			if = {
 				limit = { owner = { NOT = { has_origin = origin_machine } } }
 
@@ -1218,6 +1217,7 @@ generate_start_buildings_and_districts = {
 						district = district_generator
 					}
 				}
+
 				# 2 jobs
 				if = {
 					limit = {
@@ -1245,7 +1245,6 @@ generate_start_buildings_and_districts = {
 						}
 					}
 				}
-
 				#Servitors
 				if = {
 					limit = { owner = { has_civic = civic_machine_servitor } }
@@ -1261,7 +1260,6 @@ generate_start_buildings_and_districts = {
 							district = district_farming
 						}
 					}
-
 					add_district_and_planet_size_if_needed_effect = {
 						district = district_nexus
 					}
@@ -1711,20 +1709,6 @@ generate_start_pops = {
 		}
 	}
 	if = {
-		limit = {
-			owner = {
-				is_regular_empire = yes
-			}
-		}
-		while = {
-			limit = { num_pops < 28 }
-			create_pop = {
-				species = owner_main_species
-				ethos = random
-			}
-		}
-	}
-	if = {
 		limit = { owner = { has_origin = origin_necrophage } }
 		while = { #to make them start without resource deficits
 			count = 2
@@ -1834,7 +1818,6 @@ generate_home_planet_final_pass = {
 		}
 		owner = {
 			capital_scope = {
-
 				add_modifier = { modifier = prosp_uni_mod days = 3600 }
 			}
 		}
@@ -1968,7 +1951,6 @@ void_dweller_home_planet_setup = {
 			}
 		}
 
-
 		add_building = building_bureaucratic_1
 	}
 	else = {
@@ -2011,8 +1993,7 @@ void_dweller_home_planet_setup = {
 				}
 			}
 			else = {
-				add_building = building_holo_theatres
-
+				add_building = building_commercial_zone
 				add_district_and_planet_size_if_needed_effect = {
 					district = district_hab_mining
 				}
@@ -2042,8 +2023,6 @@ void_dweller_home_planet_setup = {
 			add_district_and_planet_size_if_needed_effect = {
 				district = district_hab_commercial
 			}
-			add_building = building_bureaucratic_1
-
 
 			if = {
 				limit = {
@@ -2064,7 +2043,6 @@ void_dweller_home_planet_setup = {
 		}
 	}
 }
-
 add_district_and_planet_size_if_needed_effect = {
 	if = {
 		limit = {

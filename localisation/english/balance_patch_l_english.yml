@@ -24,7 +24,7 @@
  tech_home_bastion:0 "Home Defense"
  tech_home_bastion_desc:0 "We have spent many years researching a defense system to defend our most important world"
  flag_spbm_clerk_buff:1 "£job_clerk£ $job_clerk$ Trade Value: §G+25%§!"
-
+ # Ascension perks
  # Economic Categories
  mod_planet_culture_workers_upkeep_mult:0 "Culture Worker Upkeep"
  mod_planet_priests_upkeep_mult:0 "Priest Upkeep"

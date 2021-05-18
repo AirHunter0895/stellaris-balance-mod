@@ -40,7 +40,11 @@ tech_space_trading = {
 	potential = {
 		is_gestalt = no
 	}
-
+	prereqfor_desc = {
+		custom = {
+        	title = "flag_spbm_clerk_buff"
+		}
+	}
 	weight_modifier = {
 		modifier = {
 			factor = 1.25

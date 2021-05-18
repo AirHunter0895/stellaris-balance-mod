@@ -28,19 +28,3 @@ on_yearly_pulse = {
 		spbm.1
 	}
 }
-
-# A colony has been destroyed. Called just before owner and controller is cleared
-# Scope = Planet
-on_colony_destroyed = {
-	events = {
-		spbm.4 # Prevent recolonisation abuse
-	}
-}
-
-# A planet has been colonized.
-# Scope = Planet
-on_colonized = {
-	events = {
-		spbm.5 # Clear the deserted penalty so it doesn't clog up the view
-	}
-}

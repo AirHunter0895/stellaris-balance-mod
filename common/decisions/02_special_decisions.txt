@@ -423,8 +423,8 @@ decision_mastery_of_nature = {
 	resources = {
 		category = decisions
 		cost = {
-			influence = 100
-			energy = 2000
+			influence = 50
+			energy = 1000
 		}
 	}
 
