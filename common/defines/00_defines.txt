@@ -337,9 +337,6 @@
 		ARCH_VIEW_TEXTBOX_SMALL = 200	# height of textbox when not showing an event
 		ARCH_VIEW_TEXTBOX_LARGE = 265	# height of textbox when showing an event
 
-		PLANETVIEW_ORBITAL_RED_HEALTH 			= 50 # How high percentage health before orbital health bar turns red in planet view.
-		PLANETVIEW_ORBITAL_YELLOW_HEALTH 		= 75 # How high percentage health before orbital health bar turns yellow in planet view.
-
 		DEFAULT_CITY_POP_LEVEL					= 4 # Shown in empire designer
 		POPS_TO_SHOW_CITY_LEVEL 				= { 1 20 60 100 200 } # Decides how many pops are required to show the next level of city-infrastructure in city_frame
 
@@ -379,7 +376,8 @@
 
 		SITUATION_LOG_ARCHAEOLOGY_PICTURE_SPRITE = "GFX_evt_archaeological_dig"
 		SITUATION_LOG_ARCHAEOLOGY_ICON_FILENAME		= "gfx/interface/icons/situation_log/situation_log_archaeology.dds"
-	SITUATION_LOG_FIRST_CONTACT_ICON_FILENAME		= "gfx/interface/icons/situation_log/situation_log_radar.dds"
+		SITUATION_LOG_FIRST_CONTACT_ICON_FILENAME		= "gfx/interface/icons/situation_log/situation_log_radar.dds"
+
 		SITUATION_LOG_DEBRIS_PICTURE_SPRITE		= "GFX_situation_log_debris_picture"
 		SITUATION_LOG_DEBRIS_ICON_FILENAME		= "gfx/interface/icons/situation_log/situation_log_debris.dds"
 		SITUATION_LOG_MODIFICATION_PICTURE_SPRITE 	= "GFX_situation_log_modification_picture"
@@ -398,6 +396,7 @@
 		ARCHAEOLOGY_DIFFICULTY_SPRITE_NAME_ROOT = "GFX_archaeology_difficulty"
 		FIRSTCONTACT_DIFFICULTY_SPRITE_NAME_ROOT = "GFX_firstcontact_difficulty"
 		ESPIONAGE_DIFFICULTY_SPRITE_NAME_ROOT = "GFX_espionage_difficulty"
+
 		MIN_GUI_SCALE							= 0.5 # Minimum UI scale factor
 
 		TOPBAR_BUTTONS_SHORTCUTS				= {
@@ -436,7 +435,9 @@
 		OUTLINER_PLANET_CONSTRUCTION_MAX_ENTRIES			= 3	# not enough space in vanilla stellaris for more. priority: starbase, tile, army, pop
 		OUTLINER_STARBASE_SHIPYARD_CONSTRUCTION_MAX_ENTRIES	= 6 # The max number of starbase shipyard construction progress bars to show in the outliner,
 																# make sure to also update the progress bar sizes
-		OUTLINER_SHIPYARD_CONSTRUCTION_MAX_ENTRIES		= 20
+
+		OUTLINER_SHIPYARD_CONSTRUCTION_MAX_ENTRIES			= 20
+
 		OUTLINER_UPDATE_EVERY_N_FRAMES 						= 7		# Optimization (mainly for late game)
 		SOCIALVIEW_CONTEXT_MENU_MARGIN						= 2 	# Margin for social view context menu
 		SOCIALVIEW_CONTEXT_MENU_BUTTON_OFFSET				= 10 	# Offset for context buttons
@@ -479,6 +480,7 @@
 		IMPERIUM_SENATE_BG_50 		= "GFX_3_senate_floor_empire_portrait_bg"
 		IMPERIUM_SENATE_BG_75 		= "GFX_4_senate_floor_empire_portrait_bg"
 		IMPERIUM_SENATE_BG_100 		= "GFX_5_senate_floor_empire_portrait_bg"
+
 		GC_SENATE_BG_0_MAX 	= 13
 		GC_SENATE_BG_25_MAX = 38
 		GC_SENATE_BG_50_MAX = 63
@@ -650,6 +652,7 @@
 
 		GALACTIC_DEFENSE_FORCE_NAMELIST = "GDF"
 		IMPERIAL_ARMADA_NAMELIST = "IA"
+
 		JUMP_DRIVE_COOLDOWN = 200					# Days between uses of Jump Drive
 
 		RELEVANT_DISTANCE = 150				# Within this distance we're considered to be diplomatically relevant
@@ -843,6 +846,7 @@
 		ENVOY_RELATION_EFFECT_DECAY			= 1.0	# Every month that there is no envoy effecting opinion it moves towards 0 with this/month
 
 		EMBASSY_IMPROVE_RELATION_MULTIPLIER = 3	# Multiplies ENVOY_IMPROVE_RELATION_BASE if you have established embassies
+
 		MIN_RIVAL_YEARS						= 10	# Years before you can remove an empire as a rival
 
 		MAX_FRICTION 						= 100	# Max friction (total)
@@ -1023,6 +1027,7 @@
 		NAVAL_CAPACITY_POP_MULT									= 0		# Mult value of Naval Capacity for each Pop
 
 		NAVAL_CAPACITY_BASE_GALACTIC_COMMUNITY					= 400	# Base value of Naval Capacity for the Galactic Defense Force/Imperial Armada
+
 		STARBASE_CAPACITY_MAX									= 999	# Max value of Starbase Capacity
 		STARBASE_CAPACITY_BASE 									= 3		# Base value of Starbase Capacity
 		STARBASE_CAPACITY_SYSTEM_MULT							= 0.10	# Mult value of Starbase Capacity for each owned system
@@ -1058,6 +1063,7 @@
 		ESPIONAGE_OPERATION_SUCCESS_SCORE = 14.0
 		ESPIONAGE_OPERATION_DICE_ROLL_MIN = 1
 		ESPIONAGE_OPERATION_DICE_ROLL_MAX = 10
+
 		RELIC_VIEW_SLOTS_PER_ROW = 3
 		RELIC_VIEW_SLOTS_PER_ROW_WIDE	= 4
 		RELIC_VIEW_DEFAULT_ROW_COUNT = 2
@@ -1097,6 +1103,7 @@
 		ENVOY_UNDERMINE_IMPERIAL_AUTHORITY_RELATION_GROWTH = -2 	# Monthly opinion "growth" when having envoys assigned that undermine the imperial authority
 		ENVOY_UNDERMINE_IMPERIAL_AUTHORITY_RELATION_DECAY = 1 		# Monthly opinion "decay" when having envoys assigned that undermine the imperial authority
 		ENVOY_UNDERMINE_IMPERIAL_AUTHORITY_RELATION_MIN = -200 		# The "lowest" the above growth can get to
+
 
 		FEDERATION_LOW_COHESION_CUTOFF = 0.1			# when there is less than this ratio left of cohesion with negative cohesion growth we show an alert
 
@@ -1361,9 +1368,12 @@
 		LOGISTIC_POP_GROWTH_CEILING			= 2.00	# Logistic Pop Growth won't raise growth beyond this percent.
 		LOGISTIC_POP_GROWTH_MIN_POPS		= 5		# Treat small colonies as having this many pops to avoid the very bottom of the curve
 		LOGISTIC_POP_GROWTH_LOWER_THRESHOLD	= 0.5	# Ignore penalties to Pop Growth if the current number of pops are below this percent of the carrying capacity
-		MAX_CARRYING_CAPACITY				= 500	# Logistic Carrying Capacity Cap (so modders have access to this value in case they make a planet with infinite districts or something like that)		MAX_NEW_COLONIES_SCALE				= 2 	# At this ratio of new to old colonies, no further scaling of migration
+		MAX_CARRYING_CAPACITY				= 500	# Logistic Carrying Capacity Cap (so modders have access to this value in case they make a planet with infinite districts or something like that)
+		MAX_NEW_COLONIES_SCALE				= 2 	# At this ratio of new to old colonies, no further scaling of migration
 		REQUIRED_POP_GROWTH					= 100	# Required growth to make a new pop
 		REQUIRED_POP_GROWTH_SCALE			= 0.5	# Required pop growth increased by this much for every pop in the empire
+
+
 		OVERCROWDING_NO_GROWTH_THRESHOLD	= 1.15	# At this amount of overcrowding (required housing / actual housing), growth stops entirely
 		OVERCROWDING_DECLINE_THRESHOLD		= 1.25	# At this amount of overcrowding (required housing / actual housing), pops start declining
 		OVERCROWDING_ABSOLUTE_THRESHOLD_FOR_NO_GROWTH		= 5	# Planet needs this amount of overcrowding (required housing - actual housing) for OVERCROWDING_NO_GROWTH_THRESHOLD to kick in
@@ -1371,6 +1381,7 @@
 
 		RESETTLE_UNEMPLOYED_BASE_RATE		= 0.1	# Chance an unemployed pop will automatically migrate if an acceptable location is found (Range is 0 to 1)
 		RESETTLE_DESTROY_COLONY_COST		= 200	# Influence surcharge for manually resettling the last pop from a colony
+
 		NEW_POP_SPECIES_RANDOMNESS			= 0.5	# The higher this is, the more random species selection of new pops will be
 		NEW_POP_SAME_SPECIES_WEIGHT			= 1.0	# The higher this is, the more new pops will be weighted by number of same or subspecies pops
 		NEW_POP_EXACT_SPECIES_WEIGHT		= 0.5	# The higher this is, the more new pops will be weighted by number of exact same species pops
@@ -1714,6 +1725,7 @@
 		FEDERATION_PROPOSE_THRESHOLD = 125 # How big ai weight should be for AI to propose the vote
 		FEDERATION_WEIGHT_COHESION_FACTOR = 0.25 # Cohesion added on the vote weight
 		FEDERATION_ALL_AI_LEADER_WEIGHT_FACTOR = 1.5 # Since the AI is set to generally not propose votes on laws in player federations, it needs this boost to care enough to reach FEDERATION_PROPOSE_THRESHOLD in AI-only federations.
+
 		DEFENSIVE_PACT_ACCEPTANCE_OPINION_FACTOR = 0.2
 		DEFENSIVE_PACT_ACCEPTANCE_ATTITUDE_ALLIANCE = 50
 		DEFENSIVE_PACT_ACCEPTANCE_ATTITUDE_COEXIST = 20
@@ -1737,6 +1749,7 @@
 		EMBASSY_ACCEPTANCE_RELATIVE_STRENGTH_FACTOR = 1 # For each 1x we are stronger than them
 		EMBASSY_ACCEPTANCE_RELATIVE_STRENGTH_MAX = 20
 		EMBASSY_ACCEPTANCE_DISTANCE_MULT = -0.05 # per 1 border distance
+
 		NON_AGGRESSION_PACT_ACCEPTANCE_OPINION_FACTOR = 0.2
 		NON_AGGRESSION_PACT_ACCEPTANCE_ATTITUDE_ALLIANCE = 100
 		NON_AGGRESSION_PACT_ACCEPTANCE_ATTITUDE_COEXIST = 50
@@ -1940,6 +1953,7 @@
 		WAR_DECLARATION_MINIMUM_SCORE = 0.5				# minimum score multiplier for war declaration after all distance have been applied
 
 		COLONY_AUTOMATION_COOLDOWN = 3					# Number of days automation will not be done after a build queue item on a planet completes
+		COLONY_AUTOMATION_DISTRICT_PREFERENCE = 1.5		# Prefer to build districts over buildings unless there are multiple building slots open or this many times as many districts as buildings, minimum 1
 
 		DIPLO_ACTION_REPEAT_DELAY = 360					# number of days before the ai will try to repeat a proposal
 
@@ -1965,6 +1979,7 @@
 		RESOLUTION_VOTE_FREEZE_THRESHOLD_DELTA = 3.0	# if the resolution next in line after the current resolution is this much better, the AI will freeze the current resolution
 		RESOLUTION_WEIGHT_OPINION_FACTOR = 0.03 		# how much opinion will factor in the decision to support a resolution or not
 		RESOLUTION_USE_FAVORS_THRESHOLD_DELTA = 2.0		# if weight reaches the threshold +/- DELTA (support/abstain) AI will use favors to boost their diplo weight
+
 		MAX_SUPPORT_PERCENTAGE_FOR_FAVORS_SUPPORTING = 55	# if we are supporting the resolution, don't spend favors if support percentage is above this
 		MIN_SUPPORT_PERCENTAGE_FOR_FAVORS_OPPOSING = 45		# if we are opposing the resolution, don't spend favors if support percentage is below this
 
@@ -2013,4 +2028,5 @@
 
 		CRISIS_EMPIRE_PROTECTIVE_MULT = 1.5 		# Used when calculating atitude protective weigth
 		AI_GALCOM_PATROL_ORBIT_TIME_DAYS = 60		# The time that the Galactic Defense Force AI will stay in orbit around a capital before moving to the next one
+		CRISIS_EMPIRE_DESTROY_DESIRE = 1			# AI desire to destroy stars as a crisis empire
 	}

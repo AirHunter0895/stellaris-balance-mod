@@ -216,6 +216,7 @@ opinion_xenophobes = {
 				has_ethic = "ethic_fanatic_xenophile"
 			}
 			FROM = { has_ethic = "ethic_xenophobe" }
+			exists = from.species
 			NOT = { is_same_species_class = FROM }
 		}
 		modifier = {
@@ -225,6 +226,7 @@ opinion_xenophobes = {
 				has_ethic = "ethic_fanatic_xenophile"
 			}
 			FROM = { has_ethic = "ethic_xenophobe" }
+			exists = from.species
 			is_same_species_class = FROM
 			NOT = { is_same_species = FROM }
 			NOT = { is_subspecies = FROM }
@@ -236,6 +238,7 @@ opinion_xenophobes = {
 			NOT = { has_ethic = "ethic_xenophobe" }
 			NOT = { has_civic = civic_machine_terminator }
 			FROM = { has_ethic = "ethic_xenophobe" }
+			exists = from.species
 			NOT = { is_same_species_class = FROM }
 		}
 		modifier = {
@@ -244,6 +247,7 @@ opinion_xenophobes = {
 			NOT = { has_ethic = "ethic_xenophobe" }
 			NOT = { has_civic = civic_machine_terminator }
 			FROM = { has_ethic = "ethic_xenophobe" }
+			exists = from.species
 			is_same_species_class = FROM
 			NOT = { is_same_species = FROM }
 			NOT = { is_subspecies = FROM }
@@ -258,8 +262,8 @@ opinion_xenophobes = {
 			FROM = {
 				has_ethic = "ethic_fanatic_xenophobe"
 			}
-			NOT = {
-				is_same_species_class = FROM }
+			exists = from.species
+			NOT = { is_same_species_class = FROM }
 		}
 		modifier = {
 			add = -10
@@ -268,6 +272,7 @@ opinion_xenophobes = {
 				has_ethic = "ethic_fanatic_xenophile"
 			}
 			FROM = { has_ethic = "ethic_fanatic_xenophobe" }
+			exists = from.species
 			is_same_species_class = FROM
 			NOT = { is_same_species = FROM }
 			NOT = { is_subspecies = FROM }
@@ -279,6 +284,7 @@ opinion_xenophobes = {
 			NOT = { has_ethic = "ethic_xenophobe" }
 			NOT = { has_civic = civic_machine_terminator }
 			FROM = { has_ethic = "ethic_fanatic_xenophobe" }
+			exists = from.species
 			NOT = { is_same_species_class = FROM }
 		}
 		modifier = {
@@ -308,6 +314,7 @@ opinion_xenophiles = {
 				has_ethic = "ethic_fanatic_xenophobe"
 			}
 			FROM = { has_ethic = "ethic_xenophile" }
+			exists = from.species
 			NOT = { is_same_species_class = FROM }
 		}
 
@@ -320,6 +327,7 @@ opinion_xenophiles = {
 				has_ethic = "ethic_fanatic_xenophobe"
 			}
 			FROM = { has_ethic = "ethic_fanatic_xenophile" }
+			exists = from.species
 			NOT = { is_same_species_class = FROM }
 		}
 
@@ -332,6 +340,7 @@ opinion_xenophiles = {
 				has_ethic = "ethic_fanatic_xenophobe"
 			}
 			FROM = { has_ethic = "ethic_xenophile" }
+			exists = from.species
 			is_same_species_class = FROM
 		}
 
@@ -344,6 +353,7 @@ opinion_xenophiles = {
 				has_ethic = "ethic_fanatic_xenophobe"
 			}
 			FROM = { has_ethic = "ethic_fanatic_xenophile" }
+			exists = from.species
 			is_same_species_class = FROM
 		}
 
@@ -379,12 +389,14 @@ opinion_xenophobia = {
 			add = -20
 			NOT = { has_valid_civic = civic_fanatic_purifiers } #handled elsewhere
 			has_ethic = "ethic_xenophobe"
+			exists = from.species
 			NOT = { is_same_species_class = FROM }
 		}
 		modifier = {
 			add = -10
 			NOT = { has_valid_civic = civic_fanatic_purifiers } #handled elsewhere
 			has_ethic = "ethic_xenophobe"
+			exists = from.species
 			is_same_species_class = FROM
 			NOT = { is_same_species = FROM }
 			NOT = { is_subspecies = FROM }
@@ -393,6 +405,7 @@ opinion_xenophobia = {
 			add = -5
 			NOT = { has_valid_civic = civic_fanatic_purifiers } #handled elsewhere
 			has_ethic = "ethic_xenophobe"
+			exists = from.species
 			is_same_species_class = FROM
 			NOT = { is_same_species = FROM }
 			is_subspecies = FROM
@@ -402,12 +415,14 @@ opinion_xenophobia = {
 			add = -40
 			NOT = { has_valid_civic = civic_fanatic_purifiers } #handled elsewhere
 			has_ethic = "ethic_fanatic_xenophobe"
+			exists = from.species
 			NOT = { is_same_species_class = FROM }
 		}
 		modifier = {
 			add = -20
 			NOT = { has_valid_civic = civic_fanatic_purifiers } #handled elsewhere
 			has_ethic = "ethic_fanatic_xenophobe"
+			exists = from.species
 			is_same_species_class = FROM
 			NOT = { is_same_species = FROM }
 			NOT = { is_subspecies = FROM }
@@ -416,6 +431,7 @@ opinion_xenophobia = {
 			add = -10
 			NOT = { has_valid_civic = civic_fanatic_purifiers } #handled elsewhere
 			has_ethic = "ethic_fanatic_xenophobe"
+			exists = from.species
 			is_same_species_class = FROM
 			NOT = { is_same_species = FROM }
 			is_subspecies = FROM
@@ -430,6 +446,7 @@ opinion_xenophilia = {
 		modifier = {
 			add = 20
 			has_ethic = "ethic_xenophile"
+			exists = from.species
 			NOT = { is_same_species_class = FROM }
 			FROM = {
 				NOT = {
@@ -441,6 +458,7 @@ opinion_xenophilia = {
 		modifier = {
 			add = 10
 			has_ethic = "ethic_xenophile"
+			exists = from.species
 			is_same_species_class = FROM
 			NOT = { is_same_species = FROM }
 			NOT = { is_subspecies = FROM }
@@ -454,6 +472,7 @@ opinion_xenophilia = {
 		modifier = {
 			add = 5
 			has_ethic = "ethic_xenophile"
+			exists = from.species
 			is_same_species_class = FROM
 			NOT = { is_same_species = FROM }
 			is_subspecies = FROM
@@ -468,6 +487,7 @@ opinion_xenophilia = {
 		modifier = {
 			add = 40
 			has_ethic = "ethic_fanatic_xenophile"
+			exists = from.species
 			NOT = { is_same_species_class = FROM }
 			FROM = {
 				NOT = {
@@ -479,6 +499,7 @@ opinion_xenophilia = {
 		modifier = {
 			add = 20
 			has_ethic = "ethic_fanatic_xenophile"
+			exists = from.species
 			is_same_species_class = FROM
 			NOT = { is_same_species = FROM }
 			NOT = { is_subspecies = FROM }
@@ -492,6 +513,7 @@ opinion_xenophilia = {
 		modifier = {
 			add = 10
 			has_ethic = "ethic_fanatic_xenophile"
+			exists = from.species
 			is_same_species_class = FROM
 			NOT = { is_same_species = FROM }
 			is_subspecies = FROM
@@ -3509,6 +3531,16 @@ opinion_killed_all_tiyanki_2 = {
 opinion_killed_all_tiyanki_3 = {
 	opinion = {
 		base = -100
+	}
+
+	decay = {
+		base = 1
+	}
+}
+
+opinion_traitor_to_empire = {
+	opinion = {
+		base = -200
 	}
 
 	decay = {

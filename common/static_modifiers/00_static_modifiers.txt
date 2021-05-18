@@ -30,6 +30,7 @@ non_playable_ai_empire = {
 # Per empire size over admin cap
 empire_size_over_cap = {
 	campaigns_cost_mult = 0.01
+	rare_edicts_cost_mult = 0.01
 	# leader_upkeep_empire_size_mult = 0.01
 	# leader_cost_empire_size_mult = 0.01
 }
@@ -50,6 +51,12 @@ fallen_empire_base = {
 	country_naval_cap_add = 100
 	country_resource_max_add = 100000
 	country_occupation_armies_add = 3 #this brings the number up to 8
+	add_base_country_intel = 20 #50 total with tech bonuses
+}
+
+# Applies to crisis empires only
+crisis_empire_base = {
+	pop_purge_speed = 1
 }
 
 ##########################################################################
@@ -85,6 +92,7 @@ difficulty_grand_admiral = {
 	country_naval_cap_mult = 0.6
 	ships_upkeep_mult = -0.4
 	starbase_shipyard_build_cost_mult = -0.4
+	pop_resettlement_cost_mult = -1.0
 	planet_stability_add = 20
 }
 
@@ -94,6 +102,7 @@ difficulty_admiral = {
 	country_naval_cap_mult = 0.45
 	ships_upkeep_mult = -0.3
 	starbase_shipyard_build_cost_mult = -0.3
+	pop_resettlement_cost_mult = -0.75
 	planet_stability_add = 15
 }
 
@@ -103,6 +112,7 @@ difficulty_commodore = {
 	country_naval_cap_mult = 0.3
 	ships_upkeep_mult = -0.2
 	starbase_shipyard_build_cost_mult = -0.2
+	pop_resettlement_cost_mult = -0.50
 	planet_stability_add = 10
 }
 
@@ -112,6 +122,7 @@ difficulty_captain = {
 	country_naval_cap_mult = 0.15
 	ships_upkeep_mult = -0.1
 	starbase_shipyard_build_cost_mult = -0.1
+	pop_resettlement_cost_mult = -0.25
 	planet_stability_add = 5
 }
 
@@ -220,7 +231,7 @@ infiltration_happiness = {
 }
 
 planet_forced_growth = {
-	pop_growth_speed = -0.2
+	pop_growth_speed = -0.1
 }
 
 planet_forced_assembly = {
@@ -265,7 +276,7 @@ pop_uplifted = {
 	pop_happiness = 0.1
 }
 
-pop_citizen_happiness = {
+pop_citizenry_happiness = {
 	pop_happiness = 1.0
 }
 
@@ -981,7 +992,7 @@ planet_employment_no_happiness_high = {
 }
 
 planet_employment_low = {
-	planet_emigration_push_add = 5
+	planet_emigration_push_add = 10
 }
 
 planet_employment_high = {
@@ -1435,14 +1446,17 @@ gave_up_scientist_xenophobe = {
 }
 
 gave_up_pop = {
+	icon = "gfx/interface/icons/modifiers/mod_pop_surrendered.dds"
 	pop_happiness = -0.1
 }
 
 gave_up_pop_xenophile = {
+	icon = "gfx/interface/icons/modifiers/mod_pop_surrendered.dds"
 	pop_happiness = -0.05
 }
 
 gave_up_pop_xenophobe = {
+	icon = "gfx/interface/icons/modifiers/mod_pop_surrendered.dds"
 	pop_happiness = -0.2
 }
 

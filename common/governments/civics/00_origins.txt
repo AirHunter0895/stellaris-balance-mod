@@ -265,6 +265,14 @@ origin_shattered_ring = {
 	advanced_start = yes
 
 	# Removing the random_weight prevents randomly generated AI empires from selecting it
+
+	swap_type = {
+		description = "origin_tooltip_shattered_ring_effects_lithoid"
+
+		trigger = {
+			local_human_species_class = LITHOID
+		}
+	}
 }
 
 origin_void_dwellers = {

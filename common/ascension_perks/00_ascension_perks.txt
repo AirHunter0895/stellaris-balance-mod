@@ -83,6 +83,89 @@ ap_become_the_crisis = {
 }
 
 #################
+# NEMESIS ASCENSION PERKS
+#################
+
+ap_become_the_crisis = {
+	potential = {
+		has_nemesis = yes
+		NOT = { has_ascension_perk = ap_become_the_crisis }
+	}
+
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_ascension_perks_2"
+			num_ascension_perks > 1
+		}
+		custom_tooltip = {
+			fail_text = "requires_independence"
+			is_subject = no
+		}
+		custom_tooltip = {
+			fail_text = "must_not_be_custodian"
+			is_galactic_custodian = no
+		}
+		custom_tooltip = {
+			fail_text = "must_not_be_emperor"
+			is_galactic_emperor = no
+		}
+		NOR = {
+			has_ethic = ethic_xenophile
+			has_ethic = ethic_fanatic_xenophile
+			has_ethic = ethic_pacifist
+			has_ethic = ethic_fanatic_pacifist
+			has_civic = civic_machine_servitor
+		}
+	}
+
+	on_enabled = {
+		hidden_effect = {
+			set_ai_personality = became_the_crisis
+		}
+		activate_crisis_progression = yes
+	}
+
+	ai_weight = {
+		factor = 7.5
+		modifier = {
+			factor = 0
+			is_militarist = no
+			is_xenophobe = no
+			is_gestalt = no
+		}
+		modifier = {
+			factor = 10
+			is_homicidal = yes
+		}
+		modifier = {
+			factor = 2
+			has_tradition = tr_supremacy_finish
+		}
+		modifier = {
+			factor = 0
+			galaxy_percentage < 0.1
+		}
+		modifier = {
+			factor = 2
+			galaxy_percentage > 0.2
+		}
+		modifier = {
+			factor = 0
+			num_ascension_perks >= 5
+		}
+		modifier = {
+			factor = 0
+			count_country = {
+				count > 1
+				limit = {
+					has_ascension_perk = ap_become_the_crisis
+				}
+			}
+		}
+	}
+}
+
+#################
 # APOCALYPSE ASCENSION PERKS
 #################
 
@@ -106,8 +189,7 @@ ap_enigmatic_engineering = {
 	}
 
 	modifier = {
-		ship_sensor_range_add = 2
-		ship_hyperlane_range_add = 4
+		intel_encryption_add = 2
 		country_base_minor_artifacts_produces_add = 0.1
 		intel_encryption_add = 2
 	}

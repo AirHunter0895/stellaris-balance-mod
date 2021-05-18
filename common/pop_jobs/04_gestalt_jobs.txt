@@ -1349,7 +1349,7 @@ maintenance_drone = {
 	}
 
 	weight = {
-		weight = 1
+		weight = @clerk_job_weight
 		modifier = {
 			factor = 2
 			OR = {

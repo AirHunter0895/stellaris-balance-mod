@@ -92,6 +92,7 @@
 @tier2influencecontactminxenophile = 60
 @tier2influencecontactmax = 100
 @tier2influencecontactmaxxenophile = 150
+
 ### MANDATES
 @unityreward = 6
 @unitymin = 50
@@ -148,7 +149,6 @@
 @carry_cap_high = 6
 @carry_cap_normal = 4
 @carry_cap_low = 3
-
 @buildings_t1 = 1
 @buildings_t2 = 2
 @buildings_t3 = 3
@@ -222,7 +222,6 @@
 @guardiantechtier = 5
 
 # BUILDINGS
-
 @b1_time = 360
 @b1_minerals = 400
 @b1_upkeep = 2
@@ -260,3 +259,4 @@
 
 @lithoid_trait_resource_production = 0.05
 @armies_for_declaring_war = 6
+

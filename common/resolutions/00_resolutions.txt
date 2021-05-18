@@ -25,7 +25,8 @@
 #	fail_effects = {} # effect to be applied if failed, scope is proposer unless there is a target country - then scope is target country, with proposer in from scope
 #	potential = {} # potential trigger, scope is country
 #	allow = {} # allow trigger, scope is country
-#	ai_weight = {} # ai weight modifiers, scope is country
+#	active = {} # Enacted sesolutions are cancelled if this trigger fails
+#	ai_weight = {} # ai weight modifiers, scope is country. from scope is the target country for targeted resolutions
 #	valid_target = {} # valid targets trigger, scope is country
 #}
 
@@ -4601,6 +4602,7 @@ resolution_mutualdefense_military_readiness_act = {
 	### SPBM: Moved to next resolution
 	#breach = {
 	#	used_naval_capacity_percent < 0.5
+	#	is_subject = no
 	#}
 
 	ai_weight = {
@@ -6796,7 +6798,7 @@ resolution_galacticreforms_form_council = {
 			has_federations_dlc = yes
 			has_nemesis = yes
 		}
-		has_global_flag = galactic_council_formed
+		NOT = { has_global_flag = galactic_council_formed }
 		has_galactic_emperor = no
 	}
 
@@ -8477,6 +8479,11 @@ resolution_sanctions_tech_3 = {
 			has_global_flag = recent_galcom_sanctions_passed
 		}
 		modifier = {
+			factor = 0.33
+			has_global_flag = recent_galcom_sanctions_passed
+		}
+
+		modifier = {
 			factor = 1.25
 			is_in_breach_of_any = no
 			is_materialist = yes
@@ -8829,6 +8836,11 @@ resolution_sanctions_economic_1 = {
 			has_global_flag = recent_galcom_sanctions_passed
 		}
 		modifier = {
+			factor = 0.33
+			has_global_flag = recent_galcom_sanctions_passed
+		}
+
+		modifier = {
 			factor = 1.25
 			is_in_breach_of_any = no
 			is_megacorp = yes
@@ -8928,6 +8940,11 @@ resolution_sanctions_economic_2 = {
 			has_global_flag = recent_galcom_sanctions_passed
 		}
 		modifier = {
+			factor = 0.33
+			has_global_flag = recent_galcom_sanctions_passed
+		}
+
+		modifier = {
 			factor = 1.25
 			is_in_breach_of_any = no
 			is_megacorp = yes
@@ -9022,6 +9039,11 @@ resolution_sanctions_economic_3 = {
 			factor = 0
 			is_in_breach_of_any = yes
 		}
+		modifier = {
+			factor = 0.33
+			has_global_flag = recent_galcom_sanctions_passed
+		}
+
 		modifier = {
 			factor = 0.33
 			has_global_flag = recent_galcom_sanctions_passed
@@ -9389,6 +9411,11 @@ resolution_sanctions_military_1 = {
 			has_global_flag = recent_galcom_sanctions_passed
 		}
 		modifier = {
+			factor = 0.33
+			has_global_flag = recent_galcom_sanctions_passed
+		}
+
+		modifier = {
 			factor = 1.25
 			is_in_breach_of_any = no
 			OR = {
@@ -9491,6 +9518,11 @@ resolution_sanctions_military_2 = {
 			has_global_flag = recent_galcom_sanctions_passed
 		}
 		modifier = {
+			factor = 0.33
+			has_global_flag = recent_galcom_sanctions_passed
+		}
+
+		modifier = {
 			factor = 1.25
 			is_in_breach_of_any = no
 			OR = {
@@ -9592,6 +9624,11 @@ resolution_sanctions_military_3 = {
 			factor = 0.33
 			has_global_flag = recent_galcom_sanctions_passed
 		}
+		modifier = {
+			factor = 0.33
+			has_global_flag = recent_galcom_sanctions_passed
+		}
+
 		modifier = {
 			factor = 1.25
 			is_in_breach_of_any = no
@@ -9970,6 +10007,11 @@ resolution_sanctions_administrative_1 = {
 		}
 
 		modifier = {
+			factor = 0.33
+			has_global_flag = recent_galcom_sanctions_passed
+		}
+
+		modifier = {
 			factor = 1.25
 			is_in_breach_of_any = no
 			OR = {
@@ -10076,6 +10118,11 @@ resolution_sanctions_administrative_2 = {
 			has_global_flag = recent_galcom_sanctions_passed
 		}
 		modifier = {
+			factor = 0.33
+			has_global_flag = recent_galcom_sanctions_passed
+		}
+
+		modifier = {
 			factor = 1.25
 			is_in_breach_of_any = no
 			OR = {
@@ -10177,6 +10224,11 @@ resolution_sanctions_administrative_3 = {
 			factor = 0
 			is_in_breach_of_any = yes
 		}
+		modifier = {
+			factor = 0.33
+			has_global_flag = recent_galcom_sanctions_passed
+		}
+
 		modifier = {
 			factor = 0.33
 			has_global_flag = recent_galcom_sanctions_passed
@@ -11031,6 +11083,7 @@ resolution_galactic_focus_war_in_heaven_denounce_both = {
 		custom_tooltip = resolution_galactic_focus_war_in_heaven_denounce_both_success
 
 		hidden_effect = {
+			repeal_all_galactic_focus_resolutions = yes
 			set_global_flag = galactic_focus_war_in_heaven
 			set_global_flag = galactic_community_resolution_passed
 			set_timed_country_flag = { flag = galactic_community_resolution_passed_general days = @resolution_flag_timer }
