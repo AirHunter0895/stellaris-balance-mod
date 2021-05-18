@@ -1164,7 +1164,7 @@
 		SPY_NETWORK_ENCRYPTION_DECRYPTION_LEVELS_MAX = 40		# Upper bounds on the infiltration level modifier value
 		SPY_NETWORK_MAX_POWER				= 100		# Including all modifiers, how powerful can a Spy Network ever be?
 		SPY_NETWORK_MAX_ENVOYS_COUNT		= 1			# How many envoys can be assigned to build a single spy network?
-		SPY_NETWORK_DAILY_ENVOY_SCORE		= 1.0		# How much progression do you get for each envoy
+		SPY_NETWORK_DAILY_ENVOY_SCORE		= 1.5		# How much progression do you get for each envoy
 		SPY_NETWORK_SPRAWL_SCORE_SCALE		= 400.0		# This many empire sprawl in the opposing empire adds 1 to daily spy network progression.
 		SPY_NETWORK_BASE_LEVEL_SCORE 		= 5.0		# It takes (SPY_NETWORK_BASE_LEVEL_SCORE) + (Current Level * SPY_NETWORK_PER_LEVEL_SCORE) points to increase spy network level
 		SPY_NETWORK_PER_LEVEL_SCORE			= 5.0		# Per level portion of the above formula

@@ -591,8 +591,8 @@ ap_world_shaper = {
 	}
 
 	modifier = {
-		terraforming_cost_mult = -0.25
-		terraform_speed_mult = 0.25
+		terraforming_cost_mult = -0.5
+		terraform_speed_mult = 0.5
 	}
 
 	on_enabled = {
@@ -805,9 +805,9 @@ ap_galactic_contender = {
 	}
 	modifier = {
 		diplo_weight_mult = 0.2
-		damage_vs_country_type_fallen_empire_mult = 0.33
-		damage_vs_country_type_awakened_fallen_empire_mult = 0.33
-		damage_vs_country_type_gate_builders_mult = 0.33
+		damage_vs_country_type_fallen_empire_mult = 0.5
+		damage_vs_country_type_awakened_fallen_empire_mult = 0.5
+		damage_vs_country_type_gate_builders_mult = 0.5
 	}
 
 	potential = {
@@ -876,7 +876,7 @@ ap_technological_ascendancy = {
 ap_one_vision = {
 	modifier = {
 		country_unity_produces_mult = 0.10
-		pop_amenities_usage_mult = -0.10
+		pop_amenities_usage_mult = -0.2
 		pop_government_ethic_attraction = 0.50
 	}
 
@@ -960,7 +960,7 @@ ap_mastery_of_nature = {
 
 ap_imperial_prerogative = {
 	modifier = {
-		country_admin_cap_mult = 0.20
+		country_admin_cap_add = 80
 		country_starbase_influence_cost_mult = -0.20
 	}
 

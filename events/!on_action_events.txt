@@ -33,9 +33,9 @@ country_event = {
 					years = 10
 				}
 				if = {
-					limit = { count_pops = { count > 4 } }
+					limit = { count_pops = { count > 8 } }
 					while = {
-						limit = { count_pops = { count > 4 } }
+						limit = { count_pops = { count > 8 } }
 						random_pop = { kill_pop = yes }
 					}
 				}

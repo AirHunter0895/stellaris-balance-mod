@@ -436,7 +436,7 @@ artifact_sell_collector = {
 	resources = {
 		category = artifact_actions
 		cost = {
-			minor_artifacts = 5
+			minor_artifacts = 2
 		}
 	}
 	
