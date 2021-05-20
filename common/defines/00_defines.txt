@@ -533,7 +533,17 @@
 		TECH_COST_MIN = 0.25
 		TECH_COST_MAX = 5.00
 		TECH_COST_SLIDER_INTERVAL = 0.25
+		
+		LOGISTIC_CEILING_DEFAULT = 1.5
+		LOGISTIC_CEILING_MIN = 1.0
+		LOGISTIC_CEILING_MAX = 2.0
+		LOGISTIC_CEILING_SLIDER_INTERVAL = 0.05
 
+		GROWTH_SCALE_DEFAULT = 0.25
+		GROWTH_SCALE_MIN = 0.00
+		GROWTH_SCALE_MAX = 1.00
+		GROWTH_SCALE_SLIDER_INTERVAL = 0.05
+		
 		SHIPYARD_MAX_OVER_CAPACITY = 5.0		# Max amount of ships that we should want to be queued in one shipyard (x shipyard capacity)
 		SHIPYARD_DISTANCE_DIV_FACTOR = 2.0		# The lower this is, the more reinforce tends to use the closest shipyard(s) available. Strongly NOT recommended to have this <1
 		SHIPYARD_REINFORCE_MAX_DISTANCE = 1000	# Shipyards further away than this from the closest shipyard will not be considered for reinforcements
