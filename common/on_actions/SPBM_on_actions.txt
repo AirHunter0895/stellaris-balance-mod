@@ -9,20 +9,6 @@ on_game_start_country = {
 		spbm.3
 	}
 }
-
-on_five_year_pulse = {
-	events = {
-		shattered.1
-		shattered.5
-	}
-}
-
-on_planet_transfer = {
-	events = {
-		shattered.4
-	}
-}
-
 on_yearly_pulse = {
 	events = {
 		spbm.1

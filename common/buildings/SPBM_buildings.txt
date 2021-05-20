@@ -1464,7 +1464,7 @@ building_system_capital = {
 			exists = owner
 			owner = { has_origin = origin_mechanists }
 		}
-		job_roboticst_add = 1
+		job_roboticist_add = 1
 	}
 	#
 
