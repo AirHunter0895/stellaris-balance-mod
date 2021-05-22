@@ -18,7 +18,6 @@ migration_control_no = {
 
 	potential = {
 		exists = from
-		}
 	}
 
 	allow = {
@@ -44,6 +43,7 @@ migration_control_no = {
 	ai_will_do = {
 		factor = 1
 	}
+}
 
 population_control_yes = {
 	token = population_control_yes
