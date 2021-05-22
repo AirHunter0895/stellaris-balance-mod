@@ -237,12 +237,15 @@ crime_lord_deal = {
 	icon_frame = 2
 	planet_stability_add = 10
 	planet_crime_mult = 0.5
+	job_criminal_add = 2
+	job_criminal_per_crime = 0.03
 }
 
 crime_lord_deal_broken = {
 	icon = "gfx/interface/icons/planet_modifiers/pm_crime.dds"
 	icon_frame = 2
 	planet_stability_add = -10
+	job_criminal_per_crime = 0.03
 }
 
 unemployment_benefits = {

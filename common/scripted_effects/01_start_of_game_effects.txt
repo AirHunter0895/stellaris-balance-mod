@@ -1284,6 +1284,9 @@ generate_start_buildings_and_districts = {
 					limit = { owner = { has_civic = civic_machine_assimilator } }
 					add_deposit = d_organic_slurry
 				}
+
+				# Blocker that removes the extra machine world replicator jobs until removed
+				add_deposit = d_resource_consolidation_1
 			}
 		}
 	}
@@ -1818,7 +1821,7 @@ generate_home_planet_final_pass = {
 		}
 		owner = {
 			capital_scope = {
-				add_modifier = { modifier = prosp_uni_mod days = 3600 }
+				add_modifier = { modifier = prosp_uni_mod days = 7200 }
 			}
 		}
 	}

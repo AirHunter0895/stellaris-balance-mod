@@ -397,6 +397,8 @@
 		FIRSTCONTACT_DIFFICULTY_SPRITE_NAME_ROOT = "GFX_firstcontact_difficulty"
 		ESPIONAGE_DIFFICULTY_SPRITE_NAME_ROOT = "GFX_espionage_difficulty"
 
+		MAP_ICON_ITEM_MINIMUM_WIDTH = 10
+
 		MIN_GUI_SCALE							= 0.5 # Minimum UI scale factor
 
 		TOPBAR_BUTTONS_SHORTCUTS				= {
@@ -1164,8 +1166,8 @@
 		FIRST_CONTACT_LOWER_INSIGHT_REWARD	= 1			# insights granted for FIRST_CONTACT_LOWER_INSIGHT_SCORE
 		FIRST_CONTACT_HIGHER_INSIGHT_REWARD	= 2			# insights granted for FIRST_CONTACT_HIGHER_INSIGHT_SCORE
 		FIRST_CONTACT_DISCOVERY_SCORE		= 10		# score for completing the stage
-		FIRST_CONTACT_DISCOVERY_DAYS		= 30		# 30 days for 1 roll
-		FIRST_CONTACT_DISCOVERY_DAYS_AI		= 50		# slower for AI to guarantee player has a chance to finish first
+		FIRST_CONTACT_DISCOVERY_DAYS		= 50		# 50 days for 1 roll
+		FIRST_CONTACT_DISCOVERY_DAYS_AI		= 75		# slower for AI to guarantee player has a chance to finish first
 		FIRST_CONTACT_FIRST_STAGE			= "base_contact_set" # Starting stage for all first contacts (see game/common/first_contact)
 		FIRST_CONTACT_INTEL_TARGET			= 10
 		FIRST_CONTACT_POLICY				= "first_contact_policy"
@@ -1374,22 +1376,19 @@
 
 		BASE_POP_GROWTH						= 3		# Base growth rate of pops
 		LOGISTIC_POP_GROWTH_R				= 0.125	# Logistic Pop Growth Constant r
-		LOGISTIC_POP_GROWTH_FLOOR			= 0.01	# Logistic Pop Growth won't lower growth to less than this percent.
-		LOGISTIC_POP_GROWTH_CEILING			= 2.00	# Logistic Pop Growth won't raise growth beyond this percent.
+		LOGISTIC_POP_GROWTH_FLOOR			= 0.1	# Logistic Pop Growth won't lower growth to less than this percent.
 		LOGISTIC_POP_GROWTH_MIN_POPS		= 5		# Treat small colonies as having this many pops to avoid the very bottom of the curve
 		LOGISTIC_POP_GROWTH_LOWER_THRESHOLD	= 0.5	# Ignore penalties to Pop Growth if the current number of pops are below this percent of the carrying capacity
 		MAX_CARRYING_CAPACITY				= 500	# Logistic Carrying Capacity Cap (so modders have access to this value in case they make a planet with infinite districts or something like that)
 		MAX_NEW_COLONIES_SCALE				= 2 	# At this ratio of new to old colonies, no further scaling of migration
 		REQUIRED_POP_GROWTH					= 100	# Required growth to make a new pop
-		REQUIRED_POP_GROWTH_SCALE			= 0.5	# Required pop growth increased by this much for every pop in the empire
-
 
 		OVERCROWDING_NO_GROWTH_THRESHOLD	= 1.15	# At this amount of overcrowding (required housing / actual housing), growth stops entirely
 		OVERCROWDING_DECLINE_THRESHOLD		= 1.25	# At this amount of overcrowding (required housing / actual housing), pops start declining
 		OVERCROWDING_ABSOLUTE_THRESHOLD_FOR_NO_GROWTH		= 5	# Planet needs this amount of overcrowding (required housing - actual housing) for OVERCROWDING_NO_GROWTH_THRESHOLD to kick in
 		MAX_NUM_GROWTH_OR_DECLINE_PER_MONTH = 10 	# No more than this amount of pops can grow, assemble or decline in the same month
 
-		RESETTLE_UNEMPLOYED_BASE_RATE		= 0.1	# Chance an unemployed pop will automatically migrate if an acceptable location is found (Range is 0 to 1)
+		RESETTLE_UNEMPLOYED_BASE_RATE		= 0.05	# Chance an unemployed pop will automatically migrate if an acceptable location is found (Range is 0 to 1)
 		RESETTLE_DESTROY_COLONY_COST		= 200	# Influence surcharge for manually resettling the last pop from a colony
 
 		NEW_POP_SPECIES_RANDOMNESS			= 0.5	# The higher this is, the more random species selection of new pops will be
@@ -1553,14 +1552,15 @@
 	}
 
 	NAI = {
-		AI_FREE_JOBS_DISTRICT_BUILD_CAP = 4			# AI will not build new districts on a planet with more than this many free jobs
-		AI_DEFICIT_SCORE_MULT = 50					# AI will score buildings producing resources in deficit this much more
-		AI_FOCUS_SCORE_MULT = 5					# AI will score buildings producing focus resources this much more
-		AI_AMENITIES_SCORE_MULT = 20					# AI will score amenity buildings this much more than other misc resources
+		AI_FREE_JOBS_DISTRICT_BUILD_CAP = 1			# AI will not build new districts on a planet with more than this many free jobs
+		AI_FREE_JOBS_BUILDING_BUILD_CAP = 2			# AI will not build new buildings on a planet with more than this many free jobs
+		AI_DEFICIT_SCORE_MULT = 60					# AI will score buildings producing resources in deficit this much more
+		AI_FOCUS_SCORE_MULT = 40					# AI will score buildings producing focus resources this much more
+		AI_AMENITIES_SCORE_MULT = 50				# AI will score amenity buildings this much more than other misc resources
 		AI_HOUSING_SCORE_MULT = 4.5					# AI will score housing buildings this much more than other misc resources
 		AI_CRIME_REDUCTION_SCORE_MULT = 2			# AI will score crime fighting buildings this much more than other misc resource
 		AI_ADMIN_CAP_SCORE_MULT = 2					# AI will score admin cap buildings this much more than other misc resource
-		AI_POPS_SCORE_MULT = 5						# AI will score pop growth and assembly buildings this much more ( already fairly high weighted  in code )
+		AI_POPS_SCORE_MULT = 1						# AI will score pop growth and assembly buildings this much more ( already fairly high weighted  in code )
 		AI_UPGRADE_SCORE_MULT = 40					# AI will score building upgrades this much more ( since they don't take up a new building slot )
 
 		AI_TECHNOLOGY_RARE_WEIGHT_MULT = 5						# AI will multiply AI weight of rare techs with this value

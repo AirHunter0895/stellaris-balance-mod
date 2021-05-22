@@ -1906,6 +1906,18 @@ bluelotus_technician = {
 		produces = {
 			alloys = 4
 		}
+		produces = {
+			trigger = {
+				planet = { has_active_building = building_foundry_2 }
+			}
+			alloys = 1
+		}
+		produces = {
+			trigger = {
+				planet = { has_active_building = building_foundry_3 }
+			}
+			alloys = 2
+		}
 
 		upkeep = {
 			trigger = {
@@ -2184,8 +2196,32 @@ foundry = {
 		produces = {
 			alloys = 3
 		}
+		produces = {
+			trigger = {
+				planet = { has_active_building = building_foundry_2 }
+			}
+			alloys = 1
+		}
+		produces = {
+			trigger = {
+				planet = { has_active_building = building_foundry_3 }
+			}
+			alloys = 2
+		}
 		upkeep = {
 			minerals = 6
+		}
+		upkeep = {
+			trigger = {
+				planet = { has_active_building = building_foundry_2 }
+			}
+			minerals = 2
+		}
+		upkeep = {
+			trigger = {
+				planet = { has_active_building = building_foundry_3 }
+			}
+			minerals = 4
 		}
 	}
 
@@ -2245,8 +2281,32 @@ artisan = {
 		produces = {
 			consumer_goods = 6
 		}
+		produces = {
+			trigger = {
+				planet = { has_active_building = building_factory_2 }
+			}
+			consumer_goods = 1
+		}
+		produces = {
+			trigger = {
+				planet = { has_active_building = building_factory_3 }
+			}
+			consumer_goods = 2
+		}
 		upkeep = {
 			minerals = 6
+		}
+		upkeep = {
+			trigger = {
+				planet = { has_active_building = building_factory_2 }
+			}
+			minerals = 1
+		}
+		upkeep = {
+			trigger = {
+				planet = { has_active_building = building_factory_3 }
+			}
+			minerals = 2
 		}
 		upkeep = {
 			trigger = {
@@ -2281,6 +2341,24 @@ artisan = {
 		modifier = {
 			factor = 1.5
 			has_trait = trait_void_dweller_1
+		}
+		modifier = {
+			factor = 1.2
+
+			OR = {
+				is_unemployed = yes
+				has_job = "artisan"
+			}
+			exists = planet
+			planet = {
+				has_available_jobs = "artisan"
+			}
+			owner = {
+				has_monthly_income = {
+					resource = consumer_goods
+					value < 5
+				}
+			}
 		}
 	}
 }

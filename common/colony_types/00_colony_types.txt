@@ -1843,9 +1843,8 @@ col_ecu_research = {
 
 
 	planet_modifier = {
-		planet_building_factory_1_build_speed_mult = 0.25
-		planet_district_arcology_civilian_industry_build_speed_mult = 0.25
-		planet_artisans_upkeep_mult = -0.2
+		planet_building_research_lab_1_build_speed_mult = 0.25
+		planet_researchers_upkeep_mult = -0.2
 	}
 
 	weight_modifier = {

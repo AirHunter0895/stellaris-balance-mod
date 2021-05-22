@@ -2079,6 +2079,14 @@ tech_terrestrial_sculpting = {
 				has_trait = "leader_trait_expertise_new_worlds"
 			}
 		}
+		modifier = {
+			factor = 2
+			is_xenophobe = yes
+		}
+		modifier = {
+			factor = 2
+			is_ai = no #auto-research
+		}
 	}
 }
 
@@ -2116,6 +2124,14 @@ tech_ecological_adaptation = {
 				area = society
 				has_trait = "leader_trait_expertise_new_worlds"
 			}
+		}
+		modifier = {
+			factor = 2
+			is_xenophobe = yes
+		}
+		modifier = {
+			factor = 2
+			is_ai = no #auto-research
 		}
 	}
 }
@@ -3840,7 +3856,10 @@ tech_psionic_theory = {
 	gateway = psionics
 
 	potential = {
-		NOT = { has_ethic = ethic_gestalt_consciousness }
+		OR = { #The OR is so that Gestalts can get Zro Distillation with that Resolution
+			NOT = { has_ethic = ethic_gestalt_consciousness }
+			is_active_resolution = resolution_galacticstudies_extradimensional_experimentation
+		}
 	}
 
 	modifier = {
@@ -3849,6 +3868,10 @@ tech_psionic_theory = {
 
 	weight_modifier = {
 		factor = 0.5
+		modifier = {
+			factor = 0
+			has_ethic = ethic_gestalt_consciousness
+		}
 		modifier = {
 			factor = 0.5
 			is_spiritualist = no
@@ -3910,10 +3933,10 @@ tech_psionic_theory = {
 						has_trait = "leader_trait_expertise_psionics"
 					}
 					any_owned_pop = {
-						pop_has_trait = trait_psionic
-					}
-					any_owned_pop = {
-						pop_has_trait = trait_latent_psionic
+						OR = {
+							pop_has_trait = trait_psionic
+							pop_has_trait = trait_latent_psionic
+						}
 					}
 				}
 			}
@@ -3935,6 +3958,10 @@ tech_psionic_theory = {
 				area = society
 				has_trait = "leader_trait_expertise_psionics"
 			}
+		}
+		modifier = {
+			factor = 2
+			is_ai = no #auto-research
 		}
 	}
 }
@@ -4147,10 +4174,6 @@ tech_thought_enforcement = {
 
 	weight_modifier = {
 		factor = 0.5
-		modifier = {
-			factor = 0
-			host_has_dlc = "Utopia"
-		}
 		modifier = {
 			factor = 0.50
 			NOT = {
@@ -4726,6 +4749,7 @@ tech_planetary_infrastructure_2 = {
 
 	modifier = {
 		planet_max_buildings_add = 1
+		planet_colony_development_speed_mult = 0.25
 	}
 
 	weight_modifier = {

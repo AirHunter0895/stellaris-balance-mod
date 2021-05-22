@@ -12233,8 +12233,16 @@ can_build_crisis_star_eater = {
 }
 
 destroy_star_system = {
+	set_star_flag = star_cracked
 	set_star_class = sc_black_hole
 	every_system_ambient_object = {
+		limit = {
+			# Preserve Unbidden crisis effects
+			NOR = {
+				has_ambient_object_flag = extradimensional_system_effect
+				has_ambient_object_flag = extradimensional_system_effect_2
+			}
+		}
         destroy_ambient_object = this
     }
 	every_system_planet = {
@@ -12252,6 +12260,23 @@ destroy_star_system = {
 			}
 		}
 		change_pc = pc_black_hole
+	}
+	# Handle Contingency Machine Worlds
+	every_system_planet = {
+		limit = {
+			is_planet_class = pc_ai
+			NOT = { has_planet_flag = machine_lair }
+		}
+		destroy_machine_world = yes
+	}
+	random_system_planet = {
+		limit = {
+			is_planet_class = pc_ai
+			has_planet_flag = machine_lair
+		}
+		from.owner = { save_event_target_as = final_machine_world_destroyer }
+		stop_crisis_sound = yes
+		planet_event = { id = crisis.2046 }
 	}
     every_system_planet = {
         limit = { 
@@ -12334,7 +12359,21 @@ destroy_star_system = {
     }
     every_fleet_in_system = {
         limit = {
-			NOT = { is_same_value = from }
+			NOR = {
+				is_same_value = from
+				# except Extradimensionals
+				AND = {
+					exists = owner
+					owner = {
+						OR = {
+							is_country_type = portal_holder
+							is_country_type = extradimensional
+							is_country_type = extradimensional_2
+							is_country_type = extradimensional_3
+						}
+					}
+				}
+			}
 		}
 		if = {
 			limit = {
@@ -12505,6 +12544,25 @@ destroy_star_system = {
     		}
     		remove_megastructure = this
     	}
+		else_if = {
+			limit = { is_crisis_sphere = yes }
+			solar_system = {
+				spawn_megastructure = {
+					type = crisis_sphere_ruined
+					coords_from = prev
+					init_effect = {
+						random_country = {
+							limit = {
+								prevprev = { has_megastructure_flag = crisis_sphere_of@prev }
+							}
+							save_event_target_as = former_owner
+						}
+						set_megastructure_flag = crisis_sphere_of@event_target:former_owner
+					}
+				}
+			}
+    		remove_megastructure = this
+		}
     	else = {
     		remove_megastructure = this
     	}

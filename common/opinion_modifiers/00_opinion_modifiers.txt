@@ -293,6 +293,7 @@ opinion_xenophobes = {
 			NOT = { has_ethic = "ethic_xenophobe" }
 			NOT = { has_civic = civic_machine_terminator }
 			FROM = { has_ethic = "ethic_fanatic_xenophobe" }
+			exists = from.species
 			is_same_species_class = FROM
 			NOT = { is_same_species = FROM }
 			NOT = { is_subspecies = FROM }
