@@ -191,7 +191,6 @@ ap_enigmatic_engineering = {
 	modifier = {
 		intel_encryption_add = 2
 		country_base_minor_artifacts_produces_add = 0.1
-		intel_encryption_add = 2
 	}
 
 	ai_weight = {
