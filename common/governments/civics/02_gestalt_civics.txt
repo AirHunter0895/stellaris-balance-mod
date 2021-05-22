@@ -91,7 +91,6 @@ civic_hive_pooled_knowledge = {
 		species_leader_exp_gain = 0.25
 		intel_encryption_add = 1
 		planet_jobs_complex_drone_produces_mult = 0.05
-		intel_encryption_add = 1
 	}
 }
 
@@ -380,7 +379,6 @@ civic_machine_delegated_functions = {
 		leaders_cost_mult = -0.25
 		envoys_add = 1
 		planet_jobs_complex_drone_produces_mult = 0.05
-		envoys_add = 1
 	}
 }
 
@@ -391,7 +389,6 @@ civic_machine_predictive_analysis = {
 		num_tech_alternatives_add = 1
 		intel_decryption_add = 1
 		all_technology_research_speed = 0.05
-		intel_decryption_add = 1
 	}
 }
 
