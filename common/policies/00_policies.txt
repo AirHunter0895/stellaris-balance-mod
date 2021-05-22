@@ -1430,7 +1430,7 @@ first_contact_protocol = {
 		}
 
 		valid = {
-			NOT = (has_valid_civic = civic_machine_assimilator)
+			NOT = {has_valid_civic = civic_machine_assimilator}
 			is_homicidal = no
 			is_xenophobe = no
 		}
