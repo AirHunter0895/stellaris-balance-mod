@@ -1660,6 +1660,7 @@ healthcare = {
 	planet_modifier = {
 		planet_amenities_add = 5
 		pop_growth_speed = 0.05
+		planet_pop_assembly_organic_mult = 0.05
 		pop_environment_tolerance = 0.05
 	}
 
