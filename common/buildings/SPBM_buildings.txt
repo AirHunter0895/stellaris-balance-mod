@@ -1138,7 +1138,7 @@ building_major_capital = {
 	}
 
 	allow = {
-		num_pops >= 40
+		num_pops >= 25
 	}
 
 	convert_to = {
@@ -1427,7 +1427,7 @@ building_system_capital = {
 	}
 
 	allow = {
-		num_pops >= 80
+		num_pops >= 40
 	}
 
 	prerequisites = {
@@ -2749,4 +2749,3 @@ building_imperial_hive_capital = {
 		text = job_patrol_drone_effect_desc
 	}
 }
-#Gestalt Capital Buildings
