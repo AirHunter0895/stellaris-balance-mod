@@ -332,7 +332,7 @@ extra_influence_1 = {
 }
 #SPBM
 extra_influence_default_member = {
-	member_modifier = {
+	members_modifier = {
 		federation_influence_produces_add = 1
 	}
 }
@@ -359,6 +359,7 @@ damage_crisis_default_1 = {
 		damage_vs_country_type_extradimensional_3_mult = 0.33
 		damage_vs_country_type_ai_empire_mult = 0.33
 		damage_vs_country_type_gray_goo_mult = 0.33
+		damage_vs_player_crisis_mult = 0.33
 	}
 }
 #SPBM
@@ -371,6 +372,7 @@ damage_crisis_default_2 = {
 		damage_vs_country_type_extradimensional_3_mult = 0.33
 		damage_vs_country_type_ai_empire_mult = 0.33
 		damage_vs_country_type_gray_goo_mult = 0.33
+		damage_vs_player_crisis_mult = 0.33
 	}
 }
 

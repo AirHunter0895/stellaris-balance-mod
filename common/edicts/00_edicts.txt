@@ -1250,6 +1250,7 @@ greater_than_ourselves = {
 	}
 
 	modifier = {
+		planet_resettlement_unemployed_mult = 2.00
 	}
 
 	potential = {
