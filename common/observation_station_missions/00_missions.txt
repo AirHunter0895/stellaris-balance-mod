@@ -518,7 +518,7 @@ technological_enlightenment_6 = {
 	potential = {
 		FROM = {
 			exists = owner
-			owner = { has_country_flag = industrial_age  }
+			owner = { has_country_flag = industrial_age }
 		}
 	}
 

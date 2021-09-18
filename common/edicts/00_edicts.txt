@@ -306,7 +306,7 @@ diplomatic_grants = {
 	}
 
 	potential = {
-		has_non_swapped_tradition = tr_diplomacy_adopt
+		has_tradition = tr_diplomacy_adopt
 		has_comms_with_alien_empire = yes
 	}
 
@@ -335,9 +335,12 @@ enhanced_surveillance = {
 	}
 
 	potential = {
-		has_tradition = tr_domination_judgment_corps
-		has_comms_with_alien_empire = yes
+		has_active_tradition = tr_domination_judgment_corps
 		is_gestalt = no
+	}
+
+	allow = {
+		has_comms_with_alien_empire = yes
 	}
 
 	ai_weight = {
@@ -630,7 +633,7 @@ extended_shifts = {
 	}
 
 	potential = {
-		has_non_swapped_tradition = tr_domination_workplace_motivators
+		has_active_tradition = tr_domination_workplace_motivators
 	}
 
 	ai_weight = {
@@ -713,7 +716,7 @@ industrial_maintenance = {
 
 	potential = {
 		is_machine_empire = yes
-		has_swapped_tradition = tr_synchronicity_finish
+		has_tradition = tr_synchronicity_finish
 	}
 
 	ai_weight = {
@@ -749,7 +752,7 @@ drone_overdrive = {
 
 	potential = {
 		is_gestalt = yes
-		has_swapped_tradition = tr_domination_drone_network
+		has_active_tradition = tr_domination_drone_network
 	}
 
 	ai_weight = {

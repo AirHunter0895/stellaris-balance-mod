@@ -1106,6 +1106,8 @@ opinion_voted_down_proposal = {
 		base = -50
 	}
 
+	min = -150
+
 	accumulative = yes
 
 	decay = {
@@ -2781,7 +2783,7 @@ triggered_opinion_tr_versatility_universal_compatibility = {
 	trigger = {
 		has_authority = auth_machine_intelligence
 		FROM = {
-			has_swapped_tradition = tr_versatility_universal_compatibility
+			has_tradition = tr_versatility_universal_compatibility
 		}
 	}
 

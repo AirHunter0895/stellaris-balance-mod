@@ -6,6 +6,8 @@
 #	modification = yes / no						# default: yes, set to no to prevent adding or removing this after creation of the empire
 #
 #	random_weight = { base = 5 }				# scriptable weight for randomizing a civic; required, else the civic will not get assigned randomly
+#												# Note: formula is "base + factor (default 1) * (result of modifiers)"
+#												# So to make it not spawn, set base and factor to 0
 #
 #	modifier = {}								# modifier added to the country if the civic is selected and valid
 #	can_build_ruler_ship = yes / no				# default: no
@@ -13,7 +15,7 @@
 #	has_secondary_species = {					# default: none; if present, will enable secondary species customization in empire designer and will create secondary species & pops at galaxy generation time (see empire_init_create_capital_secondary_pops)
 #		traits = { trait = ... }					# default: empty; trait set to enforce on the secondary species. They cannot be removed, but more can be added if points/picks permit
 #	}
-#	is_origin = yes / no 						# default: no, set to yes if civic should be treated as an Origin
+#	is_origin = yes / no						# default: no, set to yes if civic should be treated as an Origin
 #
 #	swap_type = {								# triggered name/desc/custom desc based on species class, no scope
 #		name = ...
@@ -333,11 +335,12 @@ civic_slaver_guilds = {
 				value = ethic_fanatic_authoritarian
 			}
 		}
+		civics = { NOT = { value = civic_pleasure_seekers } }
 	}
 	random_weight = { base = 5 }
 	modifier = {
 		planet_jobs_slave_produces_mult = 0.10
-		country_pop_enslaved_mult = 0.40
+		country_pop_enslaved_mult = 0.35
 	}
 }
 
@@ -391,6 +394,11 @@ civic_warrior_culture = {
 				text = civic_tooltip_militarist
 				value = ethic_militarist
 				value = ethic_fanatic_militarist
+			}
+		}
+		civics = {
+			NOT = {
+				value = civic_pleasure_seekers
 			}
 		}
 	}
@@ -716,7 +724,11 @@ civic_shared_burden = {
 			}
 		}
 		civics = {
-			NOT = { value = civic_technocracy }
+			NOT = { 
+				value = civic_technocracy 
+				value = civic_pleasure_seekers
+			}
+
 		}
 	}
 	modifier = {
@@ -1089,6 +1101,89 @@ civic_memorialist = {
 		civics = {
 			NOT = {
 				value = civic_fanatic_purifiers
+			}
+		}
+	}
+}
+
+civic_catalytic_processing = {
+	playable = { host_has_dlc = "Plantoids Species Pack" }
+	ai_playable = { host_has_dlc = "Plantoids Species Pack" }
+	description = "civic_tooltip_catalytic_processing_effects"
+	potential = {
+		ethics = { NOT = { value = ethic_gestalt_consciousness } } #Gestalts get their own versions
+		authority = { NOT = { value = auth_corporate } }
+	}
+	possible = {
+		origin = {
+			NOT = {
+				value = origin_lithoid
+			}
+		}
+	}
+	random_weight = { base = 5 }
+}
+
+civic_crafters = {
+	playable = { host_has_dlc = "Humanoids Species Pack" }
+	ai_playable = { host_has_dlc = "Humanoids Species Pack" }
+	description = "civic_tooltip_crafters_effects"
+	potential = {
+		ethics = { NOT = { value = ethic_gestalt_consciousness } }
+		authority = { NOT = { value = auth_corporate } }
+	}
+	possible = {
+		always = yes
+	}
+	random_weight = {
+		base = 3
+	}
+}
+
+civic_pleasure_seekers = {
+	playable = { host_has_dlc = "Humanoids Species Pack" }
+	ai_playable = { host_has_dlc = "Humanoids Species Pack" }
+	description = "civic_tooltip_pleasure_seekers_effects"
+	potential = {
+		ethics = { NOT = { value = ethic_gestalt_consciousness } }
+		authority = { NOT = { value = auth_corporate } }
+	}
+	possible = {
+		civics = {
+			NOT = {
+				value = civic_warrior_culture
+				value = civic_shared_burden
+				value = civic_slaver_guilds # would enslave hedonists
+			}
+		}
+	}
+	random_weight = {
+		base = 3
+	}
+}
+
+civic_idyllic_bloom = {
+	modification = no
+	playable = { host_has_dlc = "Plantoids Species Pack" }
+	ai_playable = { host_has_dlc = "Plantoids Species Pack" }
+	description = "civic_tooltip_idyllic_bloom_effects"
+	potential = {
+		ethics = { NOT = { value = ethic_gestalt_consciousness } }
+		authority = { NOT = { value = auth_corporate } }
+	}
+	possible = {
+		species_class = {
+			OR = {
+				value = FUN
+				value = PLANT
+			}
+		}
+		origin = {
+			NOR = {
+				text = civic_tooltip_not_origin_non_standard_habitability_preference
+				value = origin_life_seeded
+				value = origin_void_dwellers
+				value = origin_shattered_ring
 			}
 		}
 	}

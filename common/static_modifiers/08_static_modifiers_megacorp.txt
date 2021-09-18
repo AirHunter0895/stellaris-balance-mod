@@ -249,19 +249,19 @@ crime_lord_deal_broken = {
 }
 
 unemployment_benefits = {
-	icon = "gfx/interface/icons/planet_modifiers/pm_resources.dds"
+	icon = "gfx/interface/icons/planet_modifiers/pm_resources_2.dds"
 	icon_frame = 2
 	planet_pops_unemployed_consumer_goods_upkeep_add = 2
 }
 
 activity_program = {
-	icon = "gfx/interface/icons/planet_modifiers/pm_resources.dds"
+	icon = "gfx/interface/icons/planet_modifiers/pm_resources_2.dds"
 	icon_frame = 2
 	#effect is added on the actual job: scavenger_drone since HMs don't have unemployment
 	custom_tooltip = activity_program_tooltip
 }
 standby_mode = {
-	icon = "gfx/interface/icons/planet_modifiers/pm_resources.dds"
+	icon = "gfx/interface/icons/planet_modifiers/pm_resources_2.dds"
 	icon_frame = 2
 	unemployment_resources_energy_upkeep_add = 2
 	custom_tooltip = standby_mode_tooltip
@@ -582,19 +582,19 @@ heavy_metal = {
 }
 
 alloy_relic = {
-	icon = "gfx/interface/icons/planet_modifiers/pm_resources.dds"
+	icon = "gfx/interface/icons/planet_modifiers/pm_resources_2.dds"
 	icon_frame = 1
 	planet_jobs_alloys_produces_mult = 0.10
 }
 
 minerals_relic = {
-	icon = "gfx/interface/icons/planet_modifiers/pm_resources.dds"
+	icon = "gfx/interface/icons/planet_modifiers/pm_resources_2.dds"
 	icon_frame = 1
 	planet_jobs_minerals_produces_mult = 0.10
 }
 
 energy_relic = {
-	icon = "gfx/interface/icons/planet_modifiers/pm_resources.dds"
+	icon = "gfx/interface/icons/planet_modifiers/pm_resources_2.dds"
 	icon_frame = 1
 	planet_jobs_energy_produces_mult = 0.10
 }

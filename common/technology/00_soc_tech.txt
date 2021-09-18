@@ -319,7 +319,7 @@ tech_gene_crops = {
 
 	modifier = {
 		planet_farmers_food_produces_mult = 0.2
-		starbase_constructions_food_produces_mult = 0.20
+		starbase_constructions_food_produces_mult = 0.10
 	}
 
 	weight_modifier = {
@@ -396,7 +396,7 @@ tech_nano_vitality_crops = {
 
 	modifier = {
 		planet_farmers_food_produces_mult = 0.2
-		starbase_constructions_food_produces_mult = 0.20
+		starbase_constructions_food_produces_mult = 0.10
 	}
 
 	weight_modifier = {
@@ -473,7 +473,7 @@ tech_nutrient_replication = {
 
 	modifier = {
 		planet_jobs_food_produces_mult = 0.15
-		starbase_constructions_food_produces_mult = 0.20
+		starbase_constructions_food_produces_mult = 0.10
 	}
 
 	potential = {
@@ -1397,7 +1397,7 @@ tech_mountain_range = {
 		modifier = {
 			factor = 0
 			NOT = {
-				any_owned_planet =  {
+				any_owned_planet = {
 					has_deposit = "d_mountain_range"
 				}
 			}
@@ -1422,7 +1422,7 @@ tech_mountain_range = {
 		modifier = {
 			factor = 0
 			NOT = {
-				any_owned_planet =  {
+				any_owned_planet = {
 					has_deposit = "d_mountain_range"
 				}
 			}
@@ -1471,7 +1471,7 @@ tech_volcano = {
 		modifier = {
 			factor = 0
 			NOT = {
-				any_owned_planet =  {
+				any_owned_planet = {
 					has_deposit = "d_active_volcano"
 				}
 			}
@@ -1496,7 +1496,7 @@ tech_volcano = {
 		modifier = {
 			factor = 0
 			NOT = {
-				any_owned_planet =  {
+				any_owned_planet = {
 					has_deposit = "d_active_volcano"
 				}
 			}
@@ -1546,7 +1546,7 @@ tech_dangerous_wildlife = {
 		modifier = {
 			factor = 0
 			NOT = {
-				any_owned_planet =  {
+				any_owned_planet = {
 					has_deposit = d_dangerous_wildlife_blocker
 				}
 			}
@@ -1571,7 +1571,7 @@ tech_dangerous_wildlife = {
 		modifier = {
 			factor = 0
 			NOT = {
-				any_owned_planet =  {
+				any_owned_planet = {
 					has_deposit = d_dangerous_wildlife_blocker
 				}
 			}
@@ -1620,7 +1620,7 @@ tech_dense_jungle = {
 		modifier = {
 			factor = 0
 			NOT = {
-				any_owned_planet =  {
+				any_owned_planet = {
 					has_deposit = "d_dense_jungle"
 				}
 			}
@@ -1645,7 +1645,7 @@ tech_dense_jungle = {
 		modifier = {
 			factor = 0
 			NOT = {
-				any_owned_planet =  {
+				any_owned_planet = {
 					has_deposit = "d_dense_jungle"
 				}
 			}
@@ -1694,7 +1694,7 @@ tech_quicksand_basin = {
 		modifier = {
 			factor = 0
 			NOT = {
-				any_owned_planet =  {
+				any_owned_planet = {
 					has_deposit = "d_quicksand_basin"
 				}
 			}
@@ -1719,7 +1719,7 @@ tech_quicksand_basin = {
 		modifier = {
 			factor = 0
 			NOT = {
-				any_owned_planet =  {
+				any_owned_planet = {
 					has_deposit = "d_quicksand_basin"
 				}
 			}
@@ -1768,7 +1768,7 @@ tech_noxious_swamp = {
 		modifier = {
 			factor = 0
 			NOT = {
-				any_owned_planet =  {
+				any_owned_planet = {
 					has_deposit = "d_noxious_swamp"
 				}
 			}
@@ -1793,7 +1793,7 @@ tech_noxious_swamp = {
 		modifier = {
 			factor = 0
 			NOT = {
-				any_owned_planet =  {
+				any_owned_planet = {
 					has_deposit = "d_noxious_swamp"
 				}
 			}
@@ -1842,7 +1842,7 @@ tech_massive_glacier = {
 		modifier = {
 			factor = 0
 			NOT = {
-				any_owned_planet =  {
+				any_owned_planet = {
 					has_deposit = "d_massive_glacier"
 				}
 			}
@@ -1867,7 +1867,7 @@ tech_massive_glacier = {
 		modifier = {
 			factor = 0
 			NOT = {
-				any_owned_planet =  {
+				any_owned_planet = {
 					has_deposit = "d_massive_glacier"
 				}
 			}
@@ -1916,7 +1916,7 @@ tech_toxic_kelp = {
 		modifier = {
 			factor = 0
 			NOT = {
-				any_owned_planet =  {
+				any_owned_planet = {
 					has_deposit = "d_toxic_kelp"
 				}
 			}
@@ -1941,7 +1941,7 @@ tech_toxic_kelp = {
 		modifier = {
 			factor = 0
 			NOT = {
-				any_owned_planet =  {
+				any_owned_planet = {
 					has_deposit = "d_toxic_kelp"
 				}
 			}
@@ -1990,7 +1990,7 @@ tech_deep_sinkhole = {
 		modifier = {
 			factor = 0
 			NOT = {
-				any_owned_planet =  {
+				any_owned_planet = {
 					has_deposit = "d_deep_sinkhole"
 				}
 			}
@@ -2015,7 +2015,7 @@ tech_deep_sinkhole = {
 		modifier = {
 			factor = 0
 			NOT = {
-				any_owned_planet =  {
+				any_owned_planet = {
 					has_deposit = "d_deep_sinkhole"
 				}
 			}
@@ -2051,7 +2051,7 @@ tech_terrestrial_sculpting = {
 	}
 
 	weight_modifier = {
-		factor = 1.5 	# terraforming needs to be a bit more common
+		factor = 1.5	# terraforming needs to be a bit more common
 		modifier = {
 			factor = 0
 			is_lithoid_empire = yes
@@ -2206,7 +2206,7 @@ tech_genome_mapping = {
 	}
 
 	weight_modifier = {
-		factor = 1.5 	# genetech needs to be a bit more common
+		factor = 1.5	# genetech needs to be a bit more common
 		modifier = {
 			factor = 1.25
 			has_authority = auth_hive_mind
@@ -2256,7 +2256,7 @@ tech_vitality_boosters = {
 	}
 
 	weight_modifier = {
-		factor = 1.5 	# genetech needs to be a bit more common
+		factor = 1.5	# genetech needs to be a bit more common
 		modifier = {
 			factor = 1.25
 			has_authority = auth_hive_mind
@@ -2396,7 +2396,7 @@ tech_cloning = {
 	}
 
 	weight_modifier = {
-		factor = 1.5 	# genetech needs to be a bit more common
+		factor = 1.5	# genetech needs to be a bit more common
 		modifier = {
 			factor = 1.25
 			has_authority = auth_hive_mind
@@ -2751,7 +2751,7 @@ tech_gene_tailoring = {
 	}
 
 	weight_modifier = {
-		factor = 2.0 	# genetech needs to be a bit more common
+		factor = 2.0	# genetech needs to be a bit more common
 		modifier = {
 			factor = 1.25
 			has_authority = auth_hive_mind
@@ -2812,7 +2812,7 @@ tech_glandular_acclimation = {
 	}
 
 	weight_modifier = {
-		factor = 1.5 	# genetech needs to be a bit more common
+		factor = 1.5	# genetech needs to be a bit more common
 		modifier = {
 			factor = 1.25
 			has_authority = auth_hive_mind
@@ -3126,7 +3126,7 @@ tech_regenerative_hull_tissue = {
 	weight = @tier3weight2
 
 	weight_modifier = {
-		factor = 0 		# Can only be reverse engineered
+		factor = 0		# Can only be reverse engineered
 	}
 }
 

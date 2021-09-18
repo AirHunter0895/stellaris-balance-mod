@@ -86,7 +86,7 @@ custodianship = {
 	spawn_enabled = no # yes / no / always
 	ignore_portrait_duplication = yes
 	
-	playable = has_synthethic_dawn # scripted_triggers
+	playable = has_synthethic_dawn
 	
 	ship_prefix = "PRESCRIPTED_ship_prefix_custodianship"
 	
@@ -128,8 +128,8 @@ custodianship = {
 	initializer = "sol_system_initializer"
 	system_name = "NAME_Sol"
 	
-	graphical_culture = "humanoid_01"
-	city_graphical_culture = "humanoid_01"
+	graphical_culture = "mammalian_01"
+	city_graphical_culture = "mammalian_01"
 	
 	empire_flag = {
 		icon= {

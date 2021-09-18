@@ -289,6 +289,10 @@ has_low_living_standard_type = {
 	has_living_standard = { type = living_standard_subsistence }
 }
 
+has_decadent_living_standard_type = {
+	has_living_standard = { type = living_standard_decadent }
+}
+
 is_lithoid = {
 	species = {
 		is_archetype = LITHOID
@@ -306,10 +310,7 @@ is_organic_species = {
 
 is_robotic_species = {
 	species = {
-		OR = {
-			is_archetype = ROBOT
-			is_archetype = MACHINE
-		}
+		is_robotic = yes
 	}
 }
 

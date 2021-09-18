@@ -117,13 +117,13 @@ lithoids_arc_site_minerals = {
 artifact_find_military_application_army = {
 	army_morale = 0.05
 	army_damage_mult = 0.05
-    army_morale_damage_mult = 0.10
+	army_morale_damage_mult = 0.10
 	army_collateral_damage_mult = 0.20
 }
 
 artifact_find_military_application_army_machine = {
 	army_damage_mult = 0.05
-    army_morale_damage_mult = 0.05
+	army_morale_damage_mult = 0.05
 	army_collateral_damage_mult = 0.10
 }
 
@@ -330,6 +330,16 @@ anthem_of_aurora = {
 	country_energy_produces_mult = 0.05
 }
 
+rudari_death_laser = {
+	weapon_type_energy_weapon_damage_mult = 0.05
+	ship_weapon_range_mult = 0.05
+}
+
+killer_librarian_organism = {
+	army_collateral_damage_mult = 1
+	army_damage_mult = 0.5
+}
+
 ### "Feral Overload" Colony Event Modifier ###
 feral_overload_00 = {
 	icon = "gfx/interface/icons/planet_modifiers/pm_crime.dds"
@@ -391,3 +401,16 @@ evermore_science = {
 	planet_jobs_society_research_produces_mult = 0.10
 	planet_jobs_engineering_research_produces_mult = 0.10
 }
+
+ancient_glassed_planet = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_wasteland.dds"
+	icon_frame = 2
+}
+
+polaris_biology_modifier = {
+	category_biology_research_speed_mult = 0.2
+}
+polaris_habitability_modifier = {
+	pop_environment_tolerance = 0.05
+}
+

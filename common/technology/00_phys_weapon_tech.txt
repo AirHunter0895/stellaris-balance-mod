@@ -22,9 +22,9 @@ tech_lasers_2 = {
 	ai_update_type = military
 	prerequisites = { "tech_lasers_1" }
 	weight = @tier1weight2
-	
+
 	gateway = energy_weapons
-	
+
 	weight_modifier = {
 		modifier = {
 			factor = 1.25
@@ -42,7 +42,7 @@ tech_lasers_2 = {
 			}
 		}
 	}
-	
+
 	ai_weight = {
 		factor = 2		#weapons are good
 		modifier = {
@@ -69,12 +69,12 @@ tech_lasers_3 = {
 	cost = @tier2cost1
 	tier = 2
 	category = { particles }
-	ai_update_type = military	
+	ai_update_type = military
 	prerequisites = { "tech_lasers_2" }
 	weight = @tier2weight1
-	
+
 	gateway = energy_weapons
-	
+
 	weight_modifier = {
 		modifier = {
 			factor = 1.25
@@ -92,7 +92,7 @@ tech_lasers_3 = {
 			}
 		}
 	}
-	
+
 	ai_weight = {
 		factor = 2		#weapons are good
 		modifier = {
@@ -122,9 +122,9 @@ tech_lasers_4 = {
 	ai_update_type = military
 	prerequisites = { "tech_lasers_3" }
 	weight = @tier3weight1
-	
+
 	gateway = energy_weapons
-	
+
 	weight_modifier = {
 		modifier = {
 			factor = 1.25
@@ -142,7 +142,7 @@ tech_lasers_4 = {
 			}
 		}
 	}
-	
+
 	ai_weight = {
 		factor = 2		#weapons are good
 		modifier = {
@@ -167,14 +167,14 @@ tech_lasers_4 = {
 tech_lasers_5 = {
 	area = physics
 	cost = @tier4cost1
-	tier = 4	
+	tier = 4
 	category = { particles }
 	ai_update_type = military
 	prerequisites = { "tech_lasers_4" }
 	weight = @tier4weight1
-	
+
 	gateway = energy_weapons
-	
+
 	weight_modifier = {
 		modifier = {
 			factor = 1.25
@@ -192,7 +192,7 @@ tech_lasers_5 = {
 			}
 		}
 	}
-	
+
 	ai_weight = {
 		factor = 2		#weapons are good
 		modifier = {
@@ -218,10 +218,10 @@ tech_energy_lance_1 = {
 	cost = @tier4cost2
 	tier = 4
 	category = { particles }
-	ai_update_type = military	
+	ai_update_type = military
 	prerequisites = { "tech_lasers_4" "tech_battleships" }
 	weight = @tier4weight2
-	
+
 	weight_modifier = {
 		modifier = {
 			factor = 1.25
@@ -237,9 +237,9 @@ tech_energy_lance_1 = {
 				area = physics
 				has_trait = "leader_trait_expertise_particles"
 			}
-		}	
+		}
 	}
-	
+
 	ai_weight = {
 		factor = 2		#weapons are good
 		modifier = {
@@ -268,7 +268,7 @@ tech_energy_lance_2 = {
 	ai_update_type = military
 	prerequisites = { "tech_lasers_5" "tech_energy_lance_1" }
 	weight = @tier4weight3
-	
+
 	weight_modifier = {
 		modifier = {
 			factor = 1.25
@@ -284,9 +284,9 @@ tech_energy_lance_2 = {
 				area = physics
 				has_trait = "leader_trait_expertise_particles"
 			}
-		}	
+		}
 	}
-	
+
 	ai_weight = {
 		factor = 2		#weapons are good
 		modifier = {
@@ -318,9 +318,9 @@ tech_plasma_1 = {
 	category = { particles }
 	ai_update_type = military
 	weight = @tier2weight2
-	
+
 	prerequisites = { "tech_lasers_2" }
-	
+
 	weight_modifier = {
 		modifier = {
 			factor = 1.25
@@ -342,9 +342,9 @@ tech_plasma_1 = {
 			NOT = {
 				has_technology = "tech_lasers_1"
 			}
-		}	
+		}
 	}
-	
+
 	ai_weight = {
 		factor = 2		#weapons are good
 		modifier = {
@@ -373,7 +373,7 @@ tech_plasma_2 = {
 	ai_update_type = military
 	prerequisites = { "tech_plasma_1" }
 	weight = @tier3weight1
-	
+
 	weight_modifier = {
 		modifier = {
 			factor = 1.25
@@ -389,9 +389,9 @@ tech_plasma_2 = {
 				area = physics
 				has_trait = "leader_trait_expertise_particles"
 			}
-		}	
+		}
 	}
-	
+
 	ai_weight = {
 		factor = 2		#weapons are good
 		modifier = {
@@ -417,10 +417,10 @@ tech_plasma_3 = {
 	cost = @tier4cost1
 	tier = 4
 	category = { particles }
-	ai_update_type = military	
+	ai_update_type = military
 	prerequisites = { "tech_plasma_2" }
 	weight = @tier4weight1
-	
+
 	weight_modifier = {
 		modifier = {
 			factor = 1.25
@@ -436,9 +436,9 @@ tech_plasma_3 = {
 				area = physics
 				has_trait = "leader_trait_expertise_particles"
 			}
-		}	
+		}
 	}
-	
+
 	ai_weight = {
 		factor = 2		#weapons are good
 		modifier = {
@@ -464,10 +464,10 @@ tech_arc_emitter_1 = {
 	cost = @tier4cost2
 	tier = 4
 	category = { particles }
-	ai_update_type = military	
+	ai_update_type = military
 	prerequisites = { "tech_disruptors_3" "tech_battleships" }
 	weight = @tier4weight2
-	
+
 	weight_modifier = {
 		modifier = {
 			factor = 1.25
@@ -485,7 +485,7 @@ tech_arc_emitter_1 = {
 			}
 		}
 	}
-	
+
 	ai_weight = {
 		factor = 2		#weapons are good
 		modifier = {
@@ -511,10 +511,10 @@ tech_arc_emitter_2 = {
 	cost = @tier4cost3
 	tier = 4
 	category = { particles }
-	ai_update_type = military	
+	ai_update_type = military
 	prerequisites = { "tech_arc_emitter_1" }
 	weight = @tier4weight3
-	
+
 	weight_modifier = {
 		modifier = {
 			factor = 1.25
@@ -530,9 +530,9 @@ tech_arc_emitter_2 = {
 				area = physics
 				has_trait = "leader_trait_expertise_particles"
 			}
-		}	
+		}
 	}
-	
+
 	ai_weight = {
 		factor = 2		#weapons are good
 		modifier = {
@@ -564,9 +564,9 @@ tech_disruptors_1 = {
 	category = { particles }
 	ai_update_type = military
 	weight = @tier2weight2
-	
+
 	prerequisites = { "tech_lasers_2" }
-	
+
 	weight_modifier = {
 		modifier = {
 			factor = 1.25
@@ -588,9 +588,9 @@ tech_disruptors_1 = {
 			NOT = {
 				has_technology = "tech_lasers_1"
 			}
-		}	
+		}
 	}
-	
+
 	ai_weight = {
 		factor = 2		#weapons are good
 		modifier = {
@@ -616,10 +616,10 @@ tech_disruptors_2 = {
 	cost = @tier3cost1
 	tier = 3
 	category = { particles }
-	ai_update_type = military	
+	ai_update_type = military
 	prerequisites = { "tech_disruptors_1" }
 	weight = @tier3weight1
-	
+
 	weight_modifier = {
 		modifier = {
 			factor = 1.25
@@ -635,9 +635,9 @@ tech_disruptors_2 = {
 				area = physics
 				has_trait = "leader_trait_expertise_particles"
 			}
-		}	
+		}
 	}
-	
+
 	ai_weight = {
 		factor = 2		#weapons are good
 		modifier = {
@@ -666,7 +666,7 @@ tech_disruptors_3 = {
 	ai_update_type = military
 	prerequisites = { "tech_disruptors_2" }
 	weight = @tier4weight1
-	
+
 	weight_modifier = {
 		modifier = {
 			factor = 1.25
@@ -682,9 +682,9 @@ tech_disruptors_3 = {
 				area = physics
 				has_trait = "leader_trait_expertise_particles"
 			}
-		}	
-	}	
-	
+		}
+	}
+
 	ai_weight = {
 		factor = 2		#weapons are good
 		modifier = {
@@ -732,16 +732,16 @@ tech_energy_torpedoes_1 = {
 			NOT = {
 				has_technology = "tech_lasers_1"
 			}
-		}	
+		}
 		modifier = {
 			factor = 1.25
 			research_leader = {
 				area = physics
 				has_trait = "leader_trait_expertise_particles"
 			}
-		}	
+		}
 	}
-	
+
 	ai_weight = {
 		factor = 2		#weapons are good
 		modifier = {
@@ -786,9 +786,9 @@ tech_energy_torpedoes_2 = {
 				area = physics
 				has_trait = "leader_trait_expertise_particles"
 			}
-		}	
+		}
 	}
-	
+
 	ai_weight = {
 		factor = 2		#weapons are good
 		modifier = {
@@ -817,7 +817,7 @@ tech_energy_torpedoes_2 = {
 tech_pd_tracking_1 = {
 	area = physics
 	tier = 0
-	category = { computing }		
+	category = { computing }
 	ai_update_type = military
 	start_tech = yes
 }
@@ -831,9 +831,9 @@ tech_pd_tracking_2 = {
 	ai_update_type = military
 	prerequisites = { "tech_pd_tracking_1" }
 	weight = @tier2weight3
-	
+
 	# unlocks point defence 2
-	
+
 	weight_modifier = {
 		modifier = {
 			factor = 1.25
@@ -842,8 +842,8 @@ tech_pd_tracking_2 = {
 				has_trait = "leader_trait_expertise_computing"
 			}
 		}
-	}	
-	
+	}
+
 	ai_weight = {
 		modifier = {
 			factor = 1.25
@@ -864,9 +864,9 @@ tech_pd_tracking_3 = {
 	ai_update_type = military
 	prerequisites = { "tech_pd_tracking_2" }
 	weight = @tier4weight1
-	
+
 	# unlocks point defence 3
-	
+
 	weight_modifier = {
 		modifier = {
 			factor = 1.25
@@ -875,8 +875,8 @@ tech_pd_tracking_3 = {
 				has_trait = "leader_trait_expertise_computing"
 			}
 		}
-	}		
-	
+	}
+
 	ai_weight = {
 		modifier = {
 			factor = 1.25
@@ -900,7 +900,7 @@ tech_extradimensional_weapon_1 = {
 	category = { particles }
 	ai_update_type = military
 	weight = 0
-	
+
 	weight_modifier = {
 		factor = 10
 		modifier = {
@@ -920,7 +920,7 @@ tech_extradimensional_weapon_1 = {
 			}
 		}
 	}
-	
+
 	ai_weight = {
 		factor = 5		#weapons are good
 		modifier = {
@@ -948,7 +948,7 @@ tech_mining_drone_weapon_1 = {
 	category = { particles }
 	ai_update_type = military
 	weight = 0
-	
+
 	ai_weight = {
 		factor = 2		#weapons are good
 		modifier = {
@@ -975,9 +975,9 @@ tech_space_cloud_weapon_1 = {
 	tier = 2
 	is_rare = yes
 	category = { particles }
-	ai_update_type = military	
+	ai_update_type = military
 	weight = 0
-	
+
 	ai_weight = {
 		factor = 2		#weapons are good
 		modifier = {
@@ -1007,5 +1007,5 @@ null_void_beam = {
 	category = { particles }
 	ai_update_type = military
 	weight = 0
-	
+
 }

@@ -85,28 +85,6 @@ megastructures_habitat = {
 	}
 }
 
-colonies = {
-	use_for_ai_budget = yes
-	ai_use_parent_for_resources_upkeep = {
-		energy
-	}
-
-	triggered_cost_modifier = {
-		key = ship_colonizer
-		use_parent_icon = yes
-		modifier_types = {
-			mult
-		}
-
-		trigger = {
-			is_scope_valid = yes #When called from ship designer the design is not valid yet.
-			is_ship_class = shipclass_colonizer
-		}
-	}
-
-	parent = country
-}
-
 ships = {
 	use_for_ai_budget = yes
 	generate_mult_modifiers = {
@@ -218,6 +196,28 @@ ships = {
 			is_ship_class = shipclass_science_ship
 		}
 	}
+}
+
+colonies = {
+	use_for_ai_budget = yes
+	ai_use_parent_for_resources_upkeep = {
+		energy
+	}
+
+	triggered_cost_modifier = {
+		key = ship_colonizer
+		use_parent_icon = yes
+		modifier_types = {
+			mult
+		}
+
+		trigger = {
+			is_scope_valid = yes #When called from ship designer the design is not valid yet.
+			is_ship_class = shipclass_colonizer
+		}
+	}
+
+	parent = ships
 }
 
 ship_components = {
@@ -354,10 +354,6 @@ planet_buildings = {
 
 planet_buildings_strongholds = {
 	parent = planet_buildings
-
-	generate_mult_modifiers = {
-		cost
-	}
 }
 
 planet_branch_offices = {
@@ -387,66 +383,34 @@ planet_districts = {
 
 planet_districts_cities = {
 	parent = planet_districts
-
-	generate_mult_modifiers = {
-		cost
-	}
 }
 
 planet_districts_industrial = {
 	parent = planet_districts
-
-	generate_mult_modifiers = {
-		cost
-	}
 }
 
 planet_districts_hab_energy = {
 	parent = planet_districts
-
-	generate_mult_modifiers = {
-		cost
-	}
 }
 
 planet_districts_hab_industrial = {
 	parent = planet_districts
-
-	generate_mult_modifiers = {
-		cost
-	}
 }
 
 planet_districts_hab_research = {
 	parent = planet_districts
-
-	generate_mult_modifiers = {
-		cost
-	}
 }
 
 planet_districts_hab_mining = {
 	parent = planet_districts
-
-	generate_mult_modifiers = {
-		cost
-	}
 }
 
 planet_districts_hab_trade = {
 	parent = planet_districts
-
-	generate_mult_modifiers = {
-		cost
-	}
 }
 
 planet_districts_hab_leisure = {
 	parent = planet_districts
-
-	generate_mult_modifiers = {
-		cost
-	}
 }
 
 planet_jobs = {
@@ -465,6 +429,28 @@ planet_jobs = {
 		trigger = {
 			is_pop_category = slave
 			has_job_category = worker
+		}
+	}
+
+	triggered_produces_modifier = {
+		key = habitat_jobs
+		modifier_types = {
+			mult
+		}
+		trigger = {
+			exists = planet
+			planet = { is_planet_class = pc_habitat }
+		}
+	}
+
+	triggered_produces_modifier = {
+		key = non_artificial_planet_jobs
+		modifier_types = {
+			mult
+		}
+		trigger = {
+			exists = planet
+			planet = { is_artificial = no }
 		}
 	}
 
@@ -493,7 +479,7 @@ planet_jobs = {
 		trigger = {
 			OR = {
 				is_pop_category = specialist
-				is_pop_category = complex_drone #should use planet_jobs_complex_drone wherever possible, this is just for cases like species traits
+				is_pop_category = complex_drone #planet_jobs_complex_drone is preferable for stuff visible during galaxy setup
 				AND = {
 					is_pop_category = slave
 					has_job_category = specialist
@@ -562,6 +548,11 @@ planet_farmers = {
 	generate_mult_modifiers = {
 		produces
 	}
+
+	generate_add_modifiers = {
+		produces
+		upkeep
+	}
 }
 
 planet_miners = {
@@ -572,9 +563,16 @@ planet_miners = {
 
 	generate_add_modifiers = {
 		produces
+		upkeep
 	}
 }
 
+planet_sr_miners = { #added because we don't want miners_minerals_produces_add to apply to these
+	parent = planet_miners
+	generate_add_modifiers = {
+		upkeep
+	}
+}
 planet_livestock = {
 	parent = planet_jobs
 	generate_add_modifiers = {
@@ -584,6 +582,10 @@ planet_livestock = {
 
 planet_technician = {
 	parent = planet_jobs
+	generate_add_modifiers = {
+		produces
+		upkeep
+	}
 	generate_mult_modifiers = {
 		produces
 	}
@@ -623,12 +625,19 @@ planet_researchers = {
 		produces
 		upkeep
 	}
+	generate_add_modifiers = {
+		upkeep
+	}
 }
 
 planet_metallurgists = {
 	icon = "job_foundry"
 	parent = planet_jobs
 	generate_mult_modifiers = {
+		produces
+		upkeep
+	}
+	generate_add_modifiers = {
 		produces
 		upkeep
 	}
@@ -675,10 +684,6 @@ planet_soldiers = {
 	parent = planet_jobs
 }
 
-planet_necromancers = {
-	parent = planet_researchers
-}
-
 planet_priests = {
 	parent = planet_jobs
 	generate_mult_modifiers = {
@@ -702,7 +707,6 @@ planet_refiners = {
 	parent = planet_jobs
 	generate_mult_modifiers = {
 		produces
-		upkeep
 	}
 }
 
@@ -710,7 +714,6 @@ planet_translucers = {
 	parent = planet_jobs
 	generate_mult_modifiers = {
 		produces
-		upkeep
 	}
 }
 
@@ -718,7 +721,6 @@ planet_chemists = {
 	parent = planet_jobs
 	generate_mult_modifiers = {
 		produces
-		upkeep
 	}
 }
 
@@ -726,6 +728,10 @@ planet_artisans = {
 	icon = "job_artisan"
 	parent = planet_jobs
 	generate_mult_modifiers = {
+		produces
+		upkeep
+	}
+	generate_add_modifiers = {
 		produces
 		upkeep
 	}
@@ -974,6 +980,10 @@ envoy_costs = {
 }
 
 diplo_closed_borders = {
+	parent = diplomacy
+}
+
+diplomatic_networking = {
 	parent = diplomacy
 }
 

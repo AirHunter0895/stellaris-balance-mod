@@ -10,7 +10,7 @@ namespace = first_contact
 
 # First Contact Stage 1
 first_contact_event = {
-    id = first_contact.1
+	id = first_contact.1
 	title = first_contact.1.name
 	desc = {
 		trigger = {
@@ -79,7 +79,7 @@ first_contact_event = {
 		text = first_contact.1.desc.machine
 	}
 	picture = GFX_evt_star_chart
-    is_triggered_only = yes
+	is_triggered_only = yes
 	first_contact = yes
 	location = solar_system
 
@@ -94,7 +94,7 @@ first_contact_event = {
 	}
 
 	# immediate = { #deliberately commented out to stop the notification from showing; site is locked anyway by dint of having no envoy
-	# 	set_site_progress_locked = yes
+	#	set_site_progress_locked = yes
 	# }
 
 	after = {
@@ -600,7 +600,7 @@ first_contact_event = {
 		sound = event_first_contact_reptilian
 		trigger = { contact_country = { is_species_class = REP } }
 	}
-	
+
 	is_triggered_only = yes
 	first_contact = yes
 
@@ -887,7 +887,7 @@ first_contact_event = {
 		sound = event_first_contact_reptilian
 		trigger = { contact_country = { is_species_class = REP } }
 	}
-	
+
 	picture = GFX_evt_inhabited_solar_system
 
 	is_triggered_only = yes
@@ -1111,7 +1111,7 @@ first_contact_event = {
 		sound = event_first_contact_reptilian
 		trigger = { contact_country = { is_species_class = REP } }
 	}
-	
+
 	is_triggered_only = yes
 	first_contact = yes
 
@@ -1321,7 +1321,7 @@ first_contact_event = {
 		sound = event_first_contact_reptilian
 		trigger = { contact_country = { is_species_class = REP } }
 	}
-	
+
 	picture = GFX_evt_mysterious_signal
 
 	is_triggered_only = yes
@@ -2416,7 +2416,7 @@ first_contact_event = {
 				}
 				add_monthly_resource_mult = {
 					resource = alloys
-					value =  @tier1materialreward
+					value = @tier1materialreward
 					min = @tier1materialmin
 				}
 			}
@@ -2429,7 +2429,7 @@ first_contact_event = {
 				}
 				add_monthly_resource_mult = {
 					resource = minerals
-					value =  @tier1materialreward
+					value = @tier1materialreward
 					min = @tier1materialmin
 				}
 			}
@@ -2441,7 +2441,7 @@ first_contact_event = {
 				}
 				add_monthly_resource_mult = {
 					resource = food
-					value =  @tier1materialreward
+					value = @tier1materialreward
 					min = @tier1materialmin
 				}
 			}
@@ -3981,7 +3981,7 @@ first_contact_event = {
 		}
 		custom_tooltip = first_contact.250.B.tooltip
 		set_first_contact_stage = default_end_stage_hostile_with_vivisection
-		
+
 		ai_chance = {
 			factor = 1
 			modifier = {
@@ -4014,7 +4014,7 @@ first_contact_event = {
 			custom_tooltip = first_contact.250.C.homicidal_tooltip
 		}
 		set_first_contact_stage = default_end_stage_hostile_no_crew
-		
+
 		ai_chance = {
 			factor = 1
 			modifier = {
@@ -4038,7 +4038,7 @@ first_contact_event = {
 				}
 				add_monthly_resource_mult = {
 					resource = alloys
-					value =  @tier1materialreward
+					value = @tier1materialreward
 					min = @tier1materialmin
 				}
 			}
@@ -4051,7 +4051,7 @@ first_contact_event = {
 				}
 				add_monthly_resource_mult = {
 					resource = minerals
-					value =  @tier1materialreward
+					value = @tier1materialreward
 					min = @tier1materialmin
 				}
 			}
@@ -4063,7 +4063,7 @@ first_contact_event = {
 				}
 				add_monthly_resource_mult = {
 					resource = food
-					value =  @tier1materialreward
+					value = @tier1materialreward
 					min = @tier1materialmin
 				}
 			}
@@ -4076,7 +4076,7 @@ first_contact_event = {
 			custom_tooltip = first_contact.250.C.homicidal_tooltip
 		}
 		set_first_contact_stage = default_end_stage_hostile_no_crew
-		
+
 		ai_chance = {
 			factor = 100
 		}
@@ -6588,7 +6588,7 @@ country_event = {
 
 	option = {
 		name = EXCELLENT
-		
+
 		first_contact_grant_random_tech_option = { PROGRESS = 0.1 }
 		add_intel = {
 			who = event_target:contact_country
@@ -6625,7 +6625,7 @@ country_event = {
 
 	option = {
 		name = first_contact.290.A
-		
+
 		hidden_effect = {
 			set_country_flag = they_come_in_pieces_achievement
 		}

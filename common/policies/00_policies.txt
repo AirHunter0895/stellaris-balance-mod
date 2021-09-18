@@ -254,7 +254,7 @@ diplomatic_stance = {
 		}
 
 		valid = {
-			is_megacorp = no  # "NO! YOU CAN'T BUY OUR STUFF!" makes the shareholders sad
+			is_megacorp = no # "NO! YOU CAN'T BUY OUR STUFF!" makes the shareholders sad
 			is_homicidal = no # Homicidal variants below
 		}
 
@@ -1751,6 +1751,7 @@ trade_policy = {
 					federation = { NOT = { has_federation_perk = trade_federation_passive } }
 				}
 			}
+			has_tradition = tr_mercantile_adaptive_economic_policies
 		}
 
 		policy_flags = {
@@ -1774,6 +1775,7 @@ trade_policy = {
 					federation = { NOT = { has_federation_perk = trade_federation_passive } }
 				}
 			}
+			has_tradition = tr_mercantile_adaptive_economic_policies
 		}
 
 		policy_flags = {
@@ -1855,7 +1857,10 @@ artificial_intelligence_policy = {
 
 	potential = {
 		NOT = { has_ethic = ethic_gestalt_consciousness }
-		can_set_ai_policy = yes
+		OR = { 
+			can_set_ai_policy = yes
+			has_country_flag = synthetic_empire
+		}
 	}
 
 	option = {
@@ -1865,7 +1870,10 @@ artificial_intelligence_policy = {
 			NOR = {
 				has_ethic = "ethic_materialist"
 				has_ethic = "ethic_fanatic_materialist"
-				has_country_flag = synthetic_empire
+				custom_tooltip = {
+					success_text = is_a_synthetic_empire
+					has_country_flag = synthetic_empire
+				}
 			}
 		}
 
@@ -1912,7 +1920,10 @@ artificial_intelligence_policy = {
 		name = "ai_servitude"
 
 		valid = {
-			NOT = { has_country_flag = synthetic_empire }
+			custom_tooltip = {
+				fail_text = is_a_synthetic_empire_fail
+				NOT = { has_country_flag = synthetic_empire }
+			}
 		}
 
 		policy_flags = {
@@ -1954,9 +1965,15 @@ artificial_intelligence_policy = {
 		name = "ai_full_rights"
 
 		valid = {
-			NOR = {
-				has_ethic = "ethic_spiritualist"
-				has_ethic = "ethic_fanatic_spiritualist"
+			OR = {
+				custom_tooltip = {
+					fail_text = is_a_synthetic_empire
+					has_country_flag = synthetic_empire
+				}
+				NOR = {
+					has_ethic = "ethic_spiritualist"
+					has_ethic = "ethic_fanatic_spiritualist"
+				}
 			}
 			NOT = { has_policy_flag = robots_outlawed }
 		}

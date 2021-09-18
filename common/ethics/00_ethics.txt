@@ -1688,7 +1688,7 @@ ethic_fanatic_pacifist = {
 	}
 
 	random_weight = {
-		value = 33 		# rare ethic
+		value = 33		# rare ethic
 	}
 }
 
@@ -1992,7 +1992,7 @@ ethic_spiritualist = {
 	}
 
 	pop_attraction_tag = {
-		desc = 	POP_ATTRACTION_SPIRITUALIST_POS
+		desc =	POP_ATTRACTION_SPIRITUALIST_POS
 		trigger = {
 			OR = {
 				has_ethic = ethic_spiritualist

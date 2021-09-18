@@ -5,7 +5,7 @@ gateway_0 = {
 	construction_entity = "construction_platform_entity"
 	portrait = "GFX_megastructure_construction_background"
 	place_entity_on_planet_plane = no
-	build_outside_gravity_well = yes 						# indicates this will use "free" placement between the system's inner and outer ring
+	build_outside_gravity_well = yes						# indicates this will use "free" placement between the system's inner and outer ring
 															# if this option is active, the placement_rules will be completely ignored
 	show_galactic_map_icon = no
 	build_time = 1080
@@ -59,12 +59,12 @@ gateway_0 = {
 
 	placement_rules = {			# those would be ignored since the gateway is being "free-placed" between the inner and outer radius of the system
 	}
-	
+
 	# root = system
 	# from = country
 	ai_weight = {
 		factor = 5
-		
+
 		modifier = {
 			factor = 0
 			starbase = { NOT = { has_starbase_size >= starbase_starfortress } }
@@ -72,7 +72,7 @@ gateway_0 = {
 
 		modifier = {
 			factor = 0
-			any_neighbor_system = { 
+			any_neighbor_system = {
 				OR = {
 					has_megastructure = gateway_0
 					has_megastructure = gateway_ruined
@@ -81,11 +81,11 @@ gateway_0 = {
 					has_megastructure = gateway_doorstep					
 				}
 			}
-		}		
+		}
 	}
-	
+
 	on_build_start = {}
-	on_build_cancel = {}	
+	on_build_cancel = {}
 	on_build_complete = {
 		from = { country_event = { id = apoc.14 } }
 	}
@@ -96,7 +96,7 @@ gateway_final = {
 	construction_entity = "construction_platform_entity"
 	portrait = "GFX_megastructure_construction_background"
 	place_entity_on_planet_plane = no
-	# build_outside_gravity_well = yes 						# indicates this will use "free" placement between the system's inner and outer ring
+	# build_outside_gravity_well = yes						# indicates this will use "free" placement between the system's inner and outer ring
 															# if this option is active, the placement_rules will be completely ignored
 	show_galactic_map_icon = no
 	potential = {
@@ -134,7 +134,7 @@ gateway_final = {
 				finish_upgrade = yes
 			}
 		}
-		from = { 
+		from = {
 			country_event = { id = apoc.13 }
 			country_event = { id = apoc.11 }
 		}
@@ -166,11 +166,11 @@ gateway_restored = {
 	place_entity_on_planet_plane = no
 	# build_outside_gravity_well = yes
 	show_galactic_map_icon = no
-	
+
 	potential = {
 		has_technology = tech_gateway_activation
 	}
-	
+
 	possible = {
 		custom_tooltip = {
 			fail_text = "requires_technology_gateway_activation"

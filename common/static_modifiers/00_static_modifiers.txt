@@ -1,4 +1,4 @@
-# All global modifiers are here.  They are applied from certain game-features.
+# All global modifiers are here. They are applied from certain game-features.
 #
 # Effects are fully scriptable here.
 
@@ -1055,6 +1055,33 @@ irassian_energy = {
 	icon = "gfx/interface/icons/planet_modifiers/pm_asteroid_belt.dds"
 }
 
+turtle_world_modifier = {
+	planet_housing_mult = -0.1
+	planet_jobs_society_research_produces_mult = 0.15
+	icon = "gfx/interface/icons/planet_modifiers/pm_planet_surface.dds"
+	icon_frame = 1
+}
+turtle_world_modifier_alone = {
+	planet_housing_mult = -0.1
+	planet_jobs_society_research_produces_mult = 0.15
+	pop_happiness = 0.15
+	icon = "gfx/interface/icons/planet_modifiers/pm_planet_surface.dds"
+	icon_frame = 1
+}
+
+turtle_world_slaves_modifier = {
+	planet_housing_mult = -0.1
+	planet_jobs_society_research_produces_mult = 0.15
+	planet_buildings_cost_mult = -0.1
+	planet_districts_cost_mult = -0.1
+	icon = "gfx/interface/icons/planet_modifiers/pm_planet_surface.dds"
+	icon_frame = 1
+}
+
+embraced_turtle_slavery_modifier = {
+	pop_ethic_authoritarian_attraction_mult = 0.7
+}
+
 ##########################################################################
 # Leader Skill Modifiers
 ##########################################################################
@@ -1501,21 +1528,21 @@ machine_empire_code_bugs = {
 dportal_trade_normal = {
 	#planet_jobs_trade_value_produces_mult = 0.5 #Trade is actually added to the portal researcher job
 
-	icon = "gfx/interface/icons/planet_modifiers/pm_resources.dds"
+	icon = "gfx/interface/icons/planet_modifiers/pm_resources_2.dds"
 	icon_frame = 1
 }
 
 dportal_trade_low = {
 	#planet_jobs_trade_value_produces_mult = 0.25
 
-	icon = "gfx/interface/icons/planet_modifiers/pm_resources.dds"
+	icon = "gfx/interface/icons/planet_modifiers/pm_resources_2.dds"
 	icon_frame = 2
 }
 
 dportal_trade_high = {
 	#planet_jobs_trade_value_produces_mult = 0.75
 
-	icon = "gfx/interface/icons/planet_modifiers/pm_resources.dds"
+	icon = "gfx/interface/icons/planet_modifiers/pm_resources_2.dds"
 	icon_frame = 1
 }
 

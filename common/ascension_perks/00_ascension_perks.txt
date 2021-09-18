@@ -306,6 +306,16 @@ ap_colossus = {
 ap_engineered_evolution = {
 	on_enabled = {
 		add_research_option = tech_gene_seed_purification
+		if = {
+			limit = {
+				has_origin = origin_clone_army
+				OR = {
+					has_trait = trait_clone_soldier_infertile
+					has_trait = trait_clone_soldier_infertile_full_potential
+				}
+			}
+			custom_tooltip = clone_soldier_locked_genes
+		}
 		hidden_effect = {
 			country_event = { id = utopia.2700 }
 		}
@@ -368,6 +378,16 @@ ap_engineered_evolution = {
 ap_evolutionary_mastery = {
 	on_enabled = {
 		add_research_option = tech_genetic_resequencing
+		if = {
+			limit = {
+				has_origin = origin_clone_army
+				OR = {
+					has_trait = trait_clone_soldier_infertile
+					has_trait = trait_clone_soldier_infertile_full_potential
+				}
+			}
+			custom_tooltip = clone_soldier_locked_genes
+		}
 		hidden_effect = {
 			country_event = { id = utopia.2703 }
 		}
@@ -493,6 +513,26 @@ ap_synthetic_evolution = {
 				has_trait = trait_necrophage
 			}
 			custom_tooltip = disables_necrophage_features
+		}
+		if = {
+			limit = {
+				has_origin = origin_clone_army
+				OR = {
+					has_trait = trait_clone_soldier_infertile
+					has_trait = trait_clone_soldier_infertile_full_potential
+					has_trait = trait_clone_soldier_fertile
+				}
+			}
+			custom_tooltip = disables_clone_army_origin_features
+		}
+		if = {
+			limit = {
+				OR = {
+					has_valid_civic = civic_idyllic_bloom
+					has_valid_civic = civic_hive_idyllic_bloom
+				}
+			}
+			custom_tooltip = disables_idyllic_bloom
 		}
 		hidden_effect = {
 			country_event = { id = utopia.2550 }
@@ -1497,7 +1537,10 @@ ap_hive_worlds = {
 ap_arcology_project = {
 	potential = {
 		host_has_dlc = "Megacorp"
-		is_regular_empire = yes
+		OR = {
+			is_regular_empire = yes
+			has_valid_civic = civic_machine_servitor
+		}
 		NOT = { has_valid_civic = civic_agrarian_idyll }
 		NOT = {
 			has_ascension_perk = ap_arcology_project

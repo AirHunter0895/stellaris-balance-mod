@@ -143,6 +143,11 @@ civic_hive_empath = {
 				value = civic_hive_devouring_swarm
 			}
 		}
+		origin = {
+			NOT = {
+				value = origin_necrophage
+			}
+		}
 	}
 
 	description = "civic_tooltip_empath_effects"
@@ -156,12 +161,55 @@ civic_hive_memorialist = {
 	playable = { host_has_dlc = "Necroids Species Pack" }
 	description = "civic_tooltip_memorialist_gestalt_effects"
 	potential = {
-		authority = { value = auth_hive_mind  }
+		authority = { value = auth_hive_mind }
 	}
 	random_weight = { base = 5 }
 	possible = {
 		civics = {
 			NOT = { value = civic_hive_devouring_swarm } #Includes Terravore
+		}
+	}
+}
+
+civic_hive_catalytic_processing = {
+	playable = { host_has_dlc = "Plantoids Species Pack" }
+	ai_playable = { host_has_dlc = "Plantoids Species Pack" }
+	description = "civic_tooltip_hive_catalytic_processing_effects"
+	potential = {
+		authority = { value = auth_hive_mind }
+	}
+	possible = {
+		origin = {
+			NOT = {
+				value = origin_lithoid
+			}
+		}
+	}
+	random_weight = { base = 5 }
+}
+
+civic_hive_idyllic_bloom = {
+	modification = no
+	playable = { host_has_dlc = "Plantoids Species Pack" }
+	ai_playable = { host_has_dlc = "Plantoids Species Pack" }
+	description = "civic_tooltip_idyllic_bloom_effects"
+	potential = {
+		authority = { value = auth_hive_mind }
+	}
+	possible = {
+		species_class = {
+			OR = {
+				value = FUN
+				value = PLANT
+			}
+		}
+		origin = {
+			NOR = {
+				text = civic_tooltip_not_origin_non_standard_habitability_preference
+				value = origin_life_seeded
+				value = origin_void_dwellers
+				value = origin_shattered_ring
+			}
 		}
 	}
 }
@@ -282,9 +330,8 @@ civic_machine_builder = {
 	potential = { authority = { value = auth_machine_intelligence } }
 	random_weight = { base = 5 }
 	modifier = {
-		planet_structures_cost_mult = -0.10
-		planet_structures_upkeep_mult = -0.10
-		planet_max_buildings_add = 1
+		planet_structures_cost_mult = -0.15
+		planet_max_buildings_add = 2
 	}
 }
 
@@ -421,4 +468,17 @@ civic_machine_memorialist = {
 			}
 		}
 	}
+}
+
+civic_machine_catalytic_processing = {
+	playable = { host_has_dlc = "Plantoids Species Pack" }
+	ai_playable = { host_has_dlc = "Plantoids Species Pack" }
+	description = "civic_tooltip_machine_catalytic_processing_effects"
+	potential = {
+		authority = { value = auth_machine_intelligence }
+	}
+	possible = {
+		origin = { NOT = { value = origin_machine } }
+	}
+	random_weight = { base = 5 }
 }

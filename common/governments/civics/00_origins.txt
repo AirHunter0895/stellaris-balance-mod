@@ -165,6 +165,13 @@ origin_life_seeded = {
 
 	possible = {
 		authority = { NOT = { value = auth_machine_intelligence } }
+		civics = {
+			NOR = {
+				text = civic_tooltip_not_idyllic_bloom
+				value = civic_idyllic_bloom
+				value = civic_hive_idyllic_bloom
+			}
+		}
 	}
 
 	description = "civic_tooltip_life_seeded_effects"
@@ -178,6 +185,7 @@ origin_post_apocalyptic = {
 	is_origin = yes
 	icon = "gfx/interface/icons/origins/origins_post_apocalyptic.dds"
 	picture = GFX_origin_post_apocalyptic
+
 	starting_colony = pc_nuked
 
 	playable = {
@@ -207,7 +215,7 @@ origin_remnants = {
 	icon = "gfx/interface/icons/origins/origins_remnant.dds"
 	picture = GFX_origin_remnants
 
-	starting_colony = pc_relic  #Changes homeworld class regardless of what is picked for empire
+	starting_colony = pc_relic #Changes homeworld class regardless of what is picked for empire
 	max_once_global = yes
 
 	playable = {
@@ -250,7 +258,16 @@ origin_shattered_ring = {
 	}
 
 	possible = {
-		civics = { NOT = { value = civic_agrarian_idyll } }
+		civics = {
+			NOT = {	value = civic_agrarian_idyll }
+		}
+		civics = {
+			NOR = {
+				text = civic_tooltip_not_idyllic_bloom
+				value = civic_idyllic_bloom
+				value = civic_hive_idyllic_bloom
+			}
+		}
 		authority = { NOT = { value = auth_machine_intelligence } }
 	}
 
@@ -265,14 +282,6 @@ origin_shattered_ring = {
 	advanced_start = yes
 
 	# Removing the random_weight prevents randomly generated AI empires from selecting it
-
-	swap_type = {
-		description = "origin_tooltip_shattered_ring_effects_lithoid"
-
-		trigger = {
-			local_human_species_class = LITHOID
-		}
-	}
 }
 
 origin_void_dwellers = {
@@ -292,7 +301,16 @@ origin_void_dwellers = {
 
 	possible = {
 		ethics = { NOT = { value = ethic_gestalt_consciousness } }
-		civics = { NOT = { value = civic_agrarian_idyll } }
+		civics = {
+			NOT = {	value = civic_agrarian_idyll }
+		}
+		civics = {
+			NOR = {
+				text = civic_tooltip_not_idyllic_bloom
+				value = civic_idyllic_bloom
+				value = civic_hive_idyllic_bloom
+			}
+		}
 	}
 
 	description = "origin_tooltip_void_dwellers_effects"
@@ -403,12 +421,12 @@ origin_shoulders_of_giants = {
 	}
 
 	possible = {
-        ethics = {
-            NOT = {
-                value = ethic_gestalt_consciousness
-            }
-        }
-    }
+		ethics = {
+			NOT = {
+				value = ethic_gestalt_consciousness
+			}
+		}
+	}
 
 	description = "origin_tooltips_shoulders_of_giants_effects"
 	flags = { custom_start_screen }
@@ -432,8 +450,16 @@ origin_lithoid = {
 	}
 
 	possible = {
-		species = {
+		species_archetype = {
 			value = LITHOID
+		}
+		civics = {
+			NOR = {
+				text = civic_tooltip_not_catalytic
+				value = civic_catalytic_processing
+				value = civic_hive_catalytic_processing
+				value = civic_corporate_catalytic_processing
+			}
 		}
 	}
 
@@ -462,7 +488,10 @@ origin_machine = {
 	possible = {
 		authority = { value = auth_machine_intelligence }
 		civics = {
-			NOT = { value = civic_machine_servitor }
+			NOR = {
+				value = civic_machine_servitor
+				value = civic_machine_catalytic_processing
+			}
 		}
 	}
 
@@ -662,7 +691,6 @@ origin_necrophage = {
 	possible = {
 		ethics = {
 			NOR = {
-				value = ethic_gestalt_consciousness
 				value = ethic_xenophile
 				value = ethic_fanatic_xenophile
 				value = ethic_fanatic_egalitarian
@@ -672,6 +700,7 @@ origin_necrophage = {
 			NOR = {
 				value = civic_death_cult
 				value = civic_death_cult_corporate
+				value = civic_hive_empath
 			}
 		}
 	}
@@ -690,5 +719,35 @@ origin_necrophage = {
 
 	random_weight = {
 		base = 5
+	}
+}
+
+origin_clone_army = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origins_clones.dds"
+	picture = GFX_origin_clone_army
+	flags = { custom_start_screen }
+
+	playable = {
+		host_has_dlc = "Humanoids Species Pack"
+	}
+
+	possible = {
+		ethics = {
+			NOT = {	value = ethic_gestalt_consciousness	}
+		}
+	}
+
+	description = origin_tooltip_clone_army_effects
+
+	traits = {
+		trait = trait_clone_soldier_infertile
+	}
+
+	advanced_start = yes
+
+	random_weight = {
+		base = 0
+		factor = 0
 	}
 }
