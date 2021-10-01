@@ -2499,6 +2499,17 @@ catalytic_technician = {
 			alloys = 3
 		}
 
+		produces = {
+			trigger = {
+				exists = owner
+				owner = {
+					has_deficit = food
+					is_ai = no
+				}
+			}
+			alloys = -1.5
+		}
+
 		upkeep = {
 			food = 9
 		}
