@@ -1,0 +1,262 @@
+# Espionage Assets
+#
+# asset_name_key = {
+#	 passive = { spy_network_levels_add = @asset_spy_network_max } #passive modifier
+#	 active = {} #active modifier
+#	 possible = {} #trigger
+#	 potential = {} # trigger
+#	 categories = {} # primary category always goes first!
+# }
+
+# Gov, Dip, Eco, Tec, Mil
+
+@category_mod = 4
+@asset_spy_network_max = 5
+
+## Subterfuge Assets
+asset_bureaucrat = {
+	appearance = {
+		name_generation_method = random_person
+		portrait_generation_method = random_person
+	}
+	passive = { spy_network_levels_add = @asset_spy_network_max }
+	active = {
+		op_cat_subterfuge_skill_add = @category_mod
+		op_cat_government_skill_add = @category_mod
+	}
+	possible = {}
+	potential = {}
+	categories = { op_cat_subterfuge op_cat_government }
+}
+
+asset_clerk = {
+	appearance = {
+		name_generation_method = random_person
+		portrait_generation_method = random_person
+	}
+
+	passive = { spy_network_levels_add = @asset_spy_network_max }
+	active = {
+		op_cat_subterfuge_skill_add = @category_mod
+		op_cat_diplomacy_skill_add = @category_mod
+	}
+	possible = {}
+	potential = {}
+	categories = { op_cat_subterfuge op_cat_diplomacy }
+}
+
+asset_economist = {
+	appearance = {
+		name_generation_method = random_person
+		portrait_generation_method = random_person
+	}
+
+	passive = { spy_network_levels_add = @asset_spy_network_max }
+	active = {
+		op_cat_subterfuge_skill_add = @category_mod
+		op_cat_economy_skill_add = @category_mod
+	}
+	possible = {}
+	potential = {}
+	categories = { op_cat_subterfuge op_cat_economy }
+}
+
+asset_scientist = {
+	appearance = {
+		name_generation_method = random_person
+		portrait_generation_method = random_person
+	}
+	passive = { spy_network_levels_add = @asset_spy_network_max }
+	active = {
+		op_cat_subterfuge_skill_add = @category_mod
+		op_cat_technology_skill_add = @category_mod
+	}
+	possible = {}
+	potential = {}
+	categories = { op_cat_subterfuge op_cat_technology }
+}
+
+asset_junior_officer = {
+	appearance = {
+		name_generation_method = random_person
+		portrait_generation_method = random_person
+	}
+	passive = { spy_network_levels_add = @asset_spy_network_max }
+	active = {
+		op_cat_subterfuge_skill_add = @category_mod
+		op_cat_military_skill_add = @category_mod
+	}
+	possible = {}
+	potential = {}
+	categories = { op_cat_subterfuge op_cat_military }
+}
+
+## Sabotage Assets
+asset_criminal_underling = {
+	appearance = {
+		name_generation_method = random_person
+		portrait_generation_method = random_person
+	}
+	passive = { spy_network_levels_add = @asset_spy_network_max }
+	active = {
+		op_cat_sabotage_skill_add = @category_mod
+		op_cat_government_skill_add = @category_mod
+	}
+	possible = {}
+	potential = {}
+	categories = { op_cat_sabotage op_cat_government }
+}
+
+asset_attache = {
+	appearance = {
+		name_generation_method = random_person
+		portrait_generation_method = random_person
+	}
+	passive = { spy_network_levels_add = @asset_spy_network_max }
+	active = {
+		op_cat_sabotage_skill_add = @category_mod
+		op_cat_diplomacy_skill_add = @category_mod
+	}
+	possible = {}
+	potential = {}
+	categories = { op_cat_sabotage op_cat_diplomacy }
+}
+
+asset_laborer = {
+	appearance = {
+		name_generation_method = random_person
+		portrait_generation_method = random_person
+	}
+	passive = { spy_network_levels_add = @asset_spy_network_max }
+	active = {
+		op_cat_sabotage_skill_add = @category_mod
+		op_cat_economy_skill_add = @category_mod
+	}
+	possible = {}
+	potential = {}
+	categories = { op_cat_sabotage op_cat_economy }
+}
+
+asset_hacker = {
+	appearance = {
+		name_generation_method = random_person
+		portrait_generation_method = random_person
+	}
+	passive = { spy_network_levels_add = @asset_spy_network_max }
+	active = {
+		op_cat_sabotage_skill_add = @category_mod
+		op_cat_technology_skill_add = @category_mod
+	}
+	possible = {}
+	potential = {}
+	categories = { op_cat_sabotage op_cat_technology }
+}
+
+asset_arms_smuggler = {
+	appearance = {
+		name_generation_method = random_person
+		portrait_generation_method = random_person
+	}
+	passive = { spy_network_levels_add = @asset_spy_network_max }
+	active = {
+		op_cat_sabotage_skill_add = @category_mod
+		op_cat_military_skill_add = @category_mod
+	}
+	possible = {}
+	potential = {}
+	categories = { op_cat_sabotage op_cat_military }
+}
+
+## Manipulation Assets
+asset_agitator = {
+	appearance = {
+		name_generation_method = random_person
+		portrait_generation_method = random_person
+	}
+	passive = { spy_network_levels_add = @asset_spy_network_max }
+	active = {
+		op_cat_manipulation_skill_add = @category_mod
+		op_cat_government_skill_add = @category_mod
+	}
+	possible = {}
+	potential = {}
+	categories = { op_cat_manipulation op_cat_government }
+}
+
+asset_newscaster = {
+	appearance = {
+		name_generation_method = random_person
+		portrait_generation_method = random_person
+	}
+	passive = { spy_network_levels_add = @asset_spy_network_max }
+	active = {
+		op_cat_manipulation_skill_add = @category_mod
+		op_cat_diplomacy_skill_add = @category_mod
+	}
+	possible = {}
+	potential = {}
+	categories = { op_cat_manipulation op_cat_diplomacy }
+}
+
+asset_pop_icon = {
+	appearance = {
+		name_generation_method = random_person
+		portrait_generation_method = random_person
+	}
+	passive = { spy_network_levels_add = @asset_spy_network_max }
+	active = {
+		op_cat_manipulation_skill_add = @category_mod
+		op_cat_economy_skill_add = @category_mod
+	}
+	possible = {}
+	potential = {}
+	categories = { op_cat_manipulation op_cat_economy }
+}
+
+asset_academic = {
+	appearance = {
+		name_generation_method = random_person
+		portrait_generation_method = random_person
+	}
+	passive = { spy_network_levels_add = @asset_spy_network_max }
+	active = {
+		op_cat_manipulation_skill_add = @category_mod
+		op_cat_technology_skill_add = @category_mod
+	}
+	possible = {}
+	potential = {}
+	categories = { op_cat_manipulation op_cat_technology }
+}
+
+asset_veteran = {
+	appearance = {
+		name_generation_method = random_person
+		portrait_generation_method = random_person
+	}
+	passive = { spy_network_levels_add = @asset_spy_network_max }
+	active = {
+		op_cat_manipulation_skill_add = @category_mod
+		op_cat_military_skill_add = @category_mod
+	}
+	possible = {}
+	potential = {}
+	categories = { op_cat_manipulation op_cat_military }
+}
+
+## Special first contact asset
+
+asset_internal_organs = {
+	passive = {}
+	active = {
+		op_cat_manipulation_skill_add = @category_mod
+		op_cat_subterfuge_skill_add = @category_mod
+	}
+	possible = {}
+	potential = {}
+	categories = { op_cat_manipulation op_cat_subterfuge }
+	appearance = {
+		portrait_generation_method = nongenerated
+		name_generation_method = nongenerated
+		default_portrait = GFX_espionage_asset_organs
+	}
+}

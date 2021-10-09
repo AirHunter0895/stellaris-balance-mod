@@ -1,0 +1,2095 @@
+###########################################
+#
+# Nemesis Espionage Events
+# Written by Henrik Thyrwall
+#
+###########################################
+
+namespace = operation
+
+### Weaken Galactic Empire - Stage 1
+espionage_operation_event = {
+	id = operation.6000
+	title = operation.6000.name
+	desc = {
+		text = operation.6000.1.desc
+		trigger = { NOT = { is_active_resolution = "resolution_emperor_isd" } }
+	}
+	desc = {
+		text = operation.6000.2.desc
+		trigger = { is_active_resolution = "resolution_emperor_isd" }
+	}
+	picture = GFX_evt_spy_network
+	show_sound = event_spymaster
+	espionage_operation = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = ACKNOWLEDGED
+	}
+}
+
+### Weaken Galactic Empire - Stage 2
+espionage_operation_event = {
+	id = operation.6005
+	title = operation.6005.name
+	desc = operation.6005.desc
+	picture = GFX_evt_spymaster
+	show_sound = event_spymaster
+	espionage_operation = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = ACKNOWLEDGED
+	}
+}
+
+### Weaken Galactic Empire - Stage 3
+espionage_operation_event = {
+	id = operation.6010
+	title = operation.6010.name
+	desc = {
+		text = operation.6010.1.desc
+		trigger = { has_espionage_operation_flag = assassinate_dignitary }
+	}
+	desc = {
+		text = operation.6010.2.desc
+		trigger = { has_espionage_operation_flag = assassinate_hive_drone }
+	}
+	desc = {
+		text = operation.6010.3.desc
+		trigger = { has_espionage_operation_flag = assassinate_machine_drone }
+	}
+	desc = {
+		text = operation.6010.4.desc
+		trigger = { has_espionage_operation_flag = assassinate_isd_agent }
+	}
+	desc = {
+		text = operation.6010.5.desc
+		trigger = { has_espionage_operation_flag = assassinate_armada_officer }
+	}
+	desc = {
+		text = operation.6010.6.desc
+		trigger = { has_espionage_operation_flag = blow_up_monument }
+	}
+	desc = {
+		text = operation.6010.7.desc
+		trigger = { has_espionage_operation_flag = blow_up_isd_building }
+	}
+	desc = {
+		text = operation.6010.8.desc
+		trigger = { has_espionage_operation_flag = blow_up_armada_building }
+	}
+	desc = {
+		text = operation.6010.9.desc
+		trigger = { has_espionage_operation_flag = hijack_subspace_transmitter }
+	}
+	picture = {
+		trigger = { has_espionage_operation_flag = assassinate_machine_drone }
+		picture = GFX_evt_robot_encounter
+	}
+	picture = {
+		trigger = { has_espionage_operation_flag = assassinate_isd_agent }
+		picture = GFX_evt_cover_blown
+	}
+	picture = {
+		trigger = { has_espionage_operation_flag = assassinate_dignitary }
+		picture = GFX_evt_diplomatic_visit
+	}
+	picture = {
+		trigger = { has_espionage_operation_flag = assassinate_armada_officer }
+		picture = GFX_evt_salute
+	}
+	picture = {
+		trigger = { has_espionage_operation_flag = assassinate_hive_drone }
+		picture = GFX_evt_hive_mind
+	}
+	picture = {
+		trigger = {
+			OR = {
+				has_espionage_operation_flag = blow_up_monument
+				has_espionage_operation_flag = blow_up_isd_building
+				has_espionage_operation_flag = blow_up_armada_building
+				has_espionage_operation_flag = hijack_subspace_transmitter
+			}
+		}
+		picture = GFX_evt_galactic_empire
+	}
+	show_sound = event_default
+	is_triggered_only = yes
+	espionage_operation = yes
+
+	immediate = {
+		set_espionage_operation_progress_locked = yes
+		target = { save_event_target_as = target_country }
+		if = {
+			limit = {
+				any_playable_country = {
+					is_galactic_community_member = yes
+					is_gestalt = no
+				}
+			}
+			random_playable_country = {
+				limit = {
+					is_galactic_community_member = yes
+					is_gestalt = no
+				}
+				save_event_target_as = agent_origin
+			}
+		}
+		else = {
+			random_playable_country = {
+				limit = { is_galactic_community_member = yes }
+				save_event_target_as = agent_origin
+			}
+		}
+		random_list = {
+			# Assassinate Imperial Agent
+			1 = {
+				modifier = { factor = 0 target = { is_gestalt = yes } }
+				set_espionage_operation_flag = assassinate_dignitary
+			}
+			1 = {
+				modifier = { factor = 0 target = { is_hive_empire = no } }
+				set_espionage_operation_flag = assassinate_hive_drone
+			}
+			1 = {
+				modifier = { factor = 0 target = { is_machine_empire = no } }
+				set_espionage_operation_flag = assassinate_machine_drone
+			}
+			1 = {
+				modifier = { factor = 0 NOT = { is_active_resolution = "resolution_emperor_isd" } }
+				set_espionage_operation_flag = assassinate_isd_agent
+			}
+			1 = {
+				modifier = { factor = 0 NOT = { is_active_resolution = "resolution_emperor_imperial_armada" } }
+				set_espionage_operation_flag = assassinate_armada_officer
+			}
+
+			# Blow up target
+			1 = {
+				set_espionage_operation_flag = blow_up_monument
+			}
+			1 = {
+				modifier = { factor = 0 NOT = { is_active_resolution = "resolution_emperor_isd" } }
+				set_espionage_operation_flag = blow_up_isd_building
+			}
+			1 = {
+				modifier = { factor = 0 NOT = { is_active_resolution = "resolution_emperor_imperial_armada" } }
+				set_espionage_operation_flag = blow_up_armada_building
+			}
+
+			# Hijack Subspace Transmitter
+			1 = {
+				set_espionage_operation_flag = hijack_subspace_transmitter
+			}
+		}
+
+		if = {
+			limit = { has_espionage_operation_flag = assassinate_dignitary }
+			event_target:target_country = {
+				create_leader = {
+					class = scientist
+					species = owner_main_species
+					effect = {
+						save_event_target_as = operation_target
+						exile_leader_as = operation_target
+					}
+				}
+			}
+		}
+
+		if = {
+			limit = {
+				OR = {
+					has_espionage_operation_flag = assassinate_isd_agent
+					has_espionage_operation_flag = assassinate_armada_officer
+				}
+			}
+			if = {
+				limit = {
+					any_playable_country = {
+						is_galactic_community_member = yes
+						is_gestalt = no
+					}
+				}
+				random_playable_country = {
+					limit = {
+						is_galactic_community_member = yes
+						is_gestalt = no
+					}
+					save_event_target_as = agent_origin
+				}
+			}
+			else = {
+				random_playable_country = {
+					limit = { is_galactic_community_member = yes }
+					save_event_target_as = agent_origin
+				}
+			}
+			event_target:agent_origin = {
+				create_leader = {
+					class = scientist
+					species = owner_main_species
+					effect = {
+						save_event_target_as = operation_target
+						exile_leader_as = operation_target
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = LAUNCH_OPERATION
+		hidden_effect = {
+			owner = {
+				country_event = { id = operation.6015 days = 1 }
+			}
+		}
+	}
+
+	after = {
+		set_espionage_operation_progress_locked = no
+	}
+}
+
+### Weaken Galactic Empire - Operation Concludes
+country_event = {
+	id = operation.6015
+	title = operation.6015.name
+	desc = {
+		text = operation.6015.1.desc
+		text = operation.6015.2.desc
+		text = operation.6015.3.desc
+		trigger = {
+			from = {
+				OR = {
+					has_espionage_operation_flag = assassinate_dignitary
+					has_espionage_operation_flag = assassinate_isd_agent
+					has_espionage_operation_flag = assassinate_armada_officer
+				}
+			}
+		}
+	}
+	desc = {
+		text = operation.6015.4.desc
+		trigger = { from = { has_espionage_operation_flag = assassinate_hive_drone } }
+	}
+	desc = {
+		text = operation.6015.5.desc
+		trigger = { from = { has_espionage_operation_flag = assassinate_machine_drone } }
+	}
+	desc = {
+		text = operation.6015.6.desc
+		trigger = { from = { has_espionage_operation_flag = blow_up_monument } }
+	}
+	desc = {
+		text = operation.6015.7.desc
+		trigger = { from = { has_espionage_operation_flag = blow_up_isd_building } }
+	}
+	desc = {
+		text = operation.6015.8.desc
+		trigger = { from = { has_espionage_operation_flag = blow_up_armada_building } }
+	}
+	desc = {
+		text = operation.6015.9.desc
+		trigger = {
+			from = { has_espionage_operation_flag = hijack_subspace_transmitter }
+			event_target:target_country = { is_gestalt = no }
+		}
+	}
+	desc = {
+		text = operation.6015.10.desc
+		trigger = {
+			from = { has_espionage_operation_flag = hijack_subspace_transmitter }
+			event_target:target_country = { is_hive_empire = yes }
+		}
+	}
+	desc = {
+		text = operation.6015.11.desc
+		trigger = {
+			from = { has_espionage_operation_flag = hijack_subspace_transmitter }
+			event_target:target_country = { is_machine_empire = yes }
+		}
+	}
+	picture = {
+		trigger = {
+			from = {
+				OR = {
+					has_espionage_operation_flag = assassinate_dignitary
+					has_espionage_operation_flag = assassinate_isd_agent
+					has_espionage_operation_flag = assassinate_armada_officer
+				}
+			}
+		}
+		picture = GFX_evt_emergency_workers
+	}
+	picture = {
+		trigger = {
+			from = { has_espionage_operation_flag = hijack_subspace_transmitter }
+		}
+		picture = GFX_evt_announcement
+	}
+	picture = {
+		trigger = {
+			from = { has_espionage_operation_flag = assassinate_machine_drone }
+		}
+		picture = GFX_evt_exploding_ship
+	}
+	picture = {
+		trigger = {
+			from = { has_espionage_operation_flag = assassinate_hive_drone }
+		}
+		picture = GFX_evt_interior_battle
+	}
+	picture = {
+		trigger = {
+			from = {
+				OR = {
+					has_espionage_operation_flag = blow_up_monument
+					has_espionage_operation_flag = blow_up_isd_building
+					has_espionage_operation_flag = blow_up_armada_building
+				}
+			}
+		}
+		picture = GFX_evt_night_raid
+	}
+	show_sound = event_default
+	is_triggered_only = yes
+
+	immediate = {
+		add_imperial_authority = -20
+		from = {
+			switch = {
+				trigger = has_espionage_operation_flag
+				assassinate_dignitary = { target = { set_country_flag = assassinate_dignitary } }
+				assassinate_isd_agent = { target = { set_country_flag = assassinate_isd_agent } }
+				assassinate_armada_officer = { target = { set_country_flag = assassinate_armada_officer } }
+				assassinate_hive_drone = { target = { set_country_flag = assassinate_hive_drone } }
+				assassinate_machine_drone = { target = { set_country_flag = assassinate_machine_drone } }
+				blow_up_monument = { target = { set_country_flag = blow_up_monument } }
+				blow_up_isd_building = { target = { set_country_flag = blow_up_isd_building } }
+				blow_up_armada_building = { target = { set_country_flag = blow_up_armada_building } }
+				hijack_subspace_transmitter = { target = { set_country_flag = hijack_subspace_transmitter } }
+			}
+		}
+		event_target:target_country = {
+			country_event = { id = operation.6016 }
+		}
+	}
+
+	option = {
+		name = ACKNOWLEDGED
+		from.spynetwork = {
+			add_spy_network_level_on_success_effect = { VALUE = -15 }
+		}
+		tooltip = {
+			add_imperial_authority = -20
+		}
+	}
+
+	after = {
+		hidden_effect = {
+			if = {
+				limit = { exists = event_target:operation_target }
+				event_target:operation_target = {
+					kill_leader = { show_notification = no }
+				}
+			}
+			if = {
+				limit = {
+					owner = { NOT = { has_country_flag = operation_complete_weaken_galactic_empire } }
+				}
+				owner = {
+					change_variable = {
+						which = tinker_tailor_soldier_blorg_achievement_count
+						value = 1
+					}
+					set_country_flag = operation_complete_weaken_galactic_empire
+				}
+			}
+			destroy_espionage_operation = from
+		}
+	}
+}
+
+### Weaken Galactic Empire - Emperor Informed
+country_event = {
+	id = operation.6016
+	title = operation.6016.name
+	desc = {
+		text = operation.6016.1.desc
+		trigger = { has_country_flag = assassinate_dignitary }
+	}
+	desc = {
+		text = operation.6016.2.desc
+		trigger = { has_country_flag = assassinate_isd_agent }
+	}
+	desc = {
+		text = operation.6016.3.desc
+		trigger = { has_country_flag = assassinate_armada_officer }
+	}
+	desc = {
+		text = operation.6016.4.desc
+		trigger = { has_country_flag = assassinate_hive_drone }
+	}
+	desc = {
+		text = operation.6016.5.desc
+		trigger = { has_country_flag = assassinate_machine_drone }
+	}
+	desc = {
+		text = operation.6016.6.desc
+		trigger = { has_country_flag = blow_up_monument }
+	}
+	desc = {
+		text = operation.6016.7.desc
+		trigger = { has_country_flag = blow_up_isd_building }
+	}
+	desc = {
+		text = operation.6016.8.desc
+		trigger = { has_country_flag = blow_up_armada_building }
+	}
+	desc = {
+		text = operation.6016.9.desc
+		trigger = { has_country_flag = hijack_subspace_transmitter }
+	}
+	picture = {
+		trigger = {
+			OR = {
+				has_country_flag = assassinate_dignitary
+				has_country_flag = assassinate_isd_agent
+				has_country_flag = assassinate_armada_officer
+			}
+		}
+		picture = GFX_evt_space_funeral
+	}
+	picture = {
+		trigger = { has_country_flag = hijack_subspace_transmitter }
+		picture = GFX_evt_announcement
+	}
+	picture = {
+		trigger = { has_country_flag = assassinate_machine_drone }
+		picture = GFX_evt_exploding_ship
+	}
+	picture = {
+		trigger = { has_country_flag = assassinate_hive_drone }
+		picture = GFX_evt_interior_battle
+	}
+	picture = {
+		trigger = {
+			OR = {
+				has_country_flag = blow_up_monument
+				has_country_flag = blow_up_isd_building
+				has_country_flag = blow_up_armada_building
+			}
+		}
+		picture = GFX_evt_night_raid
+	}
+	show_sound = event_default
+	is_triggered_only = yes
+
+	option = {
+		name = operation.6016.a
+		tooltip = {
+			add_imperial_authority = -20
+		}
+	}
+
+	after = {
+		remove_country_flag = assassinate_dignitary
+		remove_country_flag = assassinate_isd_agent
+		remove_country_flag = assassinate_armada_officer
+		remove_country_flag = assassinate_hive_drone
+		remove_country_flag = assassinate_machine_drone
+		remove_country_flag = blow_up_monument
+		remove_country_flag = blow_up_isd_building
+		remove_country_flag = blow_up_armada_building
+		remove_country_flag = hijack_subspace_transmitter
+	}
+}
+
+### Spark Rebellion - Stage 1
+espionage_operation_event = {
+	id = operation.6100
+	title = operation.6100.name
+	desc = {
+		text = operation.6100.desc
+		trigger = { NOT = { has_espionage_operation_flag = operation_invalid } }
+	}
+	desc = {
+		text = operation.6100.invalid
+		trigger = { has_espionage_operation_flag = operation_invalid }
+	}
+	picture = {
+		trigger = { NOT = { has_espionage_operation_flag = operation_invalid } }
+		picture = GFX_evt_acquire_asset
+	}
+	picture = {
+		trigger = { has_espionage_operation_flag = operation_invalid }
+		picture = GFX_evt_galactic_empire
+	}
+	show_sound = event_spymaster
+	espionage_operation = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = { imperial_authority >= 80 }
+			set_espionage_operation_flag = operation_invalid
+			set_espionage_operation_progress_locked = yes
+		}
+	}
+
+	option = {
+		name = ACKNOWLEDGED
+		trigger = { NOT = { has_espionage_operation_flag = operation_invalid } }
+	}
+	option = {
+		name = operation.6100.a
+		trigger = { has_espionage_operation_flag = operation_invalid }
+		custom_tooltip = rebellion_operation_invalid_tooltip
+	}
+
+	after = {
+		if = {
+			limit = { has_espionage_operation_flag = operation_invalid }
+			fire_on_action = { on_action = on_operation_cancelled }
+			destroy_espionage_operation = this
+		}
+	}
+}
+
+### Spark Rebellion - Stage 2
+espionage_operation_event = {
+	id = operation.6105
+	title = operation.6105.name
+	desc = {
+		text = operation.6105.1.desc
+		trigger = {
+			NOT = {
+				is_active_resolution = "resolution_emperor_isd"
+				has_espionage_operation_flag = operation_invalid
+			}
+		}
+	}
+	desc = {
+		text = operation.6105.2.desc
+		trigger = {
+			is_active_resolution = "resolution_emperor_isd"
+			NOT = { has_espionage_operation_flag = operation_invalid }
+		}
+	}
+	desc = {
+		text = operation.6100.invalid
+		trigger = { has_espionage_operation_flag = operation_invalid }
+	}
+	picture = {
+		trigger = { NOT = { has_espionage_operation_flag = operation_invalid } }
+		picture = GFX_evt_operative_chase
+	}
+	picture = {
+		trigger = { has_espionage_operation_flag = operation_invalid }
+		picture = GFX_evt_galactic_empire
+	}
+	show_sound = event_default
+	espionage_operation = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = { imperial_authority >= 80 }
+			set_espionage_operation_flag = operation_invalid
+			set_espionage_operation_progress_locked = yes
+		}
+	}
+
+	option = {
+		name = ACKNOWLEDGED
+		trigger = { NOT = { has_espionage_operation_flag = operation_invalid } }
+	}
+	option = {
+		name = operation.6100.a
+		trigger = { has_espionage_operation_flag = operation_invalid }
+		custom_tooltip = rebellion_operation_invalid_tooltip
+	}
+
+	after = {
+		if = {
+			limit = { has_espionage_operation_flag = operation_invalid }
+			fire_on_action = { on_action = on_operation_cancelled }
+			destroy_espionage_operation = this
+		}
+	}
+}
+
+### Spark Rebellion - Stage 3
+espionage_operation_event = {
+	id = operation.6110
+	title = operation.6110.name
+	desc = {
+		text = operation.6110.desc
+		trigger = { NOT = { has_espionage_operation_flag = operation_invalid } }
+	}
+	desc = {
+		text = operation.6100.invalid
+		trigger = { has_espionage_operation_flag = operation_invalid }
+	}
+	picture = {
+		trigger = { NOT = { has_espionage_operation_flag = operation_invalid } }
+		picture = GFX_evt_spy_network
+	}
+	picture = {
+		trigger = { has_espionage_operation_flag = operation_invalid }
+		picture = GFX_evt_galactic_empire
+	}
+	show_sound = event_spymaster
+	espionage_operation = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = { imperial_authority >= 80 }
+			set_espionage_operation_flag = operation_invalid
+			set_espionage_operation_progress_locked = yes
+		}
+	}
+
+	option = {
+		name = ACKNOWLEDGED
+		trigger = { NOT = { has_espionage_operation_flag = operation_invalid } }
+	}
+	option = {
+		name = operation.6100.a
+		trigger = { has_espionage_operation_flag = operation_invalid }
+		custom_tooltip = rebellion_operation_invalid_tooltip
+	}
+
+	after = {
+		if = {
+			limit = { has_espionage_operation_flag = operation_invalid }
+			fire_on_action = { on_action = on_operation_cancelled }
+			destroy_espionage_operation = this
+		}
+	}
+}
+
+### Spark Rebellion - Stage 4
+espionage_operation_event = {
+	id = operation.6115
+	title = operation.6115.name
+	desc = {
+		text = operation.6115.desc
+		trigger = { NOT = { has_espionage_operation_flag = operation_invalid } }
+	}
+	desc = {
+		text = operation.6100.invalid
+		trigger = { has_espionage_operation_flag = operation_invalid }
+	}
+	picture = {
+		trigger = { NOT = { has_espionage_operation_flag = operation_invalid } }
+		picture = GFX_evt_spymaster
+	}
+	picture = {
+		trigger = { has_espionage_operation_flag = operation_invalid }
+		picture = GFX_evt_galactic_empire
+	}
+	show_sound = event_spymaster
+	espionage_operation = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = { imperial_authority >= 80 }
+			set_espionage_operation_flag = operation_invalid
+			set_espionage_operation_progress_locked = yes
+		}
+	}
+
+	option = {
+		name = ACKNOWLEDGED
+		trigger = { NOT = { has_espionage_operation_flag = operation_invalid } }
+	}
+	option = {
+		name = operation.6100.a
+		trigger = { has_espionage_operation_flag = operation_invalid }
+		custom_tooltip = rebellion_operation_invalid_tooltip
+	}
+
+	after = {
+		if = {
+			limit = { has_espionage_operation_flag = operation_invalid }
+			fire_on_action = { on_action = on_operation_cancelled }
+			destroy_espionage_operation = this
+		}
+	}
+}
+
+### Spark Rebellion - Stage 5
+espionage_operation_event = {
+	id = operation.6120
+	title = operation.6120.name
+	desc = {
+		text = operation.6120.desc
+		trigger = { NOT = { has_espionage_operation_flag = operation_invalid } }
+	}
+	desc = {
+		text = operation.6100.invalid
+		trigger = { has_espionage_operation_flag = operation_invalid }
+	}
+	picture = GFX_evt_galactic_empire
+	show_sound = event_spymaster
+	espionage_operation = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = { imperial_authority >= 80 }
+			set_espionage_operation_flag = operation_invalid
+			set_espionage_operation_progress_locked = yes
+		}
+	}
+
+	option = {
+		name = LAUNCH_OPERATION
+		trigger = { NOT = { has_espionage_operation_flag = operation_invalid } }
+		spynetwork = {
+			add_spy_network_level_on_success_effect = { VALUE = -50 }
+		}
+		hidden_effect = {
+			owner = {
+				country_event = { id = emperor.101 }
+			}
+		}
+	}
+	option = {
+		name = operation.6100.a
+		trigger = { has_espionage_operation_flag = operation_invalid }
+		custom_tooltip = rebellion_operation_invalid_tooltip
+	}
+
+	after = {
+		if = {
+			limit = { has_espionage_operation_flag = operation_invalid }
+			fire_on_action = { on_action = on_operation_cancelled }
+			destroy_espionage_operation = this
+		}
+	}
+}
+
+### Arm Privateers - Stage 1
+espionage_operation_event = {
+	id = operation.6200
+	title = operation.6200.name
+	desc = operation.6200.desc
+	picture = {
+		trigger = {
+			target = {
+				is_hive_empire = no
+				is_machine_empire = no
+			}
+		}
+		picture = GFX_evt_spy_network
+	}
+	picture = {
+		trigger = {
+			target = { is_machine_empire = yes }
+		}
+		picture = GFX_evt_synth_sabotage
+	}
+	picture = {
+		trigger = {
+			target = { is_hive_empire = yes }
+		}
+		picture = GFX_evt_hive_mind
+	}
+	show_sound = event_default
+	espionage_operation = yes
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				target = { has_country_flag = target_of_operation_arm_privateers }
+			}
+			set_espionage_operation_progress_locked = yes
+			target = { save_event_target_as = target_country }
+			espionage_operation_event = { id = operation.6207 }
+		}
+	}
+
+	option = {
+		name = ACKNOWLEDGED
+	}
+}
+
+### Arm Privateers - Stage 2
+espionage_operation_event = {
+	id = operation.6201
+	title = operation.6201.name
+	desc = {
+		text = operation.6201.1.desc
+		trigger = {
+			target = {
+				is_hive_empire = no
+				is_machine_empire = no
+			}
+		}
+	}
+	desc = {
+		text = operation.6201.2.desc
+		trigger = {
+			target = { is_machine_empire = yes }
+		}
+	}
+	desc = {
+		text = operation.6201.3.desc
+		trigger = {
+			target = { is_hive_empire = yes }
+		}
+	}
+	picture = {
+		trigger = {
+			target = {
+				is_hive_empire = no
+				is_machine_empire = no
+			}
+		}
+		picture = GFX_evt_smugglers_in_bar
+	}
+	picture = {
+		trigger = {
+			target = { is_machine_empire = yes }
+		}
+		picture = GFX_evt_robot_encounter
+	}
+	picture = {
+		trigger = {
+			target = { is_hive_empire = yes }
+		}
+		picture = GFX_evt_face_off_in_space
+	}
+	show_sound = event_default
+	espionage_operation = yes
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				target = { has_country_flag = target_of_operation_arm_privateers }
+			}
+			set_espionage_operation_progress_locked = yes
+			target = { save_event_target_as = target_country }
+			espionage_operation_event = { id = operation.6207 }
+		}
+	}
+
+	option = {
+		name = ACKNOWLEDGED
+	}
+}
+
+### Arm Privateers - Stage 3
+espionage_operation_event = {
+	id = operation.6202
+	title = operation.6202.name
+	desc = operation.6202.desc
+	picture = GFX_evt_gunrunning
+	show_sound = event_inhabited_solar_system
+	espionage_operation = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		target = { save_event_target_as = target_country }
+		if = {
+			limit = {
+				target = { has_country_flag = target_of_operation_arm_privateers }
+			}
+			set_espionage_operation_progress_locked = yes
+			espionage_operation_event = { id = operation.6207 }
+		}
+	}
+
+	option = {
+		name = LAUNCH_OPERATION
+		if = {
+			limit = {
+				target = {
+					NOT = { has_country_flag = target_of_operation_arm_privateers }
+				}
+			}
+			spynetwork = { add_spy_network_level_on_success_effect = { VALUE = -60 } }
+			hidden_effect = {
+				owner = {
+					country_event = { id = operation.6204 }
+				}
+			}
+		}
+	}
+}
+
+### Arm Privateers - Intermediate setup (in case of double-whammy)
+country_event = {
+	id = operation.6204
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				event_target:target_country = {
+					NOT = { has_country_flag = target_of_operation_arm_privateers }
+				}
+			}
+			event_target:target_country = {
+				if = {
+					limit = {
+						any_owned_starbase = { has_starbase_size = starbase_outpost }
+					}
+					random_owned_starbase = {
+						limit = { has_starbase_size = starbase_outpost }
+						solar_system = {
+							save_event_target_as = privateer_system
+							create_privateer_country = yes
+							create_privateer_fleet = yes
+						}
+					}
+				}
+				else = {
+					random_system_within_border = {
+						save_event_target_as = privateer_system
+						create_privateer_country = yes
+						create_privateer_fleet = yes
+					}
+				}
+			}
+			country_event = { id = operation.6205 } #Conclusion (instigator)
+			event_target:target_country = {
+				country_event = { id = operation.6206 } #Conclusion (victim)
+				set_saved_date = {
+					key = target_of_operation_arm_privateers
+					days_from_present = 1080
+					expires = 1080
+				}
+			}
+		}
+		else = {
+			from = {
+				espionage_operation_event = { id = operation.6207 } #Privateers already at large; operation aborts
+			}
+		}
+	}
+}
+
+### Arm Privateers - Conclusion (Instigator)
+country_event = {
+	id = operation.6205
+	title = operation.6205.name
+	desc = {
+		text = operation.6205.1.desc
+		trigger = {
+			event_target:target_country = {
+				is_hive_empire = no
+				is_machine_empire = no
+			}
+		}
+	}
+	desc = {
+		text = operation.6205.2.desc
+		trigger = {
+			event_target:target_country = { is_machine_empire = yes }
+		}
+	}
+	desc = {
+		text = operation.6205.3.desc
+		trigger = {
+			event_target:target_country = { is_hive_empire = yes }
+		}
+	}
+	picture = GFX_evt_pirates_attacking_cargo
+	show_sound = event_space_battle
+	location = event_target:privateer_system
+
+	is_triggered_only = yes
+
+	immediate = {
+		#Notify anyone else attempting Arm Privateers on this target
+		if = {
+			limit = {
+				any_playable_country = {
+					NOT = { is_same_value = root }
+					count_espionage_operation = {
+						limit = {
+							has_espionage_type = operation_arm_privateers
+							target = { is_same_value = event_target:target_country }
+						}
+						count >= 1
+					}
+				}
+			}
+			every_playable_country = {
+				limit = {
+					NOT = { is_same_value = root }
+					count_espionage_operation = {
+						limit = {
+							has_espionage_type = operation_arm_privateers
+							target = { is_same_value = event_target:target_country }
+						}
+						count >= 1
+					}
+				}
+				random_espionage_operation = {
+					limit = {
+						has_espionage_type = operation_arm_privateers
+						target = { is_same_value = event_target:target_country } #Redundant only so long as operations are limited to one at a time
+					}
+					espionage_operation_event = { id = operation.6207 days = 2 } #Privateers already at large
+				}
+			}
+		}
+	}
+
+	option = {
+		name = EXCELLENT
+		owner = {
+			if = {
+				limit = { has_ascension_perk = ap_become_the_crisis }
+				complete_crisis_objective = crisobj_perform_upsetting_operations
+			}
+		}
+	}
+
+	after = {
+		hidden_effect = {
+			if = {
+				limit = {
+					owner = { NOT = { has_country_flag = operation_complete_arm_privateers } }
+				}
+				owner = {
+					change_variable = {
+						which = tinker_tailor_soldier_blorg_achievement_count
+						value = 1
+					}
+					set_country_flag = operation_complete_arm_privateers
+				}
+			}
+		}
+		destroy_espionage_operation = fromfrom
+	}
+}
+
+### Arm Privateers - Conclusion (Victim)
+country_event = {
+	id = operation.6206
+	title = operation.6206.name
+	desc = {
+		text = operation.6206.1.desc
+		trigger = {
+			is_hive_empire = no
+			is_machine_empire = no
+		}
+	}
+	desc = {
+		text = operation.6206.2.desc
+		trigger = {
+			is_machine_empire = yes
+		}
+	}
+	desc = {
+		text = operation.6206.3.desc
+		trigger = {
+			is_hive_empire = yes
+		}
+	}
+	picture = GFX_evt_pirates_attacking_cargo
+	show_sound = event_space_battle
+	location = event_target:privateer_system
+
+	is_triggered_only = yes
+
+	option = {
+		name = operation.6206.a
+	}
+}
+
+### Arm Privateers - Privateers already at large
+espionage_operation_event = {
+	id = operation.6207
+	title = operation.6207.name
+	desc = {
+		text = operation.6207.1.desc
+		trigger = {
+			owner = { is_gestalt = no }
+		}
+	}
+	desc = {
+		text = operation.6207.2.desc
+		trigger = {
+			owner = { is_gestalt = no }
+		}
+	}
+	picture = GFX_evt_pirates_attacking_cargo
+	show_sound = event_space_battle
+	location = event_target:privateer_system
+	is_triggered_only = yes
+
+	option = {
+		name = OK
+		destroy_espionage_operation = root
+	}
+}
+
+### Extort Favors - Stage 1
+espionage_operation_event = {
+	id = operation.6250
+	title = operation.6250.name
+	desc = operation.6250.desc
+	picture = GFX_evt_spy_network
+	show_sound = event_spymaster
+	espionage_operation = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = ACKNOWLEDGED
+	}
+}
+
+### Extort Favors - Stage 2
+espionage_operation_event = {
+	id = operation.6251
+	title = operation.6251.name
+	desc = operation.6251.desc
+	picture = GFX_evt_spymaster
+	show_sound = event_spymaster
+	espionage_operation = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = ACKNOWLEDGED
+	}
+}
+
+### Extort Favors - Stage 3
+espionage_operation_event = {
+	id = operation.6252
+	title = operation.6252.name
+	desc = {
+		text = operation.6252.1.desc
+		text = operation.6252.3.desc
+		text = operation.6252.4.desc
+		text = operation.6252.5.desc
+		trigger = {
+			target = { is_gestalt = no }
+		}
+	}
+	desc = {
+		text = operation.6252.6.desc
+		text = operation.6252.7.desc
+		trigger = {
+			target = { is_machine_empire = yes }
+		}
+	}
+	desc = {
+		text = operation.6252.8.desc
+		text = operation.6252.9.desc
+		trigger = {
+			target = { is_hive_empire = yes }
+		}
+	}
+	desc = operation.6252.2.desc
+	picture = GFX_evt_intelligence_report
+	show_sound = event_spymaster
+	espionage_operation = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		target = {
+			save_event_target_as = target_country
+			random_relation = {
+				limit = {
+					is_country_type = default
+					is_gestalt = no
+					NOT = { is_country = root.target }
+					has_communications = root.target
+					NOT = { is_same_species = root.target }
+				}
+				save_event_target_as = scandal_species
+			}
+		}
+	}
+
+	option = {
+		name = LAUNCH_OPERATION
+		hidden_effect = {
+			owner = {
+				country_event = { id = operation.6255 }
+			}
+		}
+	}
+}
+
+### Extort Favors - Conclusion
+country_event = {
+	id = operation.6255
+	title = operation.6255.name
+	desc = operation.6255.desc
+	picture = GFX_evt_hand_shake
+	show_sound = event_hand_shake
+
+	is_triggered_only = yes
+
+	option = {
+		name = EXCELLENT
+		locked_random_list = {
+			80 = {
+				add_favors = {
+					target = event_target:target_country
+					value = 1
+				}
+			}
+			20 = {
+				add_favors = {
+					target = event_target:target_country
+					value = 2
+				}
+			}
+		}
+		from.spynetwork = {
+			add_spy_network_level_on_success_effect = { VALUE = -20 }
+		}
+		owner = {
+			if = {
+				limit = { has_ascension_perk = ap_become_the_crisis }
+				complete_crisis_objective = crisobj_perform_upsetting_operations
+			}
+		}
+	}
+
+	after = {
+		hidden_effect = {
+			if = {
+				limit = {
+					owner = { NOT = { has_country_flag = operation_complete_extort_favors } }
+				}
+				owner = {
+					change_variable = {
+						which = tinker_tailor_soldier_blorg_achievement_count
+						value = 1
+					}
+					set_country_flag = operation_complete_extort_favors
+				}
+			}
+			destroy_espionage_operation = from
+		}
+	}
+}
+
+### Target Seditionists
+espionage_operation_event = {
+	id = operation.6300
+	title = operation.6300.name
+	desc = operation.6300.desc
+	picture = GFX_evt_spy_network
+	show_sound = event_spymaster
+	espionage_operation = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = ACKNOWLEDGED
+	}
+}
+
+### Target Seditionists - Stage 2
+espionage_operation_event = {
+	id = operation.6305
+	title = operation.6305.name
+	desc = operation.6305.desc
+	picture = GFX_evt_alien_propaganda
+	show_sound = event_spymaster
+	espionage_operation = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = ACKNOWLEDGED
+	}
+}
+
+### Target Seditionists - Stage 3
+espionage_operation_event = {
+	id = operation.6310
+	title = operation.6310.name
+	desc = {
+		text = operation.6310.1.desc
+		trigger = {
+			target = { is_gestalt = no }
+			has_espionage_operation_flag = murder
+		}
+	}
+	desc = {
+		text = operation.6310.2.desc
+		trigger = {
+			target = { is_gestalt = no }
+			has_espionage_operation_flag = arrest
+		}
+	}
+	desc = {
+		text = operation.6310.3.desc
+		trigger = {
+			target = { is_gestalt = yes }
+		}
+	}
+	picture = GFX_evt_spymaster
+	show_sound = event_spymaster
+	espionage_operation = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = { owner = { is_gestalt = no } }
+			random_list = {
+				50 = { set_espionage_operation_flag = arrest }
+				50 = { set_espionage_operation_flag = murder }
+			}
+		}
+		set_espionage_operation_progress_locked = yes
+		target = { save_event_target_as = target_country }
+	}
+
+	option = {
+		name = LAUNCH_OPERATION
+		hidden_effect = {
+			owner = {
+				country_event = { id = operation.6315 days = 1 }
+			}
+		}
+	}
+
+	after = {
+		set_espionage_operation_progress_locked = no
+	}
+}
+
+### Target Seditionists - Operation Concludes
+country_event = {
+	id = operation.6315
+	title = operation.6315.name
+	desc = {
+		text = operation.6315.1.desc
+		trigger = {
+			NOT = { is_active_resolution = "resolution_emperor_isd" }
+			from = { has_espionage_operation_flag = arrest }
+		}
+	}
+	desc = {
+		text = operation.6315.2.desc
+		trigger = {
+			is_active_resolution = "resolution_emperor_isd"
+			from = { has_espionage_operation_flag = arrest }
+		}
+	}
+	desc = {
+		text = operation.6315.3.desc
+		trigger = {
+			NOT = { is_active_resolution = "resolution_emperor_isd" }
+			OR = {
+				from = { has_espionage_operation_flag = murder }
+				event_target:target_country = { is_gestalt = yes }
+			}
+		}
+	}
+	desc = {
+		text = operation.6315.4.desc
+		trigger = {
+			is_active_resolution = "resolution_emperor_isd"
+			OR = {
+				from = { has_espionage_operation_flag = murder }
+				event_target:target_country = { is_gestalt = yes }
+			}
+		}
+	}
+	picture = GFX_evt_cover_blown
+	show_sound = event_default
+	is_triggered_only = yes
+
+	immediate = {
+		event_target:target_country = {
+			if = {
+				limit = {
+					any_envoy = {
+						has_envoy_task = { task = undermine_imperial_authority }
+					}
+				}
+				random_envoy = {
+					limit = {
+						has_envoy_task = { task = undermine_imperial_authority }
+					}
+					save_event_target_as = envoy_to_kill
+				}
+			}
+			else = {
+				random_envoy = {
+					save_event_target_as = envoy_to_kill
+				}
+			}
+		}
+		event_target:target_country = {
+			if = {
+				limit = { from = { has_espionage_operation_flag = arrest } }
+				set_country_flag = target_seditionists_arrest
+			}
+			else = {
+				set_country_flag = target_seditionists_murder
+			}
+			country_event = { id = operation.6316 days = 5 }
+		}
+
+	}
+
+	option = {
+		name = operation.6315.a
+		custom_tooltip = undermining_tooltip_emperor
+	}
+
+	after = {
+		destroy_espionage_operation = from
+	}
+}
+
+### Target Seditionists - Target Informed
+country_event = {
+	id = operation.6316
+	title = operation.6316.name
+	desc = {
+		text = operation.6316.1.desc
+		trigger = {
+			NOT = { is_active_resolution = "resolution_emperor_isd" }
+			has_country_flag = target_seditionists_arrest
+		}
+	}
+	desc = {
+		text = operation.6316.2.desc
+		trigger = {
+			is_active_resolution = "resolution_emperor_isd"
+			has_country_flag = target_seditionists_arrest
+		}
+	}
+	desc = {
+		text = operation.6316.3.desc
+		trigger = {
+			has_country_flag = target_seditionists_murder
+		}
+	}
+	picture = GFX_evt_cover_blown
+	show_sound = event_default
+	is_triggered_only = yes
+
+	immediate = {
+		add_modifier = {
+			modifier = undermining_efforts_stalled
+			days = 1800
+		}
+	}
+
+	option = {
+		name = operation.6316.a
+		if = {
+			limit = { exists = event_target:envoy_to_kill }
+			event_target:envoy_to_kill = {
+				kill_leader = { show_notification = no }
+			}
+		}
+		custom_tooltip = undermining_tooltip_victim
+	}
+
+	after = {
+		hidden_effect = {
+			remove_country_flag = target_seditionists_arrest
+			remove_country_flag = target_seditionists_murder
+		}
+	}
+}
+
+### Target Seditionists - Critical Failure
+country_event = {
+	id = operation.6320
+	title = operation.6320.name
+	desc = operation.6320.desc
+	picture = GFX_evt_cover_blown
+	show_sound = event_default
+	is_triggered_only = yes
+
+	immediate = {
+		from.target = {
+			save_event_target_as = target_country
+			country_event = { id = operation.6321 }
+		}
+		add_imperial_authority = -10
+	}
+
+	option = {
+		name = operation.6320.a
+		tooltip = {
+			add_imperial_authority = -10
+		}
+		from = {
+			set_espionage_operation_progress_locked = no
+			fire_on_action = { on_action = on_operation_cancelled }
+			destroy_espionage_operation = this
+		}
+	}
+}
+
+### Target Seditionists - Critical Failure - Target Notified
+country_event = {
+	id = operation.6321
+	title = operation.6321.name
+	desc = operation.6321.desc
+	picture = GFX_evt_cover_blown
+	show_sound = event_default
+	is_triggered_only = yes
+
+	option = {
+		name = GOOD
+		tooltip = {
+			add_imperial_authority = -10
+		}
+	}
+}
+
+
+###########################################
+#
+# Nemesis Espionage Events
+# Written by Pierre du Plessis
+#
+###########################################
+
+############################
+# SUBTERFUGE: SLEEPER CELLS
+############################
+
+# First Event
+espionage_operation_event = {
+	id = operation.8000
+	title = operation.8000.name
+	desc = operation.8000.desc
+	espionage_operation = yes
+	picture = GFX_evt_spymaster
+	show_sound = event_default
+	is_triggered_only = yes
+
+	option = { name = ACKNOWLEDGED }
+}
+
+# Launch Operation
+espionage_operation_event = {
+	id = operation.8001
+	title = operation.8001.name
+	desc = operation.8001.desc
+	espionage_operation = yes
+	picture = GFX_evt_intelligence_report
+	show_sound = event_default
+	is_triggered_only = yes
+
+	immediate = {
+		set_espionage_operation_progress_locked = yes
+	}
+
+	option = {
+		name = LAUNCH_OPERATION
+		hidden_effect = {
+			espionage_operation_event = { id = operation.8002 days = 15 }
+		}
+	}
+
+	after = {
+		set_espionage_operation_progress_locked = no
+	}
+}
+
+# Finalé (in operation scope, so we don't need to clean up the flags afterwards)
+espionage_operation_event = {
+	id = operation.8002
+	title = operation.8002.name
+	desc = {
+		trigger = {
+			switch = {
+				trigger = has_espionage_operation_flag
+				sleeper_cells_boring = { text = operation.8002.desc.boring }
+				sleeper_cells_materialist = { text = operation.8002.desc.materialist }
+				sleeper_cells_megacorp = { text = operation.8002.desc.megacorp }
+				sleeper_cells_spiritualist = { text = operation.8002.desc.spiritualist }
+				sleeper_cells_authoritarian_imperial = { text = operation.8002.desc.authoritarian.imperial }
+				sleeper_cells_authoritarian_non_imperial = { text = operation.8002.desc.authoritarian.non_imperial }
+				sleeper_cells_militarist = { text = operation.8002.desc.militarist }
+				sleeper_cells_hive = { text = operation.8002.desc.hive }
+				sleeper_cells_hive_on_hive = { text = operation.8002.desc.hive_on_hive }
+				sleeper_cells_machine = { text = operation.8002.desc.machine }
+				sleeper_cells_machine_on_machine = { text = operation.8002.desc.machine_on_machine }
+				default = { text = operation.8002.desc.boring }
+			}
+		}
+	}
+	picture = {
+		trigger = {
+			target = {
+				is_machine_empire = yes
+			}
+		}
+		picture = GFX_evt_synth_sabotage
+	}
+	picture = {
+		trigger = {
+			target = {
+				is_machine_empire = no
+			}
+		}
+		picture = GFX_evt_spy_network
+	}
+	location = target.capital_scope
+	show_sound = event_espionage_concluded
+	is_triggered_only = yes
+
+	immediate = {
+		random_list = {
+			100 = {
+				modifier = {
+					factor = 0
+					target = { is_materialist = no }
+				}
+				modifier = {
+					factor = 2
+					target = { has_ethic = ethic_fanatic_materialist }
+				}
+				set_espionage_operation_flag = sleeper_cells_materialist
+			}
+			300 = {
+				modifier = {
+					factor = 0
+					target = { is_megacorp = no }
+				}
+				set_espionage_operation_flag = sleeper_cells_megacorp
+			}
+			100 = {
+				modifier = {
+					factor = 0
+					target = { is_spiritualist = no }
+				}
+				modifier = {
+					factor = 2
+					target = { has_ethic = ethic_fanatic_spiritualist }
+				}
+				set_espionage_operation_flag = sleeper_cells_spiritualist
+			}
+			100 = {
+				modifier = {
+					factor = 0
+					target = {
+						OR = {
+							is_authoritarian = no
+							has_authority = auth_imperial
+						}
+					}
+				}
+				modifier = {
+					factor = 2
+					target = { has_ethic = ethic_fanatic_authoritarian }
+				}
+				set_espionage_operation_flag = sleeper_cells_authoritarian_non_imperial
+			}
+			100 = {
+				modifier = {
+					factor = 0
+					target = {
+						OR = {
+							is_authoritarian = no
+							NOT = { has_authority = auth_imperial }
+						}
+					}
+				}
+				modifier = {
+					factor = 2
+					target = { has_ethic = ethic_fanatic_authoritarian }
+				}
+				set_espionage_operation_flag = sleeper_cells_authoritarian_imperial
+			}
+			100 = {
+				modifier = {
+					factor = 0
+					target = { is_militarist = no }
+				}
+				modifier = {
+					factor = 2
+					target = { has_ethic = ethic_fanatic_militarist }
+				}
+				set_espionage_operation_flag = sleeper_cells_militarist
+			}
+			100 = {
+				modifier = {
+					factor = 0
+					OR = {
+						owner = { is_hive_empire = yes }
+						target = { is_hive_empire = no }
+					}
+				}
+				set_espionage_operation_flag = sleeper_cells_hive
+			}
+			100 = {
+				modifier = {
+					factor = 0
+					OR = {
+						owner = { is_hive_empire = no }
+						target = { is_hive_empire = no }
+					}
+				}
+				set_espionage_operation_flag = sleeper_cells_hive_on_hive
+			}
+			100 = {
+				modifier = {
+					factor = 0
+					OR = {
+						owner = { is_machine_empire = yes }
+						target = { is_machine_empire = no }
+					}
+				}
+				set_espionage_operation_flag = sleeper_cells_machine
+			}
+			100 = {
+				modifier = {
+					factor = 0
+					OR = {
+						owner = { is_machine_empire = no }
+						target = { is_machine_empire = no }
+					}
+				}
+				set_espionage_operation_flag = sleeper_cells_machine_on_machine
+			}
+			50 = {
+				modifier = {
+					factor = 0.01
+					target = {
+						is_pacifist = no
+						is_xenophile = no
+						is_egalitarian = no
+					}
+				}
+				modifier = {
+					factor = 0
+					target = {
+						is_gestalt = yes
+					}
+				}
+				modifier = {
+					factor = 2
+					target = {
+						OR = {
+							has_ethic = ethic_fanatic_pacifist
+							has_ethic = ethic_fanatic_xenophile
+							has_ethic = ethic_fanatic_egalitarian
+						}
+					}
+				}
+				set_espionage_operation_flag = sleeper_cells_boring
+			}
+		}
+	}
+
+	option = {
+		name = EXCELLENT
+		spynetwork = {
+			add_modifier = {
+				modifier = sleeper_cell_operation_success
+				years = 15
+			}
+			set_saved_date = {
+				key = sleeper_cell_success
+				days_from_present = 5400
+				expires = 5400
+			}
+		}
+	}
+
+	option = { #Collateral damage (module)
+		name = operation.8002.b
+		icon = {
+			icon = GFX_espionage_asset_icon
+			text = ESPIONAGE_OPERATION_ASSET_EVENT_OPTION
+		}
+		trigger = {
+			has_espionage_asset_subterfuge = yes
+		}
+		spynetwork = {
+			add_modifier = {
+				modifier = sleeper_cell_operation_success
+				years = 30
+			}
+			set_saved_date = {
+				key = sleeper_cell_success
+				days_from_present = 10800
+				expires = 10800
+			}
+		}
+		destroy_espionage_asset_subterfuge = yes
+	}
+
+	after = {
+		hidden_effect = {
+			if = {
+				limit = {
+					owner = { NOT = { has_country_flag = operation_complete_sleeper_cells } }
+				}
+				owner = {
+					change_variable = {
+						which = tinker_tailor_soldier_blorg_achievement_count
+						value = 1
+					}
+					set_country_flag = operation_complete_sleeper_cells
+				}
+			}
+		}
+		destroy_espionage_operation = this
+	}
+}
+
+
+
+### Diplomatic Incident
+
+# First Event
+espionage_operation_event = {
+	id = operation.8200
+	title = operation.8200.name
+	desc = operation.8200.desc
+	espionage_operation = yes
+	picture = GFX_evt_decryption
+	show_sound = event_default
+	is_triggered_only = yes
+
+	option = { name = ACKNOWLEDGED }
+}
+
+# Second Event
+espionage_operation_event = {
+	id = operation.8205
+	title = operation.8205.name
+	desc = operation.8205.desc
+	espionage_operation = yes
+	picture = GFX_evt_acquire_asset
+	show_sound = event_default
+	is_triggered_only = yes
+
+	option = { name = GOOD }
+}
+
+# Third Event: Launch Operation
+espionage_operation_event = {
+	id = operation.8210
+	title = operation.8210.name
+	desc = {
+		trigger = {
+			target = { NOT = { has_country_flag = recent_envoy_event } }
+		}
+		text = operation.8210.desc
+	}
+	desc = {
+		trigger = {
+			target = { has_country_flag = recent_envoy_event }
+		}
+		text = operation.8210.desc.no_go
+	}
+	espionage_operation = yes
+	picture = GFX_evt_spy_network
+	show_sound = event_spymaster
+	is_triggered_only = yes
+
+	immediate = {
+		set_espionage_operation_progress_locked = yes
+		if = {
+			limit = {
+				target = { has_country_flag = recent_envoy_event }
+			}
+			set_espionage_operation_flag = operation_failed #country flag is timed, so could change between locs being generated and option being clicked
+		}
+	}
+
+	option = {
+		name = LAUNCH_OPERATION
+		trigger = {
+			NOT = { has_espionage_operation_flag = operation_failed }
+		}
+
+		hidden_effect = {
+			target = {
+				fire_on_action = {
+					on_action = on_five_year_random_pulse_country_negative_list
+				}
+			}
+			espionage_operation_event = { id = operation.8220 days = 15 }
+		}
+	}
+
+	option = {
+		name = UNFORTUNATE
+		trigger = {
+			has_espionage_operation_flag = operation_failed
+		}
+
+		hidden_effect = {
+			spynetwork = {
+				set_saved_date = {
+					key = operation_diplomatic_incident_timer
+					days_from_present = 2160 #6 years
+					expires = 2160
+				}
+			}
+		}
+	}
+
+	after = {
+		set_espionage_operation_progress_locked = no
+		if = {
+			limit = {
+				has_espionage_operation_flag = operation_failed
+			}
+			destroy_espionage_operation = this
+		}
+	}
+}
+
+#Gatekeeper: Did the operation succeed? (I.e. could any events fire?)
+espionage_operation_event = {
+	id = operation.8220
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		if = { #Succeed
+			limit = { has_espionage_operation_flag = operation_succeeded }
+			espionage_operation_event = { id = operation.8230 }
+			spynetwork = {
+				set_saved_date = {
+					key = operation_diplomatic_incident_timer
+					days_from_present = 3600 #10 years
+					expires = 3600
+				}
+			}
+		}
+		else = { #Fail
+			espionage_operation_event = { id = operation.8225 }
+			spynetwork = {
+				set_saved_date = {
+					key = operation_diplomatic_incident_timer
+					days_from_present = 2160 #6 years
+					expires = 2160
+				}
+			}
+		}
+	}
+}
+
+# Finalé (failed)
+espionage_operation_event = {
+	id = operation.8225
+	title = operation.8225.name
+	desc = operation.8225.desc
+	picture = GFX_evt_tradedeal
+	location = target.capital_scope
+	show_sound = event_espionage_concluded
+	is_triggered_only = yes
+
+
+	option = {
+		name = UNFORTUNATE
+		spynetwork = {
+			add_spy_network_level = -10
+		}
+	}
+
+	after = {
+		fire_on_action = { on_action = on_operation_cancelled }
+		destroy_espionage_operation = this
+	}
+}
+
+# Finalé (succeeded)
+espionage_operation_event = {
+	id = operation.8230
+	title = operation.8230.name
+	desc = {
+		trigger = {
+			switch = {
+				trigger = has_espionage_operation_flag
+				salacious_affair = { text = operation.8230.desc.salacious_affair } #with event target offended_party
+				salacious_affair_self = { text = operation.8230.desc.salacious_affair_self } #in which event target offended_party = root
+				galactic_comedy = { text = operation.8230.desc.galactic_comedy }
+				insulting_envoy = { text = operation.8230.desc.insulting_envoy } #with event target offended_party
+				insulting_envoy_self = { text = operation.8230.desc.insulting_envoy_self } #in which event target offended_party = root
+				galcom_lobbying = { text = operation.8230.desc.lobbying }
+				eloping_envoy = { text = operation.8230.desc.elope }
+				wayward_envoy = { text = operation.8230.desc.wayward }
+				substance_abuse = { text = operation.8230.desc.substances }
+			}
+		}
+	}
+	picture = GFX_evt_tradedeal
+	location = target.capital_scope
+	show_sound = event_espionage_concluded
+	is_triggered_only = yes
+
+	immediate = {
+		random_country = {
+			limit = {
+				has_country_flag = offended_party@root
+			}
+			save_event_target_as = offended_party
+			remove_country_flag = offended_party@root
+		}
+	}
+
+	option = {
+		name = EXCELLENT
+
+		custom_tooltip = diplo_incident_succeeded
+		spynetwork = {
+			add_spy_network_level_on_success_effect = { VALUE = -10 }
+		}
+		owner = {
+			if = {
+				limit = { has_ascension_perk = ap_become_the_crisis }
+				complete_crisis_objective = crisobj_perform_upsetting_operations
+			}
+		}
+	}
+
+	after = {
+		hidden_effect = {
+			if = {
+				limit = {
+					owner = { NOT = { has_country_flag = operation_complete_diplo_incident } }
+				}
+				owner = {
+					change_variable = {
+						which = tinker_tailor_soldier_blorg_achievement_count
+						value = 1
+					}
+					set_country_flag = operation_complete_diplo_incident
+				}
+			}
+		}
+		destroy_espionage_operation = this
+	}
+}

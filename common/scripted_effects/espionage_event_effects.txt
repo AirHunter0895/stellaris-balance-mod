@@ -1,0 +1,2420 @@
+#############################
+# ESPIONAGE SCRIPTED EFFECTS
+#############################
+
+@AssetCategoryDownWeight = 0.4 #Factor for however *less* likely you are to receive an Asset which is in the same category as the current Operation
+@AssetTypeWeight = 10 #Factor for however more or less likely you are to receive an Asset in the same category as one which is assigned to Acquire Asset
+
+# Operation scope (for Acquire Asset and operation random events)
+espionage_acquire_asset_regular = {
+	random_list = {
+		1 = {
+			modifier = {
+				factor = @AssetCategoryDownWeight
+				has_espionage_category = op_cat_subterfuge
+				NOT = { has_espionage_type = operation_acquire_asset }
+			}
+			modifier = {
+				factor = @AssetTypeWeight
+				has_espionage_type = operation_acquire_asset
+				has_espionage_asset_subterfuge = yes
+				NOT = { has_espionage_asset = asset_bureaucrat }
+			}
+			owner = {
+				set_country_flag = asset_bureaucrat
+			}
+		}
+		1 = {
+			modifier = {
+				factor = @AssetCategoryDownWeight
+				has_espionage_category = op_cat_subterfuge
+				NOT = { has_espionage_type = operation_acquire_asset }
+			}
+			modifier = {
+				factor = @AssetTypeWeight
+				has_espionage_type = operation_acquire_asset
+				has_espionage_asset_subterfuge = yes
+				NOT = { has_espionage_asset = asset_clerk }
+			}
+			owner = {
+				set_country_flag = asset_clerk
+			}
+		}
+		1 = {
+			modifier = {
+				factor = @AssetCategoryDownWeight
+				has_espionage_category = op_cat_subterfuge
+				NOT = { has_espionage_type = operation_acquire_asset }
+			}
+			modifier = {
+				factor = @AssetTypeWeight
+				has_espionage_type = operation_acquire_asset
+				has_espionage_asset_subterfuge = yes
+				NOT = { has_espionage_asset = asset_economist }
+			}
+			owner = {
+				set_country_flag = asset_economist
+			}
+		}
+		1 = {
+			modifier = {
+				factor = @AssetCategoryDownWeight
+				has_espionage_category = op_cat_subterfuge
+				NOT = { has_espionage_type = operation_acquire_asset }
+			}
+			modifier = {
+				factor = @AssetTypeWeight
+				has_espionage_type = operation_acquire_asset
+				has_espionage_asset_subterfuge = yes
+				NOT = { has_espionage_asset = asset_scientist }
+			}
+			owner = {
+				set_country_flag = asset_scientist
+			}
+		}
+		1 = {
+			modifier = {
+				factor = @AssetCategoryDownWeight
+				has_espionage_category = op_cat_subterfuge
+				NOT = { has_espionage_type = operation_acquire_asset }
+			}
+			modifier = {
+				factor = @AssetTypeWeight
+				has_espionage_type = operation_acquire_asset
+				has_espionage_asset_subterfuge = yes
+				NOT = { has_espionage_asset = asset_junior_officer }
+			}
+			owner = {
+				set_country_flag = asset_junior_officer
+			}
+		}
+		1 = {
+			modifier = {
+				factor = @AssetCategoryDownWeight
+				has_espionage_category = op_cat_sabotage
+			}
+			modifier = {
+				factor = @AssetTypeWeight
+				has_espionage_type = operation_acquire_asset
+				has_espionage_asset_sabotage = yes
+				NOT = { has_espionage_asset = asset_criminal_underling }
+			}
+			owner = {
+				set_country_flag = asset_criminal_underling
+			}
+		}
+		1 = {
+			modifier = {
+				factor = @AssetCategoryDownWeight
+				has_espionage_category = op_cat_sabotage
+			}
+			modifier = {
+				factor = @AssetTypeWeight
+				has_espionage_type = operation_acquire_asset
+				has_espionage_asset_sabotage = yes
+				NOT = { has_espionage_asset = asset_attache }
+			}
+			owner = {
+				set_country_flag = asset_attache
+			}
+		}
+		1 = {
+			modifier = {
+				factor = @AssetCategoryDownWeight
+				has_espionage_category = op_cat_sabotage
+			}
+			modifier = {
+				factor = @AssetTypeWeight
+				has_espionage_type = operation_acquire_asset
+				has_espionage_asset_sabotage = yes
+				NOT = { has_espionage_asset = asset_laborer }
+			}
+			owner = {
+				set_country_flag = asset_laborer
+			}
+		}
+		1 = {
+			modifier = {
+				factor = @AssetCategoryDownWeight
+				has_espionage_category = op_cat_sabotage
+			}
+			modifier = {
+				factor = @AssetTypeWeight
+				has_espionage_type = operation_acquire_asset
+				has_espionage_asset_sabotage = yes
+				NOT = { has_espionage_asset = asset_hacker }
+			}
+			owner = {
+				set_country_flag = asset_hacker
+			}
+		}
+		1 = {
+			modifier = {
+				factor = @AssetCategoryDownWeight
+				has_espionage_category = op_cat_sabotage
+			}
+			modifier = {
+				factor = @AssetTypeWeight
+				has_espionage_type = operation_acquire_asset
+				has_espionage_asset_sabotage = yes
+				NOT = { has_espionage_asset = asset_arms_smuggler }
+			}
+			owner = {
+				set_country_flag = asset_arms_smuggler
+			}
+		}
+		1 = {
+			modifier = {
+				factor = @AssetCategoryDownWeight
+				has_espionage_category = op_cat_manipulation
+			}
+			modifier = {
+				factor = @AssetTypeWeight
+				has_espionage_type = operation_acquire_asset
+				has_espionage_asset_manipulation = yes
+				NOT = { has_espionage_asset = asset_agitator }
+			}
+			owner = {
+				set_country_flag = asset_agitator
+			}
+		}
+		1 = {
+			modifier = {
+				factor = @AssetCategoryDownWeight
+				has_espionage_category = op_cat_manipulation
+			}
+			modifier = {
+				factor = @AssetTypeWeight
+				has_espionage_type = operation_acquire_asset
+				has_espionage_asset_manipulation = yes
+				NOT = { has_espionage_asset = asset_newscaster }
+			}
+			owner = {
+				set_country_flag = asset_newscaster
+			}
+		}
+		1 = {
+			modifier = {
+				factor = @AssetCategoryDownWeight
+				has_espionage_category = op_cat_manipulation
+			}
+			modifier = {
+				factor = @AssetTypeWeight
+				has_espionage_type = operation_acquire_asset
+				has_espionage_asset_manipulation = yes
+				NOT = { has_espionage_asset = asset_pop_icon }
+			}
+			owner = {
+				set_country_flag = asset_pop_icon
+			}
+		}
+		1 = {
+			modifier = {
+				factor = @AssetCategoryDownWeight
+				has_espionage_category = op_cat_manipulation
+			}
+			modifier = {
+				factor = @AssetTypeWeight
+				has_espionage_type = operation_acquire_asset
+				has_espionage_asset_manipulation = yes
+				NOT = { has_espionage_asset = asset_academic }
+			}
+			owner = {
+				set_country_flag = asset_academic
+			}
+		}
+		1 = {
+			modifier = {
+				factor = @AssetCategoryDownWeight
+				has_espionage_category = op_cat_manipulation
+			}
+			modifier = {
+				factor = @AssetTypeWeight
+				has_espionage_type = operation_acquire_asset
+				has_espionage_asset_manipulation = yes
+				NOT = { has_espionage_asset = asset_veteran }
+			}
+			owner = {
+				set_country_flag = asset_veteran
+			}
+		}
+	}
+}
+# Operation scope (for Acquire Asset and operation random events)
+espionage_acquire_asset_hive = {
+	random_list = {
+		1 = {
+			modifier = {
+				factor = @AssetCategoryDownWeight
+				has_espionage_category = op_cat_subterfuge
+				NOT = { has_espionage_type = operation_acquire_asset }
+			}
+			modifier = {
+				factor = @AssetTypeWeight
+				has_espionage_type = operation_acquire_asset
+				has_espionage_asset_subterfuge = yes
+				NOT = { has_espionage_asset = asset_synapse_drone }
+			}
+			owner = {
+				set_country_flag = asset_synapse_drone
+			}
+		}
+		1 = {
+			modifier = {
+				factor = @AssetCategoryDownWeight
+				has_espionage_category = op_cat_subterfuge
+				NOT = { has_espionage_type = operation_acquire_asset }
+			}
+			modifier = {
+				factor = @AssetTypeWeight
+				has_espionage_type = operation_acquire_asset
+				has_espionage_asset_subterfuge = yes
+				NOT = { has_espionage_asset = asset_ephapse_relay }
+			}
+			owner = {
+				set_country_flag = asset_ephapse_relay
+			}
+		}
+		1 = {
+			modifier = {
+				factor = @AssetCategoryDownWeight
+				has_espionage_category = op_cat_subterfuge
+				NOT = { has_espionage_type = operation_acquire_asset }
+			}
+			modifier = {
+				factor = @AssetTypeWeight
+				has_espionage_type = operation_acquire_asset
+				has_espionage_asset_subterfuge = yes
+				NOT = { has_espionage_asset = asset_labor_drone }
+			}
+			owner = {
+				set_country_flag = asset_labor_drone
+			}
+		}
+		1 = {
+			modifier = {
+				factor = @AssetCategoryDownWeight
+				has_espionage_category = op_cat_subterfuge
+				NOT = { has_espionage_type = operation_acquire_asset }
+			}
+			modifier = {
+				factor = @AssetTypeWeight
+				has_espionage_type = operation_acquire_asset
+				has_espionage_asset_subterfuge = yes
+				NOT = { has_espionage_asset = asset_research_drone }
+			}
+			owner = {
+				set_country_flag = asset_research_drone
+			}
+		}
+		1 = {
+			modifier = {
+				factor = @AssetCategoryDownWeight
+				has_espionage_category = op_cat_subterfuge
+				NOT = { has_espionage_type = operation_acquire_asset }
+			}
+			modifier = {
+				factor = @AssetTypeWeight
+				has_espionage_type = operation_acquire_asset
+				has_espionage_asset_subterfuge = yes
+				NOT = { has_espionage_asset = asset_warrior_drone }
+			}
+			owner = {
+				set_country_flag = asset_warrior_drone
+			}
+		}
+		1 = {
+			modifier = {
+				factor = @AssetCategoryDownWeight
+				has_espionage_category = op_cat_manipulation
+			}
+			modifier = {
+				factor = @AssetTypeWeight
+				has_espionage_type = operation_acquire_asset
+				has_espionage_asset_manipulation = yes
+				NOT = { has_espionage_asset = asset_behavioral_regulator }
+			}
+			owner = {
+				set_country_flag = asset_behavioral_regulator
+			}
+		}
+		1 = {
+			modifier = {
+				factor = @AssetCategoryDownWeight
+				has_espionage_category = op_cat_manipulation
+			}
+			modifier = {
+				factor = @AssetTypeWeight
+				has_espionage_type = operation_acquire_asset
+				has_espionage_asset_manipulation = yes
+				NOT = { has_espionage_asset = asset_pheromone_emitter }
+			}
+			owner = {
+				set_country_flag = asset_pheromone_emitter
+			}
+		}
+		1 = {
+			modifier = {
+				factor = @AssetCategoryDownWeight
+				has_espionage_category = op_cat_manipulation
+			}
+			modifier = {
+				factor = @AssetTypeWeight
+				has_espionage_type = operation_acquire_asset
+				has_espionage_asset_manipulation = yes
+				NOT = { has_espionage_asset = asset_resource_distribution_node }
+			}
+			owner = {
+				set_country_flag = asset_resource_distribution_node
+			}
+		}
+		1 = {
+			modifier = {
+				factor = @AssetCategoryDownWeight
+				has_espionage_category = op_cat_manipulation
+			}
+			modifier = {
+				factor = @AssetTypeWeight
+				has_espionage_type = operation_acquire_asset
+				has_espionage_asset_manipulation = yes
+				NOT = { has_espionage_asset = asset_cortex_node }
+			}
+			owner = {
+				set_country_flag = asset_cortex_node
+			}
+		}
+		1 = {
+			modifier = {
+				factor = @AssetCategoryDownWeight
+				has_espionage_category = op_cat_manipulation
+			}
+			modifier = {
+				factor = @AssetTypeWeight
+				has_espionage_type = operation_acquire_asset
+				has_espionage_asset_manipulation = yes
+				NOT = { has_espionage_asset = asset_subspace_tendril }
+			}
+			owner = {
+				set_country_flag = asset_subspace_tendril
+			}
+		}
+	}
+}
+# Operation scope (for Acquire Asset and operation random events)
+espionage_acquire_asset_machine = {
+	random_list = {
+		1 = {
+			modifier = {
+				factor = @AssetCategoryDownWeight
+				has_espionage_category = op_cat_subterfuge
+				NOT = { has_espionage_type = operation_acquire_asset }
+			}
+			modifier = {
+				factor = @AssetTypeWeight
+				has_espionage_type = operation_acquire_asset
+				has_espionage_asset_subterfuge = yes
+				NOT = { has_espionage_asset = asset_coordination_system }
+			}
+			owner = {
+				set_country_flag = asset_coordination_system
+			}
+		}
+		1 = {
+			modifier = {
+				factor = @AssetCategoryDownWeight
+				has_espionage_category = op_cat_subterfuge
+				NOT = { has_espionage_type = operation_acquire_asset }
+			}
+			modifier = {
+				factor = @AssetTypeWeight
+				has_espionage_type = operation_acquire_asset
+				has_espionage_asset_subterfuge = yes
+				NOT = { has_espionage_asset = asset_engagement_protocol }
+			}
+			owner = {
+				set_country_flag = asset_engagement_protocol
+			}
+		}
+		1 = {
+			modifier = {
+				factor = @AssetCategoryDownWeight
+				has_espionage_category = op_cat_subterfuge
+				NOT = { has_espionage_type = operation_acquire_asset }
+			}
+			modifier = {
+				factor = @AssetTypeWeight
+				has_espionage_type = operation_acquire_asset
+				has_espionage_asset_subterfuge = yes
+				NOT = { has_espionage_asset = asset_logistics_system }
+			}
+			owner = {
+				set_country_flag = asset_logistics_system
+			}
+		}
+		1 = {
+			modifier = {
+				factor = @AssetCategoryDownWeight
+				has_espionage_category = op_cat_subterfuge
+				NOT = { has_espionage_type = operation_acquire_asset }
+			}
+			modifier = {
+				factor = @AssetTypeWeight
+				has_espionage_type = operation_acquire_asset
+				has_espionage_asset_subterfuge = yes
+				NOT = { has_espionage_asset = asset_research_database }
+			}
+			owner = {
+				set_country_flag = asset_research_database
+			}
+		}
+		1 = {
+			modifier = {
+				factor = @AssetCategoryDownWeight
+				has_espionage_category = op_cat_subterfuge
+				NOT = { has_espionage_type = operation_acquire_asset }
+			}
+			modifier = {
+				factor = @AssetTypeWeight
+				has_espionage_type = operation_acquire_asset
+				has_espionage_asset_subterfuge = yes
+				NOT = { has_espionage_asset = asset_war_algorithm }
+			}
+			owner = {
+				set_country_flag = asset_war_algorithm
+			}
+		}
+		1 = {
+			modifier = {
+				factor = @AssetCategoryDownWeight
+				has_espionage_category = op_cat_sabotage
+			}
+			modifier = {
+				factor = @AssetTypeWeight
+				has_espionage_type = operation_acquire_asset
+				has_espionage_asset_sabotage = yes
+				NOT = { has_espionage_asset = asset_command_relay }
+			}
+			owner = {
+				set_country_flag = asset_command_relay
+			}
+		}
+		1 = {
+			modifier = {
+				factor = @AssetCategoryDownWeight
+				has_espionage_category = op_cat_sabotage
+			}
+			modifier = {
+				factor = @AssetTypeWeight
+				has_espionage_type = operation_acquire_asset
+				has_espionage_asset_sabotage = yes
+				NOT = { has_espionage_asset = asset_dispatch_uplink }
+			}
+			owner = {
+				set_country_flag = asset_dispatch_uplink
+			}
+		}
+		1 = {
+			modifier = {
+				factor = @AssetCategoryDownWeight
+				has_espionage_category = op_cat_sabotage
+			}
+			modifier = {
+				factor = @AssetTypeWeight
+				has_espionage_type = operation_acquire_asset
+				has_espionage_asset_sabotage = yes
+				NOT = { has_espionage_asset = asset_resource_pylon }
+			}
+			owner = {
+				set_country_flag = asset_resource_pylon
+			}
+		}
+		1 = {
+			modifier = {
+				factor = @AssetCategoryDownWeight
+				has_espionage_category = op_cat_sabotage
+			}
+			modifier = {
+				factor = @AssetTypeWeight
+				has_espionage_type = operation_acquire_asset
+				has_espionage_asset_sabotage = yes
+				NOT = { has_espionage_asset = asset_memory_cache }
+			}
+			owner = {
+				set_country_flag = asset_memory_cache
+			}
+		}
+		1 = {
+			modifier = {
+				factor = @AssetCategoryDownWeight
+				has_espionage_category = op_cat_sabotage
+			}
+			modifier = {
+				factor = @AssetTypeWeight
+				has_espionage_type = operation_acquire_asset
+				has_espionage_asset_sabotage = yes
+				NOT = { has_espionage_asset = asset_weapons_platform }
+			}
+			owner = {
+				set_country_flag = asset_weapons_platform
+			}
+		}
+	}
+}
+# Country scope (for Acquire Asset and operation random events, where the above has been performed)
+espionage_acquire_asset_create_asset = {
+	switch = {
+		trigger = has_country_flag
+		asset_bureaucrat = {
+			from.spynetwork = { create_espionage_asset = { type = asset_bureaucrat } }
+			remove_country_flag = asset_bureaucrat
+		}
+		asset_clerk = {
+			from.spynetwork = { create_espionage_asset = { type = asset_clerk } }
+			remove_country_flag = asset_clerk
+		}
+		asset_economist = {
+			from.spynetwork = { create_espionage_asset = { type = asset_economist } }
+			remove_country_flag = asset_economist
+		}
+		asset_scientist = {
+			from.spynetwork = { create_espionage_asset = { type = asset_scientist } }
+			remove_country_flag = asset_scientist
+		}
+		asset_junior_officer = {
+			from.spynetwork = { create_espionage_asset = { type = asset_junior_officer } }
+			remove_country_flag = asset_junior_officer
+		}
+		asset_criminal_underling = {
+			from.spynetwork = { create_espionage_asset = { type = asset_criminal_underling } }
+			remove_country_flag = asset_criminal_underling
+		}
+		asset_attache = {
+			from.spynetwork = { create_espionage_asset = { type = asset_attache } }
+			remove_country_flag = asset_attache
+		}
+		asset_laborer = {
+			from.spynetwork = { create_espionage_asset = { type = asset_laborer } }
+			remove_country_flag = asset_laborer
+		}
+		asset_hacker = {
+			from.spynetwork = { create_espionage_asset = { type = asset_hacker } }
+			remove_country_flag = asset_hacker
+		}
+		asset_arms_smuggler = {
+			from.spynetwork = { create_espionage_asset = { type = asset_arms_smuggler } }
+			remove_country_flag = asset_arms_smuggler
+		}
+		asset_agitator = {
+			from.spynetwork = { create_espionage_asset = { type = asset_agitator } }
+			remove_country_flag = asset_agitator
+		}
+		asset_newscaster = {
+			from.spynetwork = { create_espionage_asset = { type = asset_newscaster } }
+			remove_country_flag = asset_newscaster
+		}
+		asset_pop_icon = {
+			from.spynetwork = { create_espionage_asset = { type = asset_pop_icon } }
+			remove_country_flag = asset_pop_icon
+		}
+		asset_academic = {
+			from.spynetwork = { create_espionage_asset = { type = asset_academic } }
+			remove_country_flag = asset_academic
+		}
+		asset_veteran = {
+			from.spynetwork = { create_espionage_asset = { type = asset_veteran } }
+			remove_country_flag = asset_veteran
+		}
+		asset_synapse_drone = {
+			from.spynetwork = { create_espionage_asset = { type = asset_synapse_drone } }
+			remove_country_flag = asset_synapse_drone
+		}
+		asset_ephapse_relay = {
+			from.spynetwork = { create_espionage_asset = { type = asset_ephapse_relay } }
+			remove_country_flag = asset_ephapse_relay
+		}
+		asset_labor_drone = {
+			from.spynetwork = { create_espionage_asset = { type = asset_labor_drone } }
+			remove_country_flag = asset_labor_drone
+		}
+		asset_research_drone = {
+			from.spynetwork = { create_espionage_asset = { type = asset_research_drone } }
+			remove_country_flag = asset_research_drone
+		}
+		asset_warrior_drone = {
+			from.spynetwork = { create_espionage_asset = { type = asset_warrior_drone } }
+			remove_country_flag = asset_warrior_drone
+		}
+		asset_behavioral_regulator = {
+			from.spynetwork = { create_espionage_asset = { type = asset_behavioral_regulator } }
+			remove_country_flag = asset_behavioral_regulator
+		}
+		asset_pheromone_emitter = {
+			from.spynetwork = { create_espionage_asset = { type = asset_pheromone_emitter } }
+			remove_country_flag = asset_pheromone_emitter
+		}
+		asset_resource_distribution_node = {
+			from.spynetwork = { create_espionage_asset = { type = asset_resource_distribution_node } }
+			remove_country_flag = asset_resource_distribution_node
+		}
+		asset_cortex_node = {
+			from.spynetwork = { create_espionage_asset = { type = asset_cortex_node } }
+			remove_country_flag = asset_cortex_node
+		}
+		asset_subspace_tendril = {
+			from.spynetwork = { create_espionage_asset = { type = asset_subspace_tendril } }
+			remove_country_flag = asset_subspace_tendril
+		}
+		asset_coordination_system = {
+			from.spynetwork = { create_espionage_asset = { type = asset_coordination_system } }
+			remove_country_flag = asset_coordination_system
+		}
+		asset_engagement_protocol = {
+			from.spynetwork = { create_espionage_asset = { type = asset_engagement_protocol } }
+			remove_country_flag = asset_engagement_protocol
+		}
+		asset_logistics_system = {
+			from.spynetwork = { create_espionage_asset = { type = asset_logistics_system } }
+			remove_country_flag = asset_logistics_system
+		}
+		asset_research_database = {
+			from.spynetwork = { create_espionage_asset = { type = asset_research_database } }
+			remove_country_flag = asset_research_database
+		}
+		asset_war_algorithm = {
+			from.spynetwork = { create_espionage_asset = { type = asset_war_algorithm } }
+			remove_country_flag = asset_war_algorithm
+		}
+		asset_command_relay = {
+			from.spynetwork = { create_espionage_asset = { type = asset_command_relay } }
+			remove_country_flag = asset_command_relay
+		}
+		asset_dispatch_uplink = {
+			from.spynetwork = { create_espionage_asset = { type = asset_dispatch_uplink } }
+			remove_country_flag = asset_dispatch_uplink
+		}
+		asset_resource_pylon = {
+			from.spynetwork = { create_espionage_asset = { type = asset_resource_pylon } }
+			remove_country_flag = asset_resource_pylon
+		}
+		asset_memory_cache = {
+			from.spynetwork = { create_espionage_asset = { type = asset_memory_cache } }
+			remove_country_flag = asset_memory_cache
+		}
+		asset_weapons_platform = {
+			from.spynetwork = { create_espionage_asset = { type = asset_weapons_platform } }
+			remove_country_flag = asset_weapons_platform
+		}
+	}
+}
+
+# Country/Spy Network scope (for any event or operation)
+espionage_create_asset_regular = {
+	locked_random_list = {
+		1 = { create_espionage_asset = { type = asset_bureaucrat } }
+		1 = { create_espionage_asset = { type = asset_clerk } }
+		1 = { create_espionage_asset = { type = asset_economist } }
+		1 = { create_espionage_asset = { type = asset_scientist } }
+		1 = { create_espionage_asset = { type = asset_junior_officer } }
+		1 = { create_espionage_asset = { type = asset_criminal_underling } }
+		1 = { create_espionage_asset = { type = asset_attache } }
+		1 = { create_espionage_asset = { type = asset_laborer } }
+		1 = { create_espionage_asset = { type = asset_hacker } }
+		1 = { create_espionage_asset = { type = asset_arms_smuggler } }
+		1 = { create_espionage_asset = { type = asset_agitator } }
+		1 = { create_espionage_asset = { type = asset_newscaster } }
+		1 = { create_espionage_asset = { type = asset_pop_icon } }
+		1 = { create_espionage_asset = { type = asset_academic } }
+		1 = { create_espionage_asset = { type = asset_veteran } }
+	}
+}
+# Country/Spy Network scope (for any event or operation)
+espionage_create_asset_hive = {
+	locked_random_list = {
+		1 = { create_espionage_asset = { type = asset_synapse_drone } }
+		1 = { create_espionage_asset = { type = asset_ephapse_relay } }
+		1 = { create_espionage_asset = { type = asset_labor_drone } }
+		1 = { create_espionage_asset = { type = asset_research_drone } }
+		1 = { create_espionage_asset = { type = asset_warrior_drone } }
+		1 = { create_espionage_asset = { type = asset_behavioral_regulator } }
+		1 = { create_espionage_asset = { type = asset_pheromone_emitter } }
+		1 = { create_espionage_asset = { type = asset_resource_distribution_node } }
+		1 = { create_espionage_asset = { type = asset_cortex_node } }
+		1 = { create_espionage_asset = { type = asset_subspace_tendril } }
+	}
+}
+# Country/Spy Network scope (for any event or operation)
+espionage_create_asset_machine = {
+	locked_random_list = {
+		1 = { create_espionage_asset = { type = asset_coordination_system } }
+		1 = { create_espionage_asset = { type = asset_engagement_protocol } }
+		1 = { create_espionage_asset = { type = asset_logistics_system } }
+		1 = { create_espionage_asset = { type = asset_research_database } }
+		1 = { create_espionage_asset = { type = asset_war_algorithm } }
+		1 = { create_espionage_asset = { type = asset_command_relay } }
+		1 = { create_espionage_asset = { type = asset_dispatch_uplink } }
+		1 = { create_espionage_asset = { type = asset_resource_pylon } }
+		1 = { create_espionage_asset = { type = asset_memory_cache } }
+		1 = { create_espionage_asset = { type = asset_weapons_platform } }
+	}
+}
+
+# Spy Network/Operation scope
+destroy_espionage_asset_manipulation = {
+	locked_random_list = {
+		1 = {
+			modifier = { factor = 0 NOT = { has_espionage_asset = asset_agitator } }
+			destroy_espionage_asset = asset_agitator
+		}
+		1 = {
+			modifier = { factor = 0 NOT = { has_espionage_asset = asset_newscaster } }
+			destroy_espionage_asset = asset_newscaster
+		}
+		1 = {
+			modifier = { factor = 0 NOT = { has_espionage_asset = asset_pop_icon } }
+			destroy_espionage_asset = asset_pop_icon
+		}
+		1 = {
+			modifier = { factor = 0 NOT = { has_espionage_asset = asset_academic } }
+			destroy_espionage_asset = asset_academic
+		}
+		1 = {
+			modifier = { factor = 0 NOT = { has_espionage_asset = asset_veteran } }
+			destroy_espionage_asset = asset_veteran
+		}
+		1 = {
+			modifier = { factor = 0 NOT = { has_espionage_asset = asset_behavioral_regulator } }
+			destroy_espionage_asset = asset_behavioral_regulator
+		}
+		1 = {
+			modifier = { factor = 0 NOT = { has_espionage_asset = asset_pheromone_emitter } }
+			destroy_espionage_asset = asset_pheromone_emitter
+		}
+		1 = {
+			modifier = { factor = 0 NOT = { has_espionage_asset = asset_resource_distribution_node } }
+			destroy_espionage_asset = asset_resource_distribution_node
+		}
+		1 = {
+			modifier = { factor = 0 NOT = { has_espionage_asset = asset_cortex_node } }
+			destroy_espionage_asset = asset_cortex_node
+		}
+		1 = {
+			modifier = { factor = 0 NOT = { has_espionage_asset = asset_subspace_tendril } }
+			destroy_espionage_asset = asset_subspace_tendril
+		}
+	}
+}
+destroy_espionage_asset_sabotage = {
+	locked_random_list = {
+		1 = {
+			modifier = { factor = 0 NOT = { has_espionage_asset = asset_criminal_underling } }
+			destroy_espionage_asset = asset_criminal_underling
+		}
+		1 = {
+			modifier = { factor = 0 NOT = { has_espionage_asset = asset_attache } }
+			destroy_espionage_asset = asset_attache
+		}
+		1 = {
+			modifier = { factor = 0 NOT = { has_espionage_asset = asset_laborer } }
+			destroy_espionage_asset = asset_laborer
+		}
+		1 = {
+			modifier = { factor = 0 NOT = { has_espionage_asset = asset_hacker } }
+			destroy_espionage_asset = asset_hacker
+		}
+		1 = {
+			modifier = { factor = 0 NOT = { has_espionage_asset = asset_arms_smuggler } }
+			destroy_espionage_asset = asset_arms_smuggler
+		}
+		1 = {
+			modifier = { factor = 0 NOT = { has_espionage_asset = asset_command_relay } }
+			destroy_espionage_asset = asset_command_relay
+		}
+		1 = {
+			modifier = { factor = 0 NOT = { has_espionage_asset = asset_dispatch_uplink } }
+			destroy_espionage_asset = asset_dispatch_uplink
+		}
+		1 = {
+			modifier = { factor = 0 NOT = { has_espionage_asset = asset_resource_pylon } }
+			destroy_espionage_asset = asset_resource_pylon
+		}
+		1 = {
+			modifier = { factor = 0 NOT = { has_espionage_asset = asset_memory_cache } }
+			destroy_espionage_asset = asset_memory_cache
+		}
+		1 = {
+			modifier = { factor = 0 NOT = { has_espionage_asset = asset_weapons_platform } }
+			destroy_espionage_asset = asset_weapons_platform
+		}
+	}
+}
+destroy_espionage_asset_subterfuge = {
+	locked_random_list = {
+		1 = {
+			modifier = { factor = 0 NOT = { has_espionage_asset = asset_bureaucrat } }
+			destroy_espionage_asset = asset_bureaucrat
+		}
+		1 = {
+			modifier = { factor = 0 NOT = { has_espionage_asset = asset_clerk } }
+			destroy_espionage_asset = asset_clerk
+		}
+		1 = {
+			modifier = { factor = 0 NOT = { has_espionage_asset = asset_economist } }
+			destroy_espionage_asset = asset_economist
+		}
+		1 = {
+			modifier = { factor = 0 NOT = { has_espionage_asset = asset_scientist } }
+			destroy_espionage_asset = asset_scientist
+		}
+		1 = {
+			modifier = { factor = 0 NOT = { has_espionage_asset = asset_junior_officer } }
+			destroy_espionage_asset = asset_junior_officer
+		}
+		1 = {
+			modifier = { factor = 0 NOT = { has_espionage_asset = asset_ephapse_relay } }
+			destroy_espionage_asset = asset_ephapse_relay
+		}
+		1 = {
+			modifier = { factor = 0 NOT = { has_espionage_asset = asset_labor_drone } }
+			destroy_espionage_asset = asset_labor_drone
+		}
+		1 = {
+			modifier = { factor = 0 NOT = { has_espionage_asset = asset_research_drone } }
+			destroy_espionage_asset = asset_research_drone
+		}
+		1 = {
+			modifier = { factor = 0 NOT = { has_espionage_asset = asset_warrior_drone } }
+			destroy_espionage_asset = asset_warrior_drone
+		}
+		1 = {
+			modifier = { factor = 0 NOT = { has_espionage_asset = asset_coordination_system } }
+			destroy_espionage_asset = asset_coordination_system
+		}
+		1 = {
+			modifier = { factor = 0 NOT = { has_espionage_asset = asset_engagement_protocol } }
+			destroy_espionage_asset = asset_engagement_protocol
+		}
+		1 = {
+			modifier = { factor = 0 NOT = { has_espionage_asset = asset_logistics_system } }
+			destroy_espionage_asset = asset_logistics_system
+		}
+		1 = {
+			modifier = { factor = 0 NOT = { has_espionage_asset = asset_research_database } }
+			destroy_espionage_asset = asset_research_database
+		}
+		1 = {
+			modifier = { factor = 0 NOT = { has_espionage_asset = asset_war_algorithm } }
+			destroy_espionage_asset = asset_war_algorithm
+		}
+	}
+}
+destroy_espionage_asset_diplomacy = {
+	locked_random_list = {
+		1 = {
+			modifier = { factor = 0 NOT = { has_espionage_asset = asset_clerk } }
+			destroy_espionage_asset = asset_clerk
+		}
+		1 = {
+			modifier = { factor = 0 NOT = { has_espionage_asset = asset_attache } }
+			destroy_espionage_asset = asset_attache
+		}
+		1 = {
+			modifier = { factor = 0 NOT = { has_espionage_asset = asset_newscaster } }
+			destroy_espionage_asset = asset_newscaster
+		}
+		1 = {
+			modifier = { factor = 0 NOT = { has_espionage_asset = asset_ephapse_relay } }
+			destroy_espionage_asset = asset_ephapse_relay
+		}
+		1 = {
+			modifier = { factor = 0 NOT = { has_espionage_asset = asset_pheromone_emitter } }
+			destroy_espionage_asset = asset_pheromone_emitter
+		}
+		1 = {
+			modifier = { factor = 0 NOT = { has_espionage_asset = asset_engagement_protocol } }
+			destroy_espionage_asset = asset_engagement_protocol
+		}
+		1 = {
+			modifier = { factor = 0 NOT = { has_espionage_asset = asset_dispatch_uplink } }
+			destroy_espionage_asset = asset_dispatch_uplink
+		}
+	}
+}
+destroy_espionage_asset_economy = {
+	locked_random_list = {
+		1 = {
+			modifier = { factor = 0 NOT = { has_espionage_asset = asset_economist } }
+			destroy_espionage_asset = asset_economist
+		}
+		1 = {
+			modifier = { factor = 0 NOT = { has_espionage_asset = asset_laborer } }
+			destroy_espionage_asset = asset_laborer
+		}
+		1 = {
+			modifier = { factor = 0 NOT = { has_espionage_asset = asset_pop_icon } }
+			destroy_espionage_asset = asset_pop_icon
+		}
+		1 = {
+			modifier = { factor = 0 NOT = { has_espionage_asset = asset_labor_drone } }
+			destroy_espionage_asset = asset_labor_drone
+		}
+		1 = {
+			modifier = { factor = 0 NOT = { has_espionage_asset = asset_resource_distribution_node } }
+			destroy_espionage_asset = asset_resource_distribution_node
+		}
+		1 = {
+			modifier = { factor = 0 NOT = { has_espionage_asset = asset_logistics_system } }
+			destroy_espionage_asset = asset_logistics_system
+		}
+		1 = {
+			modifier = { factor = 0 NOT = { has_espionage_asset = asset_resource_pylon } }
+			destroy_espionage_asset = asset_resource_pylon
+		}
+	}
+}
+destroy_espionage_asset_government = {
+	locked_random_list = {
+		1 = {
+			modifier = { factor = 0 NOT = { has_espionage_asset = asset_bureaucrat } }
+			destroy_espionage_asset = asset_bureaucrat
+		}
+		1 = {
+			modifier = { factor = 0 NOT = { has_espionage_asset = asset_criminal_underling } }
+			destroy_espionage_asset = asset_criminal_underling
+		}
+		1 = {
+			modifier = { factor = 0 NOT = { has_espionage_asset = asset_agitator } }
+			destroy_espionage_asset = asset_agitator
+		}
+		1 = {
+			modifier = { factor = 0 NOT = { has_espionage_asset = asset_synapse_drone } }
+			destroy_espionage_asset = asset_synapse_drone
+		}
+		1 = {
+			modifier = { factor = 0 NOT = { has_espionage_asset = asset_behavioral_regulator } }
+			destroy_espionage_asset = asset_behavioral_regulator
+		}
+		1 = {
+			modifier = { factor = 0 NOT = { has_espionage_asset = asset_coordination_system} }
+			destroy_espionage_asset = asset_coordination_system
+		}
+		1 = {
+			modifier = { factor = 0 NOT = { has_espionage_asset = asset_command_relay } }
+			destroy_espionage_asset = asset_command_relay
+		}
+	}
+}
+destroy_espionage_asset_military = {
+	locked_random_list = {
+		1 = {
+			modifier = { factor = 0 NOT = { has_espionage_asset = asset_junior_officer } }
+			destroy_espionage_asset = asset_junior_officer
+		}
+		1 = {
+			modifier = { factor = 0 NOT = { has_espionage_asset = asset_arms_smuggler } }
+			destroy_espionage_asset = asset_arms_smuggler
+		}
+		1 = {
+			modifier = { factor = 0 NOT = { has_espionage_asset = asset_veteran } }
+			destroy_espionage_asset = asset_veteran
+		}
+		1 = {
+			modifier = { factor = 0 NOT = { has_espionage_asset = asset_warrior_drone } }
+			destroy_espionage_asset = asset_warrior_drone
+		}
+		1 = {
+			modifier = { factor = 0 NOT = { has_espionage_asset = asset_subspace_tendril } }
+			destroy_espionage_asset = asset_subspace_tendril
+		}
+		1 = {
+			modifier = { factor = 0 NOT = { has_espionage_asset = asset_war_algorithm } }
+			destroy_espionage_asset = asset_war_algorithm
+		}
+		1 = {
+			modifier = { factor = 0 NOT = { has_espionage_asset = asset_weapons_platform } }
+			destroy_espionage_asset = asset_weapons_platform
+		}
+	}
+}
+destroy_espionage_asset_technology = {
+	locked_random_list = {
+		1 = {
+			modifier = { factor = 0 NOT = { has_espionage_asset = asset_scientist } }
+			destroy_espionage_asset = asset_scientist
+		}
+		1 = {
+			modifier = { factor = 0 NOT = { has_espionage_asset = asset_hacker } }
+			destroy_espionage_asset = asset_hacker
+		}
+		1 = {
+			modifier = { factor = 0 NOT = { has_espionage_asset = asset_academic } }
+			destroy_espionage_asset = asset_academic
+		}
+		1 = {
+			modifier = { factor = 0 NOT = { has_espionage_asset = asset_research_drone } }
+			destroy_espionage_asset = asset_research_drone
+		}
+		1 = {
+			modifier = { factor = 0 NOT = { has_espionage_asset = asset_cortex_node } }
+			destroy_espionage_asset = asset_cortex_node
+		}
+		1 = {
+			modifier = { factor = 0 NOT = { has_espionage_asset = asset_research_database } }
+			destroy_espionage_asset = asset_research_database
+		}
+		1 = {
+			modifier = { factor = 0 NOT = { has_espionage_asset = asset_memory_cache } }
+			destroy_espionage_asset = asset_memory_cache
+		}
+	}
+}
+
+# Starbase scope | root.from = operation
+# See also: remove_sabotage_starbase_flag scripted effect
+espionage_sabotage_starbase_module = {
+	#Excludes Shipyard
+	random_list = {
+		1 = {
+			modifier = {
+				factor = 0
+				NOT = { has_starbase_module = anchorage }
+			}
+			remove_starbase_module = { module = anchorage }
+			owner = { set_country_flag = anchorage_sabotaged }
+		}
+		1 = {
+			modifier = {
+				factor = 0
+				NOT = { has_starbase_module = gun_battery }
+			}
+			remove_starbase_module = { module = gun_battery }
+			owner = { set_country_flag = gun_battery_sabotaged }
+		}
+		1 = {
+			modifier = {
+				factor = 0
+				NOT = { has_starbase_module = hangar_bay }
+			}
+			remove_starbase_module = { module = hangar_bay }
+			owner = { set_country_flag = hangar_bay_sabotaged }
+		}
+		1 = {
+			modifier = {
+				factor = 0
+				NOT = { has_starbase_module = missile_battery }
+			}
+			remove_starbase_module = { module = missile_battery }
+			owner = { set_country_flag = missile_battery_sabotaged }
+		}
+		1 = {
+			modifier = {
+				factor = 0
+				NOT = { has_starbase_module = solar_panel_network }
+			}
+			remove_starbase_module = { module = solar_panel_network }
+			owner = { set_country_flag = solar_panel_network_sabotaged }
+		}
+		1 = {
+			modifier = {
+				factor = 0
+				NOT = { has_starbase_module = trading_hub }
+			}
+			remove_starbase_module = { module = trading_hub }
+			owner = { set_country_flag = trading_hub_sabotaged }
+		}
+		1 = {
+			modifier = {
+				factor = 0
+				NOT = { has_starbase_module = shipyard }
+			}
+			remove_starbase_module = { module = shipyard }
+			owner = { set_country_flag = shipyard_sabotaged }
+		}
+	}
+}
+
+# Starbase scope | root.from = operation
+# See also: remove_sabotage_starbase_flag scripted effect
+espionage_sabotage_starbase_building = {
+	random_list = {
+		#Excludes Titan and Colossus assembly yards, plus Defense Grid
+		1 = {
+			modifier = {
+				factor = 0
+				NOT = { has_starbase_building = art_college }
+			}
+			remove_starbase_building = { building = art_college }
+			owner = { set_country_flag = art_college_sabotaged }
+		}
+		1 = {
+			modifier = {
+				factor = 0
+				NOT = { has_starbase_building = black_hole_observatory }
+			}
+			remove_starbase_building = { building = black_hole_observatory }
+			owner = { set_country_flag = black_hole_observatory_sabotaged }
+		}
+		1 = {
+			modifier = {
+				factor = 0
+				NOT = { has_starbase_building = command_center }
+			}
+			remove_starbase_building = { building = command_center }
+			owner = { set_country_flag = command_center_sabotaged }
+		}
+		1 = {
+			modifier = {
+				factor = 0
+				NOT = { has_starbase_building = communications_jammer }
+			}
+			remove_starbase_building = { building = communications_jammer }
+			owner = { set_country_flag = communications_jammer_sabotaged }
+		}
+		1 = {
+			modifier = {
+				factor = 0
+				NOT = { has_starbase_building = crew_quarters }
+			}
+			remove_starbase_building = { building = crew_quarters }
+			owner = { set_country_flag = crew_quarters_sabotaged }
+		}
+		1 = {
+			modifier = {
+				factor = 0
+				NOT = { has_starbase_building = curator_think_tank }
+			}
+			remove_starbase_building = { building = curator_think_tank }
+			owner = { set_country_flag = curator_think_tank_sabotaged }
+		}
+		1 = {
+			modifier = {
+				factor = 0
+				NOT = { has_starbase_building = deep_space_black_site }
+			}
+			remove_starbase_building = { building = deep_space_black_site }
+			owner = { set_country_flag = deep_space_black_site_sabotaged }
+		}
+		1 = {
+			modifier = {
+				factor = 0
+				NOT = { has_starbase_building = disruption_field }
+			}
+			remove_starbase_building = { building = disruption_field }
+			owner = { set_country_flag = disruption_field_sabotaged }
+		}
+		1 = {
+			modifier = {
+				factor = 0
+				NOT = { has_starbase_building = fleet_academy }
+			}
+			remove_starbase_building = { building = fleet_academy }
+			owner = { set_country_flag = fleet_academy_sabotaged }
+		}
+		1 = {
+			modifier = {
+				factor = 0
+				NOT = { has_starbase_building = hydroponics_bay }
+			}
+			remove_starbase_building = { building = hydroponics_bay }
+			owner = { set_country_flag = hydroponics_bay_sabotaged }
+		}
+		1 = {
+			modifier = {
+				factor = 0
+				NOT = { has_starbase_building = listening_post }
+			}
+			remove_starbase_building = { building = listening_post }
+			owner = { set_country_flag = listening_post_sabotaged }
+		}
+		1 = {
+			modifier = {
+				factor = 0
+				NOT = { has_starbase_building = naval_logistics_office }
+			}
+			remove_starbase_building = { building = naval_logistics_office }
+			owner = { set_country_flag = naval_logistics_office_sabotaged }
+		}
+		1 = {
+			modifier = {
+				factor = 0
+				NOT = { has_starbase_building = nebula_refinery }
+			}
+			remove_starbase_building = { building = nebula_refinery }
+			owner = { set_country_flag = nebula_refinery_sabotaged }
+		}
+		1 = {
+			modifier = {
+				factor = 0
+				NOT = { has_starbase_building = offworld_trading_company }
+			}
+			remove_starbase_building = { building = offworld_trading_company }
+			owner = { set_country_flag = offworld_trading_company_sabotaged }
+		}
+		1 = {
+			modifier = {
+				factor = 0
+				NOT = { has_starbase_building = resource_silo }
+			}
+			remove_starbase_building = { building = resource_silo }
+			owner = { set_country_flag = resource_silo_sabotaged }
+		}
+		1 = {
+			modifier = {
+				factor = 0
+				NOT = { has_starbase_building = target_uplink_computer }
+			}
+			remove_starbase_building = { building = target_uplink_computer }
+			owner = { set_country_flag = target_uplink_computer_sabotaged }
+		}
+		1 = {
+			modifier = {
+				factor = 0
+				NOT = { has_starbase_building = trader_proxy_office }
+			}
+			remove_starbase_building = { building = trader_proxy_office }
+			owner = { set_country_flag = trader_proxy_office_sabotaged }
+		}
+		1 = {
+			modifier = {
+				factor = 0
+				NOT = { has_starbase_building = warp_fluctuator }
+			}
+			remove_starbase_building = { building = warp_fluctuator }
+			owner = { set_country_flag = warp_fluctuator_sabotaged }
+		}
+	}
+}
+
+#Country scope
+remove_sabotage_starbase_flag = {
+	switch = {
+		trigger = has_country_flag
+		shipyard_sabotaged = { remove_country_flag = shipyard_sabotaged }
+		anchorage_sabotaged = { remove_country_flag = anchorage_sabotaged }
+		gun_battery_sabotaged = { remove_country_flag = gun_battery_sabotaged }
+		hangar_bay_sabotaged = { remove_country_flag = hangar_bay_sabotaged }
+		missile_battery_sabotaged = { remove_country_flag = missile_battery_sabotaged }
+		solar_panel_network_sabotaged = { remove_country_flag = solar_panel_network_sabotaged }
+		trading_hub_sabotaged = { remove_country_flag = trading_hub_sabotaged }
+		art_college_sabotaged = { remove_country_flag = art_college_sabotaged }
+		black_hole_observatory_sabotaged = { remove_country_flag = black_hole_observatory_sabotaged }
+		command_center_sabotaged = { remove_country_flag = command_center_sabotaged }
+		communications_jammer_sabotaged = { remove_country_flag = communications_jammer_sabotaged }
+		crew_quarters_sabotaged = { remove_country_flag = crew_quarters_sabotaged }
+		curator_think_tank_sabotaged = { remove_country_flag = curator_think_tank_sabotaged }
+		deep_space_black_site_sabotaged = { remove_country_flag = deep_space_black_site_sabotaged }
+		disruption_field_sabotaged = { remove_country_flag = disruption_field_sabotaged }
+		fleet_academy_sabotaged = { remove_country_flag = fleet_academy_sabotaged }
+		hydroponics_bay_sabotaged = { remove_country_flag = hydroponics_bay_sabotaged }
+		listening_post_sabotaged = { remove_country_flag = listening_post_sabotaged }
+		naval_logistics_office_sabotaged = { remove_country_flag = naval_logistics_office_sabotaged }
+		nebula_refinery_sabotaged = { remove_country_flag = nebula_refinery_sabotaged }
+		offworld_trading_company_sabotaged = { remove_country_flag = offworld_trading_company_sabotaged }
+		resource_silo_sabotaged = { remove_country_flag = resource_silo_sabotaged }
+		target_uplink_computer_sabotaged = { remove_country_flag = target_uplink_computer_sabotaged }
+		trader_proxy_office_sabotaged = { remove_country_flag = trader_proxy_office_sabotaged }
+		warp_fluctuator_sabotaged = { remove_country_flag = warp_fluctuator_sabotaged }
+	}
+}
+
+#Operation scope | root = operation; target = operation target
+espionage_smear_campaign_spiritualist = {
+	if = {
+		limit = {
+			root.target = {
+				OR = {
+					has_authority = auth_democratic
+					has_authority = auth_oligarchic
+					has_authority = auth_imperial
+				}
+			}
+		}
+		set_country_flag = smear_spiritualist_ridic@root.target
+		set_country_flag = smear_campaign_insulted@root.owner
+	}
+	else_if = {
+		limit = {
+			root.target = { has_authority = auth_corporate }
+		}
+		set_country_flag = smear_spiritualist_merch@root.target
+		set_country_flag = smear_campaign_insulted@root.owner
+	}
+	else = {
+		set_country_flag = smear_spiritualist_deity@root.target
+		set_country_flag = smear_campaign_espionage@root.owner
+	}
+}
+#Operation scope | root = operation; target = operation target
+espionage_smear_campaign_militarist = {
+	if = {
+		limit = {
+			root.target = { is_gestalt = yes }
+		}
+		set_country_flag = smear_militarist_study@root.target
+		set_country_flag = smear_campaign_espionage@root.owner
+	}
+	else_if = {
+		limit = {
+			has_truce = root.target
+		}
+		set_country_flag = smear_militarist_priso@root.target
+		set_country_flag = smear_campaign_deceived@root.owner
+	}
+	else_if = {
+		limit = {
+			root.target = {
+				OR = {
+					is_militarist = yes
+					has_authority = auth_corporate
+					has_valid_civic = civic_merchant_guilds
+				}
+			}
+		}
+		set_country_flag = smear_militarist_armsd@root.target
+		set_country_flag = smear_campaign_deceived@root.owner
+	}
+	else_if = {
+		limit = {
+			root.target = { is_pacifist = yes }
+		}
+		set_country_flag = smear_militarist_pacif@root.target
+		set_country_flag = smear_campaign_espionage@root.owner
+	}
+	else = {
+		set_country_flag = smear_militarist_satir@root.target
+		set_country_flag = smear_campaign_insulted@root.owner
+	}
+}
+#Operation scope | root = operation; target = operation target
+espionage_smear_campaign_xenophobe = {
+	if = {
+		limit = {
+			root.target = {
+				OR = {
+					has_authority = auth_corporate
+					has_valid_civic = civic_merchant_guilds
+				}
+				has_technology = tech_gene_tailoring
+			}
+		}
+		set_country_flag = smear_xenophobe_genes@root.target
+		set_country_flag = smear_campaign_insulted@root.owner
+	}
+	else = {
+		set_country_flag = smear_xenophobe_abduc@root.target
+		set_country_flag = smear_campaign_deceived@root.owner
+	}
+}
+#Operation scope | root = operation; target = operation target
+espionage_smear_campaign_egalitarian = {
+	if = {
+		limit = {
+			has_diplo_migration_treaty = root.target
+		}
+		set_country_flag = smear_egalitarian_migra@root.target
+		set_country_flag = smear_campaign_insulted@root.owner
+	}
+	else = {
+		random_list = {
+			1 = {
+				modifier = {
+					factor = 0
+					OR = {
+						is_galactic_community_noncouncil_member = no
+						root.target = { is_galactic_community_noncouncil_member = no }
+					}
+				}
+				set_country_flag = smear_egalitarian_galco@root.target
+				set_country_flag = smear_campaign_espionage@root.owner
+			}
+			1 = {
+				modifier = {
+					factor = 3
+					is_xenophobe = yes
+				}
+				set_country_flag = smear_egalitarian_elect@root.target
+				set_country_flag = smear_campaign_espionage@root.owner
+			}
+		}
+	}
+}
+#Operation scope | root = operation; target = operation target
+espionage_smear_campaign_materialist = {
+	random_list = {
+		2 = {
+			modifier = {
+				factor = 2
+				root.target = { is_materialist = yes }
+			}
+			set_country_flag = smear_materialist_theft@root.target
+			set_country_flag = smear_campaign_espionage@root.owner
+		}
+		1 = {
+			modifier = {
+				factor = 0
+				NOT = { has_technology = tech_droid_workers }
+				root.target = {
+					NOT = { has_technology = tech_droid_workers }
+				}
+			}
+			set_country_flag = smear_materialist_droid@root.target
+			set_country_flag = smear_campaign_espionage@root.owner
+		}
+		1 = {
+			modifier = {
+				factor = 0
+				root.target = { is_machine_empire = no }
+			}
+			set_country_flag = smear_materialist_singu@root.target
+			set_country_flag = smear_campaign_deceived@root.owner
+		}
+		2 = {
+			set_country_flag = smear_materialist_sabot@root.target
+			set_country_flag = smear_campaign_espionage@root.owner
+		}
+	}
+}
+#Operation scope | root = operation; target = operation target
+espionage_smear_campaign_pacifist = {
+	if = {
+		limit = {
+			root.target = {
+				OR = {
+					has_authority = auth_corporate
+					has_valid_civic = civic_merchant_guilds
+				}
+			}
+		}
+		set_country_flag = smear_pacifist_gunrun@root.target
+		set_country_flag = smear_campaign_deceived@root.owner
+	}
+	else_if = {
+		limit = {
+			root.target = {
+				OR = {
+					vassals > 0
+					AND = {
+						has_federation = yes
+						federation = { has_federation_type = hegemony_federation }
+					}
+				}
+			}
+			root.target = { is_xenophile = no } #They seem less believable as meddlers
+		}
+		set_country_flag = smear_pacifist_vassal@root.target
+		set_country_flag = smear_campaign_espionage@root.owner
+	}
+	else_if = {
+		limit = {
+			root.target = { is_militarist = yes }
+		}
+		set_country_flag = smear_pacifist_weapon@root.target
+		set_country_flag = smear_campaign_espionage@root.owner
+	}
+	else = {
+		set_country_flag = smear_pacifist_border@root.target
+		set_country_flag = smear_campaign_espionage@root.owner
+	}
+}
+#Operation scope | root = operation; target = operation target
+espionage_smear_campaign_xenophile = {
+	if = {
+		limit = {
+			root.target = {
+				OR = {
+					has_authority = auth_corporate
+					has_valid_civic = civic_merchant_guilds
+					has_commercial_pact = event_target:smear_campaign_recipient
+				}
+			}
+		}
+		set_country_flag = smear_xenophile_commerc@root.target
+		set_country_flag = smear_campaign_espionage@root.owner
+	}
+	else_if = {
+		limit = {
+			root.target = { allows_slavery = yes } #Includes gestalts
+		}
+		set_country_flag = smear_xenophile_slavery@root.target
+		set_country_flag = smear_campaign_insulted@root.owner
+	}
+	else_if = {
+		limit = {
+			root.target = {
+				is_xenophile = yes
+				has_diplo_migration_treaty = event_target:smear_campaign_recipient
+			}
+		}
+		set_country_flag = smear_xenophile_motives@root.target
+		set_country_flag = smear_campaign_insulted@root.owner
+	}
+	else = {
+		set_country_flag = smear_xenophile_contact@root.target
+		set_country_flag = smear_campaign_deceived@root.owner
+	}
+}
+#Operation scope | root = operation; target = operation target
+espionage_smear_campaign_authoritarian = {
+	if = {
+		limit = {
+			has_authority = auth_dictatorial
+			root.target = {
+				OR = {
+					has_authority = auth_democratic
+					has_authority = auth_oligarchic
+					has_authority = auth_imperial
+				}
+			}
+		}
+		set_country_flag = smear_authoritarian_mockery@root.target
+		set_country_flag = smear_campaign_insulted@root.owner
+	}
+	else_if = {
+		limit = {
+			has_diplo_migration_treaty = root.target
+		}
+		set_country_flag = smear_authoritarian_discord@root.target
+		set_country_flag = smear_campaign_espionage@root.owner
+	}
+	else_if = {
+		limit = {
+			root.target = { is_authoritarian = yes }
+		}
+		set_country_flag = smear_authoritarian_experim@root.target
+		set_country_flag = smear_campaign_deceived@root.owner
+	}
+	else = {
+		set_country_flag = smear_authoritarian_extorts@root.target
+		set_country_flag = smear_campaign_espionage@root.owner
+	}
+}
+#Operation scope | root = operation; target = operation target
+espionage_smear_campaign_corporate = {
+	random_list = {
+		2 = {
+			set_country_flag = smear_corporate_criment@root.target
+			set_country_flag = smear_campaign_espionage@root.owner
+		}
+		1 = {
+			modifier = {
+				factor = 0
+				NOT = { has_commercial_pact = root.target }
+			}
+			set_country_flag = smear_corporate_resells@root.target
+			set_country_flag = smear_campaign_deceived@root.owner
+		}
+		3 = {
+			modifier = {
+				factor = 0
+				root.target = {
+					NOT = { has_authority = auth_machine_intelligence }
+				}
+			}
+			set_country_flag = smear_corporate_machine@root.target
+			set_country_flag = smear_campaign_espionage@root.owner
+		}
+		1 = {
+			set_country_flag = smear_corporate_knockof@root.target
+			set_country_flag = smear_campaign_insulted@root.owner
+		}
+	}
+}
+#Operation scope | root = operation; target = operation target
+espionage_smear_campaign_hive = {
+	random_list = {
+		2 = {
+			modifier = {
+				factor = 0.3
+				root.target = { is_xenophile = yes }
+			}
+			set_country_flag = smear_hive_asset@root.target
+			set_country_flag = smear_campaign_espionage@root.owner
+		}
+		2 = {
+			modifier = {
+				factor = 0
+				root.target = {
+					NOT = { has_origin = origin_necrophage }
+				}
+			}
+			set_country_flag = smear_hive_necro@root.target
+			set_country_flag = smear_campaign_deceived@root.owner
+		}
+		2 = {
+			set_country_flag = smear_hive_toxin@root.target
+			set_country_flag = smear_campaign_espionage@root.owner
+		}
+	}
+}
+#Operation scope | root = operation; target = operation target
+espionage_smear_campaign_machine = {
+	random_list = {
+		1 = {
+			set_country_flag = smear_machine_asset@root.target
+			set_country_flag = smear_campaign_espionage@root.owner
+		}
+		1 = {
+			modifier = {
+				factor = 0.3
+				root.target = { is_militarist = no }
+			}
+			modifier = {
+				factor = 0
+				root.target = { is_pacifist = yes }
+			}
+			set_country_flag = smear_machine_milit@root.target
+			set_country_flag = smear_campaign_deceived@root.owner
+		}
+		2 = {
+			set_country_flag = smear_machine_steal@root.target
+			set_country_flag = smear_campaign_espionage@root.owner
+		}
+	}
+}
+
+#Country (Smear Campaign instigator) scope
+remove_smear_campaign_flags_insulted = {
+	remove_country_flag = smear_spiritualist_ridic
+	remove_country_flag = smear_spiritualist_merch
+	remove_country_flag = smear_militarist_satir
+	remove_country_flag = smear_xenophobe_genes
+	remove_country_flag = smear_egalitarian_migra
+	remove_country_flag = smear_xenophile_slavery
+	remove_country_flag = smear_xenophile_motives
+	remove_country_flag = smear_authoritarian_mockery
+	remove_country_flag = smear_corporate_knockof
+}
+remove_smear_campaign_flags_deceived = {
+	remove_country_flag = smear_militarist_priso
+	remove_country_flag = smear_militarist_armsd
+	remove_country_flag = smear_xenophobe_abduc
+	remove_country_flag = smear_materialist_singu
+	remove_country_flag = smear_pacifist_gunrun
+	remove_country_flag = smear_xenophile_contact
+	remove_country_flag = smear_authoritarian_experim
+	remove_country_flag = smear_corporate_resells
+	remove_country_flag = smear_hive_necro
+	remove_country_flag = smear_machine_milit
+}
+remove_smear_campaign_flags_espionage = {
+	remove_country_flag = smear_spiritualist_deity
+	remove_country_flag = smear_militarist_study
+	remove_country_flag = smear_militarist_pacif
+	remove_country_flag = smear_xenophobe_genes
+	remove_country_flag = smear_egalitarian_galco
+	remove_country_flag = smear_egalitarian_elect
+	remove_country_flag = smear_materialist_theft
+	remove_country_flag = smear_materialist_droid
+	remove_country_flag = smear_materialist_singu
+	remove_country_flag = smear_materialist_sabot
+	remove_country_flag = smear_pacifist_vassal
+	remove_country_flag = smear_pacifist_weapon
+	remove_country_flag = smear_pacifist_border
+	remove_country_flag = smear_xenophile_commerc
+	remove_country_flag = smear_authoritarian_discord
+	remove_country_flag = smear_authoritarian_extorts
+	remove_country_flag = smear_corporate_machine
+	remove_country_flag = smear_hive_asset
+	remove_country_flag = smear_hive_toxin
+	remove_country_flag = smear_machine_asset
+	remove_country_flag = smear_machine_steal
+}
+
+#Country scope
+espionage_crisis_beacon_lure = {
+	if = {
+		limit = { #Look in nearby systems first
+			any_system = {
+				distance = {
+					source = event_target:crisis_beacon_target_capital
+					type = euclidean
+					min_distance >= 1
+					max_distance <= 15
+				}
+				any_fleet_in_system = {
+					owner = { is_country_type = $TYPE$ }
+					is_ship_class = shipclass_military
+					fleet_size >= 40
+				}
+			}
+		}
+		random_system = {
+			limit = {
+				distance = {
+					source = event_target:crisis_beacon_target_capital
+					type = euclidean
+					min_distance >= 1
+					max_distance <= 15
+				}
+				any_fleet_in_system = {
+					owner = { is_country_type = $TYPE$ }
+					is_ship_class = shipclass_military
+					fleet_size >= 40
+				}
+			}
+			save_event_target_as = crisis_beacon_crisis_system
+			random_fleet_in_system = {
+				limit = {
+					owner = { is_country_type = $TYPE$ }
+					is_ship_class = shipclass_military
+					fleet_size >= 40
+				}
+				save_event_target_as = crisis_beacon_crisis_fleet
+				set_fleet_flag = crisis_beacon_fleet
+				auto_move_to_planet = {
+					target = event_target:crisis_beacon_target_capital
+					clear_auto_move_on_arrival = yes
+					arrival_effect = espionage_crisis_beacon_fleet_return #to the system it came from
+				}
+			}
+		}
+	}
+	else = {
+		random_system = {
+			limit = {
+				any_fleet_in_system = {
+					owner = { is_country_type = $TYPE$ }
+					is_ship_class = shipclass_military
+					fleet_size >= 40
+				}
+			}
+			save_event_target_as = crisis_beacon_crisis_system
+			random_fleet_in_system = {
+				limit = {
+					owner = { is_country_type = $TYPE$ }
+					is_ship_class = shipclass_military
+					fleet_size >= 40
+				}
+				save_event_target_as = crisis_beacon_crisis_fleet
+				auto_move_to_planet = {
+					target = event_target:crisis_beacon_target_capital
+					clear_auto_move_on_arrival = yes
+					# arrival_effect = espionage_crisis_beacon_fleet_return #to the system it came from
+				}
+			}
+		}
+	}
+}
+
+#Fleet scope | prev = system of origin
+espionage_crisis_beacon_fleet_return = {
+	auto_move_to_planet = {
+		target = event_target:crisis_beacon_crisis_system
+		clear_auto_move_on_arrival = yes
+	}
+}
+
+###########################
+# OPERATIONS RANDOM EVENTS
+###########################
+
+standard_espionage_operation_on_roll_failed = {
+	switch = {
+		trigger = is_espionage_operation_score_no_die
+		-8 = { standard_espionage_on_roll_failed_case = { SCORE=-8 } }
+		-7 = { standard_espionage_on_roll_failed_case = { SCORE=-7 } }
+		-6 = { standard_espionage_on_roll_failed_case = { SCORE=-6 } }
+		-5 = { standard_espionage_on_roll_failed_case = { SCORE=-5 } }
+		-4 = { standard_espionage_on_roll_failed_case = { SCORE=-4 } }
+		-3 = { standard_espionage_on_roll_failed_case = { SCORE=-3 } }
+		-2 = { standard_espionage_on_roll_failed_case = { SCORE=-2 } }
+		-1 = { standard_espionage_on_roll_failed_case = { SCORE=-1 } }
+		0 = { standard_espionage_on_roll_failed_case = { SCORE=0 } }
+		1 = { standard_espionage_on_roll_failed_case = { SCORE=1 } }
+		2 = { standard_espionage_on_roll_failed_case = { SCORE=2 } }
+		3 = { standard_espionage_on_roll_failed_case = { SCORE=3 } }
+		4 = { standard_espionage_on_roll_failed_case = { SCORE=4 } }
+		5 = { standard_espionage_on_roll_failed_case = { SCORE=5 } }
+		6 = { standard_espionage_on_roll_failed_case = { SCORE=6 } }
+		7 = { standard_espionage_on_roll_failed_case = { SCORE=7 } }
+		8 = { standard_espionage_on_roll_failed_case = { SCORE=8 } }
+		9 = { standard_espionage_on_roll_failed_case = { SCORE=9 } }
+		10 = { standard_espionage_on_roll_failed_case = { SCORE=10 } }
+		11 = { standard_espionage_on_roll_failed_case = { SCORE=11 } }
+		12 = { standard_espionage_on_roll_failed_case = { SCORE=12 } }
+		13 = { standard_espionage_on_roll_failed_case = { SCORE=13 } }
+		14 >= { standard_espionage_on_roll_failed_case = { SCORE=14 } }
+	}
+	hidden_effect ={
+		switch = {
+			trigger = is_espionage_operation_score
+			1 <= {
+				if = {
+					limit = { is_espionage_operation_last_die_result = 10 }
+					add_espionage_information = 1
+				}
+			}
+			8 <= { add_espionage_information = 1 }
+			13 <= { add_espionage_information = 2 }
+		}
+		random_list = {
+			39 = { }
+			1 = {
+				modifier = {
+					factor = 0
+					has_espionage_operation_flag = operation_random_event_fired
+				}
+				$RANDOM_EVENTS$ = yes
+				set_timed_espionage_operation_flag = {
+					flag = operation_random_event_fired
+					days = 90
+				}
+			}
+		}
+	}
+}
+
+# GENERIC OPERATIONS EVENTS
+# operation scope | from = target
+operation_random_events_generic = {
+	if = {
+		limit = {
+			owner = { is_regular_empire = yes }
+			target = { is_regular_empire = yes }
+		}
+		owner = { operation_random_events_regular_regular = yes }
+	}
+	else_if = {
+		limit = {
+			owner = { is_regular_empire = yes }
+			target = { is_gestalt = yes }
+		}
+		owner = { operation_random_events_regular_gestalt = yes }
+	}
+	else_if = {
+		limit = {
+			owner = { is_gestalt = yes }
+			target = { is_regular_empire = yes }
+		}
+		owner = { operation_random_events_gestalt_regular = yes }
+	}
+	else_if = {
+		limit = {
+			owner = { is_gestalt = yes }
+			target = { is_gestalt = yes }
+		}
+		owner = { operation_random_events_gestalt_gestalt = yes }
+	}
+}
+
+# Each of the following events is weighted down if the empire has already rolled that particular event recently. Timed flags are set in the event itself, using @RandomOperationEventTimer. The modifier factor used below is explicitly not '0' for repeatable events - to prevent the pool from running out of 'fresh' events entirely.
+
+# Regular empire acting upon a regular empire
+# country (operation owner) scope | root = operation; from = target
+operation_random_events_regular_regular = {
+	random_list = {
+		2 = { #Contact Lost
+			modifier = {
+				factor = 0.1
+				has_country_flag = recent_op_contact_lost
+			}
+			country_event = { id = operation.5000 }
+		}
+		1 = { #Spooked
+			modifier = {
+				factor = 0.1
+				has_country_flag = recent_op_operative_spooked
+			}
+			country_event = { id = operation.5005 }
+		}
+		1 = { #Snuffed Out
+			modifier = {
+				factor = 0
+				root.target = {
+					NOR = {
+						has_valid_civic = civic_fanatic_purifiers
+						has_origin = origin_necrophage
+					}
+				}
+			}
+			modifier = {
+				factor = 0.1
+				has_country_flag = recent_op_snuffed_out
+			}
+			country_event = { id = operation.5035 }
+		}
+		1 = { #Drain on Resources
+			modifier = {
+				factor = 0.3
+				has_country_flag = recent_op_drain_resources
+				OR = { #Criminal Assets skew the usual time-out
+					root = { has_espionage_asset_criminal = yes }
+					root.spynetwork = { has_espionage_asset_criminal = yes }
+				}
+			}
+			modifier = {
+				factor = 0.1
+				has_country_flag = recent_op_drain_resources
+				NOR = {
+					root = { has_espionage_asset_criminal = yes }
+					root.spynetwork = { has_espionage_asset_criminal = yes }
+				}
+			}
+			country_event = { id = operation.5040 }
+		}
+		1 = { #Operative Defects
+			modifier = {
+				factor = 0
+				root.target = { is_homicidal = yes }
+			}
+			modifier = {
+				factor = 0.1
+				has_country_flag = recent_op_operative_defects
+			}
+			country_event = { id = operation.5045 }
+		}
+		1 = { #Confidence Wavers
+			modifier = {
+				factor = 0.1
+				has_country_flag = recent_op_confidence_wavers
+			}
+			country_event = { id = operation.5055 }
+		}
+	}
+}
+
+# Regular empire acting upon a gestalt empire
+# country (operation owner) scope | root = operation; from = target
+operation_random_events_regular_gestalt = {
+	random_list = {
+		1 = { #Contact Lost
+			modifier = {
+				factor = 0.1
+				has_country_flag = recent_op_contact_lost
+			}
+			country_event = { id = operation.5000 }
+		}
+		1 = { #Apprehended by Hunter-Seeker Drones
+			modifier = {
+				factor = 0.1
+				has_country_flag = recent_op_apprehended_by_drones
+			}
+			country_event = { id = operation.5010 }
+		}
+		1 = { #Snuffed Out
+			modifier = {
+				factor = 0
+				root.target = {
+					OR = {
+						has_valid_civic = civic_hive_empath
+						has_valid_civic = civic_machine_servitor
+					}
+				}
+			}
+			modifier = {
+				factor = 0.1
+				has_country_flag = recent_op_snuffed_out
+			}
+			country_event = { id = operation.5035 }
+		}
+		1 = { #Operative Defects
+			modifier = {
+				factor = 0
+				root.target = { is_homicidal = yes }
+			}
+			modifier = {
+				factor = 0.1
+				has_country_flag = recent_op_operative_defects
+			}
+			country_event = { id = operation.5045 }
+		}
+		1 = { #Confidence Wavers
+			modifier = {
+				factor = 0.1
+				has_country_flag = recent_op_confidence_wavers
+			}
+			country_event = { id = operation.5055 }
+		}
+	}
+}
+
+# Gestalt empire acting upon a regular empire
+# country (operation owner) scope | root = operation; from = target
+operation_random_events_gestalt_regular = {
+	random_list = {
+		1 = { #Multi-Phasic Force Fields
+			modifier = {
+				factor = 0.1
+				has_country_flag = recent_op_multiphasic_interference
+			}
+			country_event = { id = operation.5015 }
+		}
+		1 = { #Confidence Wavers
+			modifier = {
+				factor = 0.1
+				has_country_flag = recent_op_confidence_wavers
+			}
+			country_event = { id = operation.5055 }
+		}
+	}
+}
+
+# Gestalt empire acting upon a gestalt empire
+# country (operation owner) scope | root = operation; from = target
+operation_random_events_gestalt_gestalt = {
+	random_list = {
+		1 = { #Apprehended by Hunter-Seeker Drones (regular/hive vs. gestalt)
+			modifier = {
+				factor = 0
+				is_machine_empire = yes
+			}
+			modifier = {
+				factor = 0.1
+				has_country_flag = recent_op_apprehended_by_drones
+			}
+			country_event = { id = operation.5010 }
+		}
+		1 = { #Mistaken for Food (gestalt vs. hive)
+			modifier = {
+				factor = 0
+				root.target = { is_machine_empire = yes }
+			}
+			modifier = {
+				factor = 0.1
+				has_country_flag = recent_op_drones_hunted
+			}
+			country_event = { id = operation.5020 }
+		}
+		1 = { #Toxic Field Work (hive vs. hive)
+			modifier = {
+				factor = 0
+				OR = {
+					is_machine_empire = yes
+					root.target = { is_machine_empire = yes }
+				}
+			}
+			modifier = {
+				factor = 0.1
+				has_country_flag = recent_op_toxic_field
+			}
+			country_event = { id = operation.5025 }
+		}
+		1 = { #Excess Noise (machine vs. machine)
+			modifier = {
+				factor = 0
+				OR = {
+					is_hive_empire = yes
+					root.target = { is_hive_empire = yes }
+				}
+			}
+			modifier = {
+				factor = 0.1 has_country_flag = recent_op_excess_noise
+			}
+			country_event = { id = operation.5030 }
+		}
+		1 = { #Snuffed Out
+			modifier = {
+				factor = 0.1
+				has_country_flag = recent_op_snuffed_out
+			}
+			country_event = { id = operation.5035 }
+		}
+		1 = { #Confidence Wavers
+			modifier = {
+				factor = 0.1
+				has_country_flag = recent_op_confidence_wavers
+			}
+			country_event = { id = operation.5055 }
+		}
+	}
+}
+
+# OPERATIONS UNDER DEEP COVER
+# operation scope | from = target
+operation_random_events_deepcover = {
+	random_list = {
+		1 = { #Snuffed Out
+			modifier = {
+				factor = 0.1
+				owner = { has_country_flag = recent_op_snuffed_out }
+			}
+			owner = { country_event = { id = operation.5035 } }
+		}
+		1 = { #Operative Defects
+			modifier = {
+				factor = 0
+				root.target = { is_homicidal = yes }
+			}
+			modifier = {
+				factor = 0.1
+				owner = { has_country_flag = recent_op_operative_defects }
+			}
+			owner = { country_event = { id = operation.5045 } }
+		}
+		1 = { #Confidence Wavers
+			modifier = {
+				factor = 0.1
+				owner = { has_country_flag = recent_op_confidence_wavers }
+			}
+			owner = { country_event = { id = operation.5055 } }
+		}
+	}
+}
+
+# SABOTAGE (TARGETED) OPERATIONS
+# operation scope | from = target; from.owner = target country
+operation_random_events_sabotage_targeted = {
+	random_list = {
+		1 = { #Grisly Countermeasures
+			modifier = {
+				factor = 0.1
+				owner = { has_country_flag = recent_op_grisly_countermeasures }
+			}
+			owner = { country_event = { id = operation.5050 } }
+		}
+		1 = { #Confidence Wavers
+			modifier = {
+				factor = 0.1
+				owner = { has_country_flag = recent_op_confidence_wavers }
+			}
+			owner = { country_event = { id = operation.5055 } }
+		}
+	}
+}
+
+# FAILURE EVENT SCENARIO: COVER BLOWN
+# Note: not suitable for standard_espionage_on_roll
+# operation scope | from = owner country; target = target
+operation_random_events_coverblown = {
+	random_list = {
+		1 = { #Snuffed Out
+			modifier = {
+				factor = 0.1
+				owner = { has_country_flag = recent_op_snuffed_out }
+			}
+			owner = {
+				country_event = { id = operation.5035 scopes = { from = prev } }
+			}
+		}
+	}
+}
+
+# LOW-STAKES RANDOM EVENTS
+# operation scope
+operation_random_events_low_stakes = {
+	random_list = {
+		1 = { #Apprehended by Hunter-Seeker Drones (regular vs. gestalt)
+			modifier = {
+				factor = 0
+				OR = {
+					owner = { is_regular_empire = no }
+					target = { is_gestalt = no }
+				}
+			}
+			modifier = {
+				factor = 0.1
+				owner = { has_country_flag = recent_op_apprehended_by_drones }
+			}
+			owner = {
+				country_event = { id = operation.5010 }
+			}
+		}
+		1 = { #Drain on Resources (regular vs. regular)
+			modifier = {
+				factor = 0
+				OR = {
+					owner = { is_regular_empire = no }
+					target = { is_regular_empire = no }
+				}
+			}
+			modifier = {
+				factor = 0.1
+				owner = { has_country_flag = recent_op_drain_resources }
+			}
+			owner = {
+				country_event = { id = operation.5040 }
+			}
+		}
+		1 = { #Excess Noise (machine vs. machine)
+			modifier = {
+				factor = 0
+				OR = {
+					owner = { is_machine_empire = no }
+					target = { is_machine_empire = no }
+				}
+			}
+			modifier = {
+				factor = 0.1
+				owner = { has_country_flag = recent_op_excess_noise }
+			}
+			owner = {
+				country_event = { id = operation.5030 }
+			}
+		}
+		1 = { #Mistaken for Food (gestalt vs. hive)
+			modifier = {
+				factor = 0
+				OR = {
+					owner = { is_gestalt = no }
+					target = { is_hive_empire = no }
+				}
+			}
+			modifier = {
+				factor = 0.1
+				owner = { has_country_flag = recent_op_drones_hunted }
+			}
+			owner = {
+				country_event = { id = operation.5030 }
+			}
+		}
+		1 = { #Multi-Phasic Force Fields (gestalt vs. regular)
+			modifier = {
+				factor = 0
+				OR = {
+					owner = { is_gestalt = no }
+					target = { is_regular_empire = no }
+				}
+			}
+			modifier = {
+				factor = 0.1
+				owner = { has_country_flag = recent_op_multiphasic_interference }
+			}
+			owner = {
+				country_event = { id = operation.5015 }
+			}
+		}
+		1 = { #Toxic Field Work (hive vs. hive)
+			modifier = {
+				factor = 0
+				OR = {
+					owner = { is_hive_empire = no }
+					target = { is_hive_empire = no }
+				}
+			}
+			modifier = {
+				factor = 0.1
+				owner = { has_country_flag = recent_op_toxic_field }
+			}
+			owner = {
+				country_event = { id = operation.5025 }
+			}
+		}
+		1 = { #Confidence Wavers
+			modifier = {
+				factor = 0.1
+				owner = { has_country_flag = recent_op_confidence_wavers }
+			}
+			owner = { country_event = { id = operation.5055 } }
+		}
+	}
+}
+
+# IMPERIUM: TARGET SEDITIONISTS FAILURE EVENTS
+operation_random_events_target_seditionists = {
+	random_list = {
+		1 = { # Critical Failure - exposed to Imperial Senate!
+			owner = { country_event = { id = operation.6320 } }
+		}
+		20 = { # GENERIC OPERATIONS EVENTS
+			operation_random_events_generic = yes
+		}
+	}
+}
+
+# Espionage tooltips
+standard_espionage_on_roll_failed_range_entry = {
+	custom_tooltip_with_params = {
+		description = "ESPIONAGE_OPERATION_ON_ROLL_FAILED_RANGE"
+		description_parameters = {
+			"MIN" = $MIN$
+			"MAX" = $MAX$
+			"CLUES" = $CLUES$
+			"CHANCE" = @\[( 2 + ( $MAX$ + $DIE_MAX$ - |$MAX$ - $SCORE$ - $DIE_MAX$| ) - ( $MIN$ + $DIE_MIN$ + |$MIN$ - $SCORE$ - $DIE_MIN$| ) ) / ( 2*( $DIE_MAX$ - $DIE_MIN$ + 1 ) )]
+			"SCORE" = $SCORE$
+		}
+	}
+}
+
+standard_espionage_on_roll_failed_greater_than_eq_entry = {
+	custom_tooltip_with_params = {
+		description = "ESPIONAGE_OPERATION_ON_ROLL_FAILED_GREATER_THAN_EQ"
+		description_parameters = {
+			"MIN" = $MIN$
+			"CHANCE" = @\[( $SCORE$ - $MIN$ + $DIE_MAX$ + 1 ) / ( $DIE_MAX$ - $DIE_MIN$ + 1 )]
+			"SCORE" = $SCORE$
+		}
+	}
+}
+
+standard_espionage_on_roll_failed_less_than_eq_entry = {
+	custom_tooltip_with_params = {
+		description = "ESPIONAGE_OPERATION_ON_ROLL_FAILED_LESS_THAN_EQ"
+		description_parameters = {
+			"MAX" = $MAX$
+			"CLUES" = $CLUES$
+			"CHANCE" = @\[( 2 + ( $MAX$ + $DIE_MAX$ - |$MAX$ - $SCORE$ - $DIE_MAX$| ) - ( -100 + $DIE_MIN$ + |-100 - $SCORE$ - $DIE_MIN$| ) ) / ( 2*( $DIE_MAX$ - $DIE_MIN$ + 1 ) )]
+			"SCORE" = $SCORE$
+		}
+	}
+}
+
+standard_espionage_on_roll_failed_case = {
+	custom_tooltip_with_params = {
+		description = espionage_operation_roll_extended_header
+		description_parameters = {
+			"SCORE" = $SCORE$
+		}
+	}
+	standard_espionage_on_roll_failed_less_than_eq_entry = { MAX=1 CLUES=0 SCORE=$SCORE$ DIE_MIN=1 DIE_MAX=10 }
+	standard_espionage_on_roll_failed_range_entry = { MIN=2 MAX=8 CLUES=1 SCORE=$SCORE$ DIE_MIN=1 DIE_MAX=10 }
+	standard_espionage_on_roll_failed_range_entry = { MIN=9 MAX=13 CLUES=2 SCORE=$SCORE$ DIE_MIN=1 DIE_MAX=10 }
+	standard_espionage_on_roll_failed_greater_than_eq_entry = { MIN=14 SCORE=$SCORE$ DIE_MIN=1 DIE_MAX=10 }
+}
+
+#Operation scope
+operation_choose_operative_role = {
+	random_list = {
+		1 = { set_espionage_operation_flag = operative_courier }
+		1 = { set_espionage_operation_flag = operative_facilitator }
+		1 = { set_espionage_operation_flag = operative_fixer }
+		1 = { set_espionage_operation_flag = operative_informant }
+		1 = { set_espionage_operation_flag = operative_warehouse }
+	}
+}
+
+
+set_espionage_diplo_incident_success_flag = {
+	if = {
+		limit = {
+			exists = from
+			from = { is_scope_type = espionage_operation }
+		}
+		from = {
+			set_espionage_operation_flag = operation_succeeded
+		}
+		if = {
+			limit = {
+				exists = event_target:offended_party
+			}
+			event_target:offended_party = {
+				set_country_flag = offended_party@from
+			}
+		}
+		if = {
+			limit = {
+				exists = event_target:offended_party
+				event_target:offended_party = { is_same_value = from.owner }
+			}
+			from = {
+				set_espionage_operation_flag = $FLAG$_self
+			}
+		}
+		else = {
+			from = {
+				set_espionage_operation_flag = $FLAG$
+			}
+		}
+	}
+}
+
+add_spy_network_level_on_success_effect = {
+	if = {
+		limit = {
+			owner = { has_active_tradition = tr_subterfuge_finish }
+		}
+		add_spy_network_level = @\[( $VALUE$ / 2 )]
+	}
+	else = {
+		add_spy_network_level = $VALUE$
+	}
+}
+

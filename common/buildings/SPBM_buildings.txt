@@ -2,73 +2,6 @@
 # Grand Flotilla Balance Mod Buildings #
 ########################################
 
-## Gospel Buildings
-
-building_sanctuary_of_sin = {
-	base_buildtime = @b1_time
-	base_cap_amount = 1
-
-	branch_office_building = yes
-
-	potential = {
-		has_branch_office = yes
-		branch_office_owner = { has_valid_civic = civic_gospel_of_the_masses }
-		branch_office_owner = { is_criminal_syndicate = yes }
-	}
-
-	planet_modifier = {
-		planet_crime_add = 50
-		pop_ethic_spiritualist_attraction_mult = 0.5
-		job_preacher_add = 2
-	}
-
-	resources = {
-		category = planet_branch_office_buildings
-		cost = {
-			minerals = 500
-		}
-		upkeep = {
-			energy = 2
-		}
-	}
-
-	ai_weight = {
-		weight = 250
-	}
-}
-
-building_temple_of_prosperity = {
-	base_buildtime = @b1_time
-	base_cap_amount = 1
-
-	branch_office_building = yes
-
-	potential = {
-		has_branch_office = yes
-		branch_office_owner = { has_valid_civic = civic_gospel_of_the_masses }
-		branch_office_owner = { is_criminal_syndicate = no }
-	}
-
-	planet_modifier = {
-		pop_ethic_spiritualist_attraction_mult = 0.5
-		job_preacher_add = 2
-	}
-
-	resources = {
-		category = planet_branch_office_buildings
-		cost = {
-			minerals = 500
-		}
-		upkeep = {
-			energy = 2
-		}
-	}
-
-	ai_weight = {
-		weight = 250
-	}
-}
-
 ## Housing Buildings
 building_luxury_residence = {
 	base_buildtime = @b1_time
@@ -1714,6 +1647,98 @@ building_clone_vats = {
 		text = tooltip_organic_and_artificial_assembly_warning
 	}
 }
+#Unity buildings
+building_hive_node = {
+	base_buildtime = @b1_time
+
+	category = unity
+
+	potential = {
+		exists = owner
+		building_relaxed_basic_income_check = yes
+		owner = {
+			is_hive_empire = yes
+		}
+	}
+
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			owner = { is_hive_empire = no }
+		}
+	}
+
+	convert_to = {
+		building_temple
+		building_simulation_1
+		building_autochthon_monument
+		building_corporate_monument
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b1_minerals
+		}
+		upkeep = {
+			energy = @b1_upkeep
+		}
+	}
+	planet_modifier = {
+		job_synapse_drone_add = @b1_jobs
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_active_tradition = tr_domination_synaptic_extensions
+			}
+		}
+		modifier = {
+			planet_housing_add = 2
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_edict = synaptic_reinforcement
+			}
+		}
+		job_maintenance_drone_add = 1
+	}
+
+	prerequisites = {
+		"tech_hive_node"
+	}
+
+	upgrades = {
+		building_hive_cluster
+	}
+
+	triggered_desc = {
+		text = job_synapse_drone_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				has_edict = synaptic_reinforcement
+			}
+		}
+		text = job_maintenance_drone_effect_desc
+	}
+}
+
+
+
+
+¨
+
+
 #Habitat Capital Buildings
 building_hab_capital = {
 	capital = yes

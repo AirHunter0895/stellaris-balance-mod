@@ -144,7 +144,7 @@ researcher = {
 				exists = owner
 				owner = { has_valid_civic = civic_technocracy }
 			}
-			unity = 0.5
+			unity = 1
 		}
 		upkeep = {
 			consumer_goods = 2
@@ -157,6 +157,7 @@ researcher = {
 			consumer_goods = 1
 		}
 	}
+
 
 	weight = {
 		weight = @specialist_job_weight
@@ -847,6 +848,7 @@ telepath = {
 
 	planet_modifier = {
 		planet_crime_add = -35
+		planet_stability_add = 2.5
 	}
 
 	triggered_planet_modifier = {

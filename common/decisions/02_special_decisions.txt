@@ -30,6 +30,7 @@ decision_prospect = {
 		hidden_effect = {
 			set_planet_flag = planet_prospected
 			add_random_non_blocker_deposit = yes
+			add_random_non_blocker_deposit = yes
 			create_message = {
 				type = MESSAGE_TYPE_PLANET_PROSPECTED
 				localization = MESSAGE_PLANET_PROSPECTED

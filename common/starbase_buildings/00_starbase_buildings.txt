@@ -338,10 +338,6 @@ fleet_academy = {
 		owner = { has_technology = tech_interstellar_fleet_traditions }
 	}
 
-	possible = {
-		has_starbase_module = shipyard
-	}
-
 	ship_modifier = {
 		ship_starting_experience_add = 100
 	}
@@ -589,6 +585,7 @@ black_hole_observatory = {
 					is_active_resolution = "resolution_galacticstudies_extradimensional_experimentation"
 				}
 			}
+			physics_research = 15
 		}
 		produces = {
 			trigger = {

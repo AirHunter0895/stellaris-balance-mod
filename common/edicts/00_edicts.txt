@@ -126,7 +126,7 @@ nutritional_plenitude = {
 	}
 
 	modifier = {
-		pop_growth_speed = 0.10
+		pop_growth_speed = 0.20
 		biological_pop_happiness = 0.05
 		lithoid_pop_happiness = 0.05
 		empire_size_pops_mult = 0.10
@@ -173,7 +173,7 @@ nutritional_plenitude_hive = {
 	}
 
 	modifier = {
-		pop_growth_speed = 0.10
+		pop_growth_speed = 0.20
 		empire_size_pops_mult = 0.10
 		planet_pops_organics_food_upkeep_mult = 0.25
 		planet_pops_organics_minerals_upkeep_mult = 0.25

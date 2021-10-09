@@ -1,0 +1,5437 @@
+###########################################
+#
+# Nemesis Espionage Events
+# Written by Gemma Thomson
+#
+###########################################
+
+namespace = operation
+
+# SUBTERFUGE (.1XXX)
+# SABOTAGE (.2XXX)
+# MANIPULATION (.3XXX)
+# PROVOCATION (.4XXX)
+# RANDOM EVENTS (.5XXX)
+# CUSTODIAN (.6XXX)
+# INTEL (.7XXX)
+
+@OperationBribeCost1 = -400
+@OperationBribeCost2 = -600
+@OperationBribeCost3 = -800
+@OperationBribeThreshold1 = 400
+@OperationBribeThreshold2 = 600
+@OperationBribeThreshold3 = 800
+
+@StealTechnologyAmount = 1000 #Amount of science research in every discipline which will be granted if the operation cannot steal a Technology
+@StealTechnologyTimer = 2160 #days (6 years) until Steal Technology can be repeated. Referenced in tooltip strings "operation.1026.tooltip.cooldown" and "operation_steal_technology_too_recent".
+@SabotageStarbaseTimer = 1440 #days (4 years) until Sabotage Starbase can be repeated against this target.
+@CrisisBeaconTimer = 1440 #days (4 years) until Crisis Beacon can be attempted again. Referenced in tooltip string "operation_crisis_beacon_too_recent".
+
+# Number of days before a single event should (ideally) stand a chance of coming up again.
+@RandomOperationEventTimer = 600
+@RandomOperationEventTimerLong = 1000
+
+@gather_info_infiltration_days = 3600
+
+############################
+# SUBTERFUGE: ACQUIRE ASSET
+############################
+# this = operation; from = target (country)
+
+# Install operatives
+espionage_operation_event = {
+	id = operation.1000
+	title = operation.1000.name
+	espionage_operation = yes
+	desc = {
+		trigger = {
+			target = {
+				OR = {
+					has_hostile_espionage_operation_ethics = yes
+					has_closed_borders = root.owner
+					is_at_war_with = root.owner
+				}
+			}
+		}
+		text = operation.1000.desc.hostile
+	}
+	desc = {
+		trigger = {
+			target = {
+				NOR = {
+					has_hostile_espionage_operation_ethics = yes
+					has_closed_borders = root.owner
+					is_at_war_with = root.owner
+				}
+			}
+		}
+		text = operation.1000.desc.friendly
+	}
+	picture = GFX_evt_spy_network
+	show_sound = event_default
+	is_triggered_only = yes
+
+	immediate = { }
+
+	option = { name = ACKNOWLEDGED }
+}
+# Target identified
+espionage_operation_event = {
+	id = operation.1001
+	title = operation.1001.name
+	desc = operation.1001.desc
+	espionage_operation = yes
+	picture = {
+		trigger = {
+			target = { is_gestalt = no }
+		}
+		picture = GFX_evt_acquire_asset
+	}
+	picture = {
+		trigger = {
+			target = { is_gestalt = yes }
+		}
+		picture = GFX_evt_hive_mind
+	}
+	show_sound = event_default
+	is_triggered_only = yes
+
+	immediate = { }
+
+	option = { name = GOOD }
+}
+# Result
+espionage_operation_event = {
+	id = operation.1002
+	title = operation.1002.name
+	desc = operation.1002.desc
+	espionage_operation = yes
+	picture = GFX_evt_acquire_asset
+	show_sound = event_default
+	is_triggered_only = yes
+
+	immediate = {
+		set_espionage_operation_progress_locked = yes
+		if = {
+			limit = {
+				target = { has_authority = auth_hive_mind }
+			}
+			espionage_acquire_asset_hive = yes
+		}
+		else_if = {
+			limit = {
+				target = { has_authority = auth_machine_intelligence }
+			}
+			espionage_acquire_asset_machine = yes
+		}
+		else = {
+			espionage_acquire_asset_regular = yes
+		}
+	}
+
+	option = {
+		name = LAUNCH_OPERATION
+		hidden_effect = {
+			owner = {
+				country_event = { id = operation.1006 days = 1 }
+			}
+		}
+	}
+
+	after = {
+		set_espionage_operation_progress_locked = no
+	}
+}
+# Finalé | from = operation
+country_event = {
+	id = operation.1006
+	title = operation.1006.name
+	desc = {
+		trigger = {
+			switch = {
+				trigger = has_country_flag
+				asset_bureaucrat = { text = operation.1006.desc.official }
+				asset_clerk = { text = operation.1006.desc.official }
+				asset_economist = { text = operation.1006.desc.professional }
+				asset_scientist = { text = operation.1006.desc.professional }
+				asset_junior_officer = { text = operation.1006.desc.underling }
+				asset_criminal_underling = { text = operation.1006.desc.rebel }
+				asset_attache = { text = operation.1006.desc.official }
+				asset_laborer = { text = operation.1006.desc.underling }
+				asset_hacker = { text = operation.1006.desc.rebel }
+				asset_arms_smuggler = { text = operation.1006.desc.rebel }
+				asset_agitator = { text = operation.1006.desc.rebel }
+				asset_newscaster = { text = operation.1006.desc.celebrity }
+				asset_pop_icon = { text = operation.1006.desc.celebrity }
+				asset_academic = { text = operation.1006.desc.professional }
+				asset_veteran = { text = operation.1006.desc.underling }
+				asset_synapse_drone = { text = operation.1006.desc.drone }
+				asset_ephapse_relay = { text = operation.1006.desc.organ }
+				asset_labor_drone = { text = operation.1006.desc.drone }
+				asset_research_drone = { text = operation.1006.desc.drone }
+				asset_warrior_drone = { text = operation.1006.desc.drone }
+				asset_behavioral_regulator = { text = operation.1006.desc.organ }
+				asset_pheromone_emitter = { text = operation.1006.desc.organ }
+				asset_resource_distribution_node = { text = operation.1006.desc.network }
+				asset_cortex_node = { text = operation.1006.desc.organ }
+				asset_subspace_tendril = { text = operation.1006.desc.organ }
+				asset_coordination_system = { text = operation.1006.desc.component }
+				asset_engagement_protocol = { text = operation.1006.desc.network }
+				asset_logistics_system = { text = operation.1006.desc.network }
+				asset_research_database = { text = operation.1006.desc.network }
+				asset_war_algorithm = { text = operation.1006.desc.network }
+				asset_command_relay = { text = operation.1006.desc.component }
+				asset_dispatch_uplink = { text = operation.1006.desc.component }
+				asset_resource_pylon = { text = operation.1006.desc.component }
+				asset_memory_cache = { text = operation.1006.desc.network }
+				asset_weapons_platform = { text = operation.1006.desc.network }
+				default = { text = operation.1006.desc.default }
+			}
+		}
+	}
+	picture = {
+		trigger = {
+			from.target = { is_gestalt = no }
+		}
+		picture = GFX_evt_acquire_asset
+	}
+	picture = {
+		trigger = {
+			from.target = { has_authority = auth_machine_intelligence }
+		}
+		picture = GFX_evt_sapient_AI
+	}
+	picture = {
+		trigger = {
+			from.target = { has_authority = auth_hive_mind }
+		}
+		picture = GFX_evt_hive_mind
+	}
+	location = from.target.capital_scope
+	show_sound = event_nem_asset_acquired_positive
+	is_triggered_only = yes
+
+	immediate = {
+		country_event = { id = tutorial.2010 } #Assigning Assets
+	}
+
+	option = {
+		name = EXCELLENT
+		root = {
+			espionage_acquire_asset_create_asset = yes
+		}
+		from.spynetwork = {
+			add_spy_network_level_on_success_effect = { VALUE = -15 }
+		}
+	}
+
+	after = {
+		hidden_effect = {
+			owner = {
+				if = {
+					limit = {
+						NOT = { has_country_flag = operation_complete_acquire_asset }
+					}
+					change_variable = {
+						which = tinker_tailor_soldier_blorg_achievement_count
+						value = 1
+					}
+					set_country_flag = operation_complete_acquire_asset
+				}
+			}
+		}
+		destroy_espionage_operation = from
+	}
+}
+
+###############################
+# SUBTERFUGE: STEAL TECHNOLOGY
+###############################
+# this = operation
+# from = operation.target (country)
+
+# Finding an 'in'
+espionage_operation_event = {
+	id = operation.1020
+	title = operation.1020.name
+	espionage_operation = yes
+	desc = {
+		text = operation.1020.desc.conf_external
+		trigger = {
+			has_espionage_operation_flag = steal_tech_conference
+			target = { is_xenophobe = no }
+		}
+	}
+	desc = {
+		text = operation.1020.desc.conf_hosted
+		trigger = {
+			has_espionage_operation_flag = steal_tech_conference
+		}
+	}
+	desc = {
+		text = operation.1020.desc.lecture
+		trigger = {
+			has_espionage_operation_flag = steal_tech_lecture
+		}
+	}
+	desc = {
+		text = operation.1020.desc.outreach
+		trigger = {
+			has_espionage_operation_flag = steal_tech_outreach
+		}
+	}
+	desc = {
+		text = operation.1020.desc.theft
+		trigger = {
+			has_espionage_operation_flag = steal_tech_theft
+		}
+	}
+	desc = {
+		text = operation.1020.desc.enigmatic
+		trigger = {
+			owner = {
+				has_country_flag = cannot_steal_enigmatic_tech@root.target
+			}
+		}
+	}
+	picture = {
+		trigger = {
+			OR = {
+				has_espionage_operation_flag = steal_tech_conference
+				has_espionage_operation_flag = steal_tech_lecture
+				has_espionage_operation_flag = steal_tech_outreach
+			}
+		}
+		picture = GFX_evt_voting
+	}
+	picture = {
+		trigger = {
+			has_espionage_operation_flag = steal_tech_theft
+		}
+		picture = GFX_evt_smugglers_in_bar
+	}
+	show_sound = event_default
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				target = { has_ascension_perk = ap_enigmatic_engineering }
+			}
+			set_espionage_operation_progress_locked = yes
+			owner = {
+				set_country_flag = cannot_steal_enigmatic_tech@root.target
+				country_event = { id = operation.1027 }
+			}
+		}
+		else = {
+			if = {
+				limit = { #Disregard empires which wouldn't hold a scientific debate
+					target = {
+						NOR = {
+							has_valid_civic = civic_fanatic_purifiers
+							has_valid_civic = civic_ruthless_competition
+							has_valid_civic = civic_hive_subsumed_will
+							has_valid_civic = civic_machine_introspective
+							is_homicidal = yes
+						}
+					}
+				}
+				random_list = {
+					1 = { set_espionage_operation_flag = steal_tech_conference }
+					1 = {
+						modifier = { factor = 0 target = { is_gestalt = yes } }
+						set_espionage_operation_flag = steal_tech_lecture
+					}
+					1 = {
+						modifier = { factor = 0 target = { is_gestalt = yes } }
+						set_espionage_operation_flag = steal_tech_outreach
+					}
+				}
+			}
+			else = {
+				set_espionage_operation_flag = steal_tech_theft
+			}
+		}
+	}
+
+	option = {
+		name = CURIOUS
+		trigger = {
+			owner = { has_country_flag = cannot_steal_enigmatic_tech@root.target }
+		}
+	}
+	option = {
+		name = ACKNOWLEDGED
+		trigger = {
+			owner = {
+				NOT = { has_country_flag = cannot_steal_enigmatic_tech@root.target }
+			}
+		}
+	}
+}
+# Contact made
+espionage_operation_event = {
+	id = operation.1021
+	title = operation.1021.name
+	espionage_operation = yes
+	desc = {
+		text = operation.1021.desc.creds
+		trigger = {
+			OR = {
+				has_espionage_operation_flag = steal_tech_conference
+				has_espionage_operation_flag = steal_tech_lecture
+				has_espionage_operation_flag = steal_tech_outreach
+			}
+			owner = { is_gestalt = no }
+		}
+	}
+	desc = {
+		text = operation.1021.desc.appeal
+		trigger = {
+			OR = {
+				has_espionage_operation_flag = steal_tech_conference
+				has_espionage_operation_flag = steal_tech_lecture
+				has_espionage_operation_flag = steal_tech_outreach
+			}
+		}
+	}
+	desc = {
+		trigger = {
+			has_espionage_operation_flag = steal_tech_theft
+		}
+		text = operation.1021.desc.theft
+	}
+	picture = GFX_evt_engineering_research
+	show_sound = event_default
+	is_triggered_only = yes
+
+	immediate = { }
+
+	option = { name = OK }
+}
+# Drawing up plans
+espionage_operation_event = {
+	id = operation.1022
+	title = operation.1022.name
+	espionage_operation = yes
+	desc = {
+		trigger = {
+			OR = {
+				has_espionage_operation_flag = steal_tech_conference
+				has_espionage_operation_flag = steal_tech_lecture
+				has_espionage_operation_flag = steal_tech_outreach
+			}
+		}
+		text = operation.1022.desc.invited
+	}
+	desc = {
+		trigger = {
+			has_espionage_operation_flag = steal_tech_theft
+		}
+		text = operation.1022.desc.theft
+	}
+	picture = GFX_evt_physics_research
+	show_sound = event_default
+	is_triggered_only = yes
+
+	immediate = {
+		set_espionage_operation_progress_locked = yes
+	}
+
+	option = {
+		name = LAUNCH_OPERATION
+		hidden_effect = {
+			owner = {
+				country_event = { id = operation.1025 days = 1 }
+			}
+		}
+	}
+
+	after = {
+		set_espionage_operation_progress_locked = no
+	}
+}
+# Finalé setup | from = operation
+country_event = {
+	id = operation.1025
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		if = { #Theft from a facility
+			limit = {
+				from = { has_espionage_operation_flag = steal_tech_theft }
+			}
+			random_list = {
+				3 = {
+					modifier = {
+						factor = 1.5
+						root = {
+							relative_encryption_decryption = {
+								target = from.target
+								value > 1.3
+							}
+						}
+					}
+					from = { set_espionage_operation_flag = smooth_exit }
+				}
+				2 = {
+					modifier = {
+						factor = 2
+						espionage_operation_disguise_disadvantage = yes
+					}
+					modifier = {
+						factor = 0.3
+						from = {
+							OR = {
+								has_espionage_asset_technology = yes
+								has_espionage_asset_subterfuge = yes
+								has_espionage_asset_criminal = yes
+							}
+						}
+					}
+					#'Messy' exit (no flag needed)
+				}
+			}
+		}
+		else = { #Theft via a cover alias
+			random_list = {
+				3 = {
+					modifier = {
+						factor = 1.5
+						root = {
+							relative_encryption_decryption = {
+								target = from.target
+								value > 1.5
+							}
+						}
+					}
+					from = { set_espionage_operation_flag = smooth_exit }
+				}
+				1 = {
+					modifier = {
+						factor = 2
+						espionage_operation_disguise_disadvantage = yes
+					}
+					modifier = {
+						factor = 0.3
+						from = {
+							OR = {
+								has_espionage_asset_technology = yes
+								has_espionage_asset_subterfuge = yes
+							}
+						}
+					}
+					#'Messy' exit (no flag needed)
+				}
+			}
+		}
+		country_event = { id = operation.1026 days = 3 }
+	}
+}
+# Finalé | fromfrom = operation
+country_event = {
+	id = operation.1026
+	title = operation.1026.name
+	desc = {
+		trigger = {
+			fromfrom = {
+				has_espionage_operation_flag = steal_tech_theft
+				has_espionage_operation_flag = smooth_exit
+			}
+		}
+		text = operation.1026.desc.ducts.smooth
+		text = operation.1026.desc.goods.smooth
+	}
+	desc = {
+		trigger = {
+			fromfrom = {
+				has_espionage_operation_flag = steal_tech_theft
+				NOT = { has_espionage_operation_flag = smooth_exit }
+			}
+		}
+		text = operation.1026.desc.ducts.messy
+		text = operation.1026.desc.goods.messy
+	}
+	desc = {
+		trigger = {
+			fromfrom = {
+				NOT = { has_espionage_operation_flag = steal_tech_theft }
+				has_espionage_operation_flag = smooth_exit
+			}
+		}
+		text = operation.1026.desc.invited.smooth
+	}
+	desc = {
+		trigger = {
+			fromfrom = {
+				NOT = {
+					has_espionage_operation_flag = steal_tech_theft
+					has_espionage_operation_flag = smooth_exit
+				}
+			}
+		}
+		text = operation.1026.desc.invited.messy
+	}
+	picture = GFX_evt_physics_research
+	show_sound = event_espionage_concluded
+	is_triggered_only = yes
+
+	trigger = {
+		exists = fromfrom
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				can_copy_random_tech_from = { who = fromfrom.target }
+			}
+			fromfrom = { set_espionage_operation_flag = reward_tech }
+			random_list = {
+				1 = {
+					modifier = {
+						factor = 3
+						root = {
+							relative_encryption_decryption = {
+								target = fromfrom.target
+								value > 1.6
+							}
+						}
+					}
+					modifier = {
+						factor = 0
+						fromfrom = {
+							NOR = {
+								has_espionage_operation_flag = smooth_exit
+								has_espionage_asset_subterfuge = yes
+								has_espionage_asset_technology = yes
+							}
+						}
+					}
+					fromfrom = { set_espionage_operation_flag = reward_extra } #Steal a bonus tech
+				}
+				5 = { }
+			}
+		}
+	}
+
+	option = { #We're done here (smooth)
+		name = operation.1026.a.smooth
+		trigger = {
+			fromfrom = { has_espionage_operation_flag = smooth_exit }
+		}
+		fromfrom.spynetwork = {
+			add_spy_network_level_on_success_effect = { VALUE = -20 }
+		}
+	}
+	option = { #We're done here (messy)
+		name = operation.1026.a.messy
+		trigger = {
+			fromfrom = { NOT = { has_espionage_operation_flag = smooth_exit } }
+		}
+		fromfrom.spynetwork = {
+			add_spy_network_level_on_success_effect = { VALUE = -30 }
+		}
+
+	}
+	option = { #Sabotage their current research
+		name = {
+			trigger = {
+				fromfrom = { has_espionage_operation_flag = smooth_exit }
+			}
+			text = operation.1026.b.smooth
+		}
+		name = {
+			trigger = {
+				fromfrom = { NOT = { has_espionage_operation_flag = smooth_exit } }
+			}
+			text = operation.1026.b.messy
+		}
+		icon = {
+			icon = GFX_espionage_asset_icon
+			text = ESPIONAGE_OPERATION_ASSET_EVENT_OPTION
+		}
+		trigger = {
+			fromfrom = {
+				OR = {
+					has_espionage_asset = asset_hacker
+					has_espionage_asset = asset_memory_cache
+				}
+			}
+		}
+		allow = {
+			exists = fromfrom.target
+			fromfrom.target = {
+				NOT = { has_modifier = research_stolen_sabotaged } #Not stackable
+			}
+		}
+		hidden_effect = {
+			fromfrom.target = {
+				country_event = { id = operation.1030 }
+			}
+		}
+		root = {
+			add_resource = { influence = -25 }
+		}
+		custom_tooltip = operation.1026.b.tooltip
+		fromfrom = {
+			if = {
+				limit = { has_espionage_operation_flag = smooth_exit }
+				spynetwork = {
+					add_spy_network_level_on_success_effect = { VALUE = -30 }
+				}
+			}
+			else = {
+				spynetwork = {
+					add_spy_network_level_on_success_effect = { VALUE = -40 }
+				}
+			}
+			destroy_espionage_asset_sabotage = yes
+		}
+		owner = {
+			if = {
+				limit = { has_ascension_perk = ap_become_the_crisis }
+				complete_crisis_objective = crisobj_perform_upsetting_operations
+			}
+		}
+	}
+	option = { #Research backdoor
+		name = operation.1026.c
+		icon = {
+			icon = GFX_espionage_asset_icon
+			text = ESPIONAGE_OPERATION_ASSET_EVENT_OPTION
+		}
+		trigger = {
+			root = {
+				relative_encryption_decryption = {
+					target = fromfrom.target
+					value > 1.4
+				}
+			}
+			fromfrom = {
+				OR = {
+					has_espionage_asset_subterfuge = yes
+					has_espionage_asset_technology = yes
+				}
+			}
+		}
+		allow = {
+			custom_tooltip = {
+				fail_text = "requires_not_espionage_research_backdoor"
+				NOT = { has_modifier = espionage_research_backdoor } #Not stackable
+			}
+		}
+		root = {
+			add_modifier = { modifier = espionage_research_backdoor days = 720 }
+		}
+		fromfrom = {
+			if = {
+				limit = { has_espionage_operation_flag = smooth_exit }
+				spynetwork = {
+					add_spy_network_level_on_success_effect = { VALUE = -20 }
+				}
+			}
+			else = {
+				spynetwork = {
+					add_spy_network_level_on_success_effect = { VALUE = -30 }
+				}
+			}
+			if = {
+				limit = { has_espionage_asset_technology = yes }
+				destroy_espionage_asset_technology = yes
+			}
+			else_if = {
+				limit = { has_espionage_asset_subterfuge = yes }
+				destroy_espionage_asset_subterfuge = yes
+			}
+		}
+	}
+	option = { #Steal extra technology
+		name = operation.1026.d
+		icon = {
+			icon = GFX_espionage_asset_icon
+			text = ESPIONAGE_OPERATION_ASSET_EVENT_OPTION
+		}
+		custom_tooltip = operation.1026.d.tooltip
+		trigger = {
+			fromfrom = {
+				has_espionage_operation_flag = reward_extra #Also requires "smooth_exit" and an Asset
+				can_copy_random_tech_from = { who = fromfrom.target }
+			}
+		}
+		root = {
+			copy_random_tech_from = {
+				who = fromfrom.target
+				progress = 0.10
+			}
+		}
+		fromfrom = {
+			if = {
+				limit = { has_espionage_asset_technology = yes }
+				destroy_espionage_asset_technology = yes
+			}
+			else_if = {
+				limit = { has_espionage_asset_subterfuge = yes }
+				destroy_espionage_asset_subterfuge = yes
+			}
+			spynetwork = {
+				add_spy_network_level_on_success_effect = { VALUE = -30 }
+			}
+		}
+	}
+
+	after = {
+		custom_tooltip = operation.1026.tooltip.cooldown
+		fromfrom.spynetwork = {
+			set_saved_date = {
+				key = recently_stole_technology
+				days_from_present = 360
+				expires = 360
+			}
+		}
+		if = {
+			limit = {
+				can_copy_random_tech_from = { who = fromfrom.target }
+			}
+			locked_random_list = {
+				1 = {
+					modifier = {
+						factor = 0
+						NOT = {
+							can_copy_random_tech_from = {
+								who = fromfrom.target
+								area = physics
+							}
+						}
+					}
+					copy_random_tech_from = {
+						who = fromfrom.target
+						area = physics
+						progress = 0.30
+					}
+				}
+				1 = {
+					modifier = {
+						factor = 0
+						NOT = {
+							can_copy_random_tech_from = {
+								who = fromfrom.target
+								area = society
+							}
+						}
+					}
+					copy_random_tech_from = {
+						who = fromfrom.target
+						area = society
+						progress = 0.30
+					}
+				}
+				1 = {
+					modifier = {
+						factor = 0
+						NOT = {
+							can_copy_random_tech_from = {
+								who = fromfrom.target
+								area = engineering
+							}
+						}
+					}
+					copy_random_tech_from = {
+						who = fromfrom.target
+						area = engineering
+						progress = 0.30
+					}
+				}
+			}
+		}
+		else = {
+			add_resource = { engineering_research = @StealTechnologyAmount }
+			add_resource = { physics_research = @StealTechnologyAmount }
+			add_resource = { society_research = @StealTechnologyAmount }
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					owner = { NOT = { has_country_flag = operation_complete_steal_technology } }
+				}
+				owner = {
+					change_variable = {
+						which = tinker_tailor_soldier_blorg_achievement_count
+						value = 1
+					}
+					set_country_flag = operation_complete_steal_technology
+				}
+			}
+		}
+		destroy_espionage_operation = fromfrom
+	}
+}
+# Operation invalid (Enigmatic Engineering) | from = operation
+country_event = {
+	id = operation.1027
+	title = operation.1027.name
+	desc = operation.1027.desc
+	picture = GFX_evt_physics_research
+	show_sound = event_default
+	is_triggered_only = yes
+
+	option = {
+		name = INTRIGUING
+	}
+
+	after = {
+		hidden_effect = {
+			from = {
+				fire_on_action = { on_action = on_operation_cancelled }
+			}
+		}
+		destroy_espionage_operation = from
+	}
+}
+# Operation target experiences sabotage | from = instigating country
+country_event = {
+	id = operation.1030
+	title = operation.1030.name
+	desc = {
+		trigger = { is_gestalt = no }
+		text = operation.1030.desc.regular
+	}
+	desc = {
+		trigger = { is_gestalt = yes }
+		text = operation.1030.desc.gestalt
+	}
+	picture = GFX_evt_archaeologists_escaping
+	show_sound = event_default
+	is_triggered_only = yes
+
+	trigger = {
+		exists = from
+	}
+
+	immediate = {
+		add_modifier = {
+			modifier = research_stolen_sabotaged
+			days = 360
+		}
+	}
+
+	option = {
+		name = CURSES
+	}
+}
+
+###########################
+# SABOTAGE STARBASE
+###########################
+# this = operation; from = target (starbase)
+
+# Approaching the starbase
+espionage_operation_event = {
+	id = operation.2000
+	title = operation.2000.name
+	espionage_operation = yes
+	desc = {
+		text = operation.2000.desc.jobseeker
+		text = operation.2000.desc.vendor
+		trigger = {
+			exists = target
+			target.owner = {
+				has_sabotage_starbase_valid_target = yes
+				NOR = {
+					has_hostile_espionage_operation_ethics = yes
+					has_closed_borders = root.owner
+					is_at_war_with = root.owner
+				}
+			}
+		}
+	}
+	desc = {
+		text = operation.2000.desc.derelict
+		text = operation.2000.desc.cargo
+		trigger = {
+			exists = target
+			target.owner = {
+				has_sabotage_starbase_valid_target = yes
+				owner = {
+					OR = {
+						has_hostile_espionage_operation_ethics = yes
+						has_closed_borders = root.owner
+						is_at_war_with = root.owner
+					}
+				}
+			}
+		}
+	}
+	desc = {
+		text = operation.2000.desc.invalid
+		trigger = {
+			OR = {
+				NOT = { exists = target }
+				target.owner = { has_sabotage_starbase_valid_target = no }
+			}
+		}
+	}
+	picture = GFX_evt_space_station
+	show_sound = event_default
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				OR = {
+					NOT = { exists = target }
+					target.owner = { has_sabotage_starbase_valid_target = no }
+				}
+			}
+			set_espionage_operation_progress_locked = yes
+			owner = {
+				country_event = { id = operation.2006 } #Operation invalid
+			}
+		}
+	}
+
+	option = {
+		name = ACKNOWLEDGED
+	}
+}
+# Operatives in place
+espionage_operation_event = {
+	id = operation.2001
+	title = operation.2001.name
+	espionage_operation = yes
+	desc = {
+		text = operation.2001.desc.vocation
+		trigger = {
+			exists = target
+			target.owner = {
+				has_sabotage_starbase_valid_target = yes
+				owner = {
+					NOR = {
+						has_hostile_espionage_operation_ethics = yes
+						has_closed_borders = root.owner
+						is_at_war_with = root.owner
+					}
+				}
+			}
+		}
+	}
+	desc = {
+		trigger = {
+			exists = target
+			target.owner = {
+				has_sabotage_starbase_valid_target = yes
+				owner = {
+					OR = {
+						has_hostile_espionage_operation_ethics = yes
+						has_closed_borders = root.owner
+						is_at_war_with = root.owner
+					}
+				}
+			}
+		}
+		text = operation.2001.desc.vessel
+	}
+	desc = {
+		text = operation.2000.desc.invalid
+		trigger = {
+			OR = {
+				NOT = { exists = target }
+				target.owner = { has_sabotage_starbase_valid_target = no }
+			}
+		}
+	}
+	picture = GFX_evt_space_station
+	show_sound = event_default
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				OR = {
+					NOT = { exists = target }
+					target.owner = { has_sabotage_starbase_valid_target = no }
+				}
+			}
+			set_espionage_operation_progress_locked = yes
+			owner = {
+				country_event = { id = operation.2006 } #Operation invalid
+			}
+		}
+	}
+
+	option = {
+		name = ACKNOWLEDGED
+	}
+}
+# Ready-signal
+espionage_operation_event = {
+	id = operation.2002
+	title = operation.2002.name
+	espionage_operation = yes
+	desc = {
+		text = operation.2002.desc.vocation
+		trigger = {
+			exists = target
+			target.owner = {
+				has_sabotage_starbase_valid_target = yes
+				owner = {
+					NOR = {
+						has_hostile_espionage_operation_ethics = yes
+						has_closed_borders = root.owner
+						is_at_war_with = root.owner
+					}
+				}
+			}
+		}
+	}
+	desc = {
+		text = operation.2002.desc.vessel
+		trigger = {
+			exists = target
+			target.owner = {
+				has_sabotage_starbase_valid_target = yes
+				owner = {
+					OR = {
+						has_hostile_espionage_operation_ethics = yes
+						has_closed_borders = root.owner
+						is_at_war_with = root.owner
+					}
+				}
+			}
+		}
+	}
+	desc = {
+		text = operation.2000.desc.invalid
+		trigger = {
+			OR = {
+				NOT = { exists = target }
+				target.owner = { has_sabotage_starbase_valid_target = no }
+			}
+		}
+	}
+	picture = GFX_evt_space_station
+	show_sound = event_default
+	is_triggered_only = yes
+
+	immediate = {
+		set_espionage_operation_progress_locked = yes
+		if = {
+			limit = {
+				NOR = {
+					exists = target
+					target.owner = { has_sabotage_starbase_valid_target = yes }
+				}
+			}
+			owner = {
+				country_event = { id = operation.2006 } #Operation invalid
+			}
+		}
+		else = {
+			target = {
+				save_event_target_as = sabotaged_starbase
+				owner = { save_event_target_as = sabotaged_starbase_owner }
+				solar_system = { save_event_target_as = sabotaged_starbase_system }
+			}
+		}
+	}
+
+	option = {
+		name = LAUNCH_OPERATION
+		hidden_effect = {
+			owner = {
+				country_event = { id = operation.2005 }
+			}
+		}
+	}
+
+	after = {
+		set_espionage_operation_progress_locked = no
+	}
+}
+# Finalé | from = operation; fromfrom = target (starbase)
+country_event = {
+	id = operation.2005
+	title = operation.2005.name
+	desc = {
+		text = operation.2005.desc.military
+		trigger = {
+			from.target.owner = {
+				OR = {
+					has_country_flag = anchorage_sabotaged
+					has_country_flag = gun_battery_sabotaged
+					has_country_flag = hangar_bay_sabotaged
+					has_country_flag = missile_battery_sabotaged
+					has_country_flag = command_center_sabotaged
+					has_country_flag = communications_jammer_sabotaged
+					has_country_flag = deep_space_black_site_sabotaged
+					has_country_flag = disruption_field_sabotaged
+					has_country_flag = fleet_academy_sabotaged
+					has_country_flag = naval_logistics_office_sabotaged
+					has_country_flag = target_uplink_computer_sabotaged
+					has_country_flag = warp_fluctuator_sabotaged
+				}
+			}
+		}
+	}
+	desc = {
+		text = operation.2005.desc.trade
+		trigger = {
+			from.target.owner = {
+				OR = {
+					has_country_flag = trading_hub_sabotaged
+					has_country_flag = offworld_trading_company_sabotaged
+					has_country_flag = resource_silo_sabotaged
+					has_country_flag = trader_proxy_office_sabotaged
+				}
+			}
+		}
+	}
+	desc = {
+		text = operation.2005.desc.civic
+		trigger = {
+			from.target.owner = {
+				OR = {
+					has_country_flag = art_college_sabotaged
+					has_country_flag = black_hole_observatory_sabotaged
+					has_country_flag = hydroponics_bay_sabotaged
+					has_country_flag = missile_battery_sabotaged
+					has_country_flag = crew_quarters_sabotaged
+					has_country_flag = curator_think_tank_sabotaged
+					has_country_flag = nebula_refinery_sabotaged
+					has_country_flag = solar_panel_network_sabotaged
+				}
+			}
+		}
+	}
+	location = event_target:sabotaged_starbase_system
+	picture = GFX_evt_archaeologists_escaping
+	show_sound = event_espionage_concluded
+	is_triggered_only = yes
+
+	trigger = {
+		exists = from
+		exists = event_target:sabotaged_starbase
+	}
+
+	immediate = {
+		from.target = {
+			if = {
+				limit = {
+					count_starbase_modules = {
+						count >= 1
+					}
+				}
+				espionage_sabotage_starbase_module = yes
+			}
+			else_if = {
+				limit = { has_nonshipyard_starbase_buildings = yes }
+				espionage_sabotage_starbase_building = yes
+			}
+		}
+		#Bonus actions
+		if = {
+			limit = {
+				from = { has_espionage_asset_sabotage = yes }
+			}
+			random_list = {
+				1 = { #Take down another module
+					modifier = {
+						factor = 5
+						from = { has_espionage_asset_technology = yes }
+					}
+					modifier = {
+						factor = 0
+						from.target = {
+							count_starbase_modules = {
+								count < 2
+							}
+						}
+					}
+					set_country_flag = sabotage_starbase_collateral@from.target.owner
+				}
+				1 = { #Take down a defense platform
+					modifier = {
+						factor = 5
+						from = { has_espionage_asset_military = yes }
+					}
+					set_country_flag = sabotage_starbase_defence@from.target.owner
+				}
+				4 = {
+					modifier = {
+						factor = 3
+						root = {
+							relative_encryption_decryption = { target = from.target.owner value < 0.6 }
+						}
+					}
+					#No bonus action
+				}
+			}
+		}
+	}
+
+	option = { #We're done here (smooth)
+		name = operation.2005.a
+		trigger = {
+			from.target.owner = {
+				NOR = {
+					has_hostile_espionage_operation_ethics = yes
+					has_closed_borders = root
+					is_at_war_with = root
+				}
+			}
+		}
+		from.spynetwork = {
+			add_spy_network_level_on_success_effect = { VALUE = -30 }
+		}
+		owner = {
+			if = {
+				limit = { has_ascension_perk = ap_become_the_crisis }
+				complete_crisis_objective = crisobj_perform_upsetting_operations
+			}
+		}
+	}
+	option = { #We're done here (messy)
+		name = operation.2005.a
+		trigger = {
+			from.target.owner = {
+				OR = {
+					has_hostile_espionage_operation_ethics = yes
+					has_closed_borders = root
+					is_at_war_with = root
+				}
+			}
+		}
+		from.spynetwork = {
+			add_spy_network_level_on_success_effect = { VALUE = -45 }
+		}
+		owner = {
+			if = {
+				limit = { has_ascension_perk = ap_become_the_crisis }
+				complete_crisis_objective = crisobj_perform_upsetting_operations
+			}
+		}
+	}
+	option = { #Collateral damage (module)
+		name = operation.2005.b
+		icon = {
+			icon = GFX_espionage_asset_icon
+			text = ESPIONAGE_OPERATION_ASSET_EVENT_OPTION
+		}
+		trigger = {
+			has_country_flag = sabotage_starbase_collateral@from.target.owner
+		}
+		hidden_effect = {
+			remove_country_flag = sabotage_starbase_collateral@from.target.owner
+		}
+		from = {
+			destroy_espionage_asset_technology = yes
+			target = {
+				remove_random_starbase_module = {
+					count = 1
+				}
+			}
+			spynetwork = {
+				add_spy_network_level_on_success_effect = { VALUE = -45 }
+			}
+		}
+		owner = {
+			if = {
+				limit = { has_ascension_perk = ap_become_the_crisis }
+				complete_crisis_objective = crisobj_perform_upsetting_operations
+			}
+		}
+	}
+	option = { #Collateral damage (defense platform)
+		name = operation.2005.c
+		icon = {
+			icon = GFX_espionage_asset_icon
+			text = ESPIONAGE_OPERATION_ASSET_EVENT_OPTION
+		}
+		trigger = {
+			has_country_flag = sabotage_starbase_defence@from.target.owner
+		}
+		custom_tooltip = operation.2005.c.tooltip
+		allow = {
+			custom_tooltip = {
+				fail_text = STARBASE_NO_PLATFORMS
+				from.target = {
+					fleet = {
+						count_owned_ship = {
+							count > 0
+							limit = {
+								exists = owner
+								is_ship_size = military_station_small
+							}
+						}
+					}
+				}
+			}
+			resource_stockpile_compare = { resource = volatile_motes value >= 2 }
+		}
+		hidden_effect = {
+			from.target = {
+				fleet = {
+					random_owned_ship = {
+						limit = { is_ship_size = military_station_small }
+						destroy_ship = this
+					}
+				}
+			}
+		}
+		root = {
+			add_resource = { volatile_motes = -2 }
+		}
+		from.spynetwork = {
+			add_spy_network_level_on_success_effect = { VALUE = -45 }
+		}
+		owner = {
+			if = {
+				limit = { has_ascension_perk = ap_become_the_crisis }
+				complete_crisis_objective = crisobj_perform_upsetting_operations
+			}
+		}
+	}
+
+	after = {
+		hidden_effect = {
+			if = {
+				limit = {
+					owner = { NOT = { has_country_flag = operation_complete_sabotage_starbase } }
+				}
+				owner = {
+					change_variable = {
+						which = tinker_tailor_soldier_blorg_achievement_count
+						value = 1
+					}
+					set_country_flag = operation_complete_sabotage_starbase
+				}
+			}
+			from.target.owner = {
+				set_timed_country_flag = {
+					flag = sabotaged_starbase_alert@root
+					days = @SabotageStarbaseTimer
+				}
+				country_event = { id = operation.2010 } #Notification of sabotage
+			}
+		}
+		destroy_espionage_operation = from
+	}
+}
+# Operation invalid (nothing to sabotage) | from = operation; event_target:sabotaged_starbase = target
+country_event = {
+	id = operation.2006
+	title = operation.2006.name
+	desc = operation.2006.desc
+	picture = GFX_evt_space_station
+	show_sound = event_default
+	is_triggered_only = yes
+
+	immediate = { }
+
+	option = {
+		name = UNFORTUNATE
+	}
+
+	after = {
+		destroy_espionage_operation = from
+	}
+}
+# Starbase sabotaged! (victim) | from = instigating country; event_target:sabotaged_starbase = target
+country_event = {
+	id = operation.2010
+	title = operation.2010.name
+	desc = {
+		text = operation.2010.desc.phobe
+		trigger = {
+			is_xenophobe = yes
+		}
+	}
+	desc = {
+		text = operation.2010.desc.regular
+		trigger = {
+			is_xenophobe = no
+			is_gestalt = no
+		}
+	}
+	desc = {
+		text = operation.2010.desc.gestalt
+		trigger = {
+			is_gestalt = yes
+		}
+	}
+	picture = GFX_evt_archaeologists_escaping
+	show_sound = event_default
+	is_triggered_only = yes
+	location = event_target:sabotaged_starbase
+
+	trigger = {
+		exists = from
+		exists = event_target:sabotaged_starbase
+	}
+
+	immediate = {
+		random_list = {
+			1 = { #Saboteurs caught
+				modifier = {
+					factor = 0
+					OR = {
+						NOT = {
+							any_spynetwork = {
+								owner = { is_same_value = root }
+								target = { is_same_value = from }
+							}
+						}
+						has_country_flag = recently_received_espionage_asset
+					}
+				}
+				modifier = {
+					factor = 3
+					relative_encryption_decryption = { target = from value > 0.8 }
+					relative_encryption_decryption = { target = from value < 1.6 }
+				}
+				modifier = {
+					factor = 10
+					relative_encryption_decryption = { target = from value >= 1.6 }
+				}
+				set_timed_country_flag = {
+					flag = espionage_caught_saboteurs
+					days = 20
+				}
+				if = {
+					limit = {
+						any_spynetwork = {
+							owner = { is_same_value = root }
+							target = { is_same_value = from }
+							is_spynetwork_level > 5
+						}
+						NOT = { has_country_flag = recently_received_espionage_asset }
+					}
+					country_event = { #A Surprise Catch (asset granted)
+						id = espionage.1040
+						days = 15
+						scopes = { from = fromfrom }
+					}
+				}
+			}
+			9 = { } #Nothing
+		}
+	}
+
+	option = {
+		name = {
+			text = APPALLING
+			trigger = {
+				OR = {
+					is_xenophobe = yes
+					is_gestalt = yes
+				}
+			}
+		}
+		name = {
+			text = CURSES
+			trigger = {
+				NOT = {
+					OR = {
+						is_xenophobe = yes
+						is_gestalt = yes
+					}
+				}
+			}
+		}
+	}
+
+	after = {
+		remove_sabotage_starbase_flag = yes
+	}
+}
+
+###########################
+# SMEAR CAMPAIGN
+###########################
+# this = operation; from = target (country)
+
+# NB: This operation targets two empires. 'target' is the Operation's target as seen in the UI, i.e. the empire which will actually suffer the diplomatic penalty. 'event_target:smear_campaign_recipient@target' refers to the empire chosen by the player in chapter 1, who will be made to look unfavourably upon the Smear Campaign's actual target.
+
+# Targets drawn up
+espionage_operation_event = {
+	id = operation.3000
+	title = operation.3000.name
+	espionage_operation = yes
+	desc = {
+		text = operation.3000.desc
+		trigger = {
+			exists = event_target:smear_option_1
+			exists = event_target:smear_option_2
+		}
+	}
+	desc = {
+		text = operation.3000.desc.single
+		trigger = {
+			exists = event_target:smear_option_1
+			NOT = { exists = event_target:smear_option_2 }
+		}
+	}
+	desc = { #No 3rd-party target could be found
+		text = operation.3000.desc.error
+		trigger = {
+			NOT = {
+				exists = event_target:smear_option_1
+			}
+		}
+	}
+	picture = GFX_evt_smear_campaign
+	show_sound = event_default
+	is_triggered_only = yes
+
+	immediate = {
+		set_espionage_operation_progress_locked = yes
+		while = {
+			count = 3
+			if = { #Identify a good relation first, if they exist
+				limit = {
+					any_playable_country = {
+						NOR = {
+							is_same_value = root.owner
+							is_same_value = root.target
+						}
+						has_communications = root.owner
+						has_communications = root.target
+						opinion_level = {
+							who = root.target
+							level >= good
+						}
+						NOR = {
+							AND = {
+								exists = event_target:smear_option_1
+								is_same_value = event_target:smear_option_1
+							}
+							AND = {
+								exists = event_target:smear_option_2
+								is_same_value = event_target:smear_option_2
+							}
+							AND = {
+								exists = event_target:smear_option_3
+								is_same_value = event_target:smear_option_3
+							}
+							has_country_flag = smear_campaign_recipient@root
+						}
+					}
+				}
+				random_playable_country = {
+					limit = {
+						NOR = {
+							is_same_value = root.owner
+							is_same_value = root.target
+						}
+						has_communications = root.owner
+						has_communications = root.target
+						opinion_level = {
+							who = root.target
+							level >= good
+						}
+						NOR = {
+							AND = {
+								exists = event_target:smear_option_1
+								is_same_value = event_target:smear_option_1
+							}
+							AND = {
+								exists = event_target:smear_option_2
+								is_same_value = event_target:smear_option_2
+							}
+							AND = {
+								exists = event_target:smear_option_3
+								is_same_value = event_target:smear_option_3
+							}
+							has_country_flag = smear_campaign_recipient@root
+						}
+					}
+					if = {
+						limit = { NOT = { exists = event_target:smear_option_1 } }
+						save_event_target_as = smear_option_1
+					}
+					else_if = {
+						limit = { NOT = { exists = event_target:smear_option_2 } }
+						save_event_target_as = smear_option_2
+					}
+					else_if = {
+						limit = { NOT = { exists = event_target:smear_option_3 } }
+						save_event_target_as = smear_option_3
+					}
+				}
+			}
+			else_if = { #Identify adequate relations, if they exist
+				limit = {
+					any_playable_country = {
+						NOR = {
+							is_same_value = root.owner
+							is_same_value = root.target
+						}
+						has_communications = root.owner
+						has_communications = root.target
+						opinion_level = {
+							who = root.target
+							level >= neutral
+						}
+						NOR = {
+							AND = {
+								exists = event_target:smear_option_1
+								is_same_value = event_target:smear_option_1
+							}
+							AND = {
+								exists = event_target:smear_option_2
+								is_same_value = event_target:smear_option_2
+							}
+							AND = {
+								exists = event_target:smear_option_3
+								is_same_value = event_target:smear_option_3
+							}
+							has_country_flag = smear_campaign_recipient@root
+						}
+					}
+				}
+				random_playable_country = {
+					limit = {
+						NOR = {
+							is_same_value = root.owner
+							is_same_value = root.target
+						}
+						has_communications = root.owner
+						has_communications = root.target
+						opinion_level = {
+							who = root.target
+							level >= neutral
+						}
+						NOR = {
+							AND = {
+								exists = event_target:smear_option_1
+								is_same_value = event_target:smear_option_1
+							}
+							AND = {
+								exists = event_target:smear_option_2
+								is_same_value = event_target:smear_option_2
+							}
+							AND = {
+								exists = event_target:smear_option_3
+								is_same_value = event_target:smear_option_3
+							}
+							has_country_flag = smear_campaign_recipient@root
+						}
+					}
+					if = {
+						limit = { NOT = { exists = event_target:smear_option_1 } }
+						save_event_target_as = smear_option_1
+					}
+					else_if = {
+						limit = { NOT = { exists = event_target:smear_option_2 } }
+						save_event_target_as = smear_option_2
+					}
+					else_if = {
+						limit = { NOT = { exists = event_target:smear_option_3 } }
+						save_event_target_as = smear_option_3
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = operation.3000.a
+		trigger = {
+			exists = event_target:smear_option_2 #Otherwise only "PROCEED" should appear
+		}
+		hidden_effect = {
+			event_target:smear_option_1 = {
+				set_timed_country_flag = {
+					flag = smear_campaign_recipient@root
+					days = 3600 #10 years
+				}
+			}
+			set_espionage_operation_progress_locked = no
+		}
+	}
+	option = {
+		name = operation.3000.b
+		trigger = {
+			exists = event_target:smear_option_2
+		}
+		hidden_effect = {
+			event_target:smear_option_2 = {
+				set_timed_country_flag = {
+					flag = smear_campaign_recipient@root
+					days = 3600 #10 years
+				}
+			}
+			set_espionage_operation_progress_locked = no
+		}
+	}
+	option = {
+		name = operation.3000.c
+		trigger = {
+			exists = event_target:smear_option_3
+		}
+		hidden_effect = {
+			event_target:smear_option_3 = {
+				set_timed_country_flag = {
+					flag = smear_campaign_recipient@root
+					days = 3600 #10 years
+				}
+			}
+			set_espionage_operation_progress_locked = no
+		}
+	}
+	option = {
+		name = PROCEED
+		trigger = {
+			exists = event_target:smear_option_1
+			NOT = { exists = event_target:smear_option_2 }
+		}
+		hidden_effect = {
+			event_target:smear_option_1 = {
+				set_timed_country_flag = {
+					flag = smear_campaign_recipient@root
+					days = 3600 #10 years
+				}
+			}
+			set_espionage_operation_progress_locked = no
+		}
+	}
+	option = { #No target found
+		name = operation.3000.d
+		exclusive_trigger = {
+			NOT = {
+				exists = event_target:smear_option_1
+			}
+		}
+		root = {
+			destroy_espionage_operation = this
+		}
+	}
+}
+# Campaign drafted
+espionage_operation_event = {
+	id = operation.3001
+	title = operation.3001.name
+	espionage_operation = yes
+	desc = { #Flags set in immediate, below
+		trigger = {
+			hidden:event_target:smear_campaign_recipient = {
+				switch = {
+					trigger = has_country_flag
+					smear_spiritualist_ridic@root.target = { text = operation.3001.desc.spirit.ridic }
+					smear_spiritualist_merch@root.target = { text = operation.3001.desc.spirit.merch }
+					smear_spiritualist_deity@root.target = { text = operation.3001.desc.spirit.deity }
+					smear_militarist_study@root.target = { text = operation.3001.desc.milit.study }
+					smear_militarist_priso@root.target = { text = operation.3001.desc.milit.priso }
+					smear_militarist_armsd@root.target = { text = operation.3001.desc.milit.armsd }
+					smear_militarist_pacif@root.target = { text = operation.3001.desc.milit.pacif }
+					smear_militarist_satir@root.target = { text = operation.3001.desc.milit.satir }
+					smear_xenophobe_genes@root.target = { text = operation.3001.desc.phobe.genes }
+					smear_xenophobe_abduc@root.target = { text = operation.3001.desc.phobe.abduc }
+					smear_egalitarian_migra@root.target = { text = operation.3001.desc.egal.migra }
+					smear_egalitarian_galco@root.target = { text = operation.3001.desc.egal.galco }
+					smear_egalitarian_elect@root.target = { text = operation.3001.desc.egal.elect }
+					smear_materialist_theft@root.target = { text = operation.3001.desc.mat.theft }
+					smear_materialist_droid@root.target = { text = operation.3001.desc.mat.droid }
+					smear_materialist_singu@root.target = { text = operation.3001.desc.mat.singu }
+					smear_materialist_sabot@root.target = { text = operation.3001.desc.mat.sabot }
+					smear_pacifist_gunrun@root.target = { text = operation.3001.desc.pacif.gunrun }
+					smear_pacifist_vassal@root.target = { text = operation.3001.desc.pacif.vassal }
+					smear_pacifist_weapon@root.target = { text = operation.3001.desc.pacif.weapon }
+					smear_pacifist_border@root.target = { text = operation.3001.desc.pacif.border }
+					smear_xenophile_commerc@root.target = { text = operation.3001.desc.phile.commerc }
+					smear_xenophile_slavery@root.target = { text = operation.3001.desc.phile.slavery }
+					smear_xenophile_motives@root.target = { text = operation.3001.desc.phile.motives }
+					smear_xenophile_contact@root.target = { text = operation.3001.desc.phile.contact }
+					smear_authoritarian_mockery@root.target = { text = operation.3001.desc.auth.mockery }
+					smear_authoritarian_discord@root.target = { text = operation.3001.desc.auth.discord }
+					smear_authoritarian_experim@root.target = { text = operation.3001.desc.auth.experim }
+					smear_authoritarian_extorts@root.target = { text = operation.3001.desc.auth.extorts }
+					smear_corporate_criment@root.target = { text = operation.3001.desc.corp.criment }
+					smear_corporate_resells@root.target = { text = operation.3001.desc.corp.resells }
+					smear_corporate_machine@root.target = { text = operation.3001.desc.corp.machine }
+					smear_corporate_knockof@root.target = { text = operation.3001.desc.corp.knockof }
+					smear_hive_asset@root.target = { text = operation.3001.desc.hive.asset }
+					smear_hive_necro@root.target = { text = operation.3001.desc.hive.necro }
+					smear_hive_toxin@root.target = { text = operation.3001.desc.hive.toxin }
+					smear_machine_asset@root.target = { text = operation.3001.desc.machine.asset }
+					smear_machine_milit@root.target = { text = operation.3001.desc.machine.milit }
+					smear_machine_steal@root.target = { text = operation.3001.desc.machine.steal }
+				}
+			}
+		}
+	}
+	picture = GFX_evt_smear_campaign
+	show_sound = event_default
+	is_triggered_only = yes
+
+	trigger = {
+		any_playable_country = {
+			has_country_flag = smear_campaign_recipient@root
+		}
+	}
+
+	immediate = {
+		random_playable_country = {
+			limit = {
+				has_country_flag = smear_campaign_recipient@root
+			}
+			save_event_target_as = smear_campaign_recipient #One-time, extensive use in loc
+			if = {
+				limit = {
+					is_regular_empire = yes
+				}
+				random_list = {
+					1 = {
+						modifier = { factor = 0 is_spiritualist = no }
+						espionage_smear_campaign_spiritualist = yes
+					}
+					1 = {
+						modifier = { factor = 0 is_militarist = no }
+						espionage_smear_campaign_militarist = yes
+					}
+					1 = {
+						modifier = { factor = 0 is_xenophobe = no }
+						espionage_smear_campaign_xenophobe = yes
+					}
+					1 = {
+						modifier = { factor = 0 is_egalitarian = no }
+						espionage_smear_campaign_egalitarian = yes
+					}
+					1 = {
+						modifier = { factor = 0 is_materialist = no }
+						espionage_smear_campaign_materialist = yes
+					}
+					1 = {
+						modifier = { factor = 0 is_pacifist = no }
+						espionage_smear_campaign_pacifist = yes
+					}
+					1 = {
+						modifier = { factor = 0 is_xenophile = no }
+						espionage_smear_campaign_xenophile = yes
+					}
+					1 = {
+						modifier = { factor = 0 is_authoritarian = no }
+						espionage_smear_campaign_authoritarian = yes
+					}
+					1 = {
+						modifier = {
+							factor = 0
+							NOT = { has_authority = auth_corporate }
+						}
+						espionage_smear_campaign_corporate = yes
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = { has_authority = auth_hive_mind }
+					espionage_smear_campaign_hive = yes
+				}
+				else = { espionage_smear_campaign_machine = yes }
+			}
+		}
+	}
+
+	option = {
+		name = OK
+	}
+}
+# Campaign ready
+espionage_operation_event = {
+	id = operation.3002
+	title = operation.3002.name
+	desc = operation.3002.desc
+	espionage_operation = yes
+	picture = GFX_evt_smear_campaign
+	show_sound = event_default
+	is_triggered_only = yes
+
+	trigger = {
+		any_playable_country = {
+			has_country_flag = smear_campaign_recipient@root
+		}
+	}
+
+	immediate = {
+		set_espionage_operation_progress_locked = yes
+		random_playable_country = {
+			limit = {
+				has_country_flag = smear_campaign_recipient@root
+			}
+			save_event_target_as = smear_campaign_recipient #Doesn't carry over from Chapter 2, but will work for the finalés
+		}
+	}
+
+	option = {
+		name = LAUNCH_OPERATION
+		hidden_effect = {
+			owner = {
+				country_event = { id = operation.3005 days = 1 }
+			}
+		}
+	}
+
+	after = {
+		set_espionage_operation_progress_locked = no
+		event_target:smear_campaign_recipient = {
+			remove_country_flag = smear_campaign_recipient@root
+		}
+	}
+}
+# Finalé | from = operation; fromfrom = target (country)
+country_event = {
+	id = operation.3005
+	title = operation.3005.name
+	desc = {
+		text = operation.3005.desc.insult
+		trigger = {
+			from.target = { is_gestalt = no }
+			event_target:smear_campaign_recipient = {
+				has_country_flag = smear_campaign_insulted@root
+			}
+		}
+	}
+	desc = {
+		text = operation.3005.desc.trust
+		trigger = {
+			from.target = { is_gestalt = no }
+			event_target:smear_campaign_recipient = {
+				has_country_flag = smear_campaign_deceived@root
+			}
+		}
+	}
+	desc = {
+		text = operation.3005.desc.espionage
+		trigger = {
+			from.target = { is_gestalt = no }
+			event_target:smear_campaign_recipient = {
+				has_country_flag = smear_campaign_espionage@root
+			}
+		}
+	}
+	desc = {
+		text = operation.3005.desc.gestalt
+		trigger = {
+			from.target = {
+				is_gestalt = yes
+			}
+		}
+	}
+	picture = GFX_evt_smear_campaign
+	show_sound = event_espionage_concluded
+	is_triggered_only = yes
+
+	trigger = {
+		exists = event_target:smear_campaign_recipient
+	}
+
+	immediate = {
+		from = { save_event_target_as = operation }
+		save_event_target_as = smear_campaign_instigator
+		#Remove narrative-specific flags (only shown to the instigating empire)
+		event_target:smear_campaign_recipient = {
+			switch = {
+				trigger = has_country_flag
+				smear_campaign_insulted@root = { remove_smear_campaign_flags_insulted = yes }
+				smear_campaign_deceived@root = { remove_smear_campaign_flags_deceived = yes }
+				smear_campaign_espionage@root = { remove_smear_campaign_flags_espionage = yes }
+			}
+		}
+		from.target = { save_event_target_as = smear_campaign_target }
+	}
+
+	option = {
+		name = EXCELLENT
+		from.spynetwork = {
+			add_spy_network_level_on_success_effect = { VALUE = -20 }
+		}
+		hidden_effect = {
+			event_target:smear_campaign_recipient = {
+				switch = {
+					trigger = has_country_flag
+					smear_campaign_espionage@root = {
+						if = {
+							limit = {
+								relative_encryption_decryption = { target = root value > 1.7 }
+							}
+							country_event = { id = operation.3010 days = 1 } #False Smear Campaign (Espionage)
+						}
+						else = {
+							from.target = { save_event_target_as = hostile_infiltration_country }
+							country_event = { id = espionage.1070 days = 1 } #Hostile Infiltration Detected
+							remove_country_flag = smear_campaign_espionage@root
+						}
+					}
+					smear_campaign_insulted@root = {
+						if = {
+							limit = {
+								relative_encryption_decryption = { target = root value > 1.5 }
+							}
+							country_event = { id = operation.3011 days = 1 } #False Smear Campaign (Insult)
+						}
+						else = {
+							from.target = { save_event_target_as = scandalous_insult_country }
+							country_event = { id = envoy_events.100 days = 1 } #Scandalous Insult
+							remove_country_flag = smear_campaign_insulted@root
+						}
+					}
+					smear_campaign_deceived@root = {
+						if = {
+							limit = {
+								relative_encryption_decryption = { target = root value > 1.6 }
+							}
+							country_event = { id = operation.3012 days = 1 } #False Smear Campaign (Deception)
+						}
+						else = {
+							if = {
+								limit = { has_active_spynetwork = yes }
+								from.target = { save_event_target_as = insidious_plot_country }
+								country_event = { id = espionage.1080 days = 1 } #Insidious Plot Detected
+							}
+							else = {
+								from.target = { save_event_target_as = hostile_infiltration_country }
+								country_event = { id = espionage.1070 days = 1 } #Hostile Infiltration Detected
+								remove_country_flag = smear_campaign_deceived@root
+							}
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					owner = { NOT = { has_country_flag = operation_complete_smear_campaign } }
+				}
+				owner = {
+					change_variable = {
+						which = tinker_tailor_soldier_blorg_achievement_count
+						value = 1
+					}
+					set_country_flag = operation_complete_smear_campaign
+				}
+			}
+		}
+		destroy_espionage_operation = from
+
+		owner = {
+			if = {
+				limit = { has_ascension_perk = ap_become_the_crisis }
+				complete_crisis_objective = crisobj_perform_upsetting_operations
+			}
+		}
+	}
+}
+
+# Smear Campaign Detected (Espionage) | from = inciting country; event_target:smear_campaign_target = victim country
+country_event = {
+	id = operation.3010
+	title = operation.3010.name
+	desc = operation.3010.desc
+	picture = GFX_evt_decryption
+	show_sound = event_default
+	is_triggered_only = yes
+
+	trigger = {
+		exists = event_target:smear_campaign_instigator
+		exists = event_target:smear_campaign_target
+	}
+
+	immediate = { }
+
+	option = { #Play along (mirrors espionage.1070)
+		name = operation.3010.a
+		allow = {
+			resource_stockpile_compare = { resource = influence value >= 20 }
+		}
+		add_resource = { influence = -20 }
+		root = {
+			add_opinion_modifier = {
+				who = event_target:smear_campaign_target
+				modifier = opinion_smear_campaign_espionage
+			}
+		}
+		if = {
+			limit = {
+				event_target:smear_campaign_target = {
+					has_federation = yes
+					federation = { is_same_value = root.federation }
+				}
+			}
+			federation = { add_cohesion = -20 }
+		}
+		add_monthly_resource_mult = {
+			resource = unity
+			value = @tier1unityreward
+			min = @tier1unitymin
+			max = @tier1unitymax
+		}
+		hidden_effect = {
+			remove_country_flag = smear_campaign_espionage@event_target:smear_campaign_instigator
+			event_target:smear_campaign_target = {
+				country_event = { id = espionage.1072 days = 1 } #Allegation of Espionage
+			}
+		}
+	}
+	option = { #Inform victim
+		name = operation.3010.b
+		root = {
+			add_opinion_modifier = {
+				who = event_target:smear_campaign_instigator
+				modifier = opinion_smear_campaign_caught
+			}
+		}
+		event_target:smear_campaign_target = {
+			country_event = { id = operation.3020 } #Smear Campaign Exposed
+		}
+		custom_tooltip = operation.3010.favortooltip
+	}
+}
+# Smear Campaign Detected (Insult) | from = inciting country; event_target:smear_campaign_target = victim country
+country_event = {
+	id = operation.3011
+	title = operation.3011.name
+	desc = operation.3011.desc
+	picture = GFX_evt_decryption
+	show_sound = event_encrypted_comms
+	is_triggered_only = yes
+
+	trigger = {
+		exists = event_target:smear_campaign_instigator
+		exists = event_target:smear_campaign_target
+	}
+
+	immediate = { }
+
+	option = { #Play along (mirrors envoy_events.100)
+		name = operation.3010.a
+		allow = {
+			resource_stockpile_compare = { resource = influence value >= 15 }
+		}
+		add_resource = { influence = -15 }
+		root = {
+			add_opinion_modifier = {
+				who = event_target:smear_campaign_target
+				modifier = opinion_smear_campaign_insulted
+			}
+		}
+		if = {
+			limit = {
+				has_federation = yes
+				event_target:insidious_plot_country = {
+					has_federation = yes
+					federation = { is_same_value = root.federation }
+				}
+			}
+			federation = { add_cohesion = -15 }
+		}
+		add_monthly_resource_mult = {
+			resource = unity
+			value = @tier1unityreward
+			min = @tier1unitymin
+			max = @tier1unitymax
+		}
+		hidden_effect = {
+			remove_country_flag = smear_campaign_insulted@event_target:smear_campaign_instigator
+			event_target:smear_campaign_target = {
+				country_event = { id = envoy_events.101 days = 1 } #Scandalous Insult
+			}
+		}
+	}
+	option = { #Inform victim
+		name = operation.3010.b
+		root = {
+			add_opinion_modifier = {
+				who = event_target:smear_campaign_instigator
+				modifier = opinion_smear_campaign_caught
+			}
+		}
+		event_target:smear_campaign_target = {
+			country_event = { id = operation.3020 } #Smear Campaign Exposed
+		}
+		custom_tooltip = operation.3010.favortooltip
+	}
+}
+# Smear Campaign Detected (Deception) | from = inciting country; event_target:smear_campaign_target = victim country
+country_event = {
+	id = operation.3012
+	title = operation.3012.name
+	desc = operation.3012.desc
+	picture = GFX_evt_decryption
+	show_sound = event_encrypted_comms
+	is_triggered_only = yes
+
+	trigger = {
+		exists = event_target:smear_campaign_instigator
+		exists = event_target:smear_campaign_target
+	}
+
+	immediate = { }
+
+	option = { #Play along (mirrors espionage.1080)
+		name = operation.3010.a
+		allow = {
+			resource_stockpile_compare = { resource = influence value >= 15 }
+		}
+		add_resource = { influence = -15 }
+		root = {
+			add_opinion_modifier = {
+				who = event_target:smear_campaign_target
+				modifier = opinion_smear_campaign_deceived
+			}
+		}
+		if = {
+			limit = {
+				has_federation = yes
+				event_target:insidious_plot_country = {
+					has_federation = yes
+					federation = { is_same_value = root.federation }
+				}
+			}
+			federation = { add_cohesion = -30 }
+		}
+		add_monthly_resource_mult = {
+			resource = unity
+			value = @tier1unityreward
+			min = @tier1unitymin
+			max = @tier1unitymax
+		}
+		hidden_effect = {
+			remove_country_flag = smear_campaign_deceived@event_target:smear_campaign_instigator
+			event_target:smear_campaign_target = {
+				country_event = { id = espionage.1085 days = 1 } #Implicated in a Plot
+			}
+		}
+	}
+	option = { #Inform victim
+		name = operation.3010.b
+		root = {
+			add_opinion_modifier = {
+				who = event_target:smear_campaign_instigator
+				modifier = opinion_smear_campaign_caught
+			}
+		}
+		event_target:smear_campaign_target = {
+			country_event = { id = operation.3020 } #Smear Campaign Exposed
+		}
+		custom_tooltip = operation.3010.favortooltip
+	}
+}
+
+# Smear Campaign about us, exposed by its recipient | from = recipient country; fromfrom = instigating country
+country_event = {
+	id = operation.3020
+	title = operation.3020.name
+	desc = {
+		trigger = {
+			hidden:from = {
+				switch = {
+					trigger = has_country_flag
+					smear_campaign_espionage@event_target:smear_campaign_instigator = { text = operation.3020.desc.espionage }
+					smear_campaign_insulted@event_target:smear_campaign_instigator = { text = operation.3020.desc.insult }
+					smear_campaign_deceived@event_target:smear_campaign_instigator = { text = operation.3020.desc.deception }
+					default = { text = operation.3020.desc.espionage }
+				}
+			}
+		}
+	}
+	picture = GFX_evt_decryption
+	show_sound = event_default
+	is_triggered_only = yes
+
+	trigger = {
+		exists = event_target:smear_campaign_instigator
+		exists = event_target:smear_campaign_recipient #from
+		exists = event_target:smear_campaign_target
+	}
+
+	immediate = { }
+
+	option = { #Scepticism
+		name = operation.3020.a
+		ai_chance = {
+			factor = 2
+			modifier = {
+				factor = 10
+				has_ai_personality = xenophobic_isolationists
+			}
+		}
+	}
+	option = { #Gratitude
+		name = operation.3020.b
+		add_favors = {
+			target = event_target:smear_campaign_recipient
+			value = 2
+		}
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 3
+				OR = {
+					#Eager friends
+					has_ai_personality = fanatic_befrienders
+					#Federation allies against an outsider
+					AND = {
+						has_federation = yes
+						event_target:smear_campaign_recipient = {
+							has_federation = yes
+							federation = { is_same_value = root.federation }
+						}
+						event_target:smear_campaign_instigator = {
+							NOR = {
+								has_federation = no
+								AND = {
+									has_federation = yes
+									federation = { is_same_value = root.federation }
+								}
+							}
+						}
+					}
+					#Moderate, relative trust
+					AND = {
+						trust = { who = event_target:smear_campaign_recipient value > 50 }
+						trust = { who = event_target:smear_campaign_instigator value < 50 }
+					}
+					#The instigators rival us
+					fromfrom = { is_rival = root }
+				}
+			}
+			modifier = {
+				factor = 4
+				trust = { who = event_target:smear_campaign_recipient value > 80 }
+				is_rival = event_target:smear_campaign_instigator
+			}
+		}
+	}
+
+	after = {
+		event_target:smear_campaign_recipient = {
+			remove_country_flag = smear_campaign_espionage@event_target:smear_campaign_instigator
+			remove_country_flag = smear_campaign_insulted@event_target:smear_campaign_instigator
+			remove_country_flag = smear_campaign_deceived@event_target:smear_campaign_instigator
+		}
+	}
+}
+
+###########################
+# CRISIS BEACON
+###########################
+# this = operation; from = target (country)
+
+# Team assembled; choose a target
+espionage_operation_event = {
+	id = operation.4000
+	title = operation.4000.name
+	espionage_operation = yes
+	desc = {
+		text = operation.4000.desc
+		trigger = {
+			exists = event_target:crisis_beacon_option_1
+			exists = event_target:crisis_beacon_option_2
+		}
+	}
+	desc = {
+		text = operation.4000.desc.single
+		trigger = {
+			exists = event_target:crisis_beacon_option_1
+			NOT = { exists = event_target:crisis_beacon_option_2 }
+		}
+	}
+	desc = { #No crisis target could be found
+		text = operation.4000.desc.error
+		trigger = {
+			NOT = {
+				exists = event_target:crisis_beacon_option_1
+			}
+		}
+	}
+	picture = GFX_evt_spy_network
+	show_sound = event_default
+	is_triggered_only = yes
+
+	immediate = {
+		set_espionage_operation_progress_locked = yes
+		while = {
+			count = 3
+			if = { #Identify crisis factions, if they exist
+				limit = {
+					target = {
+						NOT = {
+							is_subject_type = satrapy
+						}
+					}
+					any_country = {
+						has_communications = root.owner
+						is_crisis_faction = yes
+						NOR = {
+							is_same_value = root.owner
+							is_same_value = root.target
+							AND = {
+								has_federation = yes
+								federation = { any_member = { is_same_value = target } }
+							}
+							AND = {
+								is_overlord = yes
+								NOT = { is_overlord_to = root.target }
+							}
+							AND = {
+								exists = event_target:crisis_beacon_option_1
+								is_same_value = event_target:crisis_beacon_option_1
+							}
+							AND = {
+								exists = event_target:crisis_beacon_option_2
+								is_same_value = event_target:crisis_beacon_option_2
+							}
+							AND = {
+								exists = event_target:crisis_beacon_option_3
+								is_same_value = event_target:crisis_beacon_option_3
+							}
+							has_country_flag = crisis_beacon_from@root.owner
+						}
+					}
+				}
+				random_country = {
+					limit = {
+						has_communications = root.owner
+						is_crisis_faction = yes
+						NOR = {
+							is_same_value = root.owner
+							is_same_value = root.target
+							AND = {
+								has_federation = yes
+								federation = { any_member = { is_same_value = target } }
+							}
+							AND = {
+								is_overlord = yes
+								NOT = { is_overlord_to = root.target }
+							}
+							is_subject_type = satrapy
+							AND = {
+								exists = event_target:crisis_beacon_option_1
+								is_same_value = event_target:crisis_beacon_option_1
+							}
+							AND = {
+								exists = event_target:crisis_beacon_option_2
+								is_same_value = event_target:crisis_beacon_option_2
+							}
+							AND = {
+								exists = event_target:crisis_beacon_option_3
+								is_same_value = event_target:crisis_beacon_option_3
+							}
+							has_country_flag = crisis_beacon_from@root.owner
+						}
+					}
+					if = {
+						limit = { NOT = { exists = event_target:crisis_beacon_option_1 } }
+						save_event_target_as = crisis_beacon_option_1
+					}
+					else_if = {
+						limit = { NOT = { exists = event_target:crisis_beacon_option_2 } }
+						save_event_target_as = crisis_beacon_option_2
+					}
+					else_if = {
+						limit = { NOT = { exists = event_target:crisis_beacon_option_3 } }
+						save_event_target_as = crisis_beacon_option_3
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = operation.4000.a
+		trigger = {
+			exists = event_target:crisis_beacon_option_1
+			exists = event_target:crisis_beacon_option_2
+		}
+		hidden_effect = {
+			event_target:crisis_beacon_option_1 = {
+				set_country_flag = crisis_beacon_from@root.owner
+			}
+			set_espionage_operation_progress_locked = no
+		}
+	}
+	option = {
+		name = operation.4000.b
+		trigger = {
+			exists = event_target:crisis_beacon_option_2
+		}
+		hidden_effect = {
+			event_target:crisis_beacon_option_2 = {
+				set_country_flag = crisis_beacon_from@root.owner
+			}
+			set_espionage_operation_progress_locked = no
+		}
+	}
+	option = {
+		name = operation.4000.c
+		trigger = {
+			exists = event_target:crisis_beacon_option_3
+		}
+		hidden_effect = {
+			event_target:crisis_beacon_option_3 = {
+				set_country_flag = crisis_beacon_from@root.owner
+			}
+			set_espionage_operation_progress_locked = no
+		}
+	}
+	option = {
+		name = PROCEED
+		exclusive_trigger = {
+			exists = event_target:crisis_beacon_option_1
+			NOT = { exists = event_target:crisis_beacon_option_2 }
+		}
+		hidden_effect = {
+			event_target:crisis_beacon_option_1 = {
+				set_country_flag = crisis_beacon_from@root.owner
+			}
+			set_espionage_operation_progress_locked = no
+		}
+	}
+	option = { #No target found
+		name = OK
+		exclusive_trigger = {
+			NOT = {
+				exists = event_target:crisis_beacon_option_1
+			}
+		}
+		root = {
+			destroy_espionage_operation = this
+		}
+	}
+}
+#Operatives departed
+espionage_operation_event = {
+	id = operation.4001
+	title = operation.4001.name
+	espionage_operation = yes
+	desc = operation.4001.desc
+	picture = GFX_evt_fleet_evil
+	show_sound = event_default
+	is_triggered_only = yes
+
+	immediate = {
+		random_country = {
+			limit = {
+				has_country_flag = crisis_beacon_from@root.owner
+			}
+			save_event_target_as = crisis_beacon_crisis_country #Only works here, for loc.
+		}
+	}
+
+	option = {
+		name = OK
+	}
+}
+#Ready to launch
+espionage_operation_event = {
+	id = operation.4002
+	title = operation.4002.name
+	espionage_operation = yes
+	desc = operation.4002.desc
+	picture = GFX_evt_unknown_ships
+	show_sound = event_default
+	is_triggered_only = yes
+
+	immediate = {
+		set_espionage_operation_progress_locked = yes
+		random_country = {
+			limit = {
+				has_country_flag = crisis_beacon_from@root.owner
+			}
+			save_event_target_as = crisis_beacon_crisis_country
+		}
+		target = {
+			save_event_target_as = crisis_beacon_target_country
+			capital_scope = {
+				save_event_target_as = crisis_beacon_target_capital
+			}
+		}
+	}
+
+	option = {
+		name = LAUNCH_OPERATION
+		hidden_effect = {
+			owner = {
+				country_event = { id = operation.4005 days = 3 }
+			}
+		}
+	}
+
+	after = {
+		set_espionage_operation_progress_locked = no
+	}
+}
+# Finalé
+country_event = {
+	id = operation.4005
+	title = operation.4005.name
+	desc = {
+		trigger = {
+			hidden:event_target:crisis_beacon_crisis_country = {
+				switch = {
+					trigger = is_country_type
+					ai_empire = { text = operation.4005.desc.contingency }
+					awakened_marauders = { text = operation.4005.desc.marauders }
+					extradimensional = { text = operation.4005.desc.unbidden }
+					extradimensional_2 = { text = operation.4005.desc.unbidden }
+					extradimensional_3 = { text = operation.4005.desc.unbidden }
+					gray_goo = { text = operation.4005.desc.graytempest }
+					swarm = { text = operation.4005.desc.swarm }
+					# default = { text = operation.4005.desc.default }
+				}
+			}
+		}
+	}
+	picture = GFX_evt_unidentified_monster
+	show_sound = event_espionage_concluded
+	location = event_target:crisis_beacon_crisis_system
+	is_triggered_only = yes
+
+	immediate = {
+		event_target:crisis_beacon_crisis_country = {
+			switch = {
+				trigger = is_country_type
+				ai_empire = {
+					root = {
+						espionage_crisis_beacon_lure = { TYPE = ai_empire }
+					}
+				}
+				awakened_marauders = {
+					root = {
+						espionage_crisis_beacon_lure = { TYPE = awakened_marauders }
+					}
+				}
+				extradimensional = {
+					root = {
+						espionage_crisis_beacon_lure = { TYPE = extradimensional }
+					}
+				}
+				extradimensional_2 = {
+					root = {
+						espionage_crisis_beacon_lure = { TYPE = extradimensional_2 }
+					}
+				}
+				extradimensional_3 = {
+					root = {
+						espionage_crisis_beacon_lure = { TYPE = extradimensional_3 }
+					}
+				}
+				gray = {
+					root = {
+						espionage_crisis_beacon_lure = { TYPE = gray }
+					}
+				}
+				swarm = {
+					root = {
+						espionage_crisis_beacon_lure = { TYPE = swarm }
+					}
+				}
+			}
+		}
+		event_target:crisis_beacon_target_country = {
+			country_event = { id = operation.4010 }
+		}
+	}
+
+	option = {
+		name = EXCELLENT
+		from.spynetwork = {
+			add_spy_network_level_on_success_effect = { VALUE = -80 }
+		}
+		from.owner = {
+			if = {
+				limit = { has_ascension_perk = ap_become_the_crisis }
+				complete_crisis_objective = crisobj_perform_upsetting_operations
+			}
+		}
+	}
+
+	after = {
+		hidden_effect = {
+			if = {
+				limit = {
+					owner = { NOT = { has_country_flag = operation_complete_crisis_beacon } }
+				}
+				owner = {
+					change_variable = {
+						which = tinker_tailor_soldier_blorg_achievement_count
+						value = 1
+					}
+					set_country_flag = operation_complete_crisis_beacon
+				}
+			}
+			set_saved_date = {
+				key = crisis_beacon_timer
+				days_from_present = @CrisisBeaconTimer
+				expires = @CrisisBeaconTimer
+			}
+			country_event = { id = operation.4006 days = @CrisisBeaconTimer } #Remove Crisis Beacon lockout after 4 years
+		}
+		destroy_espionage_operation = from
+	}
+}
+#Remove Crisis Beacon lockout
+country_event = {
+	id = operation.4006
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		event_target:crisis_beacon_crisis_country = {
+			remove_country_flag = crisis_beacon_from@root
+		}
+	}
+}
+#Incoming crisis fleet
+country_event = {
+	id = operation.4010
+	title = operation.4010.name
+	desc = operation.4010.desc
+	picture = {
+		trigger = {
+			event_target:crisis_beacon_crisis_country = { is_country_type = ai_empire }
+		}
+		picture = GFX_evt_unidentified_ship
+	}
+	picture = {
+		trigger = {
+			event_target:crisis_beacon_crisis_country = { is_country_type = awakened_marauders }
+		}
+		picture = GFX_evt_pirate_armada
+	}
+	picture = {
+		trigger = {
+			event_target:crisis_beacon_crisis_country = {
+				OR = {
+					is_country_type = extradimensional
+					is_country_type = extradimensional_2
+					is_country_type = extradimensional_3
+				}
+			}
+		}
+		picture = GFX_evt_unknown_ships
+	}
+	picture = {
+		trigger = {
+			event_target:crisis_beacon_crisis_country = { is_country_type = gray }
+		}
+		picture = GFX_evt_gray_goo_ships
+	}
+	picture = {
+		trigger = {
+			event_target:crisis_beacon_crisis_country = { is_country_type = swarm }
+		}
+		picture = GFX_evt_fleet_evil
+	}
+	# picture = {
+	#	 trigger = {
+	#		 event_target:crisis_beacon_crisis_country = { is_country_type = default }
+	#	 }
+	#	 picture = GFX_evt_unidentified_ship
+	# }
+	show_sound = event_red_alert
+	location = event_target:crisis_beacon_crisis_system
+	is_triggered_only = yes
+
+	immediate = { }
+
+	option = {
+		name = BATTLESTATIONS
+	}
+}
+
+###########################
+# RANDOM EVENTS
+###########################
+# Triggered by operation_random_events_generic via e.g. operation_random_events_regular_regular
+
+### CONTACT LOST (regular vs. any)
+# from = operation; fromfrom = target
+country_event = {
+	id = operation.5000
+	title = operation.5000.name
+	desc = operation.5000.desc
+	picture = GFX_evt_spy_network
+	show_sound = event_radio_chatter
+	is_triggered_only = yes
+
+	trigger = {
+		exists = from
+		is_gestalt = no
+	}
+
+	immediate = {
+		from = { set_espionage_operation_progress_locked = yes }
+		set_timed_country_flag = {
+			flag = recent_op_contact_lost
+			days = @RandomOperationEventTimer
+		}
+	}
+
+	option = { #Find operatives
+		name = operation.5000.a
+		custom_tooltip = operation.5000.a.tooltip
+		allow = {
+			from.spynetwork = { has_available_spy_power >= 10 }
+		}
+		from.spynetwork = {
+			add_spy_network_level = -10 #Returned in subsequent events, or when the Spy Network disbands - whichever comes first
+		}
+		hidden_effect = {
+			random_list = {
+				8 = { #Re-establish contact
+					country_event = { id = operation.5001 days = 34 } #"Contact Re-Established"
+				}
+				2 = { #Contact lost
+					modifier = {
+						factor = 2
+						from = {
+							OR = {
+								has_espionage_category = op_cat_sabotage
+								has_espionage_category = op_cat_provocation
+							}
+						}
+					}
+					modifier = {
+						factor = 4
+						from.target = {
+							relative_encryption_decryption = { target = root value > 1.2 }
+						}
+					}
+					country_event = { id = operation.5002 days = 34 } #"Contact Confirmed Lost"
+					from.target = {
+						if = {
+							limit = {
+								any_spynetwork = {
+									owner = { is_same_value = prev }
+									target = { is_same_value = root }
+								}
+							}
+							set_timed_country_flag = {
+								flag = espionage_caught_spies
+								days = 20
+							}
+							country_event = { id = espionage.1040 days = 15 } #A Surprise Catch
+						}
+					}
+				}
+			}
+		}
+		ai_chance = {
+			factor = 2
+			modifier = {
+				factor = 10
+				from.spynetwork = { has_available_spy_power > 40 }
+			}
+		}
+	}
+	option = {
+		name = DISAVOW
+		custom_tooltip = operation.5000.b.tooltip
+		hidden_effect = {
+			root = {
+				set_timed_country_flag = {
+					flag = has_disavowed_operative
+					days = 36000 #100 years
+				}
+				set_country_flag = burn_notice_achievement
+			}
+			from = {
+				set_espionage_operation_progress_locked = no
+				fire_on_action = { on_action = on_operation_cancelled }
+				destroy_espionage_operation = this
+			}
+		}
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 20
+				from.target = {
+					relative_encryption_decryption = {
+						target = root
+						value < 1.0
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = operation.5000.c
+		icon = {
+			icon = GFX_espionage_asset_icon
+			text = ESPIONAGE_OPERATION_ASSET_EVENT_OPTION
+		}
+		trigger = {
+			from = {
+				OR = {
+					has_espionage_asset = asset_clerk
+					has_espionage_asset = asset_attache
+					has_espionage_asset = asset_newscaster
+					has_espionage_asset = asset_synapse_drone
+					has_espionage_asset = asset_resource_distribution_node
+					has_espionage_asset = asset_coordination_system
+					has_espionage_asset = asset_logistics_system
+				}
+			}
+		}
+		from = {
+			locked_random_list = {
+				1 = {
+					modifier = {
+						factor = 0
+						NOT = { has_espionage_asset = asset_clerk }
+					}
+					modifier = {
+						factor = 10
+						OR = {
+							has_espionage_category = op_cat_subterfuge
+							has_espionage_category = op_cat_diplomacy
+						}
+					}
+					destroy_espionage_asset = asset_clerk
+				}
+				1 = {
+					modifier = {
+						factor = 0
+						NOT = { has_espionage_asset = asset_attache }
+					}
+					modifier = {
+						factor = 10
+						OR = {
+							has_espionage_category = op_cat_sabotage
+							has_espionage_category = op_cat_diplomacy
+						}
+					}
+					destroy_espionage_asset = asset_attache
+				}
+				1 = {
+					modifier = {
+						factor = 0
+						NOT = { has_espionage_asset = asset_newscaster }
+					}
+					modifier = {
+						factor = 10
+						OR = {
+							has_espionage_category = op_cat_manipulation
+							has_espionage_category = op_cat_diplomacy
+						}
+					}
+					destroy_espionage_asset = asset_newscaster
+				}
+				1 = {
+					modifier = {
+						factor = 0
+						NOT = { has_espionage_asset = asset_synapse_drone }
+					}
+					modifier = {
+						factor = 10
+						OR = {
+							has_espionage_category = op_cat_subterfuge
+							has_espionage_category = op_cat_government
+						}
+					}
+					destroy_espionage_asset = asset_synapse_drone
+				}
+				1 = {
+					modifier = {
+						factor = 0
+						NOT = { has_espionage_asset = asset_resource_distribution_node }
+					}
+					modifier = {
+						factor = 10
+						OR = {
+							has_espionage_category = op_cat_manipulation
+							has_espionage_category = op_cat_economy
+						}
+					}
+					destroy_espionage_asset = asset_resource_distribution_node
+				}
+				1 = {
+					modifier = {
+						factor = 0
+						NOT = { has_espionage_asset = asset_coordination_system }
+					}
+					modifier = {
+						factor = 10
+						OR = {
+							has_espionage_category = op_cat_subterfuge
+							has_espionage_category = op_cat_government
+						}
+					}
+					destroy_espionage_asset = asset_coordination_system
+				}
+				1 = {
+					modifier = {
+						factor = 0
+						NOT = { has_espionage_asset = asset_logistics_system }
+					}
+					modifier = {
+						factor = 10
+						OR = {
+							has_espionage_category = op_cat_subterfuge
+							has_espionage_category = op_cat_economy
+						}
+					}
+					destroy_espionage_asset = asset_logistics_system
+				}
+			}
+		}
+		hidden_effect = {
+			country_event = { id = operation.5001 days = 4 } #Re-establish contact
+		}
+		ai_chance = {
+			factor = 20
+		}
+	}
+}
+#Contact Lost: Re-established
+#fromfrom = operation
+country_event = {
+	id = operation.5001
+	title = operation.5001.name
+	desc = operation.5001.desc
+	picture = GFX_evt_spy_network
+	show_sound = event_radio_chatter
+	is_triggered_only = yes
+
+	trigger = {
+		exists = fromfrom
+	}
+
+	immediate = {
+		fromfrom.spynetwork = { add_spy_network_level = 10 }
+		fromfrom = { set_espionage_operation_progress_locked = no }
+	}
+
+	option = { name = GOOD }
+}
+#Contact Lost: Proper Lost
+#fromfrom = operation
+country_event = {
+	id = operation.5002
+	title = operation.5002.name
+	desc = operation.5002.desc
+	picture = GFX_evt_spymaster
+	show_sound = event_radio_chatter
+	is_triggered_only = yes
+
+	trigger = {
+		exists = fromfrom
+	}
+
+	option = {
+		name = UNFORTUNATE
+		fromfrom.spynetwork = {
+			add_spy_network_level = -5
+		}
+	}
+
+	after = { fromfrom = { set_espionage_operation_progress_locked = no } }
+}
+
+### OPERATIVE SPOOKED (operatives get paranoid; regular vs. regular)
+# from = operation; fromfrom = target
+country_event = {
+	id = operation.5005
+	title = operation.5005.name
+	desc = operation.5005.desc
+	picture = GFX_evt_operative_chase
+	show_sound = event_encrypted_comms
+	is_triggered_only = yes
+
+	trigger = {
+		exists = from
+		is_gestalt = no
+		from.target = { is_gestalt = no }
+	}
+
+	immediate = {
+		from = { set_espionage_operation_progress_locked = yes }
+		set_timed_country_flag = {
+			flag = recent_op_operative_spooked
+			days = @RandomOperationEventTimer
+		}
+	}
+
+	option = { #Deny extra resources
+		name = operation.5005.a
+		hidden_effect = {
+			random_list = {
+				6 = { }
+				4 = {
+					modifier = {
+						factor = 0.5
+						from = {
+							NOR = {
+								has_espionage_category = op_cat_subterfuge
+								has_espionage_category = op_cat_provocation
+							}
+						}
+					}
+					from = { operation_random_events_coverblown = yes }
+				}
+			}
+		}
+		ai_chance = { factor = 10 }
+	}
+	option = { #Grant resources
+		name = operation.5005.b
+		allow = {
+			from.spynetwork = { has_available_spy_power >= 10 }
+		}
+		from.spynetwork = { add_spy_network_level = -10 }
+		hidden_effect = {
+			random_list = {
+				9 = { }
+				1 = {
+					modifier = {
+						factor = 3
+						from = {
+							OR = {
+								has_espionage_category = op_cat_subterfuge
+								has_espionage_category = op_cat_provocation
+							}
+						}
+					}
+					from = { operation_random_events_coverblown = yes }
+				}
+			}
+		}
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 10
+				from.spynetwork = { is_spynetwork_level > 50 }
+			}
+		}
+	}
+	option = { #Bribery? (High income)
+		name = operation.5005.c
+		trigger = {
+			has_monthly_income = {
+				resource = energy
+				value >= 40
+			}
+			from.target = {
+				NOR = {
+					has_ethic = ethic_fanatic_xenophobe
+					has_ethic = ethic_fanatic_authoritarian
+				}
+			}
+		}
+		allow = {
+			resource_stockpile_compare = {
+				resource = energy
+				value >= @OperationBribeThreshold3
+			}
+		}
+		add_resource = { energy = @OperationBribeCost3 }
+		ai_chance = {
+			factor = 10
+			modifier = { #Less inclined if they're not rolling in dough
+				factor = 0.4
+				has_monthly_income = {
+					resource = energy
+					value < 60
+				}
+			}
+		}
+	}
+	option = { #Bribery? (Medium income)
+		name = operation.5005.c
+		trigger = {
+			has_monthly_income = {
+				resource = energy
+				value >= 10
+			}
+			NOT = {
+				has_monthly_income = {
+					resource = energy
+					value >= 40
+				}
+			}
+			from.target = {
+				NOR = {
+					has_ethic = ethic_fanatic_xenophobe
+					has_ethic = ethic_fanatic_authoritarian
+				}
+			}
+		}
+		allow = {
+			resource_stockpile_compare = {
+				resource = energy
+				value >= @OperationBribeThreshold2
+			}
+		}
+		add_resource = { energy = @OperationBribeCost2 }
+		ai_chance = {
+			factor = 10
+			modifier = { #Less inclined if they're not rolling in dough
+				factor = 0.4
+				has_monthly_income = {
+					resource = energy
+					value < 40
+				}
+			}
+		}
+	}
+	option = { #Bribery? (Low income)
+		name = operation.5005.c
+		trigger = {
+			has_monthly_income = {
+				resource = energy
+				value < 10
+			}
+			from.target = {
+				NOR = {
+					has_ethic = ethic_fanatic_xenophobe
+					has_ethic = ethic_fanatic_authoritarian
+				}
+			}
+		}
+		allow = {
+			resource_stockpile_compare = {
+				resource = energy
+				value >= @OperationBribeThreshold1
+			}
+		}
+		add_resource = { energy = @OperationBribeCost1 }
+		ai_chance = {
+			factor = 10
+			modifier = { #Less inclined if they're not rolling in dough
+				factor = 0.5
+				has_monthly_income = {
+					resource = energy
+					value < 25
+				}
+			}
+		}
+	}
+	option = { #Asset can handle this
+		name = operation.5005.d
+		custom_tooltip = tooltip_espionage_asset_guaranteed_resume
+		trigger = {
+			from = {
+				OR = {
+					has_espionage_asset_subterfuge = yes
+					has_espionage_asset_diplomacy = yes
+				}
+			}
+		}
+		from = {
+			if = {
+				limit = { has_espionage_asset_subterfuge = yes }
+				destroy_espionage_asset_subterfuge = yes
+			}
+			else_if = {
+				limit = { has_espionage_asset_diplomacy = yes }
+				destroy_espionage_asset_diplomacy = yes
+			}
+		}
+		ai_chance = { factor = 20 }
+	}
+
+	after = { from = { set_espionage_operation_progress_locked = no } }
+}
+
+### APPREHENDED BY HUNTER-SEEKER DRONES (regular/hive vs. gestalt)
+# from = operation; fromfrom = target
+country_event = {
+	id = operation.5010
+	title = operation.5010.name
+	desc = operation.5010.desc
+	picture = GFX_evt_cover_blown
+	show_sound = event_comms_cutoff
+	is_triggered_only = yes
+
+	trigger = {
+		exists = from
+		is_machine_empire = no
+		from.target = { is_gestalt = yes }
+	}
+
+	immediate = {
+		from = {
+			set_espionage_operation_progress_locked = yes
+			target = { set_country_flag = drones_apprehended_operatives@root }
+		}
+		set_timed_country_flag = {
+			flag = recent_op_apprehended_by_drones
+			days = @RandomOperationEventTimer
+		}
+	}
+
+	# The friendlier the target, the less chance of mishap.
+	option = { #Needs diplomacy (very friendly)
+		name = operation.5010.a
+		exclusive_trigger = {
+			OR = {
+				opinion_level = {
+					who = from.target
+					level >= excellent
+				}
+				is_improving_relations_with = from.target
+			}
+		}
+		locked_random_list = {
+			8 = { country_event = { id = operation.5011 days = 4 } }
+			2 = { from = { operation_random_events_coverblown = yes } }
+		}
+		ai_chance = { factor = 1 }
+	}
+	option = { #Needs diplomacy (friendly)
+		name = operation.5010.a
+		exclusive_trigger = {
+			opinion_level = {
+				who = from.target
+				level >= neutral
+			}
+		}
+		locked_random_list = {
+			6 = { country_event = { id = operation.5011 days = 4 } }
+			4 = { from = { operation_random_events_coverblown = yes } }
+		}
+		ai_chance = { factor = 1 }
+	}
+	option = { #Needs diplomacy (unfriendly)
+		name = operation.5010.a
+		exclusive_trigger = {
+			OR = {
+				opinion_level = {
+					who = from.target
+					level < neutral
+				}
+				from.target = {
+					has_country_flag = drones_apprehended_operatives@root
+				}
+			}
+		}
+		locked_random_list = {
+			4 = { country_event = { id = operation.5011 days = 4 } }
+			6 = { from = { operation_random_events_coverblown = yes } }
+		}
+		ai_chance = { factor = 1 }
+	}
+	option = { #Expend an asset
+		name = operation.5010.b
+		custom_tooltip = tooltip_espionage_asset_guaranteed_resume
+		icon = {
+			icon = GFX_espionage_asset_icon
+			text = ESPIONAGE_OPERATION_ASSET_EVENT_OPTION
+		}
+		trigger = {
+			from = {
+				OR = {
+					AND = {
+						has_espionage_category = op_cat_manipulation
+						has_espionage_asset_manipulation = yes
+					}
+					AND = {
+						has_espionage_category = op_cat_sabotage
+						has_espionage_asset_sabotage = yes
+					}
+					AND = {
+						has_espionage_category = op_cat_subterfuge
+						has_espionage_asset_subterfuge = yes
+					}
+				}
+			}
+		}
+		from = {
+			if = {
+				limit = { has_espionage_category = op_cat_manipulation }
+				spynetwork = { destroy_espionage_asset_manipulation = yes }
+			}
+			else_if = {
+				limit = { has_espionage_category = op_cat_sabotage }
+				spynetwork = { destroy_espionage_asset_sabotage = yes }
+			}
+			else_if = {
+				limit = { has_espionage_category = op_cat_subterfuge }
+				spynetwork = { destroy_espionage_asset_subterfuge = yes }
+			}
+		}
+		hidden_effect = {
+			country_event = { id = operation.5011 days = 4 }
+		}
+		ai_chance = { factor = 10 }
+	}
+
+	after = {
+		from = { set_espionage_operation_progress_locked = no }
+	}
+}
+# Apprehended by Security Drones: Successful diplomacy
+# fromfrom = operation; fromfromfrom = target
+country_event = {
+	id = operation.5011
+	title = operation.5011.name
+	desc = {
+		trigger = { is_hive_empire = no }
+		text = operation.5011.desc
+	}
+	desc = {
+		trigger = { is_hive_empire = yes }
+		text = operation.5011.desc.hive
+	}
+	picture = {
+		trigger = { is_hive_empire = no }
+		picture = GFX_evt_spymaster
+	}
+	picture = {
+		trigger = { is_hive_empire = yes }
+		picture = GFX_evt_synth_organic_relations
+	}
+	show_sound = event_default
+	is_triggered_only = yes
+
+	trigger = {
+		exists = fromfrom
+	}
+
+	immediate = { }
+
+	option = {
+		name = GOOD
+	}
+}
+
+### MULTI-PHASIC FORCE FIELDS (drones suffer interference; gestalt vs. regular)
+# from = operation; fromfrom = target
+country_event = {
+	id = operation.5015
+	title = operation.5015.name
+	desc = operation.5015.desc
+	picture = GFX_evt_glitchy_matrix
+	show_sound = event_comms_cutoff
+	is_triggered_only = yes
+
+	trigger = {
+		exists = from
+	}
+
+	immediate = {
+		from = { set_espionage_operation_progress_locked = yes }
+		set_timed_country_flag = {
+			flag = recent_op_multiphasic_interference
+			days = @RandomOperationEventTimer
+		}
+	}
+
+	option = { #Try to adapt
+		name = operation.5015.a
+		custom_tooltip = operation.5015.a.tooltip
+		hidden_effect = {
+			random_list = {
+				2 = {
+					modifier = {
+						factor = 1.5
+						relative_power = {
+							who = from.target
+							category = technology
+							value > equivalent
+						}
+					}
+					modifier = {
+						factor = 1.5
+						from.target = {
+							relative_encryption_decryption = {
+								target = from
+								value <= 0.8 #at > 1.0 the target is superior
+							}
+						}
+					}
+					from = { set_espionage_operation_progress_locked = no }
+				}
+				2 = {
+					modifier = {
+						factor = 0.5
+						relative_power = {
+							who = from.target
+							category = technology
+							value > superior
+						}
+					}
+					from = {
+						set_espionage_operation_progress_locked = no
+						add_modifier = {
+							modifier = operation_multiphasic_interference
+							days = -1
+						}
+					}
+				}
+				1 = {
+					country_event = { id = operation.5016 days = 3 } #Contact lost
+				}
+			}
+		}
+		ai_chance = { factor = 1 }
+	}
+	option = { #Expend an Asset
+		name = operation.5015.b
+		custom_tooltip = tooltip_espionage_asset_guaranteed_resume
+		icon = {
+			icon = GFX_espionage_asset_icon
+			text = ESPIONAGE_OPERATION_ASSET_EVENT_OPTION
+		}
+		trigger = {
+			from = {
+				OR = {
+					AND = {
+						has_espionage_category = op_cat_manipulation
+						has_espionage_asset_manipulation = yes
+					}
+					AND = {
+						has_espionage_category = op_cat_sabotage
+						has_espionage_asset_sabotage = yes
+					}
+					AND = {
+						has_espionage_category = op_cat_subterfuge
+						has_espionage_asset_subterfuge = yes
+					}
+				}
+			}
+		}
+		from = {
+			if = {
+				limit = { has_espionage_category = op_cat_manipulation }
+				spynetwork = { destroy_espionage_asset_manipulation = yes }
+			}
+			else_if = {
+				limit = { has_espionage_category = op_cat_sabotage }
+				spynetwork = { destroy_espionage_asset_sabotage = yes }
+			}
+			else_if = {
+				limit = { has_espionage_category = op_cat_subterfuge }
+				spynetwork = { destroy_espionage_asset_subterfuge = yes }
+			}
+			hidden_effect = {
+				set_espionage_operation_progress_locked = no
+			}
+		}
+		ai_chance = {
+			factor = 50
+		}
+	}
+}
+# Multi-Phasic Force Fields: Contact lost
+# fromfrom = operation; fromfromfrom = target
+country_event = {
+	id = operation.5016
+	title = operation.5016.name
+	desc = operation.5016.desc
+	picture = GFX_evt_glitchy_matrix
+	show_sound = event_comms_cutoff
+	is_triggered_only = yes
+
+	immediate = { }
+
+	option = {
+		name = UNFORTUNATE
+	}
+
+	after = {
+		fromfrom = { set_espionage_operation_progress_locked = no }
+		hidden_effect = {
+			if = { #If the target is also spying on ROOT, the target may earn an Asset.
+				limit = {
+					has_nemesis = yes
+					fromfrom.target = {
+						has_spynetwork = yes
+						any_spynetwork = {
+							owner = { is_same_value = prev }
+							target = { is_same_value = root }
+						}
+					}
+				}
+				fromfrom.target = {
+					country_event = { id = espionage.1040 days = 0 } #A Surprise Catch
+				}
+			}
+		}
+	}
+}
+
+### MISTAKEN FOR FOOD (gestalt vs. hive)
+# from = operation; fromfrom = target
+country_event = {
+	id = operation.5020
+	title = operation.5020.name
+	desc = operation.5020.desc
+	picture = GFX_evt_aggressive_flora
+	show_sound = event_alien_nature
+	is_triggered_only = yes
+
+	trigger = {
+		exists = from
+	}
+
+	immediate = {
+		from = { set_espionage_operation_progress_locked = yes }
+		set_timed_country_flag = {
+			flag = recent_op_drones_hunted
+			days = @RandomOperationEventTimer
+		}
+	}
+
+	after = {
+		from = { set_espionage_operation_progress_locked = no }
+	}
+
+	option = { #Drop a lure (food)
+		name = operation.5020.a
+		exclusive_trigger = {
+			from.target = { is_lithoid_empire = no }
+			resource_stockpile_compare = {
+				resource = food
+				value > 400
+			}
+		}
+		add_resource = { food = -200 }
+		ai_chance = { factor = 3 }
+	}
+	option = { #Drop a lure (lithoids)
+		name = operation.5020.a
+		exclusive_trigger = {
+			from.target = { is_lithoid_empire = yes }
+			resource_stockpile_compare = {
+				resource = minerals
+				value > 400
+			}
+		}
+		add_resource = { minerals = -200 }
+		ai_chance = { factor = 2 }
+	}
+	option = { #Can't/won't afford a lure
+		name = operation.5020.b
+		from.spynetwork = {
+			add_modifier = {
+				modifier = spynetwork_drones_hunted
+				days = 280
+			}
+		}
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 10
+				OR = {
+					AND = {
+						from.target = { is_lithoid_empire = no }
+						resource_stockpile_compare = {
+							resource = food
+							value <= 600
+						}
+					}
+					AND = {
+						from.target = { is_lithoid_empire = yes }
+						resource_stockpile_compare = {
+							resource = minerals
+							value <= 600
+						}
+					}
+				}
+			}
+		}
+	}
+	option = { #Expend Warrior Drone asset
+		name = operation.5020.c
+		custom_tooltip = tooltip_espionage_asset_guaranteed_resume
+		icon = {
+			icon = GFX_espionage_asset_icon
+			text = ESPIONAGE_SPYNETWORK_ASSET_EVENT_OPTION
+		}
+		trigger = {
+			OR = {
+				from = { has_espionage_asset = asset_warrior_drone }
+				from.spynetwork = { has_espionage_asset = asset_warrior_drone }
+			}
+		}
+		if = {
+			limit = {
+				from = { has_espionage_asset = asset_warrior_drone }
+			}
+			from = { destroy_espionage_asset = asset_warrior_drone }
+		}
+		else_if = {
+			limit = {
+				from.spynetwork = { has_espionage_asset = asset_warrior_drone }
+			}
+			from.spynetwork = { destroy_espionage_asset = asset_warrior_drone }
+		}
+		ai_chance = {
+			factor = 15
+		}
+	}
+}
+
+### TOXIC FIELD WORK (hive vs. hive)
+# from = operation; fromfrom = target
+country_event = {
+	id = operation.5025
+	title = operation.5025.name
+	desc = {
+		text = operation.5025.desc
+		trigger = {
+			from.target = {
+				NOT = { has_country_flag = toxic_field_studied_by@root }
+			}
+		}
+	}
+	desc = {
+		text = operation.5025.desc.repeat
+		trigger = {
+			from.target = { has_country_flag = toxic_field_studied_by@root }
+		}
+	}
+	picture = GFX_evt_toxic
+	show_sound = event_default
+	is_triggered_only = yes
+
+	trigger = {
+		exists = from
+	}
+
+	immediate = {
+		from = {
+			set_espionage_operation_progress_locked = yes
+			save_event_target_as = toxic_field_operation
+			target = {
+				save_event_target_as = toxic_field_country
+			}
+		}
+		set_timed_country_flag = {
+			flag = recent_op_toxic_field
+			days = @RandomOperationEventTimerLong
+		}
+	}
+
+	option = {
+		name = operation.5025.a
+		enable_special_project = {
+			name = "TOXIC_OPERATION_PROJECT"
+			location = capital_scope
+			owner = root
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+	option = {
+		name = operation.5025.b
+		custom_tooltip = operation.5025.b.tooltip
+		hidden_effect = {
+			random_list = {
+				2 = {
+					modifier = {
+						factor = 0.6
+						OR = {
+							has_trait = trait_adaptive
+							has_trait = trait_adaptive_lithoid
+						}
+					}
+					modifier = {
+						factor = 0.3
+						OR = {
+							has_trait = trait_extremely_adaptive
+							has_trait = trait_survivor
+						}
+					}
+					from = {
+						spynetwork = {
+							add_modifier = {
+								modifier = spynetwork_toxic_field
+								days = 920 #Slightly less than @RandomOperationEventTimerLong
+							}
+							target = { set_country_flag = toxic_field_studied_by@root } #Changes the loc string for next time around
+						}
+					}
+				}
+				3 = { } #No effect
+			}
+		}
+		from = { set_espionage_operation_progress_locked = no }
+		ai_chance = {
+			factor = 5
+		}
+	}
+}
+#Triggered upon completion of TOXIC_OPERATION_PROJECT
+#fromfromfrom = operation; event_target:toxic_field_country = target
+country_event = {
+	id = operation.5026
+	title = operation.5026.name
+	desc = operation.5026.desc
+	picture = GFX_evt_toxic
+	show_sound = event_default
+	is_triggered_only = yes
+
+	trigger = {
+		exists = event_target:toxic_field_operation
+		exists = event_target:toxic_field_country
+	}
+
+	immediate = {
+		event_target:toxic_field_operation = { set_espionage_operation_progress_locked = no }
+		event_target:toxic_field_country = { set_country_flag = toxic_field_studied_by@root }
+	}
+
+	option = {
+		name = GOOD
+	}
+}
+#Triggered after timeout/failure of TOXIC_OPERATION_PROJECT
+#event_target:toxic_field_operation = operation; event_target:toxic_field_country = target
+country_event = {
+	id = operation.5027
+	title = operation.5027.name
+	desc = operation.5027.desc
+	picture = GFX_evt_toxic
+	show_sound = event_default
+	is_triggered_only = yes
+
+	trigger = {
+		exists = event_target:toxic_field_operation
+		exists = event_target:toxic_field_country
+		event_target:toxic_field_country = {
+			NOT = { has_country_flag = toxic_field_studied_by@root }
+		}
+	}
+
+	immediate = { }
+
+	option = {
+		name = ACKNOWLEDGED
+		hidden_effect = {
+			event_target:toxic_field_operation = {
+				set_espionage_operation_progress_locked = no
+				target = { set_country_flag = toxic_field_studied_by@root } #Changes the loc string for next time around
+			}
+			event_target:toxic_field_operation.spynetwork = {
+				add_modifier = {
+					modifier = spynetwork_toxic_field
+					days = 920 #Slightly less than @RandomOperationEventTimerLong
+				}
+			}
+		}
+	}
+}
+
+### EXCESS NOISE (machine vs. machine)
+# from = operation; fromfrom = target
+country_event = {
+	id = operation.5030
+	title = operation.5030.name
+	desc = {
+		text = operation.5030.desc
+		trigger = {
+			from.target = {
+				NOT = { has_country_flag = excess_noise_studied_by@root }
+			}
+		}
+	}
+	desc = {
+		text = operation.5030.desc.repeat
+		trigger = {
+			from.target = {
+				has_country_flag = excess_noise_studied_by@root
+			}
+		}
+	}
+	picture = GFX_evt_sapient_AI
+	show_sound = event_scanner
+	is_triggered_only = yes
+
+	trigger = {
+		exists = from
+	}
+
+	immediate = {
+		from = {
+			set_espionage_operation_progress_locked = yes
+			save_event_target_as = excess_noise_operation
+			target = {
+				save_event_target_as = excess_noise_country
+			}
+		}
+		set_timed_country_flag = {
+			flag = recent_op_excess_noise
+			days = @RandomOperationEventTimerLong
+		}
+	}
+
+	option = {
+		name = operation.5030.a
+		enable_special_project = {
+			name = "NOISE_OPERATION_PROJECT"
+			location = capital_scope
+			owner = root
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+	option = {
+		name = operation.5030.b
+		custom_tooltip = operation.5030.b.tooltip
+		hidden_effect = {
+			random_list = {
+				2 = {
+					modifier = {
+						factor = 0.6
+						has_trait = trait_robot_custom_made
+					}
+					modifier = {
+						factor = 0.3
+						has_trait = trait_robot_recycled
+					}
+					from = {
+						spynetwork = {
+							add_modifier = {
+								modifier = spynetwork_excess_noise
+								days = 920 #Slightly less than @RandomOperationEventTimerLong
+							}
+						}
+						target = { set_country_flag = excess_noise_studied_by@root }
+					}
+				}
+				3 = { } #No effect
+			}
+		}
+		from = { set_espionage_operation_progress_locked = no }
+		ai_chance = {
+			factor = 5
+		}
+	}
+}
+#Triggered upon completion of NOISE_OPERATION_PROJECT
+#fromfromfrom = operation; event_target:excess_noise_country = target
+country_event = {
+	id = operation.5031
+	title = operation.5031.name
+	desc = operation.5031.desc
+	picture = GFX_evt_sapient_AI
+	show_sound = event_default
+	is_triggered_only = yes
+
+	trigger = {
+		exists = event_target:excess_noise_operation
+		exists = event_target:excess_noise_country
+	}
+
+	immediate = {
+		event_target:excess_noise_operation = { set_espionage_operation_progress_locked = no }
+		event_target:excess_noise_country = { set_country_flag = excess_noise_studied_by@root }
+	}
+
+	option = {
+		name = GOOD
+	}
+}
+#Triggered upon failure/timeout of NOISE_OPERATION_PROJECT
+#event_target:excess_noise_operation = operation; event_target:excess_noise_country = target
+country_event = {
+	id = operation.5032
+	title = operation.5032.name
+	desc = operation.5032.desc
+	picture = GFX_evt_sapient_AI
+	show_sound = event_default
+	is_triggered_only = yes
+
+	trigger = {
+		exists = event_target:excess_noise_operation
+		exists = event_target:excess_noise_country
+	}
+
+	immediate = { }
+
+	option = {
+		name = ACKNOWLEDGED
+		event_target:excess_noise_operation = {
+			set_espionage_operation_progress_locked = no
+			target = { set_country_flag = excess_noise_studied_by@root }
+		}
+		event_target:excess_noise_operation.spynetwork = {
+			add_modifier = {
+				modifier = spynetwork_excess_noise
+				days = 920 #Slightly less than @RandomOperationEventTimerLong
+			}
+		}
+	}
+}
+
+### SNUFFED OUT (any vs. any)
+#from = operation; fromfrom = target
+country_event = {
+	id = operation.5035
+	title = operation.5035.name
+	desc = operation.5035.desc
+	picture = GFX_evt_cover_blown
+	show_sound = event_radio_chatter
+	is_triggered_only = yes
+
+	trigger = {
+		exists = from
+		from = {
+			OR = {
+				has_espionage_category = op_cat_sabotage
+				has_espionage_category = op_cat_provocation
+				target = {
+					OR = {
+						has_valid_civic = civic_fanatic_purifiers
+						has_origin = origin_necrophage
+						AND = { #Unfriendly gestalts
+							is_gestalt = yes
+							NOR = {
+								has_valid_civic = civic_hive_empath
+								has_valid_civic = civic_machine_servitor
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	immediate = {
+		from = {
+			set_espionage_operation_progress_locked = yes
+			target = { save_event_target_as = snuffedout_country } #Used in loc
+		}
+		set_timed_country_flag = {
+			flag = recent_op_snuffed_out
+			days = @RandomOperationEventTimer
+		}
+	}
+
+	option = { #Try to cover up
+		name = MAKE_IT_SO
+		custom_tooltip = operation.5035.a.tooltip
+		allow = {
+			resource_stockpile_compare = { resource = influence value >= 20 }
+			from.spynetwork = { has_available_spy_power >= 5 } #To cover the cost - a drop in Spy Network level
+		}
+		add_resource = { influence = -20 }
+		hidden_effect = {
+			random_list = {
+				1 = { #Success
+					modifier = {
+						factor = 6
+						from = { has_espionage_asset_matching_operation_theme = yes }
+					}
+					country_event = { id = operation.5036 days = 32 }
+				}
+				1 = { #Failure
+					modifier = {
+						factor = 3
+						from.target = {
+							relative_encryption_decryption = { target = root value >= 1.6 }
+						}
+					}
+					modifier = {
+						factor = 2
+						from.target = {
+							relative_encryption_decryption = { target = root value > 1.3 }
+							relative_encryption_decryption = { target = root value < 1.6 }
+						}
+					}
+					modifier = {
+						factor = 0.3
+						from.target = {
+							relative_encryption_decryption = { target = root value < 0.85 }
+						}
+					}
+					country_event = { id = operation.5037 days = 20 }
+					from.target = {
+						country_event = { id = espionage.1070 days = 20 } #"Hostile Infiltration Detected"
+					}
+				}
+			}
+		}
+		from = {
+			spynetwork = { add_spy_network_level = -5 }
+			if = {
+				limit = { has_espionage_asset_matching_operation_theme = yes }
+				switch = {
+					trigger = has_espionage_category
+					op_cat_diplomacy = { destroy_espionage_asset_diplomacy = yes }
+					op_cat_economy = { destroy_espionage_asset_economy = yes }
+					op_cat_government = { destroy_espionage_asset_government = yes }
+					op_cat_military = { destroy_espionage_asset_military = yes }
+					op_cat_technology = { destroy_espionage_asset_technology = yes }
+				}
+			}
+		}
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 8
+				from = {
+					OR = {
+						has_espionage_asset_matching_operation_theme = yes
+						target = {
+							relative_encryption_decryption = { target = root value < 0.85 }
+						}
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = DISAVOW
+		custom_tooltip = operation.5035.b.tooltip
+		hidden_effect = {
+			root = { set_country_flag = burn_notice_achievement }
+			locked_random_list = {
+				4 = { #Successful disavowal
+					modifier = {
+						factor = 0.2
+						from.target = {
+							relative_encryption_decryption = {
+								target = root
+								value > 1.4
+							}
+						}
+					}
+					modifier = {
+						factor = 1.5
+						from = { has_espionage_asset_matching_operation_category = yes }
+					}
+					root = {
+						set_timed_country_flag = {
+							flag = has_disavowed_operative
+							days = 36000 #100 years
+						}
+					}
+				}
+				1 = { #Identified by the target
+					from.target = {
+						country_event = { id = espionage.1070 } #Hostile Infiltration Detected
+					}
+				}
+			}
+		}
+		from = {
+			if = {
+				limit = { has_espionage_asset_matching_operation_category = yes }
+				switch = {
+					trigger = has_espionage_category
+					op_cat_manipulation = { destroy_espionage_asset_manipulation = yes }
+					op_cat_provocation = { } #No action - there are no Provocation-type Assets
+					op_cat_sabotage = { destroy_espionage_asset_sabotage = yes }
+					op_cat_subterfuge = { destroy_espionage_asset_subterfuge = yes }
+				}
+			}
+			set_espionage_operation_progress_locked = no
+			fire_on_action = { on_action = on_operation_cancelled }
+			destroy_espionage_operation = this
+		}
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 8
+				root = {
+					relative_encryption_decryption = {
+						target = from.target
+						value < 1.0 #At > 1.0 root's encryption is superior to target's decryption
+					}
+				}
+			}
+		}
+	}
+}
+#Snuffed Out: Successful Cover-Up
+#fromfrom = operation; event_target:snuffedout_country = target
+country_event = {
+	id = operation.5036
+	title = operation.5036.name
+	desc = operation.5036.desc
+	picture = GFX_evt_spymaster
+	show_sound = event_default
+	is_triggered_only = yes
+
+	trigger = {
+		exists = fromfrom
+		exists = event_target:snuffedout_country
+	}
+
+	immediate = {
+		fromfrom = { set_espionage_operation_progress_locked = no }
+	}
+
+	option = { name = GOOD }
+}
+#Snuffed Out: Exposed
+#fromfrom = operation; event_target:snuffedout_country = target
+country_event = {
+	id = operation.5037
+	title = operation.5037.name
+	desc = {
+		text = operation.5037.desc
+		trigger = {
+			fromfrom = { NOT = { has_espionage_category = op_cat_provocation } }
+		}
+	}
+	desc = {
+		text = operation.5037.desc.provocation
+		trigger = {
+			fromfrom = { has_espionage_category = op_cat_provocation }
+		}
+	}
+	picture = GFX_evt_cover_blown
+	show_sound = event_default
+	is_triggered_only = yes
+
+	trigger = {
+		exists = fromfrom
+		exists = event_target:snuffedout_country
+	}
+
+	immediate = { }
+
+	option = {
+		name = CURSES
+		fromfrom = {
+			fire_on_action = { on_action = on_operation_cancelled }
+			destroy_espionage_operation = this
+		}
+	}
+}
+
+# DRAIN ON RESOURCES (regular vs. regular)
+# from = operation; fromfrom = target
+country_event = {
+	id = operation.5040
+	title = operation.5040.name
+	desc = operation.5040.desc
+	picture = GFX_evt_gunrunning
+	show_sound = event_spymaster
+	is_triggered_only = yes
+	location = from.target.capital_scope
+
+	trigger = {
+		exists = from
+		is_regular_empire = yes
+		from.target = { is_regular_empire = yes }
+	}
+
+	immediate = {
+		from = { set_espionage_operation_progress_locked = yes }
+		set_timed_country_flag = {
+			flag = recent_op_drain_resources
+			days = @RandomOperationEventTimer
+		}
+	}
+
+	option = { #Reprimand
+		name = operation.5040.a
+		hidden_effect = {
+			random_list = {
+				8 = { #Tow the line
+					country_event = { id = operation.5041 days = 2 }
+				}
+				2 = { #Cut ties, especially if they're from an isolationist or profit-driven culture
+					modifier = {
+						factor = 2
+						from.target = { is_megacorp = yes }
+					}
+					modifier = {
+						factor = 4
+						from.target = { is_xenophobe = yes }
+					}
+					country_event = { id = operation.5042 days = 2 }
+				}
+			}
+		}
+	}
+	option = { #Kill the operatives
+		name = operation.5040.b
+		trigger = {
+			from.spynetwork = { has_available_spy_power >= 10 }
+			NOR = {
+				is_pacifist = yes
+				has_ethic = ethic_fanatic_xenophile
+			}
+		}
+		from = {
+			set_espionage_operation_progress_locked = no
+			spynetwork = { add_spy_network_level = -10 }
+		}
+	}
+	option = { #Piece of the action
+		name = operation.5040.c
+		allow = {
+			custom_tooltip = {
+				fail_text = operation.5040.c.fail.stacking
+				NOT = { has_modifier = espionage_drain_resources_exploit }
+			}
+			custom_tooltip = {
+				fail_text = operation.5040.c.fail.commerce
+				OR = {
+					has_commercial_pact = from.target
+					from.target = {
+						any_owned_planet = {
+							has_branch_office = root
+						}
+					}
+				}
+			}
+		}
+		root = {
+			add_modifier = { modifier = espionage_drain_resources_exploit days = 720 }
+			from = { set_espionage_operation_progress_locked = no }
+		}
+	}
+}
+# Operatives 'tow the line' | fromfrom = operation
+country_event = {
+	id = operation.5041
+	title = operation.5041.name
+	desc = operation.5041.desc
+	picture = GFX_evt_spy_network
+	show_sound = event_spymaster
+	is_triggered_only = yes
+	location = fromfrom.target.capital_scope
+
+	trigger = {
+		exists = fromfrom
+	}
+
+	immediate = {
+		fromfrom = { set_espionage_operation_progress_locked = no }
+	}
+
+	option = {
+		name = GOOD
+		fromfrom.spynetwork = { add_spy_network_level = 2 }
+	}
+}
+# Operatives 'cut ties' | fromfrom = operation
+country_event = {
+	id = operation.5042
+	title = operation.5042.name
+	desc = operation.5042.desc
+	picture = GFX_evt_spymaster
+	show_sound = event_spymaster
+	is_triggered_only = yes
+	location = fromfrom.target.capital_scope
+
+	trigger = {
+		exists = fromfrom
+	}
+
+	immediate = {
+		fromfrom = { set_espionage_operation_progress_locked = no }
+	}
+
+	option = {
+		name = CURSES
+		fromfrom.spynetwork = {
+			add_spy_network_level = -5
+			add_modifier = { modifier = spynetwork_drain_resources_cutties days = 720 }
+		}
+	}
+}
+
+# OPERATIVE DEFECTS (regular vs. any)
+# from = operation; fromfrom = target
+country_event = {
+	id = operation.5045
+	title = operation.5045.name
+	desc = {
+		text = operation.5045.desc.culture
+		trigger = { has_country_flag = operative_defects_culture }
+	}
+	desc = {
+		text = operation.5045.desc.turned
+		trigger = { has_country_flag = operative_defects_turned }
+	}
+	picture = GFX_evt_operative_chase
+	show_sound = event_default
+	is_triggered_only = yes
+	location = from.target.capital_scope
+
+	trigger = {
+		exists = from
+		is_regular_empire = yes
+		from.target = { is_homicidal = no }
+	}
+
+	immediate = {
+		from = {
+			set_espionage_operation_progress_locked = yes
+			operation_choose_operative_role = yes #for scripted loc.
+		}
+		set_timed_country_flag = {
+			flag = recent_op_operative_defects
+			days = @RandomOperationEventTimer
+		}
+		random_list = {
+			1 = {
+				modifier = {
+					factor = 2
+					OR = {
+						has_opposing_ethics = { COUNTRY1 = root COUNTRY2 = from.target }
+						AND = {
+							OR = {
+								is_autocracy = yes
+								is_oligarchy = yes
+							}
+							from.target = { has_valid_civic = civic_shared_burden }
+						}
+					}
+				}
+				modifier = {
+					factor = 0
+					from.target = { is_gestalt = yes }
+				}
+				set_country_flag = operative_defects_culture
+			}
+			3 = {
+				modifier = {
+					factor = 2
+					root = {
+						relative_encryption_decryption = { target = from.target value < 0.7 }
+					}
+				}
+				set_country_flag = operative_defects_turned
+			}
+		}
+	}
+
+	option = { #Accept the loss
+		name = operation.5045.a
+		from = { set_espionage_operation_progress_locked = no }
+		allow = {
+			resource_stockpile_compare = { resource = influence value >= 20 }
+		}
+		add_resource = { influence = -20 }
+		custom_tooltip = operation.5045.a.tooltip
+		hidden_effect = {
+			from = {
+				if = {
+					limit = {
+						OR = {
+							has_espionage_category = op_cat_provocation
+							has_espionage_category = op_cat_sabotage
+						}
+						no_scope = {
+							any_spynetwork = {
+								owner = { is_same_value = from.target }
+								target = { is_same_value = root }
+							}
+						}
+					}
+					owner = { save_event_target_as = insidious_plot_country }
+					target = {
+						country_event = { id = espionage.1070 days = 10 } #Hostile Infiltration Detected
+					}
+				}
+				else_if = {
+					limit = {
+						no_scope = {
+							any_spynetwork = {
+								owner = { is_same_value = from.target }
+								target = { is_same_value = root }
+							}
+						}
+					}
+					owner = { save_event_target_as = insidious_plot_country }
+					target = {
+						country_event = { id = espionage.1080 days = 10 } #Insidious Plot Uncovered
+					}
+				}
+			}
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+	option = { #Discipline Spymaster
+		name = operation.5045.b
+		trigger = {
+			from.spynetwork = {
+				NOT = { has_modifier = spynetwork_rigorous_screening }
+			}
+		}
+		from = { set_espionage_operation_progress_locked = no }
+		custom_tooltip = operation.5045.b.tooltip
+		add_modifier = { modifier = spynetwork_rigorous_screening days = 360 }
+		hidden_effect = {
+			random_list = { #Note that these odds are described in operation.5045.b.tooltip. Update that string if necessary.
+				1 = {
+					from = {
+						if = {
+							limit = {
+								OR = {
+									has_espionage_category = op_cat_provocation
+									has_espionage_category = op_cat_sabotage
+								}
+								no_scope = { #makes any_spynetwork check any in the game
+									any_spynetwork = {
+										owner = { is_same_value = from.target }
+										target = { is_same_value = root }
+									}
+								}
+							}
+							owner = { save_event_target_as = insidious_plot_country }
+							target = {
+								country_event = { id = espionage.1070 days = 10 } #Hostile Infiltration Detected
+							}
+						}
+						else_if = {
+							limit = {
+								no_scope = { #makes any_spynetwork check any in the game
+									any_spynetwork = {
+										owner = { is_same_value = from.target }
+										target = { is_same_value = root }
+									}
+								}
+							}
+							owner = { save_event_target_as = insidious_plot_country }
+							target = {
+								country_event = { id = espionage.1080 days = 10 } #Insidious Plot Uncovered
+							}
+						}
+					}
+				}
+				1 = {
+					#No further consequences
+				}
+			}
+		}
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 5
+				is_authoritarian = yes
+			}
+		}
+	}
+	option = { #Cancel the Operation
+		name = DISAVOW
+		hidden_effect = {
+			root = {
+				set_timed_country_flag = {
+					flag = has_disavowed_operative
+					days = 36000 #100 years
+				}
+				set_country_flag = burn_notice_achievement
+			}
+		}
+		from = {
+			fire_on_action = { on_action = on_operation_cancelled }
+			destroy_espionage_operation = this
+		}
+		ai_chance = {
+			factor = 5
+			modifier = {
+				factor = 4
+				relative_encryption_decryption = { target = from.target value < 0.85 }
+			}
+		}
+	}
+
+	after = {
+		remove_country_flag = operative_defects_culture
+		remove_country_flag = operative_defects_turned
+	}
+}
+
+# Grisly Countermeasures (targeted operations)
+# from = operation; fromfrom/from.target = target; from.target.owner = target country
+country_event = {
+	id = operation.5050
+	title = operation.5050.name
+	desc = {
+		trigger = {
+			is_machine_empire = no
+			from.spynetwork.target = { has_hostile_espionage_operation_ethics = no }
+		}
+		text = operation.5050.desc
+	}
+	desc = {
+		trigger = {
+			is_machine_empire = yes
+			from.spynetwork.target = { has_hostile_espionage_operation_ethics = no }
+		}
+		text = operation.5050.desc.machine
+	}
+	desc = {
+		trigger = {
+			from.spynetwork.target = { has_hostile_espionage_operation_ethics = yes }
+		}
+		text = operation.5050.desc.hostile
+	}
+	picture = GFX_evt_laser_grid
+	show_sound = event_energy_field
+	is_triggered_only = yes
+	location = from.target
+
+	immediate = {
+		set_timed_country_flag = {
+			flag = recent_op_grisly_countermeasures
+			days = @RandomOperationEventTimerLong
+		}
+		from = { set_espionage_operation_progress_locked = yes }
+	}
+
+	option = { #Expend Sabotage asset to arrange an extraction
+		name = operation.5050.a
+		icon = {
+			icon = GFX_espionage_asset_icon
+			text = ESPIONAGE_OPERATION_ASSET_EVENT_OPTION
+		}
+		trigger = {
+			from = {
+				has_espionage_asset_sabotage = yes
+				spynetwork = { has_available_spy_power > 10 }
+			}
+		}
+		from = {
+			destroy_espionage_asset_sabotage = yes
+			set_espionage_operation_progress_locked = no
+		}
+		from.spynetwork = { add_spy_network_level = -10 }
+	}
+	option = { #Proceed without the operative
+		name = operation.5050.b
+		from = {
+			add_modifier = { modifier = operation_grisly_countermeasures }
+			set_espionage_operation_progress_locked = no
+		}
+		from.spynetwork = {
+			add_modifier = { modifier = spynetwork_grisly_countermeasures days = 360 }
+		}
+	}
+	option = { #Attempt a disavowal of the whole operation
+		name = DISAVOW
+		custom_tooltip = operation.5050.c.tooltip
+		hidden_effect = {
+			root = {
+				set_country_flag = burn_notice_achievement
+				set_timed_country_flag = {
+					flag = has_disavowed_operative
+					days = 36000 #100 years
+				}
+			}
+			locked_random_list = {
+				5 = { #Successful disavowal
+					modifier = {
+						factor = 0.2
+						from.target.owner = {
+							relative_encryption_decryption = {
+								target = root
+								value > 1.4
+							}
+						}
+					}
+				}
+				1 = { #Identified by the target
+					modifier = {
+						factor = 0
+						from = { has_espionage_asset_sabotage = yes }
+					}
+					from.target.owner = {
+						country_event = { id = espionage.1070 } #Hostile Infiltration Detected
+					}
+				}
+			}
+		}
+		from = {
+			if = {
+				limit = { has_espionage_asset_sabotage = yes }
+				destroy_espionage_asset_sabotage = yes
+			}
+			hidden_effect = {
+				set_espionage_operation_progress_locked = no
+				fire_on_action = { on_action = on_operation_cancelled }
+				destroy_espionage_operation = this
+			}
+		}
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 8
+				root = {
+					relative_encryption_decryption = {
+						target = from.target.owner
+						value < 1.0 #At > 1.0 root's encryption is superior to target's decryption
+					}
+				}
+			}
+		}
+	}
+}
+
+# CONFIDENCE/SYNCHRONICITY WAVERS (any vs. any)
+# from = operation; fromfrom = target (country or e.g. starbase)
+country_event = {
+	id = operation.5055
+	title = operation.5055.name.regular
+	desc = {
+		text = operation.5055.desc.regular
+		trigger = { is_gestalt = no }
+	}
+	desc = {
+		text = operation.5055.desc.gestalt
+		trigger = { is_gestalt = yes }
+	}
+	picture = GFX_evt_spymaster
+	show_sound = event_spymaster
+	is_triggered_only = yes
+	location = from.target
+
+	trigger = {
+		exists = from
+		from.spynetwork = {
+			NOR = {
+				has_modifier = spynetwork_auxiliaries_lost
+				has_modifier = spynetwork_auxiliaries_insight
+				has_modifier = spynetwork_auxiliaries_leak
+			}
+		}
+	}
+
+	immediate = {
+		set_timed_country_flag = {
+			flag = recent_op_confidence_wavers
+			days = @RandomOperationEventTimerLong
+		}
+		from = {
+			set_espionage_operation_progress_locked = yes
+			#Event targets to facilitate loc. in targeted and non-targed operations alike
+			spynetwork = { save_event_target_as = operation }
+			if = {
+				limit = { is_targeted_espionage_operation = yes }
+				target.owner = { save_event_target_as = target_country }
+			}
+			else = {
+				target = { save_event_target_as = target_country }
+			}
+		}
+	}
+
+	option = { #Cut them loose
+		name = operation.5055.a
+		allow = {
+			resource_stockpile_compare = { resource = energy value >= 600 }
+		}
+		add_monthly_resource_mult = {
+			resource = energy
+			value = -6
+			min = -300
+			max = -600
+		}
+		from.spynetwork = {
+			add_modifier = { modifier = spynetwork_auxiliaries_lost days = 360 }
+		}
+	}
+	option = { #Embrace them; gamble on their being insightful
+		name = operation.5055.b
+		# custom_tooltip = operation.5055.b.tooltip
+		random_list = {
+			1 = { #Positive Insights
+				modifier = {
+					factor = 2
+					from = { has_espionage_asset_matching_operation_theme = yes }
+				}
+				country_event = { id = operation.5056 days = 5 }
+			}
+			1 = { #Negative reaction
+				modifier = {
+					factor = 2
+					has_opposing_ethics = { COUNTRY1 = root COUNTRY2 = event_target:target_country }
+				}
+				modifier = {
+					factor = 5
+					event_target:target_country = { has_hostile_espionage_operation_ethics = yes }
+				}
+				country_event = { id = operation.5057 days = 5 }
+			}
+		}
+	}
+
+	after = {
+		from = { set_espionage_operation_progress_locked = no }
+	}
+}
+# Unwavering Insight (auxiliaries improve matters)
+# fromfrom = operation; event_target:target_country = target (country)
+country_event = {
+	id = operation.5056
+	title = operation.5056.name
+	desc = operation.5056.desc
+	picture = GFX_evt_gunrunning
+	show_sound = event_spymaster
+	is_triggered_only = yes
+	location = fromfrom.target
+
+	trigger = {
+		exists = fromfrom
+		exists = event_target:target_country
+	}
+
+	immediate = { }
+
+	option = {
+		name = EXCELLENT
+		fromfrom.spynetwork = {
+			add_modifier = { modifier = spynetwork_auxiliaries_insight days = 1080 }
+		}
+	}
+}
+# Panicked Operatives
+# fromfrom = operation; event_target:target_country = target (country)
+country_event = {
+	id = operation.5057
+	title = operation.5057.name
+	desc = operation.5057.desc
+	picture = GFX_evt_operative_chase
+	show_sound = event_spymaster
+	is_triggered_only = yes
+	location = fromfrom.target
+
+	trigger = {
+		exists = fromfrom
+		exists = event_target:target_country
+	}
+
+	immediate = { }
+
+	option = {
+		name = CURSES
+		fromfrom.spynetwork = {
+			add_modifier = { modifier = spynetwork_auxiliaries_lost days = 360 }
+		}
+	}
+}
+
+###########################
+# GATHER INFORMATION
+###########################
+# this = operation; from = target (country)
+
+# Single Stage Operation - the stakes have never been lower
+espionage_operation_event = {
+	id = operation.7000
+	title = operation_gather_information
+	desc = operation.7000.desc
+
+	picture = GFX_evt_spymaster
+	show_sound = event_espionage_concluded
+	espionage_operation = yes
+	is_triggered_only = yes
+
+	trigger = {
+		exists = from
+	}
+
+	immediate = {
+		random_list = {
+			1 = {
+				modifier = {
+					factor = 0
+					owner = {
+						NOT = {
+							has_intel_level = {
+								category = government
+								level = 2
+								who = prev.target
+							}
+						}
+					}
+				}
+				modifier = {
+					factor = 5
+					has_espionage_asset_government = yes
+				}
+				set_espionage_operation_flag = intel_report_gov_3
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					owner = {
+						NOT = {
+							has_intel_level = {
+								category = government
+								level = 1
+								who = prev.target
+							}
+						}
+					}
+				}
+				modifier = {
+					factor = 5
+					has_espionage_asset_government = yes
+				}
+				set_espionage_operation_flag = intel_report_gov_2
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					owner = {
+						NOT = {
+							has_intel_level = {
+								category = government
+								level = 0
+								who = prev.target
+							}
+						}
+					}
+				}
+				modifier = {
+					factor = 5
+					has_espionage_asset_government = yes
+				}
+				set_espionage_operation_flag = intel_report_gov_1
+			}
+			1 = {
+				 modifier = {
+					factor = 0
+					owner = {
+						NOT = {
+							has_intel_level = {
+								category = diplomacy
+								level = 2
+								who = prev.target
+							}
+						}
+					}
+				}
+				modifier = {
+					factor = 5
+					has_espionage_asset_diplomacy = yes
+				}
+				set_espionage_operation_flag = intel_report_dip_3
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					owner = {
+						NOT = {
+							has_intel_level = {
+								category = diplomacy
+								level = 1
+								who = prev.target
+							}
+						}
+					}
+				}
+				modifier = {
+					factor = 5
+					has_espionage_asset_diplomacy = yes
+				}
+				set_espionage_operation_flag = intel_report_dip_2
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					owner = {
+						NOT = {
+							has_intel_level = {
+								category = diplomacy
+								level = 0
+								who = prev.target
+							}
+						}
+					}
+				}
+				modifier = {
+					factor = 5
+					has_espionage_asset_diplomacy = yes
+				}
+				set_espionage_operation_flag = intel_report_dip_1
+			}
+			1 = {
+				 modifier = {
+					factor = 0
+					owner = {
+						NOT = {
+							has_intel_level = {
+								category = economy
+								level = 2
+								who = prev.target
+							}
+						}
+					}
+				}
+				modifier = {
+					factor = 5
+					has_espionage_asset_economy = yes
+				}
+				set_espionage_operation_flag = intel_report_eco_3
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					owner = {
+						NOT = {
+							has_intel_level = {
+								category = economy
+								level = 1
+								who = prev.target
+							}
+						}
+					}
+				}
+				modifier = {
+					factor = 5
+					has_espionage_asset_economy = yes
+				}
+				set_espionage_operation_flag = intel_report_eco_2
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					owner = {
+						NOT = {
+							has_intel_level = {
+								category = economy
+								level = 0
+								who = prev.target
+							}
+						}
+					}
+				}
+				modifier = {
+					factor = 5
+					has_espionage_asset_economy = yes
+				}
+				set_espionage_operation_flag = intel_report_eco_1
+			}
+			1 = {
+				 modifier = {
+					factor = 0
+					owner = {
+						NOT = {
+							has_intel_level = {
+								category = technology
+								level = 2
+								who = prev.target
+							}
+						}
+					}
+				}
+				modifier = {
+					factor = 5
+					has_espionage_asset_technology = yes
+				}
+				set_espionage_operation_flag = intel_report_tec_3
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					owner = {
+						NOT = {
+							has_intel_level = {
+								who = prev.target
+								category = technology
+								level = 1
+							}
+						}
+					}
+				}
+				modifier = {
+					factor = 5
+					has_espionage_asset_technology = yes
+				}
+				set_espionage_operation_flag = intel_report_tec_2
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					owner = {
+						NOT = {
+							has_intel_level = {
+								who = prev.target
+								category = technology
+								level = 0
+							}
+						}
+					}
+				}
+				modifier = {
+					factor = 5
+					has_espionage_asset_technology = yes
+				}
+				set_espionage_operation_flag = intel_report_tec_1
+			}
+			1 = {
+				 modifier = {
+					factor = 0
+					owner = {
+						NOT = {
+							has_intel_level = {
+								category = military
+								level = 2
+								who = prev.target
+							}
+						}
+					}
+				}
+				modifier = {
+					factor = 5
+					has_espionage_asset_military = yes
+				}
+				set_espionage_operation_flag = intel_report_mil_3
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					owner = {
+						NOT = {
+							has_intel_level = {
+								who = prev.target
+								category = military
+								level = 1
+							}
+						}
+					}
+				}
+				modifier = {
+					factor = 5
+					has_espionage_asset_military = yes
+				}
+				set_espionage_operation_flag = intel_report_mil_2
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					owner = {
+						NOT = {
+							has_intel_level = {
+								who = prev.target
+								category = military
+								level = 0
+							}
+						}
+					}
+				}
+				modifier = {
+					factor = 5
+					has_espionage_asset_military = yes
+				}
+				set_espionage_operation_flag = intel_report_mil_1
+			}
+			10 = {
+				set_espionage_operation_flag = intel_report_intel_5
+			}
+			5 = {
+				modifier = {
+					factor = 0.5
+					owner = {
+						intel = { who = prev.target value >= 40 }
+					}
+				}
+				set_espionage_operation_flag = intel_report_intel_10
+			}
+			2 = {
+				 modifier = {
+					factor = 0.25
+					owner = {
+						intel = { who = prev.target value >= 50 }
+					}
+				 }
+				set_espionage_operation_flag = intel_report_intel_15
+			}
+		}
+	}
+
+	option = {
+		trigger = {
+			has_espionage_operation_flag = intel_report_gov_3
+		}
+		name = operation.7000.a
+		owner = { add_intel_report = { category = government level = 3 days = 360 who = prev.target } }
+	}
+	option = {
+		trigger = {
+			has_espionage_operation_flag = intel_report_gov_2
+		}
+		name = operation.7000.a
+		owner = { add_intel_report = { category = government level = 2 days = 360 who = prev.target } }
+	}
+	option = {
+		trigger = {
+			has_espionage_operation_flag = intel_report_gov_1
+		}
+		name = operation.7000.a
+		owner = { add_intel_report = { category = government level = 1 days = 360 who = prev.target } }
+	}
+	option = {
+		trigger = {
+			has_espionage_operation_flag = intel_report_dip_3
+		}
+		name = operation.7000.a
+		owner = { add_intel_report = { category = diplomacy level = 3 days = 360 who = prev.target } }
+	}
+	option = {
+		trigger = {
+			has_espionage_operation_flag = intel_report_dip_2
+		}
+		name = operation.7000.a
+		owner = { add_intel_report = { category = diplomacy level = 2 days = 360 who = prev.target } }
+	}
+	option = {
+		trigger = {
+			has_espionage_operation_flag = intel_report_dip_1
+		}
+		name = operation.7000.a
+		owner = { add_intel_report = { category = diplomacy level = 1 days = 360 who = prev.target } }
+	}
+	option = {
+		trigger = {
+			has_espionage_operation_flag = intel_report_eco_3
+		}
+		name = operation.7000.a
+		owner = { add_intel_report = { category = economy level = 3 days = 360 who = prev.target } }
+	}
+	option = {
+		trigger = {
+			has_espionage_operation_flag = intel_report_eco_2
+		}
+		name = operation.7000.a
+		owner = { add_intel_report = { category = economy level = 2 days = 360 who = prev.target } }
+	}
+	option = {
+		trigger = {
+			has_espionage_operation_flag = intel_report_eco_1
+		}
+		name = operation.7000.a
+		owner = { add_intel_report = { category = economy level = 1 days = 360 who = prev.target } }
+	}
+	option = {
+		trigger = {
+			has_espionage_operation_flag = intel_report_tec_3
+		}
+		name = operation.7000.a
+		owner = { add_intel_report = { category = technology level = 3 days = 360 who = prev.target } }
+	}
+	option = {
+		trigger = {
+			has_espionage_operation_flag = intel_report_tec_2
+		}
+		name = operation.7000.a
+		owner = { add_intel_report = { category = technology level = 2 days = 360 who = prev.target } }
+	}
+	option = {
+		trigger = {
+			has_espionage_operation_flag = intel_report_tec_1
+		}
+		name = operation.7000.a
+		owner = { add_intel_report = { category = technology level = 1 days = 360 who = prev.target } }
+	}
+	option = {
+		trigger = {
+			has_espionage_operation_flag = intel_report_mil_3
+		}
+		name = operation.7000.a
+		owner = { add_intel_report = { category = military level = 3 days = 360 who = prev.target } }
+	}
+	option = {
+		trigger = {
+			has_espionage_operation_flag = intel_report_mil_2
+		}
+		name = operation.7000.a
+		owner = { add_intel_report = { category = military level = 2 days = 360 who = prev.target } }
+	}
+	option = {
+		trigger = {
+			has_espionage_operation_flag = intel_report_mil_1
+		}
+		name = operation.7000.a
+		owner = { add_intel_report = { category = military level = 1 days = 360 who = prev.target } }
+	}
+	option = {
+		trigger = {
+			has_espionage_operation_flag = intel_report_intel_5
+		}
+		name = operation.7000.a
+		owner = {
+			add_intel = {
+				amount = 5
+				who = prev.target
+			}
+		}
+	}
+	option = {
+		trigger = {
+			has_espionage_operation_flag = intel_report_intel_10
+		}
+		name = operation.7000.a
+		owner = {
+			add_intel = {
+				amount = 10
+				who = prev.target
+			}
+		}
+	}
+	option = {
+		trigger = {
+			has_espionage_operation_flag = intel_report_intel_15
+		}
+		name = operation.7000.a
+		owner = {
+			add_intel = {
+				amount = 15
+				who = prev.target
+			}
+		}
+	}
+
+	after = {
+		spynetwork = {
+			add_spy_network_level_on_success_effect = { VALUE = -5 }
+		}
+		#Scope doubled up for tooltip reasons
+		spynetwork = {
+			if = {
+				limit = {
+					NOR = {
+						has_modifier = gather_information_infiltration_5
+						has_modifier = gather_information_infiltration_10
+						has_modifier = gather_information_infiltration_15
+						has_modifier = gather_information_infiltration_20
+					}
+				}
+				add_modifier = { modifier = gather_information_infiltration_5 days = @gather_info_infiltration_days }
+			}
+			else_if = {
+				limit = { has_modifier = gather_information_infiltration_5 }
+				hidden_effect = {
+					remove_modifier = gather_information_infiltration_5
+				}
+				add_modifier = { modifier = gather_information_infiltration_10 days = @gather_info_infiltration_days }
+			}
+			else_if = {
+				limit = { has_modifier = gather_information_infiltration_10 }
+				hidden_effect = {
+					remove_modifier = gather_information_infiltration_10
+				}
+				add_modifier = { modifier = gather_information_infiltration_15 days = @gather_info_infiltration_days }
+			}
+			else = {
+				 hidden_effect = {
+					remove_modifier = gather_information_infiltration_15
+					remove_modifier = gather_information_infiltration_20
+				}
+				add_modifier = { modifier = gather_information_infiltration_20 days = @gather_info_infiltration_days }
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					owner = { NOT = { has_country_flag = operation_complete_gather_information } }
+				}
+				owner = {
+					change_variable = {
+						which = tinker_tailor_soldier_blorg_achievement_count
+						value = 1
+					}
+					set_country_flag = operation_complete_gather_information
+				}
+			}
+		}
+		destroy_espionage_operation = this
+	}
+}
