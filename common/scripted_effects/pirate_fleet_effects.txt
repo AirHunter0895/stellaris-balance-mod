@@ -1402,7 +1402,7 @@ create_privateer_ships_13 = {
 		design = "NAME_Pirate_Galleon"
 	}
 	while = {
-		count = 25
+		count = 40
 		create_ship = {
 			name = random
 			design = last_created_design
@@ -1413,7 +1413,7 @@ create_privateer_ships_13 = {
 		design = "NAME_Skull"
 	}
 	while = {
-		count = 96
+		count = 100
 		create_ship = {
 			name = random
 			design = last_created_design
@@ -1424,7 +1424,7 @@ create_privateer_ships_13 = {
 		design = "NAME_Brigand"
 	}
 	while = {
-		count = 96
+		count = 100
 		create_ship = {
 			name = random
 			design = last_created_design
@@ -1435,7 +1435,7 @@ create_privateer_ships_13 = {
 		design = "NAME_Black_Earl"
 	}
 	while = {
-		count = 96
+		count = 100
 		create_ship = {
 			name = random
 			design = last_created_design
