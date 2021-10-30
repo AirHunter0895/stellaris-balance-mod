@@ -622,12 +622,12 @@ midas_stigma = {
 #Anniversary Patch
 
 xeno_comedy_envoy = {
-	planet_amenities_mult = 0.25
+	planet_amenities_mult = 0.1
 	pop_ethic_xenophile_attraction_mult = 0.25
 }
 
 galactic_community_diplo_corps_is_a_joke = {
-	diplo_weight_mult = -0.1
+	diplo_weight_mult = -0.15
 }
 
 diplo_corps_lost_control = {
@@ -660,11 +660,11 @@ pm_joint_cloud_snag = {
 }
 
 cannot_protect_asylum = {
-	diplo_weight_mult = -0.05
+	diplo_weight_mult = -0.1
 }
 
 failed_special_ops_mission = {
-	diplo_weight_mult = -0.1
+	diplo_weight_mult = -0.15
 	pop_citizen_happiness = -0.05
 }
 

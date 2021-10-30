@@ -1252,16 +1252,16 @@ country_event = {
 	option = {
 		name = EXCELLENT
 		locked_random_list = {
-			80 = {
-				add_favors = {
-					target = event_target:target_country
-					value = 1
-				}
-			}
-			20 = {
+			50 = {
 				add_favors = {
 					target = event_target:target_country
 					value = 2
+				}
+			}
+			50 = {
+				add_favors = {
+					target = event_target:target_country
+					value = 3
 				}
 			}
 		}

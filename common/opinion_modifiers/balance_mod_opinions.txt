@@ -17,3 +17,27 @@ opinion_lost_colony_parent_to_child = {
   }
   opinion = { base = 200 }
 }
+
+###################
+# OPINION MODIFIERS
+###################
+
+# Smear Campaigns
+opinion_smear_campaign_insulted = {
+	opinion = {
+		base = -90
+	}
+	decay = 1
+}
+opinion_smear_campaign_deceived = {
+	opinion = {
+		base = -120
+	}
+	decay = 1
+}
+opinion_smear_campaign_espionage = {
+	opinion = {
+		base = -150
+	}
+	decay = 1
+}

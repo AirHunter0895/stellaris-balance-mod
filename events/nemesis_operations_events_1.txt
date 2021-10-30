@@ -808,7 +808,7 @@ country_event = {
 					copy_random_tech_from = {
 						who = fromfrom.target
 						area = physics
-						progress = 0.30
+						progress = 0.50
 					}
 				}
 				1 = {
@@ -824,7 +824,7 @@ country_event = {
 					copy_random_tech_from = {
 						who = fromfrom.target
 						area = society
-						progress = 0.30
+						progress = 0.50
 					}
 				}
 				1 = {
@@ -840,7 +840,7 @@ country_event = {
 					copy_random_tech_from = {
 						who = fromfrom.target
 						area = engineering
-						progress = 0.30
+						progress = 0.50
 					}
 				}
 			}
@@ -2143,7 +2143,7 @@ country_event = {
 		allow = {
 			resource_stockpile_compare = { resource = influence value >= 20 }
 		}
-		add_resource = { influence = -20 }
+		add_resource = { influence = -50 }
 		root = {
 			add_opinion_modifier = {
 				who = event_target:smear_campaign_target
@@ -2207,7 +2207,7 @@ country_event = {
 		allow = {
 			resource_stockpile_compare = { resource = influence value >= 15 }
 		}
-		add_resource = { influence = -15 }
+		add_resource = { influence = -50 }
 		root = {
 			add_opinion_modifier = {
 				who = event_target:smear_campaign_target
@@ -2272,7 +2272,7 @@ country_event = {
 		allow = {
 			resource_stockpile_compare = { resource = influence value >= 15 }
 		}
-		add_resource = { influence = -15 }
+		add_resource = { influence = -50 }
 		root = {
 			add_opinion_modifier = {
 				who = event_target:smear_campaign_target
