@@ -48,19 +48,6 @@ spawning_drone = {
 			planet_amenities_no_happiness_add = -1
 		}
 	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { has_origin = origin_necrophage }
-			exists = planet.growing_species
-			planet.growing_species = {
-				NOT = { has_trait = trait_hive_mind }
-			}
-		}
-		modifier = {
-			pop_growth_speed = 0.1
-		}
-	}
 
 	resources = {
 		category = planet_jobs

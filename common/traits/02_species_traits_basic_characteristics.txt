@@ -209,7 +209,7 @@ trait_clone_soldier_infertile_full_potential = {
 		pop_government_ethic_attraction = 0.50
 		pop_environment_tolerance = 0.20
 		planet_jobs_ruler_produces_mult = 0.4
-		planet_jobs_specialist_produces_mult = 0.25
+		planet_jobs_specialist_produces_mult = 0.15
 
 		# Leader modifiers
 		army_damage_mult = 0.75
