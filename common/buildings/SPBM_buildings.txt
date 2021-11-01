@@ -1838,7 +1838,6 @@ building_hive_node = {
 
 
 
-¨
 
 
 #Habitat Capital Buildings
