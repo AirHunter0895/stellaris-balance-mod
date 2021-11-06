@@ -4,6 +4,11 @@
  civic_tooltip_private_military_companies_effects:0 "£job_soldier£ §Y$job_soldier_plural$§! and £job_enforcer£ §Y$job_enforcer_plural$§! also produce §Y2§! £trade_value£ §Y$TRADE_VALUE$§!"
  civic_tooltip_beacon_of_liberty_effects:0 "§YUnlocks Edict:§! Greater Than Ourselves"
 
+ # Espionage
+ operation_extort_favors_on_success:0 "$IF_SUCCESSFUL|E$\nGain at least two Favors from the [root.target.GetName]."
+ operation_sabotage_starbase_on_success:0 "$IF_SUCCESSFUL|E$\nDestroy a random Module or Building on a particular Starbase."
+ operation_sabotage_starbase_no_targets:0 "$TRIGGER_FAIL$ §RWe can only target Starbases with modules and buildings.§!"
+ 
  # Station Modules
  sm_spbm_vanilla_bastion:0 "Home Bastion"
  sm_spbm_vanilla_bastion_desc:0 "Our efforts to exploit and secure our home system are reflected in this combined spaceport and defense network."
@@ -25,6 +30,8 @@
  tech_home_bastion_desc:0 "We have spent many years researching a defense system to defend our most important world"
  flag_spbm_clerk_buff:1 "£job_clerk£ $job_clerk$ Trade Value: §G+25%§!"
  # Ascension perks
+ 
+ 
  # Economic Categories
  mod_planet_culture_workers_upkeep_mult:0 "Culture Worker Upkeep"
  mod_planet_priests_upkeep_mult:0 "Priest Upkeep"
