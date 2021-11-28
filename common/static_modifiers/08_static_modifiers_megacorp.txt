@@ -1,13 +1,13 @@
 ### CARAVANEERS
 
 extended_payout_goodest = {
-	country_base_minerals_produces_add = 40
-	country_base_energy_produces_add = 40
+	country_extended_payout_minerals_produces_add = 40
+	country_extended_payout_energy_produces_add = 40
 }
 
 extended_payout_good = {
-	country_base_minerals_produces_add = 6
-	country_base_energy_produces_add = 6
+	country_extended_payout_minerals_produces_add = 6
+	country_extended_payout_energy_produces_add = 6
 }
 
 slots_disappointment = {

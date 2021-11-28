@@ -398,6 +398,9 @@
 
 		MAP_ICON_ITEM_MINIMUM_WIDTH = 10
 
+		GUI_BASELINE_WIDTH						= 1280	# Horizontal Resolution that GUI files are scripted for
+		GUI_BASELINE_HEIGHT						= 720	# Vertical Resolution that GUI files are scripted for
+		GUI_EXTRA_HEIGHT_MAX					= 0		# Experimental: Maximum pixels GUIs are allowed to expand vertically
 		MIN_GUI_SCALE							= 0.5 # Minimum UI scale factor
 
 		TOPBAR_BUTTONS_SHORTCUTS				= {
@@ -545,9 +548,12 @@
 		GROWTH_SCALE_MAX = 1.00
 		GROWTH_SCALE_SLIDER_INTERVAL = 0.05
 
-		SHIPYARD_MAX_OVER_CAPACITY = 5.0		# Max amount of ships that we should want to be queued in one shipyard (x shipyard capacity)
-		SHIPYARD_DISTANCE_DIV_FACTOR = 2.0		# The lower this is, the more reinforce tends to use the closest shipyard(s) available. Strongly NOT recommended to have this <1
-		SHIPYARD_REINFORCE_MAX_DISTANCE = 1000	# Shipyards further away than this from the closest shipyard will not be considered for reinforcements
+		SHIPYARD_REINFORCE_DISTANCE_MULT = 500	# The higher this is, the bigger impact distance has when distributing reinforcement ship construction. Expected to be >= 1
+		SHIPYARD_REINFORCE_MAX_JUMPS = 100		# If the closest shipyard can theoretically construct all requested ships; shipyards further away than this (plus the number of jumps between the closest shipyard and the fleet) from the fleet will not be considered for reinforcement construction duties. Expected to be >= 1
+
+		REINFORCE_MIA_TIME_MULT = 1.0 									# Used to customize the duration of reinforcement times. Expected to be > 0
+		REINFORCE_ACCEPTABLE_EVASIVE_PATH_MULT = 2.0 					# Allowed maximum distance multiplier for evasive reinforcement path, if evasive path is longer than this reinforcement is aborted. Expected to be >= 1
+		REINFORCE_ACCEPTABLE_EVASIVE_PATH_OVERRIDE_LOWER_THRESHOLD = 12 # Evasive paths under this threshold (measured in entry+exit points) will always be used even if the evasive path is longer than the shortest path multiplied by REINFORCE_ACCEPTABLE_EVASIVE_PATH_MULT. Expected to be > 0.
 
 		LIMITED_EXPLORATION = 1		# If set to 1, only science ships with scientists can enter unvisited systems
 
@@ -805,7 +811,7 @@
 		POP_FACTION_APPROVAL_BASE					= 0.50	# Base faction approval
 		POP_FACTION_APPROVAL_HIGH					= 0.60	# Above this level of approval a faction will have some bonus happiness
 		POP_FACTION_APPROVAL_VERY_HIGH				= 0.80	# Above this level of approval a faction will have more bonus happiness
-		POP_FACTION_MIN_POTENTIAL_MEMBERS			= 5 # If a faction has less potential members than this, do not form
+		POP_FACTION_MIN_POTENTIAL_MEMBERS			= 5 # If a faction has less potential members than this, do not form, and delete if formed
 		POP_FACTION_CREATION_COOLDOWN				= 180 # Wait this many days after creating a faction to create another one (not applied to hidden factions)
 
 		POLICY_YEARS						= 10	# Years a set policy can not be changed for
@@ -1054,6 +1060,7 @@
 
 		EDICT_MAX_RESOURCE_COST			= 1000000
 		EXPERIMENTAL_SUBSPACE_NAVIGATION_TIME_MULT			= 3.0		# value * hyperlane distance to system defines the MIA time (travel time in days) for a Science Ship MIA Jump
+		MIA_TIME_MULT = 1.0 # Used to customize the duration of MIA times. Expected to be > 0
 
 		SECTOR_RESOURCE_TRANSFER_AMOUNT_LARGE = 1000
 		SECTOR_RESOURCE_TRANSFER_AMOUNT = 100
@@ -1234,6 +1241,14 @@
 		MUTATION_ADD_CHANCE					= 50
 		MUTATION_MIN_TRAITS				= 2
 		MUTATION_MAX_TRAITS					= 5
+
+		# The following four defines are for deciding the genders that randomly generated species will use for their leaders.
+		# Default means male/female divide. Non-gendered is also known as undeterminable in the game files
+		# It expects non-negative integer values. They can add up to anything, so long as it is greater than 0, and less than int_max
+		DEFAULT_GENDER_CHANCE				= 70
+		MALE_GENDER_CHANCE					= 10
+		FEMALE_GENDER_CHANCE				= 10
+		NON_GENDERED_CHANCE					= 10
 	}
 
 	NShip = {
@@ -1554,14 +1569,14 @@
 	NAI = {
 		AI_FREE_JOBS_DISTRICT_BUILD_CAP = 1						# AI will not build new districts on a planet with more than this many free jobs
 		AI_FREE_JOBS_BUILDING_BUILD_CAP = 2						# AI will not build new buildings on a planet with more than this many free jobs
-		AI_DEFICIT_SCORE_MULT = 100								# AI will score buildings producing resources in deficit this much more
-		AI_FOCUS_SCORE_MULT = 40								# AI will score buildings producing focus resources this much more
-		AI_AMENITIES_SCORE_MULT = 50							# AI will score amenity buildings this much more than other misc resources
+		AI_DEFICIT_SCORE_MULT = 2								# AI will score buildings producing resources in deficit this much more
+		AI_FOCUS_SCORE_MULT = 2									# AI will score buildings producing focus resources this much more
+		AI_AMENITIES_SCORE_MULT = 2								# AI will score amenity buildings this much more than other misc resources
 		AI_HOUSING_SCORE_MULT = 4.5								# AI will score housing buildings this much more than other misc resources
 		AI_CRIME_REDUCTION_SCORE_MULT = 2						# AI will score crime fighting buildings this much more than other misc resource
 		AI_ADMIN_CAP_SCORE_MULT = 2								# AI will score admin cap buildings this much more than other misc resource
 		AI_POPS_SCORE_MULT = 1									# AI will score pop growth and assembly buildings this much more ( already fairly high weighted in code )
-		AI_UPGRADE_SCORE_MULT = 40								# AI will score building upgrades this much more ( since they don't take up a new building slot )
+		AI_UPGRADE_SCORE_MULT = 100								# AI will score building upgrades this much more ( since they don't take up a new building slot )
 		AI_MIN_CURRENCY_INCOME_TO_BUILD_STARBASE_MODULES = 100	# AI will not build starbase modules if energy income is below this threshold
 
 		AI_TECHNOLOGY_RARE_WEIGHT_MULT = 5						# AI will multiply AI weight of rare techs with this value
@@ -1597,17 +1612,17 @@
 		WAR_DEFENSE_OWN_PLANET_PRIO = 1.5			# Priority on defending own planets in a controlled system
 		WAR_DEFENSE_OWN_PLANET_ENEMY_CONTROL_PRIO = 5 # Priority on defending own planets in an enemy controlled system
 
-		WAR_ATTACK_PLANET_PRIO = 2.0				# Priority on targeting enemy systems with planets
-		WAR_ATTACK_PLANET_CONTROLLED_SYSTEM_PRIO = 10.0				# Priority on targeting enemy planets in controlled systems
-		WAR_ATTACK_STARBASE_PRIO = 1.5				# Priority on targeting enemy systems with upgraded starbases
-		WAR_DEFEND_STARBASE_PRIO = 1.5				# Priority on defending systems with an upgraded starbase
-		WAR_ATTACK_MILITARY_FLEET_PRIO = 3.0		# Priority on targeting enemy military fleets
-		WAR_ATTACK_JUMP_DRIVE_FLEET_PRIO = 2.0		# Priority on targeting vulnerable jump-drive fleets that are in cooldown
+		WAR_ATTACK_PLANET_PRIO = 2.0						# Priority on targeting enemy systems with planets
+		WAR_ATTACK_PLANET_CONTROLLED_SYSTEM_PRIO = 3.0		# Priority on targeting enemy planets in controlled systems
+		WAR_ATTACK_STARBASE_PRIO = 4						# Priority on targeting enemy systems with upgraded starbases
+		WAR_DEFEND_STARBASE_PRIO = 2.5						# Priority on defending systems with an upgraded starbase
+		WAR_ATTACK_MILITARY_FLEET_PRIO = 5.0				# Priority on targeting enemy military fleets
+		WAR_ATTACK_JUMP_DRIVE_FLEET_PRIO = 2.0				# Priority on targeting vulnerable jump-drive fleets that are in cooldown
 
 		SPACE_MONSTER_MOVE_CHANCE = 2				# % chance that space monsters pick a new wander target each week
 		SPACE_MONSTER_WANDER_FACTOR	= 0.75			# The higher this is, the further space monsters will tend to wander from their spawn point (range: 0.0 - 1.0)
 
-		TERRAFORM_SAVE_CREDITS = 1000				# AI wants to have at least this much energy over after starting a terraforming
+		TERRAFORMING_RESOURCE_THRESHOLD_FACTOR = 1.2	# AI wants to have this factor more resources than what is required for the terraforming
 
 		EXTRADIMENSIONAL_MIN_FLEETS = 3				# At less fleets than this, extradimensionals pull back to the portal
 
@@ -1635,18 +1650,18 @@
 
 		FLEET_COMBAT_INTERVENTION_MULT = 0.5 # The AI wont try to intervene in a fleet combat unless that intervention puts us at this percentage of the enemy fleet ( i.e. we wont intervene if the enemy outnumbers us by 2 or more )
 
-		OFFENSE_VS_DEFENSE_STRATEGY_ALLOTMENT = 0.75 # How much of its fleet power should a country with 1.0 aggressiveness should try to commit to offensive missions
+		OFFENSE_VS_DEFENSE_STRATEGY_ALLOTMENT = 1.0 # How much of its fleet power should a country with 1.0 aggressiveness should try to commit to offensive missions
 
-		FLEET_DAMAGED_THRESHOLD_WAR = 0.75			# threshold when a fleet will be considered damaged and should return for repairs and avoid certain actions
-		FLEET_DAMAGED_THRESHOLD_PEACE = 0.95		# same but for peace
-		FLEET_ARMOR_DAMAGED_THRESHOLD_WAR = 0.75	# same as above but for armor
-		FLEET_ARMOR_DAMAGED_THRESHOLD_PEACE = 0.95	# same but for armor in peace
+		FLEET_DAMAGED_THRESHOLD_WAR = 0.40			# threshold when a fleet will be considered damaged and should return for repairs and avoid certain actions
+		FLEET_DAMAGED_THRESHOLD_PEACE = 0.99		# same but for peace
+		FLEET_ARMOR_DAMAGED_THRESHOLD_WAR = 0.40	# same as above but for armor
+		FLEET_ARMOR_DAMAGED_THRESHOLD_PEACE = 0.99	# same but for armor in peace
 
-		TARGET_BASE_SCORE = 100.0			# base score to use when scoring AI military targets
-		HOSTILE_FLEETS_TARGET_SCORE = 20 # extra score for engaging hostile fleets
-		CAPITAL_TARGET_SCORE = 5 # extra score for defending/invading a capital
-		CRISIS_CONSTRUCTOR_TARGET_SCORE = 3	# extra score for crisis defending constructor ships
-		CHOKEPOINT_TARGET_MULT = 2 # extra multiplier for defensive scoring of chokepoints
+		TARGET_BASE_SCORE = 100.0					# base score to use when scoring AI military targets
+		HOSTILE_FLEETS_TARGET_SCORE = 20 			# extra score for engaging hostile fleets
+		CAPITAL_TARGET_SCORE = 5 					# extra score for defending/invading a capital
+		CRISIS_CONSTRUCTOR_TARGET_SCORE = 3			# extra score for crisis defending constructor ships
+		CHOKEPOINT_TARGET_MULT = 2 					# extra multiplier for defensive scoring of chokepoints
 
 		MIN_GIFT_SIZE = 25								# in opinion impact
 		MAX_GIFT_SIZE = 50
@@ -1889,12 +1904,12 @@
 
 
 
-		ENEMY_FLEET_POWER_MULT = 1.2			# AI will need the fleet power of the enemy multiplied by this value to become offensive in an offensive war
-		ENEMY_ARMY_POWER_MULT = 1.0				# AI will need the military power of the enemy multiplied by this value to land armies on planet
-		ENEMY_FLEET_POWER_HOME_SYSTEM_MULT = 1.0 # AI will need the fleet power of the enemy multiplied by this value to attack hostiles in own systems
+		ENEMY_FLEET_POWER_MULT = 1.2					# AI will need the fleet power of the enemy multiplied by this value to become offensive in an offensive war
+		ENEMY_ARMY_POWER_MULT = 1.0						# AI will need the military power of the enemy multiplied by this value to land armies on planet
+		ENEMY_FLEET_POWER_HOME_SYSTEM_MULT = 1.0 		# AI will need the fleet power of the enemy multiplied by this value to attack hostiles in own systems
 
-		CRISIS_NAVY_SIZE_LIMIT = 100				# Crisis fleets will aim for this size before attacking targets
-		HORDE_NAVY_SIZE_LIMIT = 50				# Horde fleets will aim for this size before attacking targets
+		CRISIS_NAVY_SIZE_LIMIT = 100					# Crisis fleets will aim for this size before attacking targets
+		HORDE_NAVY_SIZE_LIMIT = 50						# Horde fleets will aim for this size before attacking targets
 		ANTI_CRISIS_NAVY_SIZE_LIMIT = 50				# Anti-Crisis fleets will aim for this size before attacking targets
 		CONTINGENCY_IGNORE_HUBS_THRESHOLD = 0.5
 

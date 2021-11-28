@@ -30,7 +30,7 @@ full_circle = {
 	pop_happiness = 0.05
 	pop_government_ethic_attraction = 0.20
 	all_technology_research_speed = 0.05
-	country_base_influence_produces_add = 0.50
+	country_shoulders_influence_produces_add = 0.50
 }
 
 # On the Shoulders of Giants Origin CONTINUED modifiers
@@ -39,7 +39,7 @@ goes_around_comes_around = {
 	pop_happiness = 0.05
 	pop_government_ethic_attraction = 0.20
 	all_technology_research_speed = 0.05
-	country_base_influence_produces_add = 0.50
+	country_shoulders_influence_produces_add = 0.50
 }
 
 # The Lesser Messenger modifiers
@@ -524,6 +524,12 @@ colonial_remains = {
 
 prosp_uni_mod = {
 	pop_happiness = 0.15
+	planet_amenities_mult = 0.25
+	planet_jobs_produces_mult = 0.1
+	icon = "gfx/interface/icons/planet_modifiers/pm_planet_from_space.dds"
+}
+
+prosp_uni_mod_gestalt = {
 	planet_amenities_mult = 0.25
 	planet_jobs_produces_mult = 0.1
 	icon = "gfx/interface/icons/planet_modifiers/pm_planet_from_space.dds"

@@ -150,6 +150,7 @@ d_segment_rubble_2 = {
 		}
 	}
 }
+
 d_segment_rubble_3 = {
 	is_for_colonizable = yes
 	icon = "d_ruins_medium"

@@ -757,8 +757,8 @@ country_event = {
 		trigger = {
 			fromfrom = {
 				has_espionage_operation_flag = reward_extra #Also requires "smooth_exit" and an Asset
-				can_copy_random_tech_from = { who = fromfrom.target }
 			}
+			can_copy_random_tech_from = { who = fromfrom.target }
 		}
 		root = {
 			copy_random_tech_from = {

@@ -81,7 +81,7 @@ fortify_the_border = {
 		category = edicts
 		cost = { #Activation Cost
 			trigger = {
-				NOT = { has_edict = fortify_the_border }			
+				NOT = { has_edict = fortify_the_border }
 			}
 			influence = 100
 		}
@@ -602,6 +602,7 @@ thought_enforcement = {
 			is_egalitarian = yes
 		}
 	}
+	modifier = { custom_tooltip = edict_thought_enforcement_effect }
 }
 
 extended_shifts = {
@@ -923,11 +924,11 @@ industrial_subsidies = {
 	potential = {
 		country_uses_consumer_goods = yes
 	}
-	
+
 	prerequisites = {
 		tech_global_production_strategy
 	}
-	
+
 	show_tech_unlock_if = {
 		country_uses_consumer_goods = yes
 	}

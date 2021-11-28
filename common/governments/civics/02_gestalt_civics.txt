@@ -332,7 +332,7 @@ civic_machine_builder = {
 	random_weight = { base = 5 }
 	modifier = {
 		planet_structures_cost_mult = -0.15
-		planet_max_buildings_add = 2
+		planet_max_buildings_add = 1
 	}
 }
 

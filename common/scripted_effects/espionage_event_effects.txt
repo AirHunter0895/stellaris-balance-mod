@@ -1793,6 +1793,34 @@ espionage_crisis_beacon_lure = {
 			}
 		}
 	}
+	if = {
+		limit = {
+			NOT = { exists = event_target:crisis_beacon_crisis_fleet }
+		}
+		random_system = {
+			limit = {
+				any_fleet_in_system = {
+					owner = { is_country_type = $TYPE$ }
+					is_ship_class = shipclass_military
+					fleet_size >= 20
+				}
+			}
+			save_event_target_as = crisis_beacon_crisis_system
+			random_fleet_in_system = {
+				limit = {
+					owner = { is_country_type = $TYPE$ }
+					is_ship_class = shipclass_military
+					fleet_size >= 20
+				}
+				save_event_target_as = crisis_beacon_crisis_fleet
+				auto_move_to_planet = {
+					target = event_target:crisis_beacon_target_capital
+					clear_auto_move_on_arrival = yes
+					# arrival_effect = espionage_crisis_beacon_fleet_return #to the system it came from
+				}
+			}
+		}
+	}
 }
 
 #Fleet scope | prev = system of origin

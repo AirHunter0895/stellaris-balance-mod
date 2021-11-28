@@ -194,7 +194,14 @@ origin_post_apocalyptic = {
 
 	possible = {
 		authority = { NOT = { value = auth_machine_intelligence } }
-		civics = { NOT = { value = civic_agrarian_idyll } }
+		civics = {
+			NOT = { value = civic_agrarian_idyll }
+			NOR = {
+				text = civic_tooltip_not_anglers
+				value = civic_anglers
+				value = civic_corporate_anglers
+			}
+		}
 	}
 
 	description = "civic_tooltip_post_apocalyptic_effects"
@@ -219,7 +226,10 @@ origin_remnants = {
 	max_once_global = yes
 
 	playable = {
-		has_ancrel = yes
+		OR = {
+			has_ancrel = yes
+			host_has_dlc = Federations
+		}
 	}
 
 	possible = {
@@ -259,13 +269,16 @@ origin_shattered_ring = {
 
 	possible = {
 		civics = {
-			NOT = {	value = civic_agrarian_idyll }
-		}
-		civics = {
+			NOT = { value = civic_agrarian_idyll }
 			NOR = {
 				text = civic_tooltip_not_idyllic_bloom
 				value = civic_idyllic_bloom
 				value = civic_hive_idyllic_bloom
+			}
+			NOR = {
+				text = civic_tooltip_not_anglers
+				value = civic_anglers
+				value = civic_corporate_anglers
 			}
 		}
 	}
@@ -301,13 +314,16 @@ origin_void_dwellers = {
 	possible = {
 		ethics = { NOT = { value = ethic_gestalt_consciousness } }
 		civics = {
-			NOT = {	value = civic_agrarian_idyll }
-		}
-		civics = {
 			NOR = {
 				text = civic_tooltip_not_idyllic_bloom
 				value = civic_idyllic_bloom
 				value = civic_hive_idyllic_bloom
+			}
+			NOT = { value = civic_agrarian_idyll }
+			NOR = {
+				text = civic_tooltip_not_anglers
+				value = civic_anglers
+				value = civic_corporate_anglers
 			}
 		}
 	}
@@ -341,6 +357,9 @@ origin_scion = {
 				#value = ethic_xenophobe
 				value = ethic_fanatic_xenophobe
 			}
+		}
+		civics = {
+			NOT = { value = civic_pompous_purists }
 		}
 	}
 
@@ -688,6 +707,9 @@ origin_necrophage = {
 	}
 
 	possible = {
+		authority = {
+			NOT = { value = auth_machine_intelligence }
+		}
 		ethics = {
 			NOR = {
 				value = ethic_xenophile
@@ -743,10 +765,72 @@ origin_clone_army = {
 		trait = trait_clone_soldier_infertile
 	}
 
+	advanced_start = no
+
+	random_weight = {
+		base = 2
+	}
+}
+
+origin_here_be_dragons = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_here_be_dragons.dds"
+	picture = GFX_origin_here_be_dragons
+	flags = { custom_start_screen }
+
+	playable = {
+		has_aquatics = yes
+	}
+
+	possible = {
+		civics = {
+			NOR = {
+				value = civic_fanatic_purifiers
+				value = civic_hive_devouring_swarm
+				value = civic_machine_terminator
+			}
+		}
+	}
+
+	description = civic_tooltip_aquatics_effects
+
+	advanced_start = yes
+	max_once_global = yes
+
+	random_weight = {
+		base = 5
+	}
+}
+
+origin_ocean_paradise = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origins_ocean_paradise.dds"
+	picture = GFX_origin_ocean_paradise
+	flags = { custom_start_screen }
+
+	starting_colony = pc_ocean
+	habitability_preference = pc_ocean
+	initializers = { ocean_paradise_start }
+
+	playable = {
+		has_aquatics = yes
+	}
+
+	possible = {
+		authority = {
+			NOT = { value = auth_machine_intelligence }
+		}
+	}
+
+	description = origin_ocean_paradise_effects
+
+	traits = {
+		trait = trait_aquatic
+	}
+
 	advanced_start = yes
 
 	random_weight = {
-		base = 0
-		factor = 0
+		base = 5
 	}
 }

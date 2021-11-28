@@ -64,6 +64,9 @@ civic_media_conglomerate = {
 			civics = { value = civic_galactic_sovereign_megacorp }
 		}
 	}
+	possible = {
+		civics = { NOT = { value = civic_idealistic_foundation } }
+	}
 	random_weight = { base = 5 }
 	modifier = {
 		country_edict_cap_add = 1
@@ -87,6 +90,7 @@ civic_naval_contractors = {
 				value = ethic_fanatic_militarist
 			}
 		}
+		civics = { NOT = { value = civic_citizen_service } }
 	}
 	modifier = {
 		starbase_shipyard_build_cost_mult = -0.10
@@ -155,6 +159,9 @@ civic_ruthless_competition = {
 			civics = { value = civic_galactic_sovereign_megacorp }
 		}
 	}
+	possible = {
+		civics = { NOT = { value = civic_meritocracy } }
+	}
 	random_weight = { base = 5 }
 	modifier = {
         leader_skill_levels = 1
@@ -205,6 +212,7 @@ civic_private_military_companies = {
 				value = ethic_fanatic_militarist
 			}
 		}
+		civics = { NOT = { value = civic_warrior_culture } }
 	}
 	description = "civic_tooltip_private_military_companies_effects"
 	modifier = {
@@ -229,7 +237,13 @@ civic_indentured_assets = {
 				value = ethic_fanatic_authoritarian
 			}
 		}
-		civics = { NOT = { value = civic_corporate_hedonism } }
+		civics = {
+			NOR = {
+				value = civic_corporate_hedonism
+				value = civic_slaver_guilds
+				value = civic_pleasure_seekers
+			}
+		}
 	}
 	modifier = {
 		planet_jobs_slave_produces_mult = 0.10
@@ -243,6 +257,9 @@ civic_brand_loyalty = {
 			authority = { value = auth_corporate }
 			civics = { value = civic_galactic_sovereign_megacorp }
 		}
+	}
+	possible = {
+		civics = { NOT = { value = civic_beacon_of_liberty } }
 	}
 	random_weight = { base = 5 }
 	modifier = {
@@ -258,6 +275,9 @@ civic_public_relations_specialists = {
 			authority = { value = auth_corporate }
 			civics = { value = civic_galactic_sovereign_megacorp }
 		}
+	}
+	possible = {
+		civics = { NOT = { value = civic_diplomatic_corps } }
 	}
 	random_weight = { base = 5 }
 	modifier = {
@@ -283,6 +303,7 @@ civic_death_cult_corporate = {
 				value = civic_fanatic_purifiers
 				value = civic_inwards_perfection
 				value = civic_ancient_preservers
+				value = civic_death_cult
 			}
 		}
 		ethics = {
@@ -299,12 +320,20 @@ civic_corporate_catalytic_processing = {
 	ai_playable = { host_has_dlc = "Plantoids Species Pack" }
 	description = "civic_tooltip_catalytic_processing_corporate_effects"
 	potential = {
-		authority = { value = auth_corporate }
+		OR = {
+			authority = { value = auth_corporate }
+			civics = { value = civic_galactic_sovereign_megacorp }
+		}
 	}
 	possible = {
 		origin = {
 			NOT = {
 				value = origin_lithoid
+			}
+		}
+		civics = {
+			NOT = {
+				value = civic_catalytic_processing
 			}
 		}
 	}
@@ -323,9 +352,40 @@ civic_corporate_hedonism = {
 		}
 	}
 	possible = {
-		civics = { NOT = { value = civic_indentured_assets } } # would enslave hedonists
+		civics = {
+			NOR = {
+				value = civic_pleasure_seekers
+				value = civic_indentured_assets
+				value = civic_slaver_guilds
+			}
+		}
 	}
 	random_weight = { base = 5 }
+}
+
+civic_corporate_anglers = {
+	modification = no
+	playable = { has_aquatics = yes }
+	ai_playable = { has_aquatics = yes }
+	description = "civic_tooltip_anglers_effects"
+	potential = {
+		OR = {
+			authority = { value = auth_corporate }
+			civics = { value = civic_galactic_sovereign_megacorp }
+		}
+	}
+	possible = {
+		origin = {
+			NOR = {
+				value = origin_post_apocalyptic
+				value = origin_shattered_ring
+				value = origin_void_dwellers
+			}
+		}
+	}
+	traits = {
+		trait = trait_aquatic
+	}
 }
 
 civic_corporate_crafters = {
@@ -333,10 +393,13 @@ civic_corporate_crafters = {
 	ai_playable = { host_has_dlc = "Humanoids Species Pack" }
 	description = "civic_tooltip_crafters_effects"
 	potential = {
-		authority = { value = auth_corporate }
+		OR = {
+			authority = { value = auth_corporate }
+			civics = { value = civic_galactic_sovereign_megacorp }
+		}
 	}
 	possible = {
-		always = yes
+		civics = { NOT = { value = civic_crafters }	}
 	}
 	random_weight = {
 		base = 3

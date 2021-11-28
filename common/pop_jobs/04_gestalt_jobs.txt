@@ -14,9 +14,9 @@ spawning_drone = {
 		is_sapient = yes
 	}
 
-	possible = {
-		drone_job_check_trigger = yes
-	}
+	possible_precalc = can_fill_drone_job
+
+	possible = { NOT = { has_trait = trait_nerve_stapled } }
 
 	planet_modifier = {
 		planet_amenities_no_happiness_add = 5
@@ -108,9 +108,9 @@ replicator = {
 		is_sapient = yes
 	}
 
-	possible = {
-		drone_job_check_trigger = yes
-	}
+	possible_precalc = can_fill_drone_job
+
+	possible = { NOT = { has_trait = trait_nerve_stapled } }
 
 	planet_modifier = {
 		planet_pop_assembly_add = 1
@@ -152,9 +152,9 @@ coordinator = {
 		is_sapient = yes
 	}
 
-	possible = {
-		drone_job_check_trigger = yes
-	}
+	possible_precalc = can_fill_drone_job
+
+	possible = { NOT = { has_trait = trait_nerve_stapled } }
 
 	resources = {
 		category = planet_bureaucrats
@@ -242,9 +242,9 @@ evaluator = {
 		is_sapient = yes
 	}
 
-	possible = {
-		drone_job_check_trigger = yes
-	}
+	possible_precalc = can_fill_drone_job
+
+	possible = { NOT = { has_trait = trait_nerve_stapled } }
 
 	resources = {
 		category = planet_evaluators
@@ -288,9 +288,9 @@ synapse_drone = {
 		is_sapient = yes
 	}
 
-	possible = {
-		drone_job_check_trigger = yes
-	}
+	possible_precalc = can_fill_drone_job
+
+	possible = { NOT = { has_trait = trait_nerve_stapled } }
 
 	resources = {
 		category = planet_synapse_drones
@@ -382,9 +382,9 @@ brain_drone = {
 		is_sapient = yes
 	}
 
-	possible = {
-		drone_job_check_trigger = yes
-	}
+	possible_precalc = can_fill_drone_job
+
+	possible = { NOT = { has_trait = trait_nerve_stapled } }
 
 	resources = {
 		category = planet_researchers
@@ -463,9 +463,9 @@ calculator = {
 		is_sapient = yes
 	}
 
-	possible = {
-		drone_job_check_trigger = yes
-	}
+	possible_precalc = can_fill_drone_job
+
+	possible = { NOT = { has_trait = trait_nerve_stapled } }
 
 	resources = {
 		category = planet_researchers
@@ -536,9 +536,9 @@ artisan_drone = {
 		is_sapient = yes
 	}
 
-	possible = {
-		drone_job_check_trigger = yes
-	}
+	possible_precalc = can_fill_drone_job
+
+	possible = { NOT = { has_trait = trait_nerve_stapled } }
 
 	resources = {
 		category = planet_artisans
@@ -588,9 +588,9 @@ fabricator = {
 		is_sapient = yes
 	}
 
-	possible = {
-		drone_job_check_trigger = yes
-	}
+	possible_precalc = can_fill_drone_job
+
+	possible = { NOT = { has_trait = trait_nerve_stapled } }
 
 	resources = {
 		category = planet_metallurgists
@@ -635,9 +635,9 @@ alloy_drone = {
 		is_sapient = yes
 	}
 
-	possible = {
-		drone_job_check_trigger = yes
-	}
+	possible_precalc = can_fill_drone_job
+
+	possible = { NOT = { has_trait = trait_nerve_stapled } }
 
 	resources = {
 		category = planet_metallurgists
@@ -680,9 +680,9 @@ catalytic_drone = {
 		is_sapient = yes
 	}
 
-	possible = {
-		drone_job_check_trigger = yes
-	}
+	possible_precalc = can_fill_drone_job
+
+	possible = { NOT = { has_trait = trait_nerve_stapled } }
 
 	resources = {
 		category = planet_metallurgists
@@ -703,8 +703,8 @@ catalytic_drone = {
 			trigger = {
 				exists = owner
 				owner = {
-					has_deficit = food
 					is_ai = no
+					has_deficit = food
 				}
 			}
 			alloys = -1.5
@@ -714,9 +714,9 @@ catalytic_drone = {
 			trigger = {
 				exists = owner
 				owner = {
+					is_ai = no
 					is_robot_empire = yes
 					has_deficit = food
-					is_ai = no
 				}
 			}
 			alloys = -0.5
@@ -766,9 +766,9 @@ chemist_drone = {
 		is_sapient = yes
 	}
 
-	possible = {
-		drone_job_check_trigger = yes
-	}
+	possible_precalc = can_fill_drone_job
+
+	possible = { NOT = { has_trait = trait_nerve_stapled } }
 
 	resources = {
 		category = planet_chemists
@@ -817,9 +817,9 @@ translucer_drone = {
 		is_sapient = yes
 	}
 
-	possible = {
-		drone_job_check_trigger = yes
-	}
+	possible_precalc = can_fill_drone_job
+
+	possible = { NOT = { has_trait = trait_nerve_stapled } }
 
 	resources = {
 		category = planet_translucers
@@ -868,9 +868,9 @@ gas_refiner_drone = {
 		is_sapient = yes
 	}
 
-	possible = {
-		drone_job_check_trigger = yes
-	}
+	possible_precalc = can_fill_drone_job
+
+	possible = { NOT = { has_trait = trait_nerve_stapled } }
 
 	resources = {
 		category = planet_refiners
@@ -919,9 +919,9 @@ patrol_drone = {
 		is_sapient = yes
 	}
 
-	possible = {
-		drone_job_check_trigger = yes
-	}
+	possible_precalc = can_fill_drone_job
+
+	possible = { NOT = { has_trait = trait_nerve_stapled } }
 
 	resources = {
 		category = planet_jobs
@@ -998,9 +998,9 @@ crystal_mining_drone = {
 		is_sapient = yes
 	}
 
-	possible = {
-		drone_job_check_trigger = yes
-	}
+	possible_precalc = can_fill_drone_job
+
+	possible = { NOT = { has_trait = trait_nerve_stapled } }
 
 	resources = {
 		category = planet_miners
@@ -1049,9 +1049,9 @@ mote_harvesting_drone = {
 		is_sapient = yes
 	}
 
-	possible = {
-		drone_job_check_trigger = yes
-	}
+	possible_precalc = can_fill_drone_job
+
+	possible = { NOT = { has_trait = trait_nerve_stapled } }
 
 	resources = {
 		category = planet_miners
@@ -1100,9 +1100,9 @@ gas_extraction_drone = {
 		is_sapient = yes
 	}
 
-	possible = {
-		drone_job_check_trigger = yes
-	}
+	possible_precalc = can_fill_drone_job
+
+	possible = { NOT = { has_trait = trait_nerve_stapled } }
 
 	resources = {
 		category = planet_miners
@@ -1151,9 +1151,7 @@ mining_drone = {
 		is_sapient = yes
 	}
 
-	possible = {
-		drone_job_check_trigger = yes
-	}
+	possible_precalc = can_fill_drone_job
 
 	resources = {
 		category = planet_miners
@@ -1212,9 +1210,7 @@ agri_drone = {
 		is_sapient = yes
 	}
 
-	possible = {
-		drone_job_check_trigger = yes
-	}
+	possible_precalc = can_fill_drone_job
 
 	resources = {
 		category = planet_farmers
@@ -1301,9 +1297,7 @@ technician_drone = {
 		is_sapient = yes
 	}
 
-	possible = {
-		drone_job_check_trigger = yes
-	}
+	possible_precalc = can_fill_drone_job
 
 	resources = {
 		category = planet_technician
@@ -1384,9 +1378,7 @@ maintenance_drone = {
 		}
 	}
 
-	possible = {
-		drone_job_check_trigger = yes
-	}
+	possible_precalc = can_fill_drone_job
 
 	planet_modifier = {
 		planet_amenities_no_happiness_add = 4
@@ -1527,9 +1519,7 @@ warrior_drone = {
 		is_sapient = yes
 	}
 
-	possible = {
-		drone_job_check_trigger = yes
-	}
+	possible_precalc = can_fill_drone_job
 
 	weight = {
 		weight = 5
@@ -1589,7 +1579,7 @@ warrior_drone = {
 bluelotus_drone = {
 	category = complex_drone
 	is_capped_by_modifier = yes
-	condition_string = WORKER_JOB_TRIGGER
+	condition_string = DRONE_JOB_TRIGGER
 	building_icon = building_illicit_research_labs
 	icon = foundry
 
@@ -1600,9 +1590,9 @@ bluelotus_drone = {
 		is_sapient = yes
 	}
 
-	possible = {
-		worker_job_check_trigger = yes
-	}
+	possible_precalc = can_fill_drone_job
+
+	possible = { NOT = { has_trait = trait_nerve_stapled } }
 
 	resources = {
 		category = planet_metallurgists
@@ -1669,7 +1659,9 @@ chronicle_drone = {
 		is_being_assimilated = no
 	}
 
-	possible = { drone_job_check_trigger = yes }
+	possible_precalc = can_fill_drone_job
+
+	possible = { NOT = { has_trait = trait_nerve_stapled } }
 
 	resources = {
 		category = planet_researchers
@@ -1736,9 +1728,7 @@ scrap_miner_drone = {
 		is_sapient = yes
 	}
 
-	possible = {
-		drone_job_check_trigger = yes
-	}
+	possible_precalc = can_fill_drone_job
 
 	resources = {
 		category = planet_miners

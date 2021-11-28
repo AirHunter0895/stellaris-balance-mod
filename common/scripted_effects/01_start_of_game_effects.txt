@@ -783,6 +783,53 @@ generate_start_deposits_and_blockers = {
 			add_deposit = d_black_soil
 		}
 	}
+
+	# Ocean Paradise Origin
+	if = {
+		limit = {
+			owner = {
+				has_origin = origin_ocean_paradise
+			}
+		}
+		if = {
+			limit = {
+				owner = { is_hive_empire = yes }
+			}
+			add_modifier = { modifier = ocean_paradise_hive }
+		}
+		else = {
+			add_modifier = { modifier = ocean_paradise }
+		}
+		clear_deposits = yes
+		clear_blockers = yes
+
+		# Food
+		add_deposit = d_teeming_reef
+		add_deposit = d_teeming_reef
+		add_deposit = d_teeming_reef
+		add_deposit = d_teeming_reef
+		add_deposit = d_teeming_reef
+		add_deposit = d_teeming_reef
+		add_deposit = d_teeming_reef
+		add_deposit = d_teeming_reef
+
+		# Minerals
+		add_deposit = d_submerged_ore_veins
+		add_deposit = d_submerged_ore_veins
+		add_deposit = d_submerged_ore_veins
+
+		# Energy
+		add_deposit = d_underwater_vent
+		add_deposit = d_underwater_vent
+		add_deposit = d_underwater_vent
+
+		# Bonus
+		add_deposit = d_crystal_reef
+		random_list = {
+			50 = { add_deposit = d_submerged_ore_veins }
+			50 = { add_deposit = d_underwater_vent }
+		}
+	}
 }
 
 # Special for Earth
@@ -934,7 +981,7 @@ generate_start_buildings_and_districts = {
 			}
 			else = {
 				while = {
-					count = 2 
+					count = 2
 					add_district_and_planet_size_if_needed_effect = {
 						district = district_farming
 					}
@@ -1101,8 +1148,21 @@ generate_start_buildings_and_districts = {
 						}
 					}
 					add_building = building_temple
-					add_district_and_planet_size_if_needed_effect = {
-						district = district_industrial
+					if = {
+						limit = {
+							owner = {
+								is_anglers_empire = yes
+								is_catalytic_empire = yes
+							}
+						}
+						add_district_and_planet_size_if_needed_effect = {
+							district = district_farming
+						}
+					}
+					else = {
+						add_district_and_planet_size_if_needed_effect = {
+							district = district_industrial
+						}
 					}
 				}
 				else = {
@@ -1110,7 +1170,7 @@ generate_start_buildings_and_districts = {
 				}
 			}
 		}
-		
+
 		if = {
 			limit = { owner = { is_hive_empire = yes } }
 
@@ -1403,13 +1463,36 @@ generate_start_buildings_and_districts = {
 				district = district_farming
 			}
 		}
+		# Replace 1 generator district with 1 farming district for anglers civic on wet worlds
+		if = {
+			limit = {
+				owner = { is_anglers_empire = yes }
+				has_climate = wet
+			}
+			remove_district = district_generator
+			add_district = district_farming
+		}
+		# Replace farming districts with uncapped ones for anglers civic on ocean worlds
+		if = {
+			limit = {
+				owner = { is_anglers_empire = yes }
+				is_planet_class = pc_ocean
+			}
+			while = {
+				limit = { num_districts = { type = district_farming value > 0 } }
+				remove_district = district_farming
+				add_district_and_planet_size_if_needed_effect = {
+					district = district_farming_uncapped
+				}
+			}
+		}
 	}
 
 	if = {
 		limit = {
 			owner = { has_origin = origin_shattered_ring }
 		}
-		
+
 		add_deposit = d_segment_rubble_1
 		add_deposit = d_segment_rubble_2
 		add_deposit = d_segment_rubble_3
@@ -1439,7 +1522,7 @@ generate_start_buildings_and_districts = {
 		else = {
 			add_deposit = d_decrepit_dwellings
 		}
-	
+
 		if = {
 			limit = {
 				owner = {
@@ -1454,7 +1537,7 @@ generate_start_buildings_and_districts = {
 				add_deposit = d_hibernating_lithoids
 			}
 		}
-	
+
 		if = {
 			limit = {
 				owner = {
@@ -1520,7 +1603,7 @@ generate_start_buildings_and_districts = {
 			}
 			else = {
 				while = {
-					count = 2 
+					count = 2
 					add_district_and_planet_size_if_needed_effect = {
 						district = district_farming_uncapped
 					}
@@ -1675,7 +1758,7 @@ generate_start_buildings_and_districts = {
 				}
 			}
 		}
-		
+
 		if = {
 			limit = {
 				owner = { is_hive_empire = yes }
@@ -2041,6 +2124,26 @@ generate_start_pops = {
 	if = {
 		limit = {
 			owner = {
+				has_origin = origin_necrophage
+				has_valid_civic = civic_hive_devouring_swarm #purges them instead
+				is_lithoid_empire = no
+			}
+		}
+		add_building = building_spawning_pool
+	}
+	if = {
+		limit = {
+			owner = {
+				has_origin = origin_necrophage
+				has_valid_civic = civic_hive_devouring_swarm
+				is_lithoid_empire = yes
+			}
+		}
+		add_district_and_planet_size_if_needed_effect = { district = district_mining }
+	}
+	if = {
+		limit = {
+			owner = {
 				has_origin = origin_clone_army
 			}
 		}
@@ -2216,8 +2319,18 @@ generate_home_planet_final_pass = {
 			}
 		}
 		owner = {
-			capital_scope = {
-				add_modifier = { modifier = prosp_uni_mod days = 7200 }
+			if = {
+				limit = {
+					is_gestalt = no
+				}
+				capital_scope = {
+					add_modifier = { modifier = prosp_uni_mod days = 7200 }
+				}
+			}
+			else = {
+				capital_scope = {
+					add_modifier = { modifier = prosp_uni_mod_gestalt days = 7200 }
+				}
 			}
 		}
 	}

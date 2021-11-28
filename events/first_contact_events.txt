@@ -11,7 +11,28 @@ namespace = first_contact
 # First Contact Stage 1
 first_contact_event = {
 	id = first_contact.1
-	title = first_contact.1.name
+	title = first_contact_start_title
+	desc = {
+		trigger = {
+			contact_country = { is_country_type = dragon_dummy }
+			owner = { is_gestalt = no }
+		}
+		text = aquatic_events.250.desc
+	}
+	desc = {
+		trigger = {
+			contact_country = { is_country_type = dragon_dummy }
+			owner = { is_hive_empire = yes }
+		}
+		text = aquatic_events.250.desc.hive
+	}
+	desc = {
+		trigger = {
+			contact_country = { is_country_type = dragon_dummy }
+			owner = { is_machine_empire = yes }
+		}
+		text = aquatic_events.250.desc.machine
+	}
 	desc = {
 		trigger = {
 			owner = {
@@ -26,6 +47,7 @@ first_contact_event = {
 					}
 				}
 			}
+			NOT = { contact_country = { is_country_type = dragon_dummy } }
 		}
 		text = first_contact.1.desc.default
 	}
@@ -39,24 +61,28 @@ first_contact_event = {
 				is_xenophile = no
 				NOT = { has_valid_civic = civic_fanatic_purifiers }
 			}
+			NOT = { contact_country = { is_country_type = dragon_dummy } }
 		}
 		text = first_contact.1.desc.xenophobe
 	}
 	desc = {
 		trigger = {
 			owner = { has_valid_civic = civic_machine_terminator }
+			NOT = { contact_country = { is_country_type = dragon_dummy } }
 		}
 		text = first_contact.1.desc.terminator
 	}
 	desc = {
 		trigger = {
 			owner = { has_valid_civic = civic_hive_devouring_swarm }
+			NOT = { contact_country = { is_country_type = dragon_dummy } }
 		}
 		text = first_contact.1.desc.devourer
 	}
 	desc = {
 		trigger = {
 			owner = { has_valid_civic = civic_fanatic_purifiers }
+			NOT = { contact_country = { is_country_type = dragon_dummy } }
 		}
 		text = first_contact.1.desc.purifier
 	}
@@ -66,6 +92,7 @@ first_contact_event = {
 				has_authority = auth_hive_mind
 				NOT = { has_valid_civic = civic_hive_devouring_swarm }
 			}
+			NOT = { contact_country = { is_country_type = dragon_dummy } }
 		}
 		text = first_contact.1.desc.hive
 	}
@@ -75,6 +102,7 @@ first_contact_event = {
 				has_authority = auth_machine_intelligence
 				NOT = { has_valid_civic = civic_machine_terminator }
 			}
+			NOT = { contact_country = { is_country_type = dragon_dummy } }
 		}
 		text = first_contact.1.desc.machine
 	}
@@ -93,9 +121,27 @@ first_contact_event = {
 		}
 	}
 
-	# immediate = { #deliberately commented out to stop the notification from showing; site is locked anyway by dint of having no envoy
-	#	set_site_progress_locked = yes
-	# }
+	immediate = {
+		# set_site_progress_locked = yes #deliberately commented out to stop the notification from showing; site is locked anyway by dint of having no envoy
+		if = {
+			limit = {
+				contact_country = {
+					is_country_type = dragon_dummy
+				}
+			}
+			set_name = first_contact_dragon
+			owner = {
+				create_leader = { #just for locs
+					class = scientist
+					species = this
+					effect = {
+						save_event_target_as = needed_name
+						exile_leader_as = needed_name
+					}
+				}
+			}
+		}
+	}
 
 	after = {
 		# set_site_progress_locked = no
@@ -208,6 +254,10 @@ first_contact_event = {
 	show_sound = {
 		sound = event_first_contact_reptilian
 		trigger = { contact_country = { is_species_class = REP } }
+	}
+	show_sound = {
+		sound = event_first_contact_aquatic
+		trigger = { contact_country = { is_species_class = AQUATIC } }
 	}
 
 	immediate = {
@@ -600,6 +650,10 @@ first_contact_event = {
 		sound = event_first_contact_reptilian
 		trigger = { contact_country = { is_species_class = REP } }
 	}
+	show_sound = {
+		sound = event_first_contact_aquatic
+		trigger = { contact_country = { is_species_class = AQUATIC } }
+	}
 
 	is_triggered_only = yes
 	first_contact = yes
@@ -887,6 +941,10 @@ first_contact_event = {
 		sound = event_first_contact_reptilian
 		trigger = { contact_country = { is_species_class = REP } }
 	}
+	show_sound = {
+		sound = event_first_contact_aquatic
+		trigger = { contact_country = { is_species_class = AQUATIC } }
+	}
 
 	picture = GFX_evt_inhabited_solar_system
 
@@ -1111,6 +1169,10 @@ first_contact_event = {
 		sound = event_first_contact_reptilian
 		trigger = { contact_country = { is_species_class = REP } }
 	}
+	show_sound = {
+		sound = event_first_contact_aquatic
+		trigger = { contact_country = { is_species_class = AQUATIC } }
+	}
 
 	is_triggered_only = yes
 	first_contact = yes
@@ -1320,6 +1382,10 @@ first_contact_event = {
 	show_sound = {
 		sound = event_first_contact_reptilian
 		trigger = { contact_country = { is_species_class = REP } }
+	}
+	show_sound = {
+		sound = event_first_contact_aquatic
+		trigger = { contact_country = { is_species_class = AQUATIC } }
 	}
 
 	picture = GFX_evt_mysterious_signal
@@ -4549,6 +4615,10 @@ first_contact_event = {
 		sound = event_first_contact_reptilian
 		trigger = { contact_country = { is_species_class = REP } }
 	}
+	show_sound = {
+		sound = event_first_contact_aquatic
+		trigger = { contact_country = { is_species_class = AQUATIC } }
+	}
 
 	is_triggered_only = yes
 	first_contact = yes
@@ -4645,6 +4715,10 @@ first_contact_event = {
 	show_sound = {
 		sound = event_first_contact_reptilian
 		trigger = { contact_country = { is_species_class = REP } }
+	}
+	show_sound = {
+		sound = event_first_contact_aquatic
+		trigger = { contact_country = { is_species_class = AQUATIC } }
 	}
 
 	is_triggered_only = yes
@@ -5360,6 +5434,10 @@ first_contact_event = {
 		sound = event_first_contact_reptilian
 		trigger = { contact_country = { is_species_class = REP } }
 	}
+	show_sound = {
+		sound = event_first_contact_aquatic
+		trigger = { contact_country = { is_species_class = AQUATIC } }
+	}
 
 	is_triggered_only = yes
 	first_contact = yes
@@ -5537,6 +5615,10 @@ first_contact_event = {
 	show_sound = {
 		sound = event_first_contact_reptilian
 		trigger = { contact_country = { is_species_class = REP } }
+	}
+	show_sound = {
+		sound = event_first_contact_aquatic
+		trigger = { contact_country = { is_species_class = AQUATIC } }
 	}
 
 	is_triggered_only = yes

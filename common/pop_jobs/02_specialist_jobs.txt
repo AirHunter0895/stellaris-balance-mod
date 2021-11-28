@@ -14,9 +14,7 @@ colonist = {
 		is_sapient = yes
 	}
 
-	possible = {
-		specialist_job_check_trigger = yes
-	}
+	possible_precalc = can_fill_specialist_job
 
 	pop_modifier = {
 		pop_defense_armies_add = 1
@@ -128,6 +126,7 @@ researcher = {
 		is_sapient = yes
 	}
 
+	possible_precalc = can_fill_specialist_job
 	possible = {
 		complex_specialist_job_check_trigger = yes
 	}
@@ -157,7 +156,6 @@ researcher = {
 			consumer_goods = 1
 		}
 	}
-
 
 	weight = {
 		weight = @specialist_job_weight
@@ -272,6 +270,7 @@ priest = {
 		is_sapient = yes
 	}
 
+	possible_precalc = can_fill_specialist_job
 	possible = {
 		complex_specialist_job_check_trigger = yes
 	}
@@ -456,6 +455,7 @@ death_priest = {
 		is_being_assimilated = no
 	}
 
+	possible_precalc = can_fill_specialist_job
 	possible = { complex_specialist_job_check_trigger = yes }
 
 	resources = {
@@ -807,8 +807,8 @@ telepath = {
 		is_sapient = yes
 	}
 
+	possible_precalc = can_fill_specialist_job
 	possible = {
-		specialist_job_check_trigger = yes
 		OR = {
 			has_trait = trait_latent_psionic
 			has_trait = trait_psionic
@@ -1246,6 +1246,7 @@ culture_worker = {
 		is_sapient = yes
 	}
 
+	possible_precalc = can_fill_specialist_job
 	possible = {
 		complex_specialist_job_check_trigger = yes
 	}
@@ -1380,6 +1381,7 @@ bureaucrat = {
 		is_sapient = yes
 	}
 
+	possible_precalc = can_fill_specialist_job
 	possible = {
 		complex_specialist_job_check_trigger = yes
 	}
@@ -1431,7 +1433,12 @@ bureaucrat = {
 	triggered_country_modifier = {
 		potential = {
 			exists = planet
-			planet = { has_designation = col_bureau }
+			planet = {
+				OR = {
+					has_designation = col_bureau
+					has_designation = col_habitat_bureau
+				}
+			}
 		}
 		modifier = {
 			country_admin_cap_add = 2
@@ -1504,9 +1511,7 @@ chemist = {
 		is_sapient = yes
 	}
 
-	possible = {
-		specialist_job_check_trigger = yes
-	}
+	possible_precalc = can_fill_specialist_job
 
 	resources = {
 		category = planet_chemists
@@ -1573,9 +1578,7 @@ translucer = {
 		is_sapient = yes
 	}
 
-	possible = {
-		specialist_job_check_trigger = yes
-	}
+	possible_precalc = can_fill_specialist_job
 
 	resources = {
 		category = planet_translucers
@@ -1653,9 +1656,7 @@ gas_refiner = {
 		is_sapient = yes
 	}
 
-	possible = {
-		specialist_job_check_trigger = yes
-	}
+	possible_precalc = can_fill_specialist_job
 
 	resources = {
 		category = planet_refiners
@@ -1733,9 +1734,7 @@ roboticist = {
 		is_sapient = yes
 	}
 
-	possible = {
-		specialist_job_check_trigger = yes
-	}
+	possible_precalc = can_fill_specialist_job
 
 	planet_modifier = {
 		planet_pop_assembly_add = 1
@@ -1766,9 +1765,7 @@ healthcare = {
 		is_sapient = yes
 	}
 
-	possible = {
-		specialist_job_check_trigger = yes
-	}
+	possible_precalc = can_fill_specialist_job
 
 	planet_modifier = {
 		planet_amenities_add = 5
@@ -1851,9 +1848,7 @@ manager = {
 		is_sapient = yes
 	}
 
-	possible = {
-		specialist_job_check_trigger = yes
-	}
+	possible_precalc = can_fill_specialist_job
 
 	planet_modifier = {
 		trade_value_add = 4
@@ -2023,9 +2018,7 @@ bluelotus_technician = {
 		is_sapient = yes
 	}
 
-	possible = {
-		worker_job_check_trigger = yes
-	}
+	possible_precalc = can_fill_worker_job
 
 	resources = {
 		category = planet_metallurgists
@@ -2133,6 +2126,7 @@ death_chronicler = {
 		is_sapient = yes
 	}
 
+	possible_precalc = can_fill_specialist_job
 	possible = { complex_specialist_job_check_trigger = yes }
 
 	resources = {
@@ -2419,8 +2413,9 @@ foundry = {
 		is_being_assimilated = no
 	}
 
+	possible_precalc = can_fill_specialist_job
 	possible = {
-		specialist_job_check_trigger = yes
+		hidden_trigger = { exists = owner }
 		owner = {
 			is_gestalt = no
 		}
@@ -2488,8 +2483,9 @@ catalytic_technician = {
 		is_being_assimilated = no
 	}
 
+	possible_precalc = can_fill_specialist_job
 	possible = {
-		specialist_job_check_trigger = yes
+		hidden_trigger = { exists = owner }
 		owner = {
 			is_gestalt = no
 		}
@@ -2505,8 +2501,8 @@ catalytic_technician = {
 			trigger = {
 				exists = owner
 				owner = {
-					has_deficit = food
 					is_ai = no
+					has_deficit = food
 				}
 			}
 			alloys = -1.5
@@ -2569,8 +2565,9 @@ artisan = {
 		is_being_assimilated = no
 	}
 
+	possible_precalc = can_fill_specialist_job
 	possible = {
-		specialist_job_check_trigger = yes
+		hidden_trigger = { exists = owner }
 		owner = {
 			is_gestalt = no
 		}
@@ -2654,8 +2651,9 @@ artificer = {
 		is_being_assimilated = no
 	}
 
+	possible_precalc = can_fill_specialist_job
 	possible = {
-		specialist_job_check_trigger = yes
+		hidden_trigger = { exists = owner }
 		owner = {
 			is_gestalt = no
 		}
@@ -2702,7 +2700,7 @@ artificer = {
 			can_take_servant_job = no
 		}
 		modifier = {
-			factor = 5	
+			factor = 5
 			has_job = artificer
 		}
 		modifier = {
@@ -2724,6 +2722,89 @@ artificer = {
 			has_trait = trait_void_dweller_1
 			exists = planet
 			planet = { is_artificial = no }
+		}
+	}
+}
+
+pearl_diver = {
+	category = specialist
+	condition_string = SPECIALIST_JOB_TRIGGER
+	building_icon = building_food_processing_facility
+	clothes_texture_index = 2
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_specialist_job
+	possible = {
+		hidden_trigger = { exists = owner }
+		owner = {
+			is_gestalt = no
+			is_anglers_empire = yes
+		}
+	}
+
+	resources = {
+		category = planet_artisans
+		produces = {
+			consumer_goods = 3
+		}
+		upkeep = {
+			food = 2
+			minerals = 2
+		}
+	}
+
+	triggered_planet_modifier = {
+		modifier = {
+			trade_value_add = 2
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			has_trait = trait_thrifty
+		}
+		modifier = {
+			trade_value_add = 0.5
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			has_trait = trait_nuumismatic_administration
+		}
+		modifier = {
+			trade_value_add = 0.2
+		}
+	}
+
+	weight = {
+		weight = @specialist_job_weight
+		modifier = {
+			factor = 2
+			is_enslaved = yes
+			has_slavery_type = { type = slavery_indentured }
+		}
+		modifier = {
+			factor = 0.1
+			can_take_servant_job = yes
+		}
+		modifier = {
+			factor = 5
+			has_job = artisan
+		}
+		modifier = {
+			factor = 10
+			has_job = artisan
+			OR = {
+				has_trait = trait_robust
+				has_trait = trait_robot_efficient_processors
+			}
 		}
 	}
 }

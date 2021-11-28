@@ -21,7 +21,7 @@ resolution_custodian_galactic_mobilization_gestalt = {
 }
 
 resolution_custodian_galactic_standard = {
-	country_base_influence_produces_add = 1
+	country_galactic_standard_influence_produces_add = 1
 	country_energy_produces_mult = -0.02
 }
 
@@ -85,34 +85,34 @@ crisis_dark_matter_cap = {
 }
 
 imp_concession_ports_1 = {
-	country_base_energy_produces_add = 10
+	country_concessions_energy_produces_add = 10
 }
 imp_concession_ports_2 = {
-	country_base_energy_produces_add = 20
+	country_concessions_energy_produces_add = 20
 }
 imp_concession_ports_3 = {
-	country_base_energy_produces_add = 30
+	country_concessions_energy_produces_add = 30
 }
 imp_concession_ports_4 = {
-	country_base_energy_produces_add = 40
+	country_concessions_energy_produces_add = 40
 }
 imp_concession_ports_5 = {
-	country_base_energy_produces_add = 50
+	country_concessions_energy_produces_add = 50
 }
 imp_concession_ports_6 = {
-	country_base_energy_produces_add = 60
+	country_concessions_energy_produces_add = 60
 }
 imp_concession_ports_7 = {
-	country_base_energy_produces_add = 70
+	country_concessions_energy_produces_add = 70
 }
 imp_concession_ports_8 = {
-	country_base_energy_produces_add = 80
+	country_concessions_energy_produces_add = 80
 }
 imp_concession_ports_9 = {
-	country_base_energy_produces_add = 90
+	country_concessions_energy_produces_add = 90
 }
 imp_concession_ports_10 = {
-	country_base_energy_produces_add = 100
+	country_concessions_energy_produces_add = 100
 }
 
 #Spynetwork scope
@@ -250,27 +250,27 @@ first_contact_war_preparations = {
 
 first_contact_warlike_warriors_recognised = {
 	diplo_weight_naval_mult = 0.25
-	country_base_influence_produces_add = 0.65
+	country_first_contact_influence_produces_add = 0.65
 }
 
 first_contact_warlike_warriors_recognised_2 = {
 	diplo_weight_naval_mult = 0.25
-	country_base_influence_produces_add = 0.65
+	country_first_contact_influence_produces_add = 0.65
 }
 
 first_contact_warlike_warriors_presumed = {
 	diplo_weight_naval_mult = 0.15
-	country_base_influence_produces_add = 0.5
+	country_first_contact_influence_produces_add = 0.5
 }
 
 first_contact_warlike_warriors_presumed_2 = {
 	diplo_weight_naval_mult = 0.15
-	country_base_influence_produces_add = 0.5
+	country_first_contact_influence_produces_add = 0.5
 }
 
 first_contact_level_headedness = {
 	diplo_weight_mult = 0.15
-	country_base_influence_produces_add = 0.5
+	country_first_contact_influence_produces_add = 0.5
 }
 
 first_comms_hostility_preparations = {
@@ -319,7 +319,7 @@ galactic_custodian = {
 
 gal_custodian = {
 	icon = "gfx/interface/icons/modifiers/mod_country_custodian.dds"
-	country_base_influence_produces_add = 5
+	country_custodian_influence_produces_add = 5
 	diplo_weight_mult = 0.3
 }
 

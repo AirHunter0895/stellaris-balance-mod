@@ -68,11 +68,7 @@ ap_become_the_crisis = {
 		}
 		modifier = {
 			factor = 0
-			num_ascension_perks >= 5
-		}
-		modifier = {
-			factor = 0
-			count_country = {
+			count_playable_country = {
 				count > 1
 				limit = {
 					has_ascension_perk = ap_become_the_crisis
@@ -83,84 +79,53 @@ ap_become_the_crisis = {
 }
 
 #################
-# NEMESIS ASCENSION PERKS
+# AQUATICS ASCENSION PERKS
 #################
 
-ap_become_the_crisis = {
+ap_hydrocentric = {
 	potential = {
-		has_nemesis = yes
-		NOT = { has_ascension_perk = ap_become_the_crisis }
+		has_aquatics = yes
+		NOT = { has_ascension_perk = ap_hydrocentric }
+		has_trait = trait_pc_ocean_preference
 	}
-
 	possible = {
-		custom_tooltip = {
-			fail_text = "requires_ascension_perks_2"
-			num_ascension_perks > 1
-		}
-		custom_tooltip = {
-			fail_text = "requires_independence"
-			is_subject = no
-		}
-		custom_tooltip = {
-			fail_text = "must_not_be_custodian"
-			is_galactic_custodian = no
-		}
-		custom_tooltip = {
-			fail_text = "must_not_be_emperor"
-			is_galactic_emperor = no
-		}
-		NOR = {
-			has_ethic = ethic_xenophile
-			has_ethic = ethic_fanatic_xenophile
-			has_ethic = ethic_pacifist
-			has_ethic = ethic_fanatic_pacifist
-			has_civic = civic_machine_servitor
-		}
+		has_trait = trait_aquatic
+		has_technology = tech_terrestrial_sculpting
 	}
 
 	on_enabled = {
-		hidden_effect = {
-			set_ai_personality = became_the_crisis
+		custom_tooltip = ap_hydrocentric_tooltip
+		if = {
+			limit = {
+				host_has_dlc = "Apocalypse"
+			}
+			if = {
+				limit = { has_ascension_perk = ap_colossus }
+				custom_tooltip = ap_hydrocentric_deluge_tooltip
+			}
+			else = {
+				custom_tooltip = ap_hydrocentric_deluge_pre_unlock_tooltip
+			}
 		}
-		activate_crisis_progression = yes
+		hidden_effect = {
+			country_event = { id = aquatics.1 }
+		}
+	}
+
+	modifier = {
+		terraforming_ocean_cost_mult = -0.25
 	}
 
 	ai_weight = {
-		factor = 7.5
+		factor = 80 #it really is quite good for Aquatic species
 		modifier = {
-			factor = 0
-			is_militarist = no
+			factor = 0.5
 			is_xenophobe = no
-			is_gestalt = no
+			is_hive_empire = no
 		}
 		modifier = {
-			factor = 10
-			is_homicidal = yes
-		}
-		modifier = {
-			factor = 2
-			has_tradition = tr_supremacy_finish
-		}
-		modifier = {
-			factor = 0
-			galaxy_percentage < 0.1
-		}
-		modifier = {
-			factor = 2
-			galaxy_percentage > 0.2
-		}
-		modifier = {
-			factor = 0
-			num_ascension_perks >= 5
-		}
-		modifier = {
-			factor = 0
-			count_country = {
-				count > 1
-				limit = {
-					has_ascension_perk = ap_become_the_crisis
-				}
-			}
+			factor = 5
+			has_origin = origin_ocean_paradise
 		}
 	}
 }
@@ -194,14 +159,15 @@ ap_enigmatic_engineering = {
 	}
 
 	ai_weight = {
-		factor = 10
+		factor = 2
 		modifier = {
-			factor = 2
-			has_ethic = ethic_materialist
+			factor = 10
+			has_valid_civic = civic_inwards_perfection
 		}
 		modifier = {
-			factor = 3
-			has_ethic = ethic_fanatic_materialist
+			factor = 2
+			is_materialist = yes
+			is_xenophobe = yes
 		}
 	}
 }
@@ -284,7 +250,7 @@ ap_colossus = {
 		}
 		modifier = {
 			factor = 0.25
-			is_ethics_aligned = { ARG1 = pacifist }
+			is_pacifist = yes
 		}
 		modifier = {
 			factor = 2
@@ -293,6 +259,18 @@ ap_colossus = {
 		modifier = {
 			factor = 2
 			is_militarist = yes
+		}
+		modifier = {
+			factor = 2
+			has_authority = auth_machine_intelligence #just because
+		}
+		modifier = {
+			factor = 2
+			has_ascension_perk = ap_become_the_crisis
+		}
+		modifier = {
+			factor = 0
+			has_crisis_level = crisis_level_5
 		}
 	}
 }
@@ -365,10 +343,14 @@ ap_engineered_evolution = {
 	}
 
 	ai_weight = {
-		factor = 10
+		factor = 15
 		modifier = {
 			factor = 0
-			num_owned_planets < 10
+			num_owned_planets < 6
+		}
+		modifier = {
+			factor = 3
+			has_authority = auth_hive_mind
 		}
 	}
 }
@@ -495,7 +477,7 @@ ap_the_flesh_is_weak = {
 		}
 		modifier = {
 			factor = 0
-			num_owned_planets < 10
+			num_owned_planets < 6
 		}
 		modifier = {
 			factor = 0
@@ -644,7 +626,11 @@ ap_mind_over_matter = {
 		}
 		modifier = {
 			factor = 0
-			num_owned_planets < 10
+			num_owned_planets < 6
+		}
+		modifier = {
+			factor = 10
+			has_ascension_perk = ap_become_the_crisis
 		}
 	}
 }
@@ -734,6 +720,14 @@ ap_world_shaper = {
 
 	ai_weight = {
 		factor = 5
+		modifier = {
+			factor = 0
+			OR = {
+				has_origin = origin_void_dwellers
+				has_origin = origin_shattered_ring
+				has_trait = trait_aquatic
+			}
+		}
 	}
 }
 
@@ -816,8 +810,36 @@ ap_defender_of_the_galaxy = {
 		modifier = {
 			factor = 0
 			NOR = {
-				has_global_flag = galactic_crisis_happened
-				has_global_flag = gray_goo_crisis_active
+				is_xenophile = yes
+				is_galactic_custodian = yes
+				is_galactic_emperor = yes
+				any_country = {
+					OR = {
+						has_crisis_level = crisis_level_5
+						is_country_type = swarm
+						is_country_type = extradimensional
+						is_country_type = extradimensional_2
+						is_country_type = extradimensional_3
+						is_country_type = ai_empire
+						is_country_type = gray_goo
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 0.25
+			NOT = {
+				any_country = {
+					OR = {
+						has_crisis_level = crisis_level_5
+						is_country_type = swarm
+						is_country_type = extradimensional
+						is_country_type = extradimensional_2
+						is_country_type = extradimensional_3
+						is_country_type = ai_empire
+						is_country_type = gray_goo
+					}
+				}
 			}
 		}
 	}
@@ -846,6 +868,20 @@ ap_interstellar_dominion = {
 			factor = 3
 			has_ethic = ethic_fanatic_xenophobe
 		}
+		modifier = {
+			factor = 0
+			is_pacifist = yes
+			years_passed > 40
+		}
+		modifier = {
+			factor = 0
+			OR = { #useless, total war CBs
+				is_homicidal = yes
+				has_valid_civic = civic_machine_assimilator
+				has_ascension_perk = ap_become_the_crisis
+				any_owned_fleet = { is_ship_size = colossus }
+			}
+		}
 	}
 }
 
@@ -870,7 +906,7 @@ ap_grasp_the_void = {
 	}
 
 	ai_weight = {
-		factor = 10
+		factor = 3
 		modifier = {
 			factor = 2
 			has_civic = civic_inwards_perfection
@@ -949,10 +985,10 @@ ap_galactic_contender = {
 		modifier = {
 			factor = 0
 			NOR = {
-				any_neighbor_country = {
+				any_country = {
 					is_country_type = awakened_fallen_empire
 				}
-				any_country = {
+				any_neighbor_country = {
 					is_country_type = fallen_empire
 				}
 			}
@@ -982,7 +1018,7 @@ ap_technological_ascendancy = {
 	}
 
 	ai_weight = {
-		factor = 10
+		factor = 30 #it's better than average
 		modifier = {
 			factor = 2
 			has_ethic = ethic_materialist
@@ -1076,6 +1112,14 @@ ap_mastery_of_nature = {
 			factor = 0.1
 			num_ascension_perks > 1
 		}
+		modifier = {
+			factor = 0
+			has_origin = origin_void_dwellers
+		}
+		modifier = {
+			factor = 2
+			num_owned_planets < 8
+		}
 	}
 }
 
@@ -1113,7 +1157,7 @@ ap_executive_vigor = {
 	}
 
 	ai_weight = {
-		factor = 10
+		factor = 30 #it's better than average
 	}
 }
 
@@ -1164,6 +1208,9 @@ ap_shared_destiny = {
 					is_subject_type = vassal
 				}
 			}
+			count_envoy = {
+				count < 3
+			}
 		}
 	}
 }
@@ -1190,12 +1237,7 @@ ap_voidborn = {
 	}
 
 	on_enabled = {
-		if = {
-			limit = {
-				is_gestalt = no
-			}
-			custom_tooltip = "ap_voidborn_habitat_effect"
-		}
+		custom_tooltip = "ap_voidborn_habitat_effect"
 		if = {
 			limit = {
 				NOT = { has_technology = tech_habitat_2 }
@@ -1227,6 +1269,15 @@ ap_voidborn = {
 			OR = {
 				has_ethic = ethic_fanatic_pacifist
 				has_origin = origin_void_dwellers
+			}
+		}
+		modifier = {
+			factor = 2
+			count_owned_planet = {
+				count > 2
+				limit = {
+					is_planet_class = pc_habitat
+				}
 			}
 		}
 	}
@@ -1307,7 +1358,7 @@ ap_galactic_wonders_utopia = {
 	}
 
 	ai_weight = {
-		factor = 10
+		factor = 20
 		modifier = {
 			factor = 2
 			has_ethic = ethic_pacifist
@@ -1453,7 +1504,7 @@ ap_synthetic_age = {
 	}
 
 	ai_weight = {
-		factor = 10
+		factor = 20
 	}
 }
 
@@ -1490,7 +1541,11 @@ ap_machine_worlds = {
 	}
 
 	ai_weight = {
-		factor = 10
+		factor = 20
+		modifier = {
+			factor = 0
+			has_valid_civic = civic_machine_servitor
+		}
 	}
 }
 
@@ -1526,7 +1581,7 @@ ap_hive_worlds = {
 	}
 
 	ai_weight = {
-		factor = 10
+		factor = 20
 	}
 }
 
